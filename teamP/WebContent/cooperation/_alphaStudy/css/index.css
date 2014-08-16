@@ -492,7 +492,7 @@ input, textarea, .uneditable-input {
 	margin: 2px 0 0 2px;
 }
 .icon-white, .nav-pills > .active > a > [class^='icon-'], .nav-pills > .active > a > [class*=' icon-'], .nav-list > .active > a > [class^='icon-'], .nav-list > .active > a > [class*=' icon-'], .navbar-inverse .nav > .active > a > [class^='icon-'], .navbar-inverse .nav > .active > a > [class*=' icon-'], .dropdown-menu > li > a:hover > [class^='icon-'], .dropdown-menu > li > a:hover > [class*=' icon-'], .dropdown-menu > .active > a > [class^='icon-'], .dropdown-menu > .active > a > [class*=' icon-'], .dropdown-submenu:hover > a > [class^='icon-'], .dropdown-submenu:hover > a > [class*=' icon-'] {
-	background-image: url(../img/glyphicons-halflings-white.png);
+	background-image: url(/teamP/cooperation/_alphaStudy/img/glyphicons-halflings-white.png);
 }
 .icon-home {
 	background-position: 0 -24px;
