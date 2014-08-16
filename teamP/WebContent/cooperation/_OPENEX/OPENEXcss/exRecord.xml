@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+	<exItem>
+		<exBoradNo></exBoradNo>
+		<exId></exId>
+		<exFirstCategory></exFirstCategory>
+		<exSecondCategory></exSecondCategory>
+		<exThirdCategory></exThirdCategory>
+		<exTimeLimit></exTimeLimit>
+		<exCount></exCount>
+		<exGrade></exGrade>
+		<exTitle></exTitle>
+		<exContent></exContent>
+		<ex1></ex1>
+		<ex2></ex2>
+		<ex3></ex3>
+		<ex4></ex4>
+		<ex5></ex5>
+		<exSolution></exSolution>
+	</exItem>
+</category>

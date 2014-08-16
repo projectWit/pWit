@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.ui-datepicker { font-family: '맑은 고딕'; font-size: 12px; width: 200px; }
+.ui-datepicker select { font-family: '맑은 고딕'; }
+.ui-datepicker select.ui-datepicker-month{ width:50px; }
+.ui-datepicker select.ui-datepicker-year{ width:60px; }

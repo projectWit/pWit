@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.dhtmlwindow{/*전체 테두리*/
+position: absolute;
+border: 1px solid #404040;
+visibility: hidden;
+background-color: white;
+}
+
+
+
+.drag-handle .drag-controls{ /*CSS for controls (min, close etc) within Drag Handle-닫기버튼쪽 padding*/
+position: absolute;
+right: 5px;
+top: 3px;
+cursor: hand;
+cursor: pointer;
+}
+
+.drag-handle{ /*CSS for Drag Handle-상단 타이틀 부분 칼라와 크기*/
+padding-top: 8px;
+text-indent: 30px; /*left margin*/
+font: bold 12px 돋움;
+background-color: #03277C;
+background:url(http://login.ecounterp.com/images/common_popBG.jpg) repeat-x;
+height:20px;
+color: white; /*글씨칼라*/
+cursor: move;
+overflow: hidden;
+width: auto;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+}
+
+* html .drag-handle{ /*IE6 and below CSS hack. Width must be set to 100% in order for opaque title bar to render-상단 타이틀의 가로사이즈*/
+width: 100%;
+}
+
+
+.drag-contentarea{ /*CSS for Content Display Area div-안쪽박스*/
+border-top: 1px solid d4d0c8;
+background-color: gray;
+color: gray;
+height: 150px;
+padding: 0px;
+overflow: auto;
+background-color:White;
+-webkit-overflow-scrolling: touch;
+}
+
+.drag-statusarea{ /*CSS for Status Bar div (includes resizearea)-하단bar*/
+border-top: 1px solid gray;
+background-color: #d4d0c8;
+height: 12px; /*height of resize image*/
+}
+
+
+.drag-resizearea{ /*CSS for Resize Area itself*/
+float: right;
+width: 13px; /*width of resize image*/
+height: 13px; /*height of resize image*/
+cursor: nw-resize;
+font-size: 0;
+}
+
+#interVeil{ /*CSS for veil that covers entire page while modal window is visible*/
+position: absolute;
+background: black url(../images/blackdot.gif);
+width: 10px;
+left: 0;
+top: 0;
+z-index: 5;
+visibility: hidden;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=50);
+opacity: 0.8;
+}

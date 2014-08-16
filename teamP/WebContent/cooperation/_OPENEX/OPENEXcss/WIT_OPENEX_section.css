@@ -1,0 +1,468 @@
+@CHARSET "UTF-8";
+
+/* 공통 섹션 시작 */
+body {
+	font-family: 맑은 고딕;
+}
+
+a:LINK {
+	text-decoration: none;
+	color: #747474;
+	margin: auto;
+}
+
+a:VISITED {
+	color: #747474;
+}
+
+a:HOVER {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+a:focus {
+	text-decoration: underline;
+}
+
+#openex_aside {
+	width: 460px;
+	height: 250px;
+	position: relative;
+	float: right;
+	border: 1px solid #8C8C8C;
+	margin-top: 10px;
+	width: 460px;
+}
+
+.openex_main_boardtitle {
+	font-weight: bold;
+	font-size: 15px;
+	color: #4C4C4C;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+.openex_main_boardcontent {
+	width: 380px;
+	height: 150px;
+	border: 1px solid #8C8C8C;
+	padding-left: 5px;
+}
+
+#openex_board table tr td p span {
+	font-size: 7px;
+	color: #4C4C4C;
+}
+
+.CategoryImages {
+	width: 50px;
+	height: 15px;
+	bottom: 10px;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .3);
+	font-size: 2px;
+	color: white;
+	border: 1px solid #4081AF;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	border-radius: 4px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.colorBtn {
+	text-shadow: 0px -1px 1px #353535;
+	font-size: 12px;
+	font-weight: bold;
+	width: 136px;
+	height: 40px;
+	color: #FFFFFF;
+	border: 1px solid #662500;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	border-radius: 4px;
+	background: rgb(255, 103, 15); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255, 103, 15, 1)
+		0%, rgba(255, 103, 15, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(255, 103, 15, 1)),
+		color-stop(100%, rgba(255, 103, 15, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 103, 15, 1)
+		0%, rgba(255, 103, 15, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(255, 103, 15, 1)
+		0%, rgba(255, 103, 15, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255, 103, 15, 1)
+		0%, rgba(255, 103, 15, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(255, 103, 15, 1) 0%,
+		rgba(255, 103, 15, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff670f',
+		endColorstr='#ff670f', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.colorBtn:HOVER {
+	cursor: pointer;
+	color: white;
+	text-shadow: 0px 1px 1px #F6F6F6;
+	background: rgb(255, 168, 76); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255, 168, 76, 1)
+		0%, rgba(255, 123, 13, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(255, 168, 76, 1)),
+		color-stop(100%, rgba(255, 123, 13, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 168, 76, 1)
+		0%, rgba(255, 123, 13, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(255, 168, 76, 1)
+		0%, rgba(255, 123, 13, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255, 168, 76, 1)
+		0%, rgba(255, 123, 13, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(255, 168, 76, 1) 0%,
+		rgba(255, 123, 13, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c',
+		endColorstr='#ff7b0d', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.listSelectBox {
+	height: 25px;
+	text-align: right;
+}
+/* 공통 섹션 끝 */
+
+/* 출제 섹션 시작 */
+#openex_setExam {
+	text-align: center;
+}
+
+#openex_setExam_classification {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#openex_setExam_excount {
+	position: relative;
+	top: 2px;
+	left: 80px;
+	width: 150px;
+	height: 345px;
+	float: left;
+	border: 1px solid gray;
+}
+
+#openex_setExam_excount_down {
+	position: relative;
+	top: 2px;
+	left: 80px;
+	width: 150px;
+	height: 30px;
+	clear: both;
+}
+
+#openex_setExam_content {
+	position: relative;
+	left: 90px;
+	float: left;
+}
+
+#openex_setExam_radiobox {
+	clear: both;
+	position: relative;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#openex_setExam_submit {
+	height: 20px;
+}
+
+#openex_setExam_submit input {
+	width: 120px;
+}
+
+#openex_setExam_submit input:HOVER {
+	font-size: 16px;
+}
+
+/* 출제 섹션 끝 */
+
+/* 문제풀이 섹션 시작 */
+#openex_solve_title input {
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	right: 500px;
+}
+
+#openex_solve_radiobox input {
+	border: none;
+}
+
+/* 문제풀이 섹션 끝 */
+
+/* 리스트 섹션 시작 */
+#openex_list {
+	text-align: center;
+}
+
+#openex_list_subject {
+	height: 10px;
+}
+
+#openex_list_title td {
+	min-width: 55px;
+	background: rgb(96, 108, 136); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(96,
+		108, 136, 1)), color-stop(100%, rgba(63, 76, 107, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88',
+		endColorstr='#3f4c6b', GradientType=0); /* IE6-9 */
+	padding: 5px;
+	color: white;
+	font-weight: bold;
+}
+
+#openex_list table tr td label {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#openex_list_content td a {
+	vertical-align: super;
+}
+
+#openex_list_content td span {
+	font-size: 7px;
+	vertical-align: super;
+}
+
+/* 리스트 섹션 끝 */
+
+/* 랭킹 섹션 시작 */
+#OPENEX_ranking {
+	text-align: center;
+	position: relative;
+	margin: auto;
+	left: 50px;
+	width: 100%;
+	height: 100%;
+	top: 10px;
+	bottom: 10px;
+	top: 10px;
+	font-size: 14px;
+}
+
+#OPENEX_ranking div {
+	float: left;
+	position: relative;
+	left: 48px;
+	width: 500px;
+	height: 550px;
+	margin: 5px;
+	padding: 5px;
+	background: rgb(206, 220, 231); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(24%, rgba(206, 220, 231, 1)),
+		color-stop(32%, rgba(206, 220, 231, 1)),
+		color-stop(100%, rgba(89, 106, 114, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7',
+		endColorstr='#596a72', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+#OPENEX_ranking div table {
+	width: 500px;
+	height: 550px;
+}
+
+#OPENEX_ranking div table tr td p {
+	padding: 5px;
+	pont-size:16px;
+	color: white;
+	font-weight: bold;
+	background: rgb(96, 108, 136); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(96,
+		108, 136, 1)), color-stop(100%, rgba(63, 76, 107, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88',
+		endColorstr='#3f4c6b', GradientType=0); /* IE6-9 */
+}
+
+/* 랭킹 섹션 끝 */
+
+/* 아카이브 섹션 시작 */
+#openex_archive {
+	text-align: center;
+	position: relative;
+	margin: auto;
+	left: 30px;
+	width: 100%;
+	height: 100%;
+	top: 10px;
+	bottom: 10px;
+	top: 10px;
+}
+
+.openex_archive_dv {
+	float: left;
+	width: 580px;
+	height: 355px;
+	margin: 5px;
+	padding: 5px;
+	position: relative;
+	background: rgb(206, 220, 231); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(24%, rgba(206, 220, 231, 1)),
+		color-stop(32%, rgba(206, 220, 231, 1)),
+		color-stop(100%, rgba(89, 106, 114, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(206, 220, 231, 1)
+		24%, rgba(206, 220, 231, 1) 32%, rgba(89, 106, 114, 1) 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7',
+		endColorstr='#596a72', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.openex_archive_record {
+	text-align: center;
+	width: 580px;
+	height: 355px;
+	margin: 5px;
+	padding: 5px;
+	position: relative;
+	margin: auto;
+	background-color: white;
+}
+
+.openex_archive_h3 {
+	clear: both;
+	margin-bottom: 2px;
+}
+
+#openex_archive_setExam_list td,#openex_archive_solve_list td {
+	font-size: 12px;
+	height: 22px;
+}
+
+.openex_archive_record_title {
+	padding: 5px;
+	color: white;
+	font-weight: bold;
+	background: rgb(96, 108, 136); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(96,
+		108, 136, 1)), color-stop(100%, rgba(63, 76, 107, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88',
+		endColorstr='#3f4c6b', GradientType=0); /* IE6-9 */
+}
+
+#graph_space {
+	width: 528px;
+	height: 277px;
+	border-bottom: 1px solod black;
+	border-left: 1px solod black;
+	border-bottom: 1px solod black;
+}
+
+#canvas_graph_1 {
+	position: relative;
+	height: 280px;
+	width: 380px;
+	border-left: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+#canvas_graph_1 table {
+	height: 300px;
+	width: 380px;
+}
+
+#canvas_graph_1 table tr td {
+	width: 20px;
+	height: 20px;
+}
+
+.canvas_graph_note {
+	position: absolute;
+	vertical-align: bottom;
+	background: rgb(125, 126, 125); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(125,
+		126, 125, 1)), color-stop(100%, rgba(14, 14, 14, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d',
+		endColorstr='#0e0e0e', GradientType=0);
+	background: rgb(125, 126, 125); /* IE6-9 */
+}
+/* 아카이브 섹션 끝 */

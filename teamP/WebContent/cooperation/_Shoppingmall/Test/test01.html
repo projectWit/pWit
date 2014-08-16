@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+ <html> 
+ <head> 
+   <style> 
+   div { color:red; } 
+   </style> 
+   <script src="jquery-1.4.4.min.js"></script> 
+   <meta charset="utf-8">
+ </head> 
+ <body> 
+ <form>
+ <div id="first">
+   <INPUT type="text" name="txt1" id="txt1">
+   <select name="garden1" size="5" id="garden1" onChange="change_sel(1)"> 
+     <option>Flowers</option> 
+     <option>Shrubs</option> 
+     <option>Trees</option> 
+     <option>Bushes</option>  
+     <option>Grass</option> 
+     <option>Dirt</option> 
+   </select>
+ </div>
+ <div id="second">
+   <INPUT type="text" name="txt2" id="txt2">
+   <select name="garden2" size="5" id="garden2" onChange="change_sel(2)">  
+     <option>Flowers</option> 
+     <option>Shrubs</option> 
+     <option>Trees</option> 
+     <option>Bushes</option>  
+     <option>Grass</option> 
+     <option>Dirt</option> 
+   </select> 
+ </div>
+ <!--<input type="button" name="del_OK" id="del_OK" onClick="del_OK(1)">-->
+ <INPUT TYPE="button" VALUE="del1" ONCLICK="del_OK(1)">
+ <INPUT TYPE="button" VALUE="del2" ONCLICK="del_OK(2)">
+ </form>  
+ <script> 
+ /*
+      $("#first select").change(function () { 
+           var str1 = ""; 
+           $("#garden1 option:selected").each(function () { 
+                 str1 += $(this).text() + " "; 
+               }); 
+    $("#first").children("input").val(str1);
+         }) 
+        // .trigger("change");
+
+     $("#garden2").change(function () { 
+           var str2 = ""; 
+           $("#garden2 option:selected").each(function () { 
+                 str2 += $(this).text() + " "; 
+               }); 
+    $("#txt2").val(str2);
+         }) 
+         .trigger("change");
+ */
+ // 위에 소스를 eval 함수를 이용해서 단순화
+
+function change_sel(sel){
+  var garden="#garden"
+  var txt = "#txt"
+  var str ="str"
+  $(garden+sel).click(function () {
+   eval("var "+str+sel); 
+    $(garden+sel+" option:selected").each(function () { 
+     eval(str +" = $(this).text()");
+    });
+   $(txt+sel).val(str);
+  }) 
+ }
+
+function del_OK(sel){
+  var garden="#garden"
+  var txt = "#txt"
+  var index = $(garden+sel+" option").index($(garden+sel+" option:selected"));
+
+ msg="하위 메뉴도 자동 삭제 됩니다. 삭제하시겠습니까?"
+  if(index>=0&&confirm(msg)){
+   $(txt+sel).val("");
+   $(garden+sel+" option:eq("+index+")").remove();
+  }else{
+   alert("선택이 잘못 되었습니다.")
+   return
+  }
+ }
+
+
+ </script> 
+  
+ </body> 
+ </html>
+</html>

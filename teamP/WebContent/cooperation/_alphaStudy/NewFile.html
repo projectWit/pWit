@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	_position: absolute;
+	width: 100%;
+	_height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+}
+input {
+	font-family: Dotum, Arial, Sans-serif;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+#leftmenu {
+	background: url(/ECMain/ECount.Common/Images/leftmenu_bg.gif) repeat-x;
+}
+html {
+	width: 100%;
+	_height: 100%;
+	margin: 0px;
+	padding: 0px;
+	scrollbar-face-color: #f8f8f8;
+	scrollbar-shadow-color: #b3b3b3;
+	scrollbar-highlight-color: #b3b3b3;
+	scrollbar-3dlight-color: #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-track-color: #ffffff;
+	scrollbar-arrow-color: #8b9ea6;
+}
+#interVeil {
+	position: absolute;
+	background: black url(/ECMain/ECount.Common/Images/blackdot.gif);
+	width: 10px;
+	left: 0px;
+	top: 0px;
+	z-index: 5;
+	visibility: hidden;
+	filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
+	opacity: 0.8;
+}
+.leftbox {
+	margin: 0 0 0 5px;
+	padding-top: 10px;
+	width: 96%;
+	line-height: 1.5em;
+}
+form, fieldset, img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+input, img, input.type-image {
+	border: 0 none;
+	vertical-align: middle;
+}
+input {
+	font-family: Dotum, Arial, Sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: normal 100%;
+	line-height: normal;
+}
+.container {
+	*zoom:1: ;
+}
+.container::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.leftbox h1 {
+	padding: 5px 0 0 23px;
+	height: 31px;
+	font-size: 16px;
+	font-weight: bold;
+	background: url(/ECMain/ECount.Common/Images/leftmenu_icon.gif) no-repeat 0px 3px;
+}
+.leftbox dt {
+	padding: 8px 0 0 22px;
+	height: 19px;
+	font-size: 12px;
+	color: #003463;
+	line-height: 14px;
+	border-top: 1px dashed #bbb;
+	text-overflow: ellipsis;
+	background: url(/ECMain/ECount.Common/Images/leftmenu_bull1.gif) no-repeat 10px 9px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.leftbox dt.on {
+	background: url(/ECMain/ECount.Common/Images/leftmenu_bull2.gif) no-repeat 10px 9px;
+}
+.leftbox dt.last {
+	border-bottom: 1px dashed #bbb;
+}
+.float_left {
+	float: left !important;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+.leftbox dd span {
+	color: #525252;
+}
+.leftbox span.float_left {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	line-height: normal;
+}
+a:link, a:active, a:visited {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.leftbox dt a:link, .leftbox dt a:visited {
+	font-family: Dotum, Arial, Sans-serif;
+	font-size: 12px;
+	color: #003463;
+	text-decoration: none;
+}
+.leftbox dd {
+	margin: 0 0 0 15px;
+	padding: 5px 0 0 9px;
+	width: 165px;
+	height: 15px;
+	font-size: 12px;
+	line-height: 16px;
+	text-overflow: ellipsis;
+	background: url(/ECMain/ECount.Common/Images/leftmenu_bullS.gif) no-repeat 3px 8px;
+	background-color: #f5f5f5;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.leftbox dd.last {
+	padding-bottom: 10px;
+}
+.leftbox dd a {
+	font-size: 11px;
+}
+.leftbox dd a:link, .leftbox dd a:visited {
+	font-family: Dotum, Arial, Sans-serif;
+	font-size: 11px;
+	color: #525252;
+	text-decoration: none;
+}
+</style>
+</head>
+<body id="leftmenu"><div id="dhtmlwindowholder"><span style="display: none;">.</span></div><div id="interVeil"></div>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/ECount.Common.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/ECount.Common.Export.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery-1.3.2.min.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery.maskedinput-1.2.2.min.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/Scripts/PrintHid.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/Scripts/Print.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery.form.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/ECount.Common.Math.js?2014080401" type="text/javascript"></script>
+
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/LoadProgressbar.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/Util.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery.hotkeys-0.7.9.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/tableUtil.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery.ECImportPopup.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/json2.js?2014080401" type="text/javascript"></script>
+<script language="javascript" src="/ECMain/ECount.Common/Javascript/jquery.EcExtend.js?2014080401" type="text/javascript"></script>
+
+
+   
+    <div class="leftbox">
+        <h1 class="container">
+            <span class="float_left" style="width: 148px; font-size: 16px;">출력물</span>
+        </h1>
+
+        <dl class="left_title">
+        
+                            <dt><span class="float_left" style="width: 167px;"><a title="전표현황" id="a1320_1" onmouseover="a('전표현황');return true;" onmouseout="b();" onclick="fnMenu('a1320_1','/Ecmain/CM3/CM_Search_EBD_Main.aspx?RPTGUBUN=69','body', '1320'); " onfocus="this.blur();" href="/Ecmain/CM3/CM_Search_EBD_Main.aspx?ec_req_sid=00HOqiJt6!FP&amp;RPTGUBUN=69" target="body">전표현황</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="자금일보" id="a110_2" onmouseover="a('자금일보');return true;" onmouseout="b();" onclick="fnMenu('a110_2','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=14','body', '110'); " onfocus="this.blur();" href="/Ecmain/CM/CM_Search_Acct_Main.aspx?ec_req_sid=00HOqiJt6!FP&amp;RPTGUBUN=14" target="body">자금일보</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="현금흐름" id="a111_3" onmouseover="a('현금흐름');return true;" onmouseout="b();" onclick="fnMenu('a111_3','/Ecmain/CM/CM_Search_Acct_Main.aspx?RptGubun=15','body', '111'); " onfocus="this.blur();" href="/Ecmain/CM/CM_Search_Acct_Main.aspx?ec_req_sid=00HOqiJt6!FP&amp;RptGubun=15" target="body">현금흐름</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="자금현황표" id="a112_4" onmouseover="a('자금현황표');return true;" onmouseout="b();" onclick="fnMenu('a112_4','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=16','body', '112'); " onfocus="this.blur();" href="/Ecmain/CM/CM_Search_Acct_Main.aspx?ec_req_sid=00HOqiJt6!FP&amp;RPTGUBUN=16" target="body">자금현황표</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="현금출납장" id="a113_5" onmouseover="a('현금출납장');return true;" onmouseout="b();" onclick="fnMenu('a113_5','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=24','body', '113'); " onfocus="this.blur();" href="/Ecmain/CM/CM_Search_Acct_Main.aspx?ec_req_sid=00HOqiJt6!FP&amp;RPTGUBUN=24" target="body">현금출납장</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="잔액재집계" id="a114_6" onmouseover="a('잔액재집계');return true;" onmouseout="b();" onclick="fnMenu('a114_6','/Ecmain/CM/EB/Summary.aspx','body', '114'); " onfocus="this.blur();" href="/Ecmain/CM/EB/Summary.aspx?ec_req_sid=00HOqiJt6!FP" target="body">잔액재집계</a></span></dt>  
+                             
+                            <dt><span class="float_left" style="width: 167px;"><a title="거래처중심입력" id="a1352_7" onmouseover="a('거래처중심입력');return true;" onmouseout="b();" onclick="fnMenu('a1352_7','/ECMAIN/ESQ/ESQ500M.ASPX','body', '1352'); " onfocus="this.blur();" href="/ECMAIN/ESQ/ESQ500M.ASPX?ec_req_sid=00HOqiJt6!FP" target="body">거래처중심입력</a></span></dt>  
+                             
+                            <dt class="on" id="class118"><span class="float_left" style="width: 167px;">
+                                <a title="경영자료" id="bar118" onclick="javascript:menuclick('submenu8','bar118','class118');fnMenu('bar118','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=22','body', '115','8');" onfocus="this.blur();" target="body">경영자료</a></span></dt>
+                     
+                        <span id="submenu8">
+                        
+                                            <dd><span class="float_left" style="width: 152px;"><a title="월별손익분석" id="a353_9" onmouseover="a('월별손익분석');return true;" onmouseout="b();" onclick="fnMenu( 'a353_9','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=22','body', '353');" onfocus="this.blur();" href="#" target="body">월별손익분석</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="월별원가분석" id="a354_10" onmouseover="a('월별원가분석');return true;" onmouseout="b();" onclick="fnMenu( 'a354_10','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=23','body', '354');" onfocus="this.blur();" href="#" target="body">월별원가분석</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="채권/채무회수기간표" id="a355_11" onmouseover="a('채권/채무회수기간표');return true;" onmouseout="b();" onclick="fnMenu( 'a355_11','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=34','body', '355');" onfocus="this.blur();" href="#" target="body">채권/채무회수기간표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="채권/채무잔액분석표" id="a356_12" onmouseover="a('채권/채무잔액분석표');return true;" onmouseout="b();" onclick="fnMenu( 'a356_12','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=35','body', '356');" onfocus="this.blur();" href="#" target="body">채권/채무잔액분석표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="경영요약보고서" id="a357_13" onmouseover="a('경영요약보고서');return true;" onmouseout="b();" onclick="fnMenu( 'a357_13','/Ecmain/CM/CM_Search_Acct_Main_2.aspx?RPTGUBUN=61','body', '357');" onfocus="this.blur();" href="#" target="body">경영요약보고서</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="자금증감내역" id="a358_14" onmouseover="a('자금증감내역');return true;" onmouseout="b();" onclick="fnMenu( 'a358_14','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=27','body', '358');" onfocus="this.blur();" href="#" target="body">자금증감내역</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="회계집계표" id="a359_15" onmouseover="a('회계집계표');return true;" onmouseout="b();" onclick="fnMenu( 'a359_15','/Ecmain/CM2/CM2_Search_Acct_Main.aspx?RPTGUBUN=63','body', '359');" onfocus="this.blur();" href="#" target="body">회계집계표</a></span></dd>
+                                      
+                                            <dd class="last"><span class="float_left" style="width: 152px;"><a title="월별추이그래프" id="a1388_16" onmouseover="a('월별추이그래프');return true;" onmouseout="b();" onclick="fnMenu( 'a1388_16','/ECMAIN/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=33','body', '1388');" onfocus="this.blur();" href="#" target="body">월별추이그래프</a></span></dd>
+                                      </span>
+                            <dt class="on" id="class1117"><span class="float_left" style="width: 167px;">
+                                <a title="장부" id="bar1117" onclick="javascript:menuclick('submenu17','bar1117','class1117');fnMenu('bar1117','/Ecmain/CM3/CM_Search_Acct_Main.aspx?RptGubun=28','body', '116','17');" onfocus="this.blur();" target="body">장부</a></span></dt>
+                     
+                        <span id="submenu17">
+                        
+                                            <dd><span class="float_left" style="width: 152px;"><a title="계정별/거래처별 원장" id="a360_18" onmouseover="a('계정별/거래처별 원장');return true;" onmouseout="b();" onclick="fnMenu( 'a360_18','/Ecmain/CM3/CM_Search_Acct_Main.aspx?RptGubun=28','body', '360');" onfocus="this.blur();" href="#" target="body">계정별/거래처별 원장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="계정별원장" id="a361_19" onmouseover="a('계정별원장');return true;" onmouseout="b();" onclick="fnMenu( 'a361_19','/Ecmain/CM3/CM_Search_Acct_Main.aspx?RptGubun=29','body', '361');" onfocus="this.blur();" href="#" target="body">계정별원장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="매입/매출장" id="a362_20" onmouseover="a('매입/매출장');return true;" onmouseout="b();" onclick="fnMenu( 'a362_20','/Ecmain/CM3/CM_Search_Acct_Main.aspx?RPTGUBUN=32','body', '362');" onfocus="this.blur();" href="#" target="body">매입/매출장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="분개장" id="a363_21" onmouseover="a('분개장');return true;" onmouseout="b();" onclick="fnMenu( 'a363_21','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=31','body', '363');" onfocus="this.blur();" href="#" target="body">분개장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="일/월계표" id="a364_22" onmouseover="a('일/월계표');return true;" onmouseout="b();" onclick="fnMenu( 'a364_22','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=21','body', '364');" onfocus="this.blur();" href="#" target="body">일/월계표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="어음원장" id="a365_23" onmouseover="a('어음원장');return true;" onmouseout="b();" onclick="fnMenu( 'a365_23','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=37','body', '365');" onfocus="this.blur();" href="#" target="body">어음원장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="건별관리원장" id="a366_24" onmouseover="a('건별관리원장');return true;" onmouseout="b();" onclick="fnMenu( 'a366_24','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=43','body', '366');" onfocus="this.blur();" href="#" target="body">건별관리원장</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="거래처별계정별원장" id="a1354_25" onmouseover="a('거래처별계정별원장');return true;" onmouseout="b();" onclick="fnMenu( 'a1354_25','/ECMAIN/CM3/CM_Search_Acct_Main.aspx?RPTGUBUN=25','body', '1354');" onfocus="this.blur();" href="#" target="body">거래처별계정별원장</a></span></dd>
+                                      
+                                            <dd class="last"><span class="float_left" style="width: 152px;"><a title="거래처거래내역조회" id="a1355_26" onmouseover="a('거래처거래내역조회');return true;" onmouseout="b();" onclick="fnMenu( 'a1355_26','/ECMAIN/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=44','body', '1355');" onfocus="this.blur();" href="#" target="body">거래처거래내역조회</a></span></dd>
+                                      </span>
+                            <dt class="on" id="class1127"><span class="float_left" style="width: 167px;">
+                                <a title="주요재무제표" id="bar1127" onclick="javascript:menuclick('submenu27','bar1127','class1127');fnMenu('bar1127','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=17','body', '1353','27');" onfocus="this.blur();" target="body">주요재무제표</a></span></dt>
+                     
+                        <span id="submenu27">
+                        
+                                            <dd><span class="float_left" style="width: 152px;"><a title="재무상태표" id="a367_28" onmouseover="a('재무상태표');return true;" onmouseout="b();" onclick="fnMenu( 'a367_28','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=17','body', '367');" onfocus="this.blur();" href="#" target="body">재무상태표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="손익계산서" id="a368_29" onmouseover="a('손익계산서');return true;" onmouseout="b();" onclick="fnMenu( 'a368_29','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=18','body', '368');" onfocus="this.blur();" href="#" target="body">손익계산서</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="원가명세서" id="a369_30" onmouseover="a('원가명세서');return true;" onmouseout="b();" onclick="fnMenu( 'a369_30','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=19','body', '369');" onfocus="this.blur();" href="#" target="body">원가명세서</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="합계잔액시산표" id="a370_31" onmouseover="a('합계잔액시산표');return true;" onmouseout="b();" onclick="fnMenu( 'a370_31','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=20','body', '370');" onfocus="this.blur();" href="#" target="body">합계잔액시산표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="계정명세서" id="a1357_32" onmouseover="a('계정명세서');return true;" onmouseout="b();" onclick="fnMenu( 'a1357_32','/ECMAIN/CM2/CM2_Search_Acct_Main.aspx?RPTGUBUN=64','body', '1357');" onfocus="this.blur();" href="#" target="body">계정명세서</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="이익잉여금처분계산서" id="a1358_33" onmouseover="a('이익잉여금처분계산서');return true;" onmouseout="b();" onclick="fnMenu( 'a1358_33','/ECMAIN/EBZ/EBZ027R.aspx','body', '1358');" onfocus="this.blur();" href="#" target="body">이익잉여금처분계산서</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="수입지출명세서" id="a1359_34" onmouseover="a('수입지출명세서');return true;" onmouseout="b();" onclick="fnMenu( 'a1359_34','/ECMAIN/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=41','body', '1359');" onfocus="this.blur();" href="#" target="body">수입지출명세서</a></span></dd>
+                                      
+                                            <dd class="last"><span class="float_left" style="width: 152px;"><a title="사용자정의보고서" id="a1360_35" onmouseover="a('사용자정의보고서');return true;" onmouseout="b();" onclick="fnMenu( 'a1360_35','/ECMAIN/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=66','body', '1360');" onfocus="this.blur();" href="#" target="body">사용자정의보고서</a></span></dd>
+                                      </span>
+                            <dt id="class1136"><span class="float_left" style="width: 167px;">
+                                <a title="기타" id="bar1136" onclick="javascript:menuclick('submenu36','bar1136','class1136');fnMenu('bar1136','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=26','body', '117','36');" onfocus="this.blur();" target="body">기타</a></span></dt>
+                     
+                        <span id="submenu36" style="display: none;">
+                        
+                                            <dd><span class="float_left" style="width: 152px;"><a title="전표인쇄" id="a371_37" onmouseover="a('전표인쇄');return true;" onmouseout="b();" onclick="fnMenu( 'a371_37','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=26','body', '371');" onfocus="this.blur();" href="#" target="body">전표인쇄</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="월별매입집계표" id="a373_38" onmouseover="a('월별매입집계표');return true;" onmouseout="b();" onclick="fnMenu( 'a373_38','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=53','body', '373');" onfocus="this.blur();" href="#" target="body">월별매입집계표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="월별매출집계표" id="a374_39" onmouseover="a('월별매출집계표');return true;" onmouseout="b();" onclick="fnMenu( 'a374_39','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=52','body', '374');" onfocus="this.blur();" href="#" target="body">월별매출집계표</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="거래처관리대장 I" id="a375_40" onmouseover="a('거래처관리대장 I');return true;" onmouseout="b();" onclick="fnMenu( 'a375_40','/Ecmain/CM3/CM_Search_Acct_Main.aspx?RptGubun=42','body', '375');" onfocus="this.blur();" href="#" target="body">거래처관리대장 I</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="거래처관리대장 II" id="a376_41" onmouseover="a('거래처관리대장 II');return true;" onmouseout="b();" onclick="fnMenu( 'a376_41','/ECMAIN/CM3/CM_SEARCH_ACCT_MAIN.ASPX?RPTGUBUN=61','body', '376');" onfocus="this.blur();" href="#" target="body">거래처관리대장 II</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="지출결의서집계" id="a377_42" onmouseover="a('지출결의서집계');return true;" onmouseout="b();" onclick="fnMenu( 'a377_42','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=48','body', '377');" onfocus="this.blur();" href="#" target="body">지출결의서집계</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="입금보고서집계" id="a378_43" onmouseover="a('입금보고서집계');return true;" onmouseout="b();" onclick="fnMenu( 'a378_43','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=55','body', '378');" onfocus="this.blur();" href="#" target="body">입금보고서집계</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="가지급금정산서집계" id="a379_44" onmouseover="a('가지급금정산서집계');return true;" onmouseout="b();" onclick="fnMenu( 'a379_44','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=56','body', '379');" onfocus="this.blur();" href="#" target="body">가지급금정산서집계</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="외화장부" id="a380_45" onmouseover="a('외화장부');return true;" onmouseout="b();" onclick="fnMenu( 'a380_45','/Ecmain/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=38','body', '380');" onfocus="this.blur();" href="#" target="body">외화장부</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="매출청구서현황" id="a708_46" onmouseover="a('매출청구서현황');return true;" onmouseout="b();" onclick="fnMenu( 'a708_46','/ECMAIN/CM3/CM_Search_Acct_Main.aspx?RptGubun=66&amp;rbRptSort=B','body', '708');" onfocus="this.blur();" href="#" target="body">매출청구서현황</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="매입청구서현황" id="a713_47" onmouseover="a('매입청구서현황');return true;" onmouseout="b();" onclick="fnMenu( 'a713_47','/ECMAIN/CM3/CM_Search_Acct_Main.aspx?RptGubun=67&amp;rbRptSort=B','body', '713');" onfocus="this.blur();" href="#" target="body">매입청구서현황</a></span></dd>
+                                      
+                                            <dd><span class="float_left" style="width: 152px;"><a title="DM" id="a1361_48" onmouseover="a('DM');return true;" onmouseout="b();" onclick="fnMenu( 'a1361_48','/ECMAIN/CM3/CM_Search_Acct_Main.aspx?RPTGUBUN=39','body', '1361');" onfocus="this.blur();" href="#" target="body">DM</a></span></dd>
+                                      
+                                            <dd class="last"><span class="float_left" style="width: 152px;"><a title="지출결의서이체리스트" id="a1362_49" onmouseover="a('지출결의서이체리스트');return true;" onmouseout="b();" onclick="fnMenu( 'a1362_49','/ECMAIN/CM/CM_Search_Acct_Main.aspx?RPTGUBUN=47','body', '1362');" onfocus="this.blur();" href="#" target="body">지출결의서이체리스트</a></span></dd>
+                                      </span>
+                            <dt class="last"><span class="float_left" style="width: 167px;"><a title="출력물" id="a118_50" onmouseover="a('출력물');return true;" onmouseout="b();" onclick="fnMenu('a118_50','/ECMAIN/CM/EB/REPORTING.ASPX','body', '118'); " onfocus="this.blur();" href="/ECMAIN/CM/EB/REPORTING.ASPX?ec_req_sid=00HOqiJt6!FP" target="body">출력물</a></span></dt>  
+                               <!-- if (ds != null && ds.Tables[0].Rows.Count > 0) -->
+        </dl>
+        <dl></dl> 
+    </div>
+<form name="form1" id="form1">
+    <input name="Sub_Url" id="Sub_Url" type="hidden">
+    <input name="LeftSubClick" id="LeftSubClick" type="hidden">
+    <input name="expend" id="expend" type="hidden">
+</form>
+
+
+</body>
+</html>
