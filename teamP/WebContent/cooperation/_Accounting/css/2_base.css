@@ -1,0 +1,487 @@
+@CHARSET "UTF-8";
+
+/*숨김영역*/
+/*=================================================*/
+#accessibility,.skip,hr,caption,legend,summary {
+	position: absolute;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	display: none
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+/*Reset*/
+/*=================================================*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	_height: 100%;
+	margin: 0px;
+	padding: 0px;
+	scrollbar-face-color: #F8F8F8;
+	scrollbar-shadow-color: #B3B3B3;
+	scrollbar-highlight-color: #B3B3B3;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #8B9EA6;
+}
+
+body {
+	_position: absolute;
+	width: 100%;
+	_height: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+}
+input {
+	font-family: Dotum, Arial, Sans-serif;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0
+}
+
+ol,ul,li {
+	list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: normal 100%;
+	line-height: normal
+}
+
+form,fieldset,img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+address,caption,em {
+	font: normal;
+}
+
+/*Link Style*/
+/*=================================================*/
+
+/*Default Link*/
+A:link,A:active,A:visited {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer
+}
+
+A:hover {
+	color: #f36;
+	text-decoration: none;
+	cursor: pointer
+}
+
+/*List Table Link - color:navy*/
+a.list_link:link,a.list_link:visited,a.list_link:active {
+	font-family: Dotum, Arial, Sans-serif;
+	color: navy;
+	text-decoration: none;
+}
+
+a.list_link:hover {
+	font-family: Dotum, Arial, Sans-serif;
+	color: navy;
+	text-decoration: underline;
+}
+
+/*List Table Link - font size:11px & color:navy, CN css에서는 font-size:12px*/
+a.list_link_s:link,a.list_link_s:visited,a.list_link_s:active {
+	font-size: 11px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: navy;
+	text-decoration: none
+}
+
+a.list_link_s:hover {
+	font-size: 11px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: navy;
+	text-decoration: underline
+}
+
+/*Navy Link - color:navy*/
+.link_navy a {
+	color: #666
+}
+
+.link_navy a:hover {
+	text-decoration: underline;
+	color: #20209f;
+	background: #f1f1f1
+}
+
+/*Navy Link - color:navy & hover시 bold*/
+.link_navy_b a {
+	color: #666
+}
+
+.link_navy_b a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #20209f
+}
+
+.link_navy_b a.on {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #20209f
+}
+
+/*Orange Link - color:orange(f60)*/
+.link_orange a {
+	color: #ff6600
+}
+
+.link_orange a:hover {
+	text-decoration: underline
+}
+
+/*Blue Link - color:blue(0D87F3)*/
+.link_blue:link,.link_blue:active,.link_blue:visited {
+	color: #0D87F3;
+	cursor: pointer;
+	text-decoration: none
+}
+
+.link_blue:hover {
+	text-decoration: underline
+}
+
+/*Red Link - color:red(f00)*/
+a.red:link,a.red:visited,a.red:active {
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: #f00;
+	text-decoration: none;
+	line-height: 14px
+}
+
+a.red:hover {
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: #f60;
+	text-decoration: none;
+	line-height: 14px
+}
+
+/* 타이틀에 오름차순 내림차순 */
+a.th:link,a.th:visited,a.th:active {
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: #036;
+	text-decoration: none;
+}
+
+a.th:hover {
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	color: #7a91a8;
+	text-decoration: none;
+}
+
+/*Input Style*/
+/*=================================================*/
+input,img,input.type-image {
+	border: 0 none;
+	vertical-align: middle;
+}
+
+/* 비밀번호 별표 있는 박스 */
+input.x_point {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #fff url() no-repeat top	right;
+} 
+
+/* Default */
+input.default {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #fff;
+} /* 기본 */
+
+/* 보더값없는 input */
+input.defaultnone {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	vertical-align: middle;
+	background: #fff;
+} /* 보더값없는 input */
+
+/* 보더값없는 회색 input */
+input.defaultgray_none {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	vertical-align: middle;
+	background: #f7f7f7;
+} /* 보더값없는 회색 input */
+
+/* 우측정렬-숫자 넣는 필드 */
+input.defaultright {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	text-align: right;
+	vertical-align: middle;
+	background: #fff;
+} /*우측정렬-숫자 넣는 필드*/
+
+/* 텍스트 써지는 회색 박스*/
+input.graybox {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #f4f4f4;
+} /* 텍스트 써지는 회색 박스*/
+
+/*파란색 바탕 텍스트필드*/
+input.bluebox {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #eff7fd;
+} /*파란색 바탕 텍스트필드*/
+
+/*우측에 zoom버튼이 올때*/
+input.blue_zoom {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	border-right: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #eff7fd;
+} /*우측에 zoom버튼이 올때*/
+
+/*좌측에 zoom버튼이 올때*/
+input.blue_zoom_left {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	border-left: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #eff7fd;
+} /*좌측에 zoom버튼이 올때*/
+
+/*좌측에 zoom버튼이 올때-회색*/
+input.gray_zoom {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	border-left: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #f4f4f4;
+} /*좌측에 zoom버튼이 올때-회색*/
+
+/*우측에 zoom버튼이 올때-회색, 오버시색변화없음*/
+input.gray_zoom_right {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	border-right: none;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	background: #f4f4f4;
+} /*우측에 zoom버튼이 올때-회색, 오버시색변화없음*/
+
+/*회색 바탕 우측정렬 텍스트필드*/
+input.grayright {
+	height: 15px;
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	text-align: right;
+	vertical-align: middle;
+	background: #f7f7f7;
+} /*회색 바탕 우측정렬 텍스트필드*/
+
+/*모든 input-text의 hover/focus/active */
+input.bluebox:hover,input.bluebox:focus,input.bluebox:active,input.default:hover,input.default:focus,input.default:active,input.blue_zoom:hover,input.blue_zoom:focus,input.blue_zoom:active,input.blue_zoom_left:hover,input.blue_zoom_left:focus,input.blue_zoom_left:active,input.gray_zoom:hover,input.gray_zoom:focus,input.gray_zoom:active,input.defaultright:hover,input.defaultright:focus,input.defaultright:active
+	{
+	background: #fff4da;
+}
+
+/*Select*/
+select {
+	height: 19px;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.2;
+	vertical-align: middle;
+	word-wrap: normal;
+}
+
+select.quick_search {
+	margin: 0 0 0 10px;
+	padding: 0;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.5em;
+	vertical-align: middle;
+	background: #dbdaca;
+}
+
+.select_top {
+	margin: 4px 0 0 0;
+	padding: 0;
+}
+
+/*Textarea*/
+textarea {
+	margin: 0;
+	padding: 1px;
+	border: 1px solid #808080;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.0em;
+	background: #fff;
+	min-height: 15px
+}
+
+textarea:hover,textarea:focus {
+	margin: 0;
+	padding: 1px;
+	font-size: 12px;
+	font-family: Dotum, Arial, Sans-serif;
+	line-height: 1.0em;
+	background: #fff4da;
+}
+
+/*Radio & Checkbox*/
+.radio,.checkbox {
+	vertical-align: middle;
+	*margin: -4px -3px;
+}
+
+/*입력화면 설정에서 인풋박스 사이 간격용*/
+input.left_2px {
+	margin-left: 2px
+}
+
+input.right_2px {
+	margin-right: 2px
+}
+
+input.leftright_2px {
+	margin-left: 2px;
+	margin-right: 2px
+}
+
+/*출력물 페이지 넘겨주는거 -> 이거 혹시…WebResource.axd에 있는것 아닌가염……...*/
+div.page {
+	float: left;
+	margin: 0;
+	padding: 10px 0 0 0;
+	line-height: 16px;
+	font-size: 12px;
+}
+
+div.page p {
+	float: left;
+	margin: 0;
+	padding: 0 3px;
+	text-align: center;
+	display: inline;
+}
+
+div.page p.img {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+div.page p span.on {
+	font-weight: bold;
+	letter-spacing: -0.5;
+	text-align: center;
+}
+
+/*페이징 가운데정렬*/
+.paging_center {
+	text-align: center
+}
+
+.paging_center .page,.paging_center .page p,.paging_center .page p.img {
+	float: none !important;
+}

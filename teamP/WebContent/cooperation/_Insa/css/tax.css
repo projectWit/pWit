@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+#tax_box {margin:0; padding:0; width:750px; font-family:맑은 고딕, Arial, Sans-serif; font-size:12px; line-height:1.4em;}
+#tax_box table.a {margin:0; padding:0; width:100%; line-height:14px; text-align:center; font-size:12px; border-collapse:separate}
+#tax_box table.a td {height:23px;} 
+
+.Tright {text-align:right;}
+.Tleft {text-align:left;}
+.Tblack {color:#333;}
+.bdred {	border-color:#ff3300;}
