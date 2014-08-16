@@ -1,37 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<link rel="stylesheet" type="text/css" href="css/stuCommon.css">
-<style type="text/css">
-
-</style>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
 calendarIDs = ['fromJoinDate', 'toJoinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태그의 id
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(e) {
-	$('#lecSubmit').click(function(e) {
-		$('#lecResult').slideDown();
-		e.preventDefault();
-	});
-	$('#lecReset').click(function(e) {
-		$('#lecResult').slideUp();
-	});
-	
-});
-</script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
 
+<style type="text/css">
+</style>
+<script type="text/javascript">
+</script>
 </head>
 
 <body>
@@ -47,11 +37,11 @@ $(document).ready(function(e) {
 <form method="post" action="" name="lecForm" id="lecForm" style="">
     <table cellspacing="0" class="info-table">
     	<tr><td class="table-label">수강신청일</td><td class="table-input"><input type="text" size=12 id="fromJoinDate"> - <input type="text" size=12 id="toJoinDate"></td>
-    		<td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+    		<td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">강의 학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년 - <input type="number" min="1" max="3" size="10"> 학년</td>
             </tr>
-        <tr><td class="table-label">강의</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
-        	<td class="table-label">학생</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        <tr><td class="table-label">강의</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
+        	<td class="table-label">학생</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">수강생 학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년 - <input type="number" min="1" max="3" size="10"> 학년</td>
         </tr>
         <tr><td class="table-label">과목</td><td class="table-input">

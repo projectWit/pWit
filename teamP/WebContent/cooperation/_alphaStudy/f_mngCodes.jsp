@@ -1,26 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<style type="text/css">
-
-</style>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
 calendarIDs = ['birthDate'];		// 달력이 추가될 태그의 id
 </script>
 
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
 <script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
 
+<style type="text/css">
+</style>
 <script type="text/javascript">
 $(document).ready(function(e) {
 	

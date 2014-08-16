@@ -1,23 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT는 당신을 환영합니다!</title>
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
-<link rel="stylesheet" type="text/css" href="css/witCommon.css">
-<style type="text/css">
 
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witCommon.css">
+<style type="text/css">
 </style>
 
-<script type="text/javascript" src="script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="script/jquery-ui.js"></script>
-<script type="text/javascript" src="script/witCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/witCommon.js"></script>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -35,8 +30,8 @@
 				<div class="ibm-columns" id="ibm-lead-1" style="cursor: pointer; width: 1236px;">
 					<div class="ibm-col-1-1" id="ibmweb_ribbonItemAbstract_0" style="padding: 0px; height: 100%;">
 						<h1 style="left: 0px;"><a href="#">
-						<img alt="20 billion  threats a day?" height="157" width="518" src="images/portal/WIT_IMG/contsam01_text.png" class="ibm-no-mobile">
-						<img class="ibm-mobile" alt="20 billion  threats a day?" height="98" width="318" src="images/portal/L688321C03041Q58/7302014_ibmcloud_mobile.png">
+						<img alt="20 billion  threats a day?" height="157" width="518" src="/teamP/cooperation/images/portal/WIT_IMG/contsam01_text.png" class="ibm-no-mobile">
+						<img class="ibm-mobile" alt="20 billion  threats a day?" height="98" width="318" src="/teamP/cooperation/images/portal/L688321C03041Q58/7302014_ibmcloud_mobile.png">
 						</a></h1>
 						<p class="ibm-access"><em>IBM Cloud is the cloud for business. Find out why.</em></p>
 					</div>
@@ -46,8 +41,8 @@
 				<div class="ibm-columns" id="ibm-lead-2" style="display: block; cursor: pointer; width: 1236px;">
 					<div class="ibm-col-1-1" id="ibmweb_ribbonItemAbstract_1" style="padding: 0px; height: 100%;">
 						<h2 style="left: 0px;"><a href="#">
-						<img alt="IBM and Apple partnership" height="297" width="578" src="images/portal/WIT_IMG/contsam02_text.png" class="ibm-no-mobile">
-						<img class="ibm-mobile" alt="IBM and Apple partnership" height="98" width="318" src="images/portal/N239470X33431S89/07152014_apple_announcement_mobile.png">
+						<img alt="IBM and Apple partnership" height="297" width="578" src="/teamP/cooperation/images/portal/WIT_IMG/contsam02_text.png" class="ibm-no-mobile">
+						<img class="ibm-mobile" alt="IBM and Apple partnership" height="98" width="318" src="/teamP/cooperation/images/portal/N239470X33431S89/07152014_apple_announcement_mobile.png">
 						</a></h2>
 						<p class="ibm-access"><em>Transform the way work is done</em></p>
 					</div>
@@ -57,8 +52,8 @@
 				<div class="ibm-columns" id="ibm-lead-3" style="display: block; cursor: pointer; width: 1236px;">
 					<div class="ibm-col-1-1" id="ibmweb_ribbonItemAbstract_2" style="padding: 0px; height: 100%;">
 						<h2 style="left: 0px;"><a href="#">
-						<img alt="Cloud computing made clear" height="297" width="518" src="images/portal/WIT_IMG/contsam03_text.png" class="ibm-no-mobile">
-						<img class="ibm-mobile" alt="Cloud computing made clear" height="98" width="318" src="images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_csm.png">
+						<img alt="Cloud computing made clear" height="297" width="518" src="/teamP/cooperation/images/portal/WIT_IMG/contsam03_text.png" class="ibm-no-mobile">
+						<img class="ibm-mobile" alt="Cloud computing made clear" height="98" width="318" src="/teamP/cooperation/images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_csm.png">
 						</a></h2>
 						<p class="ibm-access"><em>Infrastructure architect Chris Dotson shares his insights</em></p>
 					</div>
@@ -68,8 +63,8 @@
 				<div class="ibm-columns" id="ibm-lead-4" style="display: block; cursor: pointer; width: 1236px;">
 					<div class="ibm-col-1-1" id="ibmweb_ribbonItemAbstract_3" style="padding: 0px; height: 100%;">
 						<h2 style="left: 0px;"><a href="#">
-						<img alt="Cloud computing made clear" height="357" width="418" src="images/portal/WIT_IMG/contsam04_text.png" class="ibm-no-mobile">
-						<img class="ibm-mobile" alt="Cloud computing made clear" height="98" width="318" src="images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_csm.png">
+						<img alt="Cloud computing made clear" height="357" width="418" src="/teamP/cooperation/images/portal/WIT_IMG/contsam04_text.png" class="ibm-no-mobile">
+						<img class="ibm-mobile" alt="Cloud computing made clear" height="98" width="318" src="/teamP/cooperation/images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_csm.png">
 						</a></h2>
 						<p class="ibm-access"><em>Infrastructure architect Chris Dotson shares his insights</em></p>
 					</div>
@@ -80,8 +75,8 @@
 				<div class="ibm-columns ibm-cloned" id="ibm-lead-1" style="width: 1236px;">
 					<div class="ibm-col-1-1" id="ibmweb_ribbonItemAbstract_0" style="padding: 0px; height: 100%;">
 						<h1><a href="#">
-						<img alt="20 billion  threats a day?" height="297" width="518" src="images/portal/L688321C03041Q58/7302014_ibmcloud_text.png" class="ibm-no-mobile">
-						<img class="ibm-mobile" alt="20 billion  threats a day?" height="98" width="318" src="images/portal/L688321C03041Q58/7302014_ibmcloud_mobile.png">
+						<img alt="20 billion  threats a day?" height="297" width="518" src="/teamP/cooperation/images/portal/L688321C03041Q58/7302014_ibmcloud_text.png" class="ibm-no-mobile">
+						<img class="ibm-mobile" alt="20 billion  threats a day?" height="98" width="318" src="/teamP/cooperation/images/portal/L688321C03041Q58/7302014_ibmcloud_mobile.png">
 						</a></h1>
 						<p class="ibm-access"><em>IBM Cloud is the cloud for business. Find out why.</em></p>
 					</div>
