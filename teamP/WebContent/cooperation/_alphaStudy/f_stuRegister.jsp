@@ -1,22 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<link rel="stylesheet" type="text/css" href="css/stuCommon.css">
-<style type="text/css">
-
-</style>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
 calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태그의 id
+</script>
+
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
+
+<style type="text/css">
+</style>
+<script type="text/javascript">
 </script>
 </head>
 
@@ -31,14 +35,14 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
 
 <form method="post" action="" name="regForm" id="regForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-photo" rowspan="7" style="border-bottom: 1px solid transparent;'"><img src="img/photo_none2.gif"></td>
+    	<tr><td class="table-photo" rowspan="7" style="border-bottom: 1px solid transparent;'"><img src="/teamP/cooperation/_alphaStudy/img/photo_none2.gif"></td>
         	<td class="table-label">학생코드</td><td class="table-input"><input type="text" size=20 value="000001"></td>
             <td class="table-label" rowspan="3">주소</td><td class="table-input" rowspan="3"><input type="text" size=5>-<input type="text" size=5> <input type="button" value="우편번호찾기"><textarea rows="1" cols="29" style="margin-right: 0px; padding-right: 0px;"></textarea><input type="text" size=30></td>
             <td class="table-label">부모님이름</td><td class="table-input"><input type="text" size=20 value="강동원"></td></tr>
         <tr><td class="table-label">이름</td><td class="table-input"><input type="text" size=20 value="이연희"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->
             <td class="table-label">부모님휴대폰</td><td class="table-input"><select><option>010</option><option>011</option><option>016</option></select> <input type="tel" size=5 value="7777"> <input type="tel" size=5 value="7777"></td></tr>
-        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
+        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->
             <td class="table-label">부모님이메일</td><td class="table-input"><input type="text" size=10 value="yeonhee">@<input type="text" size=15 value="hanmail.net"></td></tr>
         <tr><td class="table-label">학년</td><td class="table-input"><input type="number" value="1" min="1" max="3" size="10">학년 <input type="number" min="1" max="20" size="10">반</td>
@@ -54,7 +58,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
             <td class="table-label">생일</td><td class="table-input"><input type="text" size=15 id="birthDate"></td>
             <td class="table-label">탈퇴일</td><td class="table-input"><input type="text" size=15 id="dropDate"></td></tr>
         <tr><td class="table-photo"><input type="button" value="사진 올리기"></td>
-        	<td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        	<td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">취미</td><td class="table-input"><input type="text" size=20 value="거울보기"></td>
             <td class="table-label"><!-- temp --></td><td class="table-input"><!-- temp --></td></tr>
         

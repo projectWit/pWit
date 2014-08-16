@@ -1,35 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<link rel="stylesheet" type="text/css" href="css/stuCommon.css">
-<style type="text/css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
+<script type="text/javascript">
+//달력이 추가될 태그의 id
+calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'fromBirthDate', 'toBirthDate'];
+</script>
 
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
+
+<style type="text/css">
 </style>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
 <script type="text/javascript">
-calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'fromBirthDate', 'toBirthDate'];		// 달력이 추가될 태그의 id
 </script>
-<script type="text/javascript">
-$(document).ready(function(e) {
-	$('#stuSubmit').click(function(e) {
-		$('#stuResult').slideDown();
-		e.preventDefault();
-	});
-	$('#stuReset').click(function(e) {
-		$('#stuResult').slideUp();
-	});
-});
-</script>
-<script type="text/javascript" src="../script/focusInput.js"></script>
 </head>
 
 <body>
@@ -49,7 +42,7 @@ $(document).ready(function(e) {
         <tr><td class="table-label">이름</td><td class="table-input"><input type="text" size=20 value="이연희"></td>
             <td class="table-label" rowspan=2>생일</td><td class="table-input" rowspan=2><input type="date"> 부터 <input type="date"> 까지</td>
             <td class="table-label">부모님휴대폰</td><td class="table-input"><select><option>010</option><option>011</option><option>016</option></select> <input type="tel" size=5 value="7777"> <input type="tel" size=5 value="7777"></td></tr>
-        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
+        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->
             <td class="table-label">부모님이메일</td><td class="table-input"><input type="text" size=10 value="yeonhee">@<input type="text" size=15 value="hanmail.net"></td></tr>
         <tr><td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10">학년 - <input type="number" min="1" max="3" size="10">학년 <input type="number" min="1" max="20" size="10">반</td>
@@ -67,7 +60,7 @@ $(document).ready(function(e) {
         <tr><td class="table-label">수강구분</td><td class="table-input"><select><option>미선택</option><option>수강중</option><option>미수강</option></select></td>
             <td class="table-label">생일</td><td class="table-input"><input type="text" size=12 id="fromBirthDate"> - <input type="text" size=12 id="toBirthDate"></td>
             <td class="table-label">탈퇴일</td><td class="table-input"><input type="text" size=12 id="fromDropDate"> - <input type="text" size=12 id="toDropDate"></td></tr>
-        <tr><td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        <tr><td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">취미</td><td class="table-input"><input type="text" size=20 value="거울보기"></td>
             <td class="table-label"><!-- temp --></td><td class="table-input"><!-- temp --></td></tr>
         

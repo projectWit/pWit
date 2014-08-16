@@ -34,7 +34,7 @@ padding: 5px 0px 0px 20px;
 margin-top: 10px;
 }
 .page-title .bullet-title {
-background:  url(../img/v7/icon/bullet_title.gif) no-repeat left 4px;
+background:  url(/teamP/cooperation/_alphaStudy/img/v7/icon/bullet_title.gif) no-repeat left 4px;
 padding-left: 10px;
 //border: 1px solid red;
 margin: 0px;
@@ -225,7 +225,7 @@ vertical-align: middle;
 margin-top: -2px;
 //border: 1px solid red;
 
-/* background:  url(../img/v7/icon/search.png) 0 0 no-repeat;
+/* background:  url(/teamP/cooperation/_alphaStudy/img/v7/icon/search.png) 0 0 no-repeat;
 background-size: 100%;
 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/v7/icon/search.png'); */
 }
