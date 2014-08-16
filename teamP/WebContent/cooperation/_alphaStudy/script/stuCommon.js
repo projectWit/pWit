@@ -15,4 +15,19 @@ $(document).ready(function(e) {
 		$('.tab-table .tabTable-td tr').removeClass('selected');
 		$(this).addClass('selected');
 	});
+	
+	$('#lecSubmit').click(function(e) {
+		$('#lecResult').slideDown();
+		e.preventDefault();
+	});
+	$('#lecReset').click(function(e) {
+		$('#lecResult').slideUp();
+	});
+	$('#stuSubmit').click(function(e) {
+		$('#stuResult').slideDown();
+		e.preventDefault();
+	});
+	$('#stuReset').click(function(e) {
+		$('#stuResult').slideUp();
+	});
 });

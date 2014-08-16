@@ -1,35 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<link rel="stylesheet" type="text/css" href="css/stuCommon.css">
-<style type="text/css">
-
-</style>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
-calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'fromBirthDate', 'toBirthDate'];		// 달력이 추가될 태그의 id
+//달력이 추가될 태그의 id
+calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'fromBirthDate', 'toBirthDate'];
 </script>
+
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
+
+<style type="text/css">
+</style>
 <script type="text/javascript">
-$(document).ready(function(e) {
-    $('.tabs a').click(function(e) {
-		$('.tabs a').removeClass('tab-active');
-        $(this).addClass('tab-active');
-        var item = $('.tab-active');
-        var index = $('.tabs a').index(item);
- //       alert(index);
-        $('table[id*="table-"]').hide();
-        $('#table-'+index).show();
-    });
-});
 </script>
 </head>
 
@@ -49,10 +41,10 @@ $(document).ready(function(e) {
             <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <input type="time"></td>
             </tr>
         <tr><td class="table-label">강의명</td><td class="table-input"><input type="text" size=20 value="혼자하는 수학"></td>
-        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
+        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
             <!-- <td class="table-label">생일</td> --><td class="table-input">월 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">강의 정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
             <!-- <td class="table-label">주소</td> --><td class="table-input">화 : <input type="time"></td>
             </tr>

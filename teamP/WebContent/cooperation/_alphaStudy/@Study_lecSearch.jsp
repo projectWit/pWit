@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,9 +16,8 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<%-- <jsp:include page="WIT_alphaStudy_manageStudent_section.jsp"></jsp:include> --%>
 	<jsp:include page="f_lecSearch.jsp"></jsp:include>
-	<%-- <jsp:include page="NewFile.xhtml"></jsp:include> --%>
+
 </body>
 	<jsp:include page="@Study_footer.jsp"></jsp:include>
 </html>

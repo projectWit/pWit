@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>반갑습니다. WIT의 회원이 되시면 더 많은 혜택이 기다리고 있습니다.</title>
 <jsp:include page="WIT_Reg_header.jsp"></jsp:include>
 <style type="text/css">
 * {
@@ -145,8 +144,8 @@ a {
 	margin-top: 5px;
 }
 </style>
-<script src="script/jquery-2.1.1.js"></script>
-<script src="script/ajax.js"></script>
+<script src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script src="/teamP/cooperation/script/ajax.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		open_menu('#emp_menu', '.manage_employee', 'empActOn');
@@ -206,7 +205,7 @@ a {
 				.append(
 						"<li id='"+li_id+"'><input type='hidden' id='tBookId"+tBookId+"' value='"+val+"'>"
 								+ list
-								+ " <a href=''><img src='icon/delete.png' title='삭제' class='imgDelete'></a></li>");
+								+ " <a href=''><img src='/teamP/cooperation/i/v17/icons/delete.png' title='삭제' class='imgDelete'></a></li>");
 		$('#' + li_id + ' a').attr("href",
 				"javascript:deleteTBook('#" + li_id + "')");
 	}
@@ -216,12 +215,12 @@ a {
 </script>
 
 
-
 <script type="text/javascript">
 smallHeader();
 </script>
+
 </head>
-<%-- <%@ include file="frameManage.jsp" %> --%>
+
 <body>
 <div class="ibm-home-page" id="ibm-top" style="margin-top: 74px;">
 	<section> <article>

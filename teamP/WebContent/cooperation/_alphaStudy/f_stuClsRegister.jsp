@@ -1,41 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<link rel="stylesheet" type="text/css" href="css/stuCommon.css">
-<style type="text/css">
-
-</style>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
 calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태그의 id
 </script>
 
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
+
+<style type="text/css">
+</style>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$('#lecSubmit').click(function(e) {
-		$('#lecResult').slideDown();
-		e.preventDefault();
-	});
-	$('#lecReset').click(function(e) {
-		$('#lecResult').slideUp();
-	});
-	$('#stuSubmit').click(function(e) {
-		$('#stuResult').slideDown();
-		e.preventDefault();
-	});
-	$('#stuReset').click(function(e) {
-		$('#stuResult').slideUp();
-	});
-	
+
 	$('#subTitle-0').click(function(e) {
 		$('#lecForm').slideToggle();
 	});
@@ -83,10 +70,10 @@ $(document).ready(function(e) {
             <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <input type="time"> - <input type="time"></td>
             </tr>
         <tr><td class="table-label">강의명</td><td class="table-input"><input type="text" size=20 value="혼자하는 수학"></td>
-        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
+        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
             <!-- <td class="table-label">생일</td> --><td class="table-input">월 : <input type="time"> - <input type="time"></td>
             </tr>
-        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">강의 정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
             <!-- <td class="table-label">주소</td> --><td class="table-input">화 : <input type="time"> - <input type="time"></td>
             </tr>
@@ -217,7 +204,7 @@ $(document).ready(function(e) {
         <tr><td class="table-label">이름</td><td class="table-input"><input type="text" size=20 value="이연희"></td>
             <td class="table-label" rowspan=2>생일</td><td class="table-input" rowspan=2><input type="date"> 부터 <input type="date"> 까지</td>
             <td class="table-label">부모님휴대폰</td><td class="table-input"><select><option>010</option><option>011</option><option>016</option></select> <input type="tel" size=5 value="7777"> <input type="tel" size=5 value="7777"></td></tr>
-        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
+        <tr><td class="table-label">학교코드</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="압구정고등학교"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->
             <td class="table-label">부모님이메일</td><td class="table-input"><input type="text" size=10 value="yeonhee">@<input type="text" size=15 value="hanmail.net"></td></tr>
         <tr><td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10">학년 - <input type="number" min="1" max="3" size="10">학년 <input type="number" min="1" max="20" size="10">반</td>
@@ -235,7 +222,7 @@ $(document).ready(function(e) {
         <tr><td class="table-label">수강구분</td><td class="table-input"><select><option>미선택</option><option>수강중</option><option>미수강</option></select></td>
             <td class="table-label">생일</td><td class="table-input"><input type="text" size=12 id="fromBirthDate"> - <input type="text" size=12 id="toBirthDate"></td>
             <td class="table-label">탈퇴일</td><td class="table-input"><input type="text" size=12 id="fromDropDate"> - <input type="text" size=12 id="toDropDate"></td></tr>
-        <tr><td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+        <tr><td class="table-label">추천인</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
             <td class="table-label">취미</td><td class="table-input"><input type="text" size=20 value="거울보기"></td>
             <td class="table-label"><!-- temp --></td><td class="table-input"><!-- temp --></td></tr>
         
@@ -305,8 +292,8 @@ $(document).ready(function(e) {
 	<div class="page-title" style="margin-top: 100px;"><span class="bullet-title">수강 등록 대상</span></div>
 <form method="post" action="" id="regForm" name="regForm">
     <table cellspacing="0" class="info-table" style="margin-top: 10px; margin-bottom: 50px;">
-    	<tr><td class="table-label">강의코드</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
-            <td class="table-label">학생코드</td><td class="table-input"><input type="text" size=15 value="" id="stuCode" required><a href="#"><img src="img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="" id="stuName" required></td>
+    	<tr><td class="table-label">강의코드</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
+            <td class="table-label">학생코드</td><td class="table-input"><input type="text" size=15 value="" id="stuCode" required><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="" id="stuName" required></td>
             <td class="table-label"><input type="submit" value="등록하기" id="regSubmit"></td></tr>
     </table>
 </form>
