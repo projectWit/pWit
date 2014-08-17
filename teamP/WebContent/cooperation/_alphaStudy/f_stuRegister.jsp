@@ -37,7 +37,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
     <table cellspacing="0" class="info-table">
     	<tr><td class="table-photo" rowspan="7" style="border-bottom: 1px solid transparent;'"><img src="/teamP/cooperation/_alphaStudy/img/photo_none2.gif"></td>
         	<td class="table-label">학생코드</td><td class="table-input"><input type="text" size=20 value="000001"></td>
-            <td class="table-label" rowspan="3">주소</td><td class="table-input" rowspan="3"><input type="text" size=5>-<input type="text" size=5> <input type="button" value="우편번호찾기"><textarea rows="1" cols="29" style="margin-right: 0px; padding-right: 0px;"></textarea><input type="text" size=30></td>
+            <td class="table-label" rowspan="3">주소</td><td class="table-input" rowspan="3"><input type="text" size=5>-<input type="text" size=5> <input type="button" value="우편번호찾기"><textarea rows="1" style="margin-right: 0px; padding-right: 0px; width: 97%;"></textarea><input type="text" size=30></td>
             <td class="table-label">부모님이름</td><td class="table-input"><input type="text" size=20 value="강동원"></td></tr>
         <tr><td class="table-label">이름</td><td class="table-input"><input type="text" size=20 value="이연희"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->

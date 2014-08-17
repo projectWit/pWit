@@ -29,7 +29,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
 <section>
 <article>
 
-<div class="page-title"><span class="bullet-title">강의 등록</span></div>
+<div class="page-title"><span class="bullet-title">강의 개설</span></div>
 
 <div class="content-container">
 
@@ -66,7 +66,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
         
     </table>
     <!-- <div style="margin-top: 10px;"> -->
-    <input type="submit" value="등록하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
+    <input type="submit" value="개설하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
     <!-- </div> -->
 </form>
 

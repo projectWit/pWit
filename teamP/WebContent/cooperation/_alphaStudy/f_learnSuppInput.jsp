@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>무제 문서</title>
+
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
+<script type="text/javascript">
+calendarIDs = ['testDate'];		// 달력이 추가될 태그의 id
+</script>
+
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
+
+<style type="text/css">
+</style>
+<script type="text/javascript">
+</script>
+</head>
+
+<body>
+
+<section>
+<article>
+
+
+
+<div class="content-container">
+
+<div class="page-title"><span class="bullet-title">보강 개설</span></div>
+
+<form method="post" action="" name="regForm" id="regForm">
+	<table cellspacing="0" class="info-table">
+		<tr><td class="table-label">보강일자</td><td class="table-input"><input type="text" size=15 id="testDate" name="suppDate"></td>
+			<td class="table-label">과목</td><td class="table-input"><select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
+			<td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년</td></tr>
+		<tr><td class="table-label">보강내용</td><td class="table-input" colspan=5><textarea rows="3" style="margin-right: 0px; padding-right: 0px; width: 99%;"></textarea></td></tr>
+        
+    </table>
+    <!-- <div style="margin-top: 10px;"> -->
+    <input type="submit" value="개설하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
+    <!-- </div> -->
+</form>
+
+
+<div>
+
+</article>
+</section>
+
+</body>
+</html>

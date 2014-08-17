@@ -52,7 +52,7 @@
 		<ul id="ibm-menu-links">
 			<li onmouseover="slideRibbon(-1)"><a href="@Study_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">α</span> STUDY</a></li>
 			<li onmouseover="slideRibbon(0)"><a href="@Study_stuSearch.jsp">학생 관리</a></li>
-			<li onmouseover="slideRibbon(1)"><a href="#">학습 관리</a></li>
+			<li onmouseover="slideRibbon(1)"><a href="@Study_learnProgInput.jsp">학습 관리</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="#">출결 관리</a></li>
 			<li onmouseover="slideRibbon(3)"><a href="#">수납/회계</a></li>
 			<li onmouseover="slideRibbon(4)"><a href="#">교재 관리</a></li>
@@ -87,15 +87,15 @@
 					<li class="subTab-0-1" style="display: block;"><a href="@Study_stuRegister.jsp">학생 등록</a></li>
 					<li class="subTab-0-2" style="display: block;"><a href="@Study_stuClsRegister.jsp">수강 등록</a></li>
 					<li class="subTab-0-3" style="display: block;"><a href="@Study_stuClsList.jsp">수강 등록 현황</a></li>
-					<li class="subTab-0-4" style="display: block;"><a href="@Study_stuTestResult.jsp">성적 입력</a></li>
-					<li class="subTab-0-5" style="display: block;"><a href="#">성적 조회</a></li>
+					<li class="subTab-0-4" style="display: block;"><a href="@Study_stuTestInput.jsp">성적 입력</a></li>
+					<li class="subTab-0-5" style="display: block;"><a href="@Study_stuTestSearch.jsp">성적 조회</a></li>
 				</ul>
 				
 				<ul id="subTab-1" style="display: none;">
-					<li class="subTab-1-0" style="display: block;"><a href="#">진도 관리</a></li>
-					<li class="subTab-1-1" style="display: block;"><a href="#">진도 현황</a></li>
-					<li class="subTab-1-2" style="display: block;"><a href="#">보강 관리</a></li>
-					<li class="subTab-1-3" style="display: block;"><a href="#">보강 현황</a></li>
+					<li class="subTab-1-0" style="display: block;"><a href="@Study_learnProgInput.jsp">진도 입력</a></li>
+					<li class="subTab-1-1" style="display: block;"><a href="@Study_learnProgSearch.jsp">진도 현황</a></li>
+					<li class="subTab-1-2" style="display: block;"><a href="@Study_learnSuppInput.jsp">보강 입력</a></li>
+					<li class="subTab-1-3" style="display: block;"><a href="@Study_learnSuppSearch.jsp">보강 현황</a></li>
 					<li class="subTab-1-4" style="display: block;"><a href="#">과제 관리</a></li>
 					<li class="subTab-1-4" style="display: block;"><a href="#">과제 현황</a></li>
 				</ul>

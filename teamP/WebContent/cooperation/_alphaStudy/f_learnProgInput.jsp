@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
-calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태그의 id
+calendarIDs = ['testDate'];		// 달력이 추가될 태그의 id
 </script>
 
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
@@ -29,25 +29,27 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
 <section>
 <article>
 
-<div class="page-title"><span class="bullet-title">성적 입력</span></div>
+
 
 <div class="content-container">
 
+<div class="page-title"><span class="bullet-title">진도 입력</span></div>
+
 <form method="post" action="" name="regForm" id="regForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">학생코드</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
-            <td class="table-label">과목</td><td class="table-input"><select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
-            <td class="table-label">등급</td><td class="table-input"><select><option>미선택</option><option>1등급</option><option>2등급</option><option>3등급</option></select></td></tr>
-        <tr><td class="table-label">시험종류</td><td class="table-input"><select><option>미선택</option><option>중간고사</option><option>기말고사</option><option>교육청 모의평가</option><option>전국연합 학력평가</option><option>모의고사</option></select></td>
-            <td class="table-label">점수</td><td class="table-input"><input type="number" min=0 max=100> 점</td>
-            <td class="table-label">시험난이도</td><td class="table-input"><select><option>미선택</option><option>상</option><option>중</option><option>하</option></select></td></tr>
-        
+    	<tr><td class="table-label">강좌코드</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
+            <td class="table-label">수업일자</td><td class="table-input"><input type="text" size=15 id="testDate" name="testDate"></td>
+            <td class="table-label"><!-- temp --></td><td class="table-input"><!-- 000002 --></td></tr>
+        <tr><td class="table-label">수업내용</td><td class="table-input" colspan=5><textarea rows="3" style="margin-right: 0px; padding-right: 0px; width: 99%;"></textarea></td></tr>
+        <tr><td class="table-label">개선사항</td><td class="table-input" colspan=5><textarea rows="3" style="margin-right: 0px; padding-right: 0px; width: 99%;"></textarea></td></tr>
+        <tr><td class="table-label">종합평가</td><td class="table-input" colspan=5><textarea rows="3" style="margin-right: 0px; padding-right: 0px; width: 99%;"></textarea></td></tr>
         
     </table>
     <!-- <div style="margin-top: 10px;"> -->
     <input type="submit" value="등록하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
     <!-- </div> -->
 </form>
+
 
 <div>
 

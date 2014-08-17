@@ -6,8 +6,8 @@
 <title>Insert title here</title>
 <jsp:include page="@Study_header.jsp"></jsp:include>
 <script type="text/javascript">
-currentNavIndex = 0;
-currentSubtabIndex = 4;
+currentNavIndex = 1;
+currentSubtabIndex = 1;
 
 $(document).ready(function(e) {
 	$('#subTab-'+currentNavIndex).css("display", "block");	
@@ -16,7 +16,7 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<jsp:include page="f_stuTestResult.jsp"></jsp:include>
+	<jsp:include page="f_learnProgDetail.jsp"></jsp:include>
 
 </body>
 	<jsp:include page="@Study_footer.jsp"></jsp:include>
