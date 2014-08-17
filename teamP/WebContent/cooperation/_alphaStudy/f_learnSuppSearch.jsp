@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
-calendarIDs = ['testDate'];		// 달력이 추가될 태그의 id
+calendarIDs = ['fromSuppDate', 'toSuppDate'];		// 달력이 추가될 태그의 id
 </script>
 
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
@@ -33,14 +33,26 @@ calendarIDs = ['testDate'];		// 달력이 추가될 태그의 id
 
 <div class="content-container">
 
-<div class="page-title"><span class="bullet-title">진도 검색</span></div>
+<div class="page-title"><span class="bullet-title">보강 검색</span></div>
 
 <form method="post" action="" name="stuForm" id="stuForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">강좌코드</td><td class="table-input"><input type="text" size=8 value="" id="lecCode" required><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="" id="lecName" required></td>
-            <td class="table-label">수업일자</td><td class="table-input"><input type="text" size=15 id="testDate" name="testDate"></td>
-            <td class="table-label"><!-- temp --></td><td class="table-input"><!-- 000002 --></td></tr>
-        
+    	<tr><td class="table-label">보강일자</td><td class="table-input"><input type="text" size=12 id="fromSuppDate" name="fromSuppDate"> - <input type="text" size=12 id="toSuppDate" name="toSuppDate"></td>
+			<td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+			<td class="table-label">학생구분</td><td class="table-input">
+					<select><option>미선택</option><option>중학생</option><option>고등학생</option><option>대학생</option><option>일반인</option></select>
+					<select><option>미선택</option><option>중학생</option><option>고등학생</option><option>대학생</option><option>일반인</option></select>
+					<select><option>미선택</option><option>중학생</option><option>고등학생</option><option>대학생</option><option>일반인</option></select></td></tr>
+		<tr><td class="table-label">보강시각</td><td class="table-input"><input type="time"> - <input type="time"></td>
+			<td class="table-label">과목</td><td class="table-input">
+					<select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select>
+					<select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select>
+					<select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
+			<td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년 - <input type="number" min="1" max="3" size="10"> 학년</td></tr>
+		<tr><td class="table-label">보강수강생</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
+			<td class="table-label"><!-- 과목 --></td><td class="table-input"><!-- temp --></td>
+			<td class="table-label"><!-- 학년 --></td><td class="table-input"><!-- temp --></td></tr>
+		
     </table>
     <!-- <div style="margin-top: 10px;"> -->
     <input type="submit" value="검색하기" class="buttons" id="stuSubmit"> <input type="reset" value="초기화" class="buttons" id="stuReset">
@@ -57,30 +69,42 @@ calendarIDs = ['testDate'];		// 달력이 추가될 태그의 id
             <!-- 진도 탭 -->
             <table cellspacing="0" class="tab-table result-table" id="table-0" style="">
             	<div class="tabTable-th">
-				<tr><th class="t-td-0">진도코드</th><th class="t-td-1">수업일자</th><th class="t-td-2">강좌명</th><th class="t-td-3">수업내용</th>
-					<th class="t-td-4">개선사항</th><th class="t-td-5">종합평가</th>
+				<tr><th class="t-td-0">보강코드</th><th class="t-td-1">보강일자</th><th class="t-td-2">강사코드</th><th class="t-td-3">강사</th>
+					<th class="t-td-4">과목</th><th class="t-td-5">학생구분</th><th class="t-td-6">학년</th><th class="t-td-7">보강내용</th>
+					<th class="t-td-8">학생코드</th><th class="t-td-9">학생이름</th></tr>
                 </div>
                 <tbody class="tabTable-td">
-                <tr><td class="t-td-0"><a href="@Study_learnProgDetail.jsp">000001</a></td><td class="t-td-1">2014-07-08</td><td class="t-td-2">혼자하는 수학</td>
-                	<td class="t-td-3">부정적분의 기본성질</td><td class="t-td-4">미분에 대한 개념이해가 더 필요</td><td class="t-td-5">열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
-                <tr><td><a href="@Study_learnProgDetail.jsp">000001</a></td><td>2014-07-08</td><td>혼자하는 수학</td><td>미분의 기본성질</td>
-                	<td>미분에 대한 개념이해가 더 필요</td><td>열심히 노력하면 좋은 결과가 있을 것</td></tr>
+                <tr><td class="t-td-0"><a href="@Study_learnSuppDetail.jsp">000001</a></td><td class="t-td-1">2014-07-08</td>
+                	<td class="t-td-2"><a href="@Study_teacherDetail.jsp">000001</a></td><td class="t-td-3">고길동</td><td class="t-td-4">수학</td>
+                	<td class="t-td-5">고등학교</td><td class="t-td-6">2</td><td class="t-td-7">부정적분의 기본성질</td>
+                	<td class="t-td-8"><a href="@Study_stuDetail.jsp">000001</a></td><td class="t-td-9">이연희</td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
+                <tr><td><a href="@Study_learnSuppDetail.jsp">000001</a></td><td>2014-07-08</td>
+                	<td><a href="@Study_teacherDetail.jsp">000001</a></td><td>고길동</td><td>수학</td>
+                	<td>고등학교</td><td>2</td><td>부정적분의 기본성질</td><td></td><td></td></tr>
                 
                    
                 </tbody>

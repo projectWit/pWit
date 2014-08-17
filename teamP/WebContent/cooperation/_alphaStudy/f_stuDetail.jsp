@@ -37,7 +37,7 @@ calendarIDs = ['birthDate'];		// 달력이 추가될 태그의 id
     <table cellspacing="0" class="info-table">
     	<tr><td class="table-photo" rowspan="7" style="border-bottom: 1px solid transparent;'"><img src="/teamP/cooperation/_alphaStudy/img/photo_none2.gif"></td>
         	<td class="table-label">학생코드</td><td class="table-input"><input type="text" size=20 value="000001" id="test1"></td>
-            <td class="table-label" rowspan="3">주소</td><td class="table-input" rowspan="3"><input type="text" size=5>-<input type="text" size=5> <input type="button" value="우편번호찾기"><textarea rows="1" cols="29" style="margin-right: 0px; padding-right: 0px;"></textarea><input type="text" size=30></td>
+            <td class="table-label" rowspan="3">주소</td><td class="table-input" rowspan="3"><input type="text" size=5>-<input type="text" size=5> <input type="button" value="우편번호찾기"><textarea rows="1" style="margin-right: 0px; padding-right: 0px; width: 97%;"></textarea><input type="text" size=30></td>
             <td class="table-label">부모님이름</td><td class="table-input"><input type="text" size=20 value="강동원"></td></tr>
         <tr><td class="table-label">이름</td><td class="table-input"><input type="text" size=20 value="이연희" id="test2"></td>
             <!-- <td class="table-label">주소</td><td class="table-input">000002</td> -->
@@ -311,7 +311,7 @@ calendarIDs = ['birthDate'];		// 달력이 추가될 태그의 id
         <!-- 진도 탭 -->
             <table cellspacing="0" class="tab-table" id="table-6" style="display: none;">
             	<div class="tabTable-th">
-				<tr><th class="t-td-0">수업일자</th><th class="t-td-1">강좌명</th><th class="t-td-2">수업내용</th><th class="t-td-3">개선사항</th><th class="t-td-4">종합평가</th>
+				<tr><th class="t-td-0">수업일자</th><th class="t-td-1">강좌명</th><th class="t-td-2">수업내용</th><th class="t-td-3">개선사항</th><th class="t-td-4">종합평가</th></tr>
                 </div>
                 <tbody class="tabTable-td">
                 <tr><td class="t-td-0">2014-07-08</td><td class="t-td-1">혼자하는 수학</td><td class="t-td-2">부정적분의 기본성질</td>
@@ -344,7 +344,7 @@ calendarIDs = ['birthDate'];		// 달력이 추가될 태그의 id
         <!-- 보강 탭 -->
             <table cellspacing="0" class="tab-table" id="table-7" style="display: none;">
             	<div class="tabTable-th">
-				<tr><th class="t-td-0">보강일자</th><th class="t-td-1">과목</th><th class="t-td-2">보강내용</th><th class="t-td-3">개선사항</th><th class="t-td-4">종합평가</th>
+				<tr><th class="t-td-0">보강일자</th><th class="t-td-1">과목</th><th class="t-td-2">보강내용</th><th class="t-td-3">개선사항</th><th class="t-td-4">종합평가</th></tr>
                 </div>
                 <tbody class="tabTable-td">
                 <tr><td class="t-td-0">2014-07-08</td><td class="t-td-1">수학</td><td class="t-td-2">중간고사 대비</td>

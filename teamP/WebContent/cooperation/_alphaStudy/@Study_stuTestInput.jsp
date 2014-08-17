@@ -16,7 +16,7 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<jsp:include page="f_stuTestInput.jsp"></jsp:include>
+	<jsp:include page="f_stuTestRegister.jsp"></jsp:include>
 
 </body>
 	<jsp:include page="@Study_footer.jsp"></jsp:include>
