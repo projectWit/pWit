@@ -89,7 +89,7 @@ p {
 
 .labeling {
 //	clear: both;
-	width: 60px;
+	width: 80px;
 	float: left;
 	padding-left: 10px;
 	padding-top: 5px;
@@ -142,6 +142,12 @@ a {
 
 .textline {
 	margin-top: 5px;
+}
+
+.checkboxWidth {
+	width: 100px;
+	display: inline;
+	border: 1px solid red;
 }
 </style>
 <script src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
@@ -231,9 +237,14 @@ smallHeader();
 	</p>
 	<form>
 		<ul class="common">
+			<li><b class="necessary">*</b><label class="labeling">아이디</label>
+				<input type="text" size=12  required></li>
+			<li><b class="necessary">*</b><label class="labeling">비밀번호</label>
+				<input type="text" size=20  required></li>
+			<li><b class="necessary">*</b><label class="labeling">비밀번호확인</label>
+				<input type="text" size=20  required></li>
 			<li><b class="necessary">*</b><label class="labeling">이름</label>
-				<input type="text" size=12
-				placeholder="공백없이 입력" required></li>
+				<input type="text" size=12  required></li>
 			<!-- <li><b class="necessary">*</b><label class="labeling">주민번호</label>
 				<input type="number" class="align_center" id="rNumber1" size=10
 				min="000000" max="999999" maxlength="6" required> - <input
@@ -285,7 +296,7 @@ smallHeader();
 				<input type="date" title="따로 입력하지 않을 경우 현재 시간으로 자동 저장"> (따로
 				입력하지 않을 경우 현재 시간으로 자동 저장)</li>
 		</ul>
-		<br> <br>
+		<br> <br> <br>
 		<div style="height: 25px;">
 		<p id="p3" style="position: relative">추가 정보를 입력해 주세요</p>
 		</div>
@@ -313,29 +324,25 @@ smallHeader();
 							type="checkbox" class="liner"> WIT본사
 					</div></li> <br>
 				<li><b class="necessary"></b><label class="labeling">가입동기</label>
-					<div style="width: 400px; float: left; margin-bottom: 10px;">
-						<fieldset class="schoolLevel">
-							<legend>일반인</legend>
-							<label><input type="checkbox" id="middleSchool" value=1
-								class="liner"> 주변의 권유&nbsp; </label> <label><input
-								type="checkbox" id="middleSchool" value=2 class="liner">
-								언론 및 홍보 접촉&nbsp; </label> <label><input type="checkbox"
-								id="middleSchool" value=2 class="liner"> WIT 계열사 시설 이용
-								목적 </label>
-						</fieldset>
+					<div style="width: 600px; float: left; margin-bottom: 10px; border: 0px solid red;">
+						<!-- <fieldset class="schoolLevel" style="width: 100%;">
+							<legend>일반인</legend> -->
+							<label><input type="checkbox" id="middleSchool" value=1 class="liner"> 주변의 권유&nbsp; </label> &nbsp;&nbsp;
+							<label><input type="checkbox" id="middleSchool" value=2 class="liner"> 언론 및 홍보 접촉&nbsp; </label> &nbsp;&nbsp;
+							<label><input type="checkbox" id="middleSchool" value=2 class="liner"> WIT 계열사 시설 이용 목적 </label>&nbsp;&nbsp;
+							<label><input type="checkbox" id="highSchool" value=1 class="liner"> 기업 브랜드 이미지 선호&nbsp; </label> <br>
+							<label><input type="checkbox" id="highSchool" value=2 class="liner"> 관련 업체 종사&nbsp; </label> &nbsp;&nbsp;
+							<label><input type="checkbox" id="highSchool" value=3 class="liner"> 기업 활동 동참 </label>
+						<!-- </fieldset> -->
 						<div style="height: 10px;"></div>
-						<fieldset class="schoolLevel">
+						<!-- <fieldset class="schoolLevel">
 							<legend>
 								기업인 &nbsp;&nbsp;&nbsp;&nbsp;<label><input type="checkbox" id="curriculum"
 									value=0 class="liner">WIT 계열사 &nbsp;&nbsp;</label> <label><input
 									type="checkbox" id="curriculum" value=1 class="liner">기타</label>
 							</legend>
-							<label><input type="checkbox" id="highSchool" value=1
-								class="liner"> 기업 브랜드 이미지 선호&nbsp; </label> <label><input
-								type="checkbox" id="highSchool" value=2 class="liner">
-								관련 업체 종사&nbsp; </label> <label><input type="checkbox"
-								id="highSchool" value=3 class="liner"> 기업 활동 동참 </label>
-						</fieldset>
+							
+						</fieldset> -->
 					</div></li>
 				<li id="li_textBook"><b class="necessary"></b><label
 					class="labeling">직업</label>
@@ -358,8 +365,8 @@ smallHeader();
 		<br><br><br><br>
 		<hr style="clear: both; margin-top: 20px;">
 		<div style="margin-left: 10px;">
-			<input type="submit" value="확인" title="필수항목을 모두 작성하고 클릭하세요">
-			<input type="reset" value="취소" title="이전 페이지로 돌아갑니다">
+			<input type="submit" value="가입" title="필수항목을 모두 작성하고 클릭하세요" style="width: 60px; height: 30px;">
+			<input type="reset" value="취소" title="이전 페이지로 돌아갑니다" style="width: 60px; height: 30px;">
 		</div>
 	</form>
 
