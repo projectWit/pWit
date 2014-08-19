@@ -123,6 +123,6 @@ display:block;
 height:0;
 visibility:hidden
 }
-#ibm-my-menu, #ibm-common-menu, #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
+#ibm-my-menu,  #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
 font-size: .8em;
 }

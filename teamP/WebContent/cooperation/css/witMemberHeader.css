@@ -357,6 +357,7 @@ padding: 0 10px 11px 10px;
 }
 #ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li a {
 text-shadow: 0 1px 0 #fff;
+font-size: 12px;
 }
 #ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li.ibm-active a {
 font-weight: bold;
