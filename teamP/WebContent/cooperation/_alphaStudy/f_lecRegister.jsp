@@ -44,7 +44,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
             <!-- <td class="table-label">생일</td> --><td class="table-input">월 : <input type="time"></td>
             </tr>
         <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
-            <td class="table-label">강의 정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
+            <td class="table-label">강의정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
             <!-- <td class="table-label">주소</td> --><td class="table-input">화 : <input type="time"></td>
             </tr>
         <tr><td class="table-label">과목</td><td class="table-input"><select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
