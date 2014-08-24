@@ -362,11 +362,12 @@ smallHeader();
 					</div></li>
 			</div>
 		</ul>
-		<br><br><br><br>
+		<br>
 		<hr style="clear: both; margin-top: 20px;">
-		<div style="margin-left: 10px;">
-			<input type="submit" value="가입" title="필수항목을 모두 작성하고 클릭하세요" style="width: 60px; height: 30px;">
-			<input type="reset" value="취소" title="이전 페이지로 돌아갑니다" style="width: 60px; height: 30px;">
+		<jsp:include page="/cooperation/registerTerms.jsp"></jsp:include>
+		<div style="margin-left: 10px; text-align: center;">
+			<input type="submit" value="가입" title="필수항목을 모두 작성하고 클릭하세요" class="ibm-btn-arrow-pri"><span style="margin-left: 10px; margin-right: 10px;"></span>
+			<input type="reset" value="취소" title="이전 페이지로 돌아갑니다" class="ibm-btn-cancel-sec">
 		</div>
 	</form>
 

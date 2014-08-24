@@ -7,18 +7,6 @@
 * {
 	font-family: '맑은 고딕';
 }
-.enter_information .family_member .ssg_article {
-	float: left;
-	position: relative;
-//	width: 385px;
-	width: 585px;
-	margin-bottom: 20px;
-}
-.enter_information .family_member .content {
-	overflow: hidden;
-	width: 100%;
-	padding-top: 22px;
-}
 .enter_information.content_primary .section_wrap, .complete_register.content_primary .section_wrap, .terms_agreement.content_primary .section_wrap, .member_certification.content_primary .section_wrap {
 	width: 790px;
 	margin: 0 auto;
@@ -32,11 +20,11 @@
 }
 .content_primary {
 	clear: both;
-	width: 1020px;
+//	width: 1020px;
 	margin: 0 auto;
 }
 .enter_information.content_primary, .complete_register.content_primary, .terms_agreement.content_primary, .member_certification.content_primary {
-	padding: 45px 0 90px 0;
+//	padding: 45px 0 90px 0;
 }
 #content {
 	position: relative;
@@ -48,9 +36,9 @@
 #container {
 	position: relative;
 	z-index: 1;
-	width: 1020px;
+//	width: 1020px;
 	margin: 0 auto;
-	min-height: 300px;
+//	min-height: 300px;
 }
 #container::after {
 	display: block;
@@ -66,9 +54,37 @@
 	-webkit-text-size-adjust: none;
 	*zoom:1: ;
 	position: relative;
-//	width: 600px;
-//	height: 300px;
-	border: 1px solid red;
+}
+.blind {
+	visibility: hidden;
+	overflow: hidden;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	width: 1px;
+	height: 1px;
+	font-size: 0px;
+	line-height: 0;
+}
+.enter_information .family_member h4 {
+	margin-top: 40px;
+}
+.enter_information .family_member .content {
+	overflow: hidden;
+	width: 100%;
+	padding-top: 22px;
+}
+.enter_information .family_member .ssg_article {
+	float: left;
+	position: relative;
+	width: 385px;
+	margin-bottom: 20px;
+}
+.enter_information .family_member .ssg_assent {
+	float: right;
+	position: relative;
+	width: 385px;
+	margin-bottom: 20px;
 }
 .enter_information .family_member .content h5 {
 	margin-bottom: 9px;
@@ -94,15 +110,6 @@
 .enter_information .family_member .content .option_select {
 	font-size: 11px;
 	color: #666;
-}
-.enter_information .family_member .ssg_article .all_view, .enter_information .family_member .ssg_assent .all_view, .enter_information .family_member .ssg_assent02 .all_view {
-	position: absolute;
-	top: 2px;
-	right: 0px;
-}
-.enter_information .family_member .ssg_article .all_view a, .enter_information .family_member .ssg_assent .all_view a, .enter_information .family_member .ssg_assent02 .all_view a {
-	font-size: 11px;
-	color: #999;
 }
 .radio_state {
 	position: relative;
@@ -144,19 +151,23 @@ input.checkbox, input.radio {
 	white-space: pre-line;
 	line-height: 18px;
 	font-size: 11px;
-	font-family: '맑은 고딕',"Apple SD Gothic Neo",AppleGothic,"돋움",Dotum,Tahoma,Verdana,Geneva,Arial,Helvetica,sans-serif;
+	font-family: "맑은 고딕","Apple SD Gothic Neo",AppleGothic,"돋움",Dotum,Tahoma,Verdana,Geneva,Arial,Helvetica,sans-serif;
+}
+.enter_information .family_member .ssg_article .all_view, .enter_information .family_member .ssg_assent .all_view, .enter_information .family_member .ssg_assent02 .all_view {
+	position: absolute;
+	top: 2px;
+	right: 0px;
+}
+.enter_information .family_member .ssg_article .all_view a, .enter_information .family_member .ssg_assent .all_view a, .enter_information .family_member .ssg_assent02 .all_view a {
+	font-size: 11px;
+	color: #999;
 }
 </style>
 </head>
-<body>
-	<div id="wrap">
-		<div id="container">
-			<div class="content_primary enter_information" id="content">
-				<div class="section_wrap">
-				
-				<form id="returnForm" action="/member/join/successEmail.ssg" method="post">
-					<div class="section family_member"><div class="content" id="agreeWrap">
-						<div class="ssg_article">
+<body><div id="wrap"><div id="container"><div class="content_primary enter_information" id="content"><div class="section_wrap"><form id="returnForm" action="/member/join/successEmail.ssg" method="post"><div class="section family_member">
+                <h4 class="blind">SSG 패밀리 회원 약관동의</h4>
+                <div class="content" id="agreeWrap">
+                    <div class="ssg_article">
                         <h5>SSG 패밀리 회원 이용약관(필수)</h5>
                         <div class="user_agreement">
                             
@@ -396,5 +407,89 @@ input.checkbox, input.radio {
                             <div class="msg_wrap" style="display: none;"><div class="error_txt medium"></div></div>
                         </div>
                         <!-- <div class="all_view"><a href="/comm/usageAgreement/info.ssg" target="_blank">약관전체보기</a></div> -->
-                    </div></div></div></form></div></div></div></div></body>
+                    </div>
+                    <div class="ssg_assent">
+                        <h5>SSG 패밀리 사이트 개인정보 수집/이용 동의 (필수)</h5>
+                        <div class="user_agreement">
+                            
+
+<pre>당사(㈜신세계,㈜광주신세계),㈜이마트)는 회원에게 본인확인, 포인트 적립 및 결제 서비스, 다양하고 편리한 서비스를 제공하기 위해 아래의 방법을 통해 개인정보를 수집하고 있습니다.
+
+① 개인정보 수집항목
+
+[필수항목]
+- 생년월일, 성별, 성명, 아이디, 비밀번호, 주소(자택 또는 직장-직장명포함), 전화번호(자택/휴대전화 중 1개 이상 입력), 전자우편주소 등
+- 만14세 미만 아동 개인정보 수집 시 : 법정대리인 정보(성명, 생년월일, 주소, 연락처, 관계 등)
+
+[선택항목]
+- 클럽정보(맘키즈 클럽가입시에는 자녀명, 생년월일, 성별), 차량번호, WI-FI MAC 주소
+- 기념일정보(본인생일, 결혼여부, 배우자생일), 자녀유무, 직업, 직장명, 직장연락처, 직장주소 등
+
+[서비스 이용과정 및 사업 처리과정에서 수집될 수 있는 개인정보의 범위]
+- 서비스 이용기록, 접속 로그, 쿠키, 접속IP정보, 결제기록, 이용정지 기록
+- 은행 계좌정보, 신용카드정보, 포인트카드 번호, 거래정보 등
+- 모바일단말기 식별번호, 모바일단말기 OS 정보, 이동통신회사, PUSH 수신여부, 위치기반서비스 제공을 위한 정보(사용시각, 장소 등)
+
+[본인확인 필요 시]
+- 통합회원/인증회원/법정대리인의 동의가 필요한 경우, 본인확인 인증결과 값(본인확인기관이 제공한 정보 : CI, DI)
+
+[SSG.COM 전용회원 가입시]
+
+(필수정보) 전자우편주소(아이디로 사용), 비밀번호, 생년월일, 성명, 자택주소, 휴대폰번호
+(선택정보) 성별
+
+[법인회원 가입시]
+
+- (필수정보) 사업자등록번호, 법인단체명, 비밀번호, 대표자명, 대표전화번호, 사업자주소, 전자우편주소, 담당자명/전화번호 등
+
+[비회원 고객]
+
+당사에서 운영하는 일부 사이트에서는 회원 외에도 비회원 고객 또한 상품을 구매할 수 있습니다. 이러한 경우 배송, 대금 결제, 서비스 안내 등을 위해 최소한의 개인정보만을 요청하여 동의를 구합니다.
+※ 위 정보는 가입 당시 정보 뿐만 아니라 정보 수정으로 변경된 정보를 포함합니다.
+
+
+② 개인정보 수집/이용 목적
+
+당사는 서비스 제공을 위하여 필요한 최소한의 범위 내에서 다음 각 항목과 같은 목적으로 개인정보를 수집하고 있습니다.
+
+- 당사가 제공하는 회원제 서비스에 따른 본인 확인 절차에 활용
+- “신세계포인트” 서비스 제공을 위한 카드발급, 포인트 적립 및 사용, 정산, 고객센터 운영 등
+- 물품 및 서비스 상품에 대한 주문 및 접수, 대금 결제, 주문상품 배송, 구매내역에 따른 주차비 자동 정산 및 회원에 대한 각종 편의 서비스 제공
+- 경품 및 물품 배송에 대한 정확한 배송지 확보
+- 당사, 관계사가 제공하는 서비스 및 이벤트 정보 제공(SMS/전자우편(E-mail)/DM /TM 등)
+- 당사의 제휴행사 및 서비스 홍보를 위한 마케팅 자료 활용
+- 공지/불만처리 등을 위한 원활한 의사소통의 경로 확보
+- 업무와 관련된 통계자료 작성 및 서비스 개발
+
+③ 개인정보의 보유, 이용기간 및 파기
+
+1) 당사는 개인정보의 수집목적 또는 제공받은 목적이 달성된 때에는 회원의 개인정보를 지체 없이 파기합니다.
+
+(단, 신세계포인트 회원가입 정보는 회원의 요구사항 처리, 포인트 소멸 일시 보류 등의 목적으로 회원탈퇴를 요청한 시점으로 “30일간 유예기간”을 두고 파기합니다.)
+상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 관리 의무 관계의 확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다.
+
+가. 계약 또는 청약철회 등에 관한 기록 : 5년
+나. 대금결제 및 재화 등의 공급에 관한 기록 : 5년
+다. 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
+
+2) 개인정보 파기방법은 아래와 같습니다.
+가. 종이에 출력된 개인정보: 분쇄기로 분쇄하거나 소각
+나. 전자적 파일형태로 저장된 개인정보: 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제
+
+3) 당사는 회원의 개인정보 보호를 위하여 휴면회원(최종 로그인한 후 연속하여 36개월간 로그인 기록이 없는 회원)에 대해 회원자격 상실에 대한 안내문(전자우편 또는 서면)을 통지하고, 안내문에서 정한 기한 내에 답변이 없을 경우 회원자격을 상실시킬 수 있습니다. 이 경우, 회원 아이디를 포함한 휴면회원의 개인정보 및 서비스 이용정보는 파기, 삭제됩니다.
+
+* 회원은 개인정보 수집 동의를 거부할 권리가 있으나, 필수항목 동의 거부 시 회원가입이 불가합니다.
+</pre>
+
+                        </div>
+                        <div class="option_select small choice_agr">
+                            <label class="radio_state" for="agr_check_yes1"><input name="agr_check1" title="SSG 패밀리 사이트 개인정보 수집/이용" class="radio check_required" id="agr_check_yes1" type="radio">동의</label>
+                            <label class="radio_state" for="agr_check_no1"><input name="agr_check1" title="동의 안함" class="radio" id="agr_check_no1" type="radio" value="N">동의 인함</label>
+                            <div class="msg_wrap" style="display: none;"><div class="error_txt medium"></div></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div></form></div></div></div></div></body>
 </html>
+

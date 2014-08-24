@@ -481,6 +481,77 @@ text-indent: -9999em;
 }
 #ibm-masthead .ibm-mm-close span:hover { background-position:0px -23px }
 #ibm-masthead .ibm-mm-close span:active, #ibm-masthead .ibm-mm-close span:focus { background-position:0px -49px }
+
+INPUT.ibm-btn-arrow-pri {
+//	font-family: Arial, Helvetica;
+	background: #DBDBDB;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#DBDBDB');
+	background: -webkit-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -moz-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -o-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -ms-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: linear-gradient(top, #F5F5F5, #DBDBDB);
+	border: 1px solid #DBDBDB;
+	color: #000;
+	padding: 7px 20px;
+	margin-bottom: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	text-shadow: #FFF 0 1px 0;
+	min-width: 120px;
+	min-width: 90px;
+	min-width: auto;
+	text-align: center;
+	cursor: pointer;
+}
+INPUT.ibm-btn-arrow-pri {
+	font-size: 1em;
+}
+INPUT.ibm-btn-cancel-sec {
+//	font-family: Arial, Helvetica;
+	background: #DBDBDB;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#DBDBDB');
+	background: -webkit-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -moz-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -o-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -ms-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: linear-gradient(top, #F5F5F5, #DBDBDB);
+	border: 1px solid #DBDBDB;
+	color: #000;
+	padding: 7px 20px;
+	margin-bottom: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	text-shadow: #FFF 0 1px 0;
+	min-width: 120px;
+	min-width: 90px;
+	min-width: auto;
+	text-align: center;
+	cursor: pointer;
+}
+INPUT.ibm-btn-cancel-sec {
+	font-size: 1em;
+}
+INPUT.ibm-btn-arrow-pri:hover, INPUT.ibm-btn-cancel-sec:hover {
+font-weight: bold;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CBCBCB');
+background: -webkit-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -moz-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -o-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -ms-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: linear-gradient(top, #FFFFFF, #CBCBCB);
+-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+}
 /* 여기까지 헤더 */
 
 /* 여기부터 섹션 */
@@ -751,112 +822,3 @@ text-indent: 0px;
 
 /* 여기까지 섹션 */
 
-/* 여기부터 푸터 */
-#ibm-footer-module, #ibm-footer {
-min-width: 1030px;
-}
-#ibm-footer-module {
-font-size: .7em;
-border-top: 1px solid #666;
-clear: both;
-width: 100%;
-float: left;
-background: #0F161A;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474A50', endColorstr='#0F161A');
-background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -webkit-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
-background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -moz-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
-background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -o-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
-background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -ms-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
-background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
-margin-bottom: -1px;
-}
-#ibm-footer-module h2, #ibm-footer-module h3 {
-font-size: 1em;
-color: #FCB712;
-margin: 0px;
-padding: 16px 0 5px;
-}
-#ibm-masthead .ibm-columns .ibm-col-6-1, #ibm-related-content .ibm-columns .ibm-col-6-1, #ibm-footer-module .ibm-columns .ibm-col-6-1 {
-width: 140px;
-_width: 130px;
-}
-#ibm-footer-module ul {
-line-height: 14px;
-list-style: none;
-padding: 0 0 2px 0;
-margin: 0;
-}
-#ibm-footer-module li {
-background: url(/teamP/cooperation/i/v17/bullets.gif) no-repeat -2px 2px;
-color: #666;
-margin: 4px 0;
-padding: 0 0 5px 10px;
-}
-#ibm-footer-module li:hover, #ibm-footer-module li.ibm-active { 
-background-position:-2px -98px;
-color:#FFCF01;
-}
-
-#ibm-footer-module a {
-color: #a8a8a8;
-display: block;
-text-decoration: none;
-text-shadow: 0 0 2px #000;
-}
-#ibm-footer-module a { margin-top:-4px }
-#ibm-footer-module .ibm-stock-module h2,#ibm-footer-module a:hover { color:#FFF }
-#ibm-footer-module a.ibm-active,#ibm-footer-module a:focus { 
-color:#FFF;
-text-decoration:underline 
-}
-#ibm-footer {
-background-color: #0F161A;
-border-top: 1px solid #0F161A;
-border-bottom: 1px solid #404040;
-clear: both;
-color: #CCC;
-height: auto;
-margin: 0;
-padding-top: 15px;
-position: relative;
-}
-#ibm-footer ul {
-font-weight: normal;
-font-size: .85em;
-margin: 0 auto;
-width: 960px;
-height: 1%;
-list-style-type: none;
-padding: 0 0 0 20px;
-}
-.ibm-home-page #ibm-footer ul li:first-child {
-padding-left: 5px;
-}
-#ibm-footer li {
-float: left;
-padding: 0 10px 16px 14px;
-overflow: inherit;
-white-space: nowrap;
-}
-#ibm-footer li a:hover {
-color: #A1A2A7;
-}
-#ibm-footer li a:link, #ibm-footer li a:visited {
-color: #7f7f7f;
-text-decoration: none;
-}
-#ibm-footer li a:focus {
-color:#D0D0D3;
-}
-#ibm-footer:after {
-clear:both;
-content:" ";
-display:block;
-height:0;
-visibility:hidden
-}
-#ibm-my-menu, #ibm-common-menu, #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
-font-size: .8em;
-}
-
-/* 여기까지 푸터 */

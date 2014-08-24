@@ -34,15 +34,29 @@ $(document).ready(function(e) {
 		$('.ibm-menu-subtabs li[class="'+className+'"]').addClass('ibm-active');
 	});*/
 	
-	var width = document.getElementById("ibm-com").offsetWidth;
+//	var width = document.getElementById("ibm-com").offsetWidth;
+//	var height = document.getElementById("ibm-com").offsetHeight;
+	var width = $(window).width();
+	var height = $(window).height();
+	var isDragged = false;
 	$('.ibm-container .ibm-columns').css("width", width+30);
 	$('.ibm-container .ibm-ribbon-pane').css("width", width);
+	$('.dijitDialogUnderlayWrapper .dijitDialogUnderlay').css("width", width).css("height", height);
+	$('.dijitDialog').css("left", (width/2)-200).css("top", (height/2)-166);
 	var navIndex = 1;
 	$(window).resize(function(e) {
-		width = document.getElementById("ibm-com").offsetWidth;
+		width = $(window).width();
+		height = $(window).height();
 //		alert(width);
 		$('.ibm-container .ibm-columns').css("width", width+30);
 		$('.ibm-container .ibm-ribbon-pane').css("width", width);
+		
+		$('.dijitDialogUnderlayWrapper .dijitDialogUnderlay').css("width", width).css("height", height);
+		if (isDragged) {
+			
+		} else {
+			$('.dijitDialog').css("left", (width/2)-200).css("top", (height/2)-166);
+		}
 	});
 	
 	
@@ -56,6 +70,31 @@ $(document).ready(function(e) {
 		}
 	});
 	$('#ibm-masthead').hover(largeHeader, mouseoutHeader);
+	
+	
+	$(window).mousemove(function(e){
+		$('#mouse').empty();
+		var coord = e.pageX+', '+e.pageY;
+		$('#mouse').append(coord);
+	});
+	$('.ibm-sso-signin').click(function(e) {
+		$('.dijitDialogUnderlayWrapper').fadeIn();
+		$('.dijitDialog').fadeIn();
+		$('#iframe1').contents().find('.ibm-btn-cancel-sec').click(function(e) {
+			$('.dijitDialogUnderlayWrapper').fadeOut();
+			$('.dijitDialog').fadeOut();
+		});
+		$( ".dijitDialog" ).draggable({
+			  drag: function( event, ui ) {
+				  isDragged = true;
+			  }
+		});
+	});
+	$('.dijitDialogCloseIcon').click(function(e) {
+		$('.dijitDialogUnderlayWrapper').fadeOut();
+		$('.dijitDialog').fadeOut();
+	});
+
 });
 
 function largeHeader() {

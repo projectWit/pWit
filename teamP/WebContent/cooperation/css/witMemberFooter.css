@@ -20,6 +20,7 @@ left: -3000px;
 width: 500px;
 }
 
+/* 여기부터 푸터 */
 #ibm-footer-module, #ibm-footer {
 min-width: 1030px;
 }
@@ -126,3 +127,4 @@ visibility:hidden
 #ibm-my-menu,  #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
 font-size: .8em;
 }
+/* 여기까지 푸터 */

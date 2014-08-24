@@ -20,6 +20,11 @@ left: -3000px;
 width: 500px;
 }
 
+#ibm-com {
+	width: 100%;
+	height: 100%;
+}
+
 #ibm-masthead {
 	width: 100%;
 	min-width: 980px;
@@ -487,4 +492,75 @@ text-indent: -9999em;
 }
 #ibm-masthead .ibm-mm-close span:hover { background-position:0px -23px }
 #ibm-masthead .ibm-mm-close span:active, #ibm-masthead .ibm-mm-close span:focus { background-position:0px -49px }
+
+INPUT.ibm-btn-arrow-pri {
+//	font-family: Arial, Helvetica;
+	background: #DBDBDB;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#DBDBDB');
+	background: -webkit-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -moz-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -o-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -ms-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: linear-gradient(top, #F5F5F5, #DBDBDB);
+	border: 1px solid #DBDBDB;
+	color: #000;
+	padding: 7px 20px;
+	margin-bottom: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	text-shadow: #FFF 0 1px 0;
+	min-width: 120px;
+	min-width: 90px;
+	min-width: auto;
+	text-align: center;
+	cursor: pointer;
+}
+INPUT.ibm-btn-arrow-pri {
+	font-size: 1em;
+}
+INPUT.ibm-btn-cancel-sec {
+//	font-family: Arial, Helvetica;
+	background: #DBDBDB;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#DBDBDB');
+	background: -webkit-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -moz-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -o-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: -ms-linear-gradient(top, #F5F5F5, #DBDBDB);
+	background: linear-gradient(top, #F5F5F5, #DBDBDB);
+	border: 1px solid #DBDBDB;
+	color: #000;
+	padding: 7px 20px;
+	margin-bottom: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+	text-shadow: #FFF 0 1px 0;
+	min-width: 120px;
+	min-width: 90px;
+	min-width: auto;
+	text-align: center;
+	cursor: pointer;
+}
+INPUT.ibm-btn-cancel-sec {
+	font-size: 1em;
+}
+INPUT.ibm-btn-arrow-pri:hover, INPUT.ibm-btn-cancel-sec:hover {
+font-weight: bold;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CBCBCB');
+background: -webkit-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -moz-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -o-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: -ms-linear-gradient(top, #FFFFFF, #CBCBCB);
+background: linear-gradient(top, #FFFFFF, #CBCBCB);
+-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+-moz-box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+}
 /* 여기까지 헤더 */
