@@ -312,7 +312,8 @@ IMG {
 <DIV id=ibm-content>
 <DIV class=main-head>WIT 로그인</DIV>
 <DIV id=ibm-overlay-register-error class=required><!-- All fields are required. -->모든 항목을 작성해 주세요.</DIV>
-<FORM id=userForm method=post name=userForm>
+
+<FORM id=userForm method=post name=userForm action="/teamP/loginController.do">
 <DIV id=form_fields>
 <DIV id=lft_flds><INPUT tabIndex=1 id=username name=username placeholder="WIT ID*" required>
 	<BR><A id=forgot-id-link class=ibm-select-link href="#"><!-- Forgot IBM ID? -->ID를 잊었습니까?</A></DIV>
