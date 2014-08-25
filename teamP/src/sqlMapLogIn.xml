@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.COM/DTD SQL MAP 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="sqlMapLogIn">
+
+<resultMap class="common.MemberDTO" id="memberDTO">
+<result property="mId" column="mId"/>
+<result property="mPwd" column="mPwd"/>
+</resultMap>
+<select id="memberSelect_basic" parameterClass="java.lang.String" resultMap="memberDTO">
+$value$
+</select>
+
+</sqlMap>

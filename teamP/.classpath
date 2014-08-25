@@ -23,5 +23,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commonJar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.7.0_60/jre/lib/ext/mybatis-2.3.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

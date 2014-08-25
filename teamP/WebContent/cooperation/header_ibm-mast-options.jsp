@@ -16,7 +16,7 @@
 			<li id="ibm-sso"><span><p id="ibm-welcome-msg">환영합니다</p> <span style="display: inline;">
 				<span class="ibm-greeting-hasp">[</span> 
 				<span> <span class="ibm-sso-link"><a href="#" class="ibm-sso-signin">WIT 로그인</a></span> 
-				<span class="ibm-sso-link"> / <a href="WIT_Main_register.jsp" class="ibm-sso-register">회원가입</a></span></span> 
+				<span class="ibm-sso-link"> / <a href="/teamP/cooperation/WIT_Main_register.jsp" class="ibm-sso-register">회원가입</a></span></span> 
 				<span class="ibm-greeting-hasp">]</span>
 			</span></span></li>
 		</ul>

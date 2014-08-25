@@ -1,5 +1,7 @@
 package mvc.basic;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -29,11 +31,9 @@ public class MemberController {
 	public ModelAndView hi() {
 		// view 설정
 		// view의 이름을 제공. xxx-servlet.xml 에서 prefix, suffix 추가
-		mv.setViewName("hi");
-		Member member = new Member();
-		member.setName("홍길동");
-		member.setJob("개발자");
-		mv.addObject("member", member);
+		mv.setViewName("loginContent");
+		HttpSession httpSession = request.getSession();
+
 		return mv;
 	}
 }

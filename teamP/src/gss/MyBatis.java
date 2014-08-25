@@ -60,4 +60,17 @@ public class MyBatis {
 		return objReturn;
 	}
 	
+	/* select : 사용자정의 select */
+	public Object select(String selectId, String query) {
+		Object objReturn = null;
+		try {
+			objReturn = sqlMap.queryForList(selectId, query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objReturn;
+	}
+
+	
 }

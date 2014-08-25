@@ -305,24 +305,57 @@ IMG {
 	margin: 150px auto 0px auto;
 }
 </style>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$('#ibm-signin-submit').click(function(e) {
+		var url = 'loginJSON.jsp?username='+$('#username').val()+'&password_text='+$('#password_text').val();
+		$.get(url, function(data) {
+			responseText = eval("(" + data + ")");
+			alert("result : "+responseText[0].result);
+
+//result 0 : id 불일치
+// result 1 : id 일치, pwd 불일치
+// result 2 : id, pwd 모두 일치
+			$('#ibm-overlay-register-error').empty();
+			switch (responseText[0].result) {
+			case 0: 
+				$('#ibm-overlay-register-error').append("<span style='color: red'>ID가 일치하지 않습니다</span>");
+				break;
+			case 1:
+				$('#ibm-overlay-register-error').append("<span style='color: red'>비밀번호가 일치하지 않습니다</span>");
+				break;
+			case 2:
+				$('#ibm-overlay-register-error').append("환영합니다");
+				$('#userForm').submit();
+				break;
+			default:
+				break;
+			}
+		});
+		
+	});
+	
+});
+</script>
 </head>
 
 <BODY><P align=center><IMG id=loadingimage-signin class=hide alt=none src="/teamP/cooperation/i/v17/common/loading.gif"></P>
 <DIV id=signin-overlay class=show>
 <DIV id=ibm-content>
 <DIV class=main-head>WIT 로그인</DIV>
-<DIV id=ibm-overlay-register-error class=required><!-- All fields are required. -->모든 항목을 작성해 주세요.</DIV>
+<DIV id=ibm-overlay-register-error class=required><!-- All fields are required. -->모든 항목을 작성해 주세요</DIV>
 
 <FORM id=userForm method=post name=userForm action="/teamP/loginController.do">
 <DIV id=form_fields>
-<DIV id=lft_flds><INPUT tabIndex=1 id=username name=username placeholder="WIT ID*" required>
+<DIV id=lft_flds><INPUT id=username name=username placeholder="WIT ID*" required>
 	<BR><A id=forgot-id-link class=ibm-select-link href="#"><!-- Forgot IBM ID? -->ID를 잊었습니까?</A></DIV>
 <DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=password_text  placeholder="password*" required></SPAN>
 	<BR><A id=forgot-pwd-link class=ibm-select-link href="#"><!-- Forgot password? -->비밀번호를 잊었습니까?</A></DIV><INPUT id=login-form-type type=hidden value=pwd name=login-form-type> 
-<DIV id=register-link-div><A tabIndex=6 id=ibm-register-link class=ibm-select-link href="/teamP/cooperation/WIT_Main_register.jsp">회원가입</A></DIV>
+<DIV id=register-link-div><A id=ibm-register-link class=ibm-select-link href="/teamP/cooperation/WIT_Main_register.jsp">회원가입</A></DIV>
 <DIV class=clr>&nbsp;</DIV></DIV>
 <DIV id=ibm-signin>
-<DIV class=ibm-buttons-row><INPUT tabIndex=7 id=ibm-signin-submit class=ibm-btn-arrow-pri type=submit value=로그인 name=ibm-submit><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT tabIndex=8 id=ibm-signin-cancel class=ibm-btn-cancel-sec type=button value=취소 name=ibm-cancel></DIV></DIV>
-</FORM></DIV></DIV>
+<DIV class=ibm-buttons-row><INPUT id=ibm-signin-submit class=ibm-btn-arrow-pri type=submit value=로그인 name=ibm-submit><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT id=ibm-signin-cancel class=ibm-btn-cancel-sec type=reset value=취소 name=ibm-cancel></DIV></DIV>
+</FORM></DIV></DIV><div id="testArea"></div>
 </BODY>
 </html>
