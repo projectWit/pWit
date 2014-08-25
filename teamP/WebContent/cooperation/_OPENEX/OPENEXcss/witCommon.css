@@ -1,0 +1,862 @@
+@CHARSET "UTF-8";
+
+/* 여기부터 헤더 */
+html, body, header, section, article, footer, div, p, span, a, ul, li,  h1, h2, h3, h4, h5, h6 { 
+	margin: 0px; 
+	padding: 0px; 
+	vertical-align: baseline;
+	font-family: '맑은 고딕'; 
+}
+body { /* background:  url(../i/v17/t/logo8.png) no-repeat 50% 200px; */
+	background-size: 20%;}
+ul { list-style: none; }
+a { cursor: auto; }
+.ibm-access {
+position: absolute;
+left: -3000px;
+width: 500px;
+}
+
+#ibm-masthead {
+	width: 100%;
+	min-width: 980px;
+	left: 0px;
+	top: 0px;
+	position: fixed;
+	z-index: 900;
+	border-top: 1px solid #666;
+	border-bottom: 2px solid rgba(255,255,255,.8);
+}
+#ibm-mast-options {
+	//background: #131623;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#131623', endColorstr='#1A1C27');
+	background: -webkit-linear-gradient(top, #131623, #1A1C27);
+	background: -moz-linear-gradient(top, #131623, #1A1C27);
+	background: -o-linear-gradient(top, #131623, #1A1C27);
+	background: -ms-linear-gradient(top, #131623, #1A1C27);
+	background: linear-gradient(top, #131623, #1A1C27);
+	height: 1%;
+	float: left;
+	width: 100%;
+	color: #A1A2A7;
+	font-size: .7em;
+}
+#ibm-mast-options:hover { 
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#131623', endColorstr='#1A1C27');
+	background:-webkit-linear-gradient(top, #131623, #1A1C27);
+	background:-moz-linear-gradient(top, #131623, #1A1C27);
+	background:-o-linear-gradient(top, #131623, #1A1C27);
+	background:-ms-linear-gradient(top, #131623, #1A1C27);
+	background:linear-gradient(top, #131623, #1A1C27);
+	color:#D0D0D3;
+}
+
+#ibm-mast-options ul {
+	background-color: #131623;
+	float: right;
+	margin-right: 5%;
+	border-left: 1px solid #2b2d39;
+	border-right: 1px solid #02050E;
+}
+#ibm-mast-options li {
+	border-left: 1px solid #02050E;
+	border-right: 1px solid #2b2d39;
+	float: left;
+	padding: 4px 20px;
+	height: 13px;
+}
+#ibm-mast-options li:hover { color:#FFF; }
+#ibm-mast-options li#ibm-geo { padding: 4px 0; }
+#ibm-mast-options li#ibm-geo a {
+	background: url("/teamP/cooperation/i/v17/icons/country-icons-sprite.png") no-repeat scroll 10px 0 transparent;
+	padding: 3px 20px 3px 40px;
+	/* background: none; */
+}
+#ibm-mast-options li#ibm-sso a { color: #929395; }
+#ibm-mast-options li#ibm-sso span span { color: #666; }
+#ibm-mast-options p { display: inline; }
+#ibm-mast-options a {
+	color: #A1A2A7;
+	padding: 3px 2px;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+#ibm-mast-options:hover a { color:#D0D0D3 }
+#ibm-mast-options:hover li#ibm-geo a { color:#D0D0D3;background-position:10px -20px }
+#ibm-mast-options li#ibm-geo:hover a, #ibm-mast-options li#ibm-geo a:focus { 
+background-position:10px -40px;
+color:#FFF 
+}
+#ibm-mast-options:hover li#ibm-sso a { color:#A1A2A7 }
+#ibm-mast-options li#ibm-sso:hover a { color:#BABBBD }
+
+
+#ibm-universal-nav {
+width: 100%;
+float: left;
+background: #000;
+overflow: hidden;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595C64', endColorstr='#1B1B1C');
+background: -webkit-linear-gradient(top, #595C64, #005E75);
+background: -moz-linear-gradient(top, #595C64, #005E75);
+background: -o-linear-gradient(top, #595C64, #005E75);
+background: -ms-linear-gradient(top, #595C64, #005E75);
+background: linear-gradient(top, #595C64, #005E75);
+height: 50px;
+border-top: 1px solid #999;
+border-bottom: 1px solid #666;
+}
+
+#ibm-universal-nav #ibm-unav-links, #ibm-universal-nav #ibm-menu-links {
+	margin: 0px 20px;
+	float: left;
+}
+#ibm-universal-nav #ibm-menu-links {
+	margin-left: 130px;
+	_margin-left: 75px;
+}
+#ibm-universal-nav #ibm-unav-links li, #ibm-universal-nav #ibm-menu-links li {
+	float: left;
+}
+#ibm-universal-nav li#ibm-home {
+display: block;
+overflow: hidden;
+height: 50px;
+position: absolute;
+width: 100px;
+}
+#ibm-universal-nav li#ibm-home.ibm-sm-logo a {
+_background: url(/teamP/cooperation/i/v17/t/ibm-logo.png) no-repeat scroll 0 -100px;
+background: url(/teamP/cooperation/i/v17/t/logo8.png) no-repeat scroll 0 -100px;
+background-size: 70%;
+background-position: 15% 0%;
+background-size: 60% 50%;
+height: 30px;
+}
+#ibm-universal-nav li#ibm-home a {
+_display: block;
+background: url(/teamP/cooperation/i/v17/t/logo8.png) 0 0 no-repeat;
+background-size: 70%;
+background-position: 15% 10%;
+background-size: 80% 50%;
+_background: none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/teamP/cooperation/i/v17/t/ibm-logo.png');
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/teamP/cooperation/i/v17/t/logo8.png');
+_cursor: pointer;
+width: 100px;
+float: left;
+height: 50px;
+text-indent: -999em;
+_padding: 0px;
+}
+
+/* #ibm-universal-nav li#ibm-home a {
+background: url(../i/v17/t/ibm-logo-anim-sprite.png) no-repeat 0 0;
+_background: none;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='i/v17/t/ibm-logo-anim-sprite.png');
+} */
+/* #ibm-universal-nav #ibm-home a {
+//	opacity: 1; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	z-index: 10;
+} */
+#ibm-universal-nav li a {
+color: #CCC;
+_display: block;
+text-decoration: none;
+_letter-spacing: 1px;
+text-shadow: 0px -1px 0 #000;
+padding: 17px 12px;
+font-weight: 300;
+font-size: 16px;
+line-height: 16px;
+float: left;
+height: 1%;
+}
+#ibm-universal-nav #ibm-menu-links li a:hover, #ibm-universal-nav #ibm-menu-links li a:focus {
+background:-webkit-linear-gradient(top, #696c72, #333334);
+background:-moz-linear-gradient(top, #696c72, #333334);
+background:-o-linear-gradient(top, #696c72, #333334);
+background:-ms-linear-gradient(top, #696c72, #333334);
+background:linear-gradient(top, #696c72, #333334);
+background:none transparent no-scroll repeat;
+text-shadow:0px 0 3px #FFF;
+color:#FFF
+}
+.nav-active {
+background:-webkit-linear-gradient(top, #696c72, #333334);
+background:-moz-linear-gradient(top, #696c72, #333334);
+background:-o-linear-gradient(top, #696c72, #333334);
+background:-ms-linear-gradient(top, #696c72, #333334);
+background:linear-gradient(top, #696c72, #333334);
+background:none transparent no-scroll repeat;
+text-shadow:0px 0 3px #FFF;
+color:#FFF
+}
+#ibm-universal-nav #ibm-menu-links li a:active {
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1B1B1C', endColorstr='#595C64');
+background:-webkit-linear-gradient(top, #1B1B1C, #595C64);
+background:-moz-linear-gradient(top, #1B1B1C, #595C64);
+background:-o-linear-gradient(top, #1B1B1C, #595C64);
+background:-ms-linear-gradient(top, #1B1B1C, #595C64);
+background:linear-gradient(top, #1B1B1C, #595C64);
+text-shadow:0 0 3px #FFF;
+color:#FFF
+}
+
+#ibm-search-module {
+float: right;
+margin-left: -100%;
+_position: absolute;
+_right: 0;
+}
+#ibm-search-form {
+_float: right;
+height: 24px;
+margin: 13px 40px -36px 1px;
+display: inline-block;
+border: 0px solid transparent;
+_float: none;
+_position: absolute;
+_right: 0;
+}
+.ibm-access {
+font-style: italic;
+color: #EEEEEE;
+}
+#ibm-search-form input#q {
+_font-family: Arial, Helvetica;
+-webkit-border-radius: 13px;
+-moz-border-radius: 13px;
+border-radius: 13px;
+-moz-box-shadow: 0 1px 0 #555;
+-webkit-box-shadow: 0 1px 0 #555;
+box-shadow: 0px 1px 0 #555;
+border: 1px solid #000;
+padding: 3px 30px 2px 10px;
+background: #0E0E0E;
+background: -moz-linear-gradient(top, rgba(14,14,14,1) 0, rgba(50,50,50,1) 24px, rgba(225,225,225,1) 100px, rgba(238,238,238,1) 124px) no-repeat left top transparent;
+background: -webkit-linear-gradient(top, rgba(14,14,14,1) 0,rgba(50,50,50,1) 24px,rgba(225,225,225,1) 100px,rgba(238,238,238,1) 124px) repeat left top transparent;
+background: -o-linear-gradient(top, rgba(14,14,14,1) 0,rgba(50,50,50,1) 24px,rgba(225,225,225,1) 100px,rgba(238,238,238,1) 124px) no-repeat left top transparent;
+background: -ms-linear-gradient(top, rgba(14,14,14,1) 0,rgba(50,50,50,1) 24px,rgba(225,225,225,1) 100px,rgba(238,238,238,1) 124px) no-repeat left top transparent;
+background: linear-gradient(to bottom, rgba(14,14,14,1) 0,rgba(50,50,50,1) 24px,rgba(225,225,225,1) 100px,rgba(238,238,238,1) 124px) no-repeat left top transparent;
+background-size: 222px 124px;
+_float: left;
+color: #888;
+width: 180px;
+height: 17px;
+font-style: italic;
+-webkit-transition: background .2s linear;
+-o-transition: background .2s linear;
+-moz-transition: background .2s linear;
+transition: background .2s linear;
+}
+#ibm-search-form:hover input#q,#ibm-search-form:focus input#q,#ibm-search-form input#q.ibm-active,#ibm-search-form input#q:focus {
+color:#CCC;
+background:#EEEEEE;
+background-size:222px 124px;
+background-position:left bottom;
+color:#000;
+text-shadow:0 1px 0 #ffffff
+}
+#ibm-search-form:hover #ibm-search, #ibm-search-form #q:focus ~ #ibm-search { background-position:0px -114px }
+/* #ibm-scoped-search { 
+position:absolute;
+z-index:8;
+padding:5px 0;
+background:#D8D8D8;
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63686E', endColorstr='#1B2125');
+background:-webkit-gradient(linear, left top, left bottom, from(#63686E), to(#1B2125));
+background:-moz-linear-gradient(top, #63686E, #1B2125);
+background:linear-gradient(#63686E,#1B2125);
+border:5px solid #FFF;
+-moz-box-shadow:0 1px 5px rgba(0,0,0,.4);
+-webkit-box-shadow:0 1px 5px rgba(0,0,0,.4);
+box-shadow:0 1px 5px rgba(0,0,0,.4);
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+margin-top:24px;
+width:215px
+} */
+
+#ibm-search.ibm-btn-search {
+box-shadow: none;
+min-width: 0;
+padding: 0;
+filter: none;
+}
+
+#ibm-search {
+font-size: 0;
+background: url(/teamP/cooperation/i/v17/icons/search.png) 0 3px no-repeat;
+_background: none;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/teamP/cooperation/i/v17/icons/search.png', sizingMethod='crop');
+width: 24px;
+height: 33px;
+margin-left: -40px;
+_position: relative;
+_float: left;
+color: transparent;
+border: 0px none;
+text-align: right;
+text-indent: -999em;
+cursor: pointer;
+//border: 1px solid red;
+}
+
+#ibm-common-menu {
+width: 100%;
+background-color: #ddd;
+background: -webkit-linear-gradient(#dddddd, #f1f1f1);
+background: -moz-linear-gradient(#dddddd, #f1f1f1);
+background: -o-linear-gradient(#dddddd, #f1f1f1);
+background: -ms-linear-gradient(#dddddd, #f1f1f1);
+background: linear-gradient(#dddddd, #f1f1f1);
+_background: none;
+filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#d1d1d1',EndColorStr='#f1f1f1');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(StartColorStr='#d1d1d1',EndColorStr='#f1f1f1')";
+border-bottom: 2px solid #fff;
+_height: 160px;
+display: none;
+box-shadow: 0px -9px 7px -9px #bbb inset;
+font-size: 12px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-subtabs {
+box-shadow: 0 1px 7px #c5c5c5;
+}
+#ibm-masthead .ibm-menu-subtabs {
+background-color: #ccc;
+background: -webkit-linear-gradient(#ccc, #EAEAEA);
+background: -moz-linear-gradient(#ccc, #EAEAEA);
+background: -o-linear-gradient(#ccc, #EAEAEA);
+background: -ms-linear-gradient(#ccc, #EAEAEA);
+background: linear-gradient(#ccc, #EAEAEA);
+filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#CCCCCC',EndColorStr='#EAEAEA');
+border-bottom: 1px solid #bbb;
+height: 39px;
+}
+#ibm-masthead .ibm-menu-subtabs ul {
+width: 940px;
+margin: 0 auto;
+padding: 14px 10px 0;
+margin-bottom: -1px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li {
+margin: 0 20px 0 0;
+background-image: none;
+float: left;
+padding: 0 10px 11px 10px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li a {
+text-shadow: 0 1px 0 #fff;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li.ibm-active a {
+font-weight: bold;
+color: #222;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-subtabs ul li.ibm-active {
+background: url(/teamP/cooperation/i/v17/buttons/mm-submenu-notch.gif) center 21px no-repeat transparent;
+}
+
+#ibm-common-menu li:hover,#ibm-common-menu li.ibm-active { 
+background-position:-2px -98px 
+}
+#ibm-common-menu li:active { opacity:.6 }
+#ibm-common-menu a { 
+color:#555;
+text-decoration:none 
+}
+#ibm-common-menu a:focus,#ibm-common-menu a:hover { 
+text-decoration:underline;
+color:#222 
+}
+
+#ibm-common-menu li {
+background: url(/teamP/cooperation/i/v17/bullets-alt.gif) -2px 2px no-repeat transparent;
+padding-left: 10px;
+margin-top: 10px;
+}
+#ibm-common-menu li:hover, #ibm-common-menu li.ibm-active {
+background-position: -2px -98px;
+}
+
+
+#ibm-masthead .ibm-ribbon-pane {
+width: 980px;
+//height: 240px;
+}
+.ibm-ribbon-pane {
+position: relative;
+overflow: hidden;
+_width: 940px;
+margin: 0 auto;
+clear: both;
+//border: 1px solid red;
+}
+.ibm-ribbon-section {
+position: absolute;
+width: 20000em;
+margin: 0px -10px;
+}
+#ibm-masthead .ibm-ribbon-pane .ibm-columns {
+padding-top: 0;
+_padding-top: 10px;
+clear: none;
+float: left;
+}
+#ibm-masthead .ibm-columns, #ibm-footer-module .ibm-columns {
+width: 960px;
+padding: 0px 10px;
+margin: 0px auto;
+_clear: both;
+}
+#ibm-masthead #ibm-common-menu .ibm-col-5-4.ibm-menu-dynamic {
+width: 758px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-dynamic {
+padding-right: 0;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-dynamic .ibm-col-4-1 {
+width: 172px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-dynamic .ibm-col-4-1.ibm-col-last {
+width: 162px;
+}
+.ibm-columns .ibm-col-1-1, .ibm-columns .ibm-col-2-1, .ibm-columns .ibm-col-4-1, .ibm-columns .ibm-col-4-2, .ibm-columns .ibm-col-4-3, .ibm-columns .ibm-col-5-1, .ibm-columns .ibm-col-5-2, .ibm-columns .ibm-col-5-3, .ibm-columns .ibm-col-5-4, .ibm-columns .ibm-col-6-1, .ibm-columns .ibm-col-6-2, .ibm-columns .ibm-col-6-3, .ibm-columns .ibm-col-6-4, .ibm-columns .ibm-col-6-5, .dijitDialogPaneContent .ibm-common-overlay .ibm-columns [class*="ibm-col-"] {
+float: left;
+padding: 0px 10px;
+min-height: 1px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-static, #ibm-masthead #ibm-common-menu .ibm-menu-dynamic {
+padding-top: 20px;
+}
+#ibm-masthead #ibm-common-menu .ibm-menu-static {
+border-left: 1px solid #C8C8C8;
+box-shadow: 1px 0 0 rgba(255,255,255,.5) inset;
+width: 170px;
+height: 282px;
+padding-left: 20px;
+padding-right: 0;
+}
+#ibm-common-menu h3 {
+color: #333;
+text-shadow: 0 1px 0 #fff;
+width: 140px;
+padding-left: 0;
+font-weight: bold;
+}
+#ibm-common-menu h3 a {
+color: #333;
+text-shadow: 0 1px 0 #fff;
+text-decoration: none;
+}
+
+#ibm-common-menu ul {
+list-style: none;
+padding: 0 0 18px 0;
+}
+
+#ibm-masthead .ibm-mm-close {
+height: 25px;
+width: 940px;
+overflow: hidden;
+z-index: 9;
+position: relative;
+margin: -25px auto 0;
+cursor: pointer;
+}
+#ibm-masthead .ibm-mm-close span {
+position: absolute;
+display: block;
+height: 25px;
+width: 940px;
+background: url(/teamP/cooperation/i/v17/buttons/mm-sprite-alt.gif) 0 2px no-repeat transparent;
+_background: none;
+filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/teamP/cooperation/i/v17/buttons/mm-sprite.png');
+text-align: center;
+text-indent: -9999em;
+}
+#ibm-masthead .ibm-mm-close span:hover { background-position:0px -23px }
+#ibm-masthead .ibm-mm-close span:active, #ibm-masthead .ibm-mm-close span:focus { background-position:0px -49px }
+/* 여기까지 헤더 */
+
+/* 여기부터 섹션 */
+.ibm-home-page #ibm-leadspace-head {
+background: #EFEFEF;
+border-bottom: 1px solid #C0C0AE;
+}
+.ibm-landing-page #ibm-leadspace-head, .ibm-portal-page #ibm-leadspace-head, .ibm-home-page #ibm-leadspace-head, #ibm-content #ibm-leadspace-head, .ibm-common-overlay #ibm-leadspace-head {
+display: block;
+}
+.ibm-home-page #ibm-leadspace-head #ibm-leadspace-body {
+width: 100%;
+min-height: 400px;
+padding-bottom: 0px;
+}
+.ibm-container-body {
+clear: both;
+}
+.ibm-home-page #ibm-leadspace-head a.ibm-ribbon-next, .ibm-home-page #ibm-leadspace-head a.ibm-ribbon-prev {
+display: none;
+}
+a.ibm-disabled {
+visibility: hidden;
+}
+.ibm-home-page #ibm-leadspace-head a.ibm-ribbon-next, .ibm-home-page #ibm-leadspace-head a.ibm-ribbon-prev {
+display: none;
+}
+a.ibm-ribbon-prev {
+background-position: 0px -100px;
+left: -20px;
+}
+a.ibm-ribbon-next {
+background-position: 100% 0;
+right: -20px;
+}
+a.ibm-ribbon-next, a.ibm-ribbon-prev {
+background: url(/teamP/cooperation/i/v17/icons/scroll_nav_sprite.gif) no-repeat;
+display: block;
+width: 16px;
+height: 24px;
+position: absolute;
+cursor: pointer;
+}
+.ibm-ribbon-nav a, a.ibm-ribbon-next, a.ibm-ribbon-prev {
+font-size: 0px;
+text-indent: -100%;
+_text-indent: -9999px;
+overflow: hidden;
+margin-top: 10px;
+_overflow: visible;
+color: transparent;
+}
+div#ibm-top.ibm-home-page div#ibm-leadspace-head.ibm-container div#ibm-leadspace-body.ibm-container-body div.ibm-ribbon-pane {
+width: 100%;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-pane {
+position: relative;
+height: 400px;
+overflow: hidden;
+clear: both;
+_width: 940px;
+margin: 0 auto;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-section {
+position: absolute;
+width: 20000em;
+margin: 0px -10px;
+}
+.ibm-home-page #ibm-leadspace-body #ibm-lead-1 {
+height: 400px;
+width: 100%;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-section .ibm-columns {
+clear: none;
+height: 400px;
+overflow: hidden;
+width: 100%;
+margin: 0px;
+float: left;
+padding: 0px;
+}
+img[Attributes Style] {
+height: 297px;
+width: 518px;
+}
+.ibm-home-page #ibm-lead-1 {
+_background: url(/teamP/cooperation/images/portal/L688321C03041Q58/7302014_ibmcloud_bg.png) repeat-x 50% 0px;
+background: url(/teamP/cooperation/images/portal/WIT_IMG/contsam01.png) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-lead-2 {
+_background: url(/teamP/cooperation/images/portal/N239470X33431S89/07152014_apple_announcement_bg.png) repeat-x 50% 0px;
+background: url(/teamP/cooperation/images/portal/WIT_IMG/contsam02.png) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-lead-3 {
+_background: url(/teamP/cooperation/images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_bg.jpg) repeat-x 50% 0px;
+background: url(/teamP/cooperation/images/portal/WIT_IMG/contsam03.png) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-lead-4 {
+_background: url(/teamP/cooperation/images/portal/O565237U45802D50/07282014_innovation_cloud_chris_dotson_bg.jpg) repeat-x 50% 0px;
+background: url(/teamP/cooperation/images/portal/WIT_IMG/contsam04.png) no-repeat 0px 0px;
+}
+/* #ibm-lead-2, #ibm-lead-3, #ibm-leadspace-head.ibm-ribbon div.ibm-columns div.ibm-ribbon-view {
+display: none;
+} */
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-section .ibm-columns .ibm-col-1-1 {
+width: 998px;
+padding: 0px;
+margin: 0px auto;
+float: none;
+}
+.ibm-container h2 {
+padding: 5px 0;
+height: auto;
+_height: 1%;
+}
+.ibm-home-page #ibm-leadspace-head h1, .ibm-home-page #ibm-leadspace-head h2, .ibm-home-page #ibm-leadspace-head h3 {
+position: relative;
+}
+.ibm-home-page #ibm-leadspace-head img, .ibm-home-page #ibm-leadspace-head h1, .ibm-home-page #ibm-leadspace-head h2, .ibm-home-page #ibm-leadspace-head h3 {
+padding: 0px;
+margin: 0px;
+}
+h1 {
+font-size: 2.6em;
+clear: both;
+line-height: 1em;
+text-shadow: 0px 1px 0 #FFF;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-pane h1 img, .ibm-home-page #ibm-leadspace-head .ibm-ribbon-pane h2 img {
+padding-top: 50px;
+}
+.ibm-home-page #ibm-leadspace-head img, .ibm-home-page #ibm-leadspace-head h1, .ibm-home-page #ibm-leadspace-head h2, .ibm-home-page #ibm-leadspace-head h3 {
+padding: 0px;
+margin: 0px;
+}
+.ibm-mobile {
+display: none !important;
+}
+#ibm-leadspace-head p {
+width: 312px;
+_width: 185px !important;
+}
+.ibm-columns:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+overflow: hidden;
+}
+
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav {
+height: 45px;
+margin: -55px auto 0;
+width: 980px;
+text-align: right;
+z-index: 899;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a:hover, .ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a.ibm-active {
+box-shadow: 0 1px 6px rgba(0,0,0,.85);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,.85);
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.85);
+border: 3px solid rgba(255, 255, 255, .9);
+border: 3px solid #FFF\9;
+top: -5px;
+}
+.ibm-ribbon-nav a.ibm-active {
+background-position: 0px -216px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a {
+box-shadow: 0 1px 6px rgba(0, 0, 0, .70);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+border: 3px solid rgba(255, 255, 255, .6);
+border: 3px solid #EEE\9;
+display: inline-block;
+font-size: 0px;
+height: 30px;
+margin: 3px 5px;
+outline: 0 none;
+padding: 0;
+position: relative;
+text-decoration: none;
+width: 45px;
+z-index: 899;
+cursor: pointer;
+overflow: visible;
+text-indent: 0px;
+}
+/* next, prev 는 용도가 짐작은 가지만 확실치 않음 */
+/* .ibm-ribbon-nav a, a.ibm-ribbon-next, a.ibm-ribbon-prev {
+font-size: 0px;
+text-indent: -100%;
+_text-indent: -9999px;
+overflow: hidden;
+margin-top: 10px;
+_overflow: visible;
+color: transparent;
+} */
+.ibm-ribbon-nav a {
+background: url(/teamP/cooperation/i/v17/icons/scroll_nav_sprite.gif) 0 -200px no-repeat;
+display: inline-block;
+width: 8px;
+height: 8px;
+margin: 3px;
+_margin-top: 0px;
+text-decoration: none;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-ribbon-view {
+height: 30px;
+width: 45px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-lead-thumb-1 {
+background: url(/teamP/cooperation/images/portal/WIT_IMG/thumbnail01.jpg) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-lead-thumb-2 {
+background: url(/teamP/cooperation/images/portal/WIT_IMG/thumbnail02.jpg) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-lead-thumb-3 {
+background: url(/teamP/cooperation/images/portal/WIT_IMG/thumbnail03.jpg) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-lead-thumb-4 {
+background: url(/teamP/cooperation/images/portal/WIT_IMG/thumbnail04.jpg) no-repeat 0px 0px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a.ibm-active .ibm-pagination-overlay {
+top: -110px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-pagination-overlay {
+display: none;
+background: url(/teamP/cooperation/i/v17/lead/lead_pagination_overlay.png) no-repeat 0 0;
+_background: none;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/teamP/cooperation/i/v17/lead/lead_pagination_overlay.png');
+cursor: pointer;
+position: absolute;
+text-align: left;
+width: 328px;
+height: 113px;
+top: -115px;
+left: -245px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-pagination-overlay span.ibm-lead-thumb-1, .ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-pagination-overlay span.ibm-lead-thumb-2, .ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-pagination-overlay span.ibm-lead-thumb-3, .ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a .ibm-pagination-overlay span.ibm-lead-thumb-4 {
+border: 1px solid #FFFFFF;
+display: block;
+float: left;
+height: 60px;
+margin: 18px 10px 5px 20px;
+width: 60px;
+}
+.ibm-home-page #ibm-leadspace-head .ibm-ribbon-nav a {
+box-shadow: 0 1px 6px rgba(0, 0, 0, .70);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+border: 3px solid rgba(255, 255, 255, .6);
+border: 3px solid #EEE\9;
+display: inline-block;
+font-size: 0px;
+height: 30px;
+margin: 3px 5px;
+outline: 0 none;
+padding: 0;
+position: relative;
+text-decoration: none;
+width: 45px;
+z-index: 899;
+cursor: pointer;
+overflow: visible;
+text-indent: 0px;
+}
+
+
+/* 여기까지 섹션 */
+
+/* 여기부터 푸터 */
+#ibm-footer-module, #ibm-footer {
+min-width: 1030px;
+}
+#ibm-footer-module {
+font-size: .7em;
+border-top: 1px solid #666;
+clear: both;
+width: 100%;
+float: left;
+background: #0F161A;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#474A50', endColorstr='#0F161A');
+background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -webkit-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
+background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -moz-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
+background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -o-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
+background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, -ms-linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
+background: url(/teamP/cooperation/i/v17/footermod-bg.png) no-repeat center top, linear-gradient(top, #474A50, #0F161A) repeat-x 0 0;
+margin-bottom: -1px;
+}
+#ibm-footer-module h2, #ibm-footer-module h3 {
+font-size: 1em;
+color: #FCB712;
+margin: 0px;
+padding: 16px 0 5px;
+}
+#ibm-masthead .ibm-columns .ibm-col-6-1, #ibm-related-content .ibm-columns .ibm-col-6-1, #ibm-footer-module .ibm-columns .ibm-col-6-1 {
+width: 140px;
+_width: 130px;
+}
+#ibm-footer-module ul {
+line-height: 14px;
+list-style: none;
+padding: 0 0 2px 0;
+margin: 0;
+}
+#ibm-footer-module li {
+background: url(/teamP/cooperation/i/v17/bullets.gif) no-repeat -2px 2px;
+color: #666;
+margin: 4px 0;
+padding: 0 0 5px 10px;
+}
+#ibm-footer-module li:hover, #ibm-footer-module li.ibm-active { 
+background-position:-2px -98px;
+color:#FFCF01;
+}
+
+#ibm-footer-module a {
+color: #a8a8a8;
+display: block;
+text-decoration: none;
+text-shadow: 0 0 2px #000;
+}
+#ibm-footer-module a { margin-top:-4px }
+#ibm-footer-module .ibm-stock-module h2,#ibm-footer-module a:hover { color:#FFF }
+#ibm-footer-module a.ibm-active,#ibm-footer-module a:focus { 
+color:#FFF;
+text-decoration:underline 
+}
+#ibm-footer {
+background-color: #0F161A;
+border-top: 1px solid #0F161A;
+border-bottom: 1px solid #404040;
+clear: both;
+color: #CCC;
+height: auto;
+margin: 0;
+padding-top: 15px;
+position: relative;
+}
+#ibm-footer ul {
+font-weight: normal;
+font-size: .85em;
+margin: 0 auto;
+width: 960px;
+height: 1%;
+list-style-type: none;
+padding: 0 0 0 20px;
+}
+.ibm-home-page #ibm-footer ul li:first-child {
+padding-left: 5px;
+}
+#ibm-footer li {
+float: left;
+padding: 0 10px 16px 14px;
+overflow: inherit;
+white-space: nowrap;
+}
+#ibm-footer li a:hover {
+color: #A1A2A7;
+}
+#ibm-footer li a:link, #ibm-footer li a:visited {
+color: #7f7f7f;
+text-decoration: none;
+}
+#ibm-footer li a:focus {
+color:#D0D0D3;
+}
+#ibm-footer:after {
+clear:both;
+content:" ";
+display:block;
+height:0;
+visibility:hidden
+}
+#ibm-my-menu, #ibm-common-menu, #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
+font-size: .8em;
+}
+
+/* 여기까지 푸터 */

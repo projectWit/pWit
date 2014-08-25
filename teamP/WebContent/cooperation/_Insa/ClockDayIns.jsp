@@ -34,8 +34,7 @@
 </head>
 
 <body>
-	<form method="post" id="form1">
-		
+	<form method="post" id="form1" enctype="multipart/form-data">		
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">일일근태작성</div>
@@ -62,7 +61,7 @@
 							<td class="info" style="width: 280px;"></td>
 						</tr>
 						<tr>
-							<th>사원명
+							<th>사원명</th>
 							<td id="tdEmp_Txt" style=""><input name="txtEMP_CODE"
 								type="text" id="txtEMP_CODE" class="rightnone" value = "0001"
 								style="width: 66px;" /><a href="#"><img src="img/Find.gif"
@@ -77,27 +76,35 @@
 
 							<td class="info"></td>
 						</tr>
+						
 						<tr>
-							<th>근태코드
-							<td class="cell_right"><input name="ClkCd"
-								type="text" id="ClkCd" class="rightnone"
-								style="width: 66px;" /><a href="#"
-								><img src="img/Find.gif"onclick="PopUpClkCd();return false;"
-									width="22px" height="19px" alt="검색" id="btnATTEND" /></a> <input
-								name="CodeName" type="text" readonly="readonly"
-								id="CodeName" class="grayleft" style="width: 90px;" /></td>
+							<th>부서코드</th>
+							<td id="tdEmp_Txt" style=""><input name="DepCd"
+								type="text" id="DepCd" class="rightnone" value = "00001"
+								style="width: 66px;" /><a href="#"><img src="img/Find.gif"
+									width="22px" height="19px" alt="검색" id="btnEmp" /></a> <input
+								name="Dep" type="text" readonly="readonly"
+								id="Dep" value = "인사부"class="grayleft" style="width: 90px;" /></td>
+
+							<td id="tdEmp_Lbl" class="cell_right" style="display: none;">
+								<span id="lblEMP_CODE" style="display: none;"></span> <span
+								id="lblEMP_NAME"></span>
+							</td>
+
 							<td class="info"></td>
 						</tr>
 						<tr>
-							<th>근태<span id="lblUnit">(일/시간)</span>
-							<td><input name="txtUsingDay" type="text" id="txtUsingDay"
-								class="default" style="width: 100px; text-align: right;" /> <a
-								href="#" id="btnUsingDay" name="btnUsingDay"
-								onclick="fnDetailInput();" class="link-blue">일별등록</a> <input
-								name="hidUsingDay" type="hidden" id="hidUsingDay" /></td>
-							<td class="info"><div>소수점 1자리까지 입력가능합니다.</div>
-								<div>일자별 근태(일/시간)가 다른 경우 일자별등록 버튼을 이용 일자별 근태(일/시간)를 등록합니다.</div></td>
+							<th>근태코드</th>
+							<td class="cell_right"><input name="ClkCd" value = "01"
+								type="text" id="ClkCd" class="rightnone"
+								style="width: 66px;" /><a href="#"
+								><img src="img/Find.gif"onclick="PopUpClkCd();"
+									width="22px" height="19px" alt="검색" /></a> <input
+								name="CodeName" type="text" readonly="readonly"
+								id="CodeName" class="grayleft" style="width: 90px;" value = "출근입력"/></td>
+							<td class="info"></td>
 						</tr>
+						
 						<tr>
 							<th>적요
 							<td><textarea name="Remark" id="Remark"

@@ -3,17 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>보건산업기술이전센터 &gt; 고객지원 &gt; e-mail문의 페이지입니다.</title>
 <meta http-equiv="content-type"
 	content="application/xhtml+xml; charset=euc-kr" />
 <meta name="author" content="sapling" />
 <meta name="description"
 	content="보건산업기술이전센터, Health Technology Transfer Center" />
 <meta name="keyword" content="Health Technology Transfer Center" />
-<link rel="stylesheet" type="text/css" href="css/common_style.css" />
-<link rel="stylesheet" type="text/css" href="css/sub_style.css" />
-<script type="text/javascript" src="/js/common_scripts.js"></script>
-<script type="text/javascript" src="/js/sub_scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/common_style.css" />
+<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/sub_style.css" />
 <script type="text/javascript">
 	main = 5;
 	sub = 5;

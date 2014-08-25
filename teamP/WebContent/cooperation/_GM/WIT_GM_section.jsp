@@ -5,20 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GM 체육관리 프로그램</title>
-<link rel="stylesheet" type="text/css" href="css/default.css" />
-<link rel="stylesheet" type="text/css" href="css/bbs.css" />
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/default.css" />
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/bbs.css" />
 <link rel="stylesheet" type="text/css"	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
 
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="css/witCommon.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witCommon.css">
 <style type="text/css">
 
 </style>
 
-<script type="text/javascript" src="script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_GM/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_GM/script/jquery-ui.js"></script>
 <script type="text/javascript">
 
 </script>

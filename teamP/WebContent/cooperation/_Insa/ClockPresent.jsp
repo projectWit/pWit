@@ -35,7 +35,7 @@
 
 		<br />
 		<div class="container H_25px">
-			<p class="float_left">회사명 : (주)가장많이쓰는ERP</p>
+			<p class="float_left">회사명 : (주)WIT</p>
 			<p class="float_right">2014/08/01 ~ 2014/08/07</p>
 		</div>
 
@@ -46,10 +46,7 @@
 				<!-- style="width:750px;"-->
 				<caption>근태현황</caption>
 				<thead>
-					<tr>
-						<th style="width: 84px;"><a href="#" class="th"
-							onclick="fn_SortList('SLIP_DATE');">전표일자<img
-								src="img/arrowBot.gif" id="img_trx" width="11" height="15" /></a></th>
+					<tr>						
 
 						<th style="width: 80px;"><a href="#" class="th"
 							onclick="fn_SortList('EMP_SITE');">부서명<img
@@ -86,8 +83,7 @@
 				<tbody>
 
 					<tr>
-						<td id="rpt_ctl00_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/07-2</a></td>
+						
 
 						<td id="rpt_ctl00_td_SiteNm" class="left">경영지원팀</td>
 
@@ -109,8 +105,7 @@
 					</tr>
 
 					<tr>
-						<td id="rpt_ctl01_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/07-1</a></td>
+					
 
 						<td id="rpt_ctl01_td_SiteNm" class="left">영업팀</td>
 
@@ -132,9 +127,7 @@
 
 					</tr>
 
-					<tr>
-						<td id="rpt_ctl02_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/05-1</a></td>
+					<tr>						
 
 						<td id="rpt_ctl02_td_SiteNm" class="left">경영지원팀</td>
 
@@ -156,8 +149,7 @@
 					</tr>
 
 					<tr>
-						<td id="rpt_ctl03_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/03-1</a></td>
+						
 
 						<td id="rpt_ctl03_td_SiteNm" class="left">경영지원팀</td>
 
@@ -179,8 +171,7 @@
 					</tr>
 
 					<tr>
-						<td id="rpt_ctl04_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/02-1</a></td>
+					
 
 						<td id="rpt_ctl04_td_SiteNm" class="left">경영지원팀</td>
 
@@ -202,9 +193,7 @@
 					</tr>
 
 					<tr>
-						<td id="rpt_ctl05_td_TrxDate" class="left"><a href='#'
-							class='list_link'>2014/08/01-1</a></td>
-
+						
 						<td id="rpt_ctl05_td_SiteNm" class="left">경영지원팀</td>
 
 						<td id="rpt_ctl05_td_JobNm" class="left">사원</td>

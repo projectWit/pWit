@@ -131,181 +131,181 @@ a:link {
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>30</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 수업준비좀....</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 수업준비좀....</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>강성조</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_standby.gif"/> </td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_standby.gif"/> </td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>29</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 항목을 늘려줘..</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 항목을 늘려줘..</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>조용근</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_standby.gif"/> </td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_standby.gif"/> </td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>28</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>강성조</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>27</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"><img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"><img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>26</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>25</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>24</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 확인부탁드립니다</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>23</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 직원 할인 문의드립니다</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 직원 할인 문의드립니다</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>22</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 아...이건 뭔가...</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 아...이건 뭔가...</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>21</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 휴관일 명시된게 맞나요?</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 휴관일 명시된게 맞나요?</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>20</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 그런거임?</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 그런거임?</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>19</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 헐 대박...</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 헐 대박...</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>18</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 이 강사님 다음 수업은 언제인가요?</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 이 강사님 다음 수업은 언제인가요?</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>17</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 강좌 분위기를 흐리는 수강생이 있습니다.</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[강좌] 강좌 분위기를 흐리는 수강생이 있습니다.</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>16</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 정수기 사용 문의</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 정수기 사용 문의</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>15</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 에어컨 이용질의</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[대관] 에어컨 이용질의</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>14</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head2.jpg"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 행사대관도 가능한가요?</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head2.jpg"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 행사대관도 가능한가요?</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				
 				<tr class="bl_evenline">
 					<td class='bl_list bl_no'>13</td>
-					<td class='bl_list bl_icon'><img src='img/question.gif' border=0></a></td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="img/board_head2.jpg"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 이용방법</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head2.jpg"  style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >[문의] 이용방법</a>&nbsp;&nbsp; </td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>손님</div></td>
 					
-					<td class='bl_list bl_hits'><img src="img/ico_complete.gif" /></td>
+					<td class='bl_list bl_hits'><img src="/teamP/cooperation/_GM/img/ico_complete.gif" /></td>
 				</tr>
 				 
 				<!-- LIST REPEAT END -->
@@ -322,7 +322,7 @@ a:link {
 				<tr>
 					<td id='bl_pages'> 
 						
-						 <span class="bl_curpage bl_pagetext">1</span> <span class="bl_pagetext"><a href="board.html?code=pippin1_board1&page=2">2</a></span>
+						 <span class="bl_curpage bl_pagetext">1</span> <span class="bl_pagetext"><a href="#">2</a></span>
 						
 						 </td>
 					<td id='bl_linkbutton'>   </td>

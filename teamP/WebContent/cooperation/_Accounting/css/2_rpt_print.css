@@ -192,7 +192,7 @@ table.p_list {
 
 .p_td {
 	font-size: 11px;
-	text-align: left;
+	text-align: center;
 	line-height: 14px;
 	padding: 2px 0px 2px 2px;
 	/*word-break:break-all;*/

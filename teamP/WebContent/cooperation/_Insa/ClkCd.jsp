@@ -13,7 +13,9 @@
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
 <link type="text/css" rel="stylesheet" href="css/layout.css" />
-
+<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="../script/jquery-ui.js"></script>
+<script type="text/javascript" src="../script/calendar.js"></script>
 <link type="text/css" rel="stylesheet" href="css/table.css" />
 <link type="text/css" rel="stylesheet" href="css/menu.css" />
 <link type="text/css" rel="stylesheet" href="css/print.css" />
@@ -23,6 +25,12 @@
 <link type="text/css" rel="stylesheet" href="css/tax.css" />
 <script type="text/javascript">
 	function Close() {
+		window.close();
+	};
+
+	function fnLink(no, str) {
+		window.opener.form1.ClkCd.value = no;
+		window.opener.form1.CodeName.value = str;
 		window.close();
 	};
 </script>
@@ -47,96 +55,32 @@
 				<thead>
 					<tr>
 
-						<th><a href="#" onclick="fn_SortList('ATTEND_CD');">근태코드<img
-								id="img_num" src="img/arrowBot.gif" width="11" height="15" /></a></th>
-						<th><a href="#" onclick="fn_SortList('ATTEND_DES')">근태코드명<img
-								id="img_name" src="img/arrowBot.gif" width="11" height="15" /></a></th>
+						<th><a href="#">근태코드<img id="img_num"
+								src="img/arrowBot.gif" width="11" height="15" /></a></th>
+						<th><a href="#">근태코드명<img id="img_name"
+								src="img/arrowBot.gif" width="11" height="15" /></a></th>
 						<th style="display: none;">휴가코드</th>
 					</tr>
 				</thead>
 				<tbody>
-
-					<tr id="rpt_ctl00_trRpt">
-						<td id="rpt_ctl00_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10000|2013년 연차" /></td>
-						<td><a
-							href="javascript:fnLink('10000|2013년 연차|0|10000|2013년 연차|0|2013-01-01|2013-12-31|1');"
-							class="list_link">10000</a></td>
-						<td><a
-							href="javascript:fnLink('10000|2013년 연차|0|10000|2013년 연차|0|2013-01-01|2013-12-31|1');"
-							class="list_link">2013년 연차</a></td>
-						<td style="display: none;">0</td>
+				<tr id="rpt_ctl00_trRpt">						
+						<td><a onclick="fnLink('01','출근입력')" class="list_link">01</a></td>
+						<td><a onclick="fnLink('01','출근입력')" class="list_link">출근입력</a></td>
+					</tr>
+					
+					<tr id="rpt_ctl01_trRpt">						
+						<td><a onclick="fnLink('02','퇴근입력')" class="list_link">02</a></td>
+						<td><a onclick="fnLink('02','퇴근입력')" class="list_link">퇴근입력</a></td>
 					</tr>
 
-					<tr id="rpt_ctl01_trRpt">
-						<td id="rpt_ctl01_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="20000|2014년 연차" /></td>
-						<td><a
-							href="javascript:fnLink('20000|2014년 연차|0|20000|2014년 연차|0|2014-01-01|2014-12-31|1');"
-							class="list_link">20000</a></td>
-						<td><a
-							href="javascript:fnLink('20000|2014년 연차|0|20000|2014년 연차|0|2014-01-01|2014-12-31|1');"
-							class="list_link">2014년 연차</a></td>
-						<td style="display: none;">0</td>
+					<tr id="rpt_ctl02_trRpt">						
+						<td><a onclick="fnLink('03','출장근무')" class="list_link">03</a></td>
+						<td><a onclick="fnLink('03','출장근무')" class="list_link">출장근무</a></td>
 					</tr>
-
-					<tr id="rpt_ctl02_trRpt">
-						<td id="rpt_ctl02_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10002|경조사휴가" /></td>
-						<td><a href="javascript:fnLink('10002|경조사휴가|1|||0|||1');"
-							class="list_link">10002</a></td>
-						<td><a href="javascript:fnLink('10002|경조사휴가|1|||0|||1');"
-							class="list_link">경조사휴가</a></td>
-						<td style="display: none;">1</td>
-					</tr>
-
 					<tr id="rpt_ctl03_trRpt">
-						<td id="rpt_ctl03_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10003|시간외수당" /></td>
-						<td><a href="javascript:fnLink('10003|시간외수당|1|||1|||1');"
-							class="list_link">10003</a></td>
-						<td><a href="javascript:fnLink('10003|시간외수당|1|||1|||1');"
-							class="list_link">시간외근무</a></td>
-						<td style="display: none;">1</td>
+						<td><a onclick="fnLink('04','시간외근무')" class="list_link">04</a></td>
+						<td><a onclick="fnLink('04','시간와근무')" class="list_link">시간외근무</a></td>
 					</tr>
-
-					<tr id="rpt_ctl04_trRpt">
-						<td id="rpt_ctl04_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10001|예비군/민방위훈련" /></td>
-						<td><a href="javascript:fnLink('10001|예비군/민방위훈련|1|||0|||1');"
-							class="list_link">10001</a></td>
-						<td><a href="javascript:fnLink('10001|예비군/민방위훈련|1|||0|||1');"
-							class="list_link">예비군/민방위훈련</a></td>
-						<td style="display: none;">1</td>
-					</tr>
-					
-					<tr id="rpt_ctl05_trRpt">
-						<td id="rpt_ctl05_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							 value="출근입력" /></td>
-						<td><a href="#"
-							class="list_link">0001</a></td>
-						<td><a href="#"
-							class="list_link">출근입력</a></td>
-						<td style="display: none;">1</td>
-					</tr>
-					
-					<tr id="rpt_ctl06_trRpt">
-						<td id="rpt_ctl06_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							 value="출장근무입력" /></td>
-						<td><a href="#"
-							class="list_link">0002</a></td>
-						<td><a href="#"
-							class="list_link">출장근무입력</a></td>
-						<td style="display: none;">1</td>
-					</tr>
-
 
 				</tbody>
 			</table>

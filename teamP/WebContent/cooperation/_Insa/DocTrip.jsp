@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css" />
 <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
 <script type="text/javascript">
-	calendarIDs = [ 'PreDt','DtOut', 'FromDt','ToDt']; // 달력이 추가될 태그의 id
+	calendarIDs = [ 'WriteDt','PreDt','DtOut', 'FromDt','ToDt']; // 달력이 추가될 태그의 id
 	$(document).ready(function(e) {
 		   findInput();
 		});
@@ -237,6 +237,13 @@
 					<col width="10%" />
 					<col width="8%" />
 					<col width="14%" />
+						
+						
+					<tr>
+						<th><label for="ddlYear"> 작 성 일 자</label></th>
+						<td colspan="4"><input name="WriteDt" type="text" id="WriteDt"
+							size="24" maxlength="20" value="" class="default" /></td>
+					</tr>
 									
 					<tr>
 						<th rowspan="2">인적사항</th>
@@ -255,14 +262,6 @@
 						<th><label for="ddlYear"> 일 자</label></th>
 						<td colspan="4"><input name="PreDt" type="text" id="PreDt"
 							size="24" maxlength="20" value="" class="default" /></td>
-					</tr>
-
-					<tr>
-						<th>문서제목</th>
-						<td colspan="4"><input name="txtTitle" type="text"
-							id="txtTitle" class="default" style="width: 76%"
-							value="8월 출장신청서입니다." /></td>
-
 					</tr>
 					
 					<tr>

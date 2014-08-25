@@ -8,14 +8,7 @@
 <jsp:include page="WIT_OPENEX_main_header.jsp"></jsp:include>
 </head>
 <body>
-	<div style="margin-left: auto; margin-right: auto; width: 1000px;">
-		<table align="center">
-			<tr>
-				<td><a href="WIT_OPENEX_list2.jsp">게시판으로 이동</a></td>
-			</tr>
-		</table>
-	</div>
-	<jsp:include page="WIT_OPENEX_list_section1.jsp"></jsp:include>
+	<jsp:include page="WIT_OPENEX_list_section.jsp"></jsp:include>
 </body>
 <jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
 </html>

@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* 경기문화재단 css LSA ckb@i-biznet.com */
+
+/* 공통 */
+dl.dlTxt {width:100%; border-top:1px solid #cfcfcf; overflow:hidden; padding:10px 0 0; margin:30px 0 0; display:inline-block;}
+dl.dlTxt dt {float:left; line-height:11px; vertical-align:middle;}
+dl.dlTxt dd {float:left; padding:0 10px 0 4px; margin:0 10px 0 0; line-height:11px; vertical-align:middle; color:#666; font-size:11px; background:url('/images/common/bg/bg_line01.gif') no-repeat right 1px;}
+dl.dlTxt dd.last {background:none;}
+
+
+/* 대관 이용안내 */
+.hall_guide01 {width:680px; background:url('/images/common/bg/bg_tab_line03.gif') repeat-x left top; position:relative;}
+.hall_guide01 h5 {display:block; padding:20px 0; clear:both;}
+.hall_guide01 h5.tit02 {padding:30px 0 10px;}
+.hall_guide01 h5.tit03 {padding:30px 0 10px;}
+.hall_guide01 h5.tit04 {padding:10px 0 10px;}
+.hall_guide01 span.tab01 {position:absolute; left:0; top:55px; z-index:1;}
+.hall_guide01 span.tab02 {left:227px; top:55px; position:absolute; z-index:1;}
+.hall_guide01 span.tab03 {left:454px; top:55px; position:absolute;}
+.hall_guide01 .dasan {position:relative; width:100%; padding:52px 0 0;}
+.hall_guide01 .dasan span {float:left; width:230px; line-height:11px; font-size:0;}
+.hall_guide01 .dasan span img {font-size:1em ! important;}
+.hall_guide01 .dasan span a.aDown {float:left; width:109px; height:22px; margin:10px 0 0 2px; background:url('/images/intro/btn_doDown.gif') no-repeat left top;}
+.hall_guide01 .dasan span a.aDown:hover {background-position:-109px top;}
+.hall_guide01 .dasan .sComm_data02 {width:450px; float:left;}
+.hall_guide01 .dasan .sComm_data02 table.sComm_data tbody th {padding:7px 0 6px;}
+.hall_guide01 .dasan .sComm_data02 table.sComm_data tbody td {border-right:none; padding:7px 0 6px 12px;}
+.hall_guide01 .dasan .sComm_data02 table.sComm_data tbody td ul {margin:0;}
+.hall_guide01 .dasan .sComm_data02 table.sComm_data tbody td ul li {display:block; text-align:left; padding:0 0 0 10px; width:auto; line-height:17px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px;}
+.hall_guide01 ol {display:block; border:1px solid #d6d8d9; background:#f4f3f9; padding:15px 0 8px 15px;}
+.hall_guide01 ol li {line-height:11px; display:block; padding:0 0 5px;}
+.hall_guide01 dl {display:block; color:#666; font-size:1em; margin:0 0 20px;}
+.hall_guide01 dl dt {display:block; font-weight:bold; padding:0 0 4px;}
+.hall_guide01 dl dd {display:block; padding:0 0 1px 8px; line-height:17px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px;}
+.hall_guide01 ul {display:block; margin:0 0 5px;}
+.hall_guide01 ul.ulList {margin:0 0 15px;}
+.hall_guide01 ul li {line-height:17px; display:inline-block; width:99%; padding:0 0 1px 8px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px;}
+.hall_guide01 ul li.purple {color:#7361a9;}
+.hall_guide01 .sComm_data02 table.sComm_data thead th {color:#654ca8;}
+.hall_guide01 .sComm_data02 table.sComm_data tbody td {padding:9px 0 8px; text-align:center;}
+
+/* 대관행사일정 */
+.hall_plan {width:680px; background:url('/images/common/bg/bg_tab_line03.gif') repeat-x left top; position:relative; padding:18px 0 0;}
+.hall_plan p {display:block; line-height:11px; vertical-align:middle; text-align:center;}
+.hall_plan p img {vertical-align:middle;}
+.hall_plan p span {color:#c20000; font-size:1em; padding:0 15px; position:relative; top:2px; line-height:11px; vertical-align:middle; font-weight:bold;}
+.hall_plan .weekly {position:relative; width:680px; height:41px; margin:10px 0 0; background:url('/images/common/bg/bg_search_box.gif') no-repeat left top;}
+.hall_plan .weekly a.left {float:left; padding:15px 8px 0 10px;}
+.hall_plan .weekly a.right {float:right; padding:15px 10px 0 0;}
+.hall_plan .weekly ul {float:left; font-size:0.95em; color:#666; padding:14px 0 0;}
+.hall_plan .weekly ul li {float:left; line-height:11px; vertical-align:middle; padding:0 12px 0 0;}
+.hall_plan .weekly ul li.last {padding:0;}
+.hall_plan .weekly ul li a {color:#666;}
+.hall_plan .weekly ul li a:hover {color:#7361a9; font-weight:bold; letter-spacing:-1px;}
+.hall_plan .weekly ul li a.on {color:#7361a9; font-weight:bold; letter-spacing:-1px;}
+.hall_plan .sComm_list02 table.sComm_list tbody td {font-size:1em;}
+.hall_plan .sComm_list02 table.sComm_list tbody td.eng {font-size:0.95em;}
+
+/* 온라인대관신청 리스트 */
+.hall_joinList {width:680px; padding:22px 0 0; background:url('/images/common/bg/bg_tab_line03.gif') repeat-x left top; position:relative;}
+.hall_joinList .jList {position:relative; overflow:hidden; width:680px; height:63px; margin:0 0 10px; background:url('/images/common/bg/bg_cnts02.gif') no-repeat left top;}
+.hall_joinList .jList span {float:left; color:#666; font-size:1em; padding:14px 0 0 15px; line-height:17px;}
+.hall_joinList .jList a.down {float:right; margin:7px 13px 0 0; width:196px; height:20px; background:url('/images/intro/btn_down.gif') no-repeat left top;}
+.hall_joinList .jList a.down01 {float:right; margin:7px 13px 0 0; width:196px; height:20px; background:url('/images/intro/btn_down1.gif') no-repeat left top;}
+.hall_joinList .jList a.down:hover {background-position:-196px top;}
+.hall_joinList .sComm_list02 table.sComm_list tbody td {font-size:1em;}
+.hall_joinList .sComm_list02 table.sComm_list tbody td.eng {font-size:0.95em;}
+.hall_joinList a.aHall {width:107px; height:27px; background:url('/images/intro/btn_application02.gif') no-repeat left top; float:left;}
+.hall_joinList a.aHall:hover {background-position:left -27px;}
+a.aCan {width:84px; height:27px; background:url('img/rent_cancel.gif') no-repeat left top; display:inline-block;}
+a.aCan:hover {background-position:left -27px;}
+
+/* 온라인대관신청 작성 */
+.hall_join {width:800px; padding:22px 0 0; background:url('/images/common/bg/bg_tab_line03.gif') repeat-x left top; position:relative;}
+.hall_join .jList {position:relative; overflow:hidden; width:680px; height:63px; margin:0 0 18px; background:url('/images/common/bg/bg_cnts02.gif') no-repeat left top;}
+.hall_join .jList span {float:left; color:#666; font-size:1em; padding:14px 0 0 15px; line-height:17px;}
+.hall_join .jList a.down {float:right; margin:7px 13px 0 0; width:196px; height:20px; background:url('/images/intro/btn_down.gif') no-repeat left top;}
+.hall_join .jList a.down01 {float:right; margin:7px 13px 0 0; width:196px; height:20px; background:url('/images/intro/btn_down1.gif') no-repeat left top;}
+.hall_join .jList a.down:hover {background-position:-196px top;}
+.hall_join h5 {display:block; color:#555; padding:0 0 10px; line-height:11px; vertical-align:middle;}
+.hall_join ul {padding:0 0 30px; position:relative;}
+.hall_join ul li {line-height:17px; vertical-align:middle; color:#666; font-size:1em; padding:0 0 2px 8px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px;}
+.hall_join ul li span.impor {color:#c20000;}
+.hall_join ul li.red {color:#c20000; background:none; padding:0 0 7px;}
+.hall_join ul li.red a {position:absolute; top:-3px; left:300px;}
+.hall_join ul li.choice {background:none; padding:0;}
+.hall_join table.sComm_write01 th {vertical-align:middle;}
+.hall_join table.sComm_write01 td select {color:#666;}
+.hall_join table.sComm_write01 td p.pTxt01 {padding:5px 0 0; color:#c20000; font-size:0.95em;}
+.hall_join table.sComm_write01 td p.pTxt02 {clear:both; color:#666; font-size:0.95em; display:block; padding:0 0 2px;}
+.hall_join table.sComm_write01 td p.pTxt02 span {color:#7361a9;}
+.hall_join table.sComm_write01 td p.pTxt03 {color:#666; font-size:0.95em; display:block; padding:7px 0 0;}
+.hall_join table.sComm_write01 td p.pTxt03 img {vertical-align:middle; margin:0 0 0 10px;}
+.hall_join table.sComm_write01 td span.sTxt {font-size:1.0em; padding:1px 5px 0 0;}
+.hall_join table.sComm_write01 td p.pBox01 {padding:5px 0 0;}
+.hall_join table.sComm_write01 td dl {float:left; width:238px; color:#666; font-size:12px; padding:3px 38px 20px 0;}
+.hall_join table.sComm_write01 td dl dt {font-weight:bold; padding:0 0 4px; width:100%;}
+.hall_join table.sComm_write01 td dl dd {display:block; width:100%; line-height:15px;}
+.hall_join table.sComm_write01 td ul {margin:0; padding:0;}
+.hall_join table.sComm_write01 td ul li {background:none; padding:0 0 0 20px;}
+.hall_join table.sComm_write01 td input.file {border:1px solid #e5e5e5; background:#f9f9f9;}
+.hall_join .fRight01 {margin:0 0 5px ! important;}
+
+/* 운영기관대관안내 */
+.bigHall_guide {width:680px; padding:22px 0 0; margin:0 0 20px; background:url('/images/common/bg/bg_tab_line03.gif') repeat-x left top; position:relative;}
+.bigHall_guide h5 {display:block; padding:0 0 30px;}
+.bigHall_guide h6 {display:block; padding:0 0 10px;}
+.bigHall_guide ul.ulImg {display:inline-block; width:100%; margin:0 0 25px;;}
+.bigHall_guide ul.ulImg li {float:left; line-height:11px; padding:0 0 5px; width:auto;}
+.bigHall_guide .sComm_data02 table.sComm_data thead th {color:#654ca8;}
+.bigHall_guide .sComm_data02 table.sComm_data tbody td {padding:9px 0 8px; text-align:center; font-size:1em;}
+.bigHall_guide .sComm_data02 table.sComm_data tbody td.last {padding:9px 0 8px 20px; text-align:left;font-size:0.95em;letter-spacing:-1px;}
+.bigHall_guide span {display:block; padding:10px 0 30px; color:#666; font-size:0.95em;}
+.bigHall_guide span.sTxt01 {display:block; padding:10px 0 0; color:#666; font-size:0.95em;}
+.bigHall_guide span.sTxt02 {display:block; padding:0 0 30px; color:#666; font-size:0.95em;}
+.bigHall_guide ul li {display:inline-block; width:99%; line-height:17px; padding:0 0 2px 8px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px; color:#666; font-size:1em;}
+.bigHall_guide p {border-bottom:1px solid #e7e7e7; padding:5px 0 30px; margin:0 0 30px;}
+
+/* 찾아오시는길 */
+.map {width:100%; position:relative; border-top:1px solid #ababab;}
+.map h4 {display:block; padding:20px 0 10px; position:relative;}
+.map h4 span.sMap {position:absolute; left:136px; top:21px;}
+.map ul.ulMap {display:inline-block; width:100%; border:1px solid #ddd; background:#f4f3f8; padding:0 0 20px;}
+.map ul.ulMap li {float:left; line-height:11px; padding:0; margin:0; width:auto; background:none;}
+.map ul.ulMap li a.map01 {float:left; margin:20px 0 0 20px; width:205px; height:55px; background:url('/images/intro/btn_map01.gif') no-repeat left top;}
+.map ul.ulMap li a.map01:hover {background-position:left -55px;}
+.map ul.ulMap li a.map02 {float:left; margin:20px 0 0 12px; width:205px; height:55px; background:url('/images/intro/btn_map02.gif') no-repeat left top;}
+.map ul.ulMap li a.map02:hover {background-position:left -55px;}
+.map ul.ulMap li a.map03 {float:left; margin:20px 0 0 12px; width:205px; height:55px; background:url('/images/intro/btn_map03.gif') no-repeat left top;}
+.map ul.ulMap li a.map03:hover {background-position:left -55px;}
+.map ul.ulMap li a.map04 {float:left; margin:12px 0 0 20px; width:205px; height:55px; background:url('/images/intro/btn_map04.gif') no-repeat left top;}
+.map ul.ulMap li a.map04:hover {background-position:left -55px;}
+.map ul.ulMap li a.map05 {float:left; margin:12px 0 0 12px; width:205px; height:55px; background:url('/images/intro/btn_map05.gif') no-repeat left top;}
+.map ul.ulMap li a.map05:hover {background-position:left -55px;}
+.map ul.ulMap li a.map06 {float:left; margin:12px 0 0 12px; width:205px; height:55px; background:url('/images/intro/btn_map06.gif') no-repeat left top;}
+.map ul.ulMap li a.map06:hover {background-position:left -55px;}
+.map .map_line01 {width:100%; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; margin:20px 0 0;}
+.map .map_line02 {width:100%; border-bottom:1px solid #e0e0e0; margin:0;}
+.map .map_line03 {width:100%; border-top:none; border-bottom:1px solid #cfcfcf; margin:0;}
+.map ul {display:block; padding:0 0 5px;}
+.map ul li {display:inline-block; width:99%; line-height:17px; padding:0 0 2px 8px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px; color:#666; font-size:1em;}
+.map p {margin:0 0 17px;}
+.map dl {margin:0 0 20px;}
+.map dl dt {display:block; font-weight:bold; color:#383838; font-size:1em; padding:0 0 7px 8px; background:url('/images/common/bul/bul_gray04.gif') no-repeat left 7px;}
+.map dl dd {display:block; color:#666; font-size:1em; padding:0 0 0 9px; line-height:17px;}
+.map dl dd p {padding:0 0 0 10px;}
+.map p.pTxt01 {color:#383838; font-size:1em; padding:0; font-weight:bold;}
+.map p.pTxt01 span.fRed {color:#c20000; padding:0; margin:0; display:inline;}
+.map p.pTxt02 {color:#666; font-size:1em; padding:5px 0 20px 17px;}
+.map p.pTxt02 span.fRed {color:#c20000; padding:0; margin:0; display:inline; font-weight:bold;}
+.map ul.banner {display:inline-block; width:97%; border:1px solid #ddd; background:#f4f3f8; padding:20px 0 14px 17px; margin:0 0 22px;}
+.map ul.banner li {float:left; line-height:11px; padding:0 6px 6px 0; margin:0; width:auto; background:none;}
+.marT0 {margin:0 ! important; border-top:none ! important;}
+
+/* 엄기영입니다 */
+.ceo {width:100%; position:relative; border-top:1px solid #ababab;}
+.ceo span {display:block; padding:30px 0;}
+.ceo ol {padding:0 0 10px; display:inline-block; width:100%;}
+.ceo ol li {display:block; line-height:11px; margin:0 0 10px; border:1px solid #d5d5d5; padding:20px 0 20px 20px;}

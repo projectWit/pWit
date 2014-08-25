@@ -31,23 +31,7 @@
 </head>
 
 <body>
-	<form method="post" action="EPD020M.aspx?ec_req_sid=00HORJh_mxiN"
-		id="form1">
-		<div class="aspNetHidden">
-			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
-				value="" /> <input type="hidden" name="__VIEWSTATE"
-				id="__VIEWSTATE"
-				value="/wEPDwULLTE4MDYxODI0NjcPZBYCAgEPZBYUZg8WAh4Fc3R5bGUFBWJsb2NrFgICAQ8PFhYeClllYXJTdHJpbmcFBDIwMTQeB0N1bHR1cmUFBWtvLUtSHgxudW1ZZWFyU3RhcnQC3Q8eCU1vbnRoTmFtZQUGc2VsVG1tHglEYXlTdHJpbmcFAjA2HgpudW1ZZWFyRW5kAt8PHghZZWFyWmVyb2geC01vbnRoU3RyaW5nBQIwOB4IWWVhck5hbWUFBnNlbFR5eR4HRGF5TmFtZQUHdHh0VGRheR4JTW9udGhaZXJvaGRkAgIPFgIfAAUFYmxvY2tkAggPDxYWHwEFBDIwMTQfAgUFa28tS1IfAwLdDx8EBQZzZWxTbW0fBQUCMDYfBgLfDx8HaB8IBQIwOB8JBQZzZWxTeXkfCgUHdHh0U2RheR8LaGRkAgkPDxYWHwEFBDIwMTQfAgUFa28tS1IfAwLdDx8EBQZzZWxFbW0fBQUCMDYfBgLfDx8HaB8IBQIwOB8JBQZzZWxFeXkfCgUHdHh0RWRheR8LaGRkAgoPFgIeCGRpc2FibGVkBQhkaXNhYmxlZGQCCw8WAh8MBQhkaXNhYmxlZGQCDA8PFgIeBFRleHQFDCjsnbwv7Iuc6rCEKWRkAg4PFgIeBWNsYXNzBQlsaW5rLWJsdWVkAhEPZBYCAgEPFgIeBXZhbHVlBQrsoIDsnqUoRjgpZAISD2QWAgIBDxYCHw8FBuyCreygnGRk" />
-		</div>
-
-
-
-		<div class="aspNetHidden">
-
-			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-				value="/wEWUwKUhq/VBAKkiO2ADQKkiPHlBAKkiMXeAwKTt+iTAgKTt+yTAgKTt9CTAgKTt9STAgKTt9iTAgKTt9yTAgKTt8CTAgKTt4SQAgKTt4iQAgKMt+STAgKMt+iTAgKMt+yTAgLu/vbpCwKixuDDDwKYxsiDAQKEtrYrApLEs5kJAoTdndYHAvKPgpUDAs3NjckPAs3NkawGAs3NpZcBAuq2vPYNAuq2uPYNAuq2hPYNAuq2gPYNAuq2jPYNAuq2iPYNAuq2lPYNAuq20PUNAuq23PUNAvW2sPYNAvW2vPYNAvW2uPYNAsjsytIIAvrmi/YGAvrml5MPAvrmo6gIAsXGl+gHAsXGk+gHAsXGr+gHAsXGq+gHAsXGp+gHAsXGo+gHAsXGv+gHAsXG++sHAsXG9+sHAtrGm+gHAtrGl+gHAtrGk+gHAqSytvIEAvKbxOICAqvfvIQFAui1kvMKAvP1tuQCApm8z+YEApy3uJIMAqPt7YEIAsDZ44AHAqmLicEFAr3YytsJAu6wrqYEAojkrKoLAqTPmIcGAsLfoMoCAsLfjLIJAsLfpOUEAsLf5J0PArb+knMC5rG87AYC0rHMpg4CgMyj7g8C7MuzqAcCnbqo6QoCt9SP6wMCxq7fSQLSrsdJApGRiJsNAob2p7oM" />
-		</div>
+	<form method="post" id="form1">
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">일일근태작성</div>

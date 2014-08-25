@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
-<base target="_self" />    
+<base target="_self" />
 
-    <title>
-	우편번호검색
-</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="robots" content="noindex,nofollow" />
+<title>우편번호검색</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="robots" content="noindex,nofollow" />
 
-<link type="text/css" rel="stylesheet" href="/ECMain/ECount.Common/Css2/2_base.css?2014072301" />
-    
-    <link type="text/css" rel="stylesheet" href="/ECMain/ECount.Common/Css2/2_layout.css?2014072301" />
-    
+<link type="text/css" rel="stylesheet"
+	href="/ECMain/ECount.Common/Css2/2_base.css?2014072301" />
+
+<link type="text/css" rel="stylesheet"
+	href="/ECMain/ECount.Common/Css2/2_layout.css?2014072301" />
+
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
 <link type="text/css" rel="stylesheet" href="css/layout.css" />
@@ -25,11 +27,14 @@
 <link type="text/css" rel="stylesheet" href="css/setting.css" />
 <link type="text/css" rel="stylesheet" href="css/window.css" />
 <link type="text/css" rel="stylesheet" href="css/tax.css" />
-    
-    <style type="text/css">
-         html {overflow-x : hidden;overflow-y : auto}
-    </style>
-    <script type="text/javascript" language="javascript">
+
+<style type="text/css">
+html {
+	overflow-x: hidden;
+	overflow-y: auto
+}
+</style>
+<script type="text/javascript" language="javascript">
     
         window.onload = function () {
             if ($("#tb2").get(0).style.display == "")
@@ -3707,17 +3712,20 @@
             return true;
         }
     //
-    </script>    
+    </script>
 </head>
 <body>
-    <form method="post" action="CM004P.aspx?ec_req_sid=00HObBP1cPN9&amp;KeyWord=" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNjcyMjc2Mjg5D2QWAgIDD2QWBgIBDw8WAh4EVGV4dAUG6rKA7IOJZGQCAw8PFgIfAAUG6rKA7IOJZGQCBg8PFgIfAAUP64KY66i47KeA7KO87IaMZGRkO754LfGrtl9l1GY1qeYGim+b0ho=" />
-</div>
+	<form method="post"
+		action="CM004P.aspx?ec_req_sid=00HObBP1cPN9&amp;KeyWord=" id="form1">
+		<div class="aspNetHidden">
+			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
+				value="" /> <input type="hidden" name="__VIEWSTATE"
+				id="__VIEWSTATE"
+				value="/wEPDwUJNjcyMjc2Mjg5D2QWAgIDD2QWBgIBDw8WAh4EVGV4dAUG6rKA7IOJZGQCAw8PFgIfAAUG6rKA7IOJZGQCBg8PFgIfAAUP64KY66i47KeA7KO87IaMZGRkO754LfGrtl9l1GY1qeYGim+b0ho=" />
+		</div>
 
-<script type="text/javascript">
+		<script type="text/javascript">
 //<![CDATA[
 var theForm = document.forms['form1'];
 if (!theForm) {
@@ -3734,171 +3742,185 @@ function __doPostBack(eventTarget, eventArgument) {
 </script>
 
 
-<div class="aspNetHidden">
+		<div class="aspNetHidden">
 
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAKA9Pq+DQKv1ordAQKazqC+CQLEhISFCwKln/PuCgL8v/mQBwLSzZ7uBALF8PLkAc5aN5mNclbxpqhWEKhV7IxwW23i" />
-</div>
-        <div style="width:440px;"> 
-            <div id="wrap_pop">
-            <!-- 타이틀-->
-                <div class="new-title">
-                    <div class="title-leftarea">우편번호검색</div>		
-                </div><!--endof [titlebar] 타이틀바--> 
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+				value="/wEWCAKA9Pq+DQKv1ordAQKazqC+CQLEhISFCwKln/PuCgL8v/mQBwLSzZ7uBALF8PLkAc5aN5mNclbxpqhWEKhV7IxwW23i" />
+		</div>
+		<div style="width: 440px;">
+			<div id="wrap_pop">
+				<!-- 타이틀-->
+				<div class="new-title">
+					<div class="title-leftarea">우편번호검색</div>
+				</div>
+				<!--endof [titlebar] 타이틀바-->
 
-                <div id="contents">
-			        <div class="nav_tab">
-					    <ul>
-						    <li id="Tab1" ><a href="javascript:fnTabClick('work1'); " >도로명주소</a></li>
-						
-                            <li id="Tab2" ><a href="javascript:fnTabClick('work2');" >지번 주소</a></li>
-                        
-					    </ul>
-			        </div>
+				<div id="contents">
+					<div class="nav_tab">
+						<ul>
+							<li id="Tab1"><a href="javascript:fnTabClick('work1'); ">도로명주소</a></li>
 
-	                <div id="work1"> 
-			            <table class="list H_10px" summary="등록된 우편번호를 검색하는 DIV팝업창">
-			                <thead>
-					            <tr>
-							        <th>시도, 시군구를 선택한후 도로명 혹은 건물번호를 입력 바랍니다.</th>
-					            </tr>
-			                </thead>
-			                <tbody>
-					            <tr class="gray_bg"> 
-							        <td class="center">
-								        <select id="ddlSiDo" name="ddlSiDo" onchange="fnSelectGugun()">
-									        <option value="">시도 선택</option>
-                                        
-                                            <option value ="강원도">강원도</option>
-                                        
-                                            <option value ="경기도">경기도</option>
-                                        
-                                            <option value ="경상남도">경상남도</option>
-                                        
-                                            <option value ="경상북도">경상북도</option>
-                                        
-                                            <option value ="광주광역시">광주광역시</option>
-                                        
-                                            <option value ="대구광역시">대구광역시</option>
-                                        
-                                            <option value ="대전광역시">대전광역시</option>
-                                        
-                                            <option value ="부산광역시">부산광역시</option>
-                                        
-                                            <option value ="서울특별시">서울특별시</option>
-                                        
-                                            <option value ="세종특별자치시">세종특별자치시</option>
-                                        
-                                            <option value ="울산광역시">울산광역시</option>
-                                        
-                                            <option value ="인천광역시">인천광역시</option>
-                                        
-                                            <option value ="전라남도">전라남도</option>
-                                        
-                                            <option value ="전라북도">전라북도</option>
-                                        
-                                            <option value ="제주특별자치도">제주특별자치도</option>
-                                        
-                                            <option value ="충청남도">충청남도</option>
-                                        
-                                            <option value ="충청북도">충청북도</option>
-                                        	
-								        </select>
-								        <select id="ddlGuGun" name="ddlGuGun">
-									        <option value="">시군구선택</option> 
-								        </select>
-								        <input name="txtNameRoad" type="text" id="txtNameRoad" class="default" onfocus="this.select();" />&nbsp;
-								        <input type="submit" name="btnSearchRoad" value="검색" onclick="return searchit2(&#39;work1&#39;);" id="btnSearchRoad" class="btn_searchS" />
-							        </td>
-					            </tr>
-			                </tbody>
-			            </table> 
-	                </div>
+							<li id="Tab2"><a href="javascript:fnTabClick('work2');">지번
+									주소</a></li>
 
-                    <div id="work2"> 
-		                <table class="list H_10px" summary="등록된 우편번호를 검색하는 DIV팝업창">
-		                    <thead>
-				                <tr>
-						            <th>검색할 시,군,구,읍,면,동,리 이름 중 하나를 입력합니다.</th>
-				                </tr>
-		                    </thead>
-		                    <tbody>
-				                <tr> 
-						            <td class="center">
-								            <input name="txtName" type="text" id="txtName" class="default" onfocus="this.select();" />&nbsp;
-								            <input type="submit" name="btnSearch" value="검색" onclick="return searchit2(&#39;work2&#39;);" id="btnSearch" class="btn_searchS" />
-						            </td>
-				                </tr>
-		                    </tbody>
-		                </table><!-- endof 상단검색 테이블  -->
-                    </div>
+						</ul>
+					</div>
 
-                    <p class="H_10px Navy"><strong>지역명 : </strong>데이터를 입력하기 바랍니다.</p>
+					<div id="work1">
+						<table class="list H_10px" summary="등록된 우편번호를 검색하는 DIV팝업창">
+							<thead>
+								<tr>
+									<th>시도, 시군구를 선택한후 도로명 혹은 건물번호를 입력 바랍니다.</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="gray_bg">
+									<td class="center"><select id="ddlSiDo" name="ddlSiDo"
+										onchange="fnSelectGugun()">
+											<option value="">시도 선택</option>
 
-                    <table class="list H_2px">
-                        <col width="30%" /><col width="68%" />
-			            <thead>
-					        <tr>
-							    <th>우편번호</th>
-							    <th>주소</th>
-					        </tr>
-			            </thead>
-                        <tbody id="tb1">		
-                            
-                        
-                            <tr>
-                                <td class="nodata" colspan="2" ><span id="nodata"></span></td>
-                            </tr>		
-                        
-                        </tbody>
-                        <tbody id="tb2" style="display:none">
-                            <tr>
-                                <td class="center">
-                                    <input name="txtZipCode" type="text" readonly="readonly" id="txtZipCode" class="defaultgray_none center" style="background:none" />
-                                </td>
-                                <td id="tdAddr"></td>
-                            </tr>
-                            <tr>
-                                <td class="center">
-                                    <span id="lblDetalAddr">나머지주소</span>
-                                </td>
-                                <td>
-                                    <input name="txtDetailAddr" type="text" id="txtDetailAddr" class="default" style="width:90%;" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div><!--endof contents-->
-                
-                <br /><br /><br /><br />
-                
-                <div class="footerBG_pop">
-                    <span id="lblRegist" class="btn blue" style="display:none"><input type="button"  value="등록" id="btnRegist" name="btnRegist"  onclick="javascript:ReturnValue();" /></span>
-                    <span class="btn gray"><input type="button" value="닫기" id="btnClose" name="btnClose" /></span> 
-                    <p class="btn_right"><label class="btn_txt"  id="updateMsg"></label></p>
-                    <a id="lnkPostBack" href="javascript:__doPostBack(&#39;lnkPostBack&#39;,&#39;&#39;)"></a>     
-                </div><!--endof 하단버튼 단-->
-                
-                <input type="hidden" id="hidZipCode" name="hidZipCode" />
-                <input type="hidden" id="hidAddr" name="hidAddr" />
-                <input type ="hidden" id="hidZipFlag" name="hidZipFlag" value="work2" />
-                <input type ="hidden" id="hidType" name="hidType" />
-                <input type="hidden" id="hidSido" name="hidSido" />
-                <input type="hidden" id="hidGugun" name="hidGugun" />
-                <input type="hidden" id="hidRi" name="hidRi" />
-                <input type="hidden" id="hidRoadCode" name="hidRoadCode" />
-                <input type="hidden" id="hidRoadName" name="hidRoadName" />
-                <input type="hidden" id="hidBasement" name="hidBasement" />
-                <input type="hidden" id="hidBuildingBon" name="hidBuildingBon" />
-                <input type="hidden" id="hidBuildingBu" name="hidBuildingBu" />
-                <input type="hidden" id="hidTabClick" name="hidTabClick" />
-            </div>   
-        </div>    
-    
+											<option value="강원도">강원도</option>
 
-<script type="text/javascript">
+											<option value="경기도">경기도</option>
+
+											<option value="경상남도">경상남도</option>
+
+											<option value="경상북도">경상북도</option>
+
+											<option value="광주광역시">광주광역시</option>
+
+											<option value="대구광역시">대구광역시</option>
+
+											<option value="대전광역시">대전광역시</option>
+
+											<option value="부산광역시">부산광역시</option>
+
+											<option value="서울특별시">서울특별시</option>
+
+											<option value="세종특별자치시">세종특별자치시</option>
+
+											<option value="울산광역시">울산광역시</option>
+
+											<option value="인천광역시">인천광역시</option>
+
+											<option value="전라남도">전라남도</option>
+
+											<option value="전라북도">전라북도</option>
+
+											<option value="제주특별자치도">제주특별자치도</option>
+
+											<option value="충청남도">충청남도</option>
+
+											<option value="충청북도">충청북도</option>
+
+									</select> <select id="ddlGuGun" name="ddlGuGun">
+											<option value="">시군구선택</option>
+									</select> <input name="txtNameRoad" type="text" id="txtNameRoad"
+										class="default" onfocus="this.select();" />&nbsp; <input
+										type="submit" name="btnSearchRoad" value="검색"
+										onclick="return searchit2(&#39;work1&#39;);"
+										id="btnSearchRoad" class="btn_searchS" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div id="work2">
+						<table class="list H_10px" summary="등록된 우편번호를 검색하는 DIV팝업창">
+							<thead>
+								<tr>
+									<th>검색할 시,군,구,읍,면,동,리 이름 중 하나를 입력합니다.</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="center"><input name="txtName" type="text"
+										id="txtName" class="default" onfocus="this.select();" />&nbsp;
+										<input type="submit" name="btnSearch" value="검색"
+										onclick="return searchit2(&#39;work2&#39;);" id="btnSearch"
+										class="btn_searchS" /></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- endof 상단검색 테이블  -->
+					</div>
+
+					<p class="H_10px Navy">
+						<strong>지역명 : </strong>데이터를 입력하기 바랍니다.
+					</p>
+
+					<table class="list H_2px">
+						<col width="30%" />
+						<col width="68%" />
+						<thead>
+							<tr>
+								<th>우편번호</th>
+								<th>주소</th>
+							</tr>
+						</thead>
+						<tbody id="tb1">
+
+
+							<tr>
+								<td class="nodata" colspan="2"><span id="nodata"></span></td>
+							</tr>
+
+						</tbody>
+						<tbody id="tb2" style="display: none">
+							<tr>
+								<td class="center"><input name="txtZipCode" type="text"
+									readonly="readonly" id="txtZipCode"
+									class="defaultgray_none center" style="background: none" /></td>
+								<td id="tdAddr"></td>
+							</tr>
+							<tr>
+								<td class="center"><span id="lblDetalAddr">나머지주소</span></td>
+								<td><input name="txtDetailAddr" type="text"
+									id="txtDetailAddr" class="default" style="width: 90%;" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--endof contents-->
+
+				<br />
+				<br />
+				<br />
+				<br />
+
+				<div class="footerBG_pop">
+					<span id="lblRegist" class="btn blue" style="display: none"><input
+						type="button" value="등록" id="btnRegist" name="btnRegist"
+						onclick="javascript:ReturnValue();" /></span> <span class="btn gray"><input
+						type="button" value="닫기" id="btnClose" name="btnClose" /></span>
+					<p class="btn_right">
+						<label class="btn_txt" id="updateMsg"></label>
+					</p>
+					<a id="lnkPostBack"
+						href="javascript:__doPostBack(&#39;lnkPostBack&#39;,&#39;&#39;)"></a>
+				</div>
+				<!--endof 하단버튼 단-->
+
+				<input type="hidden" id="hidZipCode" name="hidZipCode" /> <input
+					type="hidden" id="hidAddr" name="hidAddr" /> <input type="hidden"
+					id="hidZipFlag" name="hidZipFlag" value="work2" /> <input
+					type="hidden" id="hidType" name="hidType" /> <input type="hidden"
+					id="hidSido" name="hidSido" /> <input type="hidden" id="hidGugun"
+					name="hidGugun" /> <input type="hidden" id="hidRi" name="hidRi" />
+				<input type="hidden" id="hidRoadCode" name="hidRoadCode" /> <input
+					type="hidden" id="hidRoadName" name="hidRoadName" /> <input
+					type="hidden" id="hidBasement" name="hidBasement" /> <input
+					type="hidden" id="hidBuildingBon" name="hidBuildingBon" /> <input
+					type="hidden" id="hidBuildingBu" name="hidBuildingBu" /> <input
+					type="hidden" id="hidTabClick" name="hidTabClick" />
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
 //<![CDATA[
 fnTabGubun('Tab2','work2');//]]>
 </script>
-</form>
+	</form>
 </body>
 </html>

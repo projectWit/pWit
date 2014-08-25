@@ -8,7 +8,7 @@
 <jsp:include page="WIT_OPENEX_main_header.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="WIT_OPENEX_setExam_section.jsp"></jsp:include>
+	<jsp:include page="WIT_OPENEX_setExam_section1.jsp"></jsp:include>
 </body>
 	<jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
 </html>

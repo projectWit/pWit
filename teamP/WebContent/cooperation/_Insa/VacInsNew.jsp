@@ -33,7 +33,7 @@
 	function PopUpVacCd(){
 		window.open("VacCd.jsp", "","width = 500px, height = 300px");
 		
-	}
+	}	
 </script>
 
 </head>
@@ -53,24 +53,30 @@
 					<col />
 					<tbody>
 						<tr>
-							<th>휴가코드</th>
-							<td><input name="VacCd"
-								type="text" id="VacCd" class="rightnone" value = ""
-								style="width: 66px;" /><a href="#"><img src="img/Find.gif"
-									width="22px" height="19px" alt="검색" id="btnEmp" onclick = "PopUpVacCd()" /></a> </td>
-					</tr>
-						<tr>
-							<th>휴가명</th>
-							<td><input name="txtREST_NAME" type="text" maxlength="20"
-								id="txtREST_NAME" class="default"
-								
-								style="width: 97%;" /></td>
-					</tr>
+								<th>휴카코드</th>
+								<td><input type="text" name="VacCd" id="VacCd"
+									class="rightnone" size="10" maxlength="30" /><a href="#"><img
+										src="img/Find.gif" width="22px" height="19px" alt="검색" onclick = "PopUpVacCd()"/></a> <input
+									type="text" name="Vac" id="Vac" size="15"
+									value="" class="grayleft" style="width: 90px;"
+									readonly="readonly" /></td>
+							</tr>
+						
 						<tr>
 							<th>기간</th>
 							<td><input name="FromDt" type="text" id="FromDt" size="12"
 								maxlength="8" value="" class="default" > ~ <input name="ToDt" type="text" id="ToDt" size="12"
 								maxlength="8" value="" class="default" ></td>
+						</tr>
+						
+						<tr>
+							<th>연락처</th>
+						<td><select>
+								<option>010</option>
+								<option>011</option>
+								<option>017</option>
+						</select> - <input type="tel" class="default" size=5 maxlength="4" required>
+							- <input type="tel" class="default" size=5 maxlength="4" required></td>
 						</tr>
 						<tr>
 							<th>적요</th>

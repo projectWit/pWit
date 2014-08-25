@@ -15,9 +15,10 @@
 <script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
-<script type="text/javascript">
-	
-</script>
+<!-- 절대경로
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/myScript/stuCommon.js"></script> -->
 </head>
 <body id="ibm-com" class="v17">
 	<!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 33px;"> -->

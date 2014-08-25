@@ -8,13 +8,13 @@
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
-<!-- <link rel="stylesheet" type="text/css" href="css/witCommon.css"> -->
-<link rel="stylesheet" type="text/css" href="../css/witMemberFooter.css">
+<!-- <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witCommon.css"> -->
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberFooter.css">
 <style type="text/css">
 </style>
 
-<script type="text/javascript" src="script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <!-- <script type="text/javascript" src="script/witCommon.js"></script> -->
 <script type="text/javascript">
 	
@@ -95,7 +95,7 @@
 			<li><a href="#">문의</a></li>
 			<li><a href="#">개인정보 보호정책</a></li>
 			<li><a href="#">이용 약관</a></li>
-			<li><img title="Feedback" src="../i/v17/opinionlab/oo_icon.gif"><a
+			<li><img title="Feedback" src="/teamP/cooperation/i/v17/opinionlab/oo_icon.gif"><a
 				href="#">&nbsp;Feedback</a></li>
 		</ul>
 	</div>

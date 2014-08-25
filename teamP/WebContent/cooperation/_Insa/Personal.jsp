@@ -38,22 +38,8 @@
 </head>
 <body>
 
-	<form method="post" action="EPD002P_01.aspx?ec_req_sid=00HOCty8voui"
-		id="form1">
-		<div class="aspNetHidden">
-			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
-				value="" /> <input type="hidden" name="__VIEWSTATE"
-				id="__VIEWSTATE"
-				value="/wEPDwULLTE4OTE0OTI0ODcPZBYCZg9kFhBmDw8WAh4EVGV4dAUJ7J207IiZ7J20ZGQCCQ8PFhYeClllYXJTdHJpbmdlHgdDdWx0dXJlBQVrby1LUh4MbnVtWWVhclN0YXJ0AooPHglNb250aE5hbWUFCWRkbEJNb250aB4JRGF5U3RyaW5nZR4KbnVtWWVhckVuZALeDx4IWWVhclplcm9nHgtNb250aFN0cmluZ2UeCFllYXJOYW1lBQhkZGxCWWVhch4HRGF5TmFtZQUHdHh0QkRheR4JTW9udGhaZXJvZ2RkAgoPDxYWHwFlHwIFBWtvLUtSHwMClA8fBAUJZGRsV01vbnRoHwVlHwYC3g8fB2cfCGUfCQUIZGRsV1llYXIfCgUHdHh0V0RheR8LZ2RkAg0PDxYWHwFlHwIFBWtvLUtSHwMCig8fBAUKZGRsTUlNb250aB8FZR8GAt4PHwdnHwhlHwkFCWRkbE1JWWVhch8KBQh0eHRNSURheR8LZ2RkAg4PDxYWHwFlHwIFBWtvLUtSHwMCig8fBAUKZGRsTU9Nb250aB8FZR8GAt4PHwdnHwhlHwkFCWRkbE1PWWVhch8KBQh0eHRNT0RheR8LZ2RkAg8PDxYWHwFlHwIFBWtvLUtSHwMCig8fBAUKZGRsS0lNb250aB8FZR8GAt4PHwdnHwhlHwkFCWRkbEtJWWVhch8KBQh0eHRLSURheR8LZ2RkAhAPDxYWHwFlHwIFBWtvLUtSHwMCig8fBAUKZGRsS09Nb250aB8FZR8GAt4PHwdnHwhlHwkFCWRkbEtPWWVhch8KBQh0eHRLT0RheR8LZ2RkAhUPDxYCHwAFBuyCreygnGRkZGzHlJGoCDDBmYu8Dyir0W6VuZE0" />
-		</div>
-
-
-		<div class="aspNetHidden">
-
-			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-				value="/wEW5QQC79WrvgsClZbxnAkC0qfPrgwC29Cm0gIC4dPD2wcCg6vszQwC9MKpiwEC8cKpiwECjofU0w8CgP3lwgYCw+r+8gECw+rKyQYCw+qmpA4Cw+qygwcCw+qO3gwCqNO8xwsCqNOIogMCqNOkywUCqNOwpg0CqNOM/QICqNOY2AsCqNP0tAMCqNPAkwgCqNPc7gECqNOoxQYC7LDBswMC7LDdjggC7LDptw0C7LDFkgIC7LDR6QsC7LCtRALssLmjCALssJX+AQLssOHaBgLssP2xDgLRmeOeDQLRmf/1AgLRmYudBwLRmef5DALRmfPUBQLRmc+zDQLRmduOAgLRmbflCwLRmYNAAtGZn58IAubzo9gCAubzv7cKAubzy9wMAubzp7sEAubzs5YNAubzj+0CAubzm8gLAubz96QDAubzw4MIAubz394BAsvYzccMAsvY2aIEAsvY9csGAsvYwaYOAsvY3f0HAsvYqdgMAsvYhbcEAsvYkZINAsvY7e4CAsvY+cULArDB77IJArDB+4kOArDBl7EDArDB440IArDB/+gBArDBy8cGArDBp6IOArDBs/kHArDBj9QMArDBm7MEApWuiZgDApWu5fQIApWusZwNApWujfsCApWumdYLApWu9bIDApWuwYkIApWu3eQBApWuqcMGApWuhZ4OAvqUq4cNAvqUh+ICAvqU04sHAvqUr+YMAvqUu70EAvqUl5gNAvqU4/QCAvqU/9MLAvqUy64DAvqUp4UIAqG15cYBArHag6sNArHah6sNArHau6sNArHav6sNArHas6sNArHat6sNArHaq6sNArHa76gNArHa46gNAq7aj6sNAq7ag6sNAq7ah6sNAreMpRIC/cK53QYCvtWi7QECvtWW1gYCvtX6uw4CvtXunAcCvtXSwQwC1ezg2AsC1ezUvQMC1ez41AUC1ezsuQ0C1ezQ4gIC1ezExwsC1eyoqwMC1eycjAgC1eyA8QEC1ez02gYCkY+drAMCkY+BkQgCkY+1qA0CkY+ZjQICkY+N9gsCkY/xWwKRj+W8CAKRj8nhAQKRj73FBgKRj6GuDgKspr+BDQKspqPqAgKspteCBwKsprvmDAKspq/LBQKsppOsDQKspoeRAgKspuv6CwKspt9fAqymw4AIApvM/8cCApvM46gKApvMl8MMApvM+6QEApvM74kN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" />
-		</div>
+	<form method="post" id="form1">
+		
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
@@ -82,16 +68,7 @@
 						<td><input name="h_rel" type="text" maxlength="6" id="h_rel"
 							class="default" size="20" style="width: 60%;" /></td>
 					</tr>
-					<tr>
-						<th>주민등록상 전화</th>
-						<td><input name="doc_tel" type="text" maxlength="20"
-							id="doc_tel" class="default"
-							onkeyup="text_check(&#39;doc_tel&#39;,&#39;20&#39;)" size="20"
-							style="width: 70%;" /></td>
-						<th>본 관</th>
-						<td><input name="nat_plc" type="text" maxlength="12"
-							id="nat_plc" class="default" size="30" style="width: 70%;" /></td>
-					</tr>
+					
 					<tr>
 						<th>본 적</th>
 						<td colspan="3"><input name="origin_addr" type="text"
@@ -113,7 +90,7 @@
 					</tr>
 					<tr>
 						<th>생년월일</th>
-						<td><input name="DtBirth" type="text" id="DtBirth" size="12"
+						<td colspan = "3"><input name="DtBirth" type="text" id="DtBirth" size="12"
 							maxlength="8" value="" class="default"><input type="radio" name="birthday_type" id="birthday_type1" value="1"
 							checked />양력&nbsp;&nbsp; <input type="radio"
 							name="birthday_type" id="birthday_type2" value="2" />음력</td>
@@ -168,7 +145,7 @@
 					<col width="" />
 					<tr>
 						<th>병역구분</th>
-						<td><select name="military_type" id="military_type"
+						<td><select name="army_type" id="army_type"
 							style="width: 130px;">
 								<option value="9">해당사항 없음</option>
 								<option value="1">군 필</option>
@@ -177,16 +154,33 @@
 								<option value="4">연 구</option>
 						</select></td>
 						<th>군 별</th>
-						<td><input name="military_gubun" type="text" maxlength="10"
-							id="military_gubun" class="default" style="width: 50%;" /></td>
+						<td><td><select name="military_type" id="military_type"
+							style="width: 130px;">
+								<option value="9">해당사항 없음</option>
+								<option value="11">육 군</option>
+								<option value="12">공 군</option>
+								<option value="13">해 군</option>
+								<option value="14">해병대</option>
+						</select></td>
 					</tr>
 					<tr>
 						<th>미필사유</th>
 						<td><input name="military_des" type="text" maxlength="30"
 							id="military_des" class="default" style="width: 50%;" /></td>
 						<th>계 급</th>
-						<td><input name="military_rank" type="text" maxlength="10"
-							id="military_rank" class="default" style="width: 50%;" /></td>
+						<td><td><select name="class_type" id="class_type"
+							style="width: 130px;">
+								<option value="10">해당사항 없음</option>
+								<option value="1">일 병</option>
+								<option value="2">상 병</option>
+								<option value="3">병 장</option>
+								<option value="4">하 사</option>
+								<option value="5">중 사</option>
+								<option value="6">상 사</option>
+								<option value="7">소 위</option>
+								<option value="8">중 위</option>
+								<option value="9">대 위</option>							
+						</select></td>
 					</tr>
 				</table>
 				<br />

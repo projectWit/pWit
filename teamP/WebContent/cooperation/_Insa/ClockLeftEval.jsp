@@ -51,14 +51,14 @@
 			<dt id="class113">
 				<span class="float_left" style="width: 167px"> <a
 					href = "ClockLeftEval.jsp"		
-					title="조회/인쇄" onfocus="this.blur();" id="bar117">근무평가</a></span>
+					title="조회/인쇄" onfocus="this.blur();" id="a119_1">근무평가</a></span>
 			</dt>
 			<!-- if (ds != null && ds.Tables[0].Rows.Count > 0) -->
 		</dl>
 		<dl></dl>
 	</div>
 	<div style = "float : left; width : 80%; margin-left : 30px">
-		<jsp:include page="Eval.jsp" />
+		<jsp:include page="EvalIns.jsp" />
 	</div>
 	</div>
 	<form id="form1" name="form1">

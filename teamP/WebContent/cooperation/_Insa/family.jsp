@@ -89,27 +89,33 @@
 								name="KName_0" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_0" class="default"
-								name="RelDes_0" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_0" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_0" name="hidRelDes_0" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_0"
-								class="default" name="ScholarShip_0" style="width: 90%;"
-								type="text" value="" 
-								/><input id="hidScholarShip_0"
-								name="hidScholarShip_0" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_0" class="default"
+								name="ScholarShip_0" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_0" name="hidScholarShip_0" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_0" class="default"
-								name="JobDes_0" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_0"
-								class="default" name="ComName_0" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_0"
-								class="default" name="JobPos_0" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_0" id="chkHomeType_0" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_0" id="chkRelType_0" checked="checked" /> 예</td>
+								name="JobDes_0" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_0" class="default"
+								name="ComName_0" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_0" class="default"
+								name="JobPos_0" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_0" name="HomeTypeCd_0"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_0" name="RelTypeCd_0"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -124,27 +130,33 @@
 								name="KName_1" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_1" class="default"
-								name="RelDes_1" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_1" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_1" name="hidRelDes_1" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_1"
-								class="default" name="ScholarShip_1" style="width: 90%;"
-								type="text" value="" 
-								 /><input id="hidScholarShip_1"
-								name="hidScholarShip_1" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_1" class="default"
+								name="ScholarShip_1" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_1" name="hidScholarShip_1" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_1" class="default"
-								name="JobDes_1" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_1"
-								class="default" name="ComName_1" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_1"
-								class="default" name="JobPos_1" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_1" id="chkHomeType_1" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_1" id="chkRelType_1" checked="checked" /> 예</td>
+								name="JobDes_1" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_1" class="default"
+								name="ComName_1" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_1" class="default"
+								name="JobPos_1" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_1" name="HomeTypeCd_1"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_1" name="RelTypeCd_1"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -159,27 +171,33 @@
 								name="KName_2" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_2" class="default"
-								name="RelDes_2" style="width: 88%;" type="text" value=""
-								/><input
+								name="RelDes_2" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_2" name="hidRelDes_2" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_2"
-								class="default" name="ScholarShip_2" style="width: 90%;"
-								type="text" value="" 
-								/><input id="hidScholarShip_2"
-								name="hidScholarShip_2" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_2" class="default"
+								name="ScholarShip_2" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_2" name="hidScholarShip_2" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_2" class="default"
-								name="JobDes_2" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_2"
-								class="default" name="ComName_2" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_2"
-								class="default" name="JobPos_2" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_2" id="chkHomeType_2" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_2" id="chkRelType_2" checked="checked" /> 예</td>
+								name="JobDes_2" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_2" class="default"
+								name="ComName_2" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_2" class="default"
+								name="JobPos_2" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_2" name="HomeTypeCd_2"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_2" name="RelTypeCd_2"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -194,27 +212,33 @@
 								name="KName_3" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_3" class="default"
-								name="RelDes_3" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_3" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_3" name="hidRelDes_3" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_3"
-								class="default" name="ScholarShip_3" style="width: 90%;"
-								type="text" value=""
-								/><input id="hidScholarShip_3"
-								name="hidScholarShip_3" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_3" class="default"
+								name="ScholarShip_3" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_3" name="hidScholarShip_3" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_3" class="default"
-								name="JobDes_3" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_3"
-								class="default" name="ComName_3" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_3"
-								class="default" name="JobPos_3" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_3" id="chkHomeType_3" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_3" id="chkRelType_3" checked="checked" /> 예</td>
+								name="JobDes_3" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_3" class="default"
+								name="ComName_3" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_3" class="default"
+								name="JobPos_3" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_3" name="HomeTypeCd_3"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_3" name="RelTypeCd_3"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -229,27 +253,33 @@
 								name="KName_4" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_4" class="default"
-								name="RelDes_4" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_4" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_4" name="hidRelDes_4" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_4"
-								class="default" name="ScholarShip_4" style="width: 90%;"
-								type="text" value="" 
-								/><input id="hidScholarShip_4"
-								name="hidScholarShip_4" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_4" class="default"
+								name="ScholarShip_4" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_4" name="hidScholarShip_4" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_4" class="default"
-								name="JobDes_4" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_4"
-								class="default" name="ComName_4" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_4"
-								class="default" name="JobPos_4" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_4" id="chkHomeType_4" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_4" id="chkRelType_4" checked="checked" /> 예</td>
+								name="JobDes_4" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_4" class="default"
+								name="ComName_4" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_4" class="default"
+								name="JobPos_4" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_4" name="HomeTypeCd_4"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_4" name="RelTypeCd_4"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -264,27 +294,33 @@
 								name="KName_5" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_5" class="default"
-								name="RelDes_5" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_5" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_5" name="hidRelDes_5" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_5"
-								class="default" name="ScholarShip_5" style="width: 90%;"
-								type="text" value="" 
-								/><input id="hidScholarShip_5"
-								name="hidScholarShip_5" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_5" class="default"
+								name="ScholarShip_5" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_5" name="hidScholarShip_5" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_5" class="default"
-								name="JobDes_5" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_5"
-								class="default" name="ComName_5" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_5"
-								class="default" name="JobPos_5" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_5" id="chkHomeType_5" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_5" id="chkRelType_5" checked="checked" /> 예</td>
+								name="JobDes_5" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_5" class="default"
+								name="ComName_5" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_5" class="default"
+								name="JobPos_5" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_5" name="HomeTypeCd_5"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_5" name="RelTypeCd_5"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -299,27 +335,33 @@
 								name="KName_6" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_6" class="default"
-								name="RelDes_6" style="width: 88%;" type="text" value=""
-								/><input
+								name="RelDes_6" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_6" name="hidRelDes_6" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_6"
-								class="default" name="ScholarShip_6" style="width: 90%;"
-								type="text" value="" 
-								 /><input id="hidScholarShip_6"
-								name="hidScholarShip_6" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_6" class="default"
+								name="ScholarShip_6" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_6" name="hidScholarShip_6" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_6" class="default"
-								name="JobDes_6" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_6"
-								class="default" name="ComName_6" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_6"
-								class="default" name="JobPos_6" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_6" id="chkHomeType_6" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_6" id="chkRelType_6" checked="checked" /> 예</td>
+								name="JobDes_6" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_6" class="default"
+								name="ComName_6" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_6" class="default"
+								name="JobPos_6" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_6" name="HomeTypeCd_6"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_6" name="RelTypeCd_6"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -334,27 +376,33 @@
 								name="KName_7" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_7" class="default"
-								name="RelDes_7" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_7" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_7" name="hidRelDes_7" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_7"
-								class="default" name="ScholarShip_7" style="width: 90%;"
-								type="text" value="" 
-								 /><input id="hidScholarShip_7"
-								name="hidScholarShip_7" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_7" class="default"
+								name="ScholarShip_7" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_7" name="hidScholarShip_7" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_7" class="default"
-								name="JobDes_7" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_7"
-								class="default" name="ComName_7" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_7"
-								class="default" name="JobPos_7" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_7" id="chkHomeType_7" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_7" id="chkRelType_7" checked="checked" /> 예</td>
+								name="JobDes_7" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_7" class="default"
+								name="ComName_7" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_7" class="default"
+								name="JobPos_7" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_7" name="HomeTypeCd_7"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_7" name="RelTypeCd_7"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 						<tr>
@@ -369,40 +417,46 @@
 								name="KName_8" style="width: 88%;" type="text" maxlength="50"
 								value="" /></td>
 							<td class="center"><input id="RelDes_8" class="default"
-								name="RelDes_8" style="width: 88%;" type="text" value=""
-								 /><input
+								name="RelDes_8" style="width: 88%;" type="text" value="" /><input
 								id="hidRelDes_8" name="hidRelDes_8" type="hidden" value="" /></td>
-							<td class="center"><input id="ScholarShip_8"
-								class="default" name="ScholarShip_8" style="width: 90%;"
-								type="text" value="" 	/><input id="hidScholarShip_8"
-								name="hidScholarShip_8" type="hidden" value="" /></td>
+							<td class="center"><input id="ScholarShip_8" class="default"
+								name="ScholarShip_8" style="width: 90%;" type="text" value="" /><input
+								id="hidScholarShip_8" name="hidScholarShip_8" type="hidden"
+								value="" /></td>
 							<td class="center"><input id="JobDes_8" class="default"
-								name="JobDes_8" style="width: 90%;" type="text"
-								maxlength="20" value="" /></td>
-							<td class="center"><input id="ComName_8"
-								class="default" name="ComName_8" style="width: 90%;"
-								type="text" maxlength="30" value="" /></td>
-							<td class="center"><input id="JobPos_8"
-								class="default" name="JobPos_8" style="width: 88%;"
-								type="text" maxlength="10" value="" /></td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkHomeType_8" id="chkHomeType_8" checked="checked" /> 예</td>
-							<td class="center"><input class="checkbox" type="checkbox"
-								name="chkRelType_8" id="chkRelType_8" checked="checked" /> 예</td>
+								name="JobDes_8" style="width: 90%;" type="text" maxlength="20"
+								value="" /></td>
+							<td class="center"><input id="ComName_8" class="default"
+								name="ComName_8" style="width: 90%;" type="text" maxlength="30"
+								value="" /></td>
+							<td class="center"><input id="JobPos_8" class="default"
+								name="JobPos_8" style="width: 88%;" type="text" maxlength="10"
+								value="" /></td>
+							<td class="center"><select id="HomeTypeCd_8" name="HomeTypeCd_8"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
+							<td class="center"><select id="RelTypeCd_8" name="RelTypeCd_8"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">예</option>
+									<option value="2">아니오</option>
+							</select></td>
 						</tr>
 
 					</tbody>
 				</table>
-				 <br /> <br /> <br />
-				<br />
-			</div>	
+				<br /> <br /> <br /> <br />
 			</div>
-			<div class="footerBG_pop">
-				<span class="btn blue"><input type="button" name="btnNew"
-					id="btnNew" onclick="PopUpNew();" value="저장(F2)" /></span> <span
-					class="btn gray"><input type="button" name="btnClose"
-					id="btnClose" value="닫기" onclick = "Close()" /></span>
-			</div>
+		</div>
+		<div class="footerBG_pop">
+			<span class="btn blue"><input type="button" name="btnNew"
+				id="btnNew" onclick="PopUpNew();" value="저장(F2)" /></span> <span
+				class="btn gray"><input type="button" name="btnClose"
+				id="btnClose" value="닫기" onclick="Close()" /></span>
+		</div>
 	</form>
 </body>
 </html>

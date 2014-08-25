@@ -28,9 +28,29 @@ margin-bottom: 10px;
 padding-bottom: 8px;
 border-bottom: 5px solid #E8E8E8;
 }
-
-
 </style>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+	$('#facil-0').click(function(e) {
+		$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+	});
+	$('#facil-1').click(function(e) {
+		$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+	});
+	$('#facil-2').click(function(e) {
+		$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+	});
+	$('#facil-3').click(function(e) {
+		$("#main").load('/teamP/cooperation/_GM/facilitiesapplylist.jsp');
+	});
+    $('#facil-4').click(function(e) {
+	    $("#main").load('/teamP/cooperation/_GM/facilitiesuselist.jsp');
+    });
+});
+</script>
 <body>
 <div id="container" style="width:1250px; margin:auto;">
 <div id="sidebar" style="float:left; width:200px; margin-top:10px;">
@@ -40,11 +60,11 @@ border-bottom: 5px solid #E8E8E8;
         <h2>시설 관리</h2>
         <nav>
           <ul>
-            <li><a href="#">시설 등록</a></li>
-            <li><a href="#">시설 목록</a></li>
-            <li><a href="#">시설 조회</a></li>
-            <li><a href="#">사용 신청 목록</a></li>
-            <li><a href="#">이용 내역</a></li>
+            <li><a id="facil-0" href="#">시설 등록</a></li>
+            <li><a id="facil-1" href="#">시설 목록</a></li>
+            <li><a id="facil-2" href="#">시설 조회</a></li>
+            <li><a id="facil-3"  href="#">사용 신청 목록</a></li>
+            <li><a id="facil-4" href="#">이용 내역</a></li>
           </ul>
         </nav>
         <!-- /nav -->
@@ -52,7 +72,6 @@ border-bottom: 5px solid #E8E8E8;
  	</div>
 </div>
 <div id="main" style="float:left; width:980px; margin-top:10px; margin-left:20px;">
-	<jsp:include page="facilities.jsp"></jsp:include>
 </div>
 </div>
 </body>

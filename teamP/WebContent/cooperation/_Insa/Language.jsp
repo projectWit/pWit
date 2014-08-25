@@ -52,7 +52,7 @@
 
 				<table summary="" class="list_input">
 					<col width="3%" />
-					<col width="20%" />
+					<col width="10%" />
 					<col width="17%" />
 					<col width="17%" />
 					<col width="17%" />
@@ -66,6 +66,7 @@
 							<th>작 문</th>
 							<th>회 화</th>
 							<th>자 격 증</th>
+							<th>특이사항</th>
 						</tr>
 					</thead>
 					<tbody id="input_body">
@@ -75,9 +76,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_0"
-								name="ForeignName_0" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_0" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_0"
 								name="ddlForeignRead_0">
 									<option value="0">============</option>
@@ -102,6 +109,9 @@
 							<td class="center"><input id="txtForeignLicence_0"
 								class="default" name="txtForeignLicence_0" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+
+							<td class="center"><input id="ETC_0" class="default"
+								type="text" /></td>
 						</tr>
 
 
@@ -109,9 +119,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_1"
-								name="ForeignName_1" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_1" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_1"
 								name="ddlForeignRead_1">
 									<option value="0">============</option>
@@ -136,6 +152,8 @@
 							<td class="center"><input id="txtForeignLicence_1"
 								class="default" name="txtForeignLicence_1" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+							<td class="center"><input id="ETC_0" class="default"
+								type="text" /></td>
 						</tr>
 
 
@@ -143,9 +161,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_2"
-								name="ForeignName_2" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_2" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_2"
 								name="ddlForeignRead_2">
 									<option value="0">============</option>
@@ -170,6 +194,7 @@
 							<td class="center"><input id="txtForeignLicence_2"
 								class="default" name="txtForeignLicence_2" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
 						</tr>
 
 
@@ -177,9 +202,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_3"
-								name="ForeignName_3" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_3" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_3"
 								name="ddlForeignRead_3">
 									<option value="0">============</option>
@@ -204,6 +235,7 @@
 							<td class="center"><input id="txtForeignLicence_3"
 								class="default" name="txtForeignLicence_3" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
 						</tr>
 
 
@@ -211,9 +243,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_4"
-								name="ForeignName_4" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_4" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_4"
 								name="ddlForeignRead_4">
 									<option value="0">============</option>
@@ -238,6 +276,7 @@
 							<td class="center"><input id="txtForeignLicence_4"
 								class="default" name="txtForeignLicence_4" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
 						</tr>
 
 
@@ -245,9 +284,15 @@
 							<td class="center"><input class="checkbox" type="checkbox"
 								id="chkRow" name="chkRow" /></td>
 
-							<td><input type="text" id="ForeignName_5"
-								name="ForeignName_5" class="default" style="width: 70%;"
-								value="" /></td>
+							<td><select id="forLan_5" style="width: 80px">
+									<option value="9">=====</option>
+									<option value="1">영어</option>
+									<option value="2">일본어</option>
+									<option value="3">중국어</option>
+									<option value="4">프랑스어</option>
+									<option value="5">독일어</option>
+									<option value="6">기 타</option>
+							</select></td>
 							<td class="center"><select id="ddlForeignRead_5"
 								name="ddlForeignRead_5">
 									<option value="0">============</option>
@@ -272,6 +317,7 @@
 							<td class="center"><input id="txtForeignLicence_5"
 								class="default" name="txtForeignLicence_5" style="width: 90%;"
 								type="text" value="" maxlength="20" /></td>
+							<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
 						</tr>
 
 					</tbody>

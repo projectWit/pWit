@@ -10,15 +10,15 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <title>WIT는 당신을 환영합니다!</title>
 <jsp:include page="WIT_MM_header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/recipe/script.css" type="text/css"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/recipe/script.css" type="text/css"
 	charset="UTF-8" media="all" />
-<link rel="stylesheet" href="./css/style.css" type="text/css"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/style.css" type="text/css"
 	charset="UTF-8" media="all" />
-<script type="text/javascript" src="./js/pok.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_pokgan_MM/js/pok.js"></script>
 <link rel="alternate" type="application/rss+xml" title="Site RSS"
-	href="xml/recipe/rss.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/recipe/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Site Atom"
-	href="xml/recipe/atom.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/recipe/atom.xml" />
 <script type="text/javascript">
 	//<![CDATA[
 	var current_url = "http://www.rimi.kr/?mid=recipe";

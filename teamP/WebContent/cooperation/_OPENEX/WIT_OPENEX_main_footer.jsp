@@ -9,7 +9,7 @@
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
 <!-- <link rel="stylesheet" type="text/css" href="css/witCommon.css"> -->
-<link rel="stylesheet" type="text/css" href="../css/witMemberFooter.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberFooter.css">
 <style type="text/css">
 </style>
 

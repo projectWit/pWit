@@ -25,7 +25,13 @@
 	function Close() {
 		window.close();
 	};
+	function fnLink(no, str) {
+		window.opener.form1.VacCd.value = no;
+		window.opener.form1.Vac.value = str;
+		window.close();
+	};
 </script>
+
 </head>
 <body>
 	<form method="post" id="form1">
@@ -47,52 +53,45 @@
 				<thead>
 					<tr>
 
-						<th><a href="#" onclick="fn_SortList('ATTEND_CD');">근태코드<img
-								id="img_num" src="img/arrowBot.gif" width="11" height="15" /></a></th>
-						<th><a href="#" onclick="fn_SortList('ATTEND_DES')">근태코드명<img
-								id="img_name" src="img/arrowBot.gif" width="11" height="15" /></a></th>
+						<th><a href="#">휴가코드<img id="img_num"
+								src="img/arrowBot.gif" width="11" height="15" /></a></th>
+						<th><a href="#">휴가코드명<img id="img_name"
+								src="img/arrowBot.gif" width="11" height="15" /></a></th>
 						<th style="display: none;">휴가코드</th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<tr id="rpt_ctl00_trRpt">
-						<td id="rpt_ctl00_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10000|2013년 연차" /></td>
-						<td><a
-							href="javascript:fnLink('10000|2013년 연차|0|10000|2013년 연차|0|2013-01-01|2013-12-31|1');"
-							class="list_link">10000</a></td>
-						<td><a
-							href="javascript:fnLink('10000|2013년 연차|0|10000|2013년 연차|0|2013-01-01|2013-12-31|1');"
-							class="list_link">2013년 연차</a></td>
-						<td style="display: none;">0</td>
+						<td><a onclick="fnLink('10000','2013년 연차')" class="list_link">10000</a></td>
+						<td><a onclick="fnLink('10000','2013년 연차')" class="list_link">2013년
+								연차</a></td>
 					</tr>
 
 					<tr id="rpt_ctl01_trRpt">
-						<td id="rpt_ctl01_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="20000|2014년 연차" /></td>
-						<td><a
-							href="javascript:fnLink('20000|2014년 연차|0|20000|2014년 연차|0|2014-01-01|2014-12-31|1');"
-							class="list_link">20000</a></td>
-						<td><a
-							href="javascript:fnLink('20000|2014년 연차|0|20000|2014년 연차|0|2014-01-01|2014-12-31|1');"
-							class="list_link">2014년 연차</a></td>
-						<td style="display: none;">0</td>
+						<td><a onclick="fnLink('20000','2014년 연차')" class="list_link">20000</a></td>
+						<td><a onclick="fnLink('20000','2014년 연차')" class="list_link">2014년
+								연차</a></td>
 					</tr>
 
 					<tr id="rpt_ctl02_trRpt">
-						<td id="rpt_ctl02_tdCbRowSel" style="display: none;"><input
-							type="checkbox" id="cbRowSel" name="cbRowSel"
-							onclick="fnChkCnt(this);" value="10002|경조사휴가" /></td>
-						<td><a href="javascript:fnLink('10002|경조사휴가|1|||0|||1');"
-							class="list_link">10002</a></td>
-						<td><a href="javascript:fnLink('10002|경조사휴가|1|||0|||1');"
-							class="list_link">경조사휴가</a></td>
-						<td style="display: none;">1</td>
-					</tr>				
+						<td><a onclick="fnLink('10001','경조사휴가')" class="list_link">10001</a></td>
+						<td><a onclick="fnLink('10001','경조사휴가')" class="list_link">경조사휴가</a></td>
 
+					</tr>
+					<tr id="rpt_ctl03_trRpt">
+						<td><a onclick="fnLink('10002','예비군/민방위훈련')"
+							class="list_link">10002</a></td>
+						<td><a onclick="fnLink('10002','예비군/민방위훈련')"
+							class="list_link">예비군/민방위훈련</a></td>
+					</tr>
+					
+					<tr id="rpt_ctl04_trRpt">
+						<td><a onclick="fnLink('30000','2014년 여름휴가)"
+							class="list_link">30000</a></td>
+						<td><a onclick="fnLink('30000','2014년 여름휴가')"
+							class="list_link">2014년 여름휴가</a></td>
+					</tr>
 
 				</tbody>
 			</table>

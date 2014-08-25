@@ -26,9 +26,21 @@ font-family: "맑은 고딕";
 font-family: "맑은 고딕";
 	font-size: 30px;	
 }
+.ckNo {
+	text-align: left;
+	font-family: "맑은 고딕";
+	font-size: 20px;
+	height: 50px;
+}
 </style>
 </head>
 <body>
+<form>
+<table width="900px" align="center">
+			<tr>
+				<td class="ckNo"><b>No.</b></td>
+			</tr>
+		</table>
 	<table border="1" width="900px" height="1000px" align="center">
 		<col width="8%" />	
 		<col width="12%" />
@@ -48,30 +60,31 @@ font-family: "맑은 고딕";
 
 		<tr class = "ck">
 			<td>성명</td>
-			<td>호날두</td>
+			<td id = "Name">호날두</td>
 			<td>주민등록번호</td>
-			<td>123456-1234567</td>
+			<td id = "Jumin">123456-1234567</td>
+		
 		</tr>
 	
 		
 		<tr class = "ck">
 			<td>주소</td>
-			<td colspan="3">서울시 용산구 xx동 xx아파트</td>
+			<td colspan="3" id = "Juso">서울시 용산구 xx동 xx아파트</td>
 		</tr>
 		
 		<tr class = "ck">
 			<td>입사일자</td>
-			<td colspan="3">2014-08-13</td>
+			<td colspan="3" id = "InDt">2014-08-13</td>
 		</tr>
 
 		<tr class = "ck">
 			<td>퇴사일자</td>
-			<td colspan="3">2014-08-13</td>
+			<td colspan="3" id = "OutDt">2014-08-13</td>
 		</tr>
 
 		<tr class = "ck">
 			<td>퇴직사유</td>
-			<td colspan="3">그냥 그만둠</td>
+			<td colspan="3" id = "Reason">그냥 그만둠</td>
 		</tr>
 		<tr class = "ck1">
 			<td align="center" colspan="4">위 사실을 확인합니다.<br /> <br /> 2014년
@@ -81,5 +94,6 @@ font-family: "맑은 고딕";
 			 대 표 : ㅋㅋㅋ
 			</td>
 	</table>
+	</form>
 </body>
 </html>

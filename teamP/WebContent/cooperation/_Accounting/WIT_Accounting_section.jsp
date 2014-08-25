@@ -46,52 +46,46 @@
 						<td>
 							<dl>
 								<dt>경영자료</dt>
-								<dd id=""><a href="jagum.jsp">자금현황</a></dd>
-								<dd id=""><a href="hyungum.jsp">자금증감내역</a></dd>
-								<dd id=""><a href="#">월별손익분석</a></dd>
-								<dd id=""><a href="#">월별원가분석</a></dd>
+								<dd id=""><a href="WIT_Accounting_dFundsStatus.jsp">자금현황표</a></dd>
+								<dd id=""><a href="WIT_Accounting_cashVary.jsp">자금증감내역</a></dd>
+								<dd id=""><a href="WIT_Accounting_monthly_IS.jsp">월별손익분석</a></dd>
+								<dd id=""><a href="WIT_Accounting_monthly_CA.jsp">월별원가분석</a></dd>
 								<dd id=""><a href="#">월별추이그래프</a></dd>
-								<dd id=""><a href="#">채권/채무회수기간표</a></dd>
-								<dd id=""><a href="#">채권/채무잔액분석표</a></dd>
+								<dd id=""><a href="WIT_Accounting_confirmationTerm.jsp">채권/채무회수기간표</a></dd>
+								<dd id=""><a href="WIT_Accounting_confirmationBank.jsp">채권잔액분석표</a></dd>
 								<dd id=""><a href="#">경영요약보고서</a></dd>
-								<dd id=""><a href="#">회계집계표</a></dd>
 							</dl>
 						</td>
 						<td>
 							<dl>
 								<dt>재무제표</dt>
-								<dd id=""><a href="#">대차대조표</a></dd>
-								<dd id=""><a href="#">손익계산서</a></dd>
-								<dd id=""><a href="#">현금흐름표</a></dd>
+								<dd id=""><a href="WIT_Accounting_balanceSheet.jsp">대차대조표</a></dd>
+								<dd id=""><a href="WIT_Accounting_incomeStatement.jsp">손익계산서</a></dd>
+								<dd id=""><a href="WIT_Accounting_trialBalance.jsp">시산표</a></dd>
+								<dd id=""><a href="WIT_Accounting_cashFlow.jsp">현금흐름표</a></dd>
 								<dd id=""><a href="#">이익잉여금처분계산서</a></dd>
-								<dd id=""><a href="#">시산표</a></dd>
-								<dd id=""><a href="#">원가명세서</a></dd>
-								<dd id=""><a href="#">계정명세서</a></dd>
-								<dd id=""><a href="#">수입지출명세서</a></dd>
-								<dd id=""><a href="#">사용자정의보고서</a></dd>
+								<dd id=""><a href="WIT_Accounting_costSpecification.jsp">원가명세서</a></dd>
 							</dl>
 						</td>
 						<td>
 							<dl>
 								<dt>장부</dt>
-								<dd id=""><a href="#">분개장</a></dd>
-								<dd id=""><a href="#">계정별원장</a></dd>
-								<dd id=""><a href="#">현금출납장</a></dd>
-								<dd id=""><a href="#">거래처별계정별원장</a></dd>
-								<dd id=""><a href="#">거래처별거래내역</a></dd>							
-								<dd id=""><a href="#">매입/매출장</a></dd>
-								<dd id=""><a href="#">월별매입집계표</a></dd>
-								<dd id=""><a href="#">월별매출집계표</a></dd>
+								<dd id=""><a href="WIT_Accounting_journal.jsp">분개장</a></dd>
+								<dd id=""><a href="WIT_Accounting_ledger.jsp">계정별원장</a></dd>
+								<dd id=""><a href="WIT_Accounting_customersLedger.jsp">거래처별거래내역</a></dd>
+								<dd id=""><a href="WIT_Accounting_cashBook.jsp">현금출납장</a></dd>							
+								<dd id=""><a href="WIT_Accounting_psLedger.jsp">매입/매출장</a></dd>
+								<dd id=""><a href="WIT_Accounting_pLedger.jsp">매입집계표</a></dd>
+								<dd id=""><a href="WIT_Accounting_sLedger.jsp">매출집계표</a></dd>
 							</dl>
 						</td>
 						<td style="border-right: 0;">
 							<dl>
 								<dt>기타</dt>
-								<dd id=""><a href="#">전표현황</a></dd>
-								<dd id=""><a href="#">거래처관리대장</a></dd>
-								<dd id=""><a href="#">부서목록</a></dd>
-								<dd id=""><a href="#">회계계정</a></dd>
-								<dd id=""><a href="#">외화장부</a></dd>
+								<dd id=""><a href="WIT_Accounting_slipList.jsp">전표현황</a></dd>
+								<dd id=""><a href="WIT_Accounting_customersList.jsp">거래처관리대장</a></dd>
+								<dd id=""><a href="WIT_Accounting_customersList.jsp">부서목록</a></dd>
+								<dd id=""><a href="WIT_Accounting_accountsList.jsp">회계계정</a></dd>
 							</dl>
 						</td>
 					</tr>

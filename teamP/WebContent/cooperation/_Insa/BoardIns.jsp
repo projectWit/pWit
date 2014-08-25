@@ -150,13 +150,13 @@ TABLE {
 }
 
 /* 입력 폼 style */
-#bw_input_writer,#bw_input_passwd,#bw_input_email,#bw_input_subject,#bw_input_file,#bw_contents,#addinfo_out_box
+#Writer,#bw_input_passwd,#bw_input_email,#Subject,#bw_input_file,#contents,#addinfo_out_box
 	{
 	border: 1px #e0e0e0 solid;
 	color: #737172;
 }
 
-#bw_input_writer,#bw_input_passwd,#bw_writer {
+#Writer,#bw_input_passwd,#bw_writer {
 	width: 110px;
 }
 
@@ -164,11 +164,11 @@ TABLE {
 	color: #5B5B5B;
 }
 
-#bw_input_email,#bw_input_subject,#bw_input_file {
+#bw_input_email,#Subject,#bw_input_file {
 	width: 316px;
 }
 
-#bw_contents {
+#contents {
 	width: 100%;
 	padding: 5px;
 	font-size: 9pt;
@@ -835,7 +835,7 @@ div.subtitle {
 										<tr>
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
-											<td><input id="bw_input_writer" type="text" name="hname"
+											<td><input id="Writer" type="text" name="hname"
 												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<select id="head">
@@ -854,14 +854,14 @@ div.subtitle {
 												style="padding-left: 15px;">title</td>
 											<td class='bw_title_color'><span
 												style="font-family: '굴림체'"><input
-													id='bw_input_subject' type="text" name="subject" size=30
+													id='Subject' type="text" name="subject" size=30
 													maxlength=100 value=""></span><span id="bw_htmleditor"><input
 													type=checkbox name=tag value="ok">HTML태그 허용</span></td>
 										</tr>
 										<tr>
 											<td
 												class='bw_value bw_border_top bw_border_bottom bw_contentscolor'
-												colspan="2"><textarea id="bw_contents" name=content
+												colspan="2"><textarea id="contents" name=content
 													cols=67 rows=15 onfocus='clear_content()'
 													style="font-family: 굴림체; width: 100%;">내용을 적어주세요~!</textarea>
 											</td>

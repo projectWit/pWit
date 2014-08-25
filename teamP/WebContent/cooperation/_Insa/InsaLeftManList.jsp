@@ -28,7 +28,12 @@
 			</h1>
 
 			<dl class="left_title">
-
+			
+			<dt id="class113">
+				<span class="float_left" style="width: 167px"> <a href = "InsaLeftManList.jsp"					
+					title="조회/인쇄"id="a119_1">인사기록표</a></span>
+			</dt>
+			
 			<dt id="class113">
 				<span class="float_left" style="width: 167px"><a href="InsaLeftMan.jsp"
 					id="a119_1"					
@@ -43,10 +48,7 @@
 					title="기본사항등록" id="a119_1">직원정보수정/삭제</a></span>
 			</dt>
 
-			<dt id="class113">
-				<span class="float_left" style="width: 167px"> <a href = "InsaLeftManList.jsp"					
-					title="조회/인쇄"id="a119_1">인사기록표</a></span>
-			</dt>
+			
 			
 			</dl>
 			<dl></dl>

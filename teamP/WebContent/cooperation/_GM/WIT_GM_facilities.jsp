@@ -16,8 +16,8 @@ currentSubtabIndex = 0;
 </head>
 <body>
 
-	<jsp:include page="demo_facilities.jsp"></jsp:include>
+	<jsp:include page="admin_facilities.jsp"></jsp:include>
 
 </body>
-<%-- <jsp:include page="WIT_Main_footer.jsp"></jsp:include> --%>
+<jsp:include page="WIT_GM_footer.jsp"></jsp:include>
 </html>

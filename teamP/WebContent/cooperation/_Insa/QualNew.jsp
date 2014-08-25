@@ -52,7 +52,7 @@
 			<div id="contents">
 				<table summary="" class="entry H_10px">
 					<col width="30%" />
-					<col width="" />
+					<col width="" />								
 					<tr>
 						<th>자격증 명칭</th>
 

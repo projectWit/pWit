@@ -44,7 +44,7 @@
 				</dt>
 
 				<dt id="class113">
-					<span class="float_left" style="width: 167px"><a href="#"
+					<span class="float_left" style="width: 167px"><a href="ClockLeftManEva.jsp"
 						id="a119_1">근무평가관리</a></span>
 				</dt>
 

@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css" />
 <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
 <script type="text/javascript">
-	calendarIDs = [ 'PreDt', 'OutDt' ]; // 달력이 추가될 태그의 id
+	calendarIDs = [ 'WriteDt', 'PreDt', 'OutDt' ]; // 달력이 추가될 태그의 id
 
 	function PopUpOut() {
 		window.open("DocOutIns.jsp", "", "width = 1000px, height = 800px");
@@ -225,94 +225,100 @@
 
 <body>
 
-<form>
-	<div id="wrap">
-		<div class="new-title">
-			<div class="title-leftarea">퇴직증명서</div>
-			<div class="title-rightarea"></div>
-		</div>
-		<hr />
-		<br />
-		<div id="contents">
-			<table summary="" class="entry H_0px fixed">
-				<col width="12%" />
-				<col width="12%" />
-				<col width="12%" />
-				<col width="12%" />
-				<col width="22%" />
-
-
-				<tr>
-					<th rowspan="2">인적사항</th>
-					<td id="ck">소속</td>
-					<td id="ck">직위</td>
-					<td id="ck">성명</td>
-					<td id="ck">주민등록번호</td>
-
-				</tr>
-
-				<tr>
-					<td><input type="text" value="사원 " style="width: 70%" class = "default"/></td>
-					<td><input type="text" value="영업팀 " style="width: 70%" class = "default"/></td>
-					<td><input type="text" value="호날두 " style="width: 70%" class = "default"/></td>
-					<td><input type="text" value="123456 " maxlength="6"class = "default"
-						style="width: 30%" /> - <input type="text" value="1234567"
-						maxlength="7" style="width: 30%" class = "default"/></td>
-				</tr>
-				<tr>
-					<th>주소</th>
-					<td colspan="4"><a href="#" id="btnSearchPostNo"
-						name="btnSearchPostNo" class="link-blue"
-					>우편번호검색</a>
-						<input name="txtPostNo1" type="text" maxlength="3" value="123"
-						id="txtPostNo1" class="default" style="width: 30px;" />-<input
-						name="txtPostNo2" type="text" maxlength="3" id="txtPostNo2"
-						value="123" class="default" style="width: 30px;" /><br /> <textarea
-							name="txtJuso" id="txtJuso" rows="3" cols="86" class="default"
-							style="width: 300px">경남 김해시 삼방동 29-4번지 
-광옥빌라502호</textarea></td>
-				</tr>
-				<tr>
-					<th><label for="ddlYear"> 입사일자</label></th>
-					<td colspan="4"><input name="PreDt" type="text" id="PreDt"
-						size="24" maxlength="20" value="" class="default" /></td>
-				</tr>
-				<tr>
-					<th><label for="ddlYear">퇴사일자</label></th>
-					<td colspan="4"><input name="OutDt" type="text" id="OutDt"
-						size="24" maxlength="20" value="" class="default" /></td>
-				</tr>
-				<tr>
-					<th>전화번호</th>
-					<td colspan="4"><input type="text" maxlength="3" value="010"class = "default"
-						size="4" /> - <input type="text" maxlength="4" value="1234"class = "default"
-						size="5" /> - <input type="text" maxlength="4" value="5678"class = "default"
-						size="5" /></td>
-				</tr>
-				<tr>
-					<th>퇴사사유</th>
-					<td colspan="4"><input type="text" maxlength="30" class = "default"
-						value="개인사정으로 인한 퇴직" size="30" /></td>
-				</tr>
-
-			</table>
-
-			<div>
-				<span class="btn blue"> <input name="btnSend" type="button"
-					id="btnSend" value="저장/결재(F7)" onclick="PopUpOut()" />
-				</span> <a id="lnkSave2"
-					href="javascript:__doPostBack(&#39;lnkSave2&#39;,&#39;&#39;)"></a>
-				<span class="btn blue"><input name="btnList" type="button"
-					id="btnList" value="리스트" /></span>
+	<form>
+		<div id="wrap">
+			<div class="new-title">
+				<div class="title-leftarea">퇴직증명서</div>
+				<div class="title-rightarea"></div>
 			</div>
-			<table id="tblFiles2" summary="" class="entry">
-				<col width="12%" />
-				<col width="" />
+			<hr />
+			<br />
+			<div id="contents">
+				<table summary="" class="entry H_0px fixed">
+					<col width="12%" />
+					<col width="12%" />
+					<col width="12%" />
+					<col width="12%" />
+					<col width="22%" />
 
-			</table>
+					<tr>
+						<th><label for="ddlYear"> 작 성 일 자</label></th>
+						<td colspan="4"><input name="WriteDt" type="text" id="WriteDt"
+							size="24" maxlength="20" value="" class="default" /></td>
+					</tr>
+					<tr>
+						<th rowspan="2">인적사항</th>
+						<td id="ck">소속</td>
+						<td id="ck">직위</td>
+						<td id="ck">성명</td>
+						<td id="ck">주민등록번호</td>
 
+					</tr>
+
+					<tr>
+						<td><input type="text" value="사원 " style="width: 70%"
+							class="default" /></td>
+						<td><input type="text" value="영업팀 " style="width: 70%"
+							class="default" /></td>
+						<td><input type="text" value="호날두 " style="width: 70%"
+							class="default" /></td>
+						<td><input type="text" value="123456 " maxlength="6"
+							class="default" style="width: 30%" /> - <input type="text"
+							value="1234567" maxlength="7" style="width: 30%" class="default" /></td>
+					</tr>
+					<tr>
+						<th>주소</th>
+						<td colspan="4"><a href="#" id="btnSearchPostNo"
+							name="btnSearchPostNo" class="link-blue">우편번호검색</a> <input
+							name="txtPostNo1" type="text" maxlength="3" value="123"
+							id="txtPostNo1" class="default" style="width: 30px;" />-<input
+							name="txtPostNo2" type="text" maxlength="3" id="txtPostNo2"
+							value="123" class="default" style="width: 30px;" /><br /> <textarea
+								name="txtJuso" id="txtJuso" rows="3" cols="86" class="default"
+								style="width: 300px">경남 김해시 삼방동 29-4번지 
+광옥빌라502호</textarea></td>
+					</tr>
+					<tr>
+						<th><label for="ddlYear"> 입사일자</label></th>
+						<td colspan="4"><input name="PreDt" type="text" id="PreDt"
+							size="24" maxlength="20" value="" class="default" /></td>
+					</tr>
+					<tr>
+						<th><label for="ddlYear">퇴사일자</label></th>
+						<td colspan="4"><input name="OutDt" type="text" id="OutDt"
+							size="24" maxlength="20" value="" class="default" /></td>
+					</tr>
+					<tr>
+						<th>전화번호</th>
+						<td colspan="4"><input type="text" maxlength="3" value="010"
+							class="default" size="4" /> - <input type="text" maxlength="4"
+							value="1234" class="default" size="5" /> - <input type="text"
+							maxlength="4" value="5678" class="default" size="5" /></td>
+					</tr>
+					<tr>
+						<th>퇴사사유</th>
+						<td colspan="4"><input type="text" maxlength="30"
+							class="default" value="개인사정으로 인한 퇴직" size="30" /></td>
+					</tr>
+
+				</table>
+
+				<div>
+					<span class="btn blue"> <input name="btnSend" type="button"
+						id="btnSend" value="저장/결재(F7)" onclick="PopUpOut()" />
+					</span> <a id="lnkSave2"
+						href="javascript:__doPostBack(&#39;lnkSave2&#39;,&#39;&#39;)"></a>
+					<span class="btn blue"><input name="btnList" type="button"
+						id="btnList" value="리스트" /></span>
+				</div>
+				<table id="tblFiles2" summary="" class="entry">
+					<col width="12%" />
+					<col width="" />
+
+				</table>
+
+			</div>
 		</div>
-	</div>
 	</form>
 </body>
 </html>

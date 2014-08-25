@@ -12,7 +12,6 @@
 <style type="text/css">
 
 </style>
-
 <script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
@@ -50,7 +49,7 @@
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">
-			<li onmouseover="slideRibbon(0)"><a href="#">회계관리</a></li>
+			<li onmouseover="slideRibbon(0)"><a href="WIT_Accounting_index.jsp">회계관리</a></li>
 			<li onmouseover="slideRibbon(0)"><a href="#">전표 관리</a></li>
 			<li onmouseover="slideRibbon(1)"><a href="#">주요 장부</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="#">재무 제표</a></li>
@@ -75,50 +74,41 @@
 	<!-- //ibm-search-module --> <!-- ibm-common-menu --> <!-- <div id="ibm-common-menu" style="display: none;height: 1px;overflow: hidden;"> -->
 	<div id="ibm-common-menu" style="display: block; height: 41px; overflow: hidden;">
 		<div class="ibm-container-body" id="ibmweb_ribbon_0" style="height: 40px;">
-			
-		<!-- ****************************************************************************************** -->
-			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
-			
-				<ul id="subTab-0" style="display: none;">
-					<li class="subTab-0-0" style="display: block;"><a href="purchase.jsp">매입 전표 관리</a></li>
-					<li class="subTab-0-1" style="display: block;"><a href="salesSlip.jsp">매출 전표 관리</a></li>
-					<li class="subTab-0-3" style="display: block;"><a href="#">일반 전표 관리</a></li>
-					<li class="subTab-0-4" style="display: block;"><a href="#">결산 자료 입력</a></li>
-					<li class="subTab-0-5" style="display: block;"><a href="#">고정 자산 등록</a></li>
-				</ul>
-				
-				<ul id="subTab-1" style="display: none;">
-					<li class="subTab-1-0" style="display: block;"><a href="#">분개장</a></li>
-					<li class="subTab-1-1" style="display: block;"><a href="#">계정별 원장</a></li>
-					<li class="subTab-1-2" style="display: block;"><a href="#">현금 출납장</a></li>
-					<li class="subTab-1-3" style="display: block;"><a href="#">매입매출장</a></li>
-					<li class="subTab-1-4" style="display: block;"><a href="#">월별손익분석</a></li>
-					<li class="subTab-1-5" style="display: block;"><a href="#">월별원가분석</a></li>
-					<li class="subTab-1-6" style="display: block;"><a href="#">월별매입집계표</a></li>
-					<li class="subTab-1-7" style="display: block;"><a href="#">월별매출집계표</a></li>
-					<li class="subTab-1-8" style="display: block;"><a href="#">거래처별거래내역</a></li>
-					<li class="subTab-1-9" style="display: block;"><a href="#">거래처별계정별원장</a></li>
-					<li class="subTab-1-10" style="display: block;"><a href="#">경영요약보고서</a></li>
 					
-				</ul>
-				
+		<!-- ****************************************************************************************** -->
+			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">			
+				<ul id="subTab-0" style="display: none;">
+					<li class="subTab-0-0" style="display: block;"><a href="purchase.jsp">전표 관리</a></li>
+					<li class="subTab-0-1" style="display: block;"><a href="salesSlip.jsp">프로젝트 관리</a></li>
+					<li class="subTab-0-3" style="display: block;"><a href="#">결산 자료 관리</a></li>
+					<li class="subTab-0-4" style="display: block;"><a href="#">고정 자산 관리</a></li>
+				</ul>				
+				<ul id="subTab-1" style="display: none;">
+					<li class="subTab-1-0" style="display: block;"><a href="WIT_Accounting_journal.jsp">분개장</a></li>
+					<li class="subTab-1-1" style="display: block;"><a href="WIT_Accounting_ledger.jsp">계정별 원장</a></li>
+					<li class="subTab-1-2" style="display: block;"><a href="WIT_Accounting_cashBook.jsp">현금출납장</a></li>
+					<li class="subTab-1-3" style="display: block;"><a href="WIT_Accounting_psLedger.jsp">매입매출장</a></li>
+					<li class="subTab-1-4" style="display: block;"><a href="WIT_Accounting_monthly_IS.jsp">월별손익분석</a></li>
+					<li class="subTab-1-5" style="display: block;"><a href="WIT_Accounting_monthly_CA.jsp">월별원가분석</a></li>
+					<li class="subTab-1-6" style="display: block;"><a href="WIT_Accounting_pLedger.jsp">매입집계표</a></li>
+					<li class="subTab-1-7" style="display: block;"><a href="WIT_Accounting_sLedger.jsp">매출집계표</a></li>
+					<li class="subTab-1-9" style="display: block;"><a href="WIT_Accounting_customersLedger.jsp">거래처원장</a></li>
+					<li class="subTab-1-10" style="display: block;"><a href="#">경영요약보고서</a></li>					
+				</ul>				
 				<ul id="subTab-2" style="display: none;">
-					<li class="subTab-2-0" style="display: block;"><a href="#">대차대조표</a></li>
-					<li class="subTab-2-1" style="display: block;"><a href="#">손익계산서</a></li>
+					<li class="subTab-2-0" style="display: block;"><a href="WIT_Accounting_balanceSheet.jsp">대차대조표</a></li>
+					<li class="subTab-2-1" style="display: block;"><a href="WIT_Accounting_incomeStatement.jsp">손익계산서</a></li>
 					<li class="subTab-2-2" style="display: block;"><a href="#">현금흐름표</a></li>
 					<li class="subTab-2-3" style="display: block;"><a href="#">자본변동표</a></li>
-					<li class="subTab-2-4" style="display: block;"><a href="#">시산표</a></li>
-					<li class="subTab-2-5" style="display: block;"><a href="#">원가 명세서</a></li>
-					<li class="subTab-2-6" style="display: block;"><a href="#">계정 명세서</a></li>
+					<li class="subTab-2-4" style="display: block;"><a href="WIT_Accounting_trialBalance.jsp">시산표</a></li>
+					<li class="subTab-2-5" style="display: block;"><a href="WIT_Accounting_costSpecification.jsp">원가 명세서</a></li>
 					<li class="subTab-2-7" style="display: block;"><a href="#">이익 잉여금 처분계산서</a></li>
-				</ul>
-				
+				</ul>				
 				<ul id="subTab-3" style="display: none;">
 					<li class="subTab-3-0" style="display: block;"><a href="#">고정자산관리</a></li>
 					<li class="subTab-3-1" style="display: block;"><a href="#">고정자산현황</a></li>
 					<li class="subTab-3-2" style="display: block;"><a href="#">감가상각현황</a></li>
-				</ul>
-				
+				</ul>				
 				<ul id="subTab-4" style="display: none;">
 					<li class="subTab-4-0" style="display: block;"><a href="#">회사등록</a></li>
 					<li class="subTab-4-1" style="display: block;"><a href="#">거래처등록</a></li>
@@ -127,17 +117,14 @@
 					<li class="subTab-4-4" style="display: block;"><a href="#">데이터백업</a></li>
 					<li class="subTab-4-5" style="display: block;"><a href="#">데이터복구</a></li>
 					<li class="subTab-4-6" style="display: block;"><a href="#">환경설정</a></li>
-				</ul>
-				
+				</ul>				
 			</div>
 		<!-- ****************************************************************************************** -->
-
 		</div>
 	</div>
 	<!-- //ibm-common-menu --> 
 </header>
 <!-- MASTHEAD_END -->
-
 </div>
 </body>
 </html>
