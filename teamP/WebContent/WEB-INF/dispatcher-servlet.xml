@@ -10,9 +10,9 @@
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean class="mvc.basic.MemberController" id="memberController"></bean>
+	<bean class="GM.MemberDAO" id="memberdao"></bean>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/mvcTest/"></property>
+		<property name="prefix" value="/cooperation/_GM/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>
