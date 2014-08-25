@@ -30,15 +30,13 @@
 <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
 <script type="text/javascript">
 	calendarIDs = [ 'FromDt', 'FromDt1', 'ToDt', 'ToDt1' ]; // 달력이 추가될 태그의 id
-	function PopUpDepCd(){
-		window.open("ClkDep.jsp","","width = 500px, height = 300px");
-	}	
-	function PopUpNew(){
-		window.open("ClockPresent.jsp","","");
-		
+	function PopUpDepCd() {
+		window.open("ClkDep.jsp", "", "width = 500px, height = 300px");
 	}
+	function PopUpNew() {
+		window.open("ClockPresent.jsp", "", "");
 
-	
+	}
 </script>
 </head>
 
@@ -93,37 +91,39 @@
 
 							<tr>
 								<th>부서</th>
-								<td><input type="text" name="txtSiteCd" id="txtSiteCd"
+								<td><input type="text" name="DepCd" id="DepCd"
 									class="rightnone" size="10" maxlength="30" /><a href="#"><img
-										src="img/Find.gif" width="22px" height="19px" alt="검색" onclick = "PopUpDepCd()"/></a> <input
-									type="text" name="txtSiteDes" id="txtSiteDes" size="15"
-									value="" class="grayleft" style="width: 90px;"
-									readonly="readonly" /></td>
+										src="img/Find.gif" width="22px" height="19px" alt="검색"
+										onclick="PopUpDepCd()" /></a> <input type="text" name="Dep"
+									id="Dep" size="15" value="" class="grayleft"
+									style="width: 90px;" readonly="readonly" /></td>
 							</tr>
 
 							<tr>
 								<th>구분</th>
 								<td><input type="radio" name="rbIoType1" id="rbIoType1"
-									onkeypress="return fnEnterHandles1(this,'1');" value="1"
-									 />출근 <input type="radio" name="rbIoType1"
-									id="rbIoType2" onkeypress="return fnEnterHandles1(this,'1');"
-									value="2" />퇴근 <input type="radio" name="rbIoType1"
-									id="rbIoType3" onkeypress="return fnEnterHandles1(this,'1');"
-									value="3" />출/퇴근</td>
+									onkeypress="return fnEnterHandles1(this,'1');" value="1" checked = "checked"/>출근
+									<input type="radio" name="rbIoType1" id="rbIoType2"
+									onkeypress="return fnEnterHandles1(this,'1');" value="2" />퇴근
+									<input type="radio" name="rbIoType1" id="rbIoType3"
+									onkeypress="return fnEnterHandles1(this,'1');" value="3" />출/퇴근
+									<input type="radio" name="rbIoType1" id="rbIoType4"
+									onkeypress="return fnEnterHandles1(this,'1');" value="4" />휴가</td>
 							</tr>
 
 							<!--  endof 검색조건  -->
 						</table>
 						<div id="search-button" class="search-button">
 							<span class="btn gray"><input name="btnSearch"
-								type="button" id="btnSearch" value="검색(F8)" onclick = "PopUpNew()"/></span> <span
-								class="btn gray"><input name="btnRewrite" type="button"
-								id="btnRewrite" onclick="javascript:fnClear();" value="다시작성" /></span>
+								type="button" id="btnSearch" value="검색(F8)" onclick="PopUpNew()" /></span>
+							<span class="btn gray"><input name="btnRewrite"
+								type="button" id="btnRewrite" onclick="javascript:fnClear();"
+								value="다시작성" /></span>
 
 						</div>
 					</fieldset>
 				</div>
-			</div>			
+			</div>
 		</form>
 		<hr />
 	</div>

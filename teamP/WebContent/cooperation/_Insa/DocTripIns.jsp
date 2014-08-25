@@ -26,9 +26,20 @@ font-family: "맑은 고딕";
 font-family: "맑은 고딕";
 	font-size: 30px;	
 }
+.ckNo {
+	text-align: left;
+	font-family: "맑은 고딕";
+	font-size: 20px;
+	height: 50px;
+}
 </style>
 </head>
 <body>
+<table width="900px" align="center">
+			<tr>
+				<td class="ckNo"><b>No.</b></td>
+			</tr>
+		</table>
 	<table border="1" width="900px" height="1000px" align="center">
 		<col width="8%" />
 		<col width="8%" />		
@@ -42,45 +53,45 @@ font-family: "맑은 고딕";
 		</tr>
 		<tr class = "ck">
 			<td>소속</td>
-			<td colspan = "2">영업팀</td>
+			<td colspan = "2" id = "Belong">영업팀</td>
 			<td >직책</td>
-			<td >사원</td>
+			<td id = "Duty">사원</td>
 		</tr>
 
 		<tr class = "ck">
 			<td>성명</td>
-			<td colspan = "4">호날두</td>		
+			<td colspan = "4" id = "Name">호날두</td>		
 		</tr>
 		
 		<tr class = "ck">
 			<td>일자</td>
-			<td colspan="4">2013-08-13</td>
+			<td colspan="4" id = "Date">2013-08-13</td>
 		</tr>
 		
 		<tr class = "ck">
 			<td>전화번호</td>
-			<td colspan="4">010 - 1234 - 5678</td>
+			<td colspan="4" id = "Phone">010 - 1234 - 5678</td>
 		</tr>
 		<tr class = "ck">
 			<td>업무기간</td>
-			<td colspan="4">2014-08-13 ~ 2014-08-14</td>
+			<td colspan="4" id = "TripDt">2014-08-13 ~ 2014-08-14</td>
 		</tr>
 
 		<tr class = "ck">
 			<td>방문자</td>
-			<td colspan="4">내가 에이스</td>
+			<td colspan="4" id = "">내가 에이스</td>
 		</tr>
 		
 		<tr class = "ck">
 		<td rowspan="2">동행자</td>
 			<td>소속</td>
-			<td>영업팀</td>
+			<td id = "DBelong">영업팀</td>
 			<td>직책</td>
-			<td>사원</td>
+			<td id ="DDuty">사원</td>
 		</tr>
 		<tr class = "ck">
 			<td>성명</td>
-			<td colspan = "3">베일</td>		
+			<td colspan = "3" id = "DName">베일</td>		
 		</tr>		
 		
 		<tr class = "ck1">

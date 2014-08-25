@@ -38,6 +38,90 @@
 	function findInput() {
 		$('form input[type="text"], form textarea').eq(0).focus();
 	}
+	function input_email() {
+		var text = $('#select_email option:selected').text();
+		var value = $('#select_email option:selected').val();
+		//	alert(value);
+		if (value > 0) {
+			$('#email2').val(text);
+		} else {
+			$('#email2').val('');
+		}
+	}
+</script>
+
+<!-- 이미지업로드 -->
+<script type="text/javascript">
+	function previewImage(targetObj, View_area) {
+		var preview = document.getElementById(View_area); // td id
+		var ua = window.navigator.userAgent;
+
+		//ie일때(IE8 이하에서만 작동)
+		if (ua.indexOf("MSIE") > -1) {
+			targetObj.select();
+			try {
+				var src = document.selection.createRange().text; // get file full path(IE9, IE10에서 사용 불가)
+				var ie_preview_error = document
+						.getElementById("ie_preview_error_" + View_area);
+
+				if (ie_preview_error) {
+					preview.removeChild(ie_preview_error); //error가 있으면 delete
+				}
+
+				var img = document.getElementById(View_area); //이미지가 뿌려질 곳
+
+				//이미지 로딩, sizingMethod는 div에 맞춰서 사이즈를 자동조절 하는 역할
+				img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
+						+ src + "', sizingMethod='scale')";
+			} catch (e) {
+				if (!document.getElementById("ie_preview_error_" + View_area)) {
+					var info = document.createElement("<p>");
+					info.id = "ie_preview_error_" + View_area;
+					info.innerHTML = e.name;
+					preview.insertBefore(info, null);
+				}
+			}
+			//ie가 아닐때(크롬, 사파리, FF)
+		} else {
+			var files = targetObj.files;
+			for (var i = 0; i < files.length; i++) {
+				var file = files[i];
+				var imageType = /image.*/; //이미지 파일일경우만.. 뿌려준다.
+				if (!file.type.match(imageType))
+					continue;
+				var prevImg = document.getElementById("prev_" + View_area); //이전에 미리보기가 있다면 삭제
+				if (prevImg) {
+					preview.removeChild(prevImg);
+				}
+				var img = document.createElement("img");
+				img.id = "prev_" + View_area;
+				img.classList.add("obj");
+				img.file = file;
+				img.style.width = '120px';
+				img.style.height = '150px';
+				preview.appendChild(img);
+				if (window.FileReader) { // FireFox, Chrome, Opera 확인.
+					var reader = new FileReader();
+					reader.onloadend = (function(aImg) {
+						return function(e) {
+							aImg.src = e.target.result;
+						};
+					})(img);
+					reader.readAsDataURL(file);
+				} else { // safari is not supported FileReader
+					//alert('not supported FileReader');
+					if (!document.getElementById("sfr_preview_error_"
+							+ View_area)) {
+						var info = document.createElement("p");
+						info.id = "sfr_preview_error_" + View_area;
+						info.innerHTML = "not supported FileReader";
+						preview.insertBefore(info, null);
+					}
+				}
+			}
+		}
+	}
+//-->
 </script>
 <title>사원(담당)등록</title>
 
@@ -123,9 +207,7 @@
 </script>
 </head>
 <body>
-
 	<form method="post" id="form" enctype="multipart/form-data">
-
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -148,8 +230,7 @@
 					<col width="30%" span="2" />
 					<col width="" />
 					<tr>
-						<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-							src="img/ronaldo1.jpg" style="height: 150px; width: 140px;" /></td>
+						<td rowspan="10" class="center white" id="View_area"></td>
 						<th>사원번호</th>
 						<td><input type="text" value="001" name="Sabun" id="Sabun"
 							class="default" /></td>
@@ -220,61 +301,79 @@
 					</tr>
 					<tr>
 						<th>전화</th>
-						<td><input name="Tel" type="text" value="010-3096-0955"
-							maxlength="20" id="Tel" class="default"
-							onkeydown="jsOnlyNumberKey4(this);"
-							style="width: 160px; ime-mode: disabled" /></td>
+						<td><select>
+								<option>02</option>
+								<option>032</option>
+								<option>031</option>
+						</select> - <input type="tel" class="default" size=5 maxlength="4"
+							required> - <input type="tel" class="default" size=5
+							maxlength="4" required></td>
 						<th>핸드폰</th>
-						<td><input name="Phone" type="text" maxlength="20"
-							value="010-1234-8714" id="Phone" class="default"
-							onkeydown="jsOnlyNumberKey4(this);"
-							style="width: 160px; ime-mode: disabled" /></td>
+						<td><select>
+								<option>010</option>
+								<option>011</option>
+								<option>017</option>
+						</select> - <input type="tel" class="default" size=5 maxlength="4" required>
+							- <input type="tel" class="default" size=5 maxlength="4" required></td>
 					</tr>
 					<tr>
 						<th>부서코드</th>
 						<td><input name="DepCd" type="text" value="00002"
 							maxlength="14" id="DepCd" class="blue_zoom" style="width: 46px;" /><a
-							href="#"><img src="img/Find.gif" id="imgSearchEmpSite"
-								width="22px" height="19px" alt="검색" onclick="PopUpDep()" /></a><input
-							name="Dep" type="text" value="경영지원팀" readonly="readonly" id="Dep"
-							class="graybox" style="width: 88px;" /></td>
+							href="#"><img src="img/Find.gif" width="22px" height="19px"
+								alt="검색" onclick="PopUpDep()" /></a><input name="Dep" type="text"
+							value="인사부" readonly="readonly" id="Dep" class="graybox"
+							style="width: 88px;" /></td>
 						<td colspan="2"></td>
 					</tr>
 
 					<tr>
 						<th>주소</th>
-						<td colspan="4"><a href="#" id="btnSearchPostNo"
-							name="btnSearchPostNo" class="link-blue"
-							onclick="fnSearchZipCode('txtPostNo1','txtPostNo2','txtJuso','txtJuso');">우편번호검색</a>
-							<input name="txtPostNo1" type="text" maxlength="3" value="123"
-							id="txtPostNo1" class="default" style="width: 30px;" />-<input
-							name="txtPostNo2" type="text" maxlength="3" id="txtPostNo2"
-							value="123" class="default" style="width: 30px;" /><br /> <textarea
-								name="txtJuso" id="txtJuso" rows="3" cols="86" class="default"
-								style="width: 300px">경남 김해시 삼방동 29-4번지 
-광옥빌라502호</textarea></td>
+						<td colspan="4"><a href="#" id="PostNum" name="PostNum"
+							class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
+							maxlength="3" value="123" id="txtPostNo1" class="default"
+							style="width: 30px;" />-<input name="PostNum2" type="text"
+							maxlength="3" id="PostNum2" value="123" class="default"
+							style="width: 30px;" /><br /> <input type="text" name="Addr1"
+							id="Addr1" class="default" style="width: 300px"
+							value="경남 김해시 삼방동 29-4번지" /></td>
 					</tr>
 
 					<tr>
-						<th>사진 <a href="javascript:;"
-							onclick="alert('권장 사진 크기\n가로:140픽셀(3.7 Cm)\n높이:150픽셀(3.8 Cm)');"><img
-								src="img/icon_smile.gif" width="14px" height="13px" alt="" /></a></th>
-						<td colspan="4"><input name="file" type="file" id="file"
-							class="graybox" size="70" style="height: 20px;" /></td>
-					</tr>
-					<tr>
-						<th>첨부파일</th>
-						<td id="fileadd" colspan="4"><input type="file" id="file"
-							name="file" class="graybox" size="70" style="height: 20px;" /></td>
+						<th>상세주소</th>
+						<td colspan="4"><input type="text" class="default"
+							name="Addr2" id="Addr2" value="광옥빌라502호" style="width: 80%" /></td>
 					</tr>
 
 					<tr>
-						<th>개인파일함</th>
-
-						<td colspan="4"><input type="hidden" name="hidFile"
-							id="hidFile" /> <a href="#" id="btnFile" name="btnFile"
-							class="link-blue"><label for="lblPFile" style="padding: 0px">개인파일함</label></a></td>
+						<th>사진 <img src="img/icon_smile.gif" width="14px"
+							height="13px" /></th>
+						<td colspan="4"><input type="file" name="Photo" id="Photo"
+							onchange="previewImage(this,'View_area')" /></td>
 					</tr>
+
+					<tr>
+						<th>이메일주소</th>
+						<td colspan="4"><input type="text" name="email1" id="email1"
+							class="default">@<input type="text" name="email2"
+							id="email2" class="default" required><select
+							id="select_email" onChange="input_email()">
+								<option value="0">직접 입력</option>
+								<option value="1">gmail.com</option>
+								<option value="2">hanmail.net</option>
+								<option value="3">naver.com</option>
+								<option value="4">hotmail.com</option>
+								<option value="5">msn.com</option>
+								<option value="6">nate.com</option>
+								<option value="7">cyworld.com</option>
+						</select></td>
+					</tr>
+				
+				<tr>
+					<th>비밀번호</th>
+					<td colspan="4"><input type="password" name="pwd" id="pwd"
+						class="default"></td>
+				</tr>
 				</table>
 
 

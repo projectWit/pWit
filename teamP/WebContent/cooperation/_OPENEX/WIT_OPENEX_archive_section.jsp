@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT OPENEX</title>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="OPENEXscript/highcharts.js"></script>
 <script type="text/javascript" src="OPENEXscript/highcharts-3d.js"></script>
 <script type="text/javascript" src="OPENEXscript/exporting.js"></script>

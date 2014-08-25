@@ -8,17 +8,17 @@
 <meta name="module" content="opage" />
 <meta http-equiv="imagetoolbar" content="no" />
 <title>WIT는 당신을 환영합니다!</title>
-<link rel="stylesheet" href="./css/first.css" type="text/css" charset="UTF-8"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/first.css" type="text/css" charset="UTF-8"
 	media="all" />
-<link rel="stylesheet" href="./css/pok.css" type="text/css" charset="UTF-8"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/pok.css" type="text/css" charset="UTF-8"
 	media="all" />
-<link rel="stylesheet" href="./css/style.css" type="text/css" charset="UTF-8"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/style.css" type="text/css" charset="UTF-8"
 	media="all" />
-<script type="text/javascript" src="./js/pok.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_pokgan_MM/js/pok.js"></script>
 <link rel="alternate" type="application/rss+xml" title="Site RSS"
-	href="./xml/rss.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Site Atom"
-	href="./xml/atom.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/atom.xml" />
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
@@ -62,7 +62,7 @@ div.autosourcing-stub {
 							alt="시즈오카 오뎅" /></a></td>
 					<td><a href="/534812"><img
 							src="./images/shizuoka-setumei.jpg" width="331" height="141"
-							alt="시즈오카 오뎅" /></a></td>
+							alt="시즈오카 오뎅 설명" /></a></td>
 					<td><a href="/943102"><img src="./images/hiyashi.jpg"
 							width="220" height="141" alt="히야시츄카" /></a></td>
 				</tr>

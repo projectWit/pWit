@@ -5,14 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT는 당신을 환영합니다!</title>
-<link rel="stylesheet" type="text/css" href="../css/witCommon.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/witCommon.css"> -->
+<link rel="stylesheet" type="text/css" href="OPENEXcss/witCommon.css">
 <link rel="stylesheet" type="text/css" href="OPENEXcss/WIT_OPENEX_section.css">
 <style type="text/css">
 </style>
-
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/witCommon.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/witCommon.js"></script>
 </head>
 <body id="ibm-com" class="v17">
 	<div class="ibm-home-page" id="ibm-top" style="margin-top: 74px;">

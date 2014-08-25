@@ -25,6 +25,12 @@
 function Close() {
    window.close();
 };
+
+function fnLink(no, str) {
+    window.opener.form.InTypeCd.value=no;
+    window.opener.form.InType.value=str;
+    window.close();
+ };
 </script>
 </head>
 <body>
@@ -59,32 +65,28 @@ function Close() {
 					<tbody>
 
 						<tr id="rpt_ctl00_trRpt">
-							<td><a href="javascript:fnLink('00001|정규직');"
-								class="list_link">00001</a></td>
-							<td><a href="javascript:fnLink('00001|정규직');"
-								class="list_link">정규직</a></td>
+							<td><a onclick="fnLink('100','정규직')" class="list_link">100</a></td>
+							<td><a onclick="fnLink('100','정규직')" class="list_link">정규직</a></td>
 						</tr>
 
 						<tr id="rpt_ctl01_trRpt">
-							<td><a href="javascript:fnLink('00002|계약직');"
-								class="list_link">00002</a></td>
-							<td><a href="javascript:fnLink('00002|계약직');"
-								class="list_link">계약직</a></td>
+							<td><a onclick="fnLink('200','계약직')" class="list_link">200</a></td>
+							<td><a onclick="fnLink('200','계약직')" class="list_link">계약직</a></td>
 						</tr>
 
 						<tr id="rpt_ctl02_trRpt">
-							<td><a href="javascript:fnLink('01|인턴');" class="list_link">01</a></td>
-							<td><a href="javascript:fnLink('01|인턴');" class="list_link">인턴</a></td>
+							<td><a onclick="fnLink('300','인턴')" class="list_link">300</a></td>
+							<td><a onclick="fnLink('300','인턴')" class="list_link">인턴</a></td>
 						</tr>
 
 						<tr id="rpt_ctl03_trRpt">
-							<td><a href="javascript:fnLink('02|신입');" class="list_link">02</a></td>
-							<td><a href="javascript:fnLink('02|신입');" class="list_link">신입</a></td>
+							<td><a onclick="fnLink('400','신입')" class="list_link">400</a></td>
+							<td><a onclick="fnLink('400','신입')" class="list_link">신입</a></td>
 						</tr>
 
 						<tr id="rpt_ctl04_trRpt">
-							<td><a href="javascript:fnLink('03|경력');" class="list_link">03</a></td>
-							<td><a href="javascript:fnLink('03|경력');" class="list_link">경력</a></td>
+							<td><a onclick="fnLink('500','경력')" class="list_link">500</a></td>
+							<td><a onclick="fnLink('500','경력')" class="list_link">경력</a></td>
 						</tr>
 
 

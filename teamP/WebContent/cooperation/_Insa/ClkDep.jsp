@@ -25,6 +25,12 @@
 	function Close() {
 		window.close();
 	};
+	
+	function fnLink(no, str) {
+	      window.opener.form.DepCd.value=no;
+	      window.opener.form.Dep.value=str;
+	      window.close();
+	   };
 </script>
 </head>
 <body>
@@ -63,24 +69,18 @@
 					<tbody id="rptItems">
 
 						<tr id="rpt_ctl00_trRpt">
-							<td><a href="javascript:fnLink('00001|생산팀|');"
-								class="list_link list_link_focus">00001</a></td>
-							<td><a href="javascript:fnLink('00001|생산팀|');"
-								class="list_link">생산팀</a></td>
+							<td><a onclick="fnLink('00001','인사부')" class="list_link">00001</a></td>
+							<td><a onclick="fnLink('00001','인사부')" class="list_link">인사부</a></td>
 						</tr>
 
 						<tr id="rpt_ctl01_trRpt">
-							<td><a href="javascript:fnLink('00002|경영지원팀|');"
-								class="list_link list_link_focus">00002</a></td>
-							<td><a href="javascript:fnLink('00002|경영지원팀|');"
-								class="list_link">경영지원팀</a></td>
+							<td><a onclick="fnLink('00002','회계부')" class="list_link">00002</a></td>
+							<td><a onclick="fnLink('00002','회계부')" class="list_link">회계부</a></td>
 						</tr>
 
 						<tr id="rpt_ctl02_trRpt">
-							<td><a href="javascript:fnLink('00003|영업팀|');"
-								class="list_link list_link_focus">00003</a></td>
-							<td><a href="javascript:fnLink('00003|영업팀|');"
-								class="list_link">영업팀</a></td>
+							<td><a onclick="fnLink('00003','영업부')" class="list_link">00003</a></td>
+							<td><a onclick="fnLink('00003','영업부')" class="list_link">영업부</a></td>
 						</tr>
 
 

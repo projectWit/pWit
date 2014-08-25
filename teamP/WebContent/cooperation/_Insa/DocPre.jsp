@@ -208,7 +208,7 @@
 </style>
 
 <script type="text/javascript">
-	calendarIDs = [ 'PreDt', 'FromDt', 'ToDt' ]; // 달력이 추가될 태그의 id
+	calendarIDs = [ 'WriteDt','PreDt', 'FromDt', 'ToDt' ]; // 달력이 추가될 태그의 id
 </script>
 
 <script type="text/javascript">
@@ -237,13 +237,17 @@
 		<br />
 		<div id="contents">
 			<table summary="" class="entry H_0px fixed">
-				<col width="8%" />
+				<col width="10%" />
 				<col width="10%" />
 				<col width="10%" />
 				<col width="15%" />
 				<col width="25%" />
 
-
+			<tr>
+						<th><label for="ddlYear"> 작성일자</label></th>
+						<td colspan="4"><input name="WriteDt" type="text" id="WriteDt"
+							size="24" maxlength="20" value="" class="default"/></td>								
+					</tr>
 				<tr>
 					<th rowspan="2">인적사항</th>
 					<td id="ck">소속</td>

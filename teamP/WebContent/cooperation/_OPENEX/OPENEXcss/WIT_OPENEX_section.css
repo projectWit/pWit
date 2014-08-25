@@ -5,6 +5,10 @@ body {
 	font-family: 맑은 고딕;
 }
 
+*:FOCUS {
+	outline: none;
+}
+
 a:LINK {
 	text-decoration: none;
 	color: #747474;
@@ -54,7 +58,7 @@ a:focus {
 	color: #4C4C4C;
 }
 
-.CategoryImages {
+.CategoryImagesCss {
 	width: 50px;
 	height: 15px;
 	bottom: 10px;
@@ -132,6 +136,220 @@ a:focus {
 /* 공통 섹션 끝 */
 
 /* 출제 섹션 시작 */
+#OPENEX_setEam_menuContainer {
+	width: 100%;
+	height: 100%;
+	min-width: 900;
+	min-height: 600px;
+}
+
+#menuContaner {
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+	min-height: 300px;
+	text-align: center;
+	position: relative;
+	top: 80px;
+	font-weight: bold;
+}
+
+#OPENEX_LogoMenu {
+	width: 270px;
+	height: 70px;
+	border-radius: 70px 0/30px 0;
+	cursor: pointer;
+	position: relative;
+	margin: 0 auto;
+	color: #FFFFFF;
+	border: 1px solid white;
+	font-weight: bold;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	background: rgb(178, 225, 255); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(178, 225, 255, 1)
+		0%, rgba(102, 182, 252, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(178, 225, 255, 1)),
+		color-stop(100%, rgba(102, 182, 252, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(178, 225, 255, 1)
+		0%, rgba(102, 182, 252, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(178, 225, 255, 1)
+		0%, rgba(102, 182, 252, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(178, 225, 255, 1)
+		0%, rgba(102, 182, 252, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(178, 225, 255, 1) 0%,
+		rgba(102, 182, 252, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff',
+		endColorstr='#66b6fc', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+#OPENEX_LogoMenu:hover {
+	border-radius: 0 30px/0 70px;
+	background: rgb(208, 228, 247); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(208, 228, 247, 1) 0%,
+		rgba(115, 177, 231, 1) 24%, rgba(10, 119, 213, 1) 50%,
+		rgba(83, 159, 225, 1) 79%, rgba(135, 188, 234, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(208,
+		228, 247, 1)), color-stop(24%, rgba(115, 177, 231, 1)),
+		color-stop(50%, rgba(10, 119, 213, 1)),
+		color-stop(79%, rgba(83, 159, 225, 1)),
+		color-stop(100%, rgba(135, 188, 234, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(208, 228, 247, 1) 0%,
+		rgba(115, 177, 231, 1) 24%, rgba(10, 119, 213, 1) 50%,
+		rgba(83, 159, 225, 1) 79%, rgba(135, 188, 234, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(208, 228, 247, 1) 0%,
+		rgba(115, 177, 231, 1) 24%, rgba(10, 119, 213, 1) 50%,
+		rgba(83, 159, 225, 1) 79%, rgba(135, 188, 234, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(208, 228, 247, 1) 0%,
+		rgba(115, 177, 231, 1) 24%, rgba(10, 119, 213, 1) 50%,
+		rgba(83, 159, 225, 1) 79%, rgba(135, 188, 234, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(208, 228, 247, 1) 0%,
+		rgba(115, 177, 231, 1) 24%, rgba(10, 119, 213, 1) 50%,
+		rgba(83, 159, 225, 1) 79%, rgba(135, 188, 234, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7',
+		endColorstr='#87bcea', GradientType=0); /* IE6-9 */
+}
+
+#openex_setExam_selectbox {
+	width: 100%;
+	height: 100%;
+	margin: 5px 10px;
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	ext-overflow: ellipsis;
+	display: table-cell;
+}
+
+.mainMenu {
+	width: 70px;
+	height: 70px;
+	border-radius: 0 20px;
+	cursor: pointer;
+	position: relative;
+	margin: 5px 10px;
+	color: #3DB7CC;
+	text-shadow: 0 1px 2px white;
+	border: 1px solid white;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	display: table-cell;
+	vertical-align: middle;
+	ext-overflow: ellipsis;
+	background: rgb(214, 249, 255); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(214, 249, 255, 1)
+		0%, rgba(158, 232, 250, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(214, 249, 255, 1)),
+		color-stop(100%, rgba(158, 232, 250, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(214, 249, 255, 1)
+		0%, rgba(158, 232, 250, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(214, 249, 255, 1)
+		0%, rgba(158, 232, 250, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(214, 249, 255, 1)
+		0%, rgba(158, 232, 250, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(214, 249, 255, 1) 0%,
+		rgba(158, 232, 250, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff',
+		endColorstr='#9ee8fa', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.mainMenu:HOVER, .mainMenu:FOCUS {
+	width: 70px;
+	height: 70px;
+	border-radius: 0 40px;
+	color: #B5B2FF;
+	text-shadow: 0 1px 2px black;
+	background: rgb(167, 207, 223);
+	/* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(167, 207, 223, 1)
+		0%, rgba(35, 83, 138, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(167, 207, 223, 1)),
+		color-stop(100%, rgba(35, 83, 138, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(167, 207, 223, 1)
+		0%, rgba(35, 83, 138, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(167, 207, 223, 1)
+		0%, rgba(35, 83, 138, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(167, 207, 223, 1)
+		0%, rgba(35, 83, 138, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(167, 207, 223, 1) 0%,
+		rgba(35, 83, 138, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf',
+		endColorstr='#23538a', GradientType=1);
+	background: rgb(167, 207, 223);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.subMenu {
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	cursor: pointer;
+	position: relative;
+	margin: 5px 10px;
+	color: #FFFFFF;
+	border: 1px solid white;
+	text-shadow: 0 1px 2px black;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	display: table-cell;
+	vertical-align: middle;
+	ext-overflow: ellipsis;
+	background: rgb(241, 231, 103); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(241, 231, 103, 1)
+		0%, rgba(254, 182, 69, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(241, 231, 103, 1)),
+		color-stop(100%, rgba(254, 182, 69, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(241, 231, 103, 1)
+		0%, rgba(254, 182, 69, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(241, 231, 103, 1)
+		0%, rgba(254, 182, 69, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(241, 231, 103, 1)
+		0%, rgba(254, 182, 69, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(241, 231, 103, 1) 0%,
+		rgba(254, 182, 69, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767',
+		endColorstr='#feb645', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.subMenu:HOVER, .subMenu:FOCUS {
+	border-radius: 40px;
+	color: #F15F5F; text-shadow : 1px 1px 2px white;
+	background: rgb(255, 175, 75); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255, 175, 75, 1)
+		0%, rgba(255, 146, 10, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
+		color-stop(0%, rgba(255, 175, 75, 1)),
+		color-stop(100%, rgba(255, 146, 10, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 175, 75, 1)
+		0%, rgba(255, 146, 10, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(255, 175, 75, 1)
+		0%, rgba(255, 146, 10, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255, 175, 75, 1)
+		0%, rgba(255, 146, 10, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, rgba(255, 175, 75, 1) 0%,
+		rgba(255, 146, 10, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b',
+		endColorstr='#ff920a', GradientType=1);
+	text-shadow: 1px 1px 2px white;
+	/* IE6-9 fallback on horizontal gradient */
+}
+
+.clearMenu {
+	clear: both;
+}
+
 #openex_setExam {
 	text-align: center;
 }
@@ -144,27 +362,23 @@ a:focus {
 
 #openex_setExam_excount {
 	position: relative;
-	top: 2px;
-	left: 80px;
-	width: 150px;
-	height: 345px;
-	float: left;
+	width: 100%;
+	height: 420px;;
 	border: 1px solid gray;
+	border-radius-top-left: 10px;
 }
 
 #openex_setExam_excount_down {
 	position: relative;
-	top: 2px;
-	left: 80px;
-	width: 150px;
-	height: 30px;
+	width: 100%;
+	height: 20px;
 	clear: both;
 }
 
 #openex_setExam_content {
 	position: relative;
-	left: 90px;
-	float: left;
+	width: 100%;
+	height: 100%;
 }
 
 #openex_setExam_radiobox {
@@ -174,17 +388,7 @@ a:focus {
 	margin-bottom: 10px;
 }
 
-#openex_setExam_submit {
-	height: 20px;
-}
 
-#openex_setExam_submit input {
-	width: 120px;
-}
-
-#openex_setExam_submit input:HOVER {
-	font-size: 16px;
-}
 
 /* 출제 섹션 끝 */
 
@@ -205,8 +409,132 @@ a:focus {
 /* 문제풀이 섹션 끝 */
 
 /* 리스트 섹션 시작 */
+#list_selectBtn {
+	width: 25px;
+	height: 400px;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	left: 50px;
+	top: 60px;
+	cursor: pointer;
+}
+
+#list_selectBtn_listBtn {
+	width: 25px;
+	height: 150px;
+	border-radius: 20px 0 0 20px;
+	position: relative;
+	margin-top: 0 auto;
+	color: white;
+	background: #c5deea; /* Old browsers */
+	background: -moz-linear-gradient(left, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #c5deea),
+		color-stop(31%, #8abbd7), color-stop(100%, #066dab));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+	/* IE10+ */
+	background: linear-gradient(to right, #c5deea 0%, #8abbd7 31%, #066dab 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea',
+		endColorstr='#066dab', GradientType=1); /* IE6-9 */
+}
+
+#list_selectBtn_listBtn:HOVER, #list_selectBtn_listBtn:FOCUS {
+	font-size: 17px;
+	height: 200px;
+	text-shadow: 1px 0 1px white;
+	background: #c5deea; /* Old browsers */
+	background: -moz-linear-gradient(left, #c5deea 0%, #8abbd7 17%, #066dab 45%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #c5deea),
+		color-stop(17%, #8abbd7), color-stop(45%, #066dab));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #c5deea 0%, #8abbd7 17%, #066dab 45%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #c5deea 0%, #8abbd7 17%, #066dab 45%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #c5deea 0%, #8abbd7 17%, #066dab 45%);
+	/* IE10+ */
+	background: linear-gradient(to right, #c5deea 0%, #8abbd7 17%, #066dab 45%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea',
+		endColorstr='#066dab', GradientType=1); /* IE6-9 */
+}
+
+#list_selectBtn_graphBtn {
+	width: 25px;
+	height: 150px;
+	border-radius: 20px 0 0 20px;
+	position: relative;
+	margin-top: 0 auto;
+	color: white;
+	background: #febbbb; /* Old browsers */
+	background: -moz-linear-gradient(left, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #febbbb),
+		color-stop(45%, #fe9090), color-stop(100%, #ff5c5c));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+	/* IE10+ */
+	background: linear-gradient(to right, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb',
+		endColorstr='#ff5c5c', GradientType=1); /* IE6-9 */
+}
+
+#list_selectBtn_graphBtn:HOVER, #list_selectBtn_graphBtn:FOCUS {
+	font-size: 17px;
+	height: 200px;
+	text-shadow: 1px 0 1px white;
+	background: #febbbb; /* Old browsers */
+	background: -moz-linear-gradient(left, #febbbb 0%, #fe9090 18%, #ff5c5c 43%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #febbbb),
+		color-stop(18%, #fe9090), color-stop(43%, #ff5c5c));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #febbbb 0%, #fe9090 18%, #ff5c5c 43%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #febbbb 0%, #fe9090 18%, #ff5c5c 43%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #febbbb 0%, #fe9090 18%, #ff5c5c 43%);
+	/* IE10+ */
+	background: linear-gradient(to right, #febbbb 0%, #fe9090 18%, #ff5c5c 43%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febbbb',
+		endColorstr='#ff5c5c', GradientType=1); /* IE6-9 */
+}
+
 #openex_list {
 	text-align: center;
+	width: 90%;
+	min-width: 1100px;
+	height: 100%;
+	position: relative;
+	float: left;
+	display: none;
+	left: 50px;
+	height: 100%;
+	font-size: 12px;
+}
+
+#listContainer {
+	width: 90%;
+	height: 110%;
+	float: left;
+	min-height: 610px;
+	min-width: 1100px;
+	position: relative;
+	left: 50px;
 }
 
 #openex_list_subject {
@@ -307,7 +635,7 @@ a:focus {
 
 #OPENEX_ranking div table tr td p {
 	padding: 5px;
-	pont-size:16px;
+	pont-size: 16px;
 	color: white;
 	font-weight: bold;
 	background: rgb(96, 108, 136); /* Old browsers */
@@ -391,7 +719,7 @@ a:focus {
 	margin-bottom: 2px;
 }
 
-#openex_archive_setExam_list td,#openex_archive_solve_list td {
+#openex_archive_setExam_list td, #openex_archive_solve_list td {
 	font-size: 12px;
 	height: 22px;
 }

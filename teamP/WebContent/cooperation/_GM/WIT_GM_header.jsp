@@ -8,14 +8,14 @@
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="../css/witMemberHeader.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberHeader.css">
 <style type="text/css">
 
 </style>
 
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="../script/jquery-ui.js"></script>
-<script type="text/javascript" src="../script/witMemberHeader.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/witMemberHeader.js"></script>
 <script type="text/javascript">
 
 </script>
@@ -46,7 +46,7 @@
 	<div id="ibm-universal-nav">
 		<ul id="ibm-unav-links">
 			<!-- <li id="ibm-home" class="ibm-sm-logo" style="display: block; height: 30px;"><a href="#">IBM®</a></li> -->
-			<li id="ibm-home" class="" style="display: b	lock;"><a href="../WIT_Main_index.jsp">WIT®</a></li>
+			<li id="ibm-home" class="" style="display: b	lock;"><a href="/teamP/cooperation/WIT_Main_index.jsp">WIT®</a></li>
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">

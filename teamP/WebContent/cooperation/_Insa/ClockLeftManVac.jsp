@@ -42,13 +42,13 @@
 				</dt>
 
 				<dt id="class113">
-					<span class="float_left" style="width: 167px"><a href="#"
+					<span class="float_left" style="width: 167px"><a href="ClockLeftManEva.jsp"
 						id="a119_1">근무평가관리</a></span>
 				</dt>
 
 				<dt id="class113">
 					<span class="float_left" style="width: 167px"> <a
-						href="ClockLeftManVac.jsp" id="bar117">연월차현황관리</a></span>
+						href="ClockLeftManVac.jsp" id="a119_1">연월차현황관리</a></span>
 				</dt>
 
 				<!-- if (ds != null && ds.Tables[0].Rows.Count > 0) -->

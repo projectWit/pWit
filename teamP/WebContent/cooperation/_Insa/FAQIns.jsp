@@ -831,12 +831,7 @@ div.subtitle {
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
 											<td><input id="bw_input_writer" type="text" name="hname"
-												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
-												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<select id="head">
-													<option>공지</option>
-													<option>잡담</option>
-											</select></td>
+												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
 											
 											<td>
 										</tr>

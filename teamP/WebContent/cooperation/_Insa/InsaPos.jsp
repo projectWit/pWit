@@ -25,6 +25,12 @@
 	function Close() {
 		window.close();
 	};	
+	
+	function fnLink(no, str) {
+	      window.opener.form.JobPosCd.value=no;
+	      window.opener.form.JobPos.value=str;
+	      window.close();
+	   };
 
 </script>
 </head>
@@ -61,40 +67,38 @@
 					<tbody>
 
 						<tr id="rpt_ctl00_trRpt">
-							<td><a href="javascript:fnLink('001|사원');" class="list_link">001</a></td>
-							<td><a href="javascript:fnLink('001|사원');" class="list_link">사원</a></td>
+							<td><a onclick="fnLink('100','사원')" class="list_link">100</a></td>
+							<td><a onclick="fnLink('100','사원')" class="list_link">사원</a></td>
 						</tr>
 
 						<tr id="rpt_ctl01_trRpt">
-							<td><a href="javascript:fnLink('002|대리');" class="list_link">002</a></td>
-							<td><a href="javascript:fnLink('002|대리');" class="list_link">대리</a></td>
+							<td><a onclick="fnLink('200','대리')" class="list_link">200</a></td>
+							<td><a onclick="fnLink('200','대리')" class="list_link">대리</a></td>
 						</tr>
 
 						<tr id="rpt_ctl02_trRpt">
-							<td><a href="javascript:fnLink('003|과장');" class="list_link">003</a></td>
-							<td><a href="javascript:fnLink('003|과장');" class="list_link">과장</a></td>
+							<td><a onclick="fnLink('300','과장')" class="list_link">300</a></td>
+							<td><a onclick="fnLink('300','과장')" class="list_link">과장</a></td>
 						</tr>
 
 						<tr id="rpt_ctl03_trRpt">
-							<td><a href="javascript:fnLink('004|부장');" class="list_link">004</a></td>
-							<td><a href="javascript:fnLink('004|부장');" class="list_link">부장</a></td>
+							<td><a onclick="fnLink('400','부장')" class="list_link">400</a></td>
+							<td><a onclick="fnLink('400','부장')" class="list_link">부장</a></td>
 						</tr>
 
 						<tr id="rpt_ctl04_trRpt">
-							<td><a href="javascript:fnLink('005|대표이사');"
-								class="list_link">005</a></td>
-							<td><a href="javascript:fnLink('005|대표이사');"
-								class="list_link">대표이사</a></td>
+							<td><a onclick="fnLink('500','대표이사')" class="list_link">500</a></td>
+							<td><a onclick="fnLink('500','대표이사')" class="list_link">대표이사</a></td>
 						</tr>
 
 						<tr id="rpt_ctl05_trRpt">
-							<td><a href="javascript:fnLink('006|반장');" class="list_link">006</a></td>
-							<td><a href="javascript:fnLink('006|반장');" class="list_link">반장</a></td>
+							<td><a onclick="fnLink('600','반장')" class="list_link">600</a></td>
+							<td><a onclick="fnLink('600','바장')" class="list_link">반장</a></td>
 						</tr>
 
 						<tr id="rpt_ctl06_trRpt">
-							<td><a href="javascript:fnLink('007|차장');" class="list_link">007</a></td>
-							<td><a href="javascript:fnLink('007|차장');" class="list_link">차장</a></td>
+							<td><a onclick="fnLink('700','차장')" class="list_link">700</a></td>
+							<td><a onclick="fnLink('700','차장')" class="list_link">차장</a></td>
 						</tr>
 
 

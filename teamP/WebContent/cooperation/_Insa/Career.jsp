@@ -27,15 +27,13 @@
 	function Close() {
 		window.close();
 	}
+	function PopUpPos() {
+		window.open("CarPos.jsp", "", "width = 500px, height = 300px");
+	}
 </script>
 </head>
 <body>
-
-	<form method="post" id="frm">
-
-
-
-
+<form method="post" id="form">
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
@@ -61,10 +59,10 @@
 				</div>
 				<table summary="" class="list_input H_2px">
 					<col width="2%" />
-					<col width="11%" />
-					<col width="11%" />
-					<col width="16%" />
-					<col width="12%" />
+					<col width="8%" />
+					<col width="8%" />
+					<col width="15%" />
+					<col width="25%" />
 					<col width="25%" />
 					<col width="" />
 					<thead>
@@ -95,9 +93,13 @@
 							<td class="center"><input id="ComName" class="default"
 								name="ComName" style="width: 92%;" type="text" value=""
 								maxlength="30" /></td>
-							<td class="center"><input id="Position" class="default"
-								name="Position" style="width: 88%;" type="text" value=""
-								maxlength="10" /></td>
+							<td class="center"><input name="JobPosCd" type="text"
+								id="JobPosCd" value="002" class="rightnone" style="width: 46px;"
+								value="002" /><a href="#"><img src="img/Find.gif"
+									width="22px" height="19px" alt='직위/직급' onclick="PopUpPos()" /></a><input
+								name="JobPos" type="text" id="JobPos" class="grayleft"
+								style="width: 88px;" readonly="readonly" value="대리" />
+							</td>
 							<td class="center"><input id="Duty" class="default"
 								name="Duty" style="width: 95%;" type="text" value=""
 								maxlength="30" /></td>

@@ -233,10 +233,9 @@ function PopUpCar() {
 					<col width="17%" />
 
 					<tr>
-						<th><label for="ddlYear"> 일 자</label></th>
+						<th><label for="ddlYear"> 작 성 일 자</label></th>
 						<td colspan="5"><input name="PreDt" type="text" id="PreDt"
-							size="24" maxlength="20" value="" class="default"/></td>
-								
+							size="24" maxlength="20" value="" class="default"/></td>								
 					</tr>
 
 					<tr>
@@ -248,12 +247,12 @@ function PopUpCar() {
 					</tr>
 
 					<tr>
-						<td><input type="text" value="사원" style = "width : 70%" /></td>
-						<td><input type="text" value="영업팀" style = "width : 70%" /></td>
-						<td><input type="text" value="호날두"style = "width : 70%"  /></td>
-						<td colspan="2"><input type="text" value="123456 "
+						<td><input type="text" value="사원" style = "width : 70%" class = "default" /></td>
+						<td><input type="text" value="영업팀" style = "width : 70%" class = "default"/></td>
+						<td><input type="text" value="호날두"style = "width : 70%" class = "default" /></td>
+						<td colspan="2"><input type="text" value="123456 "class = "default"
 							maxlength="6" style="width: 20%" /> - <input type="text"
-							value="1234567" maxlength="7" style="width: 30%" /></td>
+							value="1234567" maxlength="7" style="width: 30%" class = "default"/></td>
 					</tr>
 
 					<tr>
@@ -265,8 +264,8 @@ function PopUpCar() {
 					</tr>
 					<tr>
 						<th>주요업무</th>
-						<td colspan="5"><input name="FromDt" type="text" id="FromDt"
-							size="24" maxlength="20" value="" class="default"/></td>
+						<td colspan="5"><input name="Job" type="text" id="Job"
+							style = "width : 50%" value="" class="default"/></td>
 					</tr>
 
 					<tr>

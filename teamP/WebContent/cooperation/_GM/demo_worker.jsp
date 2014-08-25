@@ -51,7 +51,6 @@ border-bottom: 5px solid #E8E8E8;
  	</div>
 </div>
 <div id="main" style="float:left; width:980px; margin-top:10px; margin-left:20px;">
-	<jsp:include page="m_joinEmp.jsp"></jsp:include>
 </div>
 </div>
 </body>

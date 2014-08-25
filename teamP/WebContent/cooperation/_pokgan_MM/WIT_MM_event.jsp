@@ -11,15 +11,15 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <title>WIT는 당신을 환영합니다!</title>
 <jsp:include page="WIT_MM_header.jsp"></jsp:include>
-<link rel="stylesheet" href="./css/board/script.css" type="text/css"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/board/script.css" type="text/css"
 	charset="UTF-8" media="all" />
-<link rel="stylesheet" href="./css/style.css" type="text/css"
+<link rel="stylesheet" href="/teamP/cooperation/_pokgan_MM/css/style.css" type="text/css"
 	charset="UTF-8" media="all" />
-<script type="text/javascript" src="./js/pok.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_pokgan_MM/js/pok.js"></script>
 <link rel="alternate" type="application/rss+xml" title="RSS"
-	href="./xml/board/rss.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/board/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom"
-	href="./xml/board/atom.xml" />
+	href="/teamP/cooperation/_pokgan_MM/xml/board/atom.xml" />
 <script type="text/javascript">
 	//<![CDATA[
 	var current_url = "http://www.rimi.kr/?mid=lifestory";

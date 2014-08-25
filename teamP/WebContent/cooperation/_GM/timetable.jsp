@@ -1,20 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="ko">
+<html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta property="og:author" content="" />
-<meta property="og:title" content="프로야구 경기 일정/결과" />
-<meta property="og:description" content="" />
-<meta property="og:regDate" content="" />
-<meta property="og:image" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="" />
 <title>대관 일정표</title>
-<link rel="stylesheet" href="css/sportsdb.min.css" />
-<link rel="stylesheet" href="css/sportsdb.extra.min.css" />
+<link rel="stylesheet" href="/teamP/cooperation/_GM/css/sportsdb.min.css" />
+<link rel="stylesheet" href="/teamP/cooperation/_GM/css/sportsdb.extra.min.css" />
 </head>
 <style>
 #daumWrap {

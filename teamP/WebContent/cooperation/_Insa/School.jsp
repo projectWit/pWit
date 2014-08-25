@@ -91,14 +91,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_0"
 								name="ddlScholarship_0" style="width: 90px;">
-									<option value=""  selected = "selected" >=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value=""  selected = "selected" >======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_0"
 								name="SchoolName_0" value="" maxlength="30" class="default"
@@ -109,15 +109,35 @@
 							<td class="center"><input type="text" id="EDate_0"
 								name="EDate_0" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_0"
-								name="chkDnType_0" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_0">주간</label></td>
+							<td class="center"><select id="DNType_0" name="DNType_0"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_0"
 								name="Major_0" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_0"
-								name="Addr_0" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_0"
+								name="local_0" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_0"
 								name="Etc_0" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>
@@ -137,14 +157,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_1"
 								name="ddlScholarship_1" style="width: 90px;">
-									<option value="" selected = "selected">=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value="" selected = "selected">======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_1"
 								name="SchoolName_1" value="" maxlength="30" class="default"
@@ -155,15 +175,35 @@
 							<td class="center"><input type="text" id="EDate_1"
 								name="EDate_1" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_1"
-								name="chkDnType_1" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_1">주간</label></td>
+							<td class="center"><select id="DNType_1" name="DNType_1"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_1"
 								name="Major_1" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_1"
-								name="Addr_1" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_1"
+								name="local_1" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_1"
 								name="Etc_1" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>
@@ -183,14 +223,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_2"
 								name="ddlScholarship_2" style="width: 90px;">
-									<option value="" selected = "selected">=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value="" selected = "selected">======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_2"
 								name="SchoolName_2" value="" maxlength="30" class="default"
@@ -201,15 +241,35 @@
 							<td class="center"><input type="text" id="EDate_2"
 								name="EDate_2" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_2"
-								name="chkDnType_2" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_2">주간</label></td>
+							<td class="center"><select id="DNType_2" name="DNType_2"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_2"
 								name="Major_2" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_2"
-								name="Addr_2" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_2"
+								name="local_2" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_2"
 								name="Etc_2" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>
@@ -229,14 +289,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_3"
 								name="ddlScholarship_3" style="width: 90px;">
-									<option value="" selected = "selected">=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value="" selected = "selected">======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_3"
 								name="SchoolName_3" value="" maxlength="30" class="default"
@@ -247,15 +307,35 @@
 							<td class="center"><input type="text" id="EDate_3"
 								name="EDate_3" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_3"
-								name="chkDnType_3" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_3">주간</label></td>
+							<td class="center"><select id="DNType_3" name="DNType_3"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_3"
 								name="Major_3" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_3"
-								name="Addr_3" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_3"
+								name="local_3" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_3"
 								name="Etc_3" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>
@@ -275,14 +355,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_4"
 								name="ddlScholarship_4" style="width: 90px;">
-									<option value="" selected = "selected">=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value="" selected = "selected">======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_4"
 								name="SchoolName_4" value="" maxlength="30" class="default"
@@ -293,15 +373,35 @@
 							<td class="center"><input type="text" id="EDate_4"
 								name="EDate_4" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_4"
-								name="chkDnType_4" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_4">주간</label></td>
+							<td class="center"><select id="DNType_4" name="DNType_4"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_4"
 								name="Major_4" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_4"
-								name="Addr_4" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_4"
+								name="local_4" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_4"
 								name="Etc_4" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>
@@ -321,14 +421,14 @@
 								id="chkRow" name="chkRow" /></td>
 							<td class="center"><select id="ddlScholarship_5"
 								name="ddlScholarship_5" style="width: 90px;">
-									<option value="" selected = "selected">=============</option>
-									<option value="10">초등</option>
-									<option value="20">중등</option>
-									<option value="30">고등</option>
-									<option value="40">대학</option>
-									<option value="50">대학교</option>
-									<option value="60">대학원(석사)</option>
-									<option value="61">대학원(박사)</option>
+									<option value="" selected = "selected">======</option>
+									<option value="11">초등</option>
+									<option value="12">중등</option>
+									<option value="13">고등</option>
+									<option value="14">대학</option>
+									<option value="15">대학교</option>
+									<option value="16">대학원(석사)</option>
+									<option value="17">대학원(박사)</option>
 							</select></td>
 							<td class="center"><input type="text" id="SchoolName_5"
 								name="SchoolName_5" value="" maxlength="30" class="default"
@@ -339,15 +439,35 @@
 							<td class="center"><input type="text" id="EDate_5"
 								name="EDate_5" value="" maxlength="8" class="default"
 								style="width: 88%;" /></td>
-							<td class="center"><input type="checkbox" id="chkDnType_5"
-								name="chkDnType_5" value="1" class="checkbox" checked = "checked" /> <label
-								for="chkDnType_5">주간</label></td>
+							<td class="center"><select id="DNType_5" name="DNType_5"
+								style="width: 50px;">
+									<option value="" selected="selected">===</option>
+									<option value="1">주간</option>
+									<option value="2">야간</option>
+							</select></td>
 							<td class="center"><input type="text" id="Major_5"
 								name="Major_5" value="" maxlength="30" class="default"
 								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="Addr_5"
-								name="Addr_5" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
+							<td class="center"><select id="local_5"
+								name="local_5" style="width: 80px;">
+									<option value=""  selected = "selected" >=======</option>
+									<option value="1">서울</option>
+									<option value="2">경기</option>
+									<option value="3">인천</option>
+									<option value="4">충북</option>
+									<option value="5">충남</option>
+									<option value="6">대전</option>
+									<option value="7">세종</option>
+									<option value="8">경북</option>
+									<option value="9">경남</option>
+									<option value="10">대구</option>
+									<option value="11">부산</option>
+									<option value="12">전북</option>
+									<option value="13">전남</option>
+									<option value="14">광주</option>
+									<option value="15">강원</option>
+									<option value="16">제주</option>
+							</select></td>
 							<td class="center"><input type="text" id="Etc_5"
 								name="Etc_5" value="" maxlength="60" class="default"
 								style="width: 88%;" /></td>

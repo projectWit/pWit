@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT OPENEX</title>
-<script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="OPENEXcss/WIT_OPENEX_section.css">
 </head>

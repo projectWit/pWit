@@ -4,11 +4,8 @@
 <html>
 <head>
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=EUC-KR">
-<title>유러피안 감성 캐주얼 피핀 </title>
+<title>자유게시판</title>
 <meta http-equiv="ImageToolbar" content="No"/>
-<meta name="description" content="유러피안 감성 캐주얼 피핀">
-<meta name="keywords"
-	content="여성의류,헐리웃,패션,아이콘,신상,스타일,옷,의류,여성복,캐주얼,티셔츠,아우터,바지,스커트,원피스,가방">
 <!--META name="robots" content="noindex,nofollow"-->
 <style type="text/css">
 #addinfo_out_box {
@@ -850,8 +847,7 @@ div.subtitle {
 											<td class='bw_title_color'><span
 												style="font-family: '굴림체'"><input
 													id='bw_input_subject' type="text" name="subject" size=30
-													maxlength=100 value=""></span><span id="bw_htmleditor"><input
-													type=checkbox name=tag value="ok">HTML태그 허용</span></td>
+													maxlength=100 value=""></span></td>
 										</tr>
 										<tr>
 											<td
@@ -888,18 +884,6 @@ div.subtitle {
 					<td>&nbsp;</td>
 				</tr>
 			</table>
-			<input type="hidden" name="b_score[1]" value=""> <input
-				type="hidden" name="b_score[2]" value=""> <input
-				type="hidden" name="b_score[3]" value=""> <input
-				type="hidden" name="b_score[4]" value=""> <input
-				type="hidden" name="b_score[5]" value=""><input type=hidden
-				name=type value="i"> <input type=hidden name=data
-				value="yes"> <input type=hidden name=code value="pippin1">
-			<input type=hidden name=num1 value=""> <input type=hidden
-				name=num2 value=""> <input type=hidden name=page value="1">
-			<input type=hidden name=ok value="N"> <input type=hidden
-				name=branduid value="" />
-
 
 			
 			<!-- BOARD INSERT FORM END-->

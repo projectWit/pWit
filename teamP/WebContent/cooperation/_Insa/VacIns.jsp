@@ -26,21 +26,8 @@ function PopUpVac() {
 
 </head>
 <body id="contentbody1">
-	<form method="post" action="EPA032M.aspx?ec_req_sid=00HOb!39NWci"
-		id="form1">
-		<div class="aspNetHidden">
-			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
-				value="" /> <input type="hidden" name="__VIEWSTATE"
-				id="__VIEWSTATE"
-				value="/wEPDwUIODg1NTY5OTkPZBYCAgMPZBYCZg8WAh4LXyFJdGVtQ291bnQCAhYEZg9kFg4CAQ8WAh4JaW5uZXJodG1sBVc8aW5wdXQgdHlwZT0nY2hlY2tib3gnIGlkPSdjaGtTZWxlY3QnIG5hbWU9J2Noa1NlbGVjdCcgb25jbGljaz0iY2hrX2NoYW5nZSgnMjAwMDAnKTsiLz5kAgMPFgIfAQUXMjAxNC8wMS8wMSB+IDIwMTQvMTIvMzFkAgUPFgIfAQVKPGEgY2xhc3M9J2xpc3RfbGluaycgaHJlZj0iamF2YXNjcmlwdDpmbkxpbmsoJzIwMDAwJywnMCcsICc0Jyk7Ij4yMDAwMDwvYT5kAgcPFgIfAQUOMjAxNOuFhCDsl7DssKhkAgkPFgIfAQUBNGQCCw8WAh8BBXU8YSBocmVmPScjJyBpZD0nYnRuXzAnIGNsYXNzPSdsaW5rLWJsdWUnIG9uY2xpY2s9ImJ0bl9zYXZlKCcyMDAwMCcsICcyMDE064WEIOyXsOywqCcsICdNJywgJzIwMTQvMDEvMDEnKTsiPuyImOyglTwvYT5kAg0PFgIfAQUDWWVzZAIBD2QWDgIBDxYCHwEFVzxpbnB1dCB0eXBlPSdjaGVja2JveCcgaWQ9J2Noa1NlbGVjdCcgbmFtZT0nY2hrU2VsZWN0JyBvbmNsaWNrPSJjaGtfY2hhbmdlKCcxMDAwMCcpOyIvPmQCAw8WAh8BBRcyMDEzLzAxLzAxIH4gMjAxMy8xMi8zMWQCBQ8WAh8BBUo8YSBjbGFzcz0nbGlzdF9saW5rJyBocmVmPSJqYXZhc2NyaXB0OmZuTGluaygnMTAwMDAnLCcwJywgJzQnKTsiPjEwMDAwPC9hPmQCBw8WAh8BBQ4yMDEz64WEIOyXsOywqGQCCQ8WAh8BBQE0ZAILDxYCHwEFdTxhIGhyZWY9JyMnIGlkPSdidG5fMScgY2xhc3M9J2xpbmstYmx1ZScgb25jbGljaz0iYnRuX3NhdmUoJzEwMDAwJywgJzIwMTPrhYQg7Jew7LCoJywgJ00nLCAnMjAxMy8wMS8wMScpOyI+7IiY7KCVPC9hPmQCDQ8WAh8BBQNZZXNkZP66LPoK3Wa6sO32Om1siEA9TJsi" />
-		</div>
-
-		<div class="aspNetHidden">
-
-			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-				value="/wEWBAK5tOjZAQLA2eOABwKrnrP8AgKUoMvDCUEmqRrtGGgN9SI3C35VYcwHeSGu" />
-		</div>
+	<form method="post" id="form1">
+		
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">연월차등록</div>
@@ -63,9 +50,8 @@ function PopUpVac() {
 								type="checkbox" name="chkAll" id="chkAll" /></th>
 							<th>사용기간</th>
 							<th>휴가코드</th>
-							<th>휴가명</th>
-							<th style="width: 80px;">등록인원수</th>
-							<th style="width: 100px;">사원별휴가일수</th>
+							<th>휴가명</th>							
+							<th style="width: 100px;">남은휴가일수</th>
 							<th style="width: 60px;">사용</th>
 						</tr>
 					</thead>
@@ -82,12 +68,8 @@ function PopUpVac() {
 								href="javascript:fnLink('20000','0', '4');">20000</a></td>
 
 							<td id="rpt_ctl00_td_restdes">2014년 연차</td>
-
-							<td id="rpt_ctl00_td_count" class="center">4</td>
-
-							<td id="rpt_ctl00_td_btn" class="center"><a href='#'
-								id='btn_0' class='link-blue'
-								onclick="btn_save('20000', '2014년 연차', 'M', '2014/01/01');">수정</a></td>
+							
+							<td id="rpt_ctl00_td_btn" class="center">15일</td>
 
 							<td id="rpt_ctl00_td_use" class="center">Yes</td>
 
@@ -105,11 +87,7 @@ function PopUpVac() {
 
 							<td id="rpt_ctl01_td_restdes">2013년 연차</td>
 
-							<td id="rpt_ctl01_td_count" class="center">4</td>
-
-							<td id="rpt_ctl01_td_btn" class="center"><a href='#'
-								id='btn_1' class='link-blue'
-								onclick="btn_save('10000', '2013년 연차', 'M', '2013/01/01');">수정</a></td>
+							<td id="rpt_ctl01_td_btn" class="center">15일</td>
 
 							<td id="rpt_ctl01_td_use" class="center">Yes</td>
 

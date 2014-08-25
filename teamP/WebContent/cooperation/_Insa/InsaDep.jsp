@@ -25,7 +25,15 @@
 	function Close() {
 		window.close();
 	};
-</script>
+	
+	function fnLink(no, str) {
+	      window.opener.form.DepCd.value=no;
+	      window.opener.form.Dep.value=str;
+	      window.close();
+	   };
+	</script>	
+ 
+
 </head>
 <body>
 	<form method="post" id="form1">
@@ -56,31 +64,25 @@
 							<th><a href="#" class="th"
 								>부서코드<img id="img_num" src="img/arrowBot.gif"
 									width="11" height="15" /></a></th>
-							<th><a href="#" class="th" onclick="fn_SortList('SITE_DES')">부서명<img
+							<th><a href="#" class="th">부서명<img
 									id="img_name" src="img/arrowBot.gif" width="11" height="15" /></a></th>
 						</tr>
 					</thead>
 					<tbody id="rptItems">
 
 						<tr id="rpt_ctl00_trRpt">
-							<td><a href="javascript:fnLink('00001|생산팀|');"
-								class="list_link list_link_focus">00001</a></td>
-							<td><a href="javascript:fnLink('00001|생산팀|');"
-								class="list_link">생산팀</a></td>
+							<td><a onclick="fnLink('101','인사부')" class="list_link">101</a></td>
+							<td><a onclick="fnLink('101','인사부')" class="list_link">인사부</a></td>
 						</tr>
 
 						<tr id="rpt_ctl01_trRpt">
-							<td><a href="javascript:fnLink('00002|경영지원팀|');"
-								class="list_link list_link_focus">00002</a></td>
-							<td><a href="javascript:fnLink('00002|경영지원팀|');"
-								class="list_link">경영지원팀</a></td>
+							<td><a onclick="fnLink('201','회계부')" class="list_link">201</a></td>
+							<td><a onclick="fnLink('201','회계부')" class="list_link">회계부</a></td>
 						</tr>
 
 						<tr id="rpt_ctl02_trRpt">
-							<td><a href="javascript:fnLink('00003|영업팀|');"
-								class="list_link list_link_focus">00003</a></td>
-							<td><a href="javascript:fnLink('00003|영업팀|');"
-								class="list_link">영업팀</a></td>
+							<td><a onclick="fnLink('301','영업팀')" class="list_link">301</a></td>
+							<td><a onclick="fnLink('301','영업팀')" class="list_link">영업팀</a></td>
 						</tr>
 
 

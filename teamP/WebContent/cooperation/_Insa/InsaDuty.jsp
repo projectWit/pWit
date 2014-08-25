@@ -25,28 +25,17 @@
 	function Close() {
 		window.close();
 	};
+	
+	function fnLink(no, str) {
+	    window.opener.form.JobDutyCd.value=no;
+	    window.opener.form.JobDuty.value=str;
+	    window.close();
+	 };
 </script>
 </head>
 <body>
-	<form method="post"
-		action="CM024P.aspx?ec_req_sid=00HP*WINRUDF&amp;CODE_CLASS=I10&amp;KeyWord=&amp;DelFlag=N&amp;ChkFlag=P&amp;InputFlag=Y&amp;Sort=_DES&amp;Sort_AD=A&amp;PageSize=0&amp;CurrPage=0&amp;"
-		id="form1">
-		<div class="aspNetHidden">
-			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
-				value="" /> <input type="hidden" name="__VIEWSTATE"
-				id="__VIEWSTATE"
-				value="/wEPDwULLTE1NDcwNjMwMTkPZBYOZg8VARLrtojrn4nsvZTrk5zrk7HroZ1kAgEPFQEZ7J6Q6rCA7IKs7Jqp7L2U65OcIOuTseuhnWQCAg8VAQzsp4DquInqtazrtoRkAgMPFQEM6re466O565Ox66GdZAIEDxUBDOqzteygnOq3uOujuWQCBQ8VAQzsvZTrk5zrk7HroZ1kAgYPZBYEAgEPDxYCHgRUZXh0BQbqsoDsg4lkZAICDxYCHgtfIUl0ZW1Db3VudAIDFgZmD2QWAgIBD2QWBGYPZBYCZg8VAwIwMQbtjIDsm5ACMDFkAgEPZBYCZg8VAwIwMQbtjIDsm5AG7YyA7JuQZAIBD2QWAgIBD2QWBGYPZBYCZg8VAwIwMgbtjIDsnqUCMDJkAgEPZBYCZg8VAwIwMgbtjIDsnqUG7YyA7J6lZAICD2QWAgIBD2QWBGYPZBYCZg8VAwIwMwnshLzthLDsnqUCMDNkAgEPZBYCZg8VAwIwMwnshLzthLDsnqUJ7IS87YSw7J6lZGQ=" />
-		</div>
-
-
-
-
-		<div class="aspNetHidden">
-
-			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-				value="/wEWCgLs4JvuDALEhISFCwKln/PuCgLL35zyCgKb4oaPDQLG7+jyDwKlrZCqBwK4hM+IDQLEhLNoAorOoPkD" />
-		</div>
+	<form method="post"  id="form1">
+		
 		<div id="wrap_pop">
 			<div id="contents">
 				<table class="list H_10px">
@@ -77,18 +66,18 @@
 					<tbody>
 
 						<tr id="rpt_ctl00_trRpt">
-							<td><a href="javascript:fnLink('01|팀원');" class="list_link">01</a></td>
-							<td><a href="javascript:fnLink('01|팀원');" class="list_link">팀원</a></td>
+							<td><a onclick="fnLink('10','팀원')" class="list_link">10</a></td>
+							<td><a onclick="fnLink('10','팀원')" class="list_link">팀원</a></td>
 						</tr>
 
 						<tr id="rpt_ctl01_trRpt">
-							<td><a href="javascript:fnLink('02|팀장');" class="list_link">02</a></td>
-							<td><a href="javascript:fnLink('02|팀장');" class="list_link">팀장</a></td>
+							<td><a onclick="fnLink('20','팀장')" class="list_link">20</a></td>
+							<td><a onclick="fnLink('20','팀장')" class="list_link">팀장</a></td>
 						</tr>
 
 						<tr id="rpt_ctl02_trRpt">
-							<td><a href="javascript:fnLink('03|센터장');" class="list_link">03</a></td>
-							<td><a href="javascript:fnLink('03|센터장');" class="list_link">센터장</a></td>
+							<td><a onclick="fnLink('30','센터장')" class="list_link">30</a></td>
+							<td><a onclick="fnLink('30','센터장')" class="list_link">센터장</a></td>
 						</tr>
 
 

@@ -17,7 +17,7 @@ currentSubtabIndex = 1;
 </head>
 <body>
 
-	<jsp:include page="demo_schedule.jsp"></jsp:include>
+	<jsp:include page="admin_schedule.jsp"></jsp:include>
 
 </body>
 <%-- <jsp:include page="WIT_Main_footer.jsp"></jsp:include> --%>
