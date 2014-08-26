@@ -10,9 +10,12 @@
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean class="mvc.basic.MemberController" id="memberController"></bean>
+	<!-- <bean class="mvc.basic.MemberController" id="memberController"></bean> -->
+	<bean class="com.wit.member.spring.MemberController" id="studyController"></bean>
+	<!-- <context:component-scan base-package="net.java_school.board.spring" /> -->
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/teamP/cooperation/"></property>
+		<property name="prefix" value="/cooperation/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>

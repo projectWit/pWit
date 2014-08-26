@@ -309,10 +309,10 @@ IMG {
 <script type="text/javascript">
 $(document).ready(function(e) {
 	$('#ibm-signin-submit').click(function(e) {
-		var url = 'loginJSON.jsp?username='+$('#username').val()+'&password_text='+$('#password_text').val();
+		var url = 'loginJSON2.jsp?username='+$('#username').val()+'&password_text='+$('#password_text').val();
 		$.get(url, function(data) {
 			responseText = eval("(" + data + ")");
-			alert("result : "+responseText[0].result);
+//			alert("result : "+responseText[0].result);
 
 //result 0 : id 불일치
 // result 1 : id 일치, pwd 불일치
@@ -346,16 +346,16 @@ $(document).ready(function(e) {
 <DIV class=main-head>WIT 로그인</DIV>
 <DIV id=ibm-overlay-register-error class=required><!-- All fields are required. -->모든 항목을 작성해 주세요</DIV>
 
-<FORM id=userForm method=post name=userForm action="/teamP/loginController.do">
+<FORM id=userForm method=post name=userForm action="/teamP/members/login">
 <DIV id=form_fields>
-<DIV id=lft_flds><INPUT id=username name=username placeholder="WIT ID*" required>
+<DIV id=lft_flds><INPUT id=username name=mId placeholder="WIT ID*" required>
 	<BR><A id=forgot-id-link class=ibm-select-link href="#"><!-- Forgot IBM ID? -->ID를 잊었습니까?</A></DIV>
-<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=password_text  placeholder="password*" required></SPAN>
+<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=mPwd  placeholder="password*" required></SPAN>
 	<BR><A id=forgot-pwd-link class=ibm-select-link href="#"><!-- Forgot password? -->비밀번호를 잊었습니까?</A></DIV><INPUT id=login-form-type type=hidden value=pwd name=login-form-type> 
 <DIV id=register-link-div><A id=ibm-register-link class=ibm-select-link href="/teamP/cooperation/WIT_Main_register.jsp">회원가입</A></DIV>
 <DIV class=clr>&nbsp;</DIV></DIV>
 <DIV id=ibm-signin>
-<DIV class=ibm-buttons-row><INPUT id=ibm-signin-submit class=ibm-btn-arrow-pri type=submit value=로그인 name=ibm-submit><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT id=ibm-signin-cancel class=ibm-btn-cancel-sec type=reset value=취소 name=ibm-cancel></DIV></DIV>
+<DIV class=ibm-buttons-row><INPUT id=ibm-signin-submit class=ibm-btn-arrow-pri type=button value=로그인 name=ibm-submit><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT id=ibm-signin-cancel class=ibm-btn-cancel-sec type=reset value=취소 name=ibm-cancel></DIV></DIV>
 </FORM></DIV></DIV><div id="testArea"></div>
 </BODY>
 </html>
