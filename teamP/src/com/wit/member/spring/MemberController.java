@@ -45,6 +45,7 @@ public class MemberController {
 //			return "members/login";
 			return "WIT_Main_register";
 		}
+		
 //		return "WIT_Main_register";
 	}
 	/*@RequestMapping("/login")

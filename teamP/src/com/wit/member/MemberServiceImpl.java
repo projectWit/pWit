@@ -13,6 +13,14 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberMapper memberMapper;
 	
+	public MemberMapper getMemberMapper() {
+		return memberMapper;
+	}
+
+	public void setMemberMapper(MemberMapper memberMapper) {
+		this.memberMapper = memberMapper;
+	}
+
 	public int insert(Member member) {
 		return memberMapper.insert(member);
 	}

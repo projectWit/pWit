@@ -11,29 +11,6 @@
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	
-	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:pwit@//192.168.18.235:1521/xe"/>
-		<property name="username" value="pwit"/>
-		<property name="password" value="asdf"/>
-		<property name="maxTotal" value="100"/>
-		<property name="maxIdle" value="1000"/>
-		<property name="poolPreparedStatements" value="true"/>
-		<property name="defaultAutoCommit" value="true"/>
-		<property name="validationQuery" value=" SELECT 1 FROM DUAL" />
-	</bean> -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:pwit@//192.168.18.235:1521/xe"/>
-		<property name="username" value="pwit"/>
-		<property name="password" value="asdf"/>
-		<property name="maxActive" value="100"/>
-		<property name="maxWait" value="1000"/>
-		<property name="poolPreparedStatements" value="true"/>
-		<property name="defaultAutoCommit" value="true"/>
-		<property name="validationQuery" value=" SELECT 1 FROM DUAL" />
-	</bean>
-	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:com/wit/myBatis/myBatisConfig.xml" />
@@ -43,12 +20,11 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
-	<bean class="com.wit.member.spring.MemberController" id="memberController"></bean>
+	<!-- <bean class="com.wit.member.MemberServiceImpl" id="memberService">
+		<property name="memberMapper" ref="memberMapper" />
+	</bean> -->
 	
-	<bean class="com.wit.member.MemberServiceImpl" id="memberServiceImpl">
-		<!-- <property name="memberMapperImpl" ref="memberMapper" /> -->
-	</bean>
-	<!-- <context:component-scan base-package="com.wit.member, com.wit.member.spring" /> -->
+	<bean class="com.wit.member.spring.MemberController" id="memberController">	</bean>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/cooperation/"></property>
