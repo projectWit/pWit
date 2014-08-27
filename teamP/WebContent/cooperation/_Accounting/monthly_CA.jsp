@@ -30,7 +30,7 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -86,7 +86,7 @@
 			<thead>
 				<tr>
 					<th class="p_th left" colspan="14">조회 기간 : 2014/08/20 ~
-						2014/08/20</th>
+						2014/08/20<div style="float: right">단위 : 천원</div></th>
 				</tr>
 				<tr>
 					<th class="p_th">구분</th>

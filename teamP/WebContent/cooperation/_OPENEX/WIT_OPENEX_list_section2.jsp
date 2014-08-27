@@ -5,44 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT OPENEX</title>
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript" src="OPENEXscript/getTextColor.js"></script>
-<script type="text/javascript" src="OPENEXscript/highcharts.js"></script>
-<script type="text/javascript" src="OPENEXscript/highcharts-3d.js"></script>
-<script type="text/javascript" src="OPENEXscript/exporting.js"></script>
-<script type="text/javascript" src="OPENEXscript/graphics.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="OPENEXcss/WIT_OPENEX_section.css">
-<script type="text/javascript">
-	function listOpenBtn() {
-		$("#openex_list").css('display', 'block');
-		$("#listContainer").css('display', 'none');
-		$("#openex_list").hidden();
-		$("#openex_list").slideUp(100);
-	}
-	function graphOpenBtn() {
-		$("#listContainer").css('display', 'block');
-		$("#openex_list").css('display', 'none');
-	}
-</script>
 </head>
 <%
 	int recSuPerPage = 10;
 %>
 <body>
-	<form name="openex_list_board" action="WIT_OPENEX_list_section.jsp">
-		<div id="list_selectBtn">
-			<div id="list_selectBtn_listBtn" onclick="listOpenBtn()">
-				<br>게시판 보기
-			</div>
-			<div id="list_selectBtn_graphBtn" onclick="graphOpenBtn()">
-				<br>통계 보기
-			</div>
-		</div>
+	<form name="openex_list_board" action="WIT_OPENEX_list_section2.jsp">
 		<div id="openex_list">
 			<table align="center" id="openex_list_table" border="0">
 				<tr style="height: 25px;">
 					<td colspan="12" id="openex_list_subject"><label> IT >
-					</label> <label> 소프트웨어 ></label><label id="thirdCategory">사업</label></td>
+					</label> <label> 소프트웨어 ></label><label id="thirdCategory">자바</label></td>
 				</tr>
 				<tr class="listSelectBox">
 					<td colspan="12"><select name="listSelectBox"
@@ -107,9 +87,6 @@
 				</tr>
 			</table>
 		</div>
-		<div id="listContainer"></div>
-		<img src="img/mainimg3.png"
-			style="margin: auto; width: 100%; height: 70%; position: relative; top: 10px;">
 	</form>
 </body>
 </html>

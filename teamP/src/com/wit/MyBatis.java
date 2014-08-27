@@ -1,46 +1,67 @@
 package com.wit;
 
 import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import java.io.Reader;
+import java.sql.SQLException;
 
 import com.ibatis.common.resources.Resources;
+import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 public class MyBatis {
-
-	InputStream inputStream = null;
-	SqlSessionFactory sqlSessionFactory = null;
-	SqlSession session = null;
+	Reader reader = null;
+	SqlMapClient sqlMap = null;
 	
-	public MyBatis(String resource) {
+	public MyBatis(String sqlMapConfig) {
 		try {
-			inputStream = Resources.getResourceAsStream(resource);
-			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-			session = sqlSessionFactory.openSession();
+			this.reader = Resources.getResourceAsReader(sqlMapConfig);
+			this.sqlMap = SqlMapClientBuilder.buildSqlMapClient(reader);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Resources.getResourceAsReader 예외 : "+e.getMessage());
 		}
 	}
 	
-	public SqlSession getSession() {
-		return session;
+	/* 쿼리와 파라미터를 전달받아 결과셋을 리턴 */
+	public Object queryForList(String selectId, Object parameter) {
+		Object objReturn = null;
+		try {
+			objReturn = sqlMap.queryForList(selectId, parameter);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Resources.queryForList 예외 : "+e.getMessage());
+		}
+		return objReturn;
 	}
 	
-	public void closeSession() {
-		session.commit();
-		session.close();
-	}
-	
-	public <Object> Object getMapper(Class<Object> classname) {
-		return session.getMapper(classname);
+	/* insert : 쿼리와 파라미터를 전달받아 insert 실행*/
+	public Object insert(String selectId, Object parameter) {
+		Object objReturn = null;
+		try {
+			objReturn = sqlMap.insert(selectId, parameter);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objReturn;
 	}
 	
 	/* select : 사용자정의 select */
-	/*public Object select(String selectId, String query) {
+	public Object select(String query) {
+		Object objReturn = null;
+		try {
+			objReturn = sqlMap.queryForList("userDefinedSQL", query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objReturn;
+	}
+	
+	/* select : 사용자정의 select */
+	public Object select(String selectId, String query) {
 		Object objReturn = null;
 		try {
 			objReturn = sqlMap.queryForList(selectId, query);
@@ -49,7 +70,7 @@ public class MyBatis {
 			e.printStackTrace();
 		}
 		return objReturn;
-	}*/
+	}
 
 	
 }

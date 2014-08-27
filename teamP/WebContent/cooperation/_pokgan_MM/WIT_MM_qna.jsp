@@ -19,26 +19,6 @@
 	href="/teamP/cooperation/_pokgan_MM/xml/board/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom"
 	href="/teamP/cooperation/_pokgan_MM/xml/board/atom.xml" />
-<script type="text/javascript">
-	//<![CDATA[
-	var current_url = "http://www.rimi.kr/?mid=askquestion";
-	var request_uri = "http://www.rimi.kr/";
-	var current_mid = "askquestion";
-	var waiting_message = "서버에 요청중입니다. 잠시만 기다려주세요.";
-	var ssl_actions = new Array();
-	var default_url = "http://www.rimi.kr";
-	//]]>
-</script>
-<script type="text/javascript">
-	//<![CDATA[
-	<!--
-	AutoSourcing
-			.setTemplate("<!--autosourcing_code//--><div><cite>출처(ref.) : <a href='http://www.rimi.kr/askquestion' target='_blank' onclick='window.open(this.href);return false;'>묻고 답하는 지食인 :: Rimi.kr 궁금해 지食인 - http://www.rimi.kr/askquestion</a></cite></div><!--autosourcing_code_end//-->");
-	AutoSourcing.setString(1, "묻고 답하는 지食인 :: Rimi.kr 궁금해 지食인",
-			"http://www.rimi.kr/askquestion", "http://www.rimi.kr/askquestion");
-	//-->
-	//]]>
-</script>
 <style type="text/css">
 div.autosourcing-stub {
 	display: none

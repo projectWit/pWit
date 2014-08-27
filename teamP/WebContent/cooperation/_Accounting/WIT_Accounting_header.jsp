@@ -8,7 +8,7 @@
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="../css/witMemberHeader.css">
+<link rel="stylesheet" type="text/css" href="css/witMemberHeader.css">
 <style type="text/css">
 
 </style>
@@ -16,6 +16,34 @@
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
 <script type="text/javascript">
+function insertSlips() {
+	var features = "width=480px, height=530px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no";
+	window.open('insertSlips.jsp', '전표입력창', features);
+}
+function insert_customers() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertCustomers.jsp', '', features);
+};	
+function insert_accounts() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertAccounts.jsp', '', features);
+};	
+function insertProjects() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertProject.jsp', '', features);
+};	
+function insertDepartments() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertDepartments.jsp', '', features);
+};	
+function insertFixedAsset() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertFixedAsset.jsp', '', features);
+};	
+function insertCompany() {
+	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	window.open('insertCompany.jsp', '', features);
+};	
 
 </script>
 </head>
@@ -53,7 +81,7 @@
 			<li onmouseover="slideRibbon(0)"><a href="#">전표 관리</a></li>
 			<li onmouseover="slideRibbon(1)"><a href="#">주요 장부</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="#">재무 제표</a></li>
-			<li onmouseover="slideRibbon(3)"><a href="#">고정 자산</a></li>
+			<li onmouseover="slideRibbon(3)"><a href="#">경영 자료</a></li>
 			<li onmouseover="slideRibbon(4)"><a href="#">기본 정보</a></li>
 		</ul>
 	</div>
@@ -78,42 +106,42 @@
 		<!-- ****************************************************************************************** -->
 			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">			
 				<ul id="subTab-0" style="display: none;">
-					<li class="subTab-0-0" style="display: block;"><a href="purchase.jsp">전표 관리</a></li>
-					<li class="subTab-0-1" style="display: block;"><a href="salesSlip.jsp">프로젝트 관리</a></li>
-					<li class="subTab-0-3" style="display: block;"><a href="#">결산 자료 관리</a></li>
-					<li class="subTab-0-4" style="display: block;"><a href="#">고정 자산 관리</a></li>
+					<li class="subTab-0-0" style="display: block;"><a href="#" onclick="insertSlips()">전표 관리</a></li>
+					<li class="subTab-0-1" style="display: block;"><a href="#" onclick="insertProjects()">프로젝트 관리</a></li>					
+					<li class="subTab-0-4" style="display: block;"><a href="#" onclick="insertFixedAsset()">고정 자산 관리</a></li>
 				</ul>				
 				<ul id="subTab-1" style="display: none;">
 					<li class="subTab-1-0" style="display: block;"><a href="WIT_Accounting_journal.jsp">분개장</a></li>
 					<li class="subTab-1-1" style="display: block;"><a href="WIT_Accounting_ledger.jsp">계정별 원장</a></li>
+					<li class="subTab-1-1" style="display: block;"><a href="WIT_Accounting_customersLedger.jsp">거래처 원장</a></li>
 					<li class="subTab-1-2" style="display: block;"><a href="WIT_Accounting_cashBook.jsp">현금출납장</a></li>
 					<li class="subTab-1-3" style="display: block;"><a href="WIT_Accounting_psLedger.jsp">매입매출장</a></li>
-					<li class="subTab-1-4" style="display: block;"><a href="WIT_Accounting_monthly_IS.jsp">월별손익분석</a></li>
-					<li class="subTab-1-5" style="display: block;"><a href="WIT_Accounting_monthly_CA.jsp">월별원가분석</a></li>
 					<li class="subTab-1-6" style="display: block;"><a href="WIT_Accounting_pLedger.jsp">매입집계표</a></li>
-					<li class="subTab-1-7" style="display: block;"><a href="WIT_Accounting_sLedger.jsp">매출집계표</a></li>
-					<li class="subTab-1-9" style="display: block;"><a href="WIT_Accounting_customersLedger.jsp">거래처원장</a></li>
-					<li class="subTab-1-10" style="display: block;"><a href="#">경영요약보고서</a></li>					
+					<li class="subTab-1-7" style="display: block;"><a href="WIT_Accounting_sLedger.jsp">매출집계표</a></li>				
 				</ul>				
 				<ul id="subTab-2" style="display: none;">
 					<li class="subTab-2-0" style="display: block;"><a href="WIT_Accounting_balanceSheet.jsp">대차대조표</a></li>
 					<li class="subTab-2-1" style="display: block;"><a href="WIT_Accounting_incomeStatement.jsp">손익계산서</a></li>
-					<li class="subTab-2-2" style="display: block;"><a href="#">현금흐름표</a></li>
-					<li class="subTab-2-3" style="display: block;"><a href="#">자본변동표</a></li>
-					<li class="subTab-2-4" style="display: block;"><a href="WIT_Accounting_trialBalance.jsp">시산표</a></li>
+					<li class="subTab-2-2" style="display: block;"><a href="WIT_Accounting_trialBalance.jsp">시산표</a></li>
+					<li class="subTab-2-3" style="display: block;"><a href="WIT_Accounting_cashFlow.jsp">현금흐름표</a></li>
+					<li class="subTab-2-4" style="display: block;"><a href="#">이익 잉여금 처분계산서</a></li>
 					<li class="subTab-2-5" style="display: block;"><a href="WIT_Accounting_costSpecification.jsp">원가 명세서</a></li>
-					<li class="subTab-2-7" style="display: block;"><a href="#">이익 잉여금 처분계산서</a></li>
+					
 				</ul>				
 				<ul id="subTab-3" style="display: none;">
-					<li class="subTab-3-0" style="display: block;"><a href="#">고정자산관리</a></li>
-					<li class="subTab-3-1" style="display: block;"><a href="#">고정자산현황</a></li>
-					<li class="subTab-3-2" style="display: block;"><a href="#">감가상각현황</a></li>
+					<li class="subTab-3-0" style="display: block;"><a href="WIT_Accounting_dFundsStatus.jsp">자금현황표</a></li>
+					<li class="subTab-3-1" style="display: block;"><a href="WIT_Accounting_cashVary.jsp">자금증감내역</a></li>
+					<li class="subTab-3-2" style="display: block;"><a href="WIT_Accounting_monthly_IS.jsp">월별손익분석</a></li>
+					<li class="subTab-3-3" style="display: block;"><a href="WIT_Accounting_monthly_CA.jsp">월별원가분석</a></li>
+					<li class="subTab-3-4" style="display: block;"><a href="WIT_Accounting_confirmationTerm.jsp">채권/채무회수기간표</a></li>
+					<li class="subTab-3-5" style="display: block;"><a href="WIT_Accounting_confirmationBank.jsp">채권잔액분석표</a></li>
+					<li class="subTab-3-6" style="display: block;"><a href="#">경영요약보고서</a></li>
 				</ul>				
 				<ul id="subTab-4" style="display: none;">
-					<li class="subTab-4-0" style="display: block;"><a href="#">회사등록</a></li>
-					<li class="subTab-4-1" style="display: block;"><a href="#">거래처등록</a></li>
-					<li class="subTab-4-2" style="display: block;"><a href="#">계정등록</a></li>
-					<li class="subTab-4-3" style="display: block;"><a href="#">부서등록</a></li>
+					<li class="subTab-4-0" style="display: block;"><a href="#" onclick="insertCompany()">회사등록</a></li>
+					<li class="subTab-4-1" style="display: block;"><a href="#" onclick="insert_customers()">거래처등록</a></li>
+					<li class="subTab-4-2" style="display: block;"><a href="#" onclick="insert_accounts()">계정등록</a></li>
+					<li class="subTab-4-3" style="display: block;"><a href="#" onclick="insertDepartments()">부서등록</a></li>
 					<li class="subTab-4-4" style="display: block;"><a href="#">데이터백업</a></li>
 					<li class="subTab-4-5" style="display: block;"><a href="#">데이터복구</a></li>
 					<li class="subTab-4-6" style="display: block;"><a href="#">환경설정</a></li>

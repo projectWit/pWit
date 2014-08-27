@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <jsp:include page="WIT_Accounting_header.jsp" />
+<link rel="stylesheet" type="text/css" href="css/Accounting.css">
 <!-- <script type="text/javascript" src="../script/jquery-2.1.1.js"></script> -->
 <script type="text/javascript">
 $(document).ready(function(e) {
@@ -19,11 +20,11 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<div id="body" style="position:relative;width: 100%;">
-		<div id="aSide" style="position: absolute; top: 0px; left: 0px; margin-top: 6px;">
+	<div id="body">
+		<div id="aSide">
 		<jsp:include page="leftMenu.jsp" />
 		</div>
-		<div id="contents" style="position: absolute; top: 0px; left: 210px;">
+		<div id="contents">
 			<jsp:include page="cashBook.jsp" />
 		</div>
 	</div>

@@ -30,7 +30,7 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -86,7 +86,8 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%String[] str1= {"매입", "매출", "외상매입", "외상매출", "미수금", "자산", "부채", "자본", "미지급금", "비용"};
+			<%
+			String[] str1= {"매입", "매출", "외상매입", "외상매출", "미수금", "자산", "부채", "자본", "미지급금", "비용"};
 			String[] str2= {"매입계정", "매출계정", "외상매입계정", "외상매출계정", "미수금계정", "부채 + 자본", "자산 - 자본", "자산 - 부채", "미지급금계정", "비용계정"};
 			String[] str3= {"다산", "수", "아이티", "강변", "비타폰", "세종글로벌", "글로벌", "대구존", "더포쉬", "도비"};
 			for(int i=0; i<str1.length; i++){%>

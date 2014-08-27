@@ -5,20 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT는 당신을 환영합니다!</title>
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
-<!-- <link rel="stylesheet" type="text/css" href="css/witCommon.css"> -->
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberFooter.css">
-<style type="text/css">
-</style>
-
-<script type="text/javascript" src="script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="script/jquery-ui.js"></script>
-<!-- <script type="text/javascript" src="script/witCommon.js"></script> -->
-<script type="text/javascript">
-	
-</script>
 </head>
 <body>
 	<!-- FOOTER_BEGIN -->

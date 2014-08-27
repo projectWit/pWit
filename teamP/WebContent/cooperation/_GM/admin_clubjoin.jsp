@@ -35,12 +35,12 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('/teamP/cooperation/_GM/clubInsert.jsp');
+	$("#main").load('/teamP/clubInsert.gm');
 	$('#club-0').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/clubInsert.jsp');
+		$("#main").load('/teamP/clubInsert.gm');
 	});
 	$('#club-1').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/clublist.jsp');
+		$("#main").load('/teamP/clublist.gm');
 	});
 	$('#club-2').click(function(e) {
 		$("#main").load('/teamP/cooperation/_GM/clubdrop.jsp');

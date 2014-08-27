@@ -26,12 +26,15 @@
 <script type="text/javascript" src="../script/calendar.js"></script>
 <script type="text/javascript">
 	calendarIDs = [ 'FromDt1', 'FromDt2' ]; // 달력이 추가될 태그의 id
+	function slipsD() {
+		var features = "width=680px, height=450px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+		window.open('slipsD.jsp', '', features);
+	};
 </script>
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0'
-				cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -69,7 +72,6 @@
 			<input type="button" value="조회" class="float_right"
 				style="width: 40px; height: 20px;">
 		</div>
-
 		<!-- ***** 프린트 시작 ***** -->
 		<table class="p_table" summary="">
 			<col width="185px" />
@@ -85,12 +87,13 @@
 						2014/08/20</th>
 				</tr>
 				<%
-					for (int i = 0; i < 10; i++) {
+				String str[]={"세종글로벌", "다산", "글로벌", "대구존", "폰즈", "모아", "도비"};
+					for (int i = 0; i < str.length; i++) {
 				%>
 				<tr>
 					<th colspan="6" class="p_th"
 						style="font-size: 18px; font-weight: bold;">
-						[세종 글로벌]</th>
+						[<%=str[i]%>]</th>
 				</tr>
 				<tr>
 					<th class="p_th">날자/전표번호</th>
@@ -104,7 +107,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td class="p_td">2014/08/21-<%=i+1%></td>
+					<td class="p_td"><a onclick="slipsD()">2014/08/21-<%=i+1%></a></td>
 					<td class="p_td">매출건입금</td>
 					<td class="p_td">현금</td>
 					<td class="p_td right">18,500</td>

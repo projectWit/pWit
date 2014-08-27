@@ -17,7 +17,8 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<jsp:include page="WIT_Accounting_section.jsp"></jsp:include>
+	<jsp:include page="WIT_Accounting_main.jsp"></jsp:include>
+	
 </body>
 <jsp:include page="WIT_Accounting_footer.jsp"></jsp:include>
 </html>

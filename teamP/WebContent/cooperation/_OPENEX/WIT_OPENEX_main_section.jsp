@@ -7,7 +7,6 @@
 <title>WIT OPENEX</title>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/witCommon.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="OPENEXcss/WIT_OPENEX_section.css">
 </head>
@@ -148,7 +147,5 @@
 			</table>
 		</div>
 	</div>
-	<img src="img/mainimg3.png"
-		style="margin: auto; width: 100%; height: 70%; position: relative; top: 10px;">
 </body>
 </html>

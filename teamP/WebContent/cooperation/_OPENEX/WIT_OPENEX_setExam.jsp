@@ -6,9 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT OPENEX</title>
 <jsp:include page="WIT_OPENEX_main_header.jsp"></jsp:include>
+<script type="text/javascript">
+	$(function() {
+		$('#OPENEX_headerMenu1').css('color', '#FFF');
+		$('#OPENEX_headerMenu1').css('text-shadow', '0px 0 3px #FFF');
+	});
+</script>
 </head>
 <body>
 	<jsp:include page="WIT_OPENEX_setExam_section1.jsp"></jsp:include>
 </body>
-	<jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
+<jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
 </html>

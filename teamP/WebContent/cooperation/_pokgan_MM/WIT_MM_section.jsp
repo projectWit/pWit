@@ -19,34 +19,11 @@
 	href="/teamP/cooperation/_pokgan_MM/xml/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Site Atom"
 	href="/teamP/cooperation/_pokgan_MM/xml/atom.xml" />
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
 <style type="text/css">
 div.autosourcing-stub {
 	display: none
 }
 </style>
-<script type="text/javascript">
-	//<![CDATA[
-	var current_url = "http://www.rimi.kr/";
-	var request_uri = "http://www.rimi.kr/";
-	var current_mid = "main";
-	var waiting_message = "서버에 요청중입니다. 잠시만 기다려주세요.";
-	var ssl_actions = new Array();
-	var default_url = "http://www.rimi.kr";
-	//]]>
-</script>
-<script type="text/javascript">
-	//<![CDATA[
-	<!--
-	AutoSourcing
-			.setTemplate("<!--autosourcing_code//--><div><cite>출처(ref.) : <a href='http://www.rimi.kr/main' target='_blank' onclick='window.open(this.href);return false;'>맛있는 요리레시피, 맛있는 요리사이트 :: 리미의 레시피 www.Rimi.kr - http://www.rimi.kr/main</a></cite></div><!--autosourcing_code_end//-->");
-	AutoSourcing.setString(1, "맛있는 요리레시피, 맛있는 요리사이트 :: 리미의 레시피 www.Rimi.kr",
-			"http://www.rimi.kr/main", "http://www.rimi.kr/main");
-	//-->
-	//]]>
-</script>
 <script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript">

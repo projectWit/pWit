@@ -33,9 +33,9 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+	$("#main").load('/teamP/facilities.gm');
 	$('#facil-0').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
+		$("#main").load('/teamP/facilities.gm');
 	});
 	$('#facil-1').click(function(e) {
 		$("#main").load('/teamP/cooperation/_GM/facilitieslist.jsp');

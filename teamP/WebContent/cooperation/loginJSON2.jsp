@@ -1,8 +1,8 @@
 <%@page import="com.wit.member.Member"%>
 <%@page import="com.wit.myBatis.MemberMapper"%>
-<%@page import="com.wit.MyBatis"%>
+<%@page import="com.wit.MyBatis3"%>
 <%@page import="common.MemberDAO"%><%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%
-request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8");
 String username = request.getParameter("username");
 String password_text = request.getParameter("password_text");
 //String username = "test001";
@@ -12,7 +12,7 @@ System.out.println("password_text : "+password_text);
 String resource = "com/wit/myBatis/myBatisConfig.xml";
 
 // 세션 생성
-MyBatis myBatis = new MyBatis(resource);	
+MyBatis3 myBatis = new MyBatis3(resource);	
 
 // 맵퍼에서 필요한 쿼리 실행
 MemberMapper memberMapper = myBatis.getMapper(MemberMapper.class);

@@ -4,8 +4,9 @@
 /*===========================================*/
 /*전체 감싸는 영역을 넓이750px로 지정*/
 #wrap {
-	width: 1024px;
+	width: 100%;
 	/* margin: auto; */
+	margin-right: 0px;
 	padding: 0px 0 0 0px;
 }
 /*전체 감싸는 영역을 넓이100%로 지정*/
@@ -33,7 +34,7 @@
 }
 /*출력물 ie8에서 가운데정렬 되게*/
 #contents {
-	width: 100%;
+	/* width: 100%; */
 	margin: 0 auto;
 	padding: 0;
 	clear: both;

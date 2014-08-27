@@ -30,7 +30,7 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -45,23 +45,24 @@
 		<div class="container H_38px" style="border-top: 1px solid #000;">
 			<p class="float_left left">
 				기간 : &nbsp; <input type="text" id="FromDt1" maxlength="8" size="8"
-					name="FromDt" style="background-color: #F6F6F6;height: 20px;"
+					name="FromDt" style="background-color: #F6F6F6; height: 20px;"
 					readonly="readonly"> ~ <input type="text" id="FromDt2"
 					maxlength="8" size="8" name="FromDt"
-					style="background-color: #F6F6F6;height:20px;" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					style="background-color: #F6F6F6; height: 20px;"
+					readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				프로젝트 : &nbsp; <select name="projects">
 					<option>선택</option>
 					<option>일반</option>
 					<option>특별</option>
 					<option>연구</option>
-				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				 부서 : &nbsp; <select name="projects">
+				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 부서 : &nbsp; <select
+					name="projects">
 					<option>선택</option>
 					<option>회계부</option>
 					<option>영업부</option>
 					<option>사업부</option>
-				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				검색어 입력 : <input type="text" style="width: 80px; height: 20px; background-color: #F6F6F6;">
+				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 검색어 입력 : <input type="text"
+					style="width: 80px; height: 20px; background-color: #F6F6F6;">
 			</p>
 			<input type="button" value="조회" class="float_right"
 				style="width: 40px; height: 20px;">
@@ -79,19 +80,23 @@
 						2014/08/20</th>
 				</tr>
 				<tr>
-						<th class="p_th" colspan="2">차변</th>
-						<th class="p_th" colspan="2">대변</th>
+					<th class="p_th" colspan="2">차변</th>
+					<th class="p_th" colspan="2">대변</th>
 				</tr>
 				<tr>
-					<th class="p_th left">(자산)</th>
+					<th class="p_th" style="font-weight: bold;">자산</th>
 					<th class="p_th">&nbsp;</th>
-					<th class="p_th">(부채와 자본)</th>
+					<th class="p_th" style="font-weight: bold;">부채</th>
 					<th class="p_th">&nbsp;</th>
-					
+				</tr>
+				<tr>
+					<td class="p_td left" style="font-weight: bold;">유동자산 :</td>
+					<td class="p_td right"></td>
+					<td class="p_td left" style="font-weight: bold;">유동부채 :</td>
+					<td class="p_td right"></td>
 				</tr>
 			</thead>
 			<tbody>
-			<%for(int i=0; i<1; i++){%>
 				<tr>
 					<td class="p_td">현금</td>
 					<td class="p_td right">\500,000</td>
@@ -107,32 +112,103 @@
 				<tr>
 					<td class="p_td">비품</td>
 					<td class="p_td right">\50,000</td>
-					<td class="p_td right">부채합계</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="p_td left" style="font-weight: bold;">비유동자산 :</td>
+					<td class="p_td right"></td>
+					<td class="p_td left" style="font-weight: bold;">비유동부채 :</td>
+					<td class="p_td right"></td>
+				</tr>
+				<tr>
+					<td class="p_td left">투자자산 :</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td left" style="font-weight: bold;">부채총계 :</td>
 					<td class="p_td right">\200,000</td>
 				</tr>
 				<tr>
 					<td class="p_td">&nbsp;</td>
 					<td class="p_td right">&nbsp;</td>
-					<td class="p_td">자본금</td>
-					<td class="p_td right">\200,000</td>
+					<th class="p_th" style="font-weight: bold;">자본</th>
+					<th class="p_th right">&nbsp;</th>
+				</tr>
+				<tr>
+					<td class="p_td left">유형자산 :</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td left" style="font-weight: bold;">자본금 :</td>
+					<td class="p_td right">\100,000</td>
 				</tr>
 				<tr>
 					<td class="p_td">&nbsp;</td>
 					<td class="p_td right">&nbsp;</td>
-					<td class="p_td">이익잉여금</td>
-					<td class="p_td right">\200,000</td>
+					<td class="p_td">보통주자본금</td>
+					<td class="p_td right">\50,000</td>
 				</tr>
 				<tr>
 					<td class="p_td">&nbsp;</td>
 					<td class="p_td right">&nbsp;</td>
-					<td class="p_td right">자본합계</td>
-					<td class="p_td right">\400,000</td>
+					<td class="p_td">우선주자본금</td>
+					<td class="p_td right">\50,000</td>
 				</tr>
-				<%}%>
 				<tr>
-					<th class="p_th">자산합계</th>
+					<td class="p_td left">무형자산 :</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td left" style="font-weight: bold;">자본잉여금 :</td>
+					<td class="p_td right">\100,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">주식발행초과금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">기타자본잉여금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td left" style="font-weight: bold;">이익잉여금 :</td>
+					<td class="p_td right">\200,000</td>
+				</tr>
+				<tr>
+					<td class="p_td left">기타자산 :</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">이익준비금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">임의적립금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">미처분이익잉여금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<td class="p_td">&nbsp;</td>
+					<td class="p_td right">&nbsp;</td>
+					<td class="p_td">재무구조개선적립금</td>
+					<td class="p_td right">\50,000</td>
+				</tr>
+				<tr>
+					<th class="p_th" style="font-weight: bold;">자산합계</th>
 					<th class="p_th right">\600,000</th>
-					<th class="p_th">부채와 자본합계</th>
+					<th class="p_th" style="font-weight: bold;">부채와 자본합계</th>
 					<th class="p_th right">\600,000</th>
 				</tr>
 				<!-- for -->

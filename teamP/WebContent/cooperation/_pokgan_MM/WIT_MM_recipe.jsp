@@ -19,26 +19,6 @@
 	href="/teamP/cooperation/_pokgan_MM/xml/recipe/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Site Atom"
 	href="/teamP/cooperation/_pokgan_MM/xml/recipe/atom.xml" />
-<script type="text/javascript">
-	//<![CDATA[
-	var current_url = "http://www.rimi.kr/?mid=recipe";
-	var request_uri = "http://www.rimi.kr/";
-	var current_mid = "recipe";
-	var waiting_message = "서버에 요청중입니다. 잠시만 기다려주세요.";
-	var ssl_actions = new Array();
-	var default_url = "http://www.rimi.kr";
-	//]]>
-</script>
-<script type="text/javascript">
-	//<![CDATA[
-	<!--
-	AutoSourcing
-			.setTemplate("<!--autosourcing_code//--><div><cite>출처(ref.) : <a href='http://www.rimi.kr/recipe' target='_blank' onclick='window.open(this.href);return false;'>맛있는 요리 레시피 - 리미의 레시피 ::Rimi.kr:: - http://www.rimi.kr/recipe</a></cite></div><!--autosourcing_code_end//-->");
-	AutoSourcing.setString(1, "맛있는 요리 레시피 - 리미의 레시피 ::Rimi.kr::",
-			"http://www.rimi.kr/recipe", "http://www.rimi.kr/recipe");
-	//-->
-	//]]>
-</script>
 <style type="text/css">
 div.autosourcing-stub {
 	display: none

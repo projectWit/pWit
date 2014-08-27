@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -108,7 +110,7 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 총 동호회 수 : 10 개 &nbsp;&nbsp;PAGE 1/2 </td>
+					<td id='bl_count'> 총 동호회 수 : <c:out value="${fn:length(list)}" /> 개 &nbsp;&nbsp;PAGE 1/2 </td>
 					<td id='bl_search'> <input type=checkbox name=shname value="ok" onclick="change(1)">이름
 						<input type=checkbox name=ssubject value="ok" checked onclick="change(2)">제목
 						<input type=checkbox name=scontent value="ok" onclick="change(3)">내용
@@ -133,21 +135,18 @@ a:link {
 				<!-- INLINE NOTICE --> 
 				 
 				<!-- LIST REPEAT --> 
-				<%
-				for(int i=10;i>0;i--) {
-				%>
+				
+				<c:forEach var="item" items="${list }"  varStatus="status">
 				<tr class="bl_oddline">
-					<td class='bl_list bl_no'><%=i %></td>
+					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >Trigger</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_type'>농구</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>강성조</div></td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.mId }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_type'>${item.mNickName }</td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.mName }</div></td>
 					
-					<td class='bl_list bl_hits'>16</td>
+					<td class='bl_list bl_hits'>${item.mJoindate.substring(0,10) }</td>
 				</tr>
-				 <%
-				}
-				 %>
+				</c:forEach>
 				<!-- LIST REPEAT END -->
 			</table>
 			

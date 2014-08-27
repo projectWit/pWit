@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.COM/DTD SQL MAP 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="testmyBatisSql">
+	<resultMap class="GM.MemberDTO" id="memberDTO">
+		<result property="mId" column="mId" />
+		<result property="mName" column="mName" />
+		<result property="mMobile" column="mMobile" />
+		<result property="mPost" column="mPost" />
+		<result property="mAddr" column="mAddr" />
+		<result property="mJoindate" column="mJoindate" />
+	</resultMap>
+	<resultMap class="GM.C_SportDTO" id="c_sportDTO">
+		<result property="sId" column="sId"/>
+		<result property="sName" column="sName"/>
+	</resultMap>
+	<resultMap class="GM.C_PlaceDTO" id="c_placeDTO">
+		<result property="pId" column="pId" />
+		<result property="place" column="place" />
+	</resultMap>
+<select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
+$value$
+</select>
+<select id="searchSport" parameterClass="java.lang.String" resultMap="c_sportDTO" >
+$value$
+</select>
+<select id="searchPlace" parameterClass="java.lang.String" resultMap="c_placeDTO" >
+$value$
+</select>
+</sqlMap>

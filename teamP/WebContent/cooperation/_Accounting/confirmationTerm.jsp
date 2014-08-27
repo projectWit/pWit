@@ -30,12 +30,12 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
 							<tr>
-								<td align='center' class='bigtitle'>채권/채무회수기간표</td>
+								<td align='center' class='bigtitle' style="text-align: center;">채권/채무회수기간표</td>
 							</tr>
 						</table>
 					</td>

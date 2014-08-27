@@ -19,26 +19,6 @@
 	href="/teamP/cooperation/_pokgan_MM/xml/board/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom"
 	href="/teamP/cooperation/_pokgan_MM/xml/board/atom.xml" />
-<script type="text/javascript">
-	//<![CDATA[
-	var current_url = "http://www.rimi.kr/?mid=freetalk";
-	var request_uri = "http://www.rimi.kr/";
-	var current_mid = "freetalk";
-	var waiting_message = "서버에 요청중입니다. 잠시만 기다려주세요.";
-	var ssl_actions = new Array();
-	var default_url = "http://www.rimi.kr";
-	//]]>
-</script>
-<script type="text/javascript">
-	//<![CDATA[
-	<!--
-	AutoSourcing
-			.setTemplate("<!--autosourcing_code//--><div><cite>출처(ref.) : <a href='http://www.rimi.kr/freetalk' target='_blank' onclick='window.open(this.href);return false;'>아무 얘기나 거침없이 하는 자유게시판 ::Rimi.kr:: - http://www.rimi.kr/freetalk</a></cite></div><!--autosourcing_code_end//-->");
-	AutoSourcing.setString(1, "아무 얘기나 거침없이 하는 자유게시판 ::Rimi.kr::",
-			"http://www.rimi.kr/freetalk", "http://www.rimi.kr/freetalk");
-	//-->
-	//]]>
-</script>
 <style type="text/css">
 div.autosourcing-stub {
 	display: none

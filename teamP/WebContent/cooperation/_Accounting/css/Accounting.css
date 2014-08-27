@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+#body{position:relative;width:100%;text-align:center;margin:0 auto;}
+#aSide{position: absolute; top: 0px; left:0px; margin-top: 20px;}/*  */
+#contents{width: 1024px;position: absolute;top: 0px; left: 210px;}/*  */

@@ -20,16 +20,6 @@
 	href="/teamP/cooperation/_pokgan_MM/xml/board/rss.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom"
 	href="/teamP/cooperation/_pokgan_MM/xml/board/atom.xml" />
-<script type="text/javascript">
-	//<![CDATA[
-	var current_url = "http://www.rimi.kr/?mid=lifestory";
-	var request_uri = "http://www.rimi.kr/";
-	var current_mid = "lifestory";
-	var waiting_message = "서버에 요청중입니다. 잠시만 기다려주세요.";
-	var ssl_actions = new Array();
-	var default_url = "http://www.rimi.kr";
-	//]]>
-</script>
 </head>
 <body>
 	<div id="bbody">

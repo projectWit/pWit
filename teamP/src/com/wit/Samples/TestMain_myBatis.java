@@ -1,6 +1,6 @@
 package com.wit.Samples;
 
-import com.wit.MyBatis;
+import com.wit.MyBatis3;
 import com.wit.member.Member;
 import com.wit.myBatis.MemberMapper;
 
@@ -11,7 +11,7 @@ public class TestMain_myBatis {
 		String resource = "com/wit/myBatis/myBatisConfig.xml";
 		
 		// 세션 생성
-		MyBatis myBatis = new MyBatis(resource);	
+		MyBatis3 myBatis = new MyBatis3(resource);	
 		
 		// 맵퍼에서 필요한 쿼리 실행
 		MemberMapper memberMapper = myBatis.getMapper(MemberMapper.class);

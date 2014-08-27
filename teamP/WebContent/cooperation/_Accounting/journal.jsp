@@ -26,11 +26,15 @@
 <script type="text/javascript" src="../script/calendar.js"></script>
 <script type="text/javascript">
 	calendarIDs = [ 'FromDt1', 'FromDt2' ]; // 달력이 추가될 태그의 id
+	function slipsD() {
+		var features = "width=680px, height=450px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+		window.open('slipsD.jsp', '', features);
+	};
 </script>
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -95,7 +99,7 @@
 			<tbody>
 			<%for(int i=0; i<25; i++){%>
 				<tr>
-					<td class="p_td">2014/08/21-1</td>
+					<td class="p_td"><a onclick="slipsD()">2014/08/21-<%=i+1%></a></td>
 					<td class="p_td">매출건입금</td>
 					<td class="p_td">현금</td>
 					<td class="p_td right">18,500</td>

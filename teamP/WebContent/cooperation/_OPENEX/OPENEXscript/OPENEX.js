@@ -10,7 +10,7 @@ function change2ndCategory(obj) {
 	$("#2ndCategory").slideDown("slow");
 }
 
-//첫번째 폼에 포커스
+// 첫번째 폼에 포커스
 function findInput() {
 	$('section form input[type="text"], form textarea').eq(0).focus();
 }
@@ -56,3 +56,26 @@ function scrollHidden() {
 	$("#openex_setExam_excount").css('overflow', 'hidden');
 }
 
+// 슬라이드 토글
+$(function() {
+	$('#slideTogBox_se').css('height', '30px');
+	$('#slideTogCtn_se').hide();
+	$('#slideTogBtn_se').click(function() {
+		if ($('#slideTogCtn_se').is(':hidden')) {
+			$('#slideTogBox_se').css('height', '360px');
+		} else {
+			$('#slideTogBox_se').css('height', '30px');
+		}
+		$('#slideTogCtn_se').slideToggle()
+	});
+	$('#slideTogBox_sv').css('height', '30px');
+	$('#slideTogCtn_sv').hide();
+	$('#slideTogBtn_sv').click(function() {
+		if ($('#slideTogCtn_sv').is(':hidden')) {
+			$('#slideTogBox_sv').css('height', '360px');
+		} else {
+			$('#slideTogBox_sv').css('height', '30px');
+		}
+		$('#slideTogCtn_sv').slideToggle()
+	});
+});

@@ -12,6 +12,17 @@
   
   <!-- dispatcher Servlet 설정 : spring MVC 구현 -->
   <servlet>
+   <servlet-name>dispatcher-members</servlet-name>
+   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>dispatcher-members</servlet-name>
+   <url-pattern>/members/*</url-pattern>
+  </servlet-mapping>
+  <!-- // dispatcher Servlet 설정 : spring MVC 구현 -->
+  
+  <!-- dispatcher Servlet 설정 : spring MVC 구현 -->
+  <servlet>
    <servlet-name>dispatcher-study</servlet-name>
    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   </servlet>
@@ -20,14 +31,28 @@
    <url-pattern>/study/*</url-pattern>
   </servlet-mapping>
   <!-- // dispatcher Servlet 설정 : spring MVC 구현 -->
-  <!-- dispatcher Servlet 설정 : spring MVC 구현 -->
+  
+  <!-- OPENEX Servlet 설정 : spring MVC 구현 -->
   <servlet>
-   <servlet-name>dispatcher-members</servlet-name>
+   <servlet-name>OPENEX</servlet-name>
    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+   <load-on-startup>2</load-on-startup>
   </servlet>
   <servlet-mapping>
-   <servlet-name>dispatcher-members</servlet-name>
-   <url-pattern>/members/*</url-pattern>
+   <servlet-name>OPENEX</servlet-name>
+   <url-pattern>*.op</url-pattern>
+  </servlet-mapping>
+  <!-- // OPENEX Servlet 설정 : spring MVC 구현 -->
+  
+  <!-- GM Servlet 설정 : spring MVC 구현 -->
+  <servlet>
+   <servlet-name>GM</servlet-name>
+   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+   <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>GM</servlet-name>
+   <url-pattern>*.gm</url-pattern>
   </servlet-mapping>
   <!-- // dispatcher Servlet 설정 : spring MVC 구현 -->
   

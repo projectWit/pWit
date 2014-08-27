@@ -1,13 +1,21 @@
+$(function() {
+	$('#openex_archive_graph').hide();
+});
 function graphTr() {
-	$('#openex_archive_record_graphBtn').css('display', 'block');
-};
-
+	if ($('#openex_archive_graph').is(':hidden')) {
+		$('#openex_archive_comment').hide();
+		$('#openex_archive_graph').show();
+	} else if ($('#openex_archive_comment').is(':hidden')) {
+		$('#openex_archive_comment').show();
+		$('#openex_archive_graph').hide();
+	}
+}
 
 function graph1() {
 	$('#graph_space').empty();
 	$('#graph_space')
 			.append(
-					'<div id="canvas_line" style="position: relative; height: 270px; width: 550px;"></div>');
+					'<div id="canvas_line" style="position: relative; height: 270px; width: 530px;"></div>');
 	$('#canvas_line').highcharts(
 			{
 				title : {
@@ -69,39 +77,36 @@ function graph2() {
 	$('#graph_space').empty();
 	$('#graph_space')
 			.append(
-					'<div id="canvas_pie" style= "position: relative; height: 270px; width: 550px;"></div>');
+					'<div id="canvas_pie" style= "position: relative; height: 270px; width: 530px;"></div>');
 	var colors = Highcharts.getOptions().colors, categories = [ '난이도 상',
-			'난이도 중', '난이도 하' ], data = [
-			{
-				y : 9,
-				color : colors[0],
-				drilldown : {
-					name : '난이도 상',
-					categories : [ '정답자', '오답자' ],
-					data : [ 2, 7 ],
-					color : colors[0]
-				}
-			},
-			{
-				y : 46,
-				color : colors[1],
-				drilldown : {
-					name : '난이도 중',
-					categories : [ '정답자', '오답자' ],
-					data : [ 34, 11],
-					color : colors[1]
-				}
-			},
-			{
-				y : 45,
-				color : colors[2],
-				drilldown : {
-					name : '난이도 하',
-					categories : [ '정답자', '오답자' ],
-					data : [ 40, 5],
-					color : colors[2]
-				}
-			}, ], browserData = [], versionsData = [], i, j, dataLen = data.length, drillDataLen, brightness;
+			'난이도 중', '난이도 하' ], data = [ {
+		y : 9,
+		color : colors[0],
+		drilldown : {
+			name : '난이도 상',
+			categories : [ '정답자', '오답자' ],
+			data : [ 2, 7 ],
+			color : colors[0]
+		}
+	}, {
+		y : 46,
+		color : colors[1],
+		drilldown : {
+			name : '난이도 중',
+			categories : [ '정답자', '오답자' ],
+			data : [ 34, 11 ],
+			color : colors[1]
+		}
+	}, {
+		y : 45,
+		color : colors[2],
+		drilldown : {
+			name : '난이도 하',
+			categories : [ '정답자', '오답자' ],
+			data : [ 40, 5 ],
+			color : colors[2]
+		}
+	}, ], browserData = [], versionsData = [], i, j, dataLen = data.length, drillDataLen, brightness;
 
 	// Build the data arrays
 	for (i = 0; i < dataLen; i += 1) {
@@ -185,20 +190,18 @@ function graph3() {
 					'<div id="canvas_name" style="overflow: auto; position: relative; height: 270px; width: 320px"></div>');
 };
 
-
 $(function() {
 	var categories = [ '철학일반', '철학체계', '동양철학', '서양철학', '논리학', '심리학', '윤리학',
-			'종교일반', '비교종교', '불교', '그리스도교', '이슬람교', '힌두교', '기타 종교',
-			'사회과학일반', '통계', '사회', '정치', '행정', '법', '교육', '국방 및 군사',
-			'뉴스와 미디어', '경제일반', '기업', '금융', '재정', '노동', '국제경제', '산업',
-			'전통사회경제', '각국의 경제', '부동산', '경영', '수학', '물리학', '화학', '지구과학',
-			'생명과학', '건축공학', '토목건설공학', '기계공학', '자동차공학', '항공우주공학', '전기공학',
-			'전자공학', '금속재료공학', '화학공학', '원자력공학', '환경공학', '조선해양공학',
-			'무기 및 병기공학', '산업공학', '의학', '의학 일반', '한의학', '수의학', '약학',
-			'건강 및 보건위생', 'IT 일반', '하드웨어', '소프트웨어', '통신 및 네트워크', '인터넷',
-			'문화예술일반', '문학', '음악', '미술', '건축', '사진', '영화', '연극', '무용',
-			'현대예술', '대중연예', '각국의 문화예술', '아시아사', '유럽사', '아프리카사', '아메리카사',
-			'오세아니아사', '서양사', '역사일반' ];
+			'종교일반', '비교종교', '불교', '그리스도교', '이슬람교', '힌두교', '기타 종교', '사회과학일반',
+			'통계', '사회', '정치', '행정', '법', '교육', '국방 및 군사', '뉴스와 미디어', '경제일반',
+			'기업', '금융', '재정', '노동', '국제경제', '산업', '전통사회경제', '각국의 경제', '부동산',
+			'경영', '수학', '물리학', '화학', '지구과학', '생명과학', '건축공학', '토목건설공학', '기계공학',
+			'자동차공학', '항공우주공학', '전기공학', '전자공학', '금속재료공학', '화학공학', '원자력공학',
+			'환경공학', '조선해양공학', '무기 및 병기공학', '산업공학', '의학', '의학 일반', '한의학', '수의학',
+			'약학', '건강 및 보건위생', 'IT 일반', '하드웨어', '소프트웨어', '통신 및 네트워크', '인터넷',
+			'문화예술일반', '문학', '음악', '미술', '건축', '사진', '영화', '연극', '무용', '현대예술',
+			'대중연예', '각국의 문화예술', '아시아사', '유럽사', '아프리카사', '아메리카사', '오세아니아사',
+			'서양사', '역사일반' ];
 	$(document)
 			.ready(
 					function() {
@@ -269,51 +272,26 @@ $(function() {
 											series : [
 													{
 														name : '출제 수',
-														data : [ -146,
-																-184,
-																-200,
-																-220,
-																-201,
-																-210,
-																-190,
-																-537,
-																-350,
-																-360,
-																-310,
-																-272,
-																-200,
-																-222,
-																-210,
-																-100,
-																-836,
-																-350,
-																-500,
-																-280,
+														data : [ -146, -184,
+																-200, -220,
+																-201, -210,
+																-190, -537,
+																-350, -360,
+																-310, -272,
+																-200, -222,
+																-210, -100,
+																-836, -350,
+																-500, -280,
 																-388 ]
 													},
 													{
 														name : '증가량',
-														data : [ 16,
-																	14,
-																	2,
-																	22,
-																	20,
-																	20,
-																	19,
-																	50,
-																	35,
-																	36,
-																	31,
-																	22,
-																	20,
-																	22,
-																	210,
-																	10,
-																	506,
-																	350,
-																	90,
-																	28,
-																	308 ]
+														data : [ 16, 14, 2, 22,
+																20, 20, 19, 50,
+																35, 36, 31, 22,
+																20, 22, 210,
+																10, 506, 350,
+																90, 28, 308 ]
 													} ]
 										});
 					});

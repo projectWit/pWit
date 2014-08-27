@@ -24,7 +24,7 @@
 				<span class="float_left" style="width: 167px"> <a
 					title="경영자료" id="bar118">경영자료</a></span>
 			</dt>
-			<span id="" style="display:">
+			<span id="" style="display:" />
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_dFundsStatus.jsp"
 						id="" title="자금현황표"
@@ -44,11 +44,6 @@
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_monthly_CA.jsp"
 						id="" title="월별원가분석"
 						onmouseover="a('월별원가분석');return true;">월별원가분석</a></span>
-				</dd>
-				<dd>
-					<span class="float_left" style="width: 152px"><a href="#"
-						id="" title="월별추이그래프"
-						onmouseover="a('월별추이그래프');return true;">월별추이그래프</a></span>
 				</dd>
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_confirmationTerm.jsp"
@@ -71,7 +66,7 @@
 				<span class="float_left" style="width: 167px"> <a
 					 title="재무제표" id="bar118">재무제표</a></span>
 			</dt>
-			<span id="" style="display:">
+			<span id="" style="display:" />
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_balanceSheet.jsp"
 						id=""  title="대차대조표"
@@ -102,21 +97,12 @@
 						id=""  title="원가명세서"
 						onmouseover="a('원가명세서');return true;">원가명세서</a></span>
 				</dd>
-				<dd>
-					<span class="float_left" style="width: 152px"><a href="#"
-						id=""  title="수입/지출명세서"
-						onmouseover="a('수입/지출명세서');return true;">수입/지출명세서</a></span>
-				</dd><dd>
-					<span class="float_left" style="width: 152px"><a href="#"
-						id="" title="사용자정의보고서"
-						onmouseover="a('사용자정의보고서');return true;">사용자정의보고서</a></span>
-				</dd>
 			</span>
 			<dt id="class118" class="on">
 				<span class="float_left" style="width: 167px"> <a
 					title="주요장부" id="bar118">주요장부</a></span>
 			</dt>
-			<span id="" style="display:">
+			<span id="" style="display:" />
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_journal.jsp"
 						id="" title="분개장"
@@ -158,6 +144,16 @@
 					title="기타" id="bar118">기타</a></span>
 			</dt>
 			<span id="" style="display:">
+			<dd>
+					<span class="float_left" style="width: 152px"><a href="#"
+						id="" title="고정자산현황"
+						onmouseover="a('고정자산현황');return true;">고정자산현황</a></span>
+				</dd>
+				<dd>
+					<span class="float_left" style="width: 152px"><a href="#"
+						id="" title="감가상각현황"
+						onmouseover="a('감가상각현황');return true;">감가상각현황</a></span>
+				</dd>
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_slipList.jsp"
 						id="" title="전표현황"
@@ -181,7 +177,7 @@
 				<dd>
 					<span class="float_left" style="width: 152px"><a href="#"
 						id="" title="외화장부"
-						onmouseover="a('외화장부');return true;">외화장부</a></span>
+						onmouseover="a('외화장부');return true;">내용참조</a></span>
 				</dd>
 			</span>
 			<!-- if (ds != null && ds.Tables[0].Rows.Count > 0) -->

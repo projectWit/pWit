@@ -38,7 +38,7 @@
 </head>
 <body>
 
-	<form method="post" id="form1">
+	<form method="post" id="form1" action = "PerPro.jsp">
 		
 		<div id="wrap_pop">
 			<div id="title">
@@ -191,8 +191,8 @@
 			</div>
 			<!--//contents-->
 			<div class="footerBG_pop">
-				<span class="btn blue"><input type="button" name="btnSave"
-					id="btnSave" onclick="fnSave();" value="저장(F8)" /></span> <span
+				<span class="btn blue"><input type="submit" name="btnSave"
+					id="btnSave" value="저장(F8)" /></span> <span
 					class="btn gray"><input type="button" name="btnClose"
 					id="btnClose" value="닫기" onclick = "Close()"/></span>
 				<p class="btn_right"></p>

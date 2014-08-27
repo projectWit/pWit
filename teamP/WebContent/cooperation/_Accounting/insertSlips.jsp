@@ -23,84 +23,115 @@
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/calendar.js"></script>
 <script type="text/javascript">
-	calendarIDs = [ 'FromDt1', 'FromDt2' ]; // 달력이 추가될 태그의 id
-	var features = "width=500px, height=500px, resizable=yes, scrollbars=no, top=500, left=400, toolbar=yes";
-	window.open('insertSlips.jsp', '전표입력창', features);
+	calendarIDs = [ 'FromDt' ]; // 달력이 추가될 태그의 id
+	function insertSlips_accounts() {
+		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+		window.open('insertSlips_accounts.jsp', '', features);
+	};	
+	function projectLists() {
+		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+		window.open('projectLists.jsp', '', features);
+	};	
 </script>
 <body>
-	<div id="wrap">
+	<div id="wrap" style="margin-left: 40px;">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="400" height="100" border='0' cellspacing='0'
+				cellpadding='0'>
 				<tr>
 					<td align='center'>
-						<table>
+						<table align="center">
 							<tr>
-								<td align='center' class='bigtitle'>계정목록</td>
+								<td align='center' class='bigtitle'>전표입력</td>
 							</tr>
 						</table>
 					</td>
 				</tr>
 			</table>
 		</div>
-		<div class="container H_38px" style="border-top: 1px solid #000;">
-			<p class="float_left left">
-				기간 : &nbsp; <input type="text" id="FromDt1" maxlength="8" size="8"
-					name="FromDt" style="background-color: #F6F6F6;height: 20px;"
-					readonly="readonly"> ~ <input type="text" id="FromDt2"
-					maxlength="8" size="8" name="FromDt"
-					style="background-color: #F6F6F6;height:20px;" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				프로젝트 : &nbsp; <select name="projects">
-					<option>선택</option>
-					<option>일반</option>
-					<option>특별</option>
-					<option>연구</option>
-				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				 부서 : &nbsp; <select name="projects">
-					<option>선택</option>
-					<option>회계부</option>
-					<option>영업부</option>
-					<option>사업부</option>
-				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				검색어 입력 : <input type="text" style="width: 80px; height: 20px; background-color: #F6F6F6;">
-			</p>
-			<input type="button" value="조회" class="float_right"
-				style="width: 40px; height: 20px;">
-		</div>
+		<div style="border-top: 1px solid #000; width: 400px;"></div>
 
 		<!-- ***** 프린트 시작 ***** -->
-		<table class="p_table" summary="">
-			<col width="50px" />
-			<col width="150px" />
-			<col width="" />
-			<thead>
-				<tr>
-					<th class="p_th">번호</th>
-					<th class="p_th">계정명</th>				
-					<th class="p_th">적요</th>
-				</tr>
-			</thead>
+		<table width="400">
+			<col width="100px" />
+			<col width="250px" />
 			<tbody>
-			<%String[] str1= {"매입", "매출", "외상매입", "외상매출", "미수금", "자산", "부채", "자본", "미지급금", "비용"};
-			String[] str2= {"매입계정", "매출계정", "외상매입계정", "외상매출계정", "미수금계정", "유동, 비유동자산이 있으며 부채과 자본을 합친 것이 자산계정이다.", "자산에서 갖고 있는 부채를 나타낸다.", "자산에서 부채를 뺀 실제 자산을 나타내며 운영자금으로 주식이 대표적이다.", "미지급금계정", "비용계정"};
-			for(int i=0; i<str1.length; i++){%>
 				<tr>
-					<td class="p_td"><%=i+1%></td>
-					<td class="p_td"><%=str1[i]%></td>
-					<td class="p_td"><%=str2[i]%></td>	
+					<th class="p_th left">전표일자</th>
+					<td class="p_td left"><input type="text" id="FromDt"
+						maxlength="8" size="20" name="FromDt"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" /></td>
 				</tr>
-				<%}%>
-				<!-- for -->
+				<tr>
+					<th class="p_th left">전표유형</th>
+					<td class="p_td left"><input type="text"  maxlength="8" size="20" 
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">계정</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" onclick="insertSlips_accounts()" />
+						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_accounts()" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">프로젝트</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" onclick="projectLists()"/>
+						<input type="button" value="선택하기" style="height: 28px;" onclick="projectLists()" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">거래처</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" onclick="insertSlips_customers()"/>
+						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_customers()" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">금액</th>
+					<td class="p_td left"><input type="number" size="20"
+						style="background-color: #F6F6F6; height: 28px;" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">부가세유형</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">부가세</th>
+					<td class="p_td left"><input type="number" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">적요</th>
+					<td class="p_td left"><input type="text" size="42"
+						style="background-color: #F6F6F6; height: 28px;" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">계좌코드</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly"></td>
+				</tr>
 			</tbody>
+			<tr>
+				<td colspan="2">
+					<p align="center" style="margin-top: 40px;">
+						<button type="button">전표입력</button>
+						<button type="reset">다시쓰기</button>
+					</p>
+				</td>
+			</tr>
 		</table>
 		<!-- if(com_code = "")  -->
-		<div class="container H_2px">
-			<p class="float_right">2014년 8월 8일 오후 12:07:51</p>
-		</div>
 	</div>
 	<!-- <div id="contents">-->
-
 	<!-- <div id="idPrint">-->
-
 	<!-- p_body -->
 </body>
 </html>

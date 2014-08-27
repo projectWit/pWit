@@ -72,8 +72,6 @@
 				</tr>
 			</table>
 		</div>
-		<img src="img/mainimg3.png"
-			style="margin: auto; width: 100%; height: 70%; position: relative; top: 10px;">
 	</form>
 	</section>
 </body>

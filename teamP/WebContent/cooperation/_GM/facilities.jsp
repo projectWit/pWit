@@ -1,23 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="robots" content="noindex,nofollow">
-<script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 
-<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/base.css" />
 
-<link type="text/css" rel="stylesheet" href="css/layout1.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/layout1.css" />
 
-<link type="text/css" rel="stylesheet" href="css/table.css" />
-<link type="text/css" rel="stylesheet" href="css/menu.css" />
-<link type="text/css" rel="stylesheet" href="css/print.css" />
-<link type="text/css" rel="stylesheet" href="css/etc.css" />
-<link type="text/css" rel="stylesheet" href="css/setting.css" />
-<link type="text/css" rel="stylesheet" href="css/window.css" />
-<link type="text/css" rel="stylesheet" href="css/tax.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/table.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/menu.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/print.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/etc.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/setting.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/window.css" />
+<link type="text/css" rel="stylesheet" href="/teamP/cooperation/_GM/css/tax.css" />
+
 
 
 <title>시설 등록</title>
@@ -79,10 +81,7 @@
 				</div>
 				<div class="title-rightarea">
 					<span class="btn-setting" onclick="fnShowOption(); return false"></span>
-					<!-- 옵션레이어 -->
-					<ul class="option_box_new">
-						<li><a onclick="EtcCodeClick();">추가항목등록</a></li>
-					</ul>
+				
 				</div>
 			</div>
 
@@ -116,11 +115,12 @@
 						<th>등록일자</th>
 						<td><input name="DtIn" type="text" id="DtIn" size="12"
 							maxlength="8" value="" class="default"></td>
-						<th>분류</th>
+						<th>장소</th>
 
-						<td><select>
-							<option>건물</option>
-							<option>기자재</option>
+						<td><select name="pId">
+							<c:forEach var="item" items="${place }">
+								<option value="${item.pId }">${item.place }</option>
+							</c:forEach>
 						</select></td>
 					</tr>
 					<tr>

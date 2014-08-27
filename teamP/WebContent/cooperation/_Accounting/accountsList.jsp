@@ -30,7 +30,7 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
@@ -80,7 +80,8 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%String[] str1= {"매입", "매출", "외상매입", "외상매출", "미수금", "자산", "부채", "자본", "미지급금", "비용"};
+			<%
+			String[] str1= {"매입", "매출", "외상매입", "외상매출", "미수금", "자산", "부채", "자본", "미지급금", "비용"};
 			String[] str2= {"매입계정", "매출계정", "외상매입계정", "외상매출계정", "미수금계정", "유동, 비유동자산이 있으며 부채과 자본을 합친 것이 자산계정이다.", "자산에서 갖고 있는 부채를 나타낸다.", "자산에서 부채를 뺀 실제 자산을 나타내며 운영자금으로 주식이 대표적이다.", "미지급금계정", "비용계정"};
 			for(int i=0; i<str1.length; i++){%>
 				<tr>

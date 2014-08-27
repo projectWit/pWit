@@ -47,7 +47,7 @@ a:HOVER {
 </head>
 <body>
 	<div id="openex_main"
-		style="width: 800px;; float: left; padding-top: 10px; margin: auto;">
+		style="width: 800px;; float: left; margin: 0 auto;">
 		<div id="openex_main_img" style="width: 100%; margin: auto;">
 			<img src="img/mainimg1.png"
 				style="width: 35%; position: relative; left: 120px;"> <img

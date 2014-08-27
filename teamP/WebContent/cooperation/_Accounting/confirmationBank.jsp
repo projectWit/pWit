@@ -30,12 +30,12 @@
 <body>
 	<div id="wrap">
 		<div id="print_title">
-			<table width='1024px' height="100" border='0' cellspacing='0' cellpadding='0'>
+			<table width="1000px" height="50" border='0' cellspacing='0' cellpadding='0'>
 				<tr>
 					<td align='center'>
 						<table>
 							<tr>
-								<td align='center' class='bigtitle'>채권잔액분석표</td>
+								<td align='center' class='bigtitle' style="text-align: center;">채권잔액분석표</td>
 							</tr>
 						</table>
 					</td>
@@ -97,9 +97,9 @@
 			for(int i=0; i<5; i++){
 			sum+=18500;%>
 				<tr>
-					<td class="p_td right">2014/08/23/<%=i+1%></td>
-					<td class="p_td right">다산</td>
-					<td class="p_td right">9월중으로 입금.</td>
+					<td class="p_td">2014/08/23/<%=i+1%></td>
+					<td class="p_td">다산</td>
+					<td class="p_td">9월중으로 입금.</td>
 					<td class="p_td right">500,000</td>
 					<td class="p_td right">0</td>
 					<td class="p_td right">500,000</td>
