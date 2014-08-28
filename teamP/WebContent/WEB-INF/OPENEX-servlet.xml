@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean class="packOPENEX.Ocontroller" id="Ocontroller"></bean>
+	<bean class="mem.wit.openex.Ocontroller" id="Ocontroller"></bean>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/cooperation/_OPENEX/"></property>
 		<property name="suffix" value=".jsp"></property>

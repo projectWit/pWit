@@ -3,19 +3,40 @@
 	xmlns:context="http://www.springframework.org/schema/context" 
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/context 
-	http://www.springframework.org/schema/context/spring-context.xsd">
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
-	<!-- <bean class="mvc.basic.MemberController" id="memberController"></bean> -->
-	<bean class="com.wit.member.spring.MemberController" id="studyController"></bean>
-	<!-- <context:component-scan base-package="net.java_school.board.spring" /> -->
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:pwit@//192.168.18.235:1521/xe" />
+        <property name="username" value="pwit" />
+        <property name="password" value="asdf" />
+    </bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mem/wit/study/myBatis/myBatisConfig.xml" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="mem.wit.study.myBatis" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<context:component-scan base-package="mem.wit.study"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/cooperation/"></property>
+		<property name="prefix" value="/cooperation/_alphaStudy/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 </beans>

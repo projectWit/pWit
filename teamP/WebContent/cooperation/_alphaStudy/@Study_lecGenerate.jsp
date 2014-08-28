@@ -7,7 +7,7 @@
 <jsp:include page="@Study_header.jsp"></jsp:include>
 <script type="text/javascript">
 currentNavIndex = 5;
-currentSubtabIndex = 3;
+currentSubtabIndex = 1;
 
 $(document).ready(function(e) {
 	$('#subTab-'+currentNavIndex).css("display", "block");	
@@ -16,7 +16,7 @@ $(document).ready(function(e) {
 </script>
 </head>
 <body>
-	<jsp:include page="f_lecDetail.jsp"></jsp:include>
+	<jsp:include page="f_lecGenerate.jsp"></jsp:include>
 
 </body>
 	<jsp:include page="@Study_footer.jsp"></jsp:include>

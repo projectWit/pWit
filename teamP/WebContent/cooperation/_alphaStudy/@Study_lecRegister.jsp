@@ -7,7 +7,7 @@
 <jsp:include page="@Study_header.jsp"></jsp:include>
 <script type="text/javascript">
 currentNavIndex = 5;
-currentSubtabIndex = 1;
+currentSubtabIndex = 2;
 
 $(document).ready(function(e) {
 	$('#subTab-'+currentNavIndex).css("display", "block");	

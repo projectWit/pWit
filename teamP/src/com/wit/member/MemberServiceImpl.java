@@ -52,4 +52,8 @@ public class MemberServiceImpl implements MemberService {
 	public List<Member> getMembersByKeyword(String keyword) {
 		return memberMapper.getMembersByKeyword(keyword);
 	}
+	
+	public Power getPower(Member member) {
+		return memberMapper.getPower(member);
+	}
 }

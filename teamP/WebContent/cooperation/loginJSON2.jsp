@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Power"%>
 <%@page import="com.wit.member.Member"%>
 <%@page import="com.wit.myBatis.MemberMapper"%>
 <%@page import="com.wit.MyBatis3"%>
@@ -20,9 +21,6 @@ MyBatis3 myBatis = new MyBatis3(resource);
 MemberMapper memberMapper = myBatis.getMapper(MemberMapper.class);
 Member member = memberMapper.login(username, password_text);
 
-// 커밋, 세션 종료
-myBatis.closeSession();
-
 //result 0 : id 불일치
 // result 1 : id 일치, pwd 불일치
 // result 2 : id, pwd 모두 일치
@@ -33,11 +31,18 @@ if (member == null) {
 	System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
 	if (member.getmPwd().equals(password_text)) { 
 		result = 2;	// id, pwd 전부 일치
+		Power power = memberMapper.getPower(member);
 		session.setAttribute("member", member);		// 세션 생성
+		if (power != null) {
+			session.setAttribute("power", power);
+		}
 	} else {	
 		result = 1;	// id일치, pwd불일치
 	}
 }
+//커밋, 세션 종료
+myBatis.closeSession();
+
 String json = "[{\"result\":"+result+"}]";
 System.out.println(json);
 out.print(json);

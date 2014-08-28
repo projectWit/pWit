@@ -19,4 +19,6 @@ public interface MemberService {
 	public Member getMemberById(String pId);
 	
 	public List<Member> getMembersByKeyword(String keyword);
+	
+	public Power getPower(Member member);
 }

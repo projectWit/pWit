@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wit.myBatis.MemberMapper">
+<mapper namespace="mem/wit/study/myBatis/lectureMapper">
   <select id="selectMember_basic" resultType="com.wit.member.Member">
     $value$
   </select>
@@ -8,7 +8,7 @@
     SELECT * FROM WitMember
 		WHERE mId = #{mId}
   </select>
-  <select id="getPower" parameterType="com.wit.member.Member" resultType="com.wit.member.Power">
+  <select id="getPower" resultType="com.wit.member.Power">
     SELECT * FROM power
 		WHERE mId = #{mId}
   </select>

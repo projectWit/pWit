@@ -120,8 +120,9 @@
 				
 				<ul id="subTab-5" style="display: none;">
 					<li class="subTab-5-0" style="display: block;"><a href="#">과목 관리</a></li>
-					<li class="subTab-5-1" style="display: block;"><a href="@Study_lecRegister.jsp">강의 개설</a></li>
-					<li class="subTab-5-2" style="display: block;"><a href="@Study_lecSearch.jsp">강의 관리</a></li>
+					<li class="subTab-5-1" style="display: block;"><a href="@Study_lecGenerate.jsp">강의 개설</a></li>
+					<li class="subTab-5-2" style="display: block;"><a href="@Study_lecRegister.jsp">강의 등록</a></li>
+					<li class="subTab-5-3" style="display: block;"><a href="@Study_lecSearch.jsp">강의 관리</a></li>
 				</ul>
 				
 				<ul id="subTab-6" style="display: none;">
