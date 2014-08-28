@@ -15,5 +15,4 @@ public interface LectureMapper {
 	public int update(Lecture lecture);
 	
 	public void delete(Lecture lecture);
-
 }

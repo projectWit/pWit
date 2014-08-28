@@ -13,7 +13,11 @@
     </environment>
   </environments>
   <mappers>
+  	<mapper resource="mem/wit/study/myBatis/examGradeMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecCateMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/lectureMapper.xml"/>
+    <mapper resource="mem/wit/study/myBatis/subjectMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/suppLecMapper.xml"/>
+    
   </mappers>
 </configuration>

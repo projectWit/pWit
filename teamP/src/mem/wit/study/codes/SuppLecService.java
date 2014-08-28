@@ -1,10 +1,8 @@
-package mem.wit.study.myBatis;
+package mem.wit.study.codes;
 
 import java.util.List;
 
-import mem.wit.study.codes.SuppLec;
-
-public interface SuppLecMapper {
+public interface SuppLecService {
 	
 	public List<SuppLec> selectAll();
 	

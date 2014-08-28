@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem/wit/study/myBatis/examGradeMapper">
+  <select id="selectMember_basic" resultType="com.wit.member.Member">
+    $value$
+  </select>
+  <select id="select" resultType="mem.wit.study.codes.ExamGrade">
+    SELECT * FROM cdExamGrade
+		WHERE egCode = #{egCode}
+  </select>
+</mapper>
