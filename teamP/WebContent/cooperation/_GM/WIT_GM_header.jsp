@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,9 +7,9 @@
 <!--[if lt IE 9]>
 <script src="dist/html5shiv.js"></script>
 <![endif]-->
+
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberHeader.css">
 <style type="text/css">
-
 </style>
 
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
@@ -26,23 +25,13 @@
 <div class="ibm-home-page" id="ibm-top" style="margin-top: 120px;">
 
 <!-- MASTHEAD_BEGIN -->
-<header id="ibm-masthead"> <!-- ibm-mast-options --> <!-- <div id="ibm-mast-options" style="height: 4px;"> -->
-	<div id="ibm-mast-options">
-<div style="position: absolute;">scroll : </div><div id="scroll" style="position: absolute; margin-left: 40px;"></div>
-		<ul>
-			<li id="ibm-geo"><a href="#">한국어</a></li>
-			<li id="ibm-sso"><span>
-					<p id="ibm-welcome-msg">환영합니다</p> <span style="display: inline;">
-						<span class="ibm-greeting-hasp">[</span> <span> <span
-							class="ibm-sso-link"><a href="#" class="ibm-sso-signin">WIT
-									로그인</a></span> <span class="ibm-sso-link"> / <a href="#"
-								class="ibm-sso-register">회원등록</a></span>
-					</span> <span class="ibm-greeting-hasp">]</span>
-				</span>
-			</span></li>
-		</ul>
-	</div>
-	<!-- //ibm-mast-options --> <!-- ibm-universal-nav --> <!-- <div id="ibm-universal-nav" style="height: 30px;"> -->
+<header id="ibm-masthead"> 
+
+<!-- ibm-mast-options --> 
+	<jsp:include page="/cooperation/header_ibm-mast-options.jsp"></jsp:include>
+<!-- //ibm-mast-options --> 
+	
+	<!-- ibm-universal-nav --> <!-- <div id="ibm-universal-nav" style="height: 30px;"> -->
 	<div id="ibm-universal-nav">
 		<ul id="ibm-unav-links">
 			<!-- <li id="ibm-home" class="ibm-sm-logo" style="display: block; height: 30px;"><a href="#">IBM®</a></li> -->
@@ -130,5 +119,6 @@
 <!-- MASTHEAD_END -->
 
 </div>
+	<jsp:include page="/cooperation/loginCommon.jsp"></jsp:include>
 </body>
 </html>
