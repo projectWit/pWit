@@ -31,7 +31,7 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('timetable.jsp');
+	$("#main").load('rentApply.jsp');
 	$('#rent-0').click(function(e) {
 		$("#main").load('rentApply.jsp');	//수정해야됨...페이지 안뜸
 	});

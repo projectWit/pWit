@@ -17,7 +17,7 @@
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
 <script type="text/javascript">
 function insertSlips() {
-	var features = "width=480px, height=530px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no";
+	var features = "width=550px, height=630px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no";
 	window.open('insertSlips.jsp', '전표입력창', features);
 }
 function insert_customers() {

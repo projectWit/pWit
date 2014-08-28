@@ -16,7 +16,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="WIT_OPENEX_list_section1.jsp"></jsp:include>
+	<jsp:include page="/WIT_OPENEX_list_section1.op"></jsp:include>
 </body>
 <jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
 </html>

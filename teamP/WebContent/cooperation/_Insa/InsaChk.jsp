@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.InsaDTO"%>
+<%@page import="mem.wit.Insa.InsaDAO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -138,16 +141,17 @@
 <script type="text/javascript">
 	calendarIDs = [ 'DtIn', 'DtOut' ]; // 달력이 추가될 태그의 id
 </script>
+
+<%
+	InsaDAO dao = new InsaDAO();
+	InsaDTO dto = new InsaDTO();
+	String no = request.getParameter("no");
+	List dtoL = dao.insaSelect();
+	dto = (InsaDTO)dtoL.get(0);
+%>
 </head>
 <body>
-	<div class="aspNetHidden">
-		<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-		<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT"
-			value="" /> <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
-			value="/wEPDwULLTE4NTI3MjgxNjkPZBYCZg9kFhpmDw8WAh4ISW1hZ2VVcmwFUy9FQ01haW4vRUNvdW50LkNvbW1vbi9Bc3B4SW1hZ2UvaW5zYUltYWdlLmFzcHg/ZWNfcmVxX3NpZD0wMEhPQ3R5OHZvdWkmZW1wX2NkPTAwMDAxZGQCAg8PFgIeBFRleHQFBTAwMDAxZGQCCA8WAh4IZGlzYWJsZWRkZAIKDw8WFh4KWWVhclN0cmluZwUEMjAxMh4HQ3VsdHVyZQUFa28tS1IeDG51bVllYXJTdGFydAKKDx4JTW9udGhOYW1lBQ9kZGxJbkRhdGVfTW9udGgeCURheVN0cmluZwUCMDMeCm51bVllYXJFbmQC3w8eCFllYXJaZXJvaB4LTW9udGhTdHJpbmcFAjAzHghZZWFyTmFtZQUOZGRsSW5EYXRlX1llYXIeB0RheU5hbWUFDWRkbEluRGF0ZV9EYXkeCU1vbnRoWmVyb2hkZAIRDw8WFh8DZR8EBQVrby1LUh8FAtoPHwYFEGRkbE91dERhdGVfTW9udGgfB2UfCALeDx8JZx8KZR8LBQ9kZGxPdXREYXRlX1llYXIfDAUOZGRsT3V0RGF0ZV9EYXkfDWdkZAIXDw9kFgQeCG9uY2hhbmdlBSBzZWFyY2hfY29kZSgnc2l0ZScsICcnLCAnJywgJycpOx4Kb25kYmxjbGljawUmc2VhcmNoX2NvZGUoJ3NpdGUnLCAnJywgJycsICdzZWFyY2gnKTtkAhgPDxYCHwEFD+qyveyYgeyngOybkO2MgGRkAh4PDxYCHwEFDOq4sOyXheydgO2WiWRkAiMPFgIeCWlubmVyaHRtbAU66rK964KoIOq5gO2VtOyLnCDsgrzrsKnrj5kgMjktNOuyiOyngCANCuq0keyYpeu5jOudvDUwMu2YuGQCJQ8WAh4Ec2l6ZQUCNzBkAiYPFgQfEAUM7IKs7KeE7IKt7KCcHgdWaXNpYmxlaGQCKA8WAh8SaGQCKQ8WAh4FdmFsdWUFBuyCreygnGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFDmNoa0hvbGRlclR5cGUxBQ5jaGtIb2xkZXJUeXBlMgUNY2hrVXNlcnBheUNoaw==" />
-	</div>
-
-
+<form name = "insaFrm">
 	<div id="wrap">
 		<div class="new-title">
 			<div class="title-leftarea">
@@ -160,8 +164,7 @@
 					<li><a onclick="EtcCodeClick();">추가항목등록</a></li>
 				</ul>
 			</div>
-		</div>
-
+		</div>	
 		<div id="contents">
 			<table summary="" class="entry H_15px">
 				<col width="20%" span="1" />
@@ -173,27 +176,21 @@
 					<td rowspan="10" class="center white"><img id="imgEmpPhoto"
 						src="img/ronaldo1.jpg" style="height: 150px; width: 140px;" /></td>
 					<th>사원번호</th>
-					<td><span id="lblEmpCd" style="color: Red; font-weight: bold;">00001</span>
-						<a href="#" id="btnCopyEmp" name="btnCopyEmp" class="link-blue"
-						onclick="fnPopUp('EPD002P_20');">사원복사</a></td>
+					<td><%=dto.geteId()%>
+					</td>
 					<th>성명</th>
-					<td><input name="KorName" type="text" value="호날두"
-						maxlength="50" id="KorName" class="default" style="width: 160px;" /></td>
+					<td><%=dto.geteKName()%></td>
 				</tr>
 				<tr>
 					<th>한문성명</th>
-					<td><input name="ChiName" type="text" maxlength="50"
-						value="호날두" id="ChiName" class="default" style="width: 160px;" /></td>
+					<td><%=dto.geteCName()%></td>
 					<th>영문성명</th>
-					<td><input name="EngName" type="text" maxlength="50"
-						value="Ronaldo" id="EngName" class="default" style="width: 160px;" /></td>
+					<td><%=dto.geteEName()%></td>
 				</tr>
 				<tr>
 					<th>주민등록번호</th>
-					<td><input name="Jumin1" type="text" value="690929"
-						maxlength="6" id="Jumin1" class="default" style="width: 50px;" />
-						- <input name="Jumin2" type="text" value="2109126" maxlength="7"
-						id="Jumin2" class="default" style="width: 50px;" /></td>
+					<td><%=dto.geteJumin1()%>
+						- <%=dto.geteJumin2()%></td>
 					<th>세대주여부</th>
 					<td><input value="1" name="HomeType" type="radio"
 						id="HomeType1" />세대주&nbsp;<input value="2" name="HomeType"
@@ -201,8 +198,7 @@
 				</tr>
 				<tr>
 					<th>입사일자</th>
-					<td><input name="DtIn" type="text" id="DtIn" size="12"
-						maxlength="8" value="" class="default"></td>
+					<td><%String str = dto.geteJoinDate(); String result = str.substring(0,10); out.print(result);%></td>
 					<th>입사구분</th>
 
 					<td><input name="InTypeCd" type="text" id="InTypeCd"
@@ -214,7 +210,6 @@
 				</tr>
 				<tr>
 					<th>직위/직급</th>
-
 					<td><input name="JobPosCd" type="text" id="JobPosCd"
 						value="002" class="rightnone" onblur="BlurColor2(this);"
 						style="width: 46px;" value="002" /><a href="#"><img
@@ -233,13 +228,11 @@
 				</tr>
 				<tr>
 					<th>퇴사일자</th>
-					<td><input name="DtOut" type="text" id="DtOut" size="12"
-						maxlength="8" value="" class="default"></td>
+					<td><%=dto.geteDropDate()%></td>
 
 
 					<th>퇴사사유</th>
-					<td><input name="OutReason" type="text" maxlength="60"
-						id="OutReason" class="default" style="width: 160px;" /></td>
+					<td><%=dto.geteDropRsn()%></td>
 				</tr>
 				<tr>
 					<th>전화</th>
@@ -282,36 +275,31 @@
 
 				<tr>
 					<th>상세주소</th>
-					<td colspan="4"><input type="text" class="default"
-						name="Addr2" id="Addr2" value="광옥빌라502호" style="width: 80%" /></td>
+					<td colspan="4"><%=dto.geteAddr2()%></td>
 				</tr>
 
 				<tr>
-					<th>사진 <a href="javascript:;"
-						onclick="alert('권장 사진 크기\n가로:140픽셀(3.7 Cm)\n높이:150픽셀(3.8 Cm)');"><img
-							src="img/icon_smile.gif" width="14px" height="13px" alt="" /></a></th>
+					<th>사진</th>
 					<td colspan="4"><input name="file" type="file" id="file"
 						class="graybox" size="70" style="height: 20px;" /></td>
 				</tr>
 				<tr>
 					<th>이메일주소</th>
-					<td colspan="4"><input type="text" name="email1" id="email1"
-						class="default">@<input type="text" name="email2"
-						id="email2" class="default" ></td>
+					<td colspan="4"><%=dto.geteEmail()%></td>
 				</tr>
 
-				
+
 			</table>
 			<div class="nav_tabM">
-					<ul>
-						<li><a href="#" onclick="PopUpPer();return false;">신상명세서</a></li>
-						<li><a href="#" onclick="PopUpSch();return false;">학력사항</a></li>
-						<li><a href="#" onclick="PopUpCar();return false;">경력사항</a></li>
-						<li><a href="#" onclick="PopUpFam();return false;">가족사항</a></li>
-						<li><a href="#" onclick="PopUpQual();return false;">자격ㆍ면허</a></li>
-						<li><a href="#" onclick="PopUpLan();return false;">외국어</a></li>
-					</ul>
-				</div>
+				<ul>
+					<li><a href="#" onclick="PopUpPer();return false;">신상명세서</a></li>
+					<li><a href="#" onclick="PopUpSch();return false;">학력사항</a></li>
+					<li><a href="#" onclick="PopUpCar();return false;">경력사항</a></li>
+					<li><a href="#" onclick="PopUpFam();return false;">가족사항</a></li>
+					<li><a href="#" onclick="PopUpQual();return false;">자격ㆍ면허</a></li>
+					<li><a href="#" onclick="PopUpLan();return false;">외국어</a></li>
+				</ul>
+			</div>
 			<br /> <br /> <br /> <br /> <span class="btn gray"><input
 				type="button" id="btnSave" name="btnSave" onclick="fnSave();"
 				value="수정" /></span>
@@ -319,6 +307,6 @@
 		</div>
 	</div>
 
-
+</form>
 </body>
 </html>

@@ -327,7 +327,9 @@ $(document).ready(function(e) {
 				break;
 			case 2:
 				$('#ibm-overlay-register-error').append("환영합니다");
-				$('#userForm').submit();
+//				$('#userForm').submit();
+//				top.opener.document.location.reload(); 
+				parent.document.location.reload();		// 부모페이지 리프레쉬
 				break;
 			default:
 				break;
@@ -348,9 +350,9 @@ $(document).ready(function(e) {
 
 <FORM id=userForm method=post name=userForm action="/teamP/members/login">
 <DIV id=form_fields>
-<DIV id=lft_flds><INPUT id=username name=mId placeholder="WIT ID*" required>
+<DIV id=lft_flds><INPUT id=username name=mId type="text" placeholder="WIT ID*" required>
 	<BR><A id=forgot-id-link class=ibm-select-link href="#"><!-- Forgot IBM ID? -->ID를 잊었습니까?</A></DIV>
-<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=mPwd  placeholder="password*" required></SPAN>
+<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=mPwd  type="password" placeholder="password*" required></SPAN>
 	<BR><A id=forgot-pwd-link class=ibm-select-link href="#"><!-- Forgot password? -->비밀번호를 잊었습니까?</A></DIV><INPUT id=login-form-type type=hidden value=pwd name=login-form-type> 
 <DIV id=register-link-div><A id=ibm-register-link class=ibm-select-link href="/teamP/cooperation/WIT_Main_register.jsp">회원가입</A></DIV>
 <DIV class=clr>&nbsp;</DIV></DIV>

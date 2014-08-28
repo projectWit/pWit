@@ -24,31 +24,31 @@
 	<div style="width: 100%; margin: auto;">
 		<div class="leftbox" style="float: left; width: 15%">
 			<h1 class="container">
-				<span class="float_left" style="width: 148px; font-size: 16px;">커뮤니티관리</span>
+				<span class="float_left" style="width: 148px; font-size: 16px;">직원커뮤니티</span>
 			</h1>
 
 			<dl class="left_title">
 
 				<dt id="class113">
 					<span class="float_left" style="width: 167px"><a
-						href="BoaLeftMan.jsp" id="a119_1">공지사항작성</a></span>
+						href="BoardLeft.jsp" id="a119_1">공지사항</a></span>
 				</dt>
 
 				<dt id="class113">
 					<span class="float_left" style="width: 167px"><a
-						href="BoaLeftMan.jsp" id="a119_1">자유게시판관리</a></span>
+						href="BoardLeft.jsp" id="a119_1">자유게시판</a></span>
 				</dt>
 
 				<dt id="class113">
 					<span class="float_left" style="width: 167px"><a
-						href="BoaLeftManFAQ.jsp" id="a119_1">FAQ관리</a></span>
+						href="BoardLeftFAQ.jsp" id="a119_1">자주묻는질문</a></span>
 				</dt>
 				<!-- if (ds != null && ds.Tables[0].Rows.Count > 0) -->
 			</dl>
 			<dl></dl>
 		</div>
 		<div style="float: left; width: 80%; margin-left: 30px">
-			<jsp:include page="BoaManIns.jsp" />
+			<jsp:include page="BoardIns.jsp" />
 		</div>
 
 	</div>

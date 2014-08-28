@@ -110,12 +110,8 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 총 동호회 수 : <c:out value="${fn:length(list)}" /> 개 &nbsp;&nbsp;PAGE 1/2 </td>
-					<td id='bl_search'> <input type=checkbox name=shname value="ok" onclick="change(1)">이름
-						<input type=checkbox name=ssubject value="ok" checked onclick="change(2)">제목
-						<input type=checkbox name=scontent value="ok" onclick="change(3)">내용
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						검색어 <input type=text name=stext size=10> <a href="JavaScript:document.form1.submit();"><img src='img/search_btn.gif' border=0 alt='검색' align="absmiddle"></a></td>
+					<td id='bl_count'> 총 동호회 수 : <c:out value="${fn:length(clist)}" /> 개 &nbsp;&nbsp; </td>
+					
 				</tr>
 			</table>
 			
@@ -130,21 +126,21 @@ a:link {
 					<td class='bl_title bl_subject'>Club Name</td>
 					<td class='bl_title bl_type'>Type</td>
 					<td class='bl_title bl_name'>President</td>
-					<td class='bl_title bl_hits'>Members</td>
+					<td class='bl_title bl_hits'>JoinDay</td>
 				</tr>
 				<!-- INLINE NOTICE --> 
 				 
 				<!-- LIST REPEAT --> 
 				
-				<c:forEach var="item" items="${list }"  varStatus="status">
+				<c:forEach var="item" items="${clist }"  varStatus="status">
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.mId }</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_type'>${item.mNickName }</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.mName }</div></td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.cName }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_type'>${item.sId }</td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.cPresident }</div></td>
 					
-					<td class='bl_list bl_hits'>${item.mJoindate.substring(0,10) }</td>
+					<td class='bl_list bl_hits'>${item.cJoinDay.substring(0,10) }</td>
 				</tr>
 				</c:forEach>
 				<!-- LIST REPEAT END -->
@@ -152,10 +148,10 @@ a:link {
 			
 			<!-- LIST END --></td>
 	</tr>
-	<tr>
+	<!-- <tr>
 		<td align="center"><br>
 			
-			<!-- PAGING START-->
+			PAGING START
 			
 			<table width='100%' border='0' cellpadding="0" cellspacing="0">
 				<tr>
@@ -167,8 +163,10 @@ a:link {
 				</tr>
 			</table>
 			
-			<!-- PAGING END--></td>
-	</tr>
+			PAGING END</td>
+	</tr> -->
 </table>
+<br/>
+<br/>
 </body>
 </html>

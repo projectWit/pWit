@@ -70,7 +70,7 @@
 						readonly="readonly" /></td>
 				</tr>
 				<tr>
-					<th class="p_th left">계정</th>
+					<th class="p_th left">계정I</th>
 					<td class="p_td left"><input type="text" size="20"
 						style="background-color: #F6F6F6; height: 28px;"
 						readonly="readonly" onclick="insertSlips_accounts()" />
@@ -106,6 +106,13 @@
 					<td class="p_td left"><input type="number" size="20"
 						style="background-color: #F6F6F6; height: 28px;"
 						readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<th class="p_th left">계정II</th>
+					<td class="p_td left"><input type="text" size="20"
+						style="background-color: #F6F6F6; height: 28px;"
+						readonly="readonly" onclick="insertSlips_accounts()" />
+						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_accounts()" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">적요</th>

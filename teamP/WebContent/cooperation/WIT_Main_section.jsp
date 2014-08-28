@@ -5,15 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT는 당신을 환영합니다!</title>
 
-<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witCommon.css">
-<style type="text/css">
-</style>
-
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/witCommon.js"></script>
-<script type="text/javascript">
-</script>
 </head>
 <body>
 <div class="ibm-home-page" id="ibm-top">

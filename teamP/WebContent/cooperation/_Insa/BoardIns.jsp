@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=EUC-KR">
-<title>유러피안 감성 캐주얼 피핀 </title>
+<title>자유게시판</title>
 <meta http-equiv="ImageToolbar" content="No"/>
 <script type="text/javascript">
 	$(document).ready(function(e) {
@@ -769,6 +769,12 @@ div.subtitle {
 }
 -->
 </style>
+
+<script type = "text/javascript">
+function SendBoa(){	
+	document.boafrm.submit();
+}
+</script>
 </head>
 <link rel="shortcut icon" href="/shopimages/pippin1/favicon.ico"
 	type="image/x-icon">
@@ -792,8 +798,6 @@ div.subtitle {
 	<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
 
 	<center>
-
-	
 		
 		<div id="ysfss_bar_container"
 			style="position: absolute; top: 0px; left: 0px;"></div>
@@ -823,7 +827,7 @@ div.subtitle {
 				src="http://pnfcorp.imglink.kr/pippin1/notice/2012_Newyear_notice_banner.jpg"></a>
 
 			<!-- BOARD WRITE -->
-			<form>
+			<form action = "BoardInsPro.jsp" name = "boafrm">
 			<table width="100%" border="0" align="center" cellpadding="0"
 				cellspacing="0">
 				<tr>
@@ -835,15 +839,13 @@ div.subtitle {
 										<tr>
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
-											<td><input id="Writer" type="text" name="hname"
+											<td><input id="Writer" type="text" name="eId"
 												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<select id="head">
-													<option>공지</option>
-													<option>잡담</option>
+												<select id="bHeadCd" name = "bHeadCd">
+													<option value = "1">공지</option>
+													<option value = "2">잡담</option>
 											</select></td>
-											
-											<td>
 										</tr>
 
 										<tr>
@@ -854,37 +856,26 @@ div.subtitle {
 												style="padding-left: 15px;">title</td>
 											<td class='bw_title_color'><span
 												style="font-family: '굴림체'"><input
-													id='Subject' type="text" name="subject" size=30
-													maxlength=100 value=""></span><span id="bw_htmleditor"><input
-													type=checkbox name=tag value="ok">HTML태그 허용</span></td>
+													id='subject' type="text" name="bTitle" size=30
+													maxlength=100 value=""></span></td>
 										</tr>
 										<tr>
 											<td
 												class='bw_value bw_border_top bw_border_bottom bw_contentscolor'
-												colspan="2"><textarea id="contents" name=content
+												colspan="2"><textarea id="contents" name= 'bContent'
 													cols=67 rows=15 onfocus='clear_content()'
 													style="font-family: 굴림체; width: 100%;">내용을 적어주세요~!</textarea>
 											</td>
 										</tr>
-										<tr>
-											<td class='bw_title_color bw_title'
-												style="padding-left: 15px;">data</td>
-											<td class="bw_value"><input id="bw_input_file"
-												type="text" name="file_name" value=""
-												onfocus='this.blur();upalert()'> <a
-												href="Javascript:upload();"><img
-													src='img/icon_search.gif' alt='파일첨부' border=0
-													id='bw_buttonfile'></a></td>
-										</tr>
-
-									</table></td>
+										</table></td>
 							</tr>
 						</table></td>
 				</tr>
 				<tr>
 					<td align="center"><div id='bw_button'>
-							<a href="JavaScript:send();"><img src='img/icon_write.gif'
-								border=0 alt='입력' /></a> <a
+							<!-- <a href="JavaScript:send();"><img src='img/icon_write.gif'
+								border=0 /></a>  -->
+								<input type = "submit" value = "저장"><a
 								href="BoardLeft.jsp"><img
 								src='img/icon_list.gif' border=0 alt='목록' /></a>
 						</div></td>

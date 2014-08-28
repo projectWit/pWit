@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.COM/DTD SQL MAP 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="testmyBatisSql">
+	<resultMap class="mem.wit.gm.MemberDTO" id="memberDTO">
+		<result property="mId" column="mId" />
+		<result property="mName" column="mName" />
+		<result property="mMobile" column="mMobile" />
+		<result property="mPost" column="mPost" />
+		<result property="mAddr" column="mAddr" />
+		<result property="mJoindate" column="mJoindate" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.C_SportDTO" id="c_sportDTO">
+		<result property="sId" column="sId"/>
+		<result property="sName" column="sName"/>
+	</resultMap>
+	<resultMap class="mem.wit.gm.C_PlaceDTO" id="c_placeDTO">
+		<result property="pId" column="pId" />
+		<result property="place" column="place" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.ClubDTO" id="clubDTO">
+		<result property="cName" column="cName" />
+		<result property="cJoinDay" column="cJoinDay" />
+		<result property="sId" column="sName" />
+		<result property="cPresident" column="mName" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.ClubDTO" id="clubinsert">
+		<result property="cId" column="cId" />
+		<result property="cName" column="cName" />
+		<result property="cJoinDay" column="cJoinDay" />
+		<result property="sId" column="sId" />
+		<result property="cHomepage" column="cHomepage"/>
+		<result property="cEmblem" column="cEmblem"/>
+		<result property="cPresident" column="mName" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.FacilDTO" id="facilInsert">
+		<result property="fName" column="fName" />
+		<result property="pId" column="pId" />
+		<result property="fObject" column="fObject" />
+		<result property="fAddr" column="fAddr" />
+		<result property="fPay" column="fPay" />
+		<result property="fTel" column="fTel" />
+	</resultMap>
+<select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
+$value$
+</select>
+<select id="searchSport" parameterClass="java.lang.String" resultMap="c_sportDTO" >
+$value$
+
+
+</select>
+<select id="searchPlace" parameterClass="java.lang.String" resultMap="c_placeDTO" >
+$value$
+</select>
+<select id="selectClub" parameterClass="java.lang.String" resultMap="clubDTO" >
+$value$
+</select>
+<!-- <select id="selectQboard" parameterClass="java.lang.String" resultMap="qboardDTO" >
+$value$
+</select>
+<select id="selectLec" parameterClass="java.lang.String" resultMap="lecDTO" >
+$value$
+</select>
+<select id="selectReview" parameterClass="java.lang.String" resultMap="reviewDTO" >
+$value$
+</select> -->
+<insert id="insertClub" parameterClass="mem.wit.gm.ClubDTO" >
+	insert into GM_Club values (seq_cmId.nextval, #cName#, #sId#, #cPost#,#cAddr#,#cHomepage#,#cEmblem#,sysdate,1,#cPresident#,#cManager#)
+</insert>
+<insert id="insertFacil" parameterClass="mem.wit.gm.FacilDTO">
+	insert into GM_Facil values (SEQ_fId.nextval, #fName#, #pId#, #fObject#, #fAddr#, sysdate, #fPay#, #fTel#)
+</insert>
+</sqlMap>

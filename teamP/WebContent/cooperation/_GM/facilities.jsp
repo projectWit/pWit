@@ -36,44 +36,20 @@
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
 <script language="javascript" type="text/javascript">
-	$(document)
-			.ready(
-					function() {
 
-						//******************************************************************************
-						// 상세검색 달력 스크립트
-						//******************************************************************************
-						var clareCalendar = {
-							monthNamesShort : [ '1월', '2월', '3월', '4월', '5월',
-									'6월', '7월', '8월', '9월', '10월', '11월', '12월' ],
-							dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-							weekHeader : 'Wk',
-							dateFormat : 'yy-mm-dd', //형식(20120303)
-							autoSize : false, //오토리사이즈(body등 상위태그의 설정에 따른다)
-							changeMonth : true, //월변경가능
-							changeYear : true, //년변경가능
-							showMonthAfterYear : true, //년 뒤에 월 표시
-							buttonImageOnly : true, //이미지표시
-							buttonText : '달력선택', //버튼 텍스트 표시
-							buttonImage : 'img/mini_calendar.gif', //이미지주소
-							showOn : "both", //엘리먼트와 이미지 동시 사용(both,button)
-							yearRange : '1980:2020' //1990년부터 2020년까지
-						};
-						$("#DtIn").datepicker(clareCalendar);
-						$("#DtOut").datepicker(clareCalendar);
-						$("#toDt").datepicker(clareCalendar);
-						$("img.ui-datepicker-trigger")
-								.attr("style",
-										"margin-left:5px; vertical-align:middle; cursor:pointer;"); //이미지버튼 style적용
-						$("#ui-datepicker-div").hide(); //자동으로 생성되는 div객체 숨김  
-					});
-	
+function sendInsertFacil() {
+	alert("submit");
+	//document.form.action="/teamP/facilities.gm";
+	//document.form.telCode.value=$(telCode).text();
+	//document.form.submit();
+	alert($(telCode).text());
+}
+
 </script>
 </head>
 <body>
 
-	<form method="post" action="EPD002M.aspx?ec_req_sid=00HOCty8voui"
-		id="form" enctype="multipart/form-data">
+	<form method="get" action="" id="form" name="form" enctype="multipart/form-data">
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -86,82 +62,72 @@
 			</div>
 
 			<div id="contents">
-				<table summary="" class="entry H_15px" style="height:350px; font-size:16px;">
-					<col width="20%" span="1" />
-					<col width="20%" span="2" />
-					<col width="20%" span="1" />
-					<col width="30%" span="2" />
+				<table summary="" class="entry H_15px" style="height:350px; font-size:16px; text-indent: 15px; ">
+					<col width="30%" span="1" />
+					<col width="70%" span="2" />
+					
 					<col width="" />
 					<tr>
-						<th>시설번호</th>
-						<td><span id="lblEmpCd"
-							style="color: Red; font-weight: bold;">00001</span></td>
-						<th>관리자명</th>
-						<td><input name="txtEmpKname" type="text" value="고쌤"
+						<th>시설명</th>
+						<td><input name="fName" type="text" 
 							maxlength="50" id="txtEmpKname" class="default"
 							style="width: 160px;" /></td>
 					</tr>
+					
 					<tr>
-						<th>시설 위치</th>
-						<td><input name="txtEmpHname" type="text" maxlength="50"
-							value="폴리텍대학" id="txtEmpHname" class="default"
-							style="width: 160px;" /></td>
-						<th>시설 목적</th>
-						<td><input name="txtEmpEname" type="text" maxlength="50"
-							value="다목적실" id="txtEmpEname" class="default"
-							style="width: 160px;" /></td>
-					</tr>
-					<tr>
-						<th>등록일자</th>
-						<td><input name="DtIn" type="text" id="DtIn" size="12"
-							maxlength="8" value="" class="default"></td>
 						<th>장소</th>
 
 						<td><select name="pId">
-							<c:forEach var="item" items="${place }">
-								<option value="${item.pId }">${item.place }</option>
-							</c:forEach>
+							<option value="1" selected>야외구장</option>
+							<option value="2">실내구장</option>
+							<option value="3">수영장</option>
+							<option value="4">헬스장</option>
 						</select></td>
 					</tr>
+					
 					<tr>
-						<th>관리자 연락처</th>
-						<td colspan="3"><input name="txtTelNo" type="text" value="010-3096-0955"
-							maxlength="20" id="txtTelNo" class="default"
+						<th>대관요금</th>
+						<td><input name="fPay" type="number"	maxlength="20" id="txtTelNo" class="default"
 							onkeydown="jsOnlyNumberKey4(this);"
 							style="width: 160px; ime-mode: disabled" /></td>
-											</tr>
+					</tr>
+					<tr>
+					<th>시설 연락처</th>
+					<td> <select name="telCode">
+						<option value="1" selected>02</option>
+						<option value="2">031</option>
+					</select> - <input name="fTel1" type="number" maxlength="3"id="txtEmpEname" class="default" style="width: 50px;" /> - 
+						<input name="fTel2" type="number" maxlength="3"	 id="txtEmpEname" class="default" style="width: 50px;" /></td>
+					</tr>
 					<tr>
 						<th>시설 목적</th>
-						<td colspan="3"><input type="text" maxlength="80"
-							value="위 건물은 다목적용도로 사용되기위해 만들어 졌습니다." id="txtEmpEname" class="default"
+						<td><input type="text" maxlength="100" name="fObject"
+							id="txtEmpEname" class="default"
 							style="width: 350px;" /></td>
-						<!--  클래스 이름 수정 필요함 아이디와 -->
+						
 					</tr>
 
 					<tr>
-						<th>시설 주소</th>
-						<td colspan="4"><a href="#" id="btnSearchPostNo"
+						<th>주소</th>
+						<td style="padding-left:15px;"><a href="#" id="btnSearchPostNo"
 							name="btnSearchPostNo" class="link-blue"
 							onclick="fnSearchZipCode('txtPostNo1','txtPostNo2','txtJuso','txtJuso');">우편번호검색</a>
-						
-							<input name="txtPostNo1" type="text" maxlength="3" value="123"
-							id="txtPostNo1" class="default" style="width: 30px;" />-<input
-							name="txtPostNo2" type="text" maxlength="3" id="txtPostNo2"
-							value="123" class="default" style="width: 30px;" /><br /><textarea
-								name="txtJuso" id="txtJuso" rows="4" wrap="virtual" cols="86" 
-								class="default" style="width: 300px; margin-top:5px;">경기도 고양시 덕양구 화정동</textarea></td>
+							<br/><br/>
+							<input name="fAddr" type="text"
+							id="txtPostNo1" class="default" style="width: 360px;" /><br/><br/></td>
 					</tr>
 
 				</table>
 				<br/>
 				<div style="text-align:center">
-				<img src="img/bt_submit.jpg" />&nbsp;&nbsp;&nbsp;<img src="img/bt_cancle.jpg"/>
+				<img src="img/bt_submit.jpg" style="cursor:pointer" onclick="sendInsertFacil()"/>&nbsp;&nbsp;&nbsp;<img src="img/bt_cancle.jpg" style="cursor:pointer" onclick="form.reset(); return false;"/>
 				</div>
 				<br /> <br /> <br /> <br />
 			</div>
 			<!--//contents-->
 		</div>
 		<!--//wrap-->
+		</form>
 	
 </body>
 </html>

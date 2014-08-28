@@ -23,23 +23,32 @@
 <body>
 	<section>
 	<form>
-		<div id="openex_setExam"
-			style="width: 100%; height: 100%; min-width: 1000px; min-height: 650px; position: relative; top: 25px; margin: 0 auto;' ">
+		<div id="openex_setExam">
 			<table align="center" border="0">
 				<tr>
-					<td colspan="5"><span>대분류</span>> <span>중분류</span>> <span>소분류</span><br>
-						<span>[시험 제목]</span> <span>[제한 시간]</span> <span>문항수</span>/ <span>난이도</span>
-					</td>
+					<td colspan="5"><span>IT</span>> <span>소프트웨어</span>> <span>자바</span>
+						<span>20분</span>/ <span>10문제</span>/ <span>초급</span><br> <span>[자바
+							제어문]</span></td>
 				</tr>
 				<tr>
-					<td style="height: 400px">
+					<td>
 						<div id="openex_setExam_excountbox">
-							<div id="openex_setExam_excount" onmouseover="scrollUnhidden()"
-								style="overflow: hidden;" onmouseout="scrollHidden()">문제 수
-								노출
-								<div>문항번호</div>
-								<div>배점</div>
-								</div>
+							<div id="openex_setExam_excount"
+								style="overflow: none; font-size: 13px;">
+								<p style="height: 20px;">현재 총배점</p>
+								<p style="border-bottom: 1px solid black; height: 20px;">0점</p>
+								<%
+									for (int i = 1; i < 11; i++) {
+								%>
+								<p><%=i%>번 문제<input type="checkbox" class="radioInputVLine">0점
+								</p>
+								<hr>
+								<%
+									}
+								%>
+								<input type="text" placeholder="배점" size="7"> <input type="button"
+									value="입력" class="colorBtn2" style="width: 30%">
+							</div>
 						</div>
 					</td>
 					<td colspan="4"><div id="openex_setExam_content">
@@ -68,7 +77,8 @@
 					<td><input type="radio" name="radioSelect"></td>
 				</tr>
 				<tr align="center" id="openex_setExam_submit">
-					<td colspan="5"><input type="button" value="출제" class="colorBtn"></td>
+					<td colspan="5"><input type="button" value="임시 저장"
+						class="colorBtn"></td>
 				</tr>
 			</table>
 		</div>

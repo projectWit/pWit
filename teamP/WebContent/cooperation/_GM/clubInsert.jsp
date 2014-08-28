@@ -63,16 +63,17 @@ $(document).ready(	function() {
 					"margin-left:5px; vertical-align:middle; cursor:pointer;"); //이미지버튼 style적용
 	$("#ui-datepicker-div").hide(); //자동으로 생성되는 div객체 숨김  
 });
-function submit() {
-	
+function sendController() {
+	alert("submit");
+	document.form.action="/teamP/clubInsert.gm";
 	document.form.submit();
+	
 }
 </script>
 </head>
 <body>
 
-	<form method="post" action="memberdao.gm"
-		id="form" enctype="multipart/form-data">
+	<form method="get" action="" name="form" id="form" enctype="multipart/form-data">
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -104,9 +105,18 @@ function submit() {
 							style="width: 160px;" /></td>
 						<th>종목</th>
 						<td><select name="sId">
-						<c:forEach var="item" items="${sport }">
-							<option value="${item.sId }" >${item.sName } </option>
-						</c:forEach>
+						<option value="1">축구</option>
+						<option value="2">야구</option>
+						<option value="3">농구</option>
+						<option value="4">수영</option>
+						<option value="5">탁구</option>
+						<option value="6">족구</option>
+						<option value="7">배구</option>
+						<option value="8">배드민턴</option>
+						<option value="9">태권도</option>
+						<option value="10">에어로빅</option>
+						<option value="11">행사</option>
+						<option value="12" selected>기타</option>
 						</select></td>
 					</tr>
 					<tr>
@@ -163,7 +173,7 @@ function submit() {
 				</table>
 				<br/>
 				<div style="text-align:center">
-				<img src="img/bt_submit.jpg" onclick="submit()"/>&nbsp;&nbsp;&nbsp;<img src="img/bt_cancle.jpg"/>
+				<img src="img/bt_submit.jpg" onclick="sendController()"/>&nbsp;&nbsp;&nbsp;<img src="img/bt_cancle.jpg"/>
 				</div>
 				<br /> <br /> <br /> <br />
 			</div>

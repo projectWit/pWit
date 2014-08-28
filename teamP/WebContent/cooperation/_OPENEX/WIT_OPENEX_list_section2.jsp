@@ -22,7 +22,7 @@
 			<table align="center" id="openex_list_table" border="0">
 				<tr style="height: 25px;">
 					<td colspan="12" id="openex_list_subject"><label> IT >
-					</label> <label> 소프트웨어 ></label><label id="thirdCategory">자바</label></td>
+					</label> <label> 소프트웨어 </label></td>
 				</tr>
 				<tr class="listSelectBox">
 					<td colspan="12"><select name="listSelectBox"
@@ -47,14 +47,102 @@
 					<td>작성자</td>
 					<td>작성 시간</td>
 				</tr>
-				<%
+				<tr class="openex_list_content">
+					<td>5</td>
+					<td><label><a href="#">IT></a></label><label><a
+							href="#">소프트웨어></a></label><a href="#"><label id="thirdCategory1">js</label></a></td>
+					<td class="openex_list_content_title"><a href="#"><input
+							type="button" class="CategoryImagesCss" id="CategoryImagesCss1"
+							value="java"></a><a href="WIT_OPENEX_solve.jsp">자바 기초 문법
+							문제입니다</a><span>[23]</span></td>
+					<td>120</td>
+					<td>12</td>
+					<td>10문제</td>
+					<td>10분</td>
+					<td>32명</td>
+					<td>초급</td>
+					<td>75.4%</td>
+					<td><a href="#">강성조</a></td>
+					<td>22:56</td>
+				</tr>
+				<tr class="openex_list_content">
+					<td>4</td>
+					<td><label><a href="#">IT></a></label><label><a
+							href="#">소프트웨어></a></label><a href="#"><label id="thirdCategory2">오라클</label></a></td>
+					<td class="openex_list_content_title"><a href="#"><input
+							type="button" class="CategoryImagesCss" id="CategoryImagesCss2"
+							value="java"></a><a href="WIT_OPENEX_solve.jsp">오라클 베이직</a><span>[82]</span></td>
+					<td>154</td>
+					<td>40</td>
+					<td>20문제</td>
+					<td>40분</td>
+					<td>51명</td>
+					<td>초급</td>
+					<td>32.2%</td>
+					<td><a href="#">이준희</a></td>
+					<td>20:22</td>
+				</tr>
+				<tr class="openex_list_content">
+					<td>3</td>
+					<td><label><a href="#">IT></a></label><label><a
+							href="#">소프트웨어></a></label><a href="#"><label id="thirdCategory3">js</label></a></td>
+					<td class="openex_list_content_title"><a href="#"><input
+							type="button" class="CategoryImagesCss" id="CategoryImagesCss3"
+							value="java"></a><a href="WIT_OPENEX_solve.jsp">자바스크립트 폭풍</a><span>[2]</span></td>
+					<td>340</td>
+					<td>1</td>
+					<td>30문제</td>
+					<td>20분</td>
+					<td>4명</td>
+					<td>중급</td>
+					<td>23.1%</td>
+					<td><a href="#">이행엽</a></td>
+					<td>16:56</td>
+				</tr>
+				<tr class="openex_list_content">
+					<td>2</td>
+					<td><label><a href="#">IT></a></label><label><a
+							href="#">소프트웨어></a></label><a href="#"><label id="thirdCategory4">jq</label></a></td>
+					<td class="openex_list_content_title"><a href="#"><input
+							type="button" class="CategoryImagesCss" id="CategoryImagesCss4"
+							value="java"></a><a href="WIT_OPENEX_solve.jsp">제이쿼리 실전예제</a><span>[23]</span></td>
+					<td>120</td>
+					<td>102</td>
+					<td>50문제</td>
+					<td>40분</td>
+					<td>74명</td>
+					<td>초급</td>
+					<td>75.4%</td>
+					<td><a href="#">박은희</a></td>
+					<td>16:54</td>
+				</tr>
+				<tr class="openex_list_content">
+					<td>1</td>
+					<td><label><a href="#">IT></a></label><label><a
+							href="#">소프트웨어></a></label><a href="#"><label id="thirdCategory5">자바</label></a></td>
+					<td class="openex_list_content_title"><a href="#"><input
+							type="button" class="CategoryImagesCss" id="CategoryImagesCss5"
+							value="java"></a><a href="WIT_OPENEX_solve.jsp">자바 기초 문법
+							문제입니다</a><span>[23]</span></td>
+					<td>120</td>
+					<td>12</td>
+					<td>10문제</td>
+					<td>10분</td>
+					<td>32명</td>
+					<td>초급</td>
+					<td>75.4%</td>
+					<td><a href="#">강성조</a></td>
+					<td>4:56</td>
+				</tr>
+
+				<%-- 				<%
 					for (int j = 1; j < recSuPerPage + 1; j++) {
 				%>
-				<tr id="openex_list_content">
+				<tr class="openex_list_content">
 					<td><%=j%></td>
 					<td><label><a href="#">IT></a></label><label><a
 							href="#">소프트웨어></a></label><label><a href="#">java</a></label></td>
-					<td id="openex_list_content_title"><a href="#"><input
+					<td class="openex_list_content_title"><a href="#"><input
 							type="button" class="CategoryImagesCss" id="CategoryImages"
 							value="java"></a><a href="WIT_OPENEX_solve.jsp">자바 기초 문법
 							문제입니다</a><span>[23]</span></td>
@@ -73,7 +161,7 @@
 				</tr>
 				<%
 					}
-				%>
+				%> --%>
 			</table>
 			<table align="center" border="0">
 				<tr>

@@ -79,7 +79,7 @@ TD.bl_list, .bl_list A, .bl_list A:link, .bl_list A:visited {
     text-align  : center;
 }
 .bl_date {
-    width   : 70px;
+    width   : 120px;
     text-align  : center;
 }
 .bl_place {
@@ -120,7 +120,7 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 시설 신청 목록 : 5 개 &nbsp;&nbsp; </td>
+					<td id='bl_count'> 시설 신청 목록 : 10 개 &nbsp;&nbsp; </td>
 				</tr>
 			</table>
 			
@@ -144,7 +144,7 @@ a:link {
 				 
 				<!-- LIST REPEAT --> 
 				<%
-				for(int i=5;i>0;i--) {
+				for(int i=10;i>0;i--) {
 				%>
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'><%=i %></td>
@@ -166,10 +166,10 @@ a:link {
 			
 			<!-- LIST END --></td>
 	</tr>
-	<tr>
+	<!-- <tr>
 		<td align="center"><br>
 			
-			<!-- PAGING START-->
+			PAGING START
 			
 			<table width='100%' border='0' cellpadding="0" cellspacing="0">
 				<tr>
@@ -181,8 +181,8 @@ a:link {
 				</tr>
 			</table>
 			
-			<!-- PAGING END--></td>
-	</tr>
+			PAGING END</td>
+	</tr> -->
 </table>
 <br/>
 <br/>

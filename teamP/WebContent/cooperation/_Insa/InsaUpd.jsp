@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.InsaDTO"%> 
+<%@page import="mem.wit.Insa.InsaDAO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -145,7 +148,12 @@
 
 </head>
 <body>
-
+	<%
+		InsaDAO dao = new InsaDAO();
+		InsaDTO dto = new InsaDTO();
+		List dtoL = dao.insaSelect();
+		dto = (InsaDTO) dtoL.get(0);
+	%>
 	<form method="post" id="form2" enctype="multipart/form-data">
 
 
@@ -174,32 +182,31 @@
 						<td rowspan="10" class="center white"><img id="imgEmpPhoto"
 							src="img/ronaldo1.jpg" style="height: 150px; width: 140px;" /></td>
 						<th>사원번호</th>
-						<td><span id="lblEmpCd"
-							style="color: Red; font-weight: bold;">00001</span> <a href="#"
-							id="btnCopyEmp" name="btnCopyEmp" class="link-blue"
-							onclick="fnPopUp('EPD002P_20');">사원복사</a></td>
+						<td><input type="text" readonly="readonly"
+							value="<%=dto.geteId()%>"></span></td>
 						<th>성명</th>
-						<td><input name="KorName" type="text" value="호날두"
-							maxlength="50" id="KorName" class="default" readonly="readonly"
-							style="width: 160px;" /></td>
+						<td><input name="KorName" type="text"
+							value="<%=dto.geteKName()%>" maxlength="50" id="KorName"
+							class="default" readonly="readonly" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>한문성명</th>
 						<td><input name="ChiName" type="text" maxlength="50"
-							value="호날두" id="ChiName" class="default" readonly="readonly"
-							style="width: 160px;" /></td>
+							value="<%=dto.geteCName()%>" id="ChiName" class="default"
+							readonly="readonly" style="width: 160px;" /></td>
 						<th>영문성명</th>
 						<td><input name="EngName" type="text" maxlength="50"
-							value="Ronaldo" id="EngName" class="default" readonly="readonly"
-							style="width: 160px;" /></td>
+							value="<%=dto.geteEName()%>" id="EngName" class="default"
+							readonly="readonly" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>주민등록번호</th>
-						<td><input name="Jumin1" type="text" value="690929"
-							readonly="readonly" maxlength="6" id="Jumin1" class="default"
-							style="width: 50px;" /> - <input name="Jumin2" type="text"
-							value="2109126" readonly="readonly" maxlength="7" id="Jumin2"
-							class="default" style="width: 50px;" /></td>
+						<td><input name="Jumin1" type="text"
+							value="<%=dto.geteJumin1()%>" readonly="readonly" maxlength="6"
+							id="Jumin1" class="default" style="width: 50px;" /> - <input
+							name="Jumin2" type="text" value="<%=dto.geteJumin2()%>"
+							readonly="readonly" maxlength="7" id="Jumin2" class="default"
+							style="width: 50px;" /></td>
 						<th>세대주여부</th>
 						<td><input value="1" name="HomeType" type="radio"
 							id="HomeType1" />세대주&nbsp;<input value="2" name="HomeType"
@@ -210,8 +217,8 @@
 						<td><input name="DtIn" type="text" id="DtIn" size="12"
 							readonly="readonly" maxlength="8" value="2013-08-14"
 							class="default"></td>
-						<th>입사구분</th>
 
+						<th>입사구분</th>
 						<td><input name="InTypeCd" type="text" id="InTypeCd"
 							value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
@@ -221,7 +228,6 @@
 					</tr>
 					<tr>
 						<th>직위/직급</th>
-
 						<td><input name="JobPosCd" type="text" id="JobPosCd"
 							value="002" class="rightnone" style="width: 46px;" value="002" /><a
 							href="#"><img src="img/Find.gif" width="22px" height="19px"
@@ -230,7 +236,6 @@
 							readonly="readonly" value="대리" /></td>
 
 						<th>직책</th>
-
 						<td><input name="JobDutyCd" type="text" id="JobDutyCd"
 							value="01" class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='직책'
@@ -241,13 +246,14 @@
 					<tr>
 						<th>퇴사일자</th>
 						<td><input name="DtOut" type="text" id="DtOut" size="12"
-							readonly="readonly" maxlength="8" value="" class="default"></td>
+							readonly="readonly" maxlength="8" value="<%=dto.geteDropDate()%>"
+							class="default"></td>
 
 
 						<th>퇴사사유</th>
 						<td><input name="OutReason" type="text" maxlength="60"
 							readonly="readonly" id="OutReason" class="default"
-							style="width: 160px;" /></td>
+							value="<%=dto.geteDropRsn()%>" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>전화</th>
@@ -289,8 +295,8 @@
 					<tr>
 						<th>상세주소</th>
 						<td colspan="4"><input type="text" class="default"
-							readonly="readonly" name="Addr2" id="Addr2" value="광옥빌라502호"
-							style="width: 80%" /></td>
+							readonly="readonly" name="Addr2" id="Addr2"
+							value="<%=dto.geteAddr2()%>" style="width: 80%" /></td>
 					</tr>
 
 					<tr>
@@ -300,12 +306,16 @@
 						<td colspan="4"><input name="file" type="file" id="file"
 							class="graybox" size="70" style="height: 20px;" /></td>
 					</tr>
+					<%
+						String[] str = dto.geteEmail().split("@");
+					%>
 					<tr>
 						<th>이메일주소</th>
 						<td colspan="4"><input type="text" name="email1" id="email1"
-							class="default">@<input type="text" name="email2"
-							id="email2" class="default" required><select
-							id="select_email" onChange="input_email()">
+							class="default" value="<%=str[0]%>">@<input type="text"
+							name="email2" value="<%=str[1]%>" id="email2" class="default"
+							required><select id="select_email"
+							onChange="input_email()">
 								<option value="0">직접 입력</option>
 								<option value="1">gmail.com</option>
 								<option value="2">hanmail.net</option>
@@ -316,8 +326,9 @@
 								<option value="7">cyworld.com</option>
 						</select></td>
 					</tr>
+					<tr>
 					<th>비밀번호</th>
-					<td colspan="4"><input type="password" name="pwd" id="pwd"
+					<td colspan="4"><input type="password" name="pwd" id="pwd" 
 						value="0000" class="default"></td>
 					</tr>
 				</table>

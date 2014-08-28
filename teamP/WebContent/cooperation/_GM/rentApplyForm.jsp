@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>대관신청양식</title>
-<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/rentlayout.css"
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/rentlayout.css"
 	media="all" />
-<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/sub06.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/sub06.css" media="all" />
 <style>
 ul {
 	list-style: none;
@@ -417,22 +417,10 @@ ul {
 							</table>
 						</fieldset>
 
-						<span class="fRight01"> <input type="image"
-							src="img/rent_apply.gif" alt="신청하기" /> <a href="#" class="aCan"><span
-								class="blindtext">취소하기</span></a>
+						<span class="fRight01"> <input type="image"	src="img/rent_apply.gif" style="float:right;" alt="신청하기" />
 						</span>
 					</div>
 				</div>
-				<dl class="dlTxt">
-					<dt>
-						<img src="img/txt_name.gif" alt="담당" />
-					</dt>
-					<dd>총무팀 민병욱</dd>
-					<dt>
-						<img src="img/txt_call.gif" alt="문의" />
-					</dt>
-					<dd class="last">031-231-7215</dd>
-				</dl>
 			</div>
 		</form>
 	</div>

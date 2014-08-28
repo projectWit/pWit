@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.COM/DTD SQL MAP Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+<transactionManager type="JDBC">
+<dataSource type="SIMPLE">
+<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:pwit@//192.168.18.235:1521/xe"/>
+<property name="JDBC.Username" value="pwit"/>
+<property name="JDBC.Password" value="asdf"/>
+</dataSource>
+</transactionManager>
+<sqlMap resource="mem/wit/openex/OPENEXmyBatisSql.xml" />
+</sqlMapConfig>

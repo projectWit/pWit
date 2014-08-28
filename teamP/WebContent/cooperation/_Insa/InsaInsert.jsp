@@ -232,38 +232,37 @@
 					<tr>
 						<td rowspan="10" class="center white" id="View_area"></td>
 						<th>사원번호</th>
-						<td><input type="text" value="001" name="Sabun" id="Sabun"
+						<td><input type="text" value="001" name="eId" id="eId"
 							class="default" /></td>
 						<th>성명</th>
-						<td><input name="KorName" type="text" value="호날두"
-							maxlength="50" id="KorName" class="default" style="width: 160px;" /></td>
+						<td><input name="eKName" type="text" value="호날두"
+							maxlength="20" id="eKName" class="default" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>한문성명</th>
-						<td><input name="ChiName" type="text" maxlength="50"
-							value="호날두" id="ChiName" class="default" style="width: 160px;" /></td>
+						<td><input name="eCName" type="text" maxlength="50"
+							value="호날두" id="eCName" class="default" style="width: 160px;" /></td>
 						<th>영문성명</th>
-						<td><input name="EngName" type="text" maxlength="50"
-							value="Ronaldo" id="EngName" class="default"
+						<td><input name="eEName" type="text" maxlength="50"
+							value="Ronaldo" id="eEName" class="default"
 							style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>주민등록번호</th>
-						<td><input name="Jumin1" type="text" value="690929"
-							maxlength="6" id="Jumin1" class="default" style="width: 50px;" />
-							- <input name="Jumin2" type="text" value="2109126" maxlength="7"
-							id="Jumin2" class="default" style="width: 50px;" /></td>
+						<td><input name="eJumin1" type="text" value="690929"
+							maxlength="6" id="eJumin1" class="default" style="width: 50px;" />
+							- <input name="eJumin2" type="text" value="2109126" maxlength="7"
+							id="eJumin2" class="default" style="width: 50px;" /></td>
 						<th>세대주여부</th>
-						<td><input value="1" name="HomeType" type="radio"
-							id="HomeType1" />세대주&nbsp;<input value="2" name="HomeType"
-							type="radio" id="HomeType2" checked="checked" />세대원</td>
+						<td><input value="1" name="ehid" type="radio"
+							id="HomeType1"  value = "1"/>세대주&nbsp;<input value="2" name="ehid"
+							type="radio" id="HomeType2" value = "2" checked="checked" />세대원</td>
 					</tr>
 					<tr>
 						<th>입사일자</th>
-						<td><input name="DtIn" type="text" id="DtIn" size="12"
+						<td><input name="eJoinDate" type="text" id="DtIn" size="12"
 							maxlength="8" value="" class="default"></td>
 						<th>입사구분</th>
-
 						<td><input name="InTypeCd" type="text" id="InTypeCd"
 							value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
@@ -291,12 +290,12 @@
 
 					<tr>
 						<th>퇴사일자</th>
-						<td><input name="DtOut" type="text" id="DtOut" size="12"
+						<td><input name="eDropDate" type="text" id="DtOut" size="12"
 							maxlength="8" value="" class="default"></td>
 
 
 						<th>퇴사사유</th>
-						<td><input name="OutReason" type="text" maxlength="60"
+						<td><input name="eDropRsn" type="text" maxlength="60"
 							id="OutReason" class="default" style="width: 160px;" /></td>
 					</tr>
 					<tr>
@@ -354,8 +353,8 @@
 
 					<tr>
 						<th>이메일주소</th>
-						<td colspan="4"><input type="text" name="email1" id="email1"
-							class="default">@<input type="text" name="email2"
+						<td colspan="4"><input type="text" name="eEmail" id="email1"
+							class="default">@<input type="text" name="eEmail"
 							id="email2" class="default" required><select
 							id="select_email" onChange="input_email()">
 								<option value="0">직접 입력</option>
@@ -371,7 +370,7 @@
 				
 				<tr>
 					<th>비밀번호</th>
-					<td colspan="4"><input type="password" name="pwd" id="pwd"
+					<td colspan="4"><input type="password" name="ePwd" id="ePwd"
 						class="default"></td>
 				</tr>
 				</table>

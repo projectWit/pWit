@@ -1,7 +1,7 @@
-<%@page import="Insa.PerDAO"%>
+<%@page import="mem.wit.Insa.PerDAO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<jsp:useBean id="perDTO"  class = "Insa.PerDTO"></jsp:useBean>
+	<jsp:useBean id="perDTO"  class = "mem.wit.Insa.PerDTO"></jsp:useBean>
 <jsp:setProperty property="*" name="perDTO"/>
 
 <%
@@ -19,7 +19,7 @@ if(su != 0)
 else
 {
 	msg = "게시판 글쓰기 실패 확인";
-	url = "InsaLeft.jsp";
+	url = "Personal.jsp";
 }
 %>
 <script>

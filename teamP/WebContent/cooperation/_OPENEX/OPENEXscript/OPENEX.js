@@ -76,6 +76,6 @@ $(function() {
 		} else {
 			$('#slideTogBox_sv').css('height', '30px');
 		}
-		$('#slideTogCtn_sv').slideToggle()
+		$('#slideTogCtn_sv').slideToggle();
 	});
 });

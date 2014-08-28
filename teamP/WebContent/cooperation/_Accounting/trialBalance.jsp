@@ -172,7 +172,7 @@
 		</table>
 		<!-- if(com_code = "")  -->
 		<div class="container H_2px">
-			<p class="float_right">2014년 8월 8일 오후 12:07:51</p>
+			<p class="float_right">2014년 8월 27일 오전 12:07:51</p>
 		</div>
 	</div>
 	<!-- <div id="contents">-->

@@ -50,7 +50,7 @@
 			<dl></dl>
 		</div>
 		<div style="float: left; width: 80%; margin-left: 30px">
-			<jsp:include page="BoardMain.jsp" />
+			<jsp:include page="BoardList.jsp" />
 		</div>
 
 	</div>

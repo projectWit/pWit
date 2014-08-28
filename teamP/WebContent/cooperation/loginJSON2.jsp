@@ -1,8 +1,10 @@
 <%@page import="com.wit.member.Member"%>
 <%@page import="com.wit.myBatis.MemberMapper"%>
 <%@page import="com.wit.MyBatis3"%>
-<%@page import="common.MemberDAO"%><%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%
-	request.setCharacterEncoding("utf-8");
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
+<%
+request.setCharacterEncoding("utf-8");
 String username = request.getParameter("username");
 String password_text = request.getParameter("password_text");
 //String username = "test001";
@@ -30,9 +32,10 @@ if (member == null) {
 } else {
 	System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
 	if (member.getmPwd().equals(password_text)) { 
-	result = 2;	// id와 일치하고 pwd도 일치
+		result = 2;	// id, pwd 전부 일치
+		session.setAttribute("member", member);		// 세션 생성
 	} else {	
-	result = 1;	// id일치, pwd불일치
+		result = 1;	// id일치, pwd불일치
 	}
 }
 String json = "[{\"result\":"+result+"}]";

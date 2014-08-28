@@ -28,6 +28,13 @@ a:focus {
 	text-decoration: underline;
 }
 
+.clearMenu {
+	clear: both;
+}
+.alignLeft{
+	text-align: left;
+}
+
 .openex_main_boardtitle {
 	font-weight: bold;
 	font-size: 15px;
@@ -117,6 +124,18 @@ a:focus {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c',
 		endColorstr='#ff7b0d', GradientType=1);
 	/* IE6-9 fallback on horizontal gradient */
+}
+
+.colorBtn2 {
+	text-shadow: 0px -1px 1px #353535;
+	font-size: 12px;
+	font-weight: bold;
+	width: 40px;
+	height: 25px;
+	color: #FFFFFF;
+	border: 1px solid #373481;
+	border-bottom-color: #20559A;
+	background-color: #B5B2FF;
 }
 
 .listSelectBox {
@@ -342,12 +361,28 @@ a:focus {
 	/* IE6-9 fallback on horizontal gradient */
 }
 
-.clearMenu {
-	clear: both;
-}
-
 #openex_setExam {
 	text-align: center;
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	min-height: 650px;
+	position: relative;
+	top: 25px;
+	margin: 0 auto;
+}
+
+#openex_setExam span {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#openex_setExam input {
+	border-radius: 10px;
+}
+
+.radioInputVLine {
+	vertical-align: text-top;
 }
 
 #openex_setExam_classification {
@@ -359,9 +394,9 @@ a:focus {
 #openex_setExam_excount {
 	position: relative;
 	width: 100%;
-	height: 420px;;
+	height: 430px;;
 	border: 1px solid gray;
-	border-radius-top-left: 10px;
+	border-radius: 10px;
 }
 
 #openex_setExam_excount_down {
@@ -377,6 +412,10 @@ a:focus {
 	height: 100%;
 }
 
+#openex_setExam_content textarea {
+	border-radius: 10px;
+}
+
 #openex_setExam_radiobox {
 	clear: both;
 	position: relative;
@@ -384,9 +423,28 @@ a:focus {
 	margin-bottom: 10px;
 }
 
-/* 출제 섹션 끝 */
+/* 출제 섹션 끝 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 문제풀이 섹션 시작 */
+#openex_solve {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	min-width: 800px;
+	min-height: 690px;
+	position: relative;
+	margin: 0 auto;
+}
 
-/* 문제풀이 섹션 시작 */
+#openex_solve span {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#openex_solve input ,#openex_solve textarea {
+	border-radius: 10px;
+}
+
 #openex_solve_title input {
 	font-size: 16px;
 	font-weight: bold;
@@ -398,6 +456,14 @@ a:focus {
 
 #openex_solve_radiobox input {
 	border: none;
+}
+
+#openex_solve_excount {
+	position: relative;
+	width: 100%;
+	height: 430px;;
+	border: 1px solid gray;
+	border-radius: 10px;
 }
 
 /* 문제풀이 섹션 끝 
@@ -517,11 +583,11 @@ a:focus {
 }
 
 #openex_boardList {
-	min-height: 610px;
+	min-height: 630px;
 }
 
 #openex_boardList table {
-	height: 610px;
+	height: 620px;
 	width: 950px;
 	text-align: center;
 }
@@ -559,6 +625,7 @@ a:focus {
 
 .boardSubMenuList {
 	font-weight: bold;
+	font-size: 12px;
 	color: #4C4C4C;
 	text-shadow: 0 0 1px #FFF;
 	border-bottom: 1px solid #8C8C8C;
@@ -578,10 +645,18 @@ a:focus {
 		rgba(214, 219, 191, 1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8',
 		endColorstr='#d6dbbf', GradientType=0); /* IE6-9 */
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+}
+
+.boardMenuList li {
+	display: block;
+	height: 20px;
 }
 
 .boardMenuList li span {
-	font-size: 4px;
+	font-size: 8px;
 	color: #8C8C8C;
 }
 
@@ -618,7 +693,9 @@ a:focus {
 #openex_list_subject {
 	height: 10px;
 }
-
+.openex_list_content_title {
+	text-align: left;
+}
 #openex_list_title td {
 	min-width: 55px;
 	background: rgb(96, 108, 136); /* Old browsers */
@@ -642,17 +719,17 @@ a:focus {
 	font-weight: bold;
 }
 
-#openex_list table tr td label {
+.openex_list table tr td label {
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
-#openex_list_content td a {
+.openex_list_content td a {
 	vertical-align: super;
 }
 
-#openex_list_content td span {
+.openex_list_content td span {
 	font-size: 7px;
 	vertical-align: super;
 }

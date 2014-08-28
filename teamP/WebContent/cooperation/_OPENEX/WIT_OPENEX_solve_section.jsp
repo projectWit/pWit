@@ -11,43 +11,41 @@
 	href="OPENEXcss/WIT_OPENEX_section.css">
 </head>
 <body>
-	<div id="openex_setExam"
-		style="width: 1200px; height: 570px; position: relative; top: 10px; left: 25px; float: left;">
-		<div id="openex_setExam_classification">
-			IT (java)<label> 8분 20초 경과</label> <label> [10문제] </label> <label>
-				[초급] </label>
+	<div id="openex_solve">
+		<div id="openex_solve_selectbox">
+			<label> IT > </label> <label> 소프트웨어 > </label><label> 자바 </label>
 		</div>
-		<div id="openex_setExam_selectbox">
-			<label> IT > </label> <label> 소프트웨어 > </label><label> java </label>
-		</div>
-		<div id="openex_solve_title">
-			<input type="text" style="width: 535px;"
-				value="다음은 구구단을 출력하는 프로그램이다 보기 중 [ ]에 들어 갈 것은?">
-		</div>
-		<div id="openex_setExam_excount">
-			<a href="#">01번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">02번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">03번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">04번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">05번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">06번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">07번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">08번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">09번 문제</a>
-			<hr style="width: 120px; color: gray;">
-			<a href="#">10번 문제</a>
-		</div>
-		<div id="openex_setExam_content">
-			<textarea rows="25" cols="100">
-			
+		<table align="center" border="0">
+			<tr>
+				<td colspan="2"><span>20분</span>/ <span>10문제</span>/ <span>초급</span><br>
+					<span>[자바 제어문]</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><div id="openex_solve_title">
+						<input type="text" style="width: 500px;"
+							value="다음은 구구단을 출력하는 프로그램이다 보기 중 [ ]에 들어 갈 것은?">
+					</div></td>
+			</tr>
+			<tr>
+				<td>
+					<div id="openex_solve_excountbox">
+						<div id="openex_solve_excount"
+							style="overflow: none; font-size: 13px;">
+							<%
+								for (int i = 1; i < 11; i++) {
+							%>
+							<p><%=i%>번 문제
+							</p>
+							<hr>
+							<%
+								}
+							%>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div id="openex_solve_content">
+						<textarea rows="25" cols="100">
 			
 			
 			
@@ -63,7 +61,10 @@
 			}
 
 			</textarea>
-		</div>
+					</div>
+				</td>
+			</tr>
+		</table>
 		<div id="openex_solve_radiobox">
 			<table align="center" style="position: relative; left: 40px;">
 				<tr>
@@ -81,9 +82,10 @@
 					<td><input type="radio" name="radioSelect"></td>
 				</tr>
 			</table>
-		</div>
-		<div id="openex_setExam_submit">
-			<input type="button" value="제출">
+			<br>
+			<div id="openex_solve_submit">
+				<input type="button" value="임시저장" class="colorBtn">
+			</div>
 		</div>
 	</div>
 </body>
