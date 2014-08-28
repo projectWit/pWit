@@ -8,4 +8,8 @@
     SELECT * FROM WitMember
 		WHERE mId = #{mId}
   </select>
+  <select id="getPower" resultType="com.wit.member.Power">
+    SELECT * FROM power
+		WHERE mId = #{mId}
+  </select>
 </mapper>

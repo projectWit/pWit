@@ -48,8 +48,9 @@ public class MemberController {
 		
 //		return "WIT_Main_register";
 	}
-	/*@RequestMapping("/login")
+	/*@RequestMapping("/login.do")
 	public String login() {
+		System.out.println("/login 진입");
 		return "WIT_Main_index";
 	}
 	@RequestMapping("/login2")

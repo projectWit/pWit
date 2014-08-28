@@ -1,14 +1,17 @@
 package mem.wit.gm;
 
-import gss.MyBatis;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.wit.MyBatis;
+import com.wit.member.Member;
 
 @Controller
 public class GMController {
@@ -61,11 +64,11 @@ public class GMController {
 		dto.setpId(Integer.parseInt(request.getParameter("pId")));
 		dto.setfPay(Integer.parseInt(request.getParameter("fPay")));
 		dto.setfAddr(request.getParameter("fAddr"));
-		dto.setfTel(request.getParameter("telCode")+"-"+request.getParameter("fTel1")+"-"+request.getParameter("fTel2"));
+		List<CdTelAreaDTO> telCode = (List<CdTelAreaDTO>) m.select("selectTel", "select tanum from cdtelarea where tacode="+Integer.parseInt(request.getParameter("telCode")));
+		dto.setfTel(telCode.get(0).taNum+"-"+request.getParameter("fTel1")+"-"+request.getParameter("fTel2"));
+		System.out.println(dto.getfTel());
 		m.insert("insertFacil", dto);
 		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
-	}
-	
-	
+	}	
 	
 }

@@ -133,7 +133,6 @@ a:link {
 				<tr>
 					<td class='bl_title bl_no'>No</td>					
 					<td class='bl_title bl_subject'>시설 목적</td>
-					<td class='bl_title bl_type'>분류</td>
 					<td class='bl_title bl_place'>장소</td>
 					<td class='bl_title bl_name'>관리자명</td>
 					<td class='bl_title bl_phone'>연락처</td>

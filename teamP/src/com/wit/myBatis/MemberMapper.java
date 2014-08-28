@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.wit.member.Member;
+import com.wit.member.Power;
 
 public interface MemberMapper {
 	
@@ -23,5 +24,7 @@ public interface MemberMapper {
 	public Member getMemberById(String pId);
 	
 	public List<Member> getMembersByKeyword(String keyword);
+	
+	public Power getPower(String mId);
 
 }

@@ -16,6 +16,7 @@ if (loginStatus != null) {
 //		System.out.println("session.invalidate() 진입");
 //		session.invalidate();
 		session.removeAttribute("member");
+		session.removeAttribute("power");
 	}
 }
 

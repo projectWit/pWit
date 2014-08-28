@@ -40,18 +40,26 @@
 		<result property="fPay" column="fPay" />
 		<result property="fTel" column="fTel" />
 	</resultMap>
+	<resultMap class="mem.wit.gm.CdTelAreaDTO" id="Tel" >
+		<result property="taCode" column="taCode" />
+		<result property="taNum" column="taNum" />
+	</resultMap>
 <select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
 $value$
 </select>
 <select id="searchSport" parameterClass="java.lang.String" resultMap="c_sportDTO" >
 $value$
-
-
 </select>
 <select id="searchPlace" parameterClass="java.lang.String" resultMap="c_placeDTO" >
 $value$
 </select>
 <select id="selectClub" parameterClass="java.lang.String" resultMap="clubDTO" >
+$value$
+</select>
+<select id="selectTel" parameterClass="java.lang.String" resultMap="Tel"> 
+$value$
+</select>
+<select id="searchTel" parameterClass="java.lang.String" resultMap="Tel"> 
 $value$
 </select>
 <!-- <select id="selectQboard" parameterClass="java.lang.String" resultMap="qboardDTO" >

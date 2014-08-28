@@ -18,9 +18,7 @@ $(document).ready(function(e) {
 
 </head>
 <body>
-
 	<jsp:include page="WIT_GM_section.jsp"></jsp:include>
-
 </body>
 <jsp:include page="WIT_GM_footer.jsp"></jsp:include>
 </html>
