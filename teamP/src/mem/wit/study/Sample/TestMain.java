@@ -14,7 +14,7 @@ public class TestMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-String resource = "com/wit/myBatis/myBatisConfig.xml";
+		String resource = "com/wit/myBatis/myBatisConfig.xml";
 		
 		// 세션 생성
 		MyBatis3 myBatis = new MyBatis3(resource);	
@@ -26,6 +26,10 @@ String resource = "com/wit/myBatis/myBatisConfig.xml";
 		System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
 		System.out.println("mId : "+power.getmId()+", aStudy : "+power.getaStudy());
 		
+		resource = "mem/wit/study/myBatis/myBatisConfig.xml";
+		
+		// 세션 생성
+		myBatis = new MyBatis3(resource);	
 		SuppLecMapper suppLecMapper = myBatis.getMapper(SuppLecMapper.class);
 		List<SuppLec> slList = suppLecMapper.selectAll();
 		for (SuppLec suppLec : slList) {
