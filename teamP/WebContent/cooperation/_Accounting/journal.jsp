@@ -1,3 +1,4 @@
+<%@page import="mem.wit.accounting.ACC_TotalSlip_journalDTO"%>
 <%@page import="mem.wit.accounting.ACC_TotalSlipDTO"%>
 <%@page import="java.util.ArrayList"%> 
 <%@page import="mem.wit.accounting.ACC_TotalSlipDAO"%>
@@ -83,10 +84,8 @@
 		request.setCharacterEncoding("UTF-8");
 			ApplicationContext context = new GenericXmlApplicationContext(
 					"mem/wit/accounting/Accounting.xml");
-			ACC_TotalSlipDAO dao = context.getBean("acc_TotalSlipDAO",
-					ACC_TotalSlipDAO.class);
-			ArrayList<ACC_TotalSlipDTO> arr = (ArrayList<ACC_TotalSlipDTO>) dao
-					.getAll();
+			ACC_TotalSlipDAO dao = context.getBean("acc_TotalSlipDAO", ACC_TotalSlipDAO.class);
+			ArrayList<ACC_TotalSlip_journalDTO> arr = (ArrayList<ACC_TotalSlip_journalDTO>) dao.getAll();
 			double depTor=0, crediTor=0;
 		%>
 		<!-- ***** 프린트 시작 ***** -->
@@ -119,12 +118,12 @@
 					for (int i = 0; i < arr.size(); i++) {
 				%>
 				<tr>
-					<td class="p_td"><a onclick="slipsD()"><%=arr.get(i).getTsCode()%></a></td>
-					<td class="p_td"><%=arr.get(i).getTsContents()%></td>
-					<td class="p_td"><%=arr.get(i).getaName()%></td>
-					<td class="p_td right"><%=arr.get(i).getTsAmounts()%></td>
-					<td class="p_td"><%=arr.get(i).getaName()%></td>
-					<td class="p_td right"><%=arr.get(i).getTsAmounts()*0.9%></td>
+					<td class="p_td"><a onclick="slipsD()"><%=arr.get(i).getTsj_Code()%></a></td>
+					<td class="p_td"><%=arr.get(i).getTsj_Contents()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_aName1()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_aName2()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()*0.9%></td>
 				</tr>
 				<tr>
 					<td class="p_td">&nbsp;</td>
@@ -132,11 +131,11 @@
 					<td class="p_td">&nbsp;</td>
 					<td class="p_td right">&nbsp;</td>
 					<td class="p_td">부가세예수금</td>
-					<td class="p_td right"><%=arr.get(i).getTsTax()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()*arr.get(i).getTsj_tRate()%></td>
 				</tr>
 				<%
-				depTor += arr.get(i).getTsAmounts();
-				crediTor +=(arr.get(i).getTsAmounts()*0.9+arr.get(i).getTsTax());
+				depTor += arr.get(i).getTsj_Amounts();
+				crediTor +=(arr.get(i).getTsj_Amounts()*0.9+arr.get(i).getTsj_Amounts()*arr.get(i).getTsj_tRate());
 					}
 				
 				%>

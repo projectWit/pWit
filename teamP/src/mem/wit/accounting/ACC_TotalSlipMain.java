@@ -17,9 +17,9 @@ public class ACC_TotalSlipMain {
 		dao.add(dto);*/
 
 	
-		 ArrayList<ACC_TotalSlipDTO> arr= (ArrayList<ACC_TotalSlipDTO>) dao.getAll(); 
+		/* ArrayList<ACC_TotalSlipDTO> arr= (ArrayList<ACC_TotalSlipDTO>) dao.getAll(); 
 		 for(int i=0; i<arr.size(); i++){
 		 System.out.println(arr.get(i).getTsContents()); } 
-		 ACC_TotalSlipDTO dto = dao.get(2); System.out.println(dto.getTsContents());
+		 ACC_TotalSlipDTO dto = dao.get(2); System.out.println(dto.getTsContents());*/
 	}
 }
