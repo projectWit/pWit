@@ -16,11 +16,10 @@ public class ACC_FixedAssetsDTO {
 		super();
 	}
 	
-	public ACC_FixedAssetsDTO(int fCode, String fName, String fDate,
-			int fAmounts, int fQuantity, int f_sCode, String fContents,
-			int f_eCode, String eId, int fMonths) {
+	public ACC_FixedAssetsDTO(String fName, String fDate,
+			int fAmounts, int fQuantity, 
+			int f_eCode, int fMonths, int f_sCode, String fContents) {
 		super();
-		this.fCode = fCode;
 		this.fName = fName;
 		this.fDate = fDate;
 		this.fAmounts = fAmounts;
@@ -28,7 +27,6 @@ public class ACC_FixedAssetsDTO {
 		this.f_sCode = f_sCode;
 		this.fContents = fContents;
 		this.f_eCode = f_eCode;
-		this.eId = eId;
 		this.fMonths = fMonths;
 	}
 	

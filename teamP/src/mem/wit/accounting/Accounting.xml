@@ -39,4 +39,10 @@
    <bean id="acc_FixedAssetsDAO" class="mem.wit.accounting.ACC_FixedAssetsDAO">
       <property name="dataSource" ref="dataSource"/>
    </bean>
+   <bean id="acc_TotalSlipDAO" class="mem.wit.accounting.ACC_TotalSlipDAO">
+      <property name="dataSource" ref="dataSource"/>
+   </bean>
+   <bean id="acc_CompanyDAO" class="mem.wit.accounting.ACC_CompanyDAO">
+      <property name="dataSource" ref="dataSource"/>
+   </bean>
 </beans>

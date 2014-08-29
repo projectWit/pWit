@@ -10,10 +10,10 @@ public class ACC_AccountsMain {
 	public static void main(String[] args) {
 		ApplicationContext context = new GenericXmlApplicationContext("mem/wit/accounting/Accounting.xml");
 		ACC_AccountsDAO dao = context.getBean("acc_AccountsDAO", ACC_AccountsDAO.class);
-		ACC_AccountsDTO dto = new ACC_AccountsDTO(5, "미수금", "미수금계정", "10001");
+		ACC_AccountsDTO dto = new ACC_AccountsDTO("현금", "현금계정", "10001");
 		dao.add(dto);
 		
-		/*ArrayList<ACC_AccountsDTO> arr= (ArrayList<ACC_AccountsDTO>) dao.getAll();
+	/*	ArrayList<ACC_AccountsDTO> arr= (ArrayList<ACC_AccountsDTO>) dao.getAll();
 		for(int i=0; i<arr.size(); i++){
 			System.out.println(arr.get(i).getaName());
 		}

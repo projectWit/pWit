@@ -86,7 +86,7 @@ calendarIDs = ['fromClassDate', 'toClassDate'];		// 달력이 추가될 태그�
         </div>
     </div>
 
-<div>
+</div>
 
 </article>
 </section>

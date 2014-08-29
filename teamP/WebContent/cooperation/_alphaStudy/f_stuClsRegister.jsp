@@ -298,7 +298,7 @@ $(document).ready(function(e) {
     </table>
 </form>
 
-<div>
+</div>
 
 </article>
 </section>

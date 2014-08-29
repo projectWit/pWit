@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -63,10 +64,10 @@
 		</form>
 	</div>
 	<!-- //ibm-search-module --> <!-- ibm-common-menu --> <!-- <div id="ibm-common-menu" style="display: none;height: 1px;overflow: hidden;"> -->
-	<div id="ibm-common-menu" style="display: block; height: 41px; overflow: hidden;">
+	<!-- <div id="ibm-common-menu" style="display: block; height: 41px; overflow: hidden;">
 		<div class="ibm-container-body" id="ibmweb_ribbon_0" style="height: 40px;">
 			
-		<!-- ****************************************************************************************** -->
+		******************************************************************************************
 			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
 			   
 				<ul id="subTab-0" style="display:none;">
@@ -93,8 +94,8 @@
 				<ul id="subTab-3" style="display: none;">
 					<li class="subTab-3-0" style="display: block;"><a href="#">직원 목록</a></li>
 					<li class="subTab-3-1" style="display: block;"><a href="#">직원 검색</a></li>
-					<li class="subTab-3-2" style="display: block;"><a href="#">개설 강좌 목록</a></li>
-					<li class="subTab-3-3" style="display: block;"><a href="#">종합 시간표</a></li>
+					<li class="subTab-3-2" style="display: block;"><a href="#">강좌 개설</a></li>
+					<li class="subTab-3-3" style="display: block;"><a href="#">개설 강좌 목록</a></li>
 				</ul>
 				
 				<ul id="subTab-4" style="display: none;">
@@ -106,15 +107,15 @@
 				</ul>
 				
 				<ul id="subTab-5" style="display: none;">
-					<li class="subTab-5-0" style="display: block;"><a href="#">신청 목록</a></li><!-- 허가 취소 버튼 이용 신청여부 판정 -->
+					<li class="subTab-5-0" style="display: block;"><a href="#">신청 목록</a></li>허가 취소 버튼 이용 신청여부 판정
 					<li class="subTab-5-1" style="display: block;"><a href="#">사용 현황</a></li>
 				</ul>
 			</div>
-		<!-- ****************************************************************************************** -->
+		******************************************************************************************
 
 		</div>
 	</div>
-	<!-- //ibm-common-menu --> 
+	//ibm-common-menu  -->
 </header>
 <!-- MASTHEAD_END -->
 

@@ -1,19 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.EvalDAO"%>
+<%@page import="mem.wit.Insa.EvalDTO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
 <html>
 <head>
 <title>직원리스트</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="robots" content="noindex,nofollow">
-
-
 <link type="text/css" rel="stylesheet" href="css/base.css" />
-
 <link type="text/css" rel="stylesheet" href="css/layout.css" />
-
 <link type="text/css" rel="stylesheet" href="css/table.css" />
 <link type="text/css" rel="stylesheet" href="css/menu.css" />
 <link type="text/css" rel="stylesheet" href="css/print.css" />
@@ -22,7 +19,18 @@
 <link type="text/css" rel="stylesheet" href="css/window.css" />
 <link type="text/css" rel="stylesheet" href="css/tax.css" />
 </head>
-
+<%
+	EvalDAO dao = new EvalDAO();
+	EvalDTO dto = new EvalDTO();
+	List dtoL = dao.evalList();
+%>
+<script type="text/javascript">
+	function valSend(gubun, no) {
+		document.inLfrm.gubun.value = gubun;
+		document.inLfrm.no.value = no;
+		document.inLfrm.submit();
+	}
+</script>
 <body id="tabAll">
 	<div id="idPrint">
 		<div id="contents" style="width: 720px; margin: 0 auto">
@@ -52,7 +60,7 @@
 								onclick="fn_SortList('REST_DES');">사원번호<img
 									src="img/arrowBot.gif" id="img_rest" width="11" height="15" /></a></th>
 							<th style="width: 120px;"><a href="#"
-								onclick="fn_SortList('SITE_DES');">부서명<img
+								onclick="fn_SortList('SITE_DES');">작성날짜<img
 									src="img/arrowBot.gif" id="img_site" width="11" height="15" /></a></th>
 							<th style="width: 100px;"><a href="#"
 								onclick="fn_SortList('EMP_DES');">사원명<img
@@ -63,54 +71,22 @@
 
 						</tr>
 					</thead>
+					<%
+						for (int i = 0; i < dtoL.size(); i++) {
+							dto = (EvalDTO) dtoL.get(i);
+					%>
 					<tbody>
-					<tbody>
-
 						<tr>
-							<td id="rpt_ctl00_td_RestNm" class="left">10001</td>
-
-							<td id="rpt_ctl00_td_SiteNm" class="left">경영지원팀</td>
-
-							<td id="rpt_ctl00_td_EmpNm" class="left">백도경</td>
-
-							<td id="rpt_ctl00_td_RestDay" class="right">25.0</td>
+							<td id="rpt_ctl00_td_RestNm" class="center"><%=dto.getEvSeq()%></td>
+							<td id="rpt_ctl00_td_RestDay" class="center"><%String str = dto.getEvDate(); String result = str.substring(0,10); out.print(result);%></td>
+							<td id="rpt_ctl00_td_SiteNm" class="center"><%=dto.getEvId2()%></td>
+							<td id="rpt_ctl00_td_EmpNm" class="center"><%=dto.getEvTotal()%></td>
 
 						</tr>
-
-						<tr>
-							<td id="rpt_ctl00_td_RestNm" class="left">10001</td>
-
-							<td id="rpt_ctl00_td_SiteNm" class="left">경영지원팀</td>
-
-							<td id="rpt_ctl00_td_EmpNm" class="left">백도경</td>
-
-							<td id="rpt_ctl00_td_RestDay" class="right">25.0</td>
-
-						</tr>
-						<tr>
-							<td id="rpt_ctl00_td_RestNm" class="left">10001</td>
-
-							<td id="rpt_ctl00_td_SiteNm" class="left">경영지원팀</td>
-
-							<td id="rpt_ctl00_td_EmpNm" class="left">백도경</td>
-
-							<td id="rpt_ctl00_td_RestDay" class="right">25.0</td>
-
-						</tr>
-
-						<tr>
-							<td id="rpt_ctl00_td_RestNm" class="left">10001</td>
-
-							<td id="rpt_ctl00_td_SiteNm" class="left">경영지원팀</td>
-
-							<td id="rpt_ctl00_td_EmpNm" class="left">백도경</td>
-
-							<td id="rpt_ctl00_td_RestDay" class="right">25.0</td>
-
-						</tr>
-
-
 					</tbody>
+					<%
+						}
+					%>
 				</table>
 			</div>
 			<!--//print_list-->
@@ -124,31 +100,7 @@
 	<br />
 
 
-	<!--//body-->
-
-	<a id="lnkSort"
-		href="javascript:__doPostBack(&#39;lnkSort&#39;,&#39;&#39;)"></a>
-	<a id="lnkbutton"
-		href="javascript:__doPostBack(&#39;lnkbutton&#39;,&#39;&#39;)"></a>
-	<input type="hidden" name="hidSrchFlg" id="hidSrchFlg" />
-	<input type="hidden" name="hidSearchXml" id="hidSearchXml" />
-	<input type="hidden" name="hidSearchParam" id="hidSearchParam" />
-	<input name="hidParam" type="hidden" id="hidParam" />
-	<input name="hidSortCol" type="hidden" id="hidSortCol" value="REST_DES" />
-	<input name="hidSortDir" type="hidden" id="hidSortDir" value="DESC" />
-	<input name="hidCuurPage" type="hidden" id="hidCuurPage" />
-	<input name="hidBtnGubun" type="hidden" id="hidBtnGubun" />
-
-
 </body>
 
-<form id="frmDetail">
-	<input type="hidden" name="hidSearchXml" id="SearchXml" value="" /> <input
-		type="hidden" name="hidSortCol2" id="hidSortCol2" value="" /> <input
-		type="hidden" name="hidSortDir2" id="hidSortDir2" value="" /> <input
-		type="hidden" name="hidSessionKey" id="hidSessionKey" value="" />
-</form>
-<iframe name="ifrmExcel" id="ifrmExcel"
-	style="width: 0px; height: 0px; display: none"></iframe>
 
 </html>

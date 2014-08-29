@@ -8,4 +8,7 @@
     SELECT * FROM cdSubject
 		WHERE sbjCode = #{sbjCode}
   </select>
+  <select id="selectAll" resultMap="mem.wit.study.codes.Subject">
+    SELECT * FROM cdSubject
+  </select>
 </mapper>

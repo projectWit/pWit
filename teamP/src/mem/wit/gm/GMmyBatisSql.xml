@@ -32,35 +32,81 @@
 		<result property="cEmblem" column="cEmblem"/>
 		<result property="cPresident" column="mName" />
 	</resultMap>
-	<resultMap class="mem.wit.gm.FacilDTO" id="facilInsert">
+	<resultMap class="mem.wit.gm.FacilDTO" id="FacilDTO">
 		<result property="fName" column="fName" />
 		<result property="pId" column="pId" />
+		<result property="place" column="place" />
 		<result property="fObject" column="fObject" />
 		<result property="fAddr" column="fAddr" />
 		<result property="fPay" column="fPay" />
 		<result property="fTel" column="fTel" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.QBoardDTO" id="qboardDTO">
+		<result property="qId" column="qId" />
+		<result property="qTitle" column="qTitle" />
+		<result property="qMId" column="qMId" />
+		<result property="mName" column="mName" />
+		<result property="qCont" column="qCont" />
+		<result property="qDate" column="qDate" />
+		<result property="qIp" column="qIp" />
+		<result property="stateId" column="stateId" />
+		<result property="stateName" column="stateName" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.LecDTO" id="lecDTO">
+		<result property="lecName" column="lecName" />
+		<result property="lecCnt" column="lecCnt" />
+		<result property="lecPay" column="lecPay" />
+		<result property="eTel" column="eTel" />
+		<result property="eKName" column="eKName" />
+		<result property="sSDay" column="sSDay" />
+		<result property="sEDay" column="sEDay" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.CdTelAreaDTO" id="Tel" >
+		<result property="taCode" column="taCode" />
+		<result property="taNum" column="taNum" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.C_TypeDTO" id="c_typeDTO" >
+		<result property="tId" column="tId" />
+		<result property="tName" column="tName" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.C_PTimeDTO" id="c_ptimeDTO">
+		<result property="pId" column="pId" />
+		<result property="pTime" column="pTime" />		
 	</resultMap>
 <select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
 $value$
 </select>
 <select id="searchSport" parameterClass="java.lang.String" resultMap="c_sportDTO" >
 $value$
-
-
 </select>
 <select id="searchPlace" parameterClass="java.lang.String" resultMap="c_placeDTO" >
+$value$
+</select>
+<select id="searchType" parameterClass="java.lang.String" resultMap="c_typeDTO" >
+$value$
+</select>
+<select id="searchTel" parameterClass="java.lang.String" resultMap="Tel"> 
 $value$
 </select>
 <select id="selectClub" parameterClass="java.lang.String" resultMap="clubDTO" >
 $value$
 </select>
-<!-- <select id="selectQboard" parameterClass="java.lang.String" resultMap="qboardDTO" >
+<select id="selectTel" parameterClass="java.lang.String" resultMap="Tel"> 
 $value$
 </select>
-<select id="selectLec" parameterClass="java.lang.String" resultMap="lecDTO" >
+<select id="selectFacil" parameterClass="java.lang.String" resultMap="FacilDTO" >
 $value$
 </select>
-<select id="selectReview" parameterClass="java.lang.String" resultMap="reviewDTO" >
+<select id="selectQboard" parameterClass="java.lang.String" resultMap="qboardDTO" >
+$value$
+</select>
+<select id="searchTime" parameterClass="java.lang.String" resultMap="c_ptimeDTO">
+$value$
+</select>
+<select id="selectLecList" parameterClass="java.lang.String" resultMap="lecDTO" >
+$value$
+</select>
+<!--  <select id="selectReview" parameterClass="java.lang.String" resultMap="reviewDTO" >
 $value$
 </select> -->
 <insert id="insertClub" parameterClass="mem.wit.gm.ClubDTO" >
@@ -68,5 +114,14 @@ $value$
 </insert>
 <insert id="insertFacil" parameterClass="mem.wit.gm.FacilDTO">
 	insert into GM_Facil values (SEQ_fId.nextval, #fName#, #pId#, #fObject#, #fAddr#, sysdate, #fPay#, #fTel#)
+</insert>
+<insert id="insertLec" parameterClass="mem.wit.gm.LecDTO">
+	insert into GM_Lecture values(SEQ_lecId.nextval, #lecName#, #lecCont#, #lecCnt#, #lecPay#, #sId#, #pId#, #tId#)
+</insert>
+<insert id="insertSche" parameterClass="mem.wit.gm.ScheDTO" >
+	<selectKey resultClass="int" keyProperty="lecId">
+		SELECT max(lecId) as lecId FROM GM_Lecture
+	</selectKey>
+	insert into GM_Sche values(SEQ_sNum.nextval, #lecId# , #pId#, #sSDay#, #sEDay#, 1)
 </insert>
 </sqlMap>

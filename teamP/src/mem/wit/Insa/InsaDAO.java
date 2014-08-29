@@ -64,6 +64,35 @@ public class InsaDAO {
 		  }
 		return dtoL;
 	}
+	
+	public List insaSelList(){
+		conn = DbSet.getConnection();
+		List<InsaDTO> dtoL = new ArrayList();
+		
+		try{
+			String sql = "select eId, eKName, eDepCd, eJoinDate, ePosCd, eMobile, eEmail from Employee";					
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next())
+			{
+				InsaDTO dto = new InsaDTO();
+				dto.seteId(rs.getString(1));
+				dto.seteKName(rs.getString(2));	
+				dto.seteDepCd(rs.getInt(3));			
+				dto.seteJoinDate(rs.getString(4));
+				dto.setePosCd(rs.getInt(5));
+				dto.seteMobile(rs.getString(6));	
+				dto.seteEmail(rs.getString(7));
+				dtoL.add(dto);
+			}
+		}
+		catch(SQLException e){
+		     e.printStackTrace();
+		  }finally{
+			  DbClose.close(pstmt,conn);
+		  }
+		return dtoL;
+	}
 	public int insaUpdate(InsaDTO dto)
 	{
 		int su = 0;
@@ -138,6 +167,24 @@ public class InsaDAO {
 		  }	
 		return su;
 	}
+	public int totalCnt() {
+		int su = 0;
+		conn = DbSet.getConnection();
+		try {
+			String sql = "select count(*) from EMPLOYEE";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				su = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return su;
+	}
+
 	
 
 }

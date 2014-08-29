@@ -27,14 +27,15 @@ public class FAQDAO {
 		try
 			{
 				String sql = "insert into FAQTABLE(fSeq, eId, fTitle, fContent, fDate, fIp, fCnt)";
-				sql += " values(Seq_faq.NEXTVAL, ?, ?, ?, sysdate, ?, 0)";
+				sql += "values(Seq_faq.NEXTVAL, '99999', ?, ?, sysdate, ?, 0)";
 
 				pstmt = conn.prepareStatement(sql);
 
-				pstmt.setString(1, dto.geteId());				
-				pstmt.setString(2, dto.getfTitle());
-				pstmt.setString(3, dto.getfContent());
-				pstmt.setString(4, dto.getfIp());											
+				//pstmt.setString(1, dto.geteId());				
+				pstmt.setString(1, dto.getfTitle());
+				pstmt.setString(2, dto.getfContent());				
+				pstmt.setString(3, dto.getfIp());
+											
 				su = pstmt.executeUpdate();				
 			}
 			catch(SQLException e){

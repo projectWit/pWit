@@ -26,22 +26,7 @@
 <div class="ibm-home-page" id="ibm-top" style="margin-top: 120px;">
 
 <!-- MASTHEAD_BEGIN -->
-<header id="ibm-masthead"> <!-- ibm-mast-options --> <!-- <div id="ibm-mast-options" style="height: 4px;"> -->
-	<div id="ibm-mast-options">
-<div style="position: absolute;">scroll : </div><div id="scroll" style="position: absolute; margin-left: 40px;"></div>
-		<ul>
-			<li id="ibm-geo"><a href="#">한국어</a></li>
-			<li id="ibm-sso"><span>
-					<p id="ibm-welcome-msg">환영합니다</p> <span style="display: inline;">
-						<span class="ibm-greeting-hasp">[</span> <span> <span
-							class="ibm-sso-link"><a href="#" class="ibm-sso-signin">WIT
-									로그인</a></span> <span class="ibm-sso-link"> / <a href="#"
-								class="ibm-sso-register">회원등록</a></span>
-					</span> <span class="ibm-greeting-hasp">]</span>
-				</span>
-			</span></li>
-		</ul>
-	</div>
+<header id="ibm-masthead"> <!-- ibm-mast-options --><jsp:include page="/cooperation/header_ibm-mast-options.jsp"></jsp:include>
 	<!-- //ibm-mast-options --> <!-- ibm-universal-nav --> <!-- <div id="ibm-universal-nav" style="height: 30px;"> -->
 	<div id="ibm-universal-nav">
 		<ul id="ibm-unav-links">
@@ -115,5 +100,14 @@
 <!-- MASTHEAD_END -->
 
 </div>
+<jsp:include page="/cooperation/loginCommon.jsp"></jsp:include>
+<!-- <DIV id=dijit_DialogUnderlay_0 class=dijitDialogUnderlayWrapper style="LEFT: 0px; Z-INDEX: 949; DISPLAY: none; TOP: 0px" widgetId="dijit_DialogUnderlay_0">
+<DIV id=dijit_Dialog_2_underlay class="dijitDialogUnderlay _underlay" style="HEIGHT: 454px; WIDTH: 1244px" dojoAttachPoint="node"></DIV><IFRAME id="iframe0" role=presentation tabIndex=-1 style='HEIGHT: 100%; WIDTH: 100%; POSITION: absolute; LEFT: 0px; FILTER: Alpha(Opacity="0"); Z-INDEX: -1; TOP: 0px' src="//www.ibm.com/common/js/dojo/1.6/dojo/resources/blank.html"></IFRAME></DIV>
+
+<DIV role=dialog id=dijit_Dialog_0 title="" class=dijitDialog style="POSITION: absolute; LEFT: 422px; FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); Z-INDEX: 950; TOP: 60px; display: none;" aria-labelledby=dijit_Dialog_0_title widgetId="dijit_Dialog_0">
+<DIV class=dijitDialogTitleBar dojoAttachPoint="titleBar"><SPAN id=dijit_Dialog_0_title class=dijitDialogTitle dojoAttachPoint="titleNode"></SPAN><SPAN role=button tabIndex=-1 title=Cancel class=dijitDialogCloseIcon dojoAttachPoint="closeButtonNode" dojoAttachEvent="ondijitclick: onCancel"><SPAN title=Cancel class=closeText dojoAttachPoint="closeText">x</SPAN> </SPAN></DIV>
+<DIV class=dijitDialogPaneContent style="HEIGHT: auto; WIDTH: auto" dojoAttachPoint="containerNode">
+<DIV id=ibmweb_external_signin_0 style="HEIGHT: 333px" dojoAttachPoint="signinContainerNode" widgetId="ibmweb_external_signin_0"><IFRAME id="iframe1" class=minDimensions style="HEIGHT: 333px; WIDTH: 400px" src="/teamP/cooperation/loginContent.jsp"></IFRAME></DIV></DIV></DIV>
+ -->
 </body>
 </html>

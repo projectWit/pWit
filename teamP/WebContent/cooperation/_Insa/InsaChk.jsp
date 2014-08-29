@@ -236,19 +236,9 @@
 				</tr>
 				<tr>
 					<th>전화</th>
-					<td><select>
-							<option>02</option>
-							<option>032</option>
-							<option>031</option>
-					</select> - <input type="tel" class="default" size=5 maxlength="4" required>
-						- <input type="tel" class="default" size=5 maxlength="4" required></td>
+					<td><%=dto.geteTel()%></td>
 					<th>핸드폰</th>
-					<td><select>
-							<option>010</option>
-							<option>011</option>
-							<option>017</option>
-					</select> - <input type="tel" class="default" size=5 maxlength="4" required>
-						- <input type="tel" class="default" size=5 maxlength="4" required></td>
+					<td><%=dto.geteMobile()%></td>
 				</tr>
 				<tr>
 					<th>부서코드</th>

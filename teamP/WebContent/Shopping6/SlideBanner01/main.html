@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--PG크로스브라우징필수내용 시작--><meta http-equiv="Cache-Control" content="no-cache"/><meta http-equiv="Expires" content="0"/><meta http-equiv="Pragma" content="no-cache"/><!--PG크로스브라우징필수내용 끝--><!--해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요.--><!-- 스마트디자인에서는 최신 JQuery가 내장되어있습니다. 추가로 호출하면 충돌이 생길 수 있습니다. --><script type="text/javascript" src="/ec-js/common.js"></script><!-- 해당 JS는 플래시를 사용하기 위한 스크립트입니다. --><meta property="og:title" content="샘플상품 5">
+ 
+  <title> 슬라이드 베너 (접근성 기능추가 - 탭키제어가능) </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="banner01.js"></script>
+  <style type="text/css">
+	 #wap2013092502 {float:left;position: relative;width:765px;height:355px; border:1px #cccccc solid;overflow:hidden;}/*overflow:hidden;*/
+	 #wap2013092502 .part { float:left;position: absolute;width:765px;height:355px;left:0px;top:0px;z-index:1;opacity:0;text-align:center;}
+	 #wap2013092502 .partNum { float:right;position: absolute;width:auto;min-width:150px;height:20px;text-align:center;top:330px;z-index:100; }
+	 #wap2013092502 .partNum .Num {float:left;position: relative;width:17px;height:20px;margin-left:5px; background-image:url(./img/bul_mainNum.gif);cursor:pointer;}
+     #wap2013092502 .partNum .Num a {float:left;position: relative;width:17px;height:20px;text-decoration: none;}
+     #wap2013092502 .partNum .Num.active a {text-decoration: underline;};
+	 /* 넘버 */
+	 #wap2013092502 .partNum .wap_Num0 { background-position:0px 0px; } 
+	 #wap2013092502 .partNum .wap_Num0.active { background-position:-33px 0px; } 
+	 #wap2013092502 .partNum .wap_Num1 { background-position:0px -30px; } 
+	 #wap2013092502 .partNum .wap_Num1.active { background-position:-33px -30px; } 
+	 #wap2013092502 .partNum .wap_Num2 { background-position:0px -60px; } 
+	 #wap2013092502 .partNum .wap_Num2.active { background-position:-33px -60px; } 
+	 #wap2013092502 .partNum .wap_Num3 { background-position:0px -90px; } 
+	 #wap2013092502 .partNum .wap_Num3.active { background-position:-33px -90px; } 
+	 #wap2013092502 .partNum .wap_Num4 { background-position:0px -120px; } 
+	 #wap2013092502 .partNum .wap_Num4.active { background-position:-33px -120px; } 
+  </style>
+ </head>
+
+ <body>
+     <div id="wap2013092502">
+	      <div class="partNum"></div>
+		  <div class="part" rel=0><a href=""><img src="1.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=1><a href=""><img src="2.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=2><a href=""><img src="3.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=3><a href=""><img src="1.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=4><a href=""><img src="2.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=5><a href=""><img src="3.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=6><a href=""><img src="1.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=7><a href=""><img src="2.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  <div class="part" rel=8><a href=""><img src="3.jpg" width="765" height="355" border="0" alt=""></a></div>
+		  
+	</div>
+ <b><a href="#">왼쪽으로 사라지는 베너</a></b>
+<script type="text/javascript">
+
+   var options = {};
+	options["animSpeed"] = 800;
+	options["pauseTime"] = 4000;
+	$("#wap2013092502").banner2013092502effect(options);
+
+</script>
+ </body>
+</html>
+

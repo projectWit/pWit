@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -120,7 +122,7 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 개설 강좌 수 : 10 개 &nbsp;&nbsp; </td>
+					<td id='bl_count'> 등록된 시설 수 : <c:out value="${fn:length(list)}" />  개&nbsp;&nbsp; </td>
 				</tr>
 			</table>
 			
@@ -133,31 +135,25 @@ a:link {
 				<tr>
 					<td class='bl_title bl_no'>No</td>					
 					<td class='bl_title bl_subject'>시설 목적</td>
-					<td class='bl_title bl_type'>분류</td>
 					<td class='bl_title bl_place'>장소</td>
-					<td class='bl_title bl_name'>관리자명</td>
+					<td class='bl_title bl_name'>시설명</td>
 					<td class='bl_title bl_phone'>연락처</td>
-					<td class='bl_title bl_state'>비고</td>
+					<td class='bl_title bl_state'>대관금액</td>
 				</tr>
 				<!-- INLINE NOTICE --> 
 				 
 				<!-- LIST REPEAT --> 
-				<%
-				for(int i=10;i>0;i--) {
-				%>
+				<c:forEach var="item" items="${list }"  varStatus="status">
 				<tr class="bl_oddline">
-					<td class='bl_list bl_no'><%=i %></td>
+					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >위 건물은 다목적용도로 사용되기위해 만들어 졌습니다.</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_type'>건물</td>
-					<td class='bl_list bl_place'>GM축구장</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>관리자1</div></td>
-					<td class='bl_list bl_phone'>010-1111-1234</td>
-					<td class='bl_list bl_state'><!-- 양호 이미지 -->양호</td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${list.fObject }</a>&nbsp;&nbsp; </td>
+					<td class='bl_title bl_place'>${list.place }</td>
+					<td class='bl_title bl_name'>${list.fName }</td>
+					<td class='bl_title bl_phone'>${list.fTel }</td>
+					<td class='bl_title bl_state'>${list.fPay }</td>
 				</tr>
-				 <%
-				}
-				 %>
+				</c:forEach>
 				<!-- LIST REPEAT END -->
 			</table>
 			
@@ -168,7 +164,7 @@ a:link {
 			
 			<!-- PAGING START-->
 			
-			<table width='100%' border='0' cellpadding="0" cellspacing="0">
+		<!-- 	<table width='100%' border='0' cellpadding="0" cellspacing="0">
 				<tr>
 					<td id='bl_pages'> 
 						
@@ -176,7 +172,7 @@ a:link {
 						
 					</td>
 				</tr>
-			</table>
+			</table> -->
 			
 			<!-- PAGING END--></td>
 	</tr>

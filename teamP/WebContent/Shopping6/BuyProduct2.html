@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="product.css" />
+
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="common.js"></script>
+
+<script type="text/javascript" src="ws_main.js"></script>
+<script type="text/javascript" src="scripts/11stMenu.js"></script>
+<script type="text/javascript" src="scripts/jQBanner.js"></script>
+<script type="text/javascript" src="scripts/floatBanner.js"></script>
+
+
+<style type="text/css">
+
+.vMainMenu {width:800px; margin: 0 auto;}
+.vMainMenu ul {list-style:none;}
+.vMainMenu li{float: left; border-right:2px solid gray; padding:0 10px; font-family:'맑은 고딕',돋움; font-size:13px;}
+.vMainMenu li:nth-last-child(1){border-right:0;}
+.vMainMenu li:hover{background:#ABF200;cursor:pointer;}
+.navigateWrap {width:100%;}
+.navigateWrap div.gnb_inner_wrap2 {display: none;position: absolute;top: 10px;left: 210px;width: 197px;height: 396px;padding: 0px;	z-index:1;border: 1px solid #EA0001;background: none repeat scroll 0% 0% #FFF;}
+.gnb_menu3 .grouping {float:left; width: 179px; padding: 10px;}
+.gnb_menu3 .grouping h3{font-family: '맑은 고딕'; font-size: 14px; text-align:left;height:30px;}
+.gnb_menu3 .banner{position:absolute;z-index:1;height:100%;top:-1px;right:-302px;width:300px;border:1px solid #ea0001;border-left:1px solid #e4e4e4;background:#fff;overflow:hidden;}
+.navigateWrap .gnb_menu3 > ul > li {height:0;}
+
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){    
+    $('#quick').floatBanner();    
+});
+</script>
+
+<title>Wit Shopping Mall</title>
+
+</head>
+
+<body class="body01">
+
+<div id="wrap">
+
+    <div id="header">
+    	<h1 class="xans-element- xans-layout xans-layout-logotop ">
+        	<a href="#"><img src="images/system/witmall_logo.png" alt="기본 쇼핑몰"/></a>
+		</h1>
+		
+       	<div class="inner">
+       		<script>
+				document.write(HeaderWs.makeWs.makeHeaderMenu1());
+				
+			</script>
+			<div class="link">
+                <img src="img/ws_top_banner01.gif" alt="배너"/>
+            </div>    
+            <script>
+				document.write(HeaderWs.makeWs.makeSearchMenu());
+			</script>   	
+       	</div>       	
+    
+    	<div class="inner2">
+		<script>
+			document.write(HeaderWs.makeWs.makeHeaderMenu2());
+
+		</script>
+		</div>
+	</div>
+	
+	<hr/>
+	
+	<div class="navigateWrap">
+	<div class="vMainMenu">
+	<ul>
+		<li>카테고리 전체</li>
+		<li>여성의류</li>
+		<li>남성의류</li>
+		<li>유아동</li>
+		<li>잡화/슈즈</li>
+		<li>스포츠/레저</li>
+		<li>가전/컴퓨터</li>
+		<li>주방/생활</li>
+		<li>식품</li>
+		<li>티켓/여행</li>
+	</ul>
+	<script>
+
+	var el="";
+	el += 	'		<div id="gnbMenu3" class="gnb_menu3">';
+//	el += 	'			<h2>주메뉴</h2>';
+	el += 	'			<ul>';
+	
+	for(var i=0; i<9; i++) {
+		el += 	'			<li >';
+		el += 	'				<div class="gnb_inner_wrap2" id="gnb_cate_layer'+i+'">';
+		el += 	'				</div>';
+		el += 	'			</li>';
+	}	
+	
+	el += 	'			</ul>';
+	el += 	'		</div>';
+	document.write(el);
+	
+		MainContainerWs.makeWs.makeSubMenu();
+
+		
+		$('.vMainMenu li').each(function(idx) {		
+			var $li = $(this);						
+			$li.hover(function(){
+				$("#gnb_cate_layer"+idx).show();
+			},function(){
+				$("#gnb_cate_layer"+idx).hide();
+			});
+		});
+
+	</script>
+	</div>
+	</div>
+	
+	<hr class="layout"/>
+    
+    <div id="container">
+	    <div id="contents">
+  
+
+			<!-- 상단 제품 정보  -->
+			<div class="xans-element- xans-product xans-product-detail "><!-- 이미지 영역 -->
+				<div class="xans-element- xans-product xans-product-image imgArea">
+					<div class="keyImg "><a href="/product/image_zoom2.html?product_no=13&cate_no=1&display_group=2" alt="P000000M" onclick="window.open(this.href, 'image_zoom2', 'toolbar=no,scrollbars=auto,resizable=yes,width=560,height=710,left=0,top=0', this);return false;"><img src="http://ecudemo2687.cafe24.com/web/product/big/13_shop1_942601.jpg" alt="" class="BigImage "/></a>
+        			</div>
+					<!-- 참고 : 뉴상품관리 전용 모듈입니다. 뉴상품관리 이외의 곳에서 사용하면 정상동작하지 않습니다. -->
+					<div class="xans-element- xans-product xans-product-addimage listImg">
+						<ul>
+							<li class="xans-record-"><img src="http://ecudemo2687.cafe24.com/web/product/small/13_shop1_942601.jpg"  class="ThumbImage" /></li>
+                        </ul>
+					</div>
+					
+					<div class="control ">
+           				<span class="prev"><a href="#none" onclick="viewProduct(14);" style="display:;"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_product_prev.gif" alt="이전 제품 보기"/></a></span>
+            			<span class="next"><a href="#none" onclick="viewProduct(12);" style="display:;"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_product_next.gif" alt="다음 제품 보기"/></a></span>
+            			<a href="/product/image_zoom2.html?product_no=13&cate_no=1&display_group=2" onclick="window.open(this.href, 'image_zoom2', 'toolbar=no,scrollbars=auto,resizable=yes,width=560,height=710,left=0,top=0', this);return false;"><img src="img/ws_btn_product_zoom.gif" alt="크게보기"/></a>
+        			</div>
+					<!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+					<div class="xans-element- xans-product xans-product-action button "><a href="#none" onclick="recommend_mail_pop('13', '1', '2')"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_recommend_email.gif" alt="추천메일보내기"/></a>
+						<a href="#none" onclick="" class="displaynone"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_product_request.gif" alt="상품조르기"/></a>
+					</div>					
+				</div>
+				
+				<!-- //이미지 영역 -->
+				<!-- 상세정보 내역 -->
+				<div class="infoArea">
+        <h3>[P000000M] 샘플상품 5            <span> <img src="http://img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_recommended.gif"  class="icon_img" alt="추천" /> <img src="http://img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_new.gif"  class="icon_img" alt="New" /> </span>
+            <span class="displaynone">(해외배송 가능상품)</span>
+        </h3>
+
+
+
+
+
+<div class="xans-element- xans-product xans-product-detaildesign">
+            
+<table class="prdDetail">
+<tbody>
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:16px;color:#555555;">상품명</span></th>
+<td><span style="font-size:16px;color:#555555;">샘플상품 5</span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#555555;">제조사</span></th>
+<td><span style="font-size:12px;color:#555555;">자체제작</span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#555555;">원산지</span></th>
+<td><span style="font-size:12px;color:#555555;">국내 </span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#008BCC;font-weight:bold;">판매가</span></th>
+<td><span style="font-size:12px;color:#008BCC;font-weight:bold;"><strong id="span_product_price_text">25,000원 </strong><input id="product_price" name="product_price" value="" type="hidden"  /></span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#555555;">상품코드</span></th>
+<td><span style="font-size:12px;color:#555555;">P000000M</span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#555555;">수량</span></th>
+<td><span style="font-size:12px;color:#555555;"><span id='NewProductQuantityDummy' ><span class="quantity"><input id="quantity" name="quantity_name" style="width: 30px;height: 18px;border: 1px solid #BCBCBC;" value="" type="text"  /><img src="http://img.echosting.cafe24.com/design/skin/mono/product/btn_basketUp.gif"  class="QuantityUp" alt="수량증가" /><img src="http://img.echosting.cafe24.com/design/skin/mono/product/btn_basketDown.gif"  class="QuantityDown" alt="수량감소" /></span></span></span></td>
+</tr>
+
+<tr class=" xans-record-">
+<th scope="row"><span style="font-size:12px;color:#555555;">배송비</span></th>
+<td><span style="font-size:12px;color:#555555;"><div class="delv_price_B"><input id="delivery_cost_prepaid" name="delivery_cost_prepaid" value="P" type="hidden"  />무료</div></span></td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+
+
+<table border="1" summary="">
+<caption>상품 옵션</caption>
+<tbody class="xans-element- xans-product xans-product-option xans-record-"><!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. --><!-- //참고 --></tbody>
+</table>
+
+
+
+<div id="totalProducts" class="">
+	<p class="info "><img src="http://img.echosting.cafe24.com/design/skin/default/product/ico_information.gif" alt=""/> 수량을 선택해주세요.</p>
+    <p class="info displaynone"><img src="http://img.echosting.cafe24.com/design/skin/default/product/ico_information.gif" alt=""/> 위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</p>
+    <table border="1" summary="">
+	<caption>상품 목록</caption>
+    <colgroup>
+	<col style="width:202px;"/>
+	<col style="width:85px;;"/>
+	<col style="width:85px;"/>
+	</colgroup>
+	<thead><tr>
+	<th scope="col">상품명</th>
+                        <th scope="col">상품수</th>
+                        <th scope="col">가격</th>
+                    </tr></thead>
+	<tbody class=""><tr>
+	<td>샘플상품 5</td>
+    <td>
+    <span class="quantity">
+    <input id="quantity" name="quantity_opt[]" style="" value="1" type="text"  />                                <a href="#none"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_count_up.gif" alt="수량증가" class="QuantityUp up"/></a>
+    <a href="#none"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_count_down.gif" alt="수량감소" class="QuantityDown down"/></a>
+    </span>
+    </td>
+	<td class="right">
+	<span class="quantity_price">25000</span> <span class="mileage displaynone">(<img src="http://img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_point.gif"/>  <span class="mileage_price">0</span>)</span>
+	</td>
+    </tr></tbody>
+</tbody>
+
+<tfoot><tr><td colspan="3">
+<strong>총 상품금액</strong>(수량) : <span class="total"><strong><em>0</em></strong> (0개)</span>
+</td></tr></tfoot>
+</table>
+</div>
+
+
+
+
+        <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+        <div class="xans-element- xans-product xans-product-action "><div class="btnArea">
+                <a href="#none" class="first " onclick="product_submit(1, '/exec/front/order/basket/', this)"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_buy_big.gif" alt="바로구매하기"/></a>
+                <a href="#none" class="" onclick="product_submit(2, '/exec/front/order/basket/', this)"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_cart_big.gif" alt="장바구니 담기"/></a>
+                <span class="displaynone"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_sold_out.gif" alt="SOLD OUT"/></span>
+                <a href="#none" onclick="add_wishlist_nologin('/member/login.html');" class=""><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_wish2.gif" alt="관심상품등록"/></a>
+            </div>
+                   
+</div>
+
+
+</div>
+
+<div class="eventArea">
+        <h3><span>이벤트</span></h3>
+        <div class="event"></div>
+    </div>
+</div>
+<!-- //상단 제품 정보 -->
+
+<!-- 쿠폰 다운로드 -->
+<!-- //쿠폰 다운로드 -->
+
+<div class="xans-element- xans-product xans-product-additional "><!-- 상품상세정보 -->
+<div id="prdDetail">
+        <ul class="link">
+<li class="selected"><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="cont">
+            <h3>상품상세정보</h3>
+            <p><span style="font: 12px/normal Gulim; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; float: none; display: inline !important; white-space: normal; font-size-adjust: none; font-stretch: normal; -webkit-text-stroke-width: 0px;">샘플상품 입니다.</span></p>        </div>
+    </div>
+<!-- //상품상세정보 -->
+<!-- 상품결제정보 -->
+<div id="prdPayment">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li class="selected"><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="cont">
+            <h3>상품결제정보</h3>
+            고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. 확인과정에서 도난 카드의 사용이나 타인 명의의 주문등
+      정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다. &nbsp; <br>
+      <br>
+      무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다. &nbsp;<br>
+      주문시 입력한&nbsp;입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며&nbsp;입금되지
+      않은 주문은 자동취소 됩니다. <br>
+        </div>
+    </div>
+<!-- //상품결제정보 -->
+<!-- 배송정보 -->
+<div id="prdDelivery">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li class="selected"><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="cont">
+            <h3>배송정보</h3>
+            <ul class="delivery">
+<li>배송 방법 : 택배</li>
+                <li>배송 지역 : 전국지역</li>
+                <li>배송 비용 : 무료</li>
+                <li>배송 기간 : 3일 ~ 7일</li>
+                <li>배송 안내 : - 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.<br>
+    고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.<br>
+</li>
+            </ul>
+</div>
+    </div>
+<!-- //배송정보 -->
+<!-- 교환 및 반품정보 -->
+<div id="prdChange">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li class="selected"><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="cont">
+            <h3>교환 및 반품정보</h3>
+            <b>교환 및 반품이 가능한 경우</b><br>
+- 상품을 공급 받으신 날로부터 7일이내 단, 가전제품의<br>
+&nbsp;&nbsp;경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다.<br>
+- 공급받으신 상품 및 용역의 내용이 표시.광고 내용과<br>
+&nbsp;&nbsp;다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내<br>
+<br>
+
+<b>교환 및 반품이 불가능한 경우</b><br>
+- 고객님의 책임 있는 사유로 상품등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여<br>
+&nbsp;&nbsp;포장 등을 훼손한 경우는 제외<br>
+- 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우<br>
+&nbsp;&nbsp;(예 : 가전제품, 식품, 음반 등, 단 액정화면이 부착된 노트북, LCD모니터, 디지털 카메라 등의 불량화소에<br>
+&nbsp;&nbsp;따른 반품/교환은 제조사 기준에 따릅니다.)<br>
+- 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 단, 화장품등의 경우 시용제품을 <br>
+&nbsp;&nbsp;제공한 경우에 한 합니다.<br>
+- 시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우<br>
+- 복제가 가능한 상품등의 포장을 훼손한 경우<br>
+&nbsp;&nbsp;(자세한 내용은 고객만족센터 1:1 E-MAIL상담을 이용해 주시기 바랍니다.)<br>
+<br>
+※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.<br>
+&nbsp;&nbsp;(색상 교환, 사이즈 교환 등 포함)<br>
+        </div>
+    </div>
+<!-- //교환 및 반품정보 -->
+<!-- 서비스문의 -->
+<div id="prdService">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li class="selected"><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="cont">
+            <h3>서비스문의</h3>
+                    </div>
+    </div>
+<!-- //서비스문의 -->
+<!-- 상품사용후기 -->
+<div id="prdReview">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li class="selected"><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="board">
+            <h3>상품사용후기</h3>
+            <p class="desc">상품의 사용후기를 적어주세요.</p>
+
+            <p class="nodata">게시물이 없습니다</p>
+            <p class="btnArea">
+                <a href="/board/product/write.html?board_no=4&product_no=13&cate_no=1&display_group=2"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_board_write1.gif" alt="상품문의하기"/></a>
+                <a href="/board/product/list.html?board_no=4&link_product_no=13"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_board_more.gif" alt="모두 보기"/></a>
+            </p>
+
+                    </div>
+    </div>
+<!-- //상품사용후기 -->
+<!-- 상품 Q&A -->
+<div id="prdQnA">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li class="selected"><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="board">
+            <h3>상품 Q&amp;A</h3>
+            <p class="desc">상품에 대해 궁금한 점을 해결해 드립니다.</p>
+
+            <p class="nodata">게시물이 없습니다</p>
+            <p class="btnArea">
+                <a href="/board/product/write.html?board_no=6&product_no=13&cate_no=1&display_group=2"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_board_write2.gif" alt="상품문의하기"/></a>
+                <a href="/board/product/list.html?board_no=6&link_product_no=13"><img src="http://img.echosting.cafe24.com/design/skin/default/product/btn_board_more.gif" alt="모두 보기"/></a>
+            </p>
+
+                    </div>
+    </div>
+<!-- //상품Q&A -->
+<!-- 관련상품 -->
+<div id="prdRelated">
+        <ul class="link">
+<li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdPayment">상품결제정보</a></li>
+            <li><a href="#prdDelivery">배송정보</a></li>
+            <li><a href="#prdChange">교환 및 반품정보</a></li>
+            <li><a href="#prdService">서비스문의</a></li>
+            <li><a href="#prdReview">상품사용후기</a></li>
+            <li><a href="#prdQnA">상품Q&amp;A</a></li>
+            <li class="selected"><a href="#prdRelated">관련상품</a></li>
+        </ul>
+<div class="relation">
+            <h3>관련상품</h3>
+
+                    </div>
+    </div>
+<!-- //관련상품 -->
+</div>
+
+        </div>
+    
+    </div>    
+
+	
+
+	<hr class="layout"/>
+    <div id="footer">
+    	<script>
+			document.write(FooterWs.makeFooter());
+		</script> 
+          
+    </div>
+    
+    <script>
+		document.write(HeaderWs.makeWs.makeRightWingMenu());
+	</script>
+	
+    
+ 
+	
+
+</div>
+   
+    
+</body>
+</html>
+

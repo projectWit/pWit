@@ -1,6 +1,7 @@
 package mem.wit.gm;
 
 public class FacilDTO {
+	private int fId;
 	private String fName;
 	private int pId;
 	private String place;
@@ -8,6 +9,12 @@ public class FacilDTO {
 	private String fAddr;
 	private String fDay;
 	
+	public int getfId() {
+		return fId;
+	}
+	public void setfId(int fId) {
+		this.fId = fId;
+	}
 	public String getfName() {
 		return fName;
 	}

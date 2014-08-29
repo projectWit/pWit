@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>판매자 등록</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/jquery-ui.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" media="all" href="css/niceForm.css" />
+<style>
+div.zipFinder {border: 1px solid #9da2a6; width:300px; text-align:center; display:none;}
+
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	dl#zipSel{display:none;}
+
+
+</style>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery-ui.js"></script>
+
+<script>
+
+$(function () {
+
+	$('input#submit').click( function() {
+		
+		/* var id = $.trim($('input#id').val());
+		if(id=="") {
+			alert("ID가 입력되지 않았습니다.");
+			$('input#id').focus();
+		}
+		var pwd = $.trim($('input#password').val());
+		if(pwd=="") {
+			alert("패스워드가 입력되지 않았습니다.");
+			$('input#password').focus();
+		} */
+		
+	});
+	
+	$( "#dialog" ).dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					var dong = $.trim($('input#dongName').val());
+					if(dong=="") {
+						$( this ).dialog( "close" );
+					}
+					else{
+						$.post('searchZipcodeJson.jsp', {'dongName': dong }, function(data) {
+							var elements = eval("(" + data + ")");
+							$('select#zipSel').empty();
+							$.each(elements, function(i, elem) {
+								var html = '<option value='+elem.seq;
+								html+=" zcode='"+elem.zipcode+"'";
+								if(i==0) html += ' selected';
+								html += '>'+"["+elem.zipcode+"] "
+								+elem.sido+" "
+								+elem.gugun+" "
+								+elem.dong+" "
+								+elem.ri+" "
+								+elem.bunji+'</option>';
+								$('select#zipSel').append(html);
+							});
+													
+							if(elements.length>0) $('dl#zipSel').show();
+							var txt = $('select#zipSel option:selected').html();
+							var zcode = txt.substring(1,8);
+							$('input#zipcode').val(zcode);
+						});
+						$( this ).dialog( "close" );
+						
+						
+					}
+				}
+			},
+			{
+				text: "Cancel",
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		]
+	});
+
+	$('select#zipSel').change(function() {	
+		var txt = $('select#zipSel option:selected').html();
+		var zcode = txt.substring(1,8);
+		$('input#zipcode').val(zcode);
+		
+	});
+	
+	// Link to open the dialog
+	$('button#searchZip').click(function( event ) {
+		$( "#dialog" ).dialog( "open" );
+		event.preventDefault();
+	});
+	
+});
+function makeZipFinder() {
+	
+}
+</script>
+</head>
+
+<body>
+<div id="niceFormContainer">
+
+
+<form  action="sellerAddPro.jsp" method="post" class="niceform">
+
+
+	<fieldset>
+    	<legend>판매자 등록</legend>
+    	
+    	<dl>
+        	<dt><label for="id">아이디:</label></dt>
+            <dd><input type="text" name="sel_id" id="id" size="64" maxlength="50" /></dd>
+        </dl>        
+        <dl>
+        	<dt><label for="password">패스워드:</label></dt>
+            <dd><input type="password" name="sel_password" id="password" size="64" maxlength="255" /></dd>
+        </dl>
+        <dl>
+        	<dt><label for="name">이름:</label></dt>
+            <dd><input type="text" name="sel_name" id="name" size="64" maxlength="50" /></dd>
+        </dl>
+        <dl>
+        	<dt><label for="email">이메일:</label></dt>
+            <dd><input type="text" name="sel_email" id="email" size="64" maxlength="255" /></dd>
+        </dl> 
+     
+
+    
+
+    	<dl>
+        	<dt><label for="zipcode">우편번호:</label></dt>
+            <dd><input type="text" name="sel_zipcode" id="zipcode" size="7" maxlength="7" /></dd>
+            <button type="button" name="searchZip" id="searchZip">우편번호검색</button>
+        </dl>
+        <dl id="zipSel">
+        	<dt><label for="zipSel">선택된 주소:</label></dt>
+            <select name="zipSel" id="zipSel">
+            </select>
+        </dl>
+        <dl>
+        	<dt><label for="addr">상세주소:</label></dt>
+            <dd><input type="text" name="sel_addr" id="addr" size="64" maxlength="255" /></dd>
+        </dl>
+        <dl>
+        	<dt><label for="tel1">주 전화번호:</label></dt>
+            <dd><input type="text" name="sel_tel1" id="tel1" size="30" maxlength="30" /></dd>
+        </dl>
+        <dl>
+        	<dt><label for="tel2">부 전화번호:</label></dt>
+            <dd><input type="text" name="sel_tel2" id="tel2" size="30" maxlength="30" /></dd>
+        </dl>
+        
+        
+    </fieldset>
+    
+    <fieldset class="action">
+    	<input type="submit" name="submit" id="submit" value="등록하기" />
+    
+
+      <button type="button" name="cancel" id="cancel">취소</button>
+  
+    </fieldset>
+
+</form>
+<div id="dialog" title="우편번호 검색">
+	<p>동 이름을 입력하세요. (예) 중계2동, 중계 등</p>
+	<input type="text" id="dongName" size="30" maxlength="30"></input>
+	
+</div>
+
+
+
+</div>
+
+
+</body>
+</html>
+
+

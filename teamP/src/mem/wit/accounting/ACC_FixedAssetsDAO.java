@@ -34,15 +34,14 @@ public class ACC_FixedAssetsDAO {
 	};
 	public int add(final ACC_FixedAssetsDTO dto){
 		return this.jdbcTemplate
-				.update("insert into acc_fixedassets values(?,?,sysdate,?,?,?,?,?,?,?)",
-				dto.getfCode(), 
+				.update("insert into acc_fixedassets values(acc_FixedAsset_seq.NEXTVAL,?,?,?,?,?,?,?,'10001',?)",
 				dto.getfName(), 
+				dto.getfDate(),
 				dto.getfAmounts(), 
 				dto.getfQuantity(),
 				dto.getF_sCode(), 
 				dto.getfContents(), 
 				dto.getF_eCode(),
-				dto.geteId(), 
 				dto.getfMonths());				
 	}
 	

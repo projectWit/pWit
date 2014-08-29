@@ -33,7 +33,7 @@
 	<br><br>
 	<div>
 		<div style="float: left;margin-left: 30px">
-			<a href="BoardLeftMan.jsp"><img src="img/backboardMan01.png" width="350px"
+			<a href="BoaLeftMan.jsp"><img src="img/backboardMan01.png" width="350px"
 				height="300px"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</div>
 

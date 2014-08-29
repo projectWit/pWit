@@ -159,7 +159,7 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'from
             </div>
         </div>
     </div>
-<div>
+</div>
 
 </article>
 </section>

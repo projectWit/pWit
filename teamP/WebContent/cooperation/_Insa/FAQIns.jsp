@@ -6,9 +6,6 @@
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
 <title>FAQ</title>
 <meta http-equiv="ImageToolbar" content="No"/>
-<meta name="description" content="유러피안 감성 캐주얼 피핀">
-<meta name="keywords"
-	content="여성의류,헐리웃,패션,아이콘,신상,스타일,옷,의류,여성복,캐주얼,티셔츠,아우터,바지,스커트,원피스,가방">
 <!--META name="robots" content="noindex,nofollow"-->
 <style type="text/css">
 #addinfo_out_box {
@@ -792,15 +789,9 @@ function SendFAQ(){
 	<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
 
 	<center>
-
-	
-		
 		<div id="ysfss_bar_container"
 			style="position: absolute; top: 0px; left: 0px;"></div>
-
-
 		<div id=maketop style='width: 100%'>
-
 			<script type="text/javascript">
 				
 			</script>

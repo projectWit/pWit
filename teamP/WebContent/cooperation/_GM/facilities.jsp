@@ -36,13 +36,22 @@
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
 <script language="javascript" type="text/javascript">
-
+$(document).ready(function() {
+	var url='GMPlace.jsp';
+    $.get(url, function(data) {
+    	responseText = data;
+    	$('#pId').append(responseText);
+    });
+    
+    var url2='GMTel.jsp';
+    $.get(url2, function(data) {
+    	responseText= data;
+    	$('#telCode').append(responseText);
+    });
+});
 function sendInsertFacil() {
-	alert("submit");
-	//document.form.action="/teamP/facilities.gm";
-	//document.form.telCode.value=$(telCode).text();
-	//document.form.submit();
-	alert($(telCode).text());
+	document.form.action="/teamP/facilities.gm";
+	document.form.submit();
 }
 
 </script>
@@ -50,6 +59,7 @@ function sendInsertFacil() {
 <body>
 
 	<form method="get" action="" id="form" name="form" enctype="multipart/form-data">
+	<input type="hidden" name="tel" />
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -77,11 +87,7 @@ function sendInsertFacil() {
 					<tr>
 						<th>장소</th>
 
-						<td><select name="pId">
-							<option value="1" selected>야외구장</option>
-							<option value="2">실내구장</option>
-							<option value="3">수영장</option>
-							<option value="4">헬스장</option>
+						<td><select name="pId" id="pId">
 						</select></td>
 					</tr>
 					
@@ -93,9 +99,7 @@ function sendInsertFacil() {
 					</tr>
 					<tr>
 					<th>시설 연락처</th>
-					<td> <select name="telCode">
-						<option value="1" selected>02</option>
-						<option value="2">031</option>
+					<td> <select name="telCode" id="telCode">
 					</select> - <input name="fTel1" type="number" maxlength="3"id="txtEmpEname" class="default" style="width: 50px;" /> - 
 						<input name="fTel2" type="number" maxlength="3"	 id="txtEmpEname" class="default" style="width: 50px;" /></td>
 					</tr>

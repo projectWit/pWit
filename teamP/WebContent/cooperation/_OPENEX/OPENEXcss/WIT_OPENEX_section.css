@@ -31,7 +31,8 @@ a:focus {
 .clearMenu {
 	clear: both;
 }
-.alignLeft{
+
+.alignLeft {
 	text-align: left;
 }
 
@@ -236,13 +237,14 @@ a:focus {
 	position: relative;
 	display: table-cell;
 	vertical-align: middle;
-	ext-overflow: ellipsis;
+	text-overflow: ellipsis;
 	display: table-cell;
 }
 
 .mainMenu {
 	width: 70px;
 	height: 70px;
+	line-height: 70px;
 	border-radius: 0 20px;
 	cursor: pointer;
 	position: relative;
@@ -253,9 +255,6 @@ a:focus {
 	border-bottom-color: #20559A;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
 		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
-	display: table-cell;
-	vertical-align: middle;
-	ext-overflow: ellipsis;
 	background: rgb(214, 249, 255); /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover, rgba(214, 249, 255, 1)
 		0%, rgba(158, 232, 250, 1) 100%); /* FF3.6+ */
@@ -305,6 +304,7 @@ a:focus {
 .subMenu {
 	width: 70px;
 	height: 70px;
+	line-height: 30px;
 	border-radius: 35px;
 	float: left;
 	cursor: pointer;
@@ -316,9 +316,6 @@ a:focus {
 	border-bottom-color: #20559A;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
 		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
-	display: table-cell;
-	vertical-align: middle;
-	ext-overflow: ellipsis;
 	background: rgb(184, 198, 223); /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover, rgba(184, 198, 223, 1)
 		0%, rgba(109, 136, 183, 1) 100%); /* FF3.6+ */
@@ -441,7 +438,7 @@ a:focus {
 	font-size: 12px;
 }
 
-#openex_solve input ,#openex_solve textarea {
+#openex_solve input,#openex_solve textarea {
 	border-radius: 10px;
 }
 
@@ -693,9 +690,11 @@ a:focus {
 #openex_list_subject {
 	height: 10px;
 }
+
 .openex_list_content_title {
 	text-align: left;
 }
+
 #openex_list_title td {
 	min-width: 55px;
 	background: rgb(96, 108, 136); /* Old browsers */

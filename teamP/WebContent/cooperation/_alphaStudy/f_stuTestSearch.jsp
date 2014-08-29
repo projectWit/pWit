@@ -107,7 +107,7 @@ calendarIDs = ['fromTestDate', 'toTestDate'];		// 달력이 추가될 태그의 
         </div>
     </div>
 
-<div>
+</div>
 
 </article>
 </section>

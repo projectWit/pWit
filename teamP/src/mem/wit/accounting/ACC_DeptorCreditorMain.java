@@ -11,7 +11,7 @@ public class ACC_DeptorCreditorMain {
 		ApplicationContext context = new GenericXmlApplicationContext(
 				"mem/wit/accounting/Accounting.xml");
 		ACC_DeptorCreditorDAO dao = context.getBean("acc_DeptorCreditorDAO", ACC_DeptorCreditorDAO.class);
-		ACC_DeptorCreditorDTO dto = new ACC_DeptorCreditorDTO(1, "총 자산, 부채+자본", "차변");
+		ACC_DeptorCreditorDTO dto = new ACC_DeptorCreditorDTO(2, "총 자산, 부채+자본", "대변");
 		dao.add(dto);
 		/*ArrayList<ACC_StateDTO> arr = (ArrayList<ACC_StateDTO>) dao.getAll();
 		for(int i=0; i<arr.size(); i++){

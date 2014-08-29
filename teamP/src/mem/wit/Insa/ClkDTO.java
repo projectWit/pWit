@@ -49,6 +49,13 @@ public class ClkDTO {
 		this.cTime = cTime;
 		this.cEtc = cEtc;
 	}
+	
+	public ClkDTO(String eId, String cDate, String cTime) {
+		super();
+		this.eId = eId;
+		this.cDate = cDate;
+		this.cTime = cTime;
+	}
 	public ClkDTO() {
 		super();
 	}

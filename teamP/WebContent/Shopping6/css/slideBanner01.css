@@ -1,0 +1,6 @@
+	#wap2013092502 {float:left;position: relative;width:765px;height:355px; border:1px #cccccc solid;overflow:hidden;}
+	 #wap2013092502 .part { float:left;position: absolute;width:765px;height:355px;left:0px;top:0px;z-index:1;opacity:0;text-align:center;}
+	 #wap2013092502 .partNum { float:right;position: absolute;width:auto;min-width:150px;height:20px;text-align:center;top:330px;z-index:100; }
+	 #wap2013092502 .partNum .Num {float:left;position: relative;width:17px;height:20px;margin-left:5px; background-image:url(./img/bul_mainNum.gif);cursor:pointer;}
+     #wap2013092502 .partNum .Num a {float:left;position: relative;width:17px;height:20px;text-decoration: none;}
+     #wap2013092502 .partNum .Num.active a {text-decoration: underline;};

@@ -5,7 +5,6 @@
 <head>
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=EUC-KR">
 <title>자유게시판</title>
-<meta http-equiv="ImageToolbar" content="No"/>
 <script type="text/javascript">
 	$(document).ready(function(e) {
 		findInput();
@@ -80,7 +79,7 @@ input.addinfo_upd_inputs {
 	margin-top: 7px;
 }
 </style>
-	<style>
+<style>
 TABLE {
 	border-collapse: collapse;
 }
@@ -770,24 +769,15 @@ div.subtitle {
 -->
 </style>
 
-<script type = "text/javascript">
-function SendBoa(){	
-	document.boafrm.submit();
-}
+<script type="text/javascript">
+	function SendBoa() {
+		document.boafrm.submit();
+	}
 </script>
 </head>
-<link rel="shortcut icon" href="/shopimages/pippin1/favicon.ico"
-	type="image/x-icon">
-<link rel="apple-touch-icon-precomposed"
-	href="/shopimages/pippin1/mobile_web_icon.png" />
-<IFRAME id=loginiframe name=loginiframe style="display: none"
-	scrolling=no></IFRAME>
-<div id="basketpage" 
-	style="position: absolute; visibility: hidden;"></div>
+
+<div id="basketpage" style="position: absolute; visibility: hidden;"></div>
 <script type="text/javascript" src="/js/jquery.js"></script>
-
-
-
 </head>
 <body link=#0000ff alink=#0000ff vlink=#0000ff bgcolor=#FFFFFF
 	topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
@@ -798,36 +788,32 @@ function SendBoa(){
 	<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
 
 	<center>
+
+		<script type="text/javascript">
+			function headCd() {
+				var hc = $('#bHeadCd').val();
+				alert(hc);
+			}
+		</script>
+		<script type="text/javascript">
+			function SendFAQ() {
+				document.boafrm.submit();
+			}
+		</script>		
 		
-		<div id="ysfss_bar_container"
-			style="position: absolute; top: 0px; left: 0px;"></div>
+		<script type="text/javascript">
 
+		$(document).ready(function() {
+			   var url='HdCd.jsp';
+			    $.get(url, function(data) {
+			       responseText = data;
+			       $('#bHeadCd').append(responseText);
+			    });
+			});
+		</script>
 
-		<div id=maketop style='width: 100%'>
-
-			<script type="text/javascript">
-				
-			</script>
-			<div id="cot_tl_fixed" style="display: none">
-				<div class="moreRegion_inner">
-					<iframe name="auto_iframe" id="auto_iframe"
-						src="/design/pippin1/shop_window/content.htm" frameborder="0"
-						marginwidth="0" marginheight="0" scrolling="no" width="198"
-						height="320"></iframe>
-					<span class="more2"><a onClick="javascript:fn_tab('2');"><img
-							src="/design/pippin1/shop_window/btn_close.jpg" alt="숨기기"
-							width="17" height="49" /></a></span>
-					<div style="clear: both"></div>
-				</div>
-			</div>
-			</div>
-
-			<a
-				href="javascript:view('http://pnfcorp.imglink.kr/pippin1/notice/2012_Newyear_notice_banner.jpg','','width=400,height=380')"><img
-				src="http://pnfcorp.imglink.kr/pippin1/notice/2012_Newyear_notice_banner.jpg"></a>
-
-			<!-- BOARD WRITE -->
-			<form action = "BoardInsPro.jsp" name = "boafrm">
+		<!-- BOARD WRITE -->
+		<form action="BoardInsPro.jsp" name="boafrm">
 			<table width="100%" border="0" align="center" cellpadding="0"
 				cellspacing="0">
 				<tr>
@@ -839,12 +825,11 @@ function SendBoa(){
 										<tr>
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
-											<td><input id="Writer" type="text" name="eId"
-												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+											<td><input id="Writer" type="text" name="eId" size=10
+												value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<select id="bHeadCd" name = "bHeadCd">
-													<option value = "1">공지</option>
-													<option value = "2">잡담</option>
+												
+												<select id="bHeadCd" name="bHeadCd" onchange="headCd()">													
 											</select></td>
 										</tr>
 
@@ -855,28 +840,25 @@ function SendBoa(){
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">title</td>
 											<td class='bw_title_color'><span
-												style="font-family: '굴림체'"><input
-													id='subject' type="text" name="bTitle" size=30
-													maxlength=100 value=""></span></td>
+												style="font-family: '굴림체'"><input id='subject'
+													type="text" name="bTitle" size=30 maxlength=100 value=""></span></td>
 										</tr>
 										<tr>
 											<td
 												class='bw_value bw_border_top bw_border_bottom bw_contentscolor'
-												colspan="2"><textarea id="contents" name= 'bContent'
+												colspan="2"><textarea id="contents" name='bContent'
 													cols=67 rows=15 onfocus='clear_content()'
-													style="font-family: 굴림체; width: 100%;">내용을 적어주세요~!</textarea>
-											</td>
+													style="font-family: 굴림체; width: 100%;"
+													placeholder="내용을 적어주세요~!"></textarea></td>
 										</tr>
-										</table></td>
+									</table></td>
 							</tr>
 						</table></td>
 				</tr>
 				<tr>
 					<td align="center"><div id='bw_button'>
-							<!-- <a href="JavaScript:send();"><img src='img/icon_write.gif'
-								border=0 /></a>  -->
-								<input type = "submit" value = "저장"><a
-								href="BoardLeft.jsp"><img
+							<img src='img/icon_write.gif' onclick="SendFAQ()" border=0
+								style="cursor: pointer" /> <a href="BoardLeft.jsp"><img
 								src='img/icon_list.gif' border=0 alt='목록' /></a>
 						</div></td>
 				</tr>
@@ -884,24 +866,7 @@ function SendBoa(){
 					<td>&nbsp;</td>
 				</tr>
 			</table>
-			</form>
-			<input type="hidden" name="b_score[1]" value=""> <input
-				type="hidden" name="b_score[2]" value=""> <input
-				type="hidden" name="b_score[3]" value=""> <input
-				type="hidden" name="b_score[4]" value=""> <input
-				type="hidden" name="b_score[5]" value=""><input type=hidden
-				name=type value="i"> <input type=hidden name=data
-				value="yes"> <input type=hidden name=code value="pippin1">
-			<input type=hidden name=num1 value=""> <input type=hidden
-				name=num2 value=""> <input type=hidden name=page value="1">
-			<input type=hidden name=ok value="N"> <input type=hidden
-				name=branduid value="" />
-			
+		</form>		
 	</center>
-	<script>
-		document.form1.subject.value = "\"[name]\"님의 문의사항 입니다.";
-		document.form1.subject.disabled = true;
-	</script>
-
 </body>
 </html>

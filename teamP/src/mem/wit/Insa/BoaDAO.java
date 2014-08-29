@@ -26,15 +26,17 @@ public class BoaDAO {
 
 		try {
 			String sql = "insert into BoardTable(bSeq, eId, bHeadCd, bTitle, bContent, bDate, bIp, bCnt)";
-			sql += "values(Seq_boa.NEXTVAL, '10001', 2, ?, ?, sysdate, ?, 0)";
+			sql += "values(Seq_boa.NEXTVAL, ?, ?, ?, ?, sysdate, ?, 0);";
 
 			pstmt = conn.prepareStatement(sql);
 
-			//pstmt.setString(1, dto.geteId());
-			//pstmt.setInt(2, dto.getbHeadCd());
-			pstmt.setString(1, dto.getbTitle());
-			pstmt.setString(2, dto.getbContent());			
-			pstmt.setString(3, dto.getbIp());
+			pstmt.setString(1, dto.geteId());
+			pstmt.setInt(2, dto.getbHeadCd());
+			pstmt.setString(3, dto.getbTitle());
+			pstmt.setString(4, dto.getbContent());			
+			pstmt.setString(5, dto.getbIp());
+
+
 			su = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -43,7 +45,27 @@ public class BoaDAO {
 		}
 		return su;
 	}
-
+	public List HeadCd(){
+		conn = DbSet.getConnection();
+		List<HeadDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select headcd, headname from boardhead";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				HeadDTO dto = new HeadDTO();		
+				dto.setHeadCd(rs.getInt(1));
+				dto.setHeadName(rs.getString(2));			
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;		
+	}
+	
 	public List boaSelList() {
 		conn = DbSet.getConnection();
 		List<BoaDTO> dtoL = new ArrayList();
@@ -126,5 +148,21 @@ public class BoaDAO {
 			DbClose.close(pstmt, conn);
 		}
 		return su;
+	}
+	
+	public int boaDelete(BoaDTO dto){		
+		int su = 0;
+		conn = DbSet.getConnection();
+		try {
+			String sql = "delete from BoardTable where bSeq = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,  dto.getbSeq());
+			su = pstmt.executeUpdate();			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return su;		
 	}
 }

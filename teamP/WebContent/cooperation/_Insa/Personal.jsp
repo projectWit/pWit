@@ -62,17 +62,17 @@
 					<col width="" />
 					<tr>
 						<th>세대주 성명</th>
-						<td><input name="h_name" type="text" maxlength="50"
-							id="h_name" class="default" size="20" style="width: 60%;" /></td>
+						<td><input name="hName" type="text" maxlength="50"
+							id="hName" class="default" size="20" style="width: 60%;" /></td>
 						<th>세대주와의 관계</th>
-						<td><input name="h_rel" type="text" maxlength="6" id="h_rel"
+						<td><input name="hRelate" type="text" maxlength="6" id="hRelate"
 							class="default" size="20" style="width: 60%;" /></td>
 					</tr>
 					
 					<tr>
 						<th>본 적</th>
-						<td colspan="3"><input name="origin_addr" type="text"
-							maxlength="80" id="origin_addr" class="default" size="80"
+						<td colspan="3"><input name="hHome" type="text"
+							maxlength="80" id="hHome" class="default" size="80"
 							style="width: 88%;" /></td>
 					</tr>
 					<tr>
@@ -90,23 +90,23 @@
 					</tr>
 					<tr>
 						<th>생년월일</th>
-						<td colspan = "3"><input name="DtBirth" type="text" id="DtBirth" size="12"
-							maxlength="8" value="" class="default"><input type="radio" name="birthday_type" id="birthday_type1" value="1"
+						<td colspan = "3"><input name="hBth" type="text" id="DtBirth" size="12"
+							maxlength="8" value="" class="default"><input type="radio" name="hBthCode" id="birthday_type1" value="1"
 							checked />양력&nbsp;&nbsp; <input type="radio"
-							name="birthday_type" id="birthday_type2" value="2" />음력</td>
+							name="hBth" id="birthday_type2" value="2" />음력</td>
 					</tr>
 					<tr>
 						<th>결혼유무</th>
-						<td><input type="radio" name="wedding_type"
+						<td><input type="radio" name="hMryCode"
 							id="wedding_type1" value="1" checked />미혼&nbsp;&nbsp; <input
-							type="radio" name="wedding_type" id="wedding_type2" value="2" />결혼</td>
+							type="radio" name="hMryCode" id="wedding_type2" value="2" />결혼</td>
 						<th>결혼기념일</th>
-						<td><input name="DtWedding" type="text" id="DtWedding" size="12"
+						<td><input name="hMryDate" type="text" id="DtWedding" size="12"
 							maxlength="8" value="" class="default"></td>
 					</tr>
 					<tr>
 						<th>장애구분</th>
-						<td colspan="3"><input type="radio" name="handi_type"
+						<td colspan="3"><input type="radio" name="hAbleCode"
 							id="handi_type2" value="0" checked />무&nbsp;&nbsp;&nbsp;&nbsp; <input
 							type="radio" name="handi_type" id="handi_type1" value="1" />유</td>
 					</tr>
@@ -124,7 +124,7 @@
 					<col width="" />
 					<tr>
 						<th>보훈자구분</th>
-						<td><input type="radio" name="merit_type" id="merit_type1"
+						<td><input type="radio" name="hBhCode" id="merit_type1"
 							value="0" checked />비대상&nbsp;&nbsp;&nbsp; <input type="radio"
 							name="merit_type" id="merit_type2" value="1" />대상</td>
 						<th>보훈자와의 관계</th>

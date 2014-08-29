@@ -22,6 +22,7 @@ $(function() {
 				top : "-20"
 			});
 			var targetId = $(e.target).attr("id");
+			var targetVal = $(e.target).attr("name");
 			var targetIdValue = targetId.substring(8, 9);
 			if ($('[id^="subMenu' + targetIdValue + '"]').is(':hidden')) {
 				$('[id^="mainMenu"]').css('color', '#3DB7CC');
@@ -37,12 +38,13 @@ $(function() {
 				$('#sel1stCategory').empty();
 				$('#sel2ndCategory').empty();
 				$('#sel1stCategory').append(targetText);
+				$('#sel1stCategoryHd').val(targetVal);
 				$('[id^="subMenu"]').slideUp(400);
 				$('[id^="subMenu' + targetIdValue + '"]').slideDown(400);
 			} else {
 				$('[id^="mainMenu"]').blur(function() {
 					$('[id^="mainMenu"]').css('border-radius', '0 20px');
-					$(this).css('color', 'white')
+					$(this).css('color', 'white');
 				});
 				$('#sel1stCategory').empty();
 				$('#sel2ndCategory').empty();
@@ -52,6 +54,7 @@ $(function() {
 		});
 	}
 	$('[id^="subMenu"]').click(function(e) {
+		var targetVal = $(e.target).attr("name");
 		$('#openex_setExam_selectbox').slideDown(400);
 		$('[id^="subMenu"]').css('color', 'white');
 		$(this).css('color', '#004554');
@@ -62,7 +65,8 @@ $(function() {
 		});
 		var targetText = $(e.target).text();
 		$('#sel2ndCategory').empty();
-		$('#sel2ndCategory').append('(' + targetText + ')');
+		$('#sel2ndCategory').append('('+targetText+')');
+		$('#sel2ndCategoryHd').val(targetVal);
 	});
 	$('#OPENEX_LogoMenu').click(function() {
 		$('[id^="subMenu"]').slideUp(400);

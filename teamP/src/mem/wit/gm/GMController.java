@@ -1,14 +1,17 @@
 package mem.wit.gm;
 
-import gss.MyBatis;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.wit.MyBatis;
+import com.wit.member.Member;
 
 @Controller
 public class GMController {
@@ -52,8 +55,7 @@ public class GMController {
 	}
 	@RequestMapping("/facilities.gm")
 	public ModelAndView placeInsert(HttpServletRequest request) {
-		System.out.println(request.getParameter("pId"));
-		System.out.println(request.getParameter("fName"));
+
 		mv.setViewName("facilities");
 		FacilDTO dto = new FacilDTO();
 		dto.setfName(request.getParameter("fName"));
@@ -61,11 +63,47 @@ public class GMController {
 		dto.setpId(Integer.parseInt(request.getParameter("pId")));
 		dto.setfPay(Integer.parseInt(request.getParameter("fPay")));
 		dto.setfAddr(request.getParameter("fAddr"));
-		dto.setfTel(request.getParameter("telCode")+"-"+request.getParameter("fTel1")+"-"+request.getParameter("fTel2"));
+		List<CdTelAreaDTO> telCode = (List<CdTelAreaDTO>) m.select("selectTel", "select tanum from cdtelarea where tacode="+Integer.parseInt(request.getParameter("telCode")));
+		dto.setfTel(telCode.get(0).taNum+"-"+request.getParameter("fTel1")+"-"+request.getParameter("fTel2"));
 		m.insert("insertFacil", dto);
 		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+	}	
+	@RequestMapping("/facilitieslist.gm")
+	public ModelAndView facilList() {
+		mv.setViewName("facilitieslist");
+		List<FacilDTO> list = (List<FacilDTO>) m.select("selectFacil","select f.fName,p.place,f.fObject,f.fPay,f.fTel from GM_Facil f, C_Place p where f.pId=p.pId");
+		mv.addObject("list", list);
+		return mv;
+	}
+	@RequestMapping("/questionlist.gm")
+	public ModelAndView questionList() {
+		mv.setViewName("questionlist");
+		String query= "select qId,mName,qTitle,qCont,qDate,qIp,stateName from GM_QBoard q, GM_Member m, WitMember w, C_State s where q.qMId=m.mId and m.mId=w.mId and q.stateId=s.stateId";
+		List<QBoardDTO> list = (List<QBoardDTO>) m.select("selectQboard",query);
+		return mv;
 	}
 	
-	
+	@RequestMapping("/lectureInsert.gm")
+	public ModelAndView lecandScheInsert(LecDTO dto, ScheDTO sdto) {
+		mv.setViewName("lectureInsert");
+		dto.setLecName(dto.lecName);
+		dto.setLecCnt(dto.lecCnt);
+		dto.setLecCont(dto.lecCont);
+		dto.setLecPay(dto.lecPay);
+		sdto.setpId(sdto.pId);
+		sdto.setsSDay(sdto.sSDay);
+		sdto.setsEDay(sdto.sEDay);
+		m.insert("insertLec",dto);
+		m.insert("insertSche", sdto);
+		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+	}
+	@RequestMapping("/lecturelist.gm")
+	public ModelAndView leclist() {
+		mv.setViewName("lecturelist");
+		String query = "";
+		List<LecDTO> list = (List<LecDTO>) m.select("selectLecList", query);
+		mv.addObject("list", list);
+		return mv;
+	}
 	
 }

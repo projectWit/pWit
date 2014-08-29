@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <head>
@@ -35,42 +36,23 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
 
 <form method="post" action="/teamP/study/lecture/insert" name="regForm" id="regForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">정규·보강</td><td class="table-input"></td>
-    		<td class="table-label">수강료</td><td class="table-input"><input type="number" min=1 max=10000000> 원</td>
-            <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">강의명</td><td class="table-input"><input type="text" size=20 value="혼자하는 수학"></td>
-        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
-            <!-- <td class="table-label">생일</td> --><td class="table-input">월 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
-            <td class="table-label">강의정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
-            <!-- <td class="table-label">주소</td> --><td class="table-input">화 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">과목</td><td class="table-input"><select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
-            <td class="table-label">강의실</td><td class="table-input"><select><option>미선택</option><option>102호</option><option>103호</option></select></td>
-            <!-- <td class="table-label">집전화</td> --><td class="table-input">수 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년</td>
-            <td class="table-label"><!-- 회원아이디 --></td><td class="table-input"><!-- 000002 --></td>
-            <!-- <td class="table-label">본인휴대폰</td> --><td class="table-input">목 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">학생구분</td><td class="table-input"><select><option>미선택</option><option>중학생</option><option>고등학생</option><option>대학생</option><option>일반인</option></select></td>
-            <td class="table-label"><!-- 가입일 --></td><td class="table-input"><!-- 000002 --></td>
-            <!-- <td class="table-label">본인이메일</td> --><td class="table-input">금 : <input type="time"></td>
-            </tr>
-        <tr><td class="table-label">강의대상등급</td><td class="table-input"><input type="number" min="1" max="9" size="10"> 등급</td>
-            <td class="table-label"><!-- 탈퇴일 --></td><td class="table-input"><!-- 000002 --></td>
-            <!-- <td class="table-label">생일</td> --><td class="table-input">토 : <input type="time" value="18:00"></td>
-            </tr>
-        
+    	<tr><td class="table-label">강의이름</td><td class="table-input"><input type="text" size=38 name="alName"></td>
+    		<td class="table-label">강의형태</td><td class="table-input"><select><c:forEach var="suppLec" items="${slList }" varStatus="status"><option>${suppLec.slName }</option></c:forEach></select></td>
+    		<td class="table-label">강의분류</td><td class="table-input"></td></tr>
+    	<tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="" name="tId"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value=""></td>
+    		<td class="table-label">과목</td><td class="table-input"></td>
+    		<td class="table-label">대상등급</td><td class="table-input"></td></tr>
+    	<tr><td class="table-label">교재</td><td class="table-input"></td>
+    		<td class="table-label"></td><td class="table-input"></td>
+    		<td class="table-label"></td><td class="table-input"></td></tr>
+    	<tr><td class="table-label">강의설명</td><td class="table-input" colspan=5><textarea rows="3" name="alDescription" style="margin-right: 0px; padding-right: 0px; width: 99%;"></textarea></td></tr>
     </table>
     <!-- <div style="margin-top: 10px;"> -->
     <input type="submit" value="개설하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
     <!-- </div> -->
 </form>
 
-<div>
+</div>
 
 </article>
 </section>

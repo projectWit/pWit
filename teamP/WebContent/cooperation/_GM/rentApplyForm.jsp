@@ -12,19 +12,24 @@
 ul {
 	list-style: none;
 }
+#text{
+	font-size: 12px;
+}
 </style>
 <script type="text/javascript" src="teamP/cooperation/common/js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="teamP/cooperation/common/js/common.js"></script>
 <script type="text/javascript">
 	//<![CDATA[
 	$(document).ready(function() {
-		var lm = new levelsmenu('levels', 07, 1);
-		var tm = new topmenu('gNavi', 06, 07);
-		var scquick = new scrollquick('quick', 1);
-	})
+	var url='GMFacil.jsp';
+    $.get(url, function(data) {
+    	responseText = data;
+    	$('#fId').append(responseText);
+    });
+});
 </script>
 </head>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function fncSave(form) {
 
 		if (form.agree[1].checked == true) {
@@ -127,16 +132,18 @@ ul {
 
 		return true;
 	}
-</script>
+</script> -->
 <body>
 	<div id="content">
-		<form name="frmInput" method="post" action=""
+		<form name="frmInput" method="get" action=""
 			enctype="multipart/form-data" onsubmit="return fncSave(this);">
 			<div class="hall_guide">
 				<div id="tab_list02">
 					<div class="hall_join">
 						<fieldset style="border: 0 solid transparent;">
 							<legend>온라인 대관신청</legend>
+							<p id="text">대관 신청을 하시기 위해서 작성해야 하는 내용 입니다.</p>
+							<p id="text">신청 후 1주일 안에 관리자가 허가여부를 결정합니다. 신청 후 1주일이 지나서 확인 부탁드립니다.</p>
 							<table
 								summary="온라인대관신청을 위해 신청자, 단체명, 일반전화, 휴대폰, 이메일, 사용기간, 시설명, 시설 요금안내로 구성 된 작성 폼 입니다."
 								class="sComm_write01">
@@ -147,239 +154,45 @@ ul {
 								</colgroup>
 								<tbody>
 									<tr>
-										<th scope="row"><label for="userName">신청자</label></th>
-										<td><input type="text" class="input03" id="userName"
-											name="userName" value="" /></td>
+										<th scope="row"><label for="cPresident">신청자</label></th>
+										<td><input type="text" class="input03" id="cPresident"
+											name="cPresident" /></td>
 									</tr>
 									<tr>
 										<th scope="row"><label for="team_name">단체명</label></th>
-										<td><input type="text" class="input05" id="team_name"
-											name="team_name" value="" /></td>
+										<td><input type="text" class="input05" id="rCId"
+											name="rCId" value="" /></td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="hphone1">휴대폰</label></th>
-										<td><select title="통신사 선택" id="hphone1" name="hphone1">
-												<option value="010">010</option>
-												<option value="011">011</option>
-												<option value="016">016</option>
-												<option value="017">017</option>
-												<option value="018">018</option>
-												<option value="019">019</option>
-										</select> - <input type="text" id="hphone2" class="input02"
-											title="전화번호 두번째자리" name="hphone2" value="" maxlength="4" />
-											- <input type="text" id="hphone3" class="input02"
-											title="전화번호 마지막자리" name="hphone3" value="" maxlength="4" />
+										<th scope="row"><label for="fId">시설명</label></th>
+										<td><select title="시설 선택" id="fId" name="fId">
+										</select>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="email1">이메일</label></th>
-										<td><input type="text" class="input03" id="email1"
-											title="이메일 아이디" name="email1" value="" /> @ <input
-											type="text" class="input03" id="email2" title="이메일 계정"
-											name="email2" value="" /> <select title="계정 선택" id="email3"
-											name="email3"
-											onchange="document.frmInput.email2.value=this.value; return false;">
-												<option value="">직접입력</option>
-												<option value="daum.net">daum.net</option>
-												<option value="naver.com">naver.com</option>
-												<option value="chol.com">chol.com</option>
-												<option value="dreamwiz.com">dreamwiz.com</option>
-												<option value="empal.com">empal.com</option>
-												<option value="freechal.com">freechal.com</option>
-												<option value="gmail.com">gmail.com</option>
-												<option value="hanafos.com">hanafos.com</option>
-												<option value="hanmail.net">hanmail.net</option>
-												<option value="hanmir.com">hanmir.com</option>
-												<option value="hitel.net">hitel.net</option>
-												<option value="hotmail.com">hotmail.com</option>
-												<option value="korea.com">korea.com</option>
-												<option value="lycos.co.kr">lycos.co.kr</option>
-												<option value="nate.com">nate.com</option>
-												<option value="netian.com">netian.com</option>
-												<option value="paran.com">paran.com</option>
-												<option value="yahoo.com">yahoo.com</option>
-												<option value="yahoo.co.kr">yahoo.co.kr</option>
+										<th scope="row"><label for="sId">종목</label></th>
+										<td><select id="sId" name="sId">												
 										</select></td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="sdate1">사용기간</label></th>
-										<td class="font">
-											<p>
-												<select title="년도 선택" id="sdate1" name="sdate1">
-													<option value="">연도선택</option>
-													<option value="2014">2014</option>
-													<option value="2015">2015</option>
-
-												</select> <span class="sTxt">년</span> <select title="월 선택"
-													id="sdate2" name="sdate2">
-													<option value="">월선택</option>
-													<option value="01">01</option>
-													<option value="02">02</option>
-													<option value="03">03</option>
-													<option value="04">04</option>
-													<option value="05">05</option>
-													<option value="06">06</option>
-													<option value="07">07</option>
-													<option value="08">08</option>
-													<option value="09">09</option>
-													<option value="10">10</option>
-													<option value="11">11</option>
-													<option value="12">12</option>
-
-												</select> <span class="sTxt">월</span> <select title="일 선택"
-													id="sdate3" name="sdate3">
-													<option value="">일자선택</option>
-													<option value="01">01</option>
-													<option value="02">02</option>
-													<option value="03">03</option>
-													<option value="04">04</option>
-													<option value="05">05</option>
-													<option value="06">06</option>
-													<option value="07">07</option>
-													<option value="08">08</option>
-													<option value="09">09</option>
-													<option value="10">10</option>
-													<option value="11">11</option>
-													<option value="12">12</option>
-													<option value="13">13</option>
-													<option value="14">14</option>
-													<option value="15">15</option>
-													<option value="16">16</option>
-													<option value="17">17</option>
-													<option value="18">18</option>
-													<option value="19">19</option>
-													<option value="20">20</option>
-													<option value="21">21</option>
-													<option value="22">22</option>
-													<option value="23">23</option>
-													<option value="24">24</option>
-													<option value="25">25</option>
-													<option value="26">26</option>
-													<option value="27">27</option>
-													<option value="28">28</option>
-													<option value="29">29</option>
-													<option value="30">30</option>
-													<option value="31">31</option>
-
-												</select> <span class="sTxt">일</span> <select title="시작 시간" id="sday"
-													name="sday">
-													<option value="">시간선택</option>
-													<option value="09">09시</option>
-													<option value="10">10시</option>
-													<option value="11">11시</option>
-													<option value="12">12시</option>
-													<option value="13">13시</option>
-													<option value="14">14시</option>
-													<option value="15">15시</option>
-													<option value="16">16시</option>
-													<option value="17">17시</option>
-													<option value="18">18시</option>
-													<option value="19">19시</option>
-													<option value="20">20시</option>
-													<option value="21">21시</option>
-													<option value="22">22시</option>
-
-												</select> <span class="sTxt">부터</span>
-											</p>
-											<p class="pBox01">
-												<select title="년도 선택" id="edate1" name="edate1">
-													<option value="">연도선택</option>
-													<option value="2014">2014</option>
-													<option value="2015">2015</option>
-
-												</select> <span class="sTxt">년</span> <select title="월 선택"
-													id="edate2" name="edate2">
-													<option value="">월선택</option>
-													<option value="01">01</option>
-													<option value="02">02</option>
-													<option value="03">03</option>
-													<option value="04">04</option>
-													<option value="05">05</option>
-													<option value="06">06</option>
-													<option value="07">07</option>
-													<option value="08">08</option>
-													<option value="09">09</option>
-													<option value="10">10</option>
-													<option value="11">11</option>
-													<option value="12">12</option>
-
-												</select> <span class="sTxt">월</span> <select title="일 선택"
-													id="edate3" name="edate3">
-													<option value="">일자선택</option>
-													<option value="01">01</option>
-													<option value="02">02</option>
-													<option value="03">03</option>
-													<option value="04">04</option>
-													<option value="05">05</option>
-													<option value="06">06</option>
-													<option value="07">07</option>
-													<option value="08">08</option>
-													<option value="09">09</option>
-													<option value="10">10</option>
-													<option value="11">11</option>
-													<option value="12">12</option>
-													<option value="13">13</option>
-													<option value="14">14</option>
-													<option value="15">15</option>
-													<option value="16">16</option>
-													<option value="17">17</option>
-													<option value="18">18</option>
-													<option value="19">19</option>
-													<option value="20">20</option>
-													<option value="21">21</option>
-													<option value="22">22</option>
-													<option value="23">23</option>
-													<option value="24">24</option>
-													<option value="25">25</option>
-													<option value="26">26</option>
-													<option value="27">27</option>
-													<option value="28">28</option>
-													<option value="29">29</option>
-													<option value="30">30</option>
-													<option value="31">31</option>
-
-												</select> <span class="sTxt">일</span> <select title="종료 시간" id="eday"
-													name="eday">
-													<option value="">시간선택</option>
-													<option value="09">09시</option>
-													<option value="10">10시</option>
-													<option value="11">11시</option>
-													<option value="12">12시</option>
-													<option value="13">13시</option>
-													<option value="14">14시</option>
-													<option value="15">15시</option>
-													<option value="16">16시</option>
-													<option value="17">17시</option>
-													<option value="18">18시</option>
-													<option value="19">19시</option>
-													<option value="20">20시</option>
-													<option value="21">21시</option>
-													<option value="22">22시</option>
-
-												</select> <span class="sTxt">까지</span>
-											</p>
+										<th scope="row"><label for="rDate">사용일</label></th>
+										<td class="font"><input type="text"  id="rDate" name="rDate"  />
+										
 											<p class="pTxt01">
-												* 매주 월요일은 대관 휴무입니다.<br />
+												* 매주 월요일은 대관 휴무입니다. 신청이 가능해도 허가가 되지 않으니 주의하시기 바랍니다.<br />
 												<!--* 온ㆍ오프라인으로 접수 받는 관계로 중복 신청이 될 수 있음. 결정통보는 2011년11월22일 예정임  <br /-->
 											</p>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">시설명</th>
-										<td><input type="radio" class="radio02" id="sisul1"
-											name="sisul" value="다산홀" /><label for="sisul1">다목적실</label>
-											<input type="radio" class="radio05" id="sisul2" name="sisul"
-											value="강의실" /><label for="sisul2">GM축구장</label> <input
-											type="radio" class="radio05" id="sisul3" name="sisul"
-											value="연습실" /><label for="sisul3">GM족구장</label></td>
+										<th scope="row">대관 사유</th>
+										<td><input type="text" class="input05" id="rCause"
+											name="rCause" style="width:450px;" /></td>
 									</tr>
 									<tr>
-										<th scope="row">시설 요금안내</th>
+										<th scope="row">GM 시설 요금안내</th>
 										<td>
-											<p class="pTxt01">
-												<font color="blue"><b>토요일, 일요일, 법정공휴일은 20%할증된 금액이
-														부과됩니다.</b></font>
-											</p>
+											<!-- 전체 시설 정보 불러오기 혹은 선택한 시설 정보 가져오기 		
 											<dl>
 												<dt>다산홀 (VAT 별도)</dt>
 												<dd>* 기본 2시간 80,000원</dd>
@@ -401,10 +214,10 @@ ul {
 												<dd>* 무선마이크(1개) (24,000원)</dd>
 												<dd>* 빔프로젝트(1회) (36,000원)</dd>
 												<dd>* 피아노(1회) (60,000원)</dd>
-											</dl>
+											</dl> -->
 
 											<p class="pTxt02">
-												※ 요금납부는 <span>대관사용신청 승인을 받은 후</span> 대관 일주일전까지 지정계좌번호로
+												※ 요금납부는 <span>대관사용신청 승인을 받은 후</span><br/> 대관 일주일전까지 지정계좌번호로
 												입금하여주시면 됩니다.
 											</p>
 											<ul>
@@ -417,7 +230,7 @@ ul {
 							</table>
 						</fieldset>
 
-						<span class="fRight01"> <input type="image"	src="img/rent_apply.gif" style="float:right;" alt="신청하기" />
+						<span class="fRight01"> <input type="image"	src="img/rent_apply.gif" onclick="sendSubmit()" style="float:right;" alt="신청하기" />
 						</span>
 					</div>
 				</div>

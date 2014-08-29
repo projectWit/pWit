@@ -17,16 +17,16 @@
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
 <script type="text/javascript">
 function insertSlips() {
-	var features = "width=550px, height=630px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no";
+	var features = "width=480px, height=630px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertSlips.jsp', '전표입력창', features);
 }
 function insert_customers() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
 	window.open('insertCustomers.jsp', '', features);
 };	
-function insert_accounts() {
+function AccountsInsert() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
-	window.open('insertAccounts.jsp', '', features);
+	window.open('AccountsInsert.jsp', '', features);
 };	
 function insertProjects() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
@@ -36,9 +36,9 @@ function insertDepartments() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
 	window.open('insertDepartments.jsp', '', features);
 };	
-function insertFixedAsset() {
+function FixedAssetInsert() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
-	window.open('insertFixedAsset.jsp', '', features);
+	window.open('FixedAssetInsert.jsp', '', features);
 };	
 function insertCompany() {
 	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
@@ -98,7 +98,7 @@ function insertCompany() {
 				<ul id="subTab-0" style="display: none;">
 					<li class="subTab-0-0" style="display: block;"><a href="#" onclick="insertSlips()">전표 관리</a></li>
 					<li class="subTab-0-1" style="display: block;"><a href="#" onclick="insertProjects()">프로젝트 관리</a></li>					
-					<li class="subTab-0-4" style="display: block;"><a href="#" onclick="insertFixedAsset()">고정 자산 관리</a></li>
+					<li class="subTab-0-4" style="display: block;"><a href="#" onclick="FixedAssetInsert()">고정 자산 관리</a></li>
 				</ul>				
 				<ul id="subTab-1" style="display: none;">
 					<li class="subTab-1-0" style="display: block;"><a href="WIT_Accounting_journal.jsp">분개장</a></li>
@@ -130,7 +130,7 @@ function insertCompany() {
 				<ul id="subTab-4" style="display: none;">
 					<li class="subTab-4-0" style="display: block;"><a href="#" onclick="insertCompany()">회사등록</a></li>
 					<li class="subTab-4-1" style="display: block;"><a href="#" onclick="insert_customers()">거래처등록</a></li>
-					<li class="subTab-4-2" style="display: block;"><a href="#" onclick="insert_accounts()">계정등록</a></li>
+					<li class="subTab-4-2" style="display: block;"><a href="#" onclick="AccountsInsert()">계정등록</a></li>
 					<li class="subTab-4-3" style="display: block;"><a href="#" onclick="insertDepartments()">부서등록</a></li>
 					<li class="subTab-4-4" style="display: block;"><a href="#">데이터백업</a></li>
 					<li class="subTab-4-5" style="display: block;"><a href="#">데이터복구</a></li>

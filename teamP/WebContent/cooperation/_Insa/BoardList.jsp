@@ -140,7 +140,7 @@ TD.bl_list,.bl_list A,.bl_list A:link,.bl_list A:visited {
 	}
 </script>
 <body>
-	<form name="BoaFrm" action = "BoaMain.jsp">
+	<form name="BoaFrm" action = "BoaMainMan.jsp">
 	<input type="hidden" name="gubun" /> <input type="hidden" name="no" />
 		<table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">

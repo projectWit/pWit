@@ -140,12 +140,12 @@ $(function () {
 						<td style="border-right: 0;">
 							<dl>
 								<dt>기타</dt>
-								<dd id=""><a href="WIT_Accounting_slipList.jsp">고정자산현황</a></dd>
+								<dd id=""><a href="WIT_Accounting_FixedAssetSelect.jsp">고정자산현황</a></dd>
 								<dd id=""><a href="WIT_Accounting_slipList.jsp">감가상각현황</a></dd>
 								<dd id=""><a href="WIT_Accounting_slipList.jsp">전표현황</a></dd>
 								<dd id=""><a href="WIT_Accounting_customersList.jsp">거래처관리대장</a></dd>
 								<dd id=""><a href="WIT_Accounting_customersList.jsp">부서목록</a></dd>
-								<dd id=""><a href="WIT_Accounting_accountsList.jsp">회계계정</a></dd>
+								<dd id=""><a href="WIT_Accounting_AccountsSelect.jsp">회계계정</a></dd>
 								<dd id=""><a href="WIT_Accounting_accountsList.jsp">내용참조</a></dd>
 							</dl>
 						</td>

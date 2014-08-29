@@ -67,7 +67,7 @@ public class MemberController {
 	@RequestMapping(value="/editAccount", method=RequestMethod.POST)
 	public String editAccount(Member member, HttpSession session) throws Exception {
 		Member loginMember = (Member) session.getAttribute("member");
-		String mId = loginMember.getmId(); //세션에 저장된 사용자 정보로부터 이메일을 알아낸다.
+		String mId = loginMember.getmId();
 		
 		if (member.getmName() == null) {
 			member.setmName(loginMember.getmName());

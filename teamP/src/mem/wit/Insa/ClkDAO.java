@@ -67,4 +67,50 @@ public class ClkDAO {
 		}
 		return dtoL;
 	}
+	public List clkMDList() {
+		conn = DbSet.getConnection();
+		List<ClkDTO> dtoL = new ArrayList();
+		try {
+
+			String sql = "select cDate, eId, cTime from ClockTable where cCd = 1 and cDate = '2014-08-29'";
+			pstmt = conn.prepareStatement(sql);			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				ClkDTO dto = new ClkDTO();
+				System.out.println(rs.getString(1));
+				dto.setcDate(rs.getString(1));
+				dto.seteId(rs.getString(2));
+				dto.setcTime(rs.getString(3));				
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
+	
+	public List clkEvalList() {
+		conn = DbSet.getConnection();
+		List<ClkDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select evSeq, EVID2, evTotal from ClockEval";
+			pstmt = conn.prepareStatement(sql);			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				ClkDTO dto = new ClkDTO();
+				dto.setcDate(rs.getString(1));
+				dto.seteId(rs.getString(2));
+				dto.setcTime(rs.getString(3));				
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
 }

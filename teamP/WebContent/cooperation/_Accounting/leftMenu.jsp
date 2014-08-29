@@ -145,7 +145,7 @@
 			</dt>
 			<span id="" style="display:">
 			<dd>
-					<span class="float_left" style="width: 152px"><a href="#"
+					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_FixedAssetSelect.jsp"
 						id="" title="고정자산현황"
 						onmouseover="a('고정자산현황');return true;">고정자산현황</a></span>
 				</dd>
@@ -170,7 +170,7 @@
 						onmouseover="a('부서목록');return true;">부서목록</a></span>
 				</dd>
 				<dd>
-					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_accountsList.jsp"
+					<span class="float_left" style="width: 152px"><a href="WIT_Accounting_AccountsSelect.jsp"
 						id="" title="회계계정"
 						onmouseover="a('회계계정');return true;">회계계정</a></span>
 				</dd>

@@ -23,10 +23,10 @@
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/calendar.js"></script>
 <script type="text/javascript">
-	calendarIDs = [ 'FromDt' ]; // 달력이 추가될 태그의 id
-	function insertSlips_accounts() {
+	calendarIDs = [ 'tsDate' ]; // 달력이 추가될 태그의 id
+	function Accounts_sSelect() {
 		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
-		window.open('insertSlips_accounts.jsp', '', features);
+		window.open('Accounts_sSelect.jsp', '', features);
 	};	
 	function projectLists() {
 		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
@@ -34,7 +34,8 @@
 	};	
 </script>
 <body>
-	<div id="wrap" style="margin-left: 40px;">
+<form action="insertSlipsPro.jsp" method="post">
+	<div id="wrap" style="margin-left: 40px; width: 400px;">
 		<div id="print_title">
 			<table width="400" height="100" border='0' cellspacing='0'
 				cellpadding='0'>
@@ -58,78 +59,78 @@
 			<tbody>
 				<tr>
 					<th class="p_th left">전표일자</th>
-					<td class="p_td left"><input type="text" id="FromDt"
-						maxlength="8" size="20" name="FromDt"
-						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" /></td>
+					<td class="p_td left"><input type="text" id="tsDate"
+						maxlength="8" size="20" name="tsDate"
+						style="background-color: #F6F6F6; height: 28px;" />
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">전표유형</th>
 					<td class="p_td left"><input type="text"  maxlength="8" size="20" 
-						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" /></td>
+						style="background-color: #F6F6F6; height: 28px;" name="ts_stCode"/>
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">계정I</th>
-					<td class="p_td left"><input type="text" size="20"
+					<td class="p_td left"><input type="text" size="20" name="ts_aCode"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" onclick="insertSlips_accounts()" />
-						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_accounts()" /></td>
+						onclick="Accounts_sSelect()" />
+						<input type="button" value="선택하기" style="height: 28px;" onclick="Accounts_sSelect()" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">프로젝트</th>
-					<td class="p_td left"><input type="text" size="20"
+					<td class="p_td left"><input type="text" size="20" name="ts_pCode"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" onclick="projectLists()"/>
+						onclick="projectLists()"/>
 						<input type="button" value="선택하기" style="height: 28px;" onclick="projectLists()" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">거래처</th>
-					<td class="p_td left"><input type="text" size="20"
+					<td class="p_td left"><input type="text" size="20" name="ts_cCode"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" onclick="insertSlips_customers()"/>
+						onclick="insertSlips_customers()"/>
 						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_customers()" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">금액</th>
-					<td class="p_td left"><input type="number" size="20"
+					<td class="p_td left"><input type="number" size="20" name="tsAmounts"
 						style="background-color: #F6F6F6; height: 28px;" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">부가세유형</th>
-					<td class="p_td left"><input type="text" size="20"
+					<td class="p_td left"><input type="text" size="20" name="ts_tCode"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" /></td>
+						 /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">부가세</th>
-					<td class="p_td left"><input type="number" size="20"
+					<td class="p_td left"><input type="number" size="20" name="tsTax"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" /></td>
+						 /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">계정II</th>
-					<td class="p_td left"><input type="text" size="20"
+					<td class="p_td left"><input type="text" size="20" name="ts_saCode"
 						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly" onclick="insertSlips_accounts()" />
-						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_accounts()" /></td>
+						 onclick="Accounts_sSelect()" />
+						<input type="button" value="선택하기" style="height: 28px;" onclick="Accounts_sSelect()" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">적요</th>
-					<td class="p_td left"><input type="text" size="42"
+					<td class="p_td left"><input type="text" size="42" name="tsContents"
 						style="background-color: #F6F6F6; height: 28px;" /></td>
 				</tr>
 				<tr>
 					<th class="p_th left">계좌코드</th>
-					<td class="p_td left"><input type="text" size="20"
-						style="background-color: #F6F6F6; height: 28px;"
-						readonly="readonly"></td>
+					<td class="p_td left"><input type="text" size="20" name="ts_baCode"
+						style="background-color: #F6F6F6; height: 28px;" />
+					</td>
 				</tr>
 			</tbody>
 			<tr>
 				<td colspan="2">
 					<p align="center" style="margin-top: 40px;">
-						<button type="button">전표입력</button>
+						<button type="submit">전표입력</button>
 						<button type="reset">다시쓰기</button>
 					</p>
 				</td>
@@ -140,5 +141,6 @@
 	<!-- <div id="contents">-->
 	<!-- <div id="idPrint">-->
 	<!-- p_body -->
+	</form>
 </body>
 </html>

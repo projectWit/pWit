@@ -189,7 +189,7 @@ div.autosourcing-stub {
 						</div>
 						<div class="buttonRight" id="buttons">
 							<li class="button_write"
-								onclick="location.href='http://www.rimi.kr/?mid=restaurant_review&amp;act=dispBoardWrite'"></a></li>
+								onclick="location.href='WIT_MM_placeWrite.jsp'"></a></li>
 						</div>
 						<div class="pagination">
 							<strong>1</strong> <a

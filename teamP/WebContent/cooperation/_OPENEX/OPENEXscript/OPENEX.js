@@ -1,4 +1,4 @@
-//선택된 select box의 값을 상단 타이틀에 출력 
+// 선택된 select box의 값을 상단 타이틀에 출력
 function change1stCategory(obj) {
 	var getObj = obj[obj.selectedIndex].innerHTML;
 	$("p[name='1stCategory']").html(getObj);
@@ -8,6 +8,7 @@ function change2ndCategory(obj) {
 	var getObj = "(" + obj[obj.selectedIndex].innerHTML + ")";
 	$("p[name='2ndCategory']").html(getObj);
 	$("#2ndCategory").slideDown("slow");
+	alert($('##1stCategoryHd').text);
 }
 
 // 첫번째 폼에 포커스

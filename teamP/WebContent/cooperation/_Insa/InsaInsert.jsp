@@ -263,7 +263,7 @@
 						<td><input name="eJoinDate" type="text" id="DtIn" size="12"
 							maxlength="8" value="" class="default"></td>
 						<th>입사구분</th>
-						<td><input name="InTypeCd" type="text" id="InTypeCd"
+						<td><input name="eInTypeCd" type="text" id="eInTypeCd"
 							value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
 								onclick="PopUpCd()" /></a><input name="InType" type="text"
@@ -273,14 +273,14 @@
 
 					<tr>
 						<th>직위/직급</th>
-						<td><input name="JobPosCd" type="text" id="JobPosCd"
+						<td><input name="ePosCd" type="text" id="ePosCd"
 							value="002" class="rightnone" style="width: 46px;" value="002" /><a
 							href="#"><img src="img/Find.gif" width="22px" height="19px"
 								alt='직위/직급' onclick="PopUpPos()" /></a><input name="JobPos"
 							type="text" id="JobPos" class="grayleft" style="width: 88px;"
 							readonly="readonly" value="대리" /></td>
 						<th>직책</th>
-						<td><input name="JobDutyCd" type="text" id="JobDutyCd"
+						<td><input name="eDutyCd" type="text" id="eDutyCd"
 							value="01" class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='직책'
 								onclick="PopUpDuty()" /></a><input name="JobDuty" type="text"
@@ -300,25 +300,25 @@
 					</tr>
 					<tr>
 						<th>전화</th>
-						<td><select>
+						<td><select name = "eTel">
 								<option>02</option>
 								<option>032</option>
 								<option>031</option>
-						</select> - <input type="tel" class="default" size=5 maxlength="4"
-							required> - <input type="tel" class="default" size=5
+						</select> - <input type="tel" name = "eTel"class="default" size=5 maxlength="4"
+							required> - <input type="tel" name = "eTel" class="default" size=5
 							maxlength="4" required></td>
 						<th>핸드폰</th>
 						<td><select>
 								<option>010</option>
 								<option>011</option>
 								<option>017</option>
-						</select> - <input type="tel" class="default" size=5 maxlength="4" required>
-							- <input type="tel" class="default" size=5 maxlength="4" required></td>
+						</select> - <input type="tel" class="default" size=5 maxlength="4" name = "eMobile" required>
+							- <input type="tel" name = "eMobile"class="default" size=5 maxlength="4" required></td>
 					</tr>
 					<tr>
 						<th>부서코드</th>
-						<td><input name="DepCd" type="text" value="00002"
-							maxlength="14" id="DepCd" class="blue_zoom" style="width: 46px;" /><a
+						<td><input name="eDepCd" type="text" value="00002"
+							maxlength="14" id="eDepCd" class="blue_zoom" style="width: 46px;" /><a
 							href="#"><img src="img/Find.gif" width="22px" height="19px"
 								alt="검색" onclick="PopUpDep()" /></a><input name="Dep" type="text"
 							value="인사부" readonly="readonly" id="Dep" class="graybox"
@@ -328,7 +328,7 @@
 
 					<tr>
 						<th>주소</th>
-						<td colspan="4"><a href="#" id="PostNum" name="PostNum"
+						<td colspan="4"><a href="#" id="ePostNum" name="ePostNum"
 							class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
 							maxlength="3" value="123" id="txtPostNo1" class="default"
 							style="width: 30px;" />-<input name="PostNum2" type="text"
@@ -341,13 +341,13 @@
 					<tr>
 						<th>상세주소</th>
 						<td colspan="4"><input type="text" class="default"
-							name="Addr2" id="Addr2" value="광옥빌라502호" style="width: 80%" /></td>
+							name="eAddr2" id="eAddr2" value="광옥빌라502호" style="width: 80%" /></td>
 					</tr>
 
 					<tr>
 						<th>사진 <img src="img/icon_smile.gif" width="14px"
 							height="13px" /></th>
-						<td colspan="4"><input type="file" name="Photo" id="Photo"
+						<td colspan="4"><input type="file" name="ePhoto" id="ePhoto"
 							onchange="previewImage(this,'View_area')" /></td>
 					</tr>
 

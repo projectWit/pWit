@@ -1,5 +1,8 @@
+<%@page import="mem.wit.Insa.HeadDTO"%>
+<%@page import="mem.wit.Insa.CodeDAO"%>
 <%@page import="mem.wit.Insa.BoaDAO"%>
 <%@page import = "mem.wit.Insa.BoaDTO" %>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -14,6 +17,7 @@
 <%
 	BoaDAO dao = BoaDAO.getInstance();
 	boaDTO.setbIp(request.getRemoteAddr());
+	
 	int su = dao.boaInsert(boaDTO);
 
 	out.print(su);

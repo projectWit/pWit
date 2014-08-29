@@ -128,7 +128,7 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'dropDate', 'birthDate'];		// ë‹¬ë 
         </div>
     </div>
 
-<div>
+</div>
 
 </article>
 </section>

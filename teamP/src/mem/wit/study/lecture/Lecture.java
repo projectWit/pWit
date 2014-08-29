@@ -2,13 +2,13 @@ package mem.wit.study.lecture;
 
 public class Lecture {
 	int alId;
-	int slCode;
-	int lcCode;
+	int slCode;		// SuppLec
+	int lcCode;		// LecCate
 	String alName;
-	int tId;
-	int sbjCode;
-	int egCode;
-	int tbCode;
+	int tId;			// Teacher
+	int sbjCode;	// Subject
+	int egCode;		// ExamGrade
+	int tbCode;		// Textbook
 	String alDescription;
 	
 	public int getAlId() {

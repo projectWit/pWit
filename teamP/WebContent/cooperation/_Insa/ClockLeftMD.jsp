@@ -54,7 +54,7 @@
 			<dl></dl>
 		</div>
 		<div style="float: left; width: 80%; margin-left: 30px">
-			<jsp:include page="ClkManDay.jsp" />
+			<jsp:include page="ClkManDayList.jsp" />
 		</div>
 	</div>
 	<form id="form1" name="form1">

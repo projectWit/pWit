@@ -68,7 +68,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
     <!-- </div> -->
 </form>
 
-<div>
+</div>
 
 </article>
 </section>

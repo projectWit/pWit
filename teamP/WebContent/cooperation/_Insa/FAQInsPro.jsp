@@ -18,7 +18,7 @@
 	String msg = "", url = "";
 	if (su != 0) {
 		msg = "FAQ 글쓰기 성공 확인";
-		url = "BoardLeftFAQ.jsp";
+		url = "BoaLetManFAQ.jsp";
 	} else {
 		msg = "FAQ 글쓰기 실패 확인";
 		url = "FAQIns.jsp";

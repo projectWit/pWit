@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>WIT Shoppingmal Admin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<link rel="stylesheet" type="text/css" href="main.css" />
+
+
+<style type="text/css">
+#info {float:left; width:220px;}
+#admContainer {float:left;}
+#sellTable {border:2px solid lightblue; border-collapse:collapse;}
+#sellTable td {border:1px solid lightblue; padding:5px;text-align:center;}
+</style>
+
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="jquery-contained-sticky-scroll.js"></script>
+<script type="text/javascript" src="common.js"></script>
+
+<script type="text/javascript" src="ws_main.js"></script>
+<!-- <script type="text/javascript" src="scripts/11stMenu.js"></script>
+<script type="text/javascript" src="scripts/jQBanner.js"></script>
+<script type="text/javascript" src="scripts/floatBanner.js"></script> -->
+
+
+
+<title>Wit Shopping Mall</title>
+
+</head>
+
+<body class="body01">
+
+<div id="wrap">
+
+    <div id="header">
+    	<h1 class="xans-element- xans-layout xans-layout-logotop ">
+        	<a href="#"><img src="images/system/witmall_logo.png" alt="기본 쇼핑몰"/></a>
+		</h1>
+		
+       	<div class="inner">
+       		<script>
+				document.write(HeaderWs.makeWs.makeHeaderMenu1());
+				
+			</script>
+			<div class="link">
+                <img src="img/ws_top_banner01.gif" alt="배너"/>
+            </div>    
+            <script>
+				document.write(HeaderWs.makeWs.makeSearchMenu());
+			</script>   	
+       	</div>       	
+    
+<!--     	<div class="inner2">
+		<script>
+			document.write(HeaderWs.makeWs.makeHeaderMenu2());
+		</script>
+		</div> -->
+	</div>
+	
+	
+	
+	<hr/>
+	<hr class="layout"/>
+    
+    <div id="container">
+	    <div id="admWrapper">
+
+<div id="info">
+<ul class="menu">
+	<li class="home"><a href="#">Home</a></li>
+	<li class="sub products"><a href="#"><b>주문 처리</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul>
+			<li class="sub"><a href="../menu/">새주문 처리<!--[if IE 7]><!--></a><!--<![endif]-->
+			
+					<ul>
+						<li><a href="../mozilla/">새주문 조회</a></li>
+						<li><a href="../ie/">재고 확인</a></li>
+						<li><a href="../opacity/">무통장입금 확인</a></li>
+					</ul>
+					<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+			</li>
+			<li class="sub"><a href="../boxes/"><b>배송 처리</b><!--[if IE 7]><!--></a><!--<![endif]-->
+			
+					<ul>
+						<li><a href="../mozilla/">미배송 조회</a></li>
+						<li><a href="../ie/">배송 조회</a></li>
+						<li><a href="../opacity/">배송 완료 처리</a></li>
+						<li class="sub"><a href="../menu/"><b>??</b><!--[if IE 7]><!--></a><!--<![endif]-->
+					
+							<ul>
+								<li><a href="../mozilla/">?1</a></li>
+								<li><a href="../opacity/"><b>?2</b></a></li>
+								<li><a href="../menu/">?</a></li>
+							</ul>
+							<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+						</li>
+						<li><a href="../boxes/">??</a></li>
+						<li class="sub"><a href="../opacity/">Non-standard<!--[if IE 7]><!--></a><!--<![endif]-->
+					
+							<ul>
+								<li><a href="../mozilla/">Bayonet mount</a></li>
+								<li><a href="../opacity/">Screw mount</a></li>
+							</ul>
+							<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+						</li>
+					</ul>
+					<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+			</li>
+			<li><a href="../mozilla/">반송 처리</a></li>
+			<li><a href="../ie/">반송자 관리</a></li>
+			<li><a href="../opacity/">반송상품 처리</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="sub services"><a href="#">고객 관리<!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul>
+			<li><a href="../mozilla/">고객 조회</a></li>
+			<li><a href="../menu/">고객등급업그레이드</a></li>
+			<li><a href="../layouts/">VIP 고객 관리</a></li>
+			<li><a href="../boxes/">탈퇴 고객 처리</a></li>
+			
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="sub shop"><a href="#">상품 관리<!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul>
+			<li><a href="addProduct.html">상품 등록</a></li>
+			<li><a href="../opacity/">상품 정보 수정</a></li>
+			<li><a href="../menu/">상품 내리기</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="sub contacts"><a href="#">게시판 관리<!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul>
+			<li><a href="../layouts/">질문에 답글 달기</a></li>
+			<li class="sub"><a href="../boxes/">게시판 수정<!--[if IE 7]><!--></a><!--<![endif]-->
+		
+				<ul>
+					<li><a href="../mozilla/">게시글 올리기</a></li>
+					<li><a href="../ie/">게시글 수정</a></li>
+					<li><a href="../opacity/">게시글 내리기</a></li>
+					<li class="sub"><a href="../menu/">악성 댓글 관리<!--[if IE 7]><!--></a><!--<![endif]-->
+				
+						<ul>
+							<li class="sub current"><a href="../mozilla/">악성댓글자<!--[if IE 7]><!--></a><!--<![endif]-->
+						
+								<ul>
+									<li><a href="../ie/">경고 메일 보내기</a></li>
+									<li><a href="../menu/">경고 문자 보내기</a></li>
+									<li><a href="../boxes/">악성댓글자조회</a></li>
+									<li class="sub"><a href="../opacity/">악성댓글자등록<!--[if IE 7]><!--></a><!--<![endif]-->
+								
+										<ul>
+											<li><a href="../ie/">등록</a></li>
+											<li><a href="../opacity/">인쇄</a></li>
+											<li><a href="../menu/">삭제</a></li>
+										</ul>
+				
+									</li>
+									<li><a href="../layouts/">Cardiff</a></li>
+									<li><a href="../mozilla/">Belfast</a></li>
+								</ul>
+		
+							</li>
+							<li><a href="../opacity/">댓글 내리기</a></li>
+
+						</ul>
+
+					</li>
+
+				</ul>
+				<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+			</li>
+			<li><a href="../mozilla/">이벤트 등록</a></li>
+			<li><a href="../ie/">당첨자 조회</a></li>
+			<li><a href="../opacity/">당첨자 처리</a></li>
+			<li><a href="../menu/">이벤트 내리기</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li class="privacy"><a href="#">개인정보수정</a></li>
+</ul>
+
+</div> <!-- end of #info -->
+
+
+
+<div id="admContainer">
+	<script>
+		document.write(SellTable.makeTable());
+	</script>
+
+
+</div>
+
+</div>
+    
+    </div>    
+
+	
+
+	<hr class="layout"/>
+    <div id="footer">
+    	<script>
+			document.write(FooterWs.makeFooter2());
+		</script> 
+          
+    </div>
+
+    
+ 
+	
+
+</div>
+   
+    
+</body>
+</html>
+

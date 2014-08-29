@@ -52,7 +52,7 @@ calendarIDs = ['suppDate'];		// 달력이 추가될 태그의 id
 </form>
 
 
-<div>
+</div>
 
 </article>
 </section>

@@ -40,5 +40,28 @@
 		$value$
 	</select>
 
+	<resultMap class="mem.wit.openex.OsetExam_mjnameDTO" id="OsetExam_mjnameDTO">
+		<result property="MJ_NO" column="MJ_NO" />
+		<result property="MJ_NAME" column="MJ_NAME" />
+	</resultMap>
+	<select id="selectMjSubName" parameterClass="java.lang.String"
+		resultMap="OsetExam_mjnameDTO">
+		$value$
+	</select>
+
+	<resultMap class="mem.wit.openex.OsetExam_mdnameDTO" id="OsetExam_mdnameDTO">
+		<result property="MJ_NO" column="MJ_NO" />
+		<result property="MD_NO" column="MD_NO" />
+		<result property="MD_NAME" column="MD_NAME" />
+	</resultMap>
+	<select id="selectMdSubName" parameterClass="java.lang.String"
+		resultMap="OsetExam_mdnameDTO">
+		$value$
+	</select>
+
+	<insert id="insertSE" parameterClass="mem.wit.openex.OsetExamDTO">
+		INSERT INTO O_SetExam VALUES (SEQ_exNo.NEXTVAL,#MID#,#EXTIMELIMIT#,#DIF_NO#,#EX_QUESTIONSCOUNT#,#EX_TITLE#,
+#EX_EXPLAIN#,0,0,#EX_RECOMMENDLECTURE#,#EX_REFERENCE#,SYSDATE,0,#MD_NO#,#EX_MNNAME#)
+	</insert>
 
 </sqlMap>

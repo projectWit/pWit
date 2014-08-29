@@ -140,7 +140,7 @@ calendarIDs = ['suppDate'];		// 달력이 추가될 태그의 id
         </div>
     </div>
 
-<div>
+</div>
 
 </article>
 </section>

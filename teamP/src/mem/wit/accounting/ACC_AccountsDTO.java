@@ -10,10 +10,9 @@ public ACC_AccountsDTO() {
 	super();
 }
 
-public ACC_AccountsDTO(int aCode, String aName, String aContents,
+public ACC_AccountsDTO(String aName, String aContents,
 		String eId) {
-	super();
-	this.aCode = aCode;
+	super();	
 	this.aName = aName;
 	this.aContents = aContents;
 	this.eId = eId;

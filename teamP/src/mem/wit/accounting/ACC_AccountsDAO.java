@@ -27,12 +27,12 @@ public class ACC_AccountsDAO {
 		}
 	};
 	public int add(final ACC_AccountsDTO dto){
-		return this.jdbcTemplate.update("insert into acc_accounts values(?,?,?,?)",
-				dto.getaCode(), dto.getaName(), dto.getaContents(), dto.geteId());				
+		return this.jdbcTemplate.update("insert into acc_accounts (aCode, aName, aContents, eId) values(acc_Accounts_seq.NEXTVAL,?,?,?)",
+				dto.getaName(), dto.getaContents(), dto.geteId());				
 	}
 	
 	public List<ACC_AccountsDTO> getAll() {
-		return this.jdbcTemplate.query("select*from acc_accounts order by aCode", this.userMapper);
+		return this.jdbcTemplate.query("select * from acc_accounts order by aCode", this.userMapper);
 	}
 	
 	public ACC_AccountsDTO get(int code) {
