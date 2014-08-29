@@ -17,7 +17,7 @@ public class SuppLecServiceImpl implements SuppLecService {
 		return suppLecMapper.selectAll();
 	}
 	
-	public SuppLec select(String slCode) {
+	public SuppLec select(int slCode) {
 		return suppLecMapper.select(slCode);
 	}
 	

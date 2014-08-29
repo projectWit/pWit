@@ -6,7 +6,7 @@ public interface SuppLecService {
 	
 	public List<SuppLec> selectAll();
 	
-	public SuppLec select(String slCode);
+	public SuppLec select(int slCode);
 	
 	public int insert(SuppLec suppLec);
 	

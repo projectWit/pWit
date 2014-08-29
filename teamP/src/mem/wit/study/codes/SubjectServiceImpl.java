@@ -17,7 +17,7 @@ public class SubjectServiceImpl implements SubjectService {
 		return subjectMapper.selectAll();
 	}
 	
-	public Subject select(String sbjCode) {
+	public Subject select(int sbjCode) {
 		return subjectMapper.select(sbjCode);
 	}
 	

@@ -4,7 +4,6 @@ public class Subject {
 	int sbjCode;
 	int sgCode;
 	int sbjCatCode;
-	int cCode;
 	String sbjName;
 	int sbjYear;
 	
@@ -25,12 +24,6 @@ public class Subject {
 	}
 	public void setSbjCatCode(int sbjCatCode) {
 		this.sbjCatCode = sbjCatCode;
-	}
-	public int getcCode() {
-		return cCode;
-	}
-	public void setcCode(int cCode) {
-		this.cCode = cCode;
 	}
 	public String getSbjName() {
 		return sbjName;

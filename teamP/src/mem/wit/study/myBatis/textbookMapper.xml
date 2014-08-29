@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.TextbookMapper">
+	<resultMap id="TextbookMap" type="mem.wit.study.codes.Textbook">
+		<!-- <result property="tbCode" column="tbCode" />
+		<result property="pCode" column="pCode" />
+		<result property="sbjCode" column="sbjCode" />
+		<result property="cCode" column="cCode" />
+		<result property="tbName" column="tbName" />
+		<result property="tbPrice" column="tbPrice" /> -->
+	</resultMap>
+	<resultMap id="TbookJoinMap" type="mem.wit.study.codes.TbookJoin">
+	</resultMap>
+  <select id="selectMember_basic" resultType="com.wit.member.Member">
+    $value$
+  </select>
+  <select id="select" resultType="mem.wit.study.codes.Textbook">
+    SELECT * FROM cdTextbook
+		WHERE tbCode = #{tbCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.TextbookMapper.TextbookMap">
+    SELECT * FROM cdTextbook
+  </select>
+  <select id="selectJoinAll" resultMap="mem.wit.study.myBatis.TextbookMapper.TbookJoinMap">
+    SELECT T.TBCODE, P.PNAME, T.TBNAME, S.SBJNAME, C.CNAME, T.TBPRICE FROM cdTextbook T 
+	  INNER JOIN cdPublish P ON T.PCODE=P.PCODE 
+	  INNER JOIN cdSubject S ON T.SBJCODE=S.SBJCODE
+	  INNER JOIN cdCurriculum C ON T.CCODE=C.CCODE
+	ORDER BY T.TBCODE
+  </select>
+</mapper>

@@ -2,13 +2,16 @@ package mem.wit.study.myBatis;
 
 import java.util.List;
 
+import mem.wit.study.codes.TbookJoin;
 import mem.wit.study.codes.Textbook;
 
 public interface TextbookMapper {
 	
 	public List<Textbook> selectAll();
 	
-	public Textbook select(String tbCode);
+	public List<TbookJoin> selectJoinAll();
+	
+	public Textbook select(int tbCode);
 	
 	public int insert(Textbook textbook);
 	

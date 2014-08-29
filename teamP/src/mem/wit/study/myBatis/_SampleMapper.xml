@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatisapp.mappers.ProjectMapper">
+    <resultMap id="ProjectMap" type="com.model.Project">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />     
+    </resultMap>
+    <resultMap id="deptResult" type="egovframework.rte.psl.dataaccess.vo.DeptVO">
+		<result property="deptNo" column="DEPT_NO" />
+		<result property="deptName" column="DEPT_NAME" />
+		<result property="loc" column="LOC" />
+	</resultMap>
+    <select id="selectProjectsByClient" parameterType="int" resultMap="com.mybatisapp.mappers.ProjectMapper.ProjectMap">
+    	select * from blahblah
+    </select>
+</mapper>

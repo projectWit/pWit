@@ -8,16 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TextbookServiceImpl implements TextbookService {
+public class TbookJoinServiceImpl implements TbookJoinService {
 	
 	@Autowired
 	private TextbookMapper textbookMapper;
 	
-	public List<Textbook> selectAll() {
-		return textbookMapper.selectAll();
+	public List<TbookJoin> selectJoinAll() {
+		return textbookMapper.selectJoinAll();
 	}
 	
-	public Textbook select(int tbCode) {
+/*	public Textbook select(int tbCode) {
 		return textbookMapper.select(tbCode);
 	}
 	
@@ -32,5 +32,5 @@ public class TextbookServiceImpl implements TextbookService {
 	public void delete(Textbook textbook) {
 		textbookMapper.delete(textbook);
 	}
-	
+	*/
 }

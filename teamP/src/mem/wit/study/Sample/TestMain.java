@@ -3,7 +3,9 @@ package mem.wit.study.Sample;
 import java.util.List;
 
 import mem.wit.study.codes.SuppLec;
+import mem.wit.study.codes.TbookJoin;
 import mem.wit.study.myBatis.SuppLecMapper;
+import mem.wit.study.myBatis.TextbookMapper;
 
 import com.wit.MyBatis3;
 import com.wit.member.Member;
@@ -14,8 +16,7 @@ public class TestMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String resource = "com/wit/myBatis/myBatisConfig.xml";
-		
+		/*String resource = "com/wit/myBatis/myBatisConfig.xml";
 		// 세션 생성
 		MyBatis3 myBatis = new MyBatis3(resource);	
 		
@@ -24,16 +25,24 @@ public class TestMain {
 		Member member = memberMapper.login("admin", "admin");
 		Power power = memberMapper.getPower(member);
 		System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
-		System.out.println("mId : "+power.getmId()+", aStudy : "+power.getaStudy());
+		System.out.println("mId : "+power.getmId()+", aStudy : "+power.getaStudy());*/
 		
-		resource = "mem/wit/study/myBatis/myBatisConfig.xml";
-		
+		/*String resource = "mem/wit/study/myBatis/myBatisConfig.xml";
 		// 세션 생성
-		myBatis = new MyBatis3(resource);	
+		MyBatis3 myBatis = new MyBatis3(resource);	
 		SuppLecMapper suppLecMapper = myBatis.getMapper(SuppLecMapper.class);
 		List<SuppLec> slList = suppLecMapper.selectAll();
 		for (SuppLec suppLec : slList) {
 			System.out.println("slCode : "+suppLec.getSlCode()+", slName : "+suppLec.getSlName());
+		}*/
+		
+		String resource = "mem/wit/study/myBatis/myBatisConfig.xml";
+		// 세션 생성
+		MyBatis3 myBatis = new MyBatis3(resource);	
+		TextbookMapper textbookMapper = myBatis.getMapper(TextbookMapper.class);
+		List<TbookJoin> tbList = textbookMapper.selectJoinAll();
+		for (TbookJoin tbookJoin : tbList) {
+			System.out.println("tbCode : "+tbookJoin.getTbCode()+", tbName : "+tbookJoin.getTbName());
 		}
 		
 		// 커밋, 세션 종료

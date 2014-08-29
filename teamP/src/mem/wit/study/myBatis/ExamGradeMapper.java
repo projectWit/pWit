@@ -8,7 +8,7 @@ public interface ExamGradeMapper {
 	
 	public List<ExamGrade> selectAll();
 	
-	public ExamGrade select(String sgCode);
+	public ExamGrade select(int sgCode);
 	
 	public int insert(ExamGrade examGrade);
 	

@@ -1,11 +1,11 @@
 package mem.wit.study.codes;
 
-public class Textbook {
+public class TbookJoin {
 	int tbCode;
-	int pCode;
-	int sbjCode;
-	int cCode;
+	String pName;
 	String tbName;
+	String sbjName;
+	String cName;
 	int tbPrice;
 	
 	public int getTbCode() {
@@ -14,29 +14,29 @@ public class Textbook {
 	public void setTbCode(int tbCode) {
 		this.tbCode = tbCode;
 	}
-	public int getpCode() {
-		return pCode;
+	public String getpName() {
+		return pName;
 	}
-	public void setpCode(int pCode) {
-		this.pCode = pCode;
-	}
-	public int getSbjCode() {
-		return sbjCode;
-	}
-	public void setSbjCode(int sbjCode) {
-		this.sbjCode = sbjCode;
-	}
-	public int getcCode() {
-		return cCode;
-	}
-	public void setcCode(int cCode) {
-		this.cCode = cCode;
+	public void setpName(String pName) {
+		this.pName = pName;
 	}
 	public String getTbName() {
 		return tbName;
 	}
 	public void setTbName(String tbName) {
 		this.tbName = tbName;
+	}
+	public String getSbjName() {
+		return sbjName;
+	}
+	public void setSbjName(String sbjName) {
+		this.sbjName = sbjName;
+	}
+	public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
 	}
 	public int getTbPrice() {
 		return tbPrice;

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mem.wit.study.myBatis.SuppLecMapper">
+	<resultMap id="SuppLecMap" type="mem.wit.study.codes.SuppLec">
+		<!-- <result property="slCode" column="slCode" />
+		<result property="slName" column="slName" /> -->
+	</resultMap>
   <select id="selectMember_basic" resultType="com.wit.member.Member">
     $value$
   </select>
@@ -8,7 +12,7 @@
     SELECT * FROM cdSuppLec
 		WHERE slCode = #{slCode}
   </select>
-  <select id="selectAll" resultType="mem.wit.study.codes.SuppLec">
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.SuppLecMapper.SuppLecMap">
     SELECT * FROM cdSuppLec
   </select>
 </mapper>

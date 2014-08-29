@@ -10,7 +10,7 @@
 <%
 
 String loginStatus = request.getParameter("loginStatus");
-System.out.println("loginStatus : "+loginStatus);
+//System.out.println("loginStatus : "+loginStatus);
 if (loginStatus != null) {
 	if (loginStatus.equals("true")) {
 //		System.out.println("session.invalidate() 진입");

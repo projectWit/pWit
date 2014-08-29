@@ -17,7 +17,7 @@ public class ExamGradeServiceImpl implements ExamGradeService {
 		return examGradeMapper.selectAll();
 	}
 	
-	public ExamGrade select(String egCode) {
+	public ExamGrade select(int egCode) {
 		return examGradeMapper.select(egCode);
 	}
 	

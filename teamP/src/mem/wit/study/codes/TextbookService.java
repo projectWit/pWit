@@ -6,7 +6,7 @@ public interface TextbookService {
 	
 	public List<Textbook> selectAll();
 	
-	public Textbook select(String tbCode);
+	public Textbook select(int tbCode);
 	
 	public int insert(Textbook textbook);
 	

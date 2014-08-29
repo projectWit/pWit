@@ -6,7 +6,7 @@ public interface SubjectService {
 	
 	public List<Subject> selectAll();
 	
-	public Subject select(String sbjCode);
+	public Subject select(int sbjCode);
 	
 	public int insert(Subject subject);
 	

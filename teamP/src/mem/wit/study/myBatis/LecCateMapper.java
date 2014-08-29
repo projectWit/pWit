@@ -8,7 +8,7 @@ public interface LecCateMapper {
 	
 	public List<LecCate> selectAll();
 	
-	public LecCate select(String lcCode);
+	public LecCate select(int lcCode);
 	
 	public int insert(LecCate lecCate);
 	

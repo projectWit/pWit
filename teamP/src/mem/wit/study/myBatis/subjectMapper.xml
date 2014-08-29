@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mem/wit/study/myBatis/subjectMapper">
+<mapper namespace="mem.wit.study.myBatis.SubjectMapper">
+	<resultMap id="SubjectMap" type="mem.wit.study.codes.Subject">
+		<!-- <result property="sbjCode" column="sbjCode" />
+		<result property="sgCode" column="sgCode" />
+		<result property="sbjCatCode" column="sbjCatCode" />
+		<result property="sbjName" column="sbjName" />
+		<result property="sbjYear" column="sbjYear" /> -->
+	</resultMap>
   <select id="selectMember_basic" resultType="com.wit.member.Member">
     $value$
   </select>
@@ -8,7 +15,7 @@
     SELECT * FROM cdSubject
 		WHERE sbjCode = #{sbjCode}
   </select>
-  <select id="selectAll" resultMap="mem.wit.study.codes.Subject">
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.SubjectMapper.SubjectMap">
     SELECT * FROM cdSubject
   </select>
 </mapper>

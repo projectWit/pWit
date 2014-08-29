@@ -17,7 +17,7 @@ public class LecCateServiceImpl implements LecCateService {
 		return lecCateMapper.selectAll();
 	}
 	
-	public LecCate select(String lcCode) {
+	public LecCate select(int lcCode) {
 		return lecCateMapper.select(lcCode);
 	}
 	

@@ -10,7 +10,8 @@ import mem.wit.study.codes.Subject;
 import mem.wit.study.codes.SubjectService;
 import mem.wit.study.codes.SuppLec;
 import mem.wit.study.codes.SuppLecService;
-import mem.wit.study.codes.Textbook;
+import mem.wit.study.codes.TbookJoin;
+import mem.wit.study.codes.TbookJoinService;
 import mem.wit.study.codes.TextbookService;
 import mem.wit.study.lecture.Lecture;
 import mem.wit.study.lecture.LectureService;
@@ -31,6 +32,7 @@ public class LectureController {
 	@Autowired private SubjectService subjectService;
 	@Autowired private ExamGradeService examGradeService;
 	@Autowired private TextbookService textbookService;
+	@Autowired private TbookJoinService tbookJoinService;
 //	@Autowired private TeacherService teacherService;
 	
 	@RequestMapping(value="/select", method=RequestMethod.GET)
@@ -50,7 +52,7 @@ public class LectureController {
 		List<LecCate> lcList = lecCateService.selectAll();
 		List<Subject> sbjList = subjectService.selectAll();
 		List<ExamGrade> egList = examGradeService.selectAll();
-		List<Textbook> tbList = textbookService.selectAll();
+		List<TbookJoin> tbList = tbookJoinService.selectJoinAll();
 		model.addAttribute("slList", slList);
 		model.addAttribute("lcList", lcList);
 		model.addAttribute("sbjList", sbjList);
