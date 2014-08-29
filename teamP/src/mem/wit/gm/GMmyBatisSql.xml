@@ -54,10 +54,11 @@
 	</resultMap>
 	<resultMap class="mem.wit.gm.LecDTO" id="lecDTO">
 		<result property="lecName" column="lecName" />
-		<result property="lecCnt" column="lecCnt" />
+		<result property="eKName" column="eKName" />
+		<result property="place" column="place" />
+		<result property="sName" column="sName" />
 		<result property="lecPay" column="lecPay" />
 		<result property="eTel" column="eTel" />
-		<result property="eKName" column="eKName" />
 		<result property="sSDay" column="sSDay" />
 		<result property="sEDay" column="sEDay" />
 	</resultMap>

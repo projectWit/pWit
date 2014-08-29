@@ -17,6 +17,7 @@ import com.wit.member.Member;
 public class GMController {
 	ModelAndView mv = new ModelAndView();
 	MyBatis m = new MyBatis("mem/wit/gm/GMSqlMapConfig.xml");
+
 	@RequestMapping("/memberlist.gm")
 	public ModelAndView memberlist() {
 		// view 설정
@@ -27,6 +28,7 @@ public class GMController {
 		mv.addObject("list", list);
 		return mv;
 	}
+
 	@RequestMapping("/clublist.gm")
 	public ModelAndView clublist() {
 		// view 설정
@@ -37,7 +39,7 @@ public class GMController {
 		mv.addObject("clist", clist);
 		return mv;
 	}
-	
+
 	@RequestMapping("/clubInsert.gm")
 	public ModelAndView clubInsert(HttpServletRequest request) {
 		mv.setViewName("clubInsert"); // view의 이름을 제공
@@ -51,8 +53,10 @@ public class GMController {
 		dto.setcPresident(request.getParameter("cPresident"));
 		dto.setcManager(request.getParameter("cManager"));
 		m.insert("insertClub", dto);
-		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
 	}
+
 	@RequestMapping("/facilities.gm")
 	public ModelAndView placeInsert(HttpServletRequest request) {
 
@@ -63,26 +67,37 @@ public class GMController {
 		dto.setpId(Integer.parseInt(request.getParameter("pId")));
 		dto.setfPay(Integer.parseInt(request.getParameter("fPay")));
 		dto.setfAddr(request.getParameter("fAddr"));
-		List<CdTelAreaDTO> telCode = (List<CdTelAreaDTO>) m.select("selectTel", "select tanum from cdtelarea where tacode="+Integer.parseInt(request.getParameter("telCode")));
-		dto.setfTel(telCode.get(0).taNum+"-"+request.getParameter("fTel1")+"-"+request.getParameter("fTel2"));
+		List<CdTelAreaDTO> telCode = (List<CdTelAreaDTO>) m.select(
+				"selectTel",
+				"select tanum from cdtelarea where tacode="
+						+ Integer.parseInt(request.getParameter("telCode")));
+		dto.setfTel(telCode.get(0).taNum + "-" + request.getParameter("fTel1")
+				+ "-" + request.getParameter("fTel2"));
 		m.insert("insertFacil", dto);
-		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
-	}	
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+	}
+
 	@RequestMapping("/facilitieslist.gm")
 	public ModelAndView facilList() {
 		mv.setViewName("facilitieslist");
-		List<FacilDTO> list = (List<FacilDTO>) m.select("selectFacil","select f.fName,p.place,f.fObject,f.fPay,f.fTel from GM_Facil f, C_Place p where f.pId=p.pId");
+		List<FacilDTO> list = (List<FacilDTO>) m
+				.select("selectFacil",
+						"select f.fName,p.place,f.fObject,f.fPay,f.fTel from GM_Facil f, C_Place p where f.pId=p.pId");
 		mv.addObject("list", list);
 		return mv;
 	}
+
 	@RequestMapping("/questionlist.gm")
 	public ModelAndView questionList() {
 		mv.setViewName("questionlist");
-		String query= "select qId,mName,qTitle,qCont,qDate,qIp,stateName from GM_QBoard q, GM_Member m, WitMember w, C_State s where q.qMId=m.mId and m.mId=w.mId and q.stateId=s.stateId";
-		List<QBoardDTO> list = (List<QBoardDTO>) m.select("selectQboard",query);
+		String query = "select qId,mName,qTitle,qCont,qDate,qIp,stateName from GM_QBoard q, GM_Member m, WitMember w, C_State s "
+				+ "where q.qMId=m.mId and m.mId=w.mId and q.stateId=s.stateId";
+		List<QBoardDTO> list = (List<QBoardDTO>) m
+				.select("selectQboard", query);
 		return mv;
 	}
-	
+
 	@RequestMapping("/lectureInsert.gm")
 	public ModelAndView lecandScheInsert(LecDTO dto, ScheDTO sdto) {
 		mv.setViewName("lectureInsert");
@@ -93,17 +108,21 @@ public class GMController {
 		sdto.setpId(sdto.pId);
 		sdto.setsSDay(sdto.sSDay);
 		sdto.setsEDay(sdto.sEDay);
-		m.insert("insertLec",dto);
+		m.insert("insertLec", dto);
 		m.insert("insertSche", sdto);
-		return new ModelAndView("redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
 	}
+
 	@RequestMapping("/lecturelist.gm")
 	public ModelAndView leclist() {
 		mv.setViewName("lecturelist");
-		String query = "";
+		String query = "select l.lecName, e.eKName, p.place, sp.sName, s.sSDay, s.sEDay, l.lecPay, e.eTel "
+				+ "from GM_Lecture l, GM_Sche s, GM_Teacher t, Employee e, C_PTime pt, C_Place p, C_Sport sp "
+				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eNum and t.tId=s.tId and s.pId=pt.pId and sp.sId=l.sId";
 		List<LecDTO> list = (List<LecDTO>) m.select("selectLecList", query);
 		mv.addObject("list", list);
 		return mv;
 	}
-	
+
 }

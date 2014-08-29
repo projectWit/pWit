@@ -137,11 +137,10 @@ function sendController() {
 				<col>
 			<tbody>
 				<tr>
-					<th><label for="<span class='login'>강좌명</span>"><span
+					<th><label for="lecName"><span
 							class="login">강좌명</span></label></th>
-					<td><input name="business_no_basic" class="default"
-						id="business_no_basic"
-						style="width: 300px; background-color: rgb(255, 255, 255);"
+					<td><input name="lecName" class="default"
+						id="lecName" style="width: 300px; background-color: rgb(255, 255, 255);"
 						type="text"></td>
 
 				</tr>
