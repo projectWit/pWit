@@ -8,7 +8,7 @@ public interface LectureMapper {
 	
 	public List<Lecture> selectAll();
 	
-	public Lecture select(String alId);
+	public List<Lecture> select(Lecture lecture);
 	
 	public int insert(Lecture lecture);
 	

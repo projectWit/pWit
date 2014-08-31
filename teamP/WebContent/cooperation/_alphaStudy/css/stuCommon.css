@@ -62,20 +62,29 @@ margin: 0px;
 	border-bottom: 1px solid #CCC;
 	border-left: 1px solid #CCC;
 }
-.content-container .info-table .table-photo{
+.content-container .info-table .table-photo {
 	width: 140px;
 	text-align: center;
 	padding: 0px;
 }
-.content-container .info-table .table-label{
+.content-container .info-table .table-label {
 	width: 100px;
 	background-color: #e2f0fc;
 }
-.content-container .info-table .table-input{
+.content-container .info-table .table-input {
 //	min-width: 250px;
 	width: 250px;
 	background-color: #f7f7f7;
 }
+.content-container .info-table .find-label {
+	width: 60px;
+	background-color: #e2f0fc;
+}
+.content-container .info-table .find-input {
+	width: 80px;
+	background-color: #f7f7f7;
+}
+
 .tab-container {
 	margin-top: 40px;
 	margin-bottom: 50px;
@@ -181,6 +190,7 @@ background-color: #f9f9f9;
 .tab-container .tab-content .tab-table .tabTable-td tr:hover {
 	background-color: #0094db;
 	color: white;
+	cursor: pointer;
 }
 .tab-container .tab-content .tab-table .tabTable-td tr.selected {
 	background-color: #0094db;

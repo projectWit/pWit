@@ -36,20 +36,20 @@
 	<div id="ibm-universal-nav" class="ibm-universal-nav">
 		<ul id="ibm-unav-links">
 			<!-- <li id="ibm-home" class="ibm-sm-logo" style="display: block; height: 30px;"><a href="#">IBM®</a></li> -->
-			<li id="ibm-home" class="" style="display: block;"><a href="../WIT_Main_index.jsp">IBM®</a></li>
+			<li id="ibm-home" class="" style="display: block;"><a href="../WIT_Main_index.jsp" title="홈으로">IBM®</a></li>
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul></ul>
 		<ul id="ibm-menu-links">
-			<li onmouseover="slideRibbon(-1)"><a href="@Study_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">α</span> STUDY</a></li>
-			<li onmouseover="slideRibbon(0)"><a href="@Study_stuSearch.jsp">학생 관리</a></li>
-			<li onmouseover="slideRibbon(1)"><a href="@Study_learnProgSearch.jsp">학습 관리</a></li>
+			<li onmouseover="slideRibbon(-1)"><a href="/teamP/cooperation/_alphaStudy/@Study_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">α</span> STUDY</a></li>
+			<li onmouseover="slideRibbon(0)"><a href="/teamP/cooperation/_alphaStudy/@Study_stuSearch.jsp">학생 관리</a></li>
+			<li onmouseover="slideRibbon(1)"><a href="/teamP/cooperation/_alphaStudy/@Study_learnProgSearch.jsp">학습 관리</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="#">출결 관리</a></li>
 			<li onmouseover="slideRibbon(3)"><a href="#">수납/회계</a></li>
-			<li onmouseover="slideRibbon(4)"><a href="#">교재 관리</a></li>
-			<li onmouseover="slideRibbon(5)"><a href="@Study_lecSearch.jsp">과목/강의</a></li>
+			<li onmouseover="slideRibbon(4)"><a href="#">자재 관리</a></li>
+			<li onmouseover="slideRibbon(5)"><a href="/teamP/cooperation/_alphaStudy/@Study_lecSearch.jsp">강의 관리</a></li>
 			<li onmouseover="slideRibbon(6)"><a href="#">직원 관리</a></li>
-			<li onmouseover="slideRibbon(7)"><a href="@Study_mngCodes.jsp">코드 관리</a></li>
+			<li onmouseover="slideRibbon(7)"><a href="/teamP/cooperation/_alphaStudy/@Study_mngCodes.jsp">코드 관리</a></li>
 		</ul>
 	</div>
 <!-- //ibm-universal-nav --> 
@@ -80,19 +80,19 @@
 			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
 			
 				<ul id="subTab-0" style="display: none;">
-					<li class="subTab-0-0" style="display: block;"><a href="@Study_stuSearch.jsp">학생 관리</a></li>
-					<li class="subTab-0-1" style="display: block;"><a href="@Study_stuRegister.jsp">학생 등록</a></li>
-					<li class="subTab-0-2" style="display: block;"><a href="@Study_stuClsRegister.jsp">수강 등록</a></li>
-					<li class="subTab-0-3" style="display: block;"><a href="@Study_stuClsList.jsp">수강 등록 현황</a></li>
-					<li class="subTab-0-4" style="display: block;"><a href="@Study_stuTestRegister.jsp">성적 입력</a></li>
-					<li class="subTab-0-5" style="display: block;"><a href="@Study_stuTestSearch.jsp">성적 조회</a></li>
+					<li class="subTab-0-0" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuSearch.jsp">학생 관리</a></li>
+					<li class="subTab-0-1" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuRegister.jsp">학생 등록</a></li>
+					<li class="subTab-0-2" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuClsRegister.jsp">수강 등록</a></li>
+					<li class="subTab-0-3" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuClsList.jsp">수강 등록 현황</a></li>
+					<li class="subTab-0-4" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuTestRegister.jsp">성적 입력</a></li>
+					<li class="subTab-0-5" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_stuTestSearch.jsp">성적 조회</a></li>
 				</ul>
 				
 				<ul id="subTab-1" style="display: none;">
 					<!-- <li class="subTab-1-0" style="display: block;"><a href="@Study_learnProgRegister.jsp">진도 입력</a></li> -->
-					<li class="subTab-1-1" style="display: block;"><a href="@Study_learnProgSearch.jsp">진도 현황</a></li>
-					<li class="subTab-1-2" style="display: block;"><a href="@Study_learnSuppRegister.jsp">보강 개설</a></li>
-					<li class="subTab-1-3" style="display: block;"><a href="@Study_learnSuppSearch.jsp">보강 현황</a></li>
+					<li class="subTab-1-1" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_learnProgSearch.jsp">진도 현황</a></li>
+					<li class="subTab-1-2" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_learnSuppRegister.jsp">보강 개설</a></li>
+					<li class="subTab-1-3" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_learnSuppSearch.jsp">보강 현황</a></li>
 					<li class="subTab-1-4" style="display: block;"><a href="#">과제 관리</a></li>
 					<li class="subTab-1-4" style="display: block;"><a href="#">과제 현황</a></li>
 				</ul>
@@ -119,10 +119,10 @@
 				</ul>
 				
 				<ul id="subTab-5" style="display: none;">
-					<li class="subTab-5-0" style="display: block;"><a href="#">과목 관리</a></li>
-					<li class="subTab-5-1" style="display: block;"><!-- <a href="@Study_lecGenerate.jsp"> --><a href="/teamP/study/lecture/insert">강의 개설</a></li>
-					<li class="subTab-5-2" style="display: block;"><a href="@Study_lecRegister.jsp">강의 등록</a></li>
-					<li class="subTab-5-3" style="display: block;"><a href="@Study_lecSearch.jsp">강의 관리</a></li>
+					<li class="subTab-5-0" style="display: block;"><a href="/teamP/study/lecture/create">강의 개설</a></li>
+					<li class="subTab-5-1" style="display: block;"><a href="/teamP/study/lecture/search">강의 관리</a></li>
+					<li class="subTab-5-2" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_lecRegister.jsp">강의 스케줄 등록</a></li>
+					<li class="subTab-5-3" style="display: block;"><a href="/teamP/cooperation/_alphaStudy/@Study_lecSearch.jsp">강의 스케줄 관리</a></li>
 				</ul>
 				
 				<ul id="subTab-6" style="display: none;">

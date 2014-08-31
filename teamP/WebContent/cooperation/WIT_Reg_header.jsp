@@ -44,7 +44,7 @@
 	<div id="ibm-universal-nav">
 		<ul id="ibm-unav-links">
 			<!-- <li id="ibm-home" class="ibm-sm-logo" style="display: block; height: 30px;"><a href="#">IBM®</a></li> -->
-			<li id="ibm-home" class="" style="display: block;"><a href="WIT_Main_index.jsp">WIT®</a></li>
+			<li id="ibm-home" class="" style="display: block;"><a href="WIT_Main_index.jsp" title="홈으로">WIT®</a></li>
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">

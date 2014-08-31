@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.TeacherMapper">
+	<resultMap id="TeacherMap" type="mem.wit.study.teacher.Teacher">
+	</resultMap>
+  <select id="select" parameterType="mem.wit.study.teacher.Teacher" resultMap="mem.wit.study.myBatis.TeacherMapper.TeacherMap">
+    SELECT T.TID,E.EID,E.EKNAME,E.ETEL,E.EMOBILE,E.EEMAIL,E.EPOSTNUM,Z.SIDO,Z.GUGUN,Z.DONG,Z.RI,Z.BUNJI,
+    E.EADDR2,E.EJOINDATE,E.EDROPDATE,S.SBJCATNAME,G.SGNAME FROM ATEACHER T
+	  INNER JOIN EMPLOYEE E ON T.EID=E.EID
+	  INNER JOIN CDSBJCATE S ON T.SBJCATCODE=S.SBJCATCODE
+	  INNER JOIN CDSCHGRADE G ON T.SGCODE=G.SGCODE
+	  INNER JOIN ZIPCODES Z ON E.EPOSTNUM=Z.SEQ
+	<where>
+	    <if test="tId != (null or 0)">
+			T.TID = #{tId}
+	    </if>
+	    <if test="eKname != (null or '')">
+	        AND E.EKNAME like #{eKname}
+	    </if>
+	    <if test="sbjCatCode > 0">
+	        AND T.SBJCATCODE = #{sbjCatCode}
+	    </if>
+	</where>
+	ORDER BY T.TID
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.TeacherMapper.TeacherMap">
+    SELECT T.TID,E.EID,E.EKNAME,E.ETEL,E.EMOBILE,E.EEMAIL,E.EPOSTNUM,Z.SIDO,Z.GUGUN,Z.DONG,Z.RI,Z.BUNJI,
+    E.EADDR2,E.EJOINDATE,E.EDROPDATE,S.SBJCATNAME,G.SGNAME FROM ATEACHER T
+	  INNER JOIN EMPLOYEE E ON T.EID=E.EID
+	  INNER JOIN CDSBJCATE S ON T.SBJCATCODE=S.SBJCATCODE
+	  INNER JOIN CDSCHGRADE G ON T.SGCODE=G.SGCODE
+	  INNER JOIN ZIPCODES Z ON E.EPOSTNUM=Z.SEQ
+	ORDER BY T.TID
+  </select>
+</mapper>

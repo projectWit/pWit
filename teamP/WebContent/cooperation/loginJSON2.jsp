@@ -10,8 +10,8 @@ String username = request.getParameter("username");
 String password_text = request.getParameter("password_text");
 //String username = "test001";
 //String password_text = "1111";
-System.out.println("username : "+username);
-System.out.println("password_text : "+password_text);
+//System.out.println("username : "+username);
+//System.out.println("password_text : "+password_text);
 String resource = "com/wit/myBatis/myBatisConfig.xml";
 
 // 세션 생성
@@ -28,7 +28,7 @@ int result = 0;
 if (member == null) {	
 	// id와 일치하는 레코드가 없음. id 불일치
 } else {
-	System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
+//	System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
 	if (member.getmPwd().equals(password_text)) { 
 		result = 2;	// id, pwd 전부 일치
 		Power power = memberMapper.getPower(member);
@@ -44,6 +44,6 @@ if (member == null) {
 myBatis.closeSession();
 
 String json = "[{\"result\":"+result+"}]";
-System.out.println(json);
+//System.out.println(json);
 out.print(json);
 %>

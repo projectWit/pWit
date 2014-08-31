@@ -3,9 +3,7 @@
 <mapper namespace="mem.wit.study.myBatis.ExamGradeMapper">
 	<resultMap id="ExamGradeMap" type="mem.wit.study.codes.ExamGrade">
 	</resultMap>
-  <select id="selectMember_basic" resultType="com.wit.member.Member">
-    $value$
-  </select>
+  
   <select id="select" resultType="mem.wit.study.codes.ExamGrade">
     SELECT * FROM cdExamGrade
 		WHERE egCode = #{egCode}

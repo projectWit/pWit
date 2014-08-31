@@ -11,5 +11,5 @@
 	<jsp:include page="f_indexSection.jsp"></jsp:include>
 
 </body>
-	<jsp:include page="@Study_footer.jsp"></jsp:include>
+	<jsp:include page="/cooperation/WIT_Main_footer.jsp"></jsp:include>
 </html>

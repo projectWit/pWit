@@ -67,6 +67,7 @@ width: 500px;
 	border-right: 1px solid #02050E;
 }
 #ibm-mast-options li {
+	font-size: 11px;
 	border-left: 1px solid #02050E;
 	border-right: 1px solid #2b2d39;
 	float: left;

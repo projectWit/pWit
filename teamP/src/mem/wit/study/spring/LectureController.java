@@ -10,8 +10,7 @@ import mem.wit.study.codes.Subject;
 import mem.wit.study.codes.SubjectService;
 import mem.wit.study.codes.SuppLec;
 import mem.wit.study.codes.SuppLecService;
-import mem.wit.study.codes.TbookJoin;
-import mem.wit.study.codes.TbookJoinService;
+import mem.wit.study.codes.Textbook;
 import mem.wit.study.codes.TextbookService;
 import mem.wit.study.lecture.Lecture;
 import mem.wit.study.lecture.LectureService;
@@ -32,39 +31,66 @@ public class LectureController {
 	@Autowired private SubjectService subjectService;
 	@Autowired private ExamGradeService examGradeService;
 	@Autowired private TextbookService textbookService;
-	@Autowired private TbookJoinService tbookJoinService;
 //	@Autowired private TeacherService teacherService;
 	
-	@RequestMapping(value="/select", method=RequestMethod.GET)
-	public String select() {
-		return "members/register";
-	}
-	@RequestMapping(value="/select", method=RequestMethod.POST)
-	public String select(String alId) throws Exception {
-		lectureService.select(alId);
-		return "members/welcome";
-	}
-	
-	@RequestMapping(value="/insert", method=RequestMethod.GET)
-	public String insert(Model model) {
-		System.out.println("insert GET");
+	@RequestMapping(value="/search", method=RequestMethod.GET)
+	public String search(Model model) {
+//		System.out.println("search GET");
 		List<SuppLec> slList = suppLecService.selectAll();
 		List<LecCate> lcList = lecCateService.selectAll();
 		List<Subject> sbjList = subjectService.selectAll();
 		List<ExamGrade> egList = examGradeService.selectAll();
-		List<TbookJoin> tbList = tbookJoinService.selectJoinAll();
+		List<Textbook> tbList = textbookService.selectAll();
+		List<Lecture> lecList = lectureService.selectAll();
 		model.addAttribute("slList", slList);
 		model.addAttribute("lcList", lcList);
 		model.addAttribute("sbjList", sbjList);
 		model.addAttribute("egList", egList);
 		model.addAttribute("tbList", tbList);
-		return "@Study_lecGenerate";
+		model.addAttribute("lecList", lecList);
+		return "@Study_lecSearch";
 	}
-	@RequestMapping(value="/insert", method=RequestMethod.POST)
-	public String insert(Lecture lecture) throws Exception {
-//		lectureService.insert(lecture);
-		System.out.println("insert POST");
-		return "@Study_lecGenerate";
+	@RequestMapping(value="/search", method=RequestMethod.POST)
+	public String search() throws Exception {
+		return "@Study_lecSearch";
+	}
+	
+	@RequestMapping(value="/create", method=RequestMethod.GET)
+	public String create(Model model) {
+//		System.out.println("create GET");
+		List<SuppLec> slList = suppLecService.selectAll();
+		List<LecCate> lcList = lecCateService.selectAll();
+		List<Subject> sbjList = subjectService.selectAll();
+		List<ExamGrade> egList = examGradeService.selectAll();
+		List<Textbook> tbList = textbookService.selectAll();
+		model.addAttribute("slList", slList);
+		model.addAttribute("lcList", lcList);
+		model.addAttribute("sbjList", sbjList);
+		model.addAttribute("egList", egList);
+		model.addAttribute("tbList", tbList);
+		return "@Study_lecCreate";
+	}
+	@RequestMapping(value="/create", method=RequestMethod.POST)
+	public String create(Model model, Lecture lecture, String tIdText) throws Exception {
+//		System.out.println("create POST");
+		List<SuppLec> slList = suppLecService.selectAll();
+		List<LecCate> lcList = lecCateService.selectAll();
+		List<Subject> sbjList = subjectService.selectAll();
+		List<ExamGrade> egList = examGradeService.selectAll();
+		List<Textbook> tbList = textbookService.selectAll();
+		model.addAttribute("slList", slList);
+		model.addAttribute("lcList", lcList);
+		model.addAttribute("sbjList", sbjList);
+		model.addAttribute("egList", egList);
+		model.addAttribute("tbList", tbList);
+		
+		if (tIdText != "") {
+			lecture.settId(Integer.parseInt(tIdText));
+		}
+		int updateCount = lectureService.insert(lecture);
+		System.out.println("updateCount : "+updateCount);
+		System.out.println("updateKey : "+lecture.getAlId());
+		return "@Study_lecCreate";
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.GET)

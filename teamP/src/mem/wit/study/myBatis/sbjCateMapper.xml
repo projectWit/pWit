@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.SbjCateMapper">
+	<resultMap id="SbjCateMap" type="mem.wit.study.codes.SbjCate">
+	</resultMap>
+  
+  <select id="select" resultType="mem.wit.study.codes.SbjCate">
+    SELECT * FROM cdSbjCate
+		WHERE sbjCatCode = #{sbjCatCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.SbjCateMapper.SbjCateMap">
+    SELECT * FROM cdSbjCate
+  </select>
+</mapper>

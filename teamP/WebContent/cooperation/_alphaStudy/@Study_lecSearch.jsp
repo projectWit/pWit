@@ -7,7 +7,7 @@
 <jsp:include page="@Study_header.jsp"></jsp:include>
 <script type="text/javascript">
 currentNavIndex = 5;
-currentSubtabIndex = 3;
+currentSubtabIndex = 1;
 
 $(document).ready(function(e) {
 	$('#subTab-'+currentNavIndex).css("display", "block");	
@@ -19,5 +19,5 @@ $(document).ready(function(e) {
 	<jsp:include page="f_lecSearch.jsp"></jsp:include>
 
 </body>
-	<jsp:include page="@Study_footer.jsp"></jsp:include>
+	<jsp:include page="/cooperation/WIT_Main_footer.jsp"></jsp:include>
 </html>

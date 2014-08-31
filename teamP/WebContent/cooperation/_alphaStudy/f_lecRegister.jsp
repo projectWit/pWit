@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <head>
@@ -11,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
-calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태그의 id
+calendarIDs = ['fromLecDate', 'toLecDate', 'birthDate'];		// 달력이 추가될 태그의 id
 </script>
 
 <link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
@@ -29,44 +30,44 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
 <section>
 <article>
 
-<div class="page-title"><span class="bullet-title">강의 개설</span></div>
+<div class="page-title"><span class="bullet-title">강의 스케줄 등록</span></div>
 
 <div class="content-container">
 
 <form method="post" action="" name="regForm" id="regForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">강의코드</td><td class="table-input"><input type="text" size=20 value="000001"></td>
-    		<td class="table-label">수강료</td><td class="table-input"><input type="number" min=1 max=10000000> 원</td>
-            <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <input type="time"></td>
+    	<tr><td class="table-label">강의</td><td class="table-input"><input type="text" size=8 ><a href="/teamP/study/newWindow/findLecture" class="newWindow" rel="0" ><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 ></td>
+    		<!-- <td class="table-label">수강료</td><td class="table-input"><input type="number" min=1 max=10000000> 원</td> -->
+            <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <select name="sbjCatCode"><c:forEach var="sbjCate" items="${scList }" varStatus="status"><option value="${sbjCate.sbjCatCode}">${sbjCate.sbjCatName }</option></c:forEach></select></td>
             </tr>
-        <tr><td class="table-label">강의명</td><td class="table-input"><input type="text" size=20 value="혼자하는 수학"></td>
-        	<td class="table-label">교재</td><td class="table-input"><input type="text" size=8 value="00005"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 value="수학의 정석"></td>
+        <tr><td class="table-label">수강료</td><td class="table-input"><input type="number" min=1 style="width: 100px;"> 원</td>
+        	<!-- <td class="table-label">교재</td><td class="table-input"></td> -->
             <!-- <td class="table-label">생일</td> --><td class="table-input">월 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">강사</td><td class="table-input"><input type="text" size=15 value="000002"><a href="#"><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 value="한지민"></td>
-            <td class="table-label">강의정원</td><td class="table-input"><input type="number" min=1 max=100> 명 이하</td>
+        <tr><td class="table-label">인원</td><td class="table-input"><input type="number" min=1 style="width: 70px;"> 명 이하</td>
+            <!-- <td class="table-label">강의정원</td><td class="table-input"><input type="number" min=1 max=1000> 명 이하</td> -->
             <!-- <td class="table-label">주소</td> --><td class="table-input">화 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">과목</td><td class="table-input"><select><option>미선택</option><option>국어</option><option>영어</option><option>수학</option></select></td>
-            <td class="table-label">강의실</td><td class="table-input"><select><option>미선택</option><option>102호</option><option>103호</option></select></td>
+        <tr><td class="table-label">강의실</td><td class="table-input"><select name="sbjCatCode"><c:forEach var="sbjCate" items="${scList }" varStatus="status"><option value="${sbjCate.sbjCatCode}">${sbjCate.sbjCatName }</option></c:forEach></select></td>
+            <!-- <td class="table-label">강의실</td><td class="table-input"><select><option>미선택</option><option>102호</option><option>103호</option></select></td> -->
             <!-- <td class="table-label">집전화</td> --><td class="table-input">수 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">학년</td><td class="table-input"><input type="number" min="1" max="3" size="10"> 학년</td>
-            <td class="table-label"><!-- 회원아이디 --></td><td class="table-input"><!-- 000002 --></td>
+        <tr><td class="table-label">스케줄설명</td><td class="table-input"><textarea rows="1" name="alDescription" style="margin-right: 0px; padding-right: 0px; width: 97%;"></textarea></td>
+            <!-- <td class="table-label"></td><td class="table-input"></td> -->
             <!-- <td class="table-label">본인휴대폰</td> --><td class="table-input">목 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">학생구분</td><td class="table-input"><select><option>미선택</option><option>중학생</option><option>고등학생</option><option>대학생</option><option>일반인</option></select></td>
-            <td class="table-label"><!-- 가입일 --></td><td class="table-input"><!-- 000002 --></td>
+        <tr><td class="table-label">강의시작일</td><td class="table-input"><input type="text" size=15 id="fromLecDate"></td>
+            <!-- <td class="table-label"></td><td class="table-input"></td> -->
             <!-- <td class="table-label">본인이메일</td> --><td class="table-input">금 : <input type="time"></td>
             </tr>
-        <tr><td class="table-label">강의대상등급</td><td class="table-input"><input type="number" min="1" max="9" size="10"> 등급</td>
-            <td class="table-label"><!-- 탈퇴일 --></td><td class="table-input"><!-- 000002 --></td>
+        <tr><td class="table-label">강의종료일</td><td class="table-input"><input type="text" size=15 id="toLecDate"></td>
+            <!-- <td class="table-label"></td><td class="table-input"></td> -->
             <!-- <td class="table-label">생일</td> --><td class="table-input">토 : <input type="time" value="18:00"></td>
             </tr>
         
     </table>
     <!-- <div style="margin-top: 10px;"> -->
-    <input type="submit" value="개설하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
+    <input type="submit" value="등록하기" class="buttons" id="regSubmit"> <input type="reset" value="초기화" class="buttons" id="regReset">
     <!-- </div> -->
 </form>
 

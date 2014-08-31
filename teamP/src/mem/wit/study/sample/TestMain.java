@@ -1,9 +1,9 @@
-package mem.wit.study.Sample;
+package mem.wit.study.sample;
 
 import java.util.List;
 
 import mem.wit.study.codes.SuppLec;
-import mem.wit.study.codes.TbookJoin;
+import mem.wit.study.codes.Textbook;
 import mem.wit.study.myBatis.SuppLecMapper;
 import mem.wit.study.myBatis.TextbookMapper;
 
@@ -40,8 +40,8 @@ public class TestMain {
 		// 세션 생성
 		MyBatis3 myBatis = new MyBatis3(resource);	
 		TextbookMapper textbookMapper = myBatis.getMapper(TextbookMapper.class);
-		List<TbookJoin> tbList = textbookMapper.selectJoinAll();
-		for (TbookJoin tbookJoin : tbList) {
+		List<Textbook> tbList = textbookMapper.selectAll();
+		for (Textbook tbookJoin : tbList) {
 			System.out.println("tbCode : "+tbookJoin.getTbCode()+", tbName : "+tbookJoin.getTbName());
 		}
 		

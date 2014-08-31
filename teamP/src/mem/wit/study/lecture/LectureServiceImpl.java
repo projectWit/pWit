@@ -17,8 +17,8 @@ public class LectureServiceImpl implements LectureService {
 		return lectureMapper.selectAll();
 	}
 	
-	public Lecture select(String alId) {
-		return lectureMapper.select(alId);
+	public List<Lecture> select(Lecture lecture) {
+		return lectureMapper.select(lecture);
 	}
 	
 	public int insert(Lecture lecture) {

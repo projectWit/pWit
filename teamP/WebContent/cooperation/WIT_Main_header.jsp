@@ -7,7 +7,7 @@
 <!--[if lt IE 9]>
 <script src="/teamP/cooperation/dist/html5shiv.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witCommon.css">
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMemberHeader.css">
 <style type="text/css">
 </style>
 
@@ -34,16 +34,16 @@
 	<div id="ibm-universal-nav">
 		<ul id="ibm-unav-links">
 			<!-- <li id="ibm-home" class="ibm-sm-logo" style="display: block; height: 30px;"><a href="#">IBM®</a></li> -->
-			<li id="ibm-home" class="" style="display: block;"><a href="WIT_Main_index.jsp">WIT®</a></li>
+			<li id="ibm-home" class="" style="display: block;"><a href="WIT_Main_index.jsp" title="홈으로">WIT®</a></li>
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">
 			<li onmouseover="slideRibbon(0)"><a href="#">교육 사업</a></li>
 			<li onmouseover="slideRibbon(1)"><a href="/teamP/Shopping6/index.html">쇼핑몰 사업</a></li>
-			<li onmouseover="slideRibbon(2)"><a href="_GM/WIT_GM_index.jsp">스포츠 사업</a></li>
-			<li onmouseover="slideRibbon(3)"><a href="_pokgan_MM/WIT_MM_index.jsp">커뮤니티 사업</a></li>
-			<li onmouseover="slideRibbon(4)"><a href="_Insa/WIT_Insa_index.jsp">인사 관리</a></li>
-			<li onmouseover="slideRibbon(5)"><a href="_Accounting/WIT_Accounting_index.jsp">회계 관리</a></li>
+			<li onmouseover="slideRibbon(2)"><a href="/teamP/cooperation/_GM/WIT_GM_index.jsp">스포츠 사업</a></li>
+			<li onmouseover="slideRibbon(3)"><a href="/teamP/cooperation/_pokgan_MM/WIT_MM_index.jsp">커뮤니티 사업</a></li>
+			<li onmouseover="slideRibbon(4)"><a href="/teamP/cooperation/_Insa/WIT_Insa_index.jsp">인사 관리</a></li>
+			<li onmouseover="slideRibbon(5)"><a href="/teamP/cooperation/_Accounting/WIT_Accounting_index.jsp">회계 관리</a></li>
 		</ul>
 	</div>
 	<!-- //ibm-universal-nav --> <!-- ibm-search-module --> <!-- <div id="ibm-search-module" class="ibm-access"> -->
@@ -68,8 +68,8 @@
 				style="display:none; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
 				<ul>
 					<li class="subTab-0-0 ibm-active" style="display: block;"><a
-						href="_alphaStudy/@Study_index.jsp">알파 스터디</a></li>
-					<li class="subTab-0-1" style="display: block;"><a href="_OPENEX/WIT_OPENEX_index.jsp">오프넥스</a></li>
+						href="/teamP/cooperation/_alphaStudy/@Study_index.jsp">알파 스터디</a></li>
+					<li class="subTab-0-1" style="display: block;"><a href="/teamP/cooperation/_OPENEX/WIT_OPENEX_index.jsp">오프넥스</a></li>
 					<!-- <li class="subTab-0-2" style="display: block;">
 			<a href="#">Business Partners and alliances</a></li> -->
 				</ul>

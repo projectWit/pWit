@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mem/wit/study/myBatis/lectureMapper">
+<mapper namespace="mem.wit.study.myBatis.LectureMapper">
+	<resultMap id="LectureMap" type="mem.wit.study.lecture.Lecture">
+	</resultMap>
 	
-  <select id="selectMember_basic" resultType="com.wit.member.Member">
-    $value$
+  <select id="select" parameterType="mem.wit.study.lecture.Lecture" resultMap="mem.wit.study.myBatis.LectureMapper.LectureMap">
+    SELECT T.TID,E.EID,E.EKNAME,E.ETEL,E.EMOBILE,E.EEMAIL,E.EPOSTNUM,Z.SIDO,Z.GUGUN,Z.DONG,Z.RI,Z.BUNJI,E.EADDR2,E.EJOINDATE,E.EDROPDATE,S.SBJCATNAME,G.SGNAME FROM ATEACHER T
+	  INNER JOIN EMPLOYEE E ON T.EID=E.EID
+	  INNER JOIN CDSBJCATE S ON T.SBJCATCODE=S.SBJCATCODE
+	  INNER JOIN CDSCHGRADE G ON T.SGCODE=G.SGCODE
+	  INNER JOIN ZIPCODES Z ON E.EPOSTNUM=Z.SEQ
+	<where>
+	    <if test="tId != (null or 0)">
+			T.TID = #{tId}
+	    </if>
+	    <if test="eKname != (null or '')">
+	        AND E.EKNAME like #{eKname}
+	    </if>
+	    <if test="sbjCatCode > 0">
+	        AND T.SBJCATCODE = #{sbjCatCode}
+	    </if>
+	</where>
+	ORDER BY T.TID
   </select>
-  <select id="login" resultType="com.wit.member.Member">
-    SELECT * FROM WitMember
-		WHERE mId = #{mId}
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.LectureMapper.LectureMap">
+    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
+	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	ORDER BY L.ALID
   </select>
-  <select id="getPower" resultType="com.wit.member.Power">
-    SELECT * FROM power
-		WHERE mId = #{mId}
-  </select>
+  <insert id="insert" parameterType="mem.wit.study.lecture.Lecture" useGeneratedKeys="true" >
+  	<selectKey keyProperty="alId" resultType="int" order="BEFORE">
+  		<!-- SELECT NEXTVAL('ALECTURE_SEQ') -->
+  		SELECT ALECTURE_SEQ.NEXTVAL FROM DUAL
+  	</selectKey>
+  	
+  	INSERT INTO aLecture VALUES(#{alId}, #{alName}, #{slCode}, #{lcCode}, #{tId}, #{sbjCode}, #{egCode}, #{tbCode}, #{alDescription})
+  </insert>
 </mapper>

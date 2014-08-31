@@ -8,9 +8,7 @@
 		<result property="sbjName" column="sbjName" />
 		<result property="sbjYear" column="sbjYear" /> -->
 	</resultMap>
-  <select id="selectMember_basic" resultType="com.wit.member.Member">
-    $value$
-  </select>
+  
   <select id="select" resultType="mem.wit.study.codes.Subject">
     SELECT * FROM cdSubject
 		WHERE sbjCode = #{sbjCode}

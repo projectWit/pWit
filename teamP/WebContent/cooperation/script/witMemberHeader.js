@@ -79,26 +79,9 @@ $(document).ready(function(e) {
 	});
 	$('.ibm-sso-signin').click(function(e) {
 		showLogin();
-		/*if ($('#loginStatus').val()=="true" ) {	// 로그인 상태가 true 일 때는 로그아웃의 요청이다
-//			window.open("closeSession.jsp", "", "width=0, height=0");
-			$('#loginStatusForm').submit();
-		} else {
-		$('.dijitDialogUnderlayWrapper').fadeIn();
-		$('.dijitDialog').fadeIn();
-		$('#iframe1').contents().find('.ibm-btn-cancel-sec').click(function(e) {
-			$('.dijitDialogUnderlayWrapper').fadeOut();
-			$('.dijitDialog').fadeOut();
-		});
-		$( ".dijitDialog" ).draggable({
-			  drag: function( event, ui ) {
-				  isDragged = true;
-			  }
-		});
-		} // end if ($('#loginStatus').val()=="true" )
-*/	});
+	});
 	$('.dijitDialogCloseIcon').click(function(e) {
-		$('.dijitDialogUnderlayWrapper').fadeOut();
-		$('.dijitDialog').fadeOut();
+		hideLogin();
 	});
 
 });
@@ -111,8 +94,7 @@ function showLogin() {
 	$('.dijitDialogUnderlayWrapper').fadeIn();
 	$('.dijitDialog').fadeIn();
 	$('#iframe1').contents().find('.ibm-btn-cancel-sec').click(function(e) {
-		$('.dijitDialogUnderlayWrapper').fadeOut();
-		$('.dijitDialog').fadeOut();
+		hideLogin();
 	});
 	$( ".dijitDialog" ).draggable({
 		  drag: function( event, ui ) {
@@ -120,6 +102,11 @@ function showLogin() {
 		  }
 	});
 	} // end if ($('#loginStatus').val()=="true" )
+}
+function hideLogin() {
+	$('#iframe1')[0].contentDocument.location.reload(true);
+	$('.dijitDialogUnderlayWrapper').fadeOut();
+	$('.dijitDialog').fadeOut();
 }
 
 function largeHeader() {

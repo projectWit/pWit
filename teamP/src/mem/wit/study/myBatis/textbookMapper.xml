@@ -9,23 +9,20 @@
 		<result property="tbName" column="tbName" />
 		<result property="tbPrice" column="tbPrice" /> -->
 	</resultMap>
-	<resultMap id="TbookJoinMap" type="mem.wit.study.codes.TbookJoin">
-	</resultMap>
-  <select id="selectMember_basic" resultType="com.wit.member.Member">
-    $value$
-  </select>
+  
   <select id="select" resultType="mem.wit.study.codes.Textbook">
-    SELECT * FROM cdTextbook
-		WHERE tbCode = #{tbCode}
-  </select>
-  <select id="selectAll" resultMap="mem.wit.study.myBatis.TextbookMapper.TextbookMap">
-    SELECT * FROM cdTextbook
-  </select>
-  <select id="selectJoinAll" resultMap="mem.wit.study.myBatis.TextbookMapper.TbookJoinMap">
-    SELECT T.TBCODE, P.PNAME, T.TBNAME, S.SBJNAME, C.CNAME, T.TBPRICE FROM cdTextbook T 
+    SELECT T.TBCODE,T.PCODE,P.PNAME,T.SBJCODE,S.SBJNAME,T.CCODE,C.CNAME,T.TBNAME,T.TBPRICE FROM cdTextbook T 
 	  INNER JOIN cdPublish P ON T.PCODE=P.PCODE 
 	  INNER JOIN cdSubject S ON T.SBJCODE=S.SBJCODE
 	  INNER JOIN cdCurriculum C ON T.CCODE=C.CCODE
+	WHERE tbCode = #{tbCode}
 	ORDER BY T.TBCODE
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.TextbookMapper.TextbookMap">
+    SELECT T.TBCODE,T.PCODE,P.PNAME,T.SBJCODE,S.SBJNAME,T.CCODE,C.CNAME,T.TBNAME,T.TBPRICE FROM cdTextbook T 
+  INNER JOIN cdPublish P ON T.PCODE=P.PCODE 
+  INNER JOIN cdSubject S ON T.SBJCODE=S.SBJCODE
+  INNER JOIN cdCurriculum C ON T.CCODE=C.CCODE
+ORDER BY T.TBCODE
   </select>
 </mapper>

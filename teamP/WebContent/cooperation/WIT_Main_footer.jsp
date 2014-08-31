@@ -67,22 +67,22 @@
 			<div class="ibm-col-6-1">
 				<h3>협력업체</h3>
 				<ul>
-					<li><a href="#">한국 폴리텍 제1 대학</a></li>
-					<li><a href="#">네이버</a></li>
-					<li><a href="#">다음</a></li>
-					<li><a href="#">네이트</a></li>
+					<li><a href="http://jungsu.kopo.ac.kr/" target="_black">한국 폴리텍 제1 대학</a></li>
+					<li><a href="http://www.naver.com/" target="_black">네이버</a></li>
+					<li><a href="http://www.daum.net/" target="_blank">다음</a></li>
+					<li><a href="http://www.nate.com/" target="_blank">네이트</a></li>
 				</ul>
 			</div>
 			<div class="ibm-col-6-1">
 				<h3>퀵 링크</h3>
 				<ul>
-					<li><a href="#">ALPHA STUDY</a></li>
-					<li><a href="#">OPENEX</a></li>
-					<li><a href="#">WIT MALL</a></li>
-					<li><a href="#">GM</a></li>
-					<li><a href="#">이폭간의 멋남 먹방</a></li>
-					<li><a href="#">인사 정보</a></li>
-					<li><a href="#">회계 정보</a></li>
+					<li><a href="/teamP/cooperation/_alphaStudy/@Study_index.jsp">ALPHA STUDY</a></li>
+					<li><a href="/teamP/cooperation/_OPENEX/WIT_OPENEX_index.jsp">OPENEX</a></li>
+					<li><a href="/teamP/Shopping6/index.html">WIT MALL</a></li>
+					<li><a href="/teamP/cooperation/_GM/WIT_GM_index.jsp">GM</a></li>
+					<li><a href="/teamP/cooperation/_pokgan_MM/WIT_MM_index.jsp">이폭간의 멋남 먹방</a></li>
+					<li><a href="/teamP/cooperation/_Insa/WIT_Insa_index.jsp">인사 정보</a></li>
+					<li><a href="/teamP/cooperation/_Accounting/WIT_Accounting_index.jsp">회계 정보</a></li>
 				</ul>
 			</div>
 		</div>

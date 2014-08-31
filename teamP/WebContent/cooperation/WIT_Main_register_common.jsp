@@ -316,12 +316,12 @@ smallHeader();
 				</select></li>
 				<li><b class="necessary"></b><label class="labeling">관심사업</label>
 					<div style="padding-top: 5px;">
-						<input type="checkbox" class="liner"> 알파 스터디 &nbsp;&nbsp;
-						<input type="checkbox" class="liner"> 오프넥스 &nbsp;&nbsp; <input
-							type="checkbox" class="liner"> GM &nbsp;&nbsp; <input
-							type="checkbox" class="liner"> 이폭간의 멋남 먹방 &nbsp;&nbsp; <input
-							type="checkbox" class="liner"> WIT MALL &nbsp;&nbsp; <input
-							type="checkbox" class="liner"> WIT본사
+						<label><input type="checkbox" class="liner"> 알파 스터디&nbsp; </label> &nbsp;&nbsp;
+						<label><input type="checkbox" class="liner"> 오프넥스&nbsp; </label> &nbsp;&nbsp; 
+						<label><input type="checkbox" class="liner"> GM&nbsp; </label> &nbsp;&nbsp; 
+						<label><input type="checkbox" class="liner"> 이폭간의 멋남 먹방&nbsp; </label> &nbsp;&nbsp; 
+						<label><input type="checkbox" class="liner"> WIT MALL&nbsp; </label> &nbsp;&nbsp; 
+						<label><input type="checkbox" class="liner"> WIT본사&nbsp; </label>
 					</div></li> <br>
 				<li><b class="necessary"></b><label class="labeling">가입동기</label>
 					<div style="width: 600px; float: left; margin-bottom: 10px; border: 0px solid red;">
@@ -332,7 +332,7 @@ smallHeader();
 							<label><input type="checkbox" id="middleSchool" value=2 class="liner"> WIT 계열사 시설 이용 목적 </label>&nbsp;&nbsp;
 							<label><input type="checkbox" id="highSchool" value=1 class="liner"> 기업 브랜드 이미지 선호&nbsp; </label> <br>
 							<label><input type="checkbox" id="highSchool" value=2 class="liner"> 관련 업체 종사&nbsp; </label> &nbsp;&nbsp;
-							<label><input type="checkbox" id="highSchool" value=3 class="liner"> 기업 활동 동참 </label>
+							<label><input type="checkbox" id="highSchool" value=3 class="liner"> 기업 활동 동참&nbsp; </label>
 						<!-- </fieldset> -->
 						<div style="height: 10px;"></div>
 						<!-- <fieldset class="schoolLevel">

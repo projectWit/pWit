@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WIT는 당신을 환영합니다!</title>
-
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/witMainSection.css">
 </head>
 <body>
 <div class="ibm-home-page" id="ibm-top">

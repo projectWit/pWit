@@ -5,9 +5,7 @@
 		<!-- <result property="slCode" column="slCode" />
 		<result property="slName" column="slName" /> -->
 	</resultMap>
-  <select id="selectMember_basic" resultType="com.wit.member.Member">
-    $value$
-  </select>
+  
   <select id="select" resultType="mem.wit.study.codes.SuppLec">
     SELECT * FROM cdSuppLec
 		WHERE slCode = #{slCode}

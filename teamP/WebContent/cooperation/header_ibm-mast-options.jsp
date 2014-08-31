@@ -33,11 +33,12 @@ if (login) {
 	signin = "WIT 로그인";
 	register = "회원가입";
 	regHref = "/teamP/cooperation/WIT_Main_register.jsp";
+//	regHref = "/teamP/members/register";
 }
 %>
 
 <body  id="ibm-com" class="v17">
-<form id="loginStatusForm" method="post" action="" ><!-- onSubmit="window.location.reload()" -->
+<form id="loginStatusForm" method="get" action="" ><!-- onSubmit="window.location.reload()" -->
 <input id="loginStatus" name="loginStatus" type="hidden" value="<%=login %>">
 </form>
 <!-- ibm-mast-options -->
