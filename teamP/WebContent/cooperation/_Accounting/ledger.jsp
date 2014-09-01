@@ -1,3 +1,8 @@
+<%@page import="mem.wit.accounting.ACC_TotalSlip_journalDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="mem.wit.accounting.ACC_TotalSlipDAO"%>
+<%@page import="org.springframework.context.support.GenericXmlApplicationContext"%>
+<%@page import="org.springframework.context.ApplicationContext"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -84,12 +89,19 @@
 						2014/08/20</th>
 				</tr>
 				<%
-					for (int i = 0; i < 10; i++) {
+				request.setCharacterEncoding("UTF-8");
+				ApplicationContext context = new GenericXmlApplicationContext(
+						"mem/wit/accounting/Accounting.xml");
+				ACC_TotalSlipDAO dao = context.getBean("acc_TotalSlipDAO", ACC_TotalSlipDAO.class);
+				ArrayList<ACC_TotalSlip_journalDTO> arr = (ArrayList<ACC_TotalSlip_journalDTO>) dao.getAll();
+				double depTor=0, crediTor=0;
+				System.out.println("테스트"+arr.size());
+					for (int i = 0; i < 1; i++) {
 				%>
 				<tr>
 					<th colspan="6" class="p_th"
 						style="font-size: 18px; font-weight: bold;">
-						[현&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금 ]</th>
+						[<%=arr.get(i).getTsj_aName1()%>]</th>
 				</tr>
 				<tr>
 					<th class="p_th">날자/전표번호</th>
@@ -102,20 +114,42 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td class="p_td">2014/08/21-<%=i+1%></td>
-					<td class="p_td">세종</td>
-					<td class="p_td">매출건입금</td>
-					<td class="p_td right">18,500</td>
-					<td class="p_td right">0</td>
-					<td class="p_td right">18,500</td>
+					<td class="p_td"><%=arr.get(i).getTsj_Code()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_cName()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_Contents()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
 				</tr>
 				<tr>
-					<td class="p_td">2014/08/21-1</td>
-					<td class="p_td">세종</td>
-					<td class="p_td">매출건입금</td>
-					<td class="p_td right">1,500</td>
-					<td class="p_td right">2,500</td>
-					<td class="p_td right">17,500</td>
+					<th class="p_th" colspan="3">누계</th>
+					<th class="p_th" style="text-align: right;">20,000</th>
+					<th class="p_th" style="text-align: right;">2,500</th>
+					<th class="p_th" style="text-align: right;">&nbsp;</th>
+				</tr>
+				
+				<tr>
+					<th colspan="6" class="p_th"
+						style="font-size: 18px; font-weight: bold;">
+						[<%=arr.get(i).getTsj_aName2()%>]</th>
+				</tr>
+				<tr>
+					<th class="p_th">날자/전표번호</th>
+					<th class="p_th">거래처</th>
+					<th class="p_th">적요</th>
+					<th class="p_th">차변</th>
+					<th class="p_th">대변</th>
+					<th class="p_th">잔액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="p_td"><%=arr.get(i).getTsj_Code()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_cName()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_Contents()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
 				</tr>
 				<tr>
 					<th class="p_th" colspan="3">누계</th>

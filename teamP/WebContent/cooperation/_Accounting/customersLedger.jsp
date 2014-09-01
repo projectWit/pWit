@@ -1,3 +1,8 @@
+<%@page import="mem.wit.accounting.ACC_TotalSlip_journalDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="mem.wit.accounting.ACC_TotalSlipDAO"%>
+<%@page import="org.springframework.context.support.GenericXmlApplicationContext"%>
+<%@page import="org.springframework.context.ApplicationContext"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -87,13 +92,20 @@
 						2014/08/20</th>
 				</tr>
 				<%
-				String str[]={"세종글로벌", "다산", "글로벌", "대구존", "폰즈", "모아", "도비"};
-					for (int i = 0; i < str.length; i++) {
+				request.setCharacterEncoding("UTF-8");
+				ApplicationContext context = new GenericXmlApplicationContext(
+						"mem/wit/accounting/Accounting.xml");
+				ACC_TotalSlipDAO dao = context.getBean("acc_TotalSlipDAO", ACC_TotalSlipDAO.class);
+				ArrayList<ACC_TotalSlip_journalDTO> arr = (ArrayList<ACC_TotalSlip_journalDTO>) dao.getAll();
+				double depTor=0, crediTor=0;
+				System.out.println("테스트"+arr.size());
+				/* String str[]={"세종글로벌", "다산", "글로벌", "대구존", "폰즈", "모아", "도비"}; */
+					for (int i = 0; i < arr.size(); i++) {
 				%>
 				<tr>
 					<th colspan="6" class="p_th"
 						style="font-size: 18px; font-weight: bold;">
-						[<%=str[i]%>]</th>
+						[<%=arr.get(i).getTsj_cName()%>]</th>
 				</tr>
 				<tr>
 					<th class="p_th">날자/전표번호</th>
@@ -107,12 +119,12 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td class="p_td"><a onclick="slipsD()">2014/08/21-<%=i+1%></a></td>
-					<td class="p_td">매출건입금</td>
-					<td class="p_td">현금</td>
-					<td class="p_td right">18,500</td>
-					<td class="p_td">용역매출</td>
-					<td class="p_td right">18,500</td>
+					<td class="p_td"><a onclick="slipsD()"><%=arr.get(i).getTsj_Code()%></a></td>
+					<td class="p_td"><%=arr.get(i).getTsj_Contents()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_aName1()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
+					<td class="p_td"><%=arr.get(i).getTsj_aName2()%></td>
+					<td class="p_td right"><%=arr.get(i).getTsj_Amounts()%></td>
 				</tr>
 				<tr>
 					<th class="p_th" colspan="2">누계</th>
