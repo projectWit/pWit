@@ -66,42 +66,23 @@ TD.bl_list, .bl_list A, .bl_list A:link, .bl_list A:visited {
 }
 
 .bl_type {
-    width: 100px;       
+    width: 120px;       
     text-align  : center;
 }
 .bl_subject {
+	wdith:150px;
     text-align  : center;
-}
-.bl_type {
-	width : 80px;
-	text-align:center;
 }
 .bl_name {
-    width : 100px;
-    text-align  : center;
-}
-.bl_sport {
-	width : 80px;
-	text-align  : center;
-}
-.bl_phone {
-    width : 100px;
+    width : 150px;
     text-align  : center;
 }
 .bl_date {
-    width   : 100px;
-    text-align  : center;
-}
-.bl_place {
-    width       : 80px;
+    width   : 70px;
     text-align  : center;
 }
 .bl_hits {
-    width       : 80px;
-    text-align  : center;
-}
-.bl_dateend {
-    width       : 100px;
+    width       : 120px;
     text-align  : center;
 }
 .leftalign {
@@ -121,11 +102,6 @@ a:link {
 	text-decoration: none;
 }
 </style>
-<script type="text/javascript" >
-function popUpLecture(lecId) {
-	window.open("ShowLecture.jsp&lecId="+lecId, "", "width = 600px, height = 400px");
-}
-</script>
 <body>
 
 <table width="900px" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -135,7 +111,8 @@ function popUpLecture(lecId) {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 개설 강좌 : <c:out value="${fn:length(list)}" /> &nbsp;&nbsp; </td>
+					<td id='bl_count'> 총 회원 수 : <c:out value="${fn:length(list)}" /> 명 &nbsp;&nbsp; </td>
+					
 				</tr>
 			</table>
 			
@@ -147,31 +124,23 @@ function popUpLecture(lecId) {
 			<table id='bl_table' border='0' cellpadding='0' cellspacing='0' width='100%'>
 				<tr>
 					<td class='bl_title bl_no'>No</td>					
-					<td class='bl_title bl_subject'>강좌명</td>
-					<td class='bl_title bl_sport'>종목</td>
-					<td class='bl_title bl_type'>대상</td>
-					<td class='bl_title bl_place'>장소</td>
-					<td class='bl_title bl_name'>강사명</td>
-					<td class='bl_title bl_phone'>연락처</td>
-					<td class='bl_title bl_date'>시작일</td>
-					<td class='bl_title bl_dateend'>종료일</td>
+					<td class='bl_title bl_subject'>아이디</td>
+					<td class='bl_title bl_name'>이름</td>
+					<td class='bl_title bl_type'>연락처</td>
+					<td class='bl_title bl_hits'>가입일</td>
 				</tr>
 				<!-- INLINE NOTICE --> 
 				 
 				<!-- LIST REPEAT --> 
+				
 				<c:forEach var="item" items="${list }"  varStatus="status">
-				<tr class="bl_oddline" onclick="popUpLecture(${item.lecId })">
+				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.lecName }</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_sport'>${item.sName }</td>
-					<td class='bl_list bl_type'>${item.tName }</td>
-					<td class='bl_list bl_place'>${item.place }</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.eKName }</div></td>
-					<td class='bl_list bl_phone'>${item.eTel }</td>
-					
-					<td class='bl_list bl_date'>${item.sSDay.substring(0,10) }</td>
-					<td class='bl_list bl_dateend'>${item.sEDay.substring(0,10) }</td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.mId }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.mName }</div></td>
+					<td class='bl_list bl_type'>${item.mMobile }</td>
+					<td class='bl_list bl_hits'>${item.mJoindate.substring(0,10) }</td>
 				</tr>
 				</c:forEach>
 				<!-- LIST REPEAT END -->
@@ -179,12 +148,12 @@ function popUpLecture(lecId) {
 			
 			<!-- LIST END --></td>
 	</tr>
-	<tr>
+	<!-- <tr>
 		<td align="center"><br>
 			
-			<!-- PAGING START-->
+			PAGING START
 			
-			<!-- <table width='100%' border='0' cellpadding="0" cellspacing="0">
+			<table width='100%' border='0' cellpadding="0" cellspacing="0">
 				<tr>
 					<td id='bl_pages'> 
 						
@@ -192,10 +161,11 @@ function popUpLecture(lecId) {
 						
 					</td>
 				</tr>
-			</table> -->
+			</table>
 			
-			<!-- PAGING END--></td>
-	</tr>
+			PAGING END</td>
+	</tr> -->
+	<tr><td></td></tr>
 </table>
 <br/>
 <br/>

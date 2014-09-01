@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,8 +11,8 @@
 <meta name="description"
 	content="보건산업기술이전센터, Health Technology Transfer Center" />
 <meta name="keyword" content="Health Technology Transfer Center" />
-<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/common_style.css" />
-<link rel="stylesheet" type="text/css" href="teamP/cooperation/_GM/css/sub_style.css" />
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/common_style.css" />
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_GM/css/sub_style.css" />
 <script type="text/javascript">
 	main = 5;
 	sub = 5;
@@ -67,9 +69,16 @@ textarea{border:1px solid #c8c8c8;font-size:1em;}
 .write_table table td table th{border:1px solid #ddd; background:#f1f1f1; font-weight:normal;}
 .write_table table td table td{border:1px solid #ddd; background:#fff; font-weight:normal;}
 </style>
+<script type="text/javascript">
+function sendController() {
+	document.form.action="/teamP/questionInsert.gm";
+	document.form.submit();
+}
+</script>
 <body>
 <div id="ckmpContainerWrap">
-	<form name="form" method="post" enctype="multipart/form-data">
+	<h3>1:1 문의 하기</h3>
+	<form name="form" enctype="multipart/form-data">
 		<div id="skillRegistWriteTable" class="write_table">
 			<table width="800px" border="0" cellspacing="0" cellpadding="0"
 				summary="기술개요 국문 글쓰기 테이블입니다.">
@@ -80,74 +89,31 @@ textarea{border:1px solid #c8c8c8;font-size:1em;}
 				</colgroup>
 				<tbody>
 					<tr>
-						<th><label for="emailTitle">제목</label></th>
-						<td><input type="text" name="subject" id="emailTitle"
+						<th><label for="qTitle">제목</label></th>
+						<td><input type="text" name="qTitle" id="qTitle"
 							title="제목 작성" size="75" maxlength="100" /></td>
 					</tr>
+					<c:forEach var="item" items="${list}">					
 					<tr>
-						<th><label for="emailWrite">작성자</label></th>
-						<td><input type="text" name="name" id="emailWrite"
-							title="작성자 작성" size="15" maxlength="50" /></td>
+						<th><label for="qMId">작성자</label></th>
+						<td>${item.mName }</td>
 					</tr>
+					</c:forEach>
 					<tr>
-						<th><label for="emailTel1">전화번호</label></th>
-						<td><input type="text" name="phone1" id="emailTel1"
-							title="연락처 앞번호" maxlength="4" size="10" /> - <input type="text"
-							name="phone2" id="emailTel2" title="연락처 중간번호" maxlength="4"
-							size="10" /> - <input type="text" name="phone3" id="emailTel3"
-							title="연락처 뒷번호" maxlength="4" size="10" /></td>
-					</tr>
-					<tr>
-						<th><label for="emailCel1">휴대전화</label></th>
-						<td><input type="text" name="cellular1" id="emailCel1"
-							title="연락처 앞번호" maxlength="4" size="10" /> - <input type="text"
-							name="cellular2" id="emailCel2" title="연락처 중간번호" maxlength="4"
-							size="10" /> - <input type="text" name="cellular3"
-							id="emailCel3" title="연락처 뒷번호" maxlength="4" size="10" /></td>
-					</tr>
-					<tr>
-						<th><label for="emailM1">이메일</label></th>
-						<td><input type="text" name=email1 value=""
-							id="memberEmail1" title="이메일 첫번재" size="25" maxlength="50" /> @
-							<input type="text" name=email2 value="" id="memberEmail1"
-							title="이메일 두번재" size="25" maxlength="100" /> <select
-							name="email3" onChange="setEmail(value);" id="skillMail3">
-								<option value="">:::직접기록:::</option>
-								<option value="hanmail.net">hanmail.net</option>
-								<option value="yahoo.co.kr">yahoo.co.kr</option>
-								<option value="hotmail.com">hotmail.com</option>
-								<option value="naver.com">naver.com</option>
-								<option value="paran.com">paran.com</option>
-								<option value="nate.com">nate.com</option>
-								<option value="dreamwiz.com">dreamwiz.com</option>
-								<option value="empal.com">empal.com</option>
-								<option value="netian.com">netian.com</option>
-								<option value="korea.com">korea.com</option>
-								<option value="freechal.com">freechal.com</option>
-						</select></td>
-					</tr>
-					<!--
-		<tr>
-			<th><label for="emailFile1">첨부파일</label></th>
-			<td>
-               <input type="file" id="emailFile1" title="첨부파일 첫번째" size="30" /><br />
-               <input type="file" id="emailFile2" title="첨부파일 두번째" size="30" />
-               </td>
-		</tr>
-		-->
-					<tr>
-						<th><label for="emailText">내용</label></th>
-						<td><textarea cols="73" rows="10" name="contents"
-								id="emailText" title="내용쓰기"></textarea></td>
+						<th><label for="qCont">내용</label></th>
+						<td><textarea cols="73" rows="10" name="qCont"
+								id="qCont" title="내용쓰기"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
 		<!-- //공통 버튼 -->
-
+		<div style="text-align:center">
+			<img src="img/bt_submit.jpg" onclick="sendController()" style="cursor:pointer"/>&nbsp;&nbsp;&nbsp;<img src="img/bt_cancle.jpg" style="cursor:pointer" onclick="form.reset(); return false;"/>
+		</div>
 	</form>
-
+	<br/><br/>
 	<!-- ######################################### CONTENTS end ################## -->
 </div>
 </body>

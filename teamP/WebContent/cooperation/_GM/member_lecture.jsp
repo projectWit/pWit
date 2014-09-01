@@ -35,13 +35,16 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('/teamP/question.gm');
-   $('#board-0').click(function(e) {
-	   $("#main").load('question.jsp');
-   });
-   $('#board-1').click(function(e) {
-	   $('#main').load('questionCheck.jsp');
-   });
+	$('#main').load('/teamP/lecturelist.gm');
+	$('#memlect-0').click(function (e) {
+		$('#main').load('/teamP/lecturelist.gm');
+	});
+	$('#memlect-1').click(function (e) {
+		$('#main').load('lectureSearch.jsp');
+	});
+	$('#memlect-2').click(function (e) {
+		$('#main').load('lectureCheck.jsp');
+	});
 });
 </script>
 <body>
@@ -50,18 +53,19 @@ $(document).ready(function(e) {
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
         <!-- ########################################################################################## -->
-        <h2>회원 관리</h2>
+        <h2>마이 페이지</h2>
         <nav>
           <ul>
-            <li><a href="#" id='board-0'>1:1 문의</a></li>
-            <li><a href="#" id='board-1'>답변 확인</a></li>
+            <li><a href="#" id='memlec-0'>강좌 목록</a></li>
+            <li><a href="#" id='memlec-1'>강좌 검색</a></li>
+            <li><a href="#" id='memlec-2'>신청 결과</a></li>
           </ul>
         </nav>
         <!-- /nav -->
 	</aside>
  	</div>
 </div>
-<div id="main" style="float:left; width:700px; margin-top:10px; margin-left:20px;">
+<div id="main" style="float:left; width:700px; margin-top:10px; margin-left:20px; ">
 </div>
 </div>
 </body>

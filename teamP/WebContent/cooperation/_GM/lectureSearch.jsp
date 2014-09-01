@@ -80,10 +80,6 @@ TD.bl_list, .bl_list A, .bl_list A:link, .bl_list A:visited {
     width : 100px;
     text-align  : center;
 }
-.bl_sport {
-	width : 80px;
-	text-align  : center;
-}
 .bl_phone {
     width : 100px;
     text-align  : center;
@@ -121,11 +117,6 @@ a:link {
 	text-decoration: none;
 }
 </style>
-<script type="text/javascript" >
-function popUpLecture(lecId) {
-	window.open("ShowLecture.jsp&lecId="+lecId, "", "width = 600px, height = 400px");
-}
-</script>
 <body>
 
 <table width="900px" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -160,7 +151,7 @@ function popUpLecture(lecId) {
 				 
 				<!-- LIST REPEAT --> 
 				<c:forEach var="item" items="${list }"  varStatus="status">
-				<tr class="bl_oddline" onclick="popUpLecture(${item.lecId })">
+				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>${status.count }</td>
 					
 					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.lecName }</a>&nbsp;&nbsp; </td>

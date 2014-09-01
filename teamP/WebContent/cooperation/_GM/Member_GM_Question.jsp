@@ -7,18 +7,18 @@
 <title>Insert title here</title>
 <jsp:include page="WIT_GM_header.jsp"></jsp:include>
 <script type="text/javascript">
-currentNavIndex = -1;
-currentSubtabIndex = 0;
-
 $(document).ready(function(e) {
-   $('#subTab-'+currentNavIndex).css("display", "block");   
-   $($('#ibm-menu-links li a')[currentNavIndex+1]).addClass('nav-active').css('text-shadow', '0px 0 3px #FFF').css('color', '#FFF');
+   $('#subTab-0').css("display", "block");
 });
+currentNavIndex = 1;
+currentSubtabIndex = 3;
 </script>
 
 </head>
 <body>
-	<jsp:include page="WIT_GM_section.jsp"></jsp:include>
+
+	<jsp:include page="member_participation.jsp"></jsp:include>
+
 </body>
 <jsp:include page="WIT_GM_footer.jsp"></jsp:include>
 </html>

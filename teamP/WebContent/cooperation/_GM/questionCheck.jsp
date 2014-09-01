@@ -53,55 +53,31 @@ TD.bl_list, .bl_list A, .bl_list A:link, .bl_list A:visited {
 	font-size: 11px;
 	color: #666;
 }
-#bl_search {
-    text-align: right;
-    line-height : 28px;
-	font-family: Tahoma, "돋움", Verdana;
-	font-size: 11px;
-	color: #666;
-}
 .bl_no {
     width: 40px;       
     text-align  : center;
 }
-
-.bl_type {
-    width: 100px;       
+.bl_icon {
+    width: 30px;       
+    text-align  : center;
+}
+.bl_product {
+    width: 70px;       
     text-align  : center;
 }
 .bl_subject {
     text-align  : center;
 }
-.bl_type {
-	width : 80px;
-	text-align:center;
-}
 .bl_name {
-    width : 100px;
-    text-align  : center;
-}
-.bl_sport {
-	width : 80px;
-	text-align  : center;
-}
-.bl_phone {
-    width : 100px;
+     width : 70px;
     text-align  : center;
 }
 .bl_date {
-    width   : 100px;
-    text-align  : center;
-}
-.bl_place {
-    width       : 80px;
+    width   : 70px;
     text-align  : center;
 }
 .bl_hits {
-    width       : 80px;
-    text-align  : center;
-}
-.bl_dateend {
-    width       : 100px;
+    width       : 60px;
     text-align  : center;
 }
 .leftalign {
@@ -121,13 +97,12 @@ a:link {
 	text-decoration: none;
 }
 </style>
-<script type="text/javascript" >
-function popUpLecture(lecId) {
-	window.open("ShowLecture.jsp&lecId="+lecId, "", "width = 600px, height = 400px");
+<body>
+<script type="text/javascript">
+function sendQuestionBoardPage(qId) {
+	location.href="questionDetail.jsp&qId="+qId;
 }
 </script>
-<body>
-
 <table width="900px" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tr>
 		<td align="center"><!-- LIST HEADER --> 
@@ -135,7 +110,8 @@ function popUpLecture(lecId) {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 개설 강좌 : <c:out value="${fn:length(list)}" /> &nbsp;&nbsp; </td>
+					<td id='bl_count'> 문의 글 : <c:out value="${fn:length(list)}" />건</td>
+					<td id='bl_search'></td>
 				</tr>
 			</table>
 			
@@ -146,58 +122,52 @@ function popUpLecture(lecId) {
 			
 			<table id='bl_table' border='0' cellpadding='0' cellspacing='0' width='100%'>
 				<tr>
-					<td class='bl_title bl_no'>No</td>					
-					<td class='bl_title bl_subject'>강좌명</td>
-					<td class='bl_title bl_sport'>종목</td>
-					<td class='bl_title bl_type'>대상</td>
-					<td class='bl_title bl_place'>장소</td>
-					<td class='bl_title bl_name'>강사명</td>
-					<td class='bl_title bl_phone'>연락처</td>
-					<td class='bl_title bl_date'>시작일</td>
-					<td class='bl_title bl_dateend'>종료일</td>
+					<td class='bl_title bl_no'>No</td>
+					<td class='bl_title bl_icon'>&nbsp;</td>
+					
+					<td class='bl_title bl_subject'>Content</td>
+					<td class='bl_title bl_name'>Name</td>
+					
+					<td class='bl_title bl_hits'>Answer</td>
 				</tr>
 				<!-- INLINE NOTICE --> 
-				 
+				
+							 
 				<!-- LIST REPEAT --> 
-				<c:forEach var="item" items="${list }"  varStatus="status">
-				<tr class="bl_oddline" onclick="popUpLecture(${item.lecId })">
-					<td class='bl_list bl_no'>${status.count }</td>
+				<c:forEach var="item" items="${list }" >
+				<tr class="bl_oddline" onclick='sendQuestionBoardPage(${list.qId})' style="cursor:pointer">
+					<td class='bl_list bl_no'>${list.qId }</td>
+					<td class='bl_list bl_icon'><img src='/teamP/cooperation/_GM/img/question.gif' border=0></a></td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.lecName }</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_sport'>${item.sName }</td>
-					<td class='bl_list bl_type'>${item.tName }</td>
-					<td class='bl_list bl_place'>${item.place }</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.eKName }</div></td>
-					<td class='bl_list bl_phone'>${item.eTel }</td>
-					
-					<td class='bl_list bl_date'>${item.sSDay.substring(0,10) }</td>
-					<td class='bl_list bl_dateend'>${item.sEDay.substring(0,10) }</td>
+					<td class='bl_list bl_subject leftalign' colspan="1"> <img src="/teamP/cooperation/_GM/img/board_head.gif" style='margin-right:5px;' align='absmiddle' /><span class='BoardBrandName'></span><a href="#"  >${list.qTitle }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${list.mName }</div></td>
+					<td class='bl_list bl_date'>${list.qDate }</td>
+					<td class='bl_list bl_hits'>${list.stateName } </td>
 				</tr>
-				</c:forEach>
+				</c:forEach>				 
 				<!-- LIST REPEAT END -->
 			</table>
 			
 			<!-- LIST END --></td>
 	</tr>
 	<tr>
-		<td align="center"><br>
+		<!-- <td align="center"><br>
 			
-			<!-- PAGING START-->
+			PAGING START
 			
-			<!-- <table width='100%' border='0' cellpadding="0" cellspacing="0">
+			<table width='100%' border='0' cellpadding="0" cellspacing="0">
 				<tr>
 					<td id='bl_pages'> 
 						
-						 <span class="bl_curpage bl_pagetext">1</span> <span class="bl_pagetext"><a href="board.html?code=pippin1_board1&page=2">2</a></span>
+						 <span class="bl_curpage bl_pagetext">1</span> <span class="bl_pagetext"><a href="#">2</a></span>
 						
-					</td>
+						 </td>
+					<td id='bl_linkbutton'>   </td>
 				</tr>
-			</table> -->
+			</table>
 			
-			<!-- PAGING END--></td>
+			PAGING END</td> -->
 	</tr>
 </table>
-<br/>
-<br/>
 </body>
 </html>

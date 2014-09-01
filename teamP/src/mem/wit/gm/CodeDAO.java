@@ -45,5 +45,14 @@ public class CodeDAO {
 		List<C_PTimeDTO> alist=(List<C_PTimeDTO>) myBatis.select("searchTime", query);
 		return alist;
 	}
-	
+	public List<MemberDTO> CheckId(String id) {
+		String query="select mId, mName, mMobile from Witmember where mId='"+id+"'";
+		List<MemberDTO> alist = (List<MemberDTO>) myBatis.select("searchId", query);
+		return alist;
+	}
+	public List<ClubDTO> CheckClub(String id) {
+		String query="select cName, sName from GM_Member g, GM_Club c, C_Sport s where s.sId=c.sId and g.mId=c.cPresident and g.mId='"+id+"'";
+		List<ClubDTO> alist = (List<ClubDTO>) myBatis.select("searchClub", query);
+		return alist;
+	}
 }

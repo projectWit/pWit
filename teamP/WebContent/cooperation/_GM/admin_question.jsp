@@ -31,12 +31,16 @@ border-bottom: 5px solid #E8E8E8;
 
 
 </style>
-<script type="text/javascript" src="teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
+   $('#main').load('/teamP/memberlist.gm'); 
    $('#member-0').click(function(e) {
-	   $("#main").load('question_admin.jsp');
+	  $('#main').load('/teamP/memberlist.gm'); 
+   });
+   $('#member-3').click(function(e) {
+	   $("#main").load('question.jsp');
    });
 });
 </script>

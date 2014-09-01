@@ -24,7 +24,43 @@
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 33px;"> -->
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 74px;"> -->
 <div class="ibm-home-page" id="ibm-top" style="margin-top: 120px;">
-
+<%
+Member member = (Member) session.getAttribute("member");
+boolean login = member == null ? false : true;
+String href1 = "#";
+String href2 = "#";
+String href3 = "#";
+String href4 = "#";
+String href5 = "#";
+String logfunc = "";
+String name1 = "수강 강좌";
+String name2 = "동호회";
+String name3 = "질의 응답";
+String name4 = "대관 신청";
+String name5 = "마이페이지";
+if (login) { // 로그인 관리자 때 
+   if(member.getmId().equals("admin_gm") || member.getmId().equals("admin")) {
+	   name1="회원 관리";
+	   name2="동호회 관리";
+	   name3="강사 관리";
+	   name4="시설 관리";
+	   name5="대관 관리";
+	   href1 = "WIT_GM_member.jsp";
+	   href2 = "WIT_GM_club.jsp";
+	   href3 = "WIT_GM_worker.jsp";
+	   href4 = "WIT_GM_facilities.jsp";
+	   href5 = "WIT_GM_rent.jsp";
+   } else {
+	   href1 = "#";
+	   href2 = "#";
+	   href3 = "Member_GM_Question.jsp";
+	   href4 = "Member_GM_rent.jsp";
+	   href5 = "#";
+   }
+} else {
+	logfunc = "showLogin()";
+}
+%>
 <!-- MASTHEAD_BEGIN -->
 <header id="ibm-masthead"> 
 
@@ -40,13 +76,13 @@
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">
-			<li onmouseover="slideRibbon(-1)"><a href="WIT_GM_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">G M</span></a></li>
+			<li onmouseover="slideRibbon(-1)"><a  href="WIT_GM_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">G M</span></a></li>
 			<li onmouseover="slideRibbon(0)"><a href="WIT_GM_introduce.jsp">GM 소개</a></li>
-			<li onmouseover="slideRibbon(1)"><a href="WIT_GM_member.jsp">회원 관리</a></li>
-			<li onmouseover="slideRibbon(2)"><a href="WIT_GM_club.jsp">동호회 관리</a></li>
-			<li onmouseover="slideRibbon(3)"><a href="WIT_GM_worker.jsp">직원 관리</a></li>
-			<li onmouseover="slideRibbon(4)"><a href="WIT_GM_facilities.jsp">시설 관리</a></li>
-			<li onmouseover="slideRibbon(5)"><a href="WIT_GM_rent.jsp">대관 관리</a></li>
+			<li onmouseover="slideRibbon(1)"><a onclick="<%=logfunc%>" href="<%=href1%>"><%=name1 %></a></li>
+			<li onmouseover="slideRibbon(2)"><a onclick="<%=logfunc%>" href="<%=href2%>"><%=name2 %></a></li>
+			<li onmouseover="slideRibbon(3)"><a onclick="<%=logfunc%>" href="<%=href3%>"><%=name3 %></a></li>
+			<li onmouseover="slideRibbon(4)"><a onclick="<%=logfunc%>" href="<%=href4%>"><%=name4 %></a></li>
+			<li onmouseover="slideRibbon(5)"><a onclick="<%=logfunc%>" href="<%=href5%>"><%=name5 %></a></li>
 		</ul>
 	</div>
 	<!-- //ibm-universal-nav --> <!-- ibm-search-module --> <!-- <div id="ibm-search-module" class="ibm-access"> -->

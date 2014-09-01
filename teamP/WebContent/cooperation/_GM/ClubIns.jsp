@@ -116,7 +116,7 @@ img {
 		});
 	});
 function sendController() {
-	document.form.action="/teamP/lectureInsert.gm";
+	document.form.action="/teamP/ClubIns.gm";
 	document.form.submit();
 }
 </script>
@@ -126,7 +126,7 @@ function sendController() {
 <form method="get" action="" name="form">
 	<!-----------------------------------바디 시작---------------------------------------------------->
 	<div id="sideRight" style="width: 750px">
-		<h3>강좌 개설</h3>
+		<h3>동호회 개설</h3>
 		
 		<br/>
 		
@@ -138,7 +138,7 @@ function sendController() {
 			<tbody>
 				<tr>
 					<th><label for="lecName"><span
-							class="login">강좌명</span></label></th>
+							class="login">동호회명</span></label></th>
 					<td><input name="lecName" class="default"
 						id="lecName" style="width: 300px; background-color: rgb(255, 255, 255);"
 						type="text"></td>
@@ -146,57 +146,47 @@ function sendController() {
 				</tr>
 
 				<tr>
-					<th><label for="lecCont">강좌 내용</label></th>
+					<th><label for="lecCont">동호회회장</label></th>
 					<td><textarea name="lecCont" id="lecCont" cols="60" rows="3"></textarea></td>
 
 				</tr>
 
 				<tr>
-					<th><label for="lecCnt">수강회원수</label></th>
-					<td><input type="number" id="lecCnt" name="lecCnt" /> 명</td>
+					<th><label for="pId">동호회 총무</label></th>
+					<td><select id="pId" name="pId" style="margin-left: 10px;"></select></td>
 				</tr>
-
-				<tr>
-					<th><label for="lecPay">수강비</label></th>
-					<td><input type="number" id="lecPay" name="lecPay" /> 원</td>
-				</tr>
-
+				
 				<tr>
 					<th><label for="sId">종목</label></th>
 					<td><select id="sId" name="sId" style="margin-left: 10px;"	>
 					</select></td>
 				</tr>
 
+				
 				<tr>
-					<th><label for="pId">장소</label></th>
-					<td><select id="pId" name="pId" style="margin-left: 10px;"></select></td>
-				</tr>
-
-				<tr>
-					<th><label for="tId">대상</label></th>
-					<td><select id="tId" name="tId" style="margin-left: 10px;"></select></td>
-				</tr>
-				<tr>
-					<th><label for="ptId">수업 시간</label></th>
-					<td><select id="ptId" name="ptId" style="margin-left: 10px;"></select></td>
-
-				</tr>
-
-				<tr>
-					<th><label for="sSDay">개설일</label></th>
+					<th><label for="sSDay">우편번호</label></th>
 					<td>
 					<input type="text" id="sSDay" name="sSDay" />
 					</td>
 				</tr>
 
 				<tr>
-					<th><label for="sEDay">종료일</label></th>
+					<th><label for="sEDay">상세주소</label></th>
 					<td><input type="text" id="sEDay" name="sEDay" />
 					</td>
 				</tr>
 
+				<tr>
+					<th><label for="ptId">홈페이지 주소</label></th>
+					<td><select id="ptId" name="ptId" style="margin-left: 10px;"></select></td>
 
+				</tr>	
 
+				<tr>
+					<th><label for="pId">동호회 마크</label></th>
+					<td><select id="pId" name="pId" style="margin-left: 10px;"></select></td>
+				</tr>
+				
 
 			</tbody>
 		</table>

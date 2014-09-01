@@ -42,7 +42,7 @@ $(document).ready(function(e) {
 		$("#main").load('lectureInsert.jsp');	
 	});
 	$('#worker-3').click(function(e) {
-		$("#main").load('lecturelist.jsp');
+		$("#main").load('/teamP/lecturelist.gm');
 	});
 });
 </script>
