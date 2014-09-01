@@ -131,10 +131,17 @@ background-image: -moz-linear-gradient(top, #ececec, #fff);
 background-image: linear-gradient(top, #ececec, #fff);
 	border-bottom: 1px solid #FFF;
 }
+.tab-container .popup-content {
+	width: 400px; 
+	height: 300px; 
+	overflow: scroll; 
+	overflow-x: hidden; 
+	border: 1px solid #aaa;
+}
 .tab-container .tab-content {
 	clear: both;
 	width: 1200px;
-	height: 300px;
+//	height: 300px;
 	padding-top: 10px;
 	border-left: 1px solid #999;
 	border-right: 1px solid #999;
@@ -198,7 +205,7 @@ background-color: #f9f9f9;
 }
 
 .tab-container .tab-content .paging {
-	margin-top: 5px;
+	margin-top: 15px;
 	text-align: center;
 }
 

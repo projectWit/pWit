@@ -15,7 +15,7 @@
 			T.TID = #{tId}
 	    </if>
 	    <if test="eKname != (null or '')">
-	        AND E.EKNAME like #{eKname}
+	        AND E.EKNAME like '%' || #{eKname} || '%'
 	    </if>
 	    <if test="sbjCatCode > 0">
 	        AND T.SBJCATCODE = #{sbjCatCode}

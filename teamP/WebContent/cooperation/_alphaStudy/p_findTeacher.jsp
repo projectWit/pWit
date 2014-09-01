@@ -38,7 +38,7 @@ calendarIDs = ['joinDate', 'dropDate', 'birthDate'];		// 달력이 추가될 태
     <table cellspacing="0" class="info-table" style="min-width: 400px;">
     	<tr><td class="find-label">아이디</td><td class="find-input"><input type="number" size=8 min=1 name="tIdText" style="width: 70px;"></td>
     		<td class="find-label">이름</td><td class="find-input"><input type="text" size=8 name="eKname"></td>
-            <td class="find-label" rowspan=7>과목</td><td class="find-input"><select name="sbjCatCode"><option value="0">선택</option><c:forEach var="sbjCate" items="${scList }" varStatus="status"><option value="${sbjCate.sbjCatCode}">${sbjCate.sbjCatName }</option></c:forEach></select></td>
+            <td class="find-label">과목</td><td class="find-input"><select name="sbjCatCode"><option value="0">선택</option><c:forEach var="sbjCate" items="${scList }" varStatus="status"><option value="${sbjCate.sbjCatCode}">${sbjCate.sbjCatName }</option></c:forEach></select></td>
             </tr>
        
     </table>

@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var windowSizeArray = [ "width=420,height=470", "width=300,height=400,scrollbars=yes" ];
+var windowSizeArray = [ "width=420,height=500", "width=300,height=400,scrollbars=yes" ];
 
 $(document).ready(function(e) {
 	$('.tabs a').click(function(e) {
@@ -56,6 +56,11 @@ $(document).ready(function(e) {
 	$('#findTeacherResult tr').click(function(e) {
 		$('#tIdText', opener.document).val($(this).children('td').eq(0).text());
 		$('#tName', opener.document).val($(this).children('td').eq(1).text());
+		window.close();
+	});
+	$('#findLectureResult tr').click(function(e) {
+		$('#alIdText', opener.document).val($(this).children('td').eq(0).text());
+		$('#alName', opener.document).val($(this).children('td').eq(1).text());
 		window.close();
 	});
 });

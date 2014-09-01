@@ -5,23 +5,49 @@
 	</resultMap>
 	
   <select id="select" parameterType="mem.wit.study.lecture.Lecture" resultMap="mem.wit.study.myBatis.LectureMapper.LectureMap">
-    SELECT T.TID,E.EID,E.EKNAME,E.ETEL,E.EMOBILE,E.EEMAIL,E.EPOSTNUM,Z.SIDO,Z.GUGUN,Z.DONG,Z.RI,Z.BUNJI,E.EADDR2,E.EJOINDATE,E.EDROPDATE,S.SBJCATNAME,G.SGNAME FROM ATEACHER T
-	  INNER JOIN EMPLOYEE E ON T.EID=E.EID
-	  INNER JOIN CDSBJCATE S ON T.SBJCATCODE=S.SBJCATCODE
-	  INNER JOIN CDSCHGRADE G ON T.SGCODE=G.SGCODE
-	  INNER JOIN ZIPCODES Z ON E.EPOSTNUM=Z.SEQ
+    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
+	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
 	<where>
+		<if test="alId != (null or 0)">
+			L.ALID = #{alId}
+	    </if>
+	    <if test="alName != (null or '')">
+	        AND L.ALNAME like '%' || #{alName} || '%'
+	    </if>
 	    <if test="tId != (null or 0)">
-			T.TID = #{tId}
+			AND L.TID = #{tId}
 	    </if>
 	    <if test="eKname != (null or '')">
-	        AND E.EKNAME like #{eKname}
+	        AND E.EKNAME like '%' || #{eKname} || '%'
 	    </if>
-	    <if test="sbjCatCode > 0">
-	        AND T.SBJCATCODE = #{sbjCatCode}
+	    <if test="slCode > 0">
+	        AND L.SLCODE = #{slCode}
+	    </if>
+	    <if test="lcCode > 0">
+	        AND L.LCCODE = #{lcCode}
+	    </if>
+	    <if test="sbjCode > 0">
+	        AND L.SBJCODE = #{sbjCode}
+	    </if>
+	    <if test="egCode > 0">
+	        AND L.EGCODE = #{egCode}
+	    </if>
+	    <if test="tbCode > 0">
+	        AND L.TBCODE = #{tbCode}
 	    </if>
 	</where>
-	ORDER BY T.TID
+	ORDER BY L.ALID DESC
   </select>
   <select id="selectAll" resultMap="mem.wit.study.myBatis.LectureMapper.LectureMap">
     SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
@@ -37,7 +63,7 @@
 	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
 	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
 	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
-	ORDER BY L.ALID
+	ORDER BY L.ALID DESC
   </select>
   <insert id="insert" parameterType="mem.wit.study.lecture.Lecture" useGeneratedKeys="true" >
   	<selectKey keyProperty="alId" resultType="int" order="BEFORE">

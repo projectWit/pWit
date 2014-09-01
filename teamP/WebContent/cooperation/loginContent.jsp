@@ -350,14 +350,14 @@ $(document).ready(function(e) {
 
 <FORM id=userForm method=post name=userForm action="/teamP/members/login">
 <DIV id=form_fields>
-<DIV id=lft_flds><INPUT id=username name=mId type="text" placeholder="WIT ID*" required>
+<DIV id=lft_flds><INPUT id=username name=mId type="text" tabindex=1 placeholder="WIT ID*" required>
 	<BR><A id=forgot-id-link class=ibm-select-link href="#"><!-- Forgot IBM ID? -->ID를 잊었습니까?</A></DIV>
-<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=mPwd  type="password" placeholder="password*" required></SPAN>
+<DIV id=rt_flds><SPAN id=pwdField><INPUT id=password_text name=mPwd  type="password" tabindex=2 placeholder="password*" required></SPAN>
 	<BR><A id=forgot-pwd-link class=ibm-select-link href="#"><!-- Forgot password? -->비밀번호를 잊었습니까?</A></DIV><INPUT id=login-form-type type=hidden value=pwd name=login-form-type> 
 <DIV id=register-link-div><A id=ibm-register-link class=ibm-select-link href="/teamP/cooperation/WIT_Main_register.jsp">회원가입</A></DIV>
 <DIV class=clr>&nbsp;</DIV></DIV>
 <DIV id=ibm-signin>
-<DIV class=ibm-buttons-row><INPUT id=ibm-signin-submit class=ibm-btn-arrow-pri type=button value=로그인 name=ibm-submit><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT id=ibm-signin-cancel class=ibm-btn-cancel-sec type=reset value=취소 name=ibm-cancel></DIV></DIV>
+<DIV class=ibm-buttons-row><INPUT id=ibm-signin-submit class=ibm-btn-arrow-pri type=button value=로그인 name=ibm-submit tabindex=3><SPAN class=ibm-sep>&nbsp;</SPAN><INPUT id=ibm-signin-cancel class=ibm-btn-cancel-sec type=reset value=취소 name=ibm-cancel tabindex=4></DIV></DIV>
 </FORM></DIV></DIV><div id="testArea"></div>
 </BODY>
 </html>

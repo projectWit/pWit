@@ -36,7 +36,7 @@ calendarIDs = ['fromLecDate', 'toLecDate', 'birthDate'];		// 달력이 추가될
 
 <form method="post" action="" name="regForm" id="regForm">
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">강의</td><td class="table-input"><input type="text" size=8 ><a href="/teamP/study/newWindow/findLecture" class="newWindow" rel="0" ><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 ></td>
+    	<tr><td class="table-label">강의</td><td class="table-input"><input type="text" size=8 name="alIdText" id="alIdText"><a href="/teamP/study/newWindow/findLecture" class="newWindow" rel="0" ><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=19 id="alName"></td>
     		<!-- <td class="table-label">수강료</td><td class="table-input"><input type="number" min=1 max=10000000> 원</td> -->
             <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <select name="sbjCatCode"><c:forEach var="sbjCate" items="${scList }" varStatus="status"><option value="${sbjCate.sbjCatCode}">${sbjCate.sbjCatName }</option></c:forEach></select></td>
             </tr>
