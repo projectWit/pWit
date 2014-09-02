@@ -17,31 +17,31 @@
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
 <script type="text/javascript">
 function insertSlips() {
-	var features = "width=480px, height=630px, top=150, left=150, toolbar=no, scrollbars=no, resizable=no, location=no,border=0,menubar=no,status=no,directories=no";
+	var features = "width=480px, height=630px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertSlips.jsp', '전표입력창', features);
 }
 function insert_customers() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertCustomers.jsp', '', features);
 };	
 function AccountsInsert() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('AccountsInsert.jsp', '', features);
 };	
 function insertProjects() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertProject.jsp', '', features);
 };	
 function insertDepartments() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertDepartments.jsp', '', features);
 };	
 function FixedAssetInsert() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('FixedAssetInsert.jsp', '', features);
 };	
 function insertCompany() {
-	var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
+	var features = "width=480px, height=550px, top=150, left=150, toolbar=no, scrollbars=no, resizable=yes, location=no,border=0,menubar=no,status=no,directories=no";
 	window.open('insertCompany.jsp', '', features);
 };	
 

@@ -35,10 +35,18 @@
 		var features = "width=500px, height=500px, resizable=yes, scrollbars=no, top=500, left=400, toolbar=yes";
 		window.open('AccountsInsert.jsp', '', features);
 	}	
+	function choice(no) {
+		document.saccountsList.no.value = no;
+		document.saccountsList.submit();
+	}
+	function lineChk(obj, colorGu) {
+		obj.style.background = colorGu;
+	}
 </script>
 <body onload="saccountsList.aSearch.select()">
-<form method="post" id="saccountsList">
-	<div id="wrap" style="margin-left: 40px;">
+<form method="post" action="insertSlips.jsp" id="saccountsList" name="saccountsList">
+<input type="hidden" name="no">
+	<div id="wrap" style="margin-left: 40px; width: 400px;">
 		<div id="print_title">
 			<table width="400" height="100" border='0' cellspacing='0'
 				cellpadding='0'>
@@ -65,7 +73,6 @@ ApplicationContext context = new GenericXmlApplicationContext(
 		"mem/wit/accounting/Accounting.xml");
 ACC_AccountsDAO dao = context.getBean("acc_AccountsDAO",
 		ACC_AccountsDAO.class);
-
 ArrayList<ACC_AccountsDTO> arr = (ArrayList<ACC_AccountsDTO>) dao.getAll();
 %>
 		<!-- ***** 프린트 시작 ***** -->
@@ -91,7 +98,9 @@ ArrayList<ACC_AccountsDTO> arr = (ArrayList<ACC_AccountsDTO>) dao.getAll();
 				for(int i=0; i<arr.size(); i++){
 				%>
 				<tr>
-				<td class="p_td">2014/08/25-<%=arr.get(i).getaCode()%></td>
+				<td class="p_td" onclick="choice(<%=arr.get(i).getaCode()%>)"
+				onmouseover="lineCHK(this, '#F6F6F6')"
+				onmouseout="lineCHK(this, 'white')">2014/08/25/<%=arr.get(i).getaCode()%></td>
 				<td class="p_td"><%=arr.get(i).getaName()%></td>
 				<td class="p_td"><%=arr.get(i).getaContents()%></td>
 				</tr>

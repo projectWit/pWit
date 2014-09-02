@@ -1,3 +1,16 @@
+<%@page import="mem.wit.accounting.ACC_BankAccountDTO"%>
+<%@page import="mem.wit.accounting.ACC_BankAccountDAO"%>
+<%@page import="mem.wit.accounting.ACC_TaxDTO"%>
+<%@page import="mem.wit.accounting.ACC_TaxDAO"%>
+<%@page import="mem.wit.accounting.ACC_CustomersDTO"%>
+<%@page import="mem.wit.accounting.ACC_CustomersDAO"%>
+<%@page import="mem.wit.accounting.ACC_ProjectsDTO"%>
+<%@page import="mem.wit.accounting.ACC_ProjectsDAO"%>
+<%@page import="mem.wit.accounting.ACC_AccountsDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="mem.wit.accounting.ACC_AccountsDAO"%>
+<%@page import="org.springframework.context.support.GenericXmlApplicationContext"%>
+<%@page import="org.springframework.context.ApplicationContext"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,14 +37,6 @@
 <script type="text/javascript" src="../script/calendar.js"></script>
 <script type="text/javascript">
 	calendarIDs = [ 'tsDate' ]; // 달력이 추가될 태그의 id
-	function Accounts_sSelect() {
-		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
-		window.open('Accounts_sSelect.jsp', '', features);
-	};	
-	function projectLists() {
-		var features = "width=480px, height=550px, resizable=no, scrollbars=no, top=200, left=200, toolbar=no";
-		window.open('projectLists.jsp', '', features);
-	};	
 </script>
 <body>
 <form action="insertSlipsPro.jsp" method="post">
@@ -51,7 +56,37 @@
 			</table>
 		</div>
 		<div style="border-top: 1px solid #000; width: 400px;"></div>
+<% 
+ApplicationContext a_context = new GenericXmlApplicationContext(
+		"mem/wit/accounting/Accounting.xml");
+ACC_AccountsDAO a_dao = a_context.getBean("acc_AccountsDAO",
+		ACC_AccountsDAO.class);
+ArrayList<ACC_AccountsDTO> a_arr = (ArrayList<ACC_AccountsDTO>) a_dao.getAll();
 
+ApplicationContext p_context = new GenericXmlApplicationContext(
+		"mem/wit/accounting/Accounting.xml");
+ACC_ProjectsDAO p_dao = p_context.getBean("acc_ProjectsDAO",
+		ACC_ProjectsDAO.class);
+ArrayList<ACC_ProjectsDTO> p_arr = (ArrayList<ACC_ProjectsDTO>) p_dao.getAll();
+
+ApplicationContext c_context = new GenericXmlApplicationContext(
+		"mem/wit/accounting/Accounting.xml");
+ACC_CustomersDAO c_dao = c_context.getBean("acc_CustomersDAO",
+		ACC_CustomersDAO.class);
+ArrayList<ACC_CustomersDTO> c_arr = (ArrayList<ACC_CustomersDTO>)c_dao.getAll();
+
+ApplicationContext t_context = new GenericXmlApplicationContext(
+		"mem/wit/accounting/Accounting.xml");
+ACC_TaxDAO t_dao = t_context.getBean("acc_TaxDAO",
+		ACC_TaxDAO.class);
+ArrayList<ACC_TaxDTO> t_arr = (ArrayList<ACC_TaxDTO>)t_dao.getAll();
+
+ApplicationContext ba_context = new GenericXmlApplicationContext(
+		"mem/wit/accounting/Accounting.xml");
+ACC_BankAccountDAO ba_dao = ba_context.getBean("acc_BankAccountDAO",
+		ACC_BankAccountDAO.class);
+ArrayList<ACC_BankAccountDTO> ba_arr = (ArrayList<ACC_BankAccountDTO>) ba_dao.getAll();
+%>
 		<!-- ***** 프린트 시작 ***** -->
 		<table width="400">
 			<col width="100px" />
@@ -72,24 +107,31 @@
 				</tr>
 				<tr>
 					<th class="p_th left">계정I</th>
-					<td class="p_td left"><input type="text" size="20" name="ts_aCode"
-						style="background-color: #F6F6F6; height: 28px;"
-						onclick="Accounts_sSelect()" />
-						<input type="button" value="선택하기" style="height: 28px;" onclick="Accounts_sSelect()" /></td>
+					<td class="p_td left">
+					<%for (int i=0; i<a_arr.size();i++){%>
+					<input type="text" size="20" name="ts_aCode"
+						style="background-color: #F6F6F6; height: 28px;" />
+						<select><option>선택</option>						
+						<option><%=a_arr.get(i).getaName()%></option><%}%></select>
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">프로젝트</th>
 					<td class="p_td left"><input type="text" size="20" name="ts_pCode"
-						style="background-color: #F6F6F6; height: 28px;"
-						onclick="projectLists()"/>
-						<input type="button" value="선택하기" style="height: 28px;" onclick="projectLists()" /></td>
+						style="background-color: #F6F6F6; height: 28px;"/>
+						<select><option>선택</option>
+						<%for (int i=0; i<p_arr.size();i++){%>
+						<option><%=p_arr.get(i).getpName()%></option><%}%></select>
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">거래처</th>
 					<td class="p_td left"><input type="text" size="20" name="ts_cCode"
-						style="background-color: #F6F6F6; height: 28px;"
-						onclick="insertSlips_customers()"/>
-						<input type="button" value="선택하기" style="height: 28px;" onclick="insertSlips_customers()" /></td>
+						style="background-color: #F6F6F6; height: 28px;" />
+						<select><option>선택</option>
+						<%for (int i=0; i<c_arr.size();i++){%>
+						<option><%=c_arr.get(i).getcName()%></option><%}%></select>
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">금액</th>
@@ -99,8 +141,11 @@
 				<tr>
 					<th class="p_th left">부가세유형</th>
 					<td class="p_td left"><input type="text" size="20" name="ts_tCode"
-						style="background-color: #F6F6F6; height: 28px;"
-						 /></td>
+						style="background-color: #F6F6F6; height: 28px;"  />
+						<select><option>선택</option>
+						<%for (int i=0; i<t_arr.size();i++){%>
+						<option><%=t_arr.get(i).gettName()%></option><%}%></select>
+					</td>
 				</tr>
 				<tr>
 					<th class="p_th left">부가세</th>
@@ -113,7 +158,9 @@
 					<td class="p_td left"><input type="text" size="20" name="ts_saCode"
 						style="background-color: #F6F6F6; height: 28px;"
 						 onclick="Accounts_sSelect()" />
-						<input type="button" value="선택하기" style="height: 28px;" onclick="Accounts_sSelect()" /></td>
+						<select><option>선택</option>
+						<%for (int i=0; i<a_arr.size();i++){%>
+						<option><%=a_arr.get(i).getaName()%></option><%}%></select></td>
 				</tr>
 				<tr>
 					<th class="p_th left">적요</th>
@@ -124,6 +171,9 @@
 					<th class="p_th left">계좌코드</th>
 					<td class="p_td left"><input type="text" size="20" name="ts_baCode"
 						style="background-color: #F6F6F6; height: 28px;" />
+						<select><option>선택</option>
+						<%for (int i=0; i<ba_arr.size();i++){%>
+						<option><%=ba_arr.get(i).getBaName()%></option><%}%></select>
 					</td>
 				</tr>
 			</tbody>

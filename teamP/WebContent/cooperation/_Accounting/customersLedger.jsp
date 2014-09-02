@@ -114,7 +114,6 @@
 					<th class="p_th">금액</th>
 					<th class="p_th">계정</th>
 					<th class="p_th">금액</th>
-					
 				</tr>
 			</thead>
 			<tbody>
