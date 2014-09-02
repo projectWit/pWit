@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.LecRoomMapper">
+	<resultMap id="LecRoomMap" type="mem.wit.study.codes.LecRoom">
+	</resultMap>
+  
+  <select id="select" resultType="mem.wit.study.codes.LecRoom">
+    SELECT * FROM cdLecRoom
+		WHERE lcCode = #{lrCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.LecRoomMapper.LecRoomMap">
+    SELECT * FROM cdLecRoom
+  </select>
+</mapper>

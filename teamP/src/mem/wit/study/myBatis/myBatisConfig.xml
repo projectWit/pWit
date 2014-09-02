@@ -15,7 +15,13 @@
   </environments>
   <mappers>
   	<mapper resource="mem/wit/study/myBatis/examGradeMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/dayMapper.xml"/>
   	<mapper resource="mem/wit/study/myBatis/lecCateMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecDayMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecRoomMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecScheduleMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecStatusMapper.xml"/>
+  	<mapper resource="mem/wit/study/myBatis/lecTimeMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/lectureMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/sbjCateMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/subjectMapper.xml"/>

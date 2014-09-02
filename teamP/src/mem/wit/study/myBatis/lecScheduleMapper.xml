@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.LecScheduleMapper">
+	<resultMap id="LecScheduleMap" type="mem.wit.study.lecture.LecSchedule">
+	</resultMap>
+	
+  <select id="select" parameterType="mem.wit.study.lecture.LecSchedule" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
+    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
+	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	<where>
+		<if test="alId != (null or 0)">
+			L.ALID = #{alId}
+	    </if>
+	    <if test="alName != (null or '')">
+	        AND L.ALNAME like '%' || #{alName} || '%'
+	    </if>
+	    <if test="tId != (null or 0)">
+			AND L.TID = #{tId}
+	    </if>
+	    <if test="eKname != (null or '')">
+	        AND E.EKNAME like '%' || #{eKname} || '%'
+	    </if>
+	    <if test="slCode > 0">
+	        AND L.SLCODE = #{slCode}
+	    </if>
+	    <if test="lcCode > 0">
+	        AND L.LCCODE = #{lcCode}
+	    </if>
+	    <if test="sbjCode > 0">
+	        AND L.SBJCODE = #{sbjCode}
+	    </if>
+	    <if test="egCode > 0">
+	        AND L.EGCODE = #{egCode}
+	    </if>
+	    <if test="tbCode > 0">
+	        AND L.TBCODE = #{tbCode}
+	    </if>
+	</where>
+	ORDER BY L.ALID DESC
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
+    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
+	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	ORDER BY L.ALID DESC
+  </select>
+  <insert id="insert" parameterType="mem.wit.study.lecture.LecSchedule" useGeneratedKeys="true" >
+  	<selectKey keyProperty="lsId" resultType="int" order="BEFORE">
+  		<!-- SELECT NEXTVAL('LECSCHEDULE_SEQ') -->
+  		SELECT LECSCHEDULE_SEQ.NEXTVAL FROM DUAL
+  	</selectKey>
+  	
+  	INSERT INTO LECSCHEDULE VALUES(#{lsId},#{alId},#{lsCost},#{lsMax},#{lrCode},#{lsDescription},SYSDATE,TO_DATE(#{lsToDate},'YYYY-MM-DD'),#{lsCode})
+  </insert>
+</mapper>

@@ -2,8 +2,10 @@ package mem.wit.study.sample;
 
 import java.util.List;
 
+import mem.wit.study.codes.LecStatus;
 import mem.wit.study.codes.SuppLec;
 import mem.wit.study.codes.Textbook;
+import mem.wit.study.myBatis.LecStatusMapper;
 import mem.wit.study.myBatis.SuppLecMapper;
 import mem.wit.study.myBatis.TextbookMapper;
 

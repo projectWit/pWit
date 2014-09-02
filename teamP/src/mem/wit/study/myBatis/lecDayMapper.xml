@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.LecDayMapper">
+	<resultMap id="LecDayMap" type="mem.wit.study.lecture.LecDay">
+	</resultMap>
+  
+  <select id="select" resultMap="mem.wit.study.myBatis.LecDayMapper.LecDayMap">
+    SELECT LTCODE, TO_CHAR(LTFROMTIME,'HH24:MI')LTFROMTIME, TO_CHAR(LTTOTIME,'HH24:MI')LTTOTIME FROM CDLECTIME
+		WHERE ltCode = #{ltCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.LecDayMapper.LecDayMap">
+    SELECT LTCODE, TO_CHAR(LTFROMTIME,'HH24:MI')LTFROMTIME, TO_CHAR(LTTOTIME,'HH24:MI')LTTOTIME FROM CDLECTIME
+  </select>
+  <insert id="insert" parameterType="mem.wit.study.lecture.LecDay" useGeneratedKeys="true" >
+  	<selectKey keyProperty="dId" resultType="int" order="BEFORE">
+  		<!-- SELECT NEXTVAL('LECDAY_SEQ') -->
+  		SELECT LECDAY_SEQ.NEXTVAL FROM DUAL
+  	</selectKey>
+  	
+  	INSERT INTO lecDay VALUES(#{dId}, #{lsId}, #{dCode}, #{ltCode})
+  </insert>
+</mapper>

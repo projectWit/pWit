@@ -3,6 +3,7 @@
 var windowSizeArray = [ "width=420,height=500", "width=300,height=400,scrollbars=yes" ];
 
 $(document).ready(function(e) {
+	
 	$('.tabs a').click(function(e) {
 		$('.tabs a').removeClass('tab-active');
 		$(this).addClass('tab-active');
@@ -36,6 +37,9 @@ $(document).ready(function(e) {
 		if ($('#tIdText').val()=="") {
 			e.preventDefault();
 			alert("강사를 선택해 주세요");
+		} else if ($('#alIdText').val()=="") {
+			e.preventDefault();
+			alert("강의를 선택해 주세요");
 		}
 	});
 	
@@ -63,4 +67,17 @@ $(document).ready(function(e) {
 		$('#alName', opener.document).val($(this).children('td').eq(1).text());
 		window.close();
 	});
+	
+	$('#numPerPage').val($('#numPerPageSET').val());
+	$('.paging a').click(function(e) {
+//		alert($(this).attr('value'));
+		$('#curPage').val($(this).attr('value'));
+		$(this).parents('form').submit();
+	});
+	$('#numPerPage').change(function(e) {
+		$('#curPage').val("");
+		$(this).parents('form').submit();
+	});
+	
+	$('.paging a[value="'+$('#curPage').val()+'"]').addClass('activePage');
 });

@@ -253,3 +253,13 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/v7/icon/s
 	padding: 5px; 
 	width: 70px;
 }
+
+.paging a {
+	color: #666;
+	text-decoration: none;
+}
+.paging a:hover, .paging a.activePage {
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+}

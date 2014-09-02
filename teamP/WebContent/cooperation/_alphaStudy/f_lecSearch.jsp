@@ -23,17 +23,6 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'from
 <style type="text/css">
 </style>
 <script type="text/javascript">
-$(document).ready(function(e) {
-	$('#numPerPage').val($('#numPerPageSET').val());
-	$('.paging a').click(function(e) {
-//		alert($(this).attr('value'));
-		$('#curPage').val($(this).attr('value'));
-		$(this).parents('form').submit();
-	});
-	$('#numPerPage').change(function(e) {
-		$(this).parents('form').submit();
-	});
-});
 </script>
 </head>
 
@@ -102,17 +91,17 @@ $(document).ready(function(e) {
             <div class="paging">
             	<!-- <span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
             		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span> -->
-			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>...</span></c:if>
+			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>&nbsp;...</span></c:if>
 				&nbsp;&nbsp;<span>
 			<c:forEach var="i" begin="${pagingModel.firstPage }" end="${pagingModel.lastPage }" step="1" varStatus="status">
 				<a href="#" value="${i }">${i }</a>&nbsp;&nbsp;
 			</c:forEach>
 				</span>
-			<c:if test="${pagingModel.nextLink > 0}"><span>...<a href="#" value="${pagingModel.nextLink }">다음 10개</a></span></c:if>
-			<c:if test="${pagingModel.prevLink > 0 && pagingModel.nextLink == 0}"><span>...<a href="#">처음으로</a></span></c:if>
+			<c:if test="${pagingModel.nextLink > 0}"><span>...&nbsp;<a href="#" value="${pagingModel.nextLink }">다음 10개</a></span></c:if>
+			<c:if test="${pagingModel.prevLink > 0 && pagingModel.nextLink == 0}"><span>...&nbsp;<a href="#">처음으로</a></span></c:if>
             </div>
         </div>
-        <input type="hidden" value="" name="curPage" id="curPage">
+        <input type="hidden" value="${pagingModel.curPage }" name="curPage" id="curPage">
         <input type="hidden" value="${pagingModel.numPerPage }" name="numPerPageSET" id="numPerPageSET">
         <!-- <input type="submit" value="테스트용버튼"> -->
 </form>

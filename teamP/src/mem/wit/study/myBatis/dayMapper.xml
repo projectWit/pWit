@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.DayMapper">
+	<resultMap id="DayMap" type="mem.wit.study.codes.Day">
+	</resultMap>
+  
+  <select id="select" resultType="mem.wit.study.codes.Day">
+    SELECT * FROM cdDay
+		WHERE dCode = #{dCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.DayMapper.DayMap">
+    SELECT * FROM cdDay
+  </select>
+</mapper>
