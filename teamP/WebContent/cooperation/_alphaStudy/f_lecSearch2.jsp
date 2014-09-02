@@ -82,9 +82,10 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'from
     
     <div class="tab-container" style="">
    		<div class="page-title"><span class="bullet-title">검색 결과</span></div>
-   
-        <div class="tab-content" style="border: 0px solid red; display: none;" id="lecResult">
-        	<select style="float: right; margin-right: 10px;"><option>10개씩 보기</option><option>20개씩 보기</option><option>30개씩 보기</option></select>
+ 
+<form method="post" action="/teamP/study/lecture/search/list" name="pagingForm" id="pagingForm">
+        <div class="tab-content" style="border: 0px solid red; " id="lecResult">
+        	<select id="numPerPage" name="numPerPage" style="float: right; margin-right: 10px;"><option value="10">10개씩 보기</option><option value="20">20개씩 보기</option><option value="30">30개씩 보기</option></select>
         	<div class="" style="overflow: visible; border: 0px solid transparent;">
             <table cellspacing="0" class="tab-table result-table" id="table-0" style="">
             	<div class="tabTable-th">
@@ -103,61 +104,43 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'from
                 	<td class="t-td-9">18:00</td><td class="t-td-10">18:00</td><td class="t-td-11">18:00</td><td class="t-td-12">18:00</td>
                 	<td class="t-td-13">18:00</td><td class="t-td-14">18:00</td><td class="t-td-15">18:00</td><td class="t-td-16">수학의 정석</td>
                 	<td class="t-td-17"><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
-                <tr><td><a href="@Study_lecDetail.jsp">00001</a></td><td>혼자하는 수학</td><td>이연희</td><td>수학</td><td>고등학생</td>
-                	<td>3</td><td>30</td><td>102</td><td>300,000</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>18:00</td>
-                	<td>18:00</td><td>18:00</td><td>18:00</td><td>수학의 정석</td>
-                	<td><input type="button" value="삭제"></td></tr>
+			<c:forEach var="lecture" items="${lecList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
+				<tr><td class="t-td-0">${pagingModel.no-status.count+1 }</td><td class="t-td-0"><a href="#">${lecture.alId }</a></td><td class="t-td-1">${lecture.alName }</td><td class="t-td-2">${lecture.alDescription }</td>
+                	<td class="t-td-3">${lecture.slName }</td><td class="t-td-4">${lecture.lcName }</td><td class="t-td-5">${lecture.tId }</td>
+                	<td class="t-td-6">${lecture.eKname }</td><td class="t-td-7">${lecture.sgName }</td><td class="t-td-8">${lecture.sbjCatName }</td>
+                	<td class="t-td-9">${lecture.sbjName }</td><td class="t-td-10">${lecture.egName }</td><td class="t-td-11">${lecture.tbName } - ${lecture.sbjName2 } ${lecture.cName }</td>
+                	<td class="t-td-12"><input type="button" value="삭제"></td></tr>
+			</c:forEach>
+			<!-- <tr><td class="t-td-0">t</td><td class="t-td-0"><a href="#">t</a></td><td class="t-td-1">t</td><td class="t-td-2">t</td>
+                	<td class="t-td-3">t</td><td class="t-td-4">t</td><td class="t-td-5">t</td>
+                	<td class="t-td-6">t</td><td class="t-td-7">t</td><td class="t-td-8">t</td>
+                	<td class="t-td-9">t</td><td class="t-td-10">t</td><td class="t-td-11">t</td>
+                	<td class="t-td-12"><input type="button" value="삭제"></td></tr> -->
+			
                 
                 </tbody>
             </table>
             </div>
             
             <div class="paging">
-            	<span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
-            		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span>
+            	<!-- <span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
+            		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span> -->
+			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>&nbsp;...</span></c:if>
+				&nbsp;&nbsp;<span>
+			<c:forEach var="i" begin="${pagingModel.firstPage }" end="${pagingModel.lastPage }" step="1" varStatus="status">
+				<a href="#" value="${i }">${i }</a>&nbsp;&nbsp;
+			</c:forEach>
+				</span>
+			<c:if test="${pagingModel.nextLink > 0}"><span>...&nbsp;<a href="#" value="${pagingModel.nextLink }">다음 10개</a></span></c:if>
+			<c:if test="${pagingModel.prevLink > 0 && pagingModel.nextLink == 0}"><span>...&nbsp;<a href="#">처음으로</a></span></c:if>
             </div>
         </div>
+        <input type="hidden" value="${pagingModel.curPage }" name="curPage" id="curPage">
+        <input type="hidden" value="${pagingModel.numPerPage }" name="numPerPageSET" id="numPerPageSET">
+        <!-- <input type="submit" value="테스트용버튼"> -->
+</form>
+        
+
     </div>
 </div>
 

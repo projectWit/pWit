@@ -130,23 +130,13 @@ public class LectureController {
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String register(Model model) {
 //		System.out.println("register GET");
-		List<LecRoom> lrList = lecRoomService.selectAll();
-		List<LecTime> ltList = lecTimeService.selectAll();
-		List<LecStatus> lsList = lecStatusService.selectAll();
-		model.addAttribute("lrList", lrList);
-		model.addAttribute("ltList", ltList);
-		model.addAttribute("lsList", lsList);
+		doSelectCodes(model);
 		return "@Study_lecRegister";
 	}
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String register(Model model, LecSchedule lecSchedule,LecDay lecDay, HttpServletRequest request) throws Exception {
 //		System.out.println("register POST");
-		List<LecRoom> lrList = lecRoomService.selectAll();
-		List<LecTime> ltList = lecTimeService.selectAll();
-		List<LecStatus> lsList = lecStatusService.selectAll();
-		model.addAttribute("lrList", lrList);
-		model.addAttribute("ltList", ltList);
-		model.addAttribute("lsList", lsList);
+		doSelectCodes(model);
 
 // 강의 스케줄 생성 ------------------------------------------------------------------
 		String alIdText = request.getParameter("alIdText");
@@ -163,21 +153,21 @@ public class LectureController {
 		}
 //		System.out.println("lsDescription : "+lecSchedule.getLsDescription());
 		int updateCount = lecScheduleService.insert(lecSchedule);
-		System.out.println("updateCount : "+updateCount);
-		System.out.println("updateKey : "+lecSchedule.getLsId());
+		System.out.println("lecSchedule updateCount : "+updateCount);
+		System.out.println("lecSchedule updateKey : "+lecSchedule.getLsId());
 // -------------------------------------------------------------------------------------
 		
-// 강의 요일,타임 생성 ---------------------------------------------------------------
+// 강의 요일,타임 생성 -------------------------------------------------------------
 		for (int i=0; i<7; i++) {
 			int ltCode = lecDay.getLtCodeArray()[i];
-			System.out.println("ltCode : "+ltCode);
+//			System.out.println("ltCode : "+ltCode);
 			if (ltCode > 0) {
 				lecDay.setLsId(lecSchedule.getLsId());
 				lecDay.setdCode(i+1);	// 요일 설정
 				lecDay.setLtCode(ltCode);	// 타임 설정
 				updateCount = lecDayService.insert(lecDay);
-				System.out.println("updateCount : "+updateCount);
-				System.out.println("updateKey : "+lecDay.getdId());
+				System.out.println("lecDay updateCount : "+updateCount);
+				System.out.println("lecDay updateKey : "+lecDay.getdId());
 			}
 		}
 // -------------------------------------------------------------------------------------
@@ -186,13 +176,17 @@ public class LectureController {
 	}
 	
 	@RequestMapping(value="/regSearch", method=RequestMethod.GET)
-	public String regSearch() {
+	public String regSearch(Model model) {
 		System.out.println("regSearch GET");
+		doSelectCodes(model);
 		return "@Study_lecRegSearch";
 	}
 	@RequestMapping(value="/regSearch", method=RequestMethod.POST)
-	public String regSearch(Lecture lecture) throws Exception {
+	public String regSearch(Model model, LecSchedule lecSchedule, Lecture lecture, LecDay lecDay) throws Exception {
 		System.out.println("regSearch POST");
+		doSelectCodes(model);
+		
+//		System.out.println(lecture.getSlCode());
 		return "@Study_lecRegSearch";
 	}
 	
@@ -224,11 +218,17 @@ public class LectureController {
 		List<Subject> sbjList = subjectService.selectAll();
 		List<ExamGrade> egList = examGradeService.selectAll();
 		List<Textbook> tbList = textbookService.selectAll();
+		List<LecRoom> lrList = lecRoomService.selectAll();
+		List<LecTime> ltList = lecTimeService.selectAll();
+		List<LecStatus> lsList = lecStatusService.selectAll();
 		model.addAttribute("slList", slList);
 		model.addAttribute("lcList", lcList);
 		model.addAttribute("sbjList", sbjList);
 		model.addAttribute("egList", egList);
 		model.addAttribute("tbList", tbList);
+		model.addAttribute("lrList", lrList);
+		model.addAttribute("ltList", ltList);
+		model.addAttribute("lsList", lsList);
 	}
 	private void doListPaging(Model model, HttpServletRequest request, int tRecord) {
 		int totalRecord = tRecord;

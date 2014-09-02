@@ -8,7 +8,7 @@ public interface LecScheduleService {
 	
 	public List<LecSchedule> selectAll();
 	
-	public List<LecSchedule> select(LecSchedule lecSchedule);
+	public List<LecSchedule> select(LecScheduleParam lecScheduleParam);
 	
 	public int insert(LecSchedule lecSchedule);
 	

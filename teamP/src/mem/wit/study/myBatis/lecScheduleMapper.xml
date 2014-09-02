@@ -2,23 +2,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mem.wit.study.myBatis.LecScheduleMapper">
 	<resultMap id="LecScheduleMap" type="mem.wit.study.lecture.LecSchedule">
+		<association property="lecture" column="{alId=alId}" javaType="mem.wit.study.lecture.Lecture" select="selectLecture"/>
+		<collection property="lecDay" column="{lsId=lsId}" ofType="mem.wit.study.lecture.LecDay" select="selectLecDay"/>
 	</resultMap>
 	
-  <select id="select" parameterType="mem.wit.study.lecture.LecSchedule" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
-    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
-	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
-	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
-	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
-	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
-	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
-	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
-	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
-	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
-	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
-	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
-	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
-	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+  <select id="select" parameterType="mem.wit.study.lecture.LecScheduleParam" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
+    SELECT LS.LSID,LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
+	TO_CHAR(LS.LSFROMDATE,'YYYY-MM-DD')LSFROMDATE,TO_CHAR(LS.LSTODATE,'YYYY-MM-DD')LSTODATE,LS.LSCODE,STS.LSNAME FROM LECSCHEDULE LS
+	  INNER JOIN ALECTURE L ON LS.ALID=L.ALID
+	  INNER JOIN CDLECROOM R ON LS.LRCODE=R.LRCODE
+	  INNER JOIN CDLECSTATUS STS ON LS.LSCODE=STS.LSCODE
 	<where>
+		<if test="lsId != (null or 0)">
+			LS.LSID = #{lsId}
+	    </if>
+	    <if test="lsDescription != (null or '')">
+	        AND LS.LSDESCRIPTION like '%' || #{lsDescription} || '%'
+	    </if>
+	    <if test="alId != (null or 0)">
+			AND L.ALID = #{alId}
+	    </if>
+	    <if test="lsCost != (null or 0)">
+			AND LS.LSCOST = #{lsCost}
+	    </if>
+	    <if test="lsMax != (null or 0)">
+			AND LS.LSMAX = #{lsMax}
+	    </if>
+	    <if test="lrCode != (null or 0)">
+			AND LS.LRCODE = #{lrCode}
+	    </if>
+	    <if test="lsFromDate != (null or '')">
+	        AND ( LS.LSFROMDATE > TO_DATE(#{lsFromDate},'YYYY-MM-DD') AND LS.LSFROMDATE < TO_DATE(#{lsFromDate},'YYYY-MM-DD')+1 )
+	    </if>
+	    <if test="lsToDate != (null or '')">
+	        AND ( LS.LSTODATE > TO_DATE(#{lsToDate},'YYYY-MM-DD') AND LS.LSTODATE < TO_DATE(#{lsToDate},'YYYY-MM-DD')+1 )
+	    </if>
+	
+	
+	<!-- 참고 : http://krespo.net/162 -->
+	
+	
 		<if test="alId != (null or 0)">
 			L.ALID = #{alId}
 	    </if>
@@ -47,10 +70,19 @@
 	        AND L.TBCODE = #{tbCode}
 	    </if>
 	</where>
-	ORDER BY L.ALID DESC
+	ORDER BY LS.LSID DESC
   </select>
   <select id="selectAll" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
-    SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
+    SELECT LS.LSID,LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
+	TO_CHAR(LS.LSFROMDATE,'YYYY-MM-DD')LSFROMDATE,TO_CHAR(LS.LSTODATE,'YYYY-MM-DD')LSTODATE,LS.LSCODE,STS.LSNAME FROM LECSCHEDULE LS
+	  INNER JOIN ALECTURE L ON LS.ALID=L.ALID
+	  INNER JOIN CDLECROOM R ON LS.LRCODE=R.LRCODE
+	  INNER JOIN CDLECSTATUS STS ON LS.LSCODE=STS.LSCODE
+	ORDER BY LS.LSID DESC
+  </select>
+  
+  <select id="selectLecture" resultType="mem.wit.study.lecture.Lecture">
+	SELECT L.ALID,L.ALNAME,L.ALDESCRIPTION,L.SLCODE,SL.SLNAME,L.LCCODE,C.LCNAME,L.TID,E.EKNAME,SG.SGNAME,
 	SC.SBJCATNAME,L.SBJCODE,S.SBJNAME,L.EGCODE,EG.EGNAME,L.TBCODE,T.TBNAME,S2.SBJNAME SBJNAME2,CC.CNAME FROM ALECTURE L
 	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
 	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
@@ -63,14 +95,37 @@
 	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
 	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
 	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	WHERE L.ALID = #{alId}
 	ORDER BY L.ALID DESC
   </select>
+  
+  <select id="selectLecDay" resultType="mem.wit.study.lecture.LecDay">
+    SELECT LD.DID,LD.LSID,LD.DCODE,D.DNAME,LD.LTCODE,
+	TO_CHAR(T.LTFROMTIME,'HH24:MI')LTFROMTIME,TO_CHAR(T.LTTOTIME,'HH24:MI')LTTOTIME FROM LECDAY LD
+	  INNER JOIN CDDAY D ON LD.DCODE=D.DCODE
+	  INNER JOIN CDLECTIME T ON LD.LTCODE=T.LTCODE
+	WHERE lsId = #{lsId}
+	ORDER BY LD.DID
+  </select>
+  
+  
+  
   <insert id="insert" parameterType="mem.wit.study.lecture.LecSchedule" useGeneratedKeys="true" >
   	<selectKey keyProperty="lsId" resultType="int" order="BEFORE">
   		<!-- SELECT NEXTVAL('LECSCHEDULE_SEQ') -->
   		SELECT LECSCHEDULE_SEQ.NEXTVAL FROM DUAL
   	</selectKey>
   	
-  	INSERT INTO LECSCHEDULE VALUES(#{lsId},#{alId},#{lsCost},#{lsMax},#{lrCode},#{lsDescription},SYSDATE,TO_DATE(#{lsToDate},'YYYY-MM-DD'),#{lsCode})
+  	<!-- INSERT INTO LECSCHEDULE VALUES(#{lsId},#{alId},#{lsCost},#{lsMax},#{lrCode},#{lsDescription},SYSDATE,TO_DATE(#{lsToDate},'YYYY-MM-DD'),#{lsCode}) -->
+  	INSERT INTO LECSCHEDULE VALUES(#{lsId},#{alId},#{lsCost},#{lsMax},#{lrCode},#{lsDescription},
+  	<choose>
+	    <when test="lsFromDate != (null or '')">
+	      TO_DATE(#{lsFromDate},'YYYY-MM-DD')
+	    </when>
+	    <otherwise>
+	      SYSDATE
+	    </otherwise>
+	</choose>
+  	,TO_DATE(#{lsToDate},'YYYY-MM-DD'),#{lsCode})
   </insert>
 </mapper>

@@ -18,7 +18,7 @@ $(document).ready(function(e) {
 		buttonText : '달력선택', //버튼 텍스트 표시
 		buttonImage : '/teamP/cooperation/i/v17/icons/WebResource.gif', //이미지주소
 		showOn : "both", //엘리먼트와 이미지 동시 사용(both,button)
-		yearRange : '1900:2020' //1990년부터 2020년까지
+		yearRange : '1900:2100' //1990년부터 2100년까지
 	};
 	/* $("#fromDt").datepicker(clareCalendar);
 	$("#toDt").datepicker(clareCalendar); */

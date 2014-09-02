@@ -22,8 +22,8 @@ public class LecScheduleServiceImpl implements LecScheduleService {
 		return lecScheduleMapper.selectAll();
 	}
 	
-	public List<LecSchedule> select(LecSchedule lecSchedule) {
-		return lecScheduleMapper.select(lecSchedule);
+	public List<LecSchedule> select(LecScheduleParam lecScheduleParam) {
+		return lecScheduleMapper.select(lecScheduleParam);
 	}
 	
 	public int insert(LecSchedule lecSchedule) {

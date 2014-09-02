@@ -40,7 +40,10 @@ $(document).ready(function(e) {
 		} else if ($('#alIdText').val()=="") {
 			e.preventDefault();
 			alert("강의를 선택해 주세요");
-		}
+		} else if ($('.lecTime').children('option[value=0]:selected').size() > 6) {
+			e.preventDefault();
+			alert("강의시각을 선택해 주세요");
+		} 
 	});
 	
 	/*$('#findTeacher').click(function(e) {
