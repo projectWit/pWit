@@ -26,6 +26,7 @@ import mem.wit.study.codes.TextbookService;
 import mem.wit.study.lecture.LecDay;
 import mem.wit.study.lecture.LecDayService;
 import mem.wit.study.lecture.LecSchedule;
+import mem.wit.study.lecture.LecScheduleParam;
 import mem.wit.study.lecture.LecScheduleService;
 import mem.wit.study.lecture.Lecture;
 import mem.wit.study.lecture.LectureService;
@@ -176,17 +177,73 @@ public class LectureController {
 	}
 	
 	@RequestMapping(value="/regSearch", method=RequestMethod.GET)
-	public String regSearch(Model model) {
+	public String regSearch(Model model, HttpServletRequest request, HttpSession session) {
 		System.out.println("regSearch GET");
 		doSelectCodes(model);
+		List<LecSchedule> lschduleList = lecScheduleService.selectAll();
+		model.addAttribute("lschduleList", lschduleList);
+		doListPaging(model, request, lschduleList.size());
+		session.setAttribute("lschduleList", lschduleList);
 		return "@Study_lecRegSearch";
 	}
 	@RequestMapping(value="/regSearch", method=RequestMethod.POST)
-	public String regSearch(Model model, LecSchedule lecSchedule, Lecture lecture, LecDay lecDay) throws Exception {
+	public String regSearch(Model model, LecScheduleParam lecScheduleParam, HttpServletRequest request, HttpSession session) throws Exception {
 		System.out.println("regSearch POST");
 		doSelectCodes(model);
-		
-//		System.out.println(lecture.getSlCode());
+		String lsIdText = request.getParameter("lsIdText");
+		String alIdText = request.getParameter("alIdText");
+		String tIdText = request.getParameter("tIdText");
+		String lsCostText = request.getParameter("lsCostText");
+		String lsMaxText = request.getParameter("lsMaxText");
+		if (lsIdText != "") {
+			lecScheduleParam.setLsId(Integer.parseInt(lsIdText));
+		}
+		if (alIdText != "") {
+			lecScheduleParam.setAlId(Integer.parseInt(alIdText));
+		}
+		if (tIdText != "") {
+			lecScheduleParam.settId(Integer.parseInt(tIdText));
+		}
+		if (lsCostText != "") {
+			lecScheduleParam.setLsCost(Integer.parseInt(lsCostText));
+		}
+		if (lsMaxText != "") {
+			lecScheduleParam.setLsMax(Integer.parseInt(lsMaxText));
+		}
+		if (lecScheduleParam.getLsDescription() == null) {
+			lecScheduleParam.setLsDescription("");
+		}
+		lecScheduleParam.setLtCode1(lecScheduleParam.getLtCodeArray()[0]);
+		lecScheduleParam.setLtCode2(lecScheduleParam.getLtCodeArray()[1]);
+		lecScheduleParam.setLtCode3(lecScheduleParam.getLtCodeArray()[2]);
+		lecScheduleParam.setLtCode4(lecScheduleParam.getLtCodeArray()[3]);
+		lecScheduleParam.setLtCode5(lecScheduleParam.getLtCodeArray()[4]);
+		lecScheduleParam.setLtCode6(lecScheduleParam.getLtCodeArray()[5]);
+		lecScheduleParam.setLtCode7(lecScheduleParam.getLtCodeArray()[6]);
+		for (int i=0; i<7; i++) {
+			System.out.println("getLtCodeArray"+i+" : "+lecScheduleParam.getLtCodeArray()[i]);
+		}
+//		System.out.println("lsId : "+lecScheduleParam.getLsId());
+		List<LecSchedule> lschduleList = lecScheduleService.select(lecScheduleParam);
+		model.addAttribute("lschduleList", lschduleList);
+		doListPaging(model, request, lschduleList.size());
+		session.setAttribute("lschduleList", lschduleList);
+		return "@Study_lecRegSearch";
+	}
+	
+	@RequestMapping(value="/regSearch/list", method=RequestMethod.GET)
+	public String rSearchList(Model model, HttpServletRequest request, HttpSession session) {
+		System.out.println("rSearchList GET");
+		doSelectCodes(model);
+		return "@Study_lecRegSearch";
+	}
+	@RequestMapping(value="/regSearch/list", method=RequestMethod.POST)
+	public String rSearchList(Model model, LecScheduleParam lecScheduleParam, HttpServletRequest request, HttpSession session) throws Exception {
+		System.out.println("rSearchList POST");
+		doSelectCodes(model);
+		List<LecSchedule> lschduleList = (List<LecSchedule>)session.getAttribute("lschduleList");
+		model.addAttribute("lschduleList", lschduleList);
+		doListPaging(model, request, lschduleList.size());
 		return "@Study_lecRegSearch";
 	}
 	

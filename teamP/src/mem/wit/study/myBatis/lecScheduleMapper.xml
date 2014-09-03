@@ -2,16 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mem.wit.study.myBatis.LecScheduleMapper">
 	<resultMap id="LecScheduleMap" type="mem.wit.study.lecture.LecSchedule">
-		<association property="lecture" column="{alId=alId}" javaType="mem.wit.study.lecture.Lecture" select="selectLecture"/>
-		<collection property="lecDay" column="{lsId=lsId}" ofType="mem.wit.study.lecture.LecDay" select="selectLecDay"/>
+		<id property="lsId" column="LSID"/>
+		<!-- <result property="lsId" column="LSID"/> -->
+		<result property="alId" column="ALID"/>
+		<result property="lsCost" column="LSCOST"/>
+		<result property="lsMax" column="LSMAX"/>
+		<result property="lrCode" column="LRCODE"/>
+		<result property="lrName" column="LRNAME"/>
+		<result property="lsDescription" column="LSDESCRIPTION"/>
+		<result property="lsFromDate" column="LSFROMDATE"/>
+		<result property="lsToDate" column="LSTODATE"/>
+		<result property="lsCode" column="LSCODE"/>
+		<result property="lsName" column="LSNAME"/>
+		<association property="lecture" column="{alId=ALID}" javaType="mem.wit.study.lecture.Lecture" select="selectLecture"/>
+		<collection property="lecDay" column="{lsId=LSID}" ofType="mem.wit.study.lecture.LecDay" select="selectLecDay"/>
 	</resultMap>
 	
   <select id="select" parameterType="mem.wit.study.lecture.LecScheduleParam" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
-    SELECT LS.LSID,LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
+    SELECT DISTINCT(LS.LSID),LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
 	TO_CHAR(LS.LSFROMDATE,'YYYY-MM-DD')LSFROMDATE,TO_CHAR(LS.LSTODATE,'YYYY-MM-DD')LSTODATE,LS.LSCODE,STS.LSNAME FROM LECSCHEDULE LS
 	  INNER JOIN ALECTURE L ON LS.ALID=L.ALID
 	  INNER JOIN CDLECROOM R ON LS.LRCODE=R.LRCODE
 	  INNER JOIN CDLECSTATUS STS ON LS.LSCODE=STS.LSCODE
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	  INNER JOIN LECDAY LD ON LS.LSID=LD.LSID
+	  INNER JOIN CDDAY D ON LD.DCODE=D.DCODE
+	  INNER JOIN CDLECTIME T ON LD.LTCODE=T.LTCODE
 	<where>
 		<if test="lsId != (null or 0)">
 			LS.LSID = #{lsId}
@@ -20,7 +46,7 @@
 	        AND LS.LSDESCRIPTION like '%' || #{lsDescription} || '%'
 	    </if>
 	    <if test="alId != (null or 0)">
-			AND L.ALID = #{alId}
+			AND LS.ALID = #{alId}
 	    </if>
 	    <if test="lsCost != (null or 0)">
 			AND LS.LSCOST = #{lsCost}
@@ -32,52 +58,100 @@
 			AND LS.LRCODE = #{lrCode}
 	    </if>
 	    <if test="lsFromDate != (null or '')">
-	        AND ( LS.LSFROMDATE > TO_DATE(#{lsFromDate},'YYYY-MM-DD') AND LS.LSFROMDATE < TO_DATE(#{lsFromDate},'YYYY-MM-DD')+1 )
+	        AND ( LS.LSFROMDATE <![CDATA[ > ]]> TO_DATE(#{lsFromDate},'YYYY-MM-DD') AND LS.LSFROMDATE <![CDATA[ < ]]> TO_DATE(#{lsFromDate},'YYYY-MM-DD')+1 )
 	    </if>
 	    <if test="lsToDate != (null or '')">
-	        AND ( LS.LSTODATE > TO_DATE(#{lsToDate},'YYYY-MM-DD') AND LS.LSTODATE < TO_DATE(#{lsToDate},'YYYY-MM-DD')+1 )
+	        AND ( LS.LSTODATE <![CDATA[ > ]]> TO_DATE(#{lsToDate},'YYYY-MM-DD') AND LS.LSTODATE <![CDATA[ < ]]> TO_DATE(#{lsToDate},'YYYY-MM-DD')+1 )
 	    </if>
-	
-	
-	<!-- 참고 : http://krespo.net/162 -->
-	
-	
-		<if test="alId != (null or 0)">
-			L.ALID = #{alId}
+	    <if test="lsCode != (null or 0)">
+			AND LS.LSCODE = #{lsCode}
 	    </if>
-	    <if test="alName != (null or '')">
-	        AND L.ALNAME like '%' || #{alName} || '%'
-	    </if>
+	    
 	    <if test="tId != (null or 0)">
 			AND L.TID = #{tId}
 	    </if>
-	    <if test="eKname != (null or '')">
-	        AND E.EKNAME like '%' || #{eKname} || '%'
+	    <if test="slCode != (null or 0)">
+			AND L.SLCODE = #{slCode}
 	    </if>
-	    <if test="slCode > 0">
-	        AND L.SLCODE = #{slCode}
+	    <if test="lcCode != (null or 0)">
+			AND L.SLCODE = #{lcCode}
 	    </if>
-	    <if test="lcCode > 0">
-	        AND L.LCCODE = #{lcCode}
+	    <if test="sbjCode != (null or 0)">
+			AND L.SBJCODE = #{sbjCode}
 	    </if>
-	    <if test="sbjCode > 0">
-	        AND L.SBJCODE = #{sbjCode}
+	    <if test="egCode != (null or 0)">
+			AND L.EGCODE = #{egCode}
 	    </if>
-	    <if test="egCode > 0">
-	        AND L.EGCODE = #{egCode}
+	    <if test="tbCode != (null or 0)">
+			AND L.TBCODE = #{tbCode}
 	    </if>
-	    <if test="tbCode > 0">
-	        AND L.TBCODE = #{tbCode}
+	    
+	    <if test="ltCode1 != (null or 0)">
+			AND ( LD.DCODE = 1 AND LD.LTCODE = #{ltCode1} )
 	    </if>
+	    <if test="ltCode2 != (null or 0)">
+			AND ( LD.DCODE = 2 AND LD.LTCODE = #{ltCode2} )
+	    </if>
+	    <if test="ltCode3 != (null or 0)">
+			AND ( LD.DCODE = 3 AND LD.LTCODE = #{ltCode3} )
+	    </if>
+	    <if test="ltCode4 != (null or 0)">
+			AND ( LD.DCODE = 4 AND LD.LTCODE = #{ltCode4} )
+	    </if>
+	    <if test="ltCode5 != (null or 0)">
+			AND ( LD.DCODE = 5 AND LD.LTCODE = #{ltCode5} )
+	    </if>
+	    <if test="ltCode6 != (null or 0)">
+			AND ( LD.DCODE = 6 AND LD.LTCODE = #{ltCode6} )
+	    </if>
+	    <if test="ltCode7 != (null or 0)">
+			AND ( LD.DCODE = 7 AND LD.LTCODE = #{ltCode7} )
+	    </if>
+	    
+	    <!-- <if test="ltCodeArray[0] != (null or 0)">
+			AND ( LD.DCODE = 1 AND LD.LTCODE = #{ltCodeArray<![CDATA[[]]>0<![CDATA[]]]>} )
+	    </if>
+	    <if test="ltCodeArray[1] != (null or 0)">
+			AND ( LD.DCODE = 2 AND LD.LTCODE = #{ltCodeArray[1]} )
+	    </if>
+	    <if test="ltCodeArray[2] != (null or 0)">
+			AND ( LD.DCODE = 3 AND LD.LTCODE = #{ltCodeArray[2]} )
+	    </if>
+	    <if test="ltCodeArray[3] != (null or 0)">
+			AND ( LD.DCODE = 4 AND LD.LTCODE = #{ltCodeArray[3]} )
+	    </if>
+	    <if test="ltCodeArray[4] != (null or 0)">
+			AND ( LD.DCODE = 5 AND LD.LTCODE = #{ltCodeArray[4]} )
+	    </if>
+	    <if test="ltCodeArray[5] != (null or 0)">
+			AND ( LD.DCODE = 6 AND LD.LTCODE = #{ltCodeArray[5]} )
+	    </if>
+	    <if test="ltCodeArray[6] != (null or 0)">
+			AND ( LD.DCODE = 7 AND LD.LTCODE = #{ltCodeArray[6]} )
+	    </if> -->
 	</where>
 	ORDER BY LS.LSID DESC
   </select>
   <select id="selectAll" resultMap="mem.wit.study.myBatis.LecScheduleMapper.LecScheduleMap">
-    SELECT LS.LSID,LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
+    SELECT DISTINCT(LS.LSID),LS.ALID,LS.LSCOST,LS.LSMAX,LS.LRCODE,R.LRNAME,LS.LSDESCRIPTION,
 	TO_CHAR(LS.LSFROMDATE,'YYYY-MM-DD')LSFROMDATE,TO_CHAR(LS.LSTODATE,'YYYY-MM-DD')LSTODATE,LS.LSCODE,STS.LSNAME FROM LECSCHEDULE LS
 	  INNER JOIN ALECTURE L ON LS.ALID=L.ALID
 	  INNER JOIN CDLECROOM R ON LS.LRCODE=R.LRCODE
 	  INNER JOIN CDLECSTATUS STS ON LS.LSCODE=STS.LSCODE
+	  INNER JOIN CDSUPPLEC SL ON L.SLCODE=SL.SLCODE
+	  INNER JOIN CDLECCATE C ON L.LCCODE=C.LCCODE
+	  INNER JOIN ATEACHER TCH ON L.TID=TCH.TID
+	  INNER JOIN EMPLOYEE E ON TCH.EID=E.EID
+	  INNER JOIN CDSUBJECT S ON L.SBJCODE=S.SBJCODE
+	  INNER JOIN CDSBJCATE SC ON S.SBJCATCODE=SC.SBJCATCODE
+	  INNER JOIN CDSCHGRADE SG ON S.SGCODE=SG.SGCODE
+	  INNER JOIN CDEXAMGRADE EG ON L.EGCODE=EG.EGCODE
+	  INNER JOIN CDTEXTBOOK T ON L.TBCODE=T.TBCODE
+	  INNER JOIN CDSUBJECT S2 ON T.SBJCODE=S2.SBJCODE
+	  INNER JOIN CDCURRICULUM CC ON T.CCODE=CC.CCODE
+	  INNER JOIN LECDAY LD ON LS.LSID=LD.LSID
+	  INNER JOIN CDDAY D ON LD.DCODE=D.DCODE
+	  INNER JOIN CDLECTIME T ON LD.LTCODE=T.LTCODE
 	ORDER BY LS.LSID DESC
   </select>
   

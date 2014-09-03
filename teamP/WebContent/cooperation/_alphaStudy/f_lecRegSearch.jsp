@@ -38,7 +38,7 @@ calendarIDs = ['lsFromDate', 'lsToDate', 'fromDropDate', 'toDropDate', 'fromBirt
 <form method="post" action="" name="lecForm" id="lecForm">
 <!-- 범위 검색형 -->    
     <table cellspacing="0" class="info-table">
-    	<tr><td class="table-label">스케줄코드</td><td class="table-input"><input type="number" min=1 name="lsId"></td>
+    	<tr><td class="table-label">스케줄코드</td><td class="table-input"><input type="number" min=1 name="lsIdText"></td>
     		<td class="table-label">강사</td><td class="table-input"><input type="text" size=15 name="tIdText" id="tIdText" readonly><a href="/teamP/study/newWindow/findTeacher" id="findTeacher" class="newWindow" rel="0" ><img src="/teamP/cooperation/_alphaStudy/img/v7/icon/search.png" class="magnify"></a><input type="text" size=12 id="tName" readonly></td>
             <td class="table-label" rowspan=7>강의시각</td><td class="table-input">일 : <select name="ltCodeArray[0]" class="lecTime"><option value="0">선택</option><c:forEach var="lecTime" items="${ltList }" varStatus="status"><option value="${lecTime.ltCode}">${lecTime.ltFromTime } - ${lecTime.ltToTime }</option></c:forEach></select></td>
             </tr>
@@ -78,6 +78,80 @@ calendarIDs = ['lsFromDate', 'lsToDate', 'fromDropDate', 'toDropDate', 'fromBirt
     
         
     <!-- 탭 컨테이너 영역 -->
+    <div class="tab-container" style="">
+   		<div class="page-title"><span class="bullet-title">검색 결과</span></div>
+ 
+<form method="post" action="/teamP/study/lecture/regSearch/list" name="pagingForm" id="pagingForm">
+        <div class="tab-content" style="border: 0px solid red; " id="lecResult">
+        	<select id="numPerPage" name="numPerPage" style="float: left; margin-right: 10px;"><option value="10">10개씩 보기</option><option value="20">20개씩 보기</option><option value="30">30개씩 보기</option></select>
+        	<div class="" style="overflow: visible; border: 0px solid transparent;">
+            <table cellspacing="0" class="tab-table result-table" id="table-0" style="clear: both;">
+            	<div class="tabTable-th">
+				<tr><th class="t-td-0">번호</th><th class="t-td-0">스케줄코드</th><th class="t-td-0">강의상태</th><th class="t-td-0">강의코드</th><th class="t-td-1">강의명</th><th class="t-td-2">강사명</th>
+					<th class="t-td-3">과목</th><th class="t-td-3">형태</th><th class="t-td-3">분류</th><th class="t-td-4">학생구분</th>
+                	<th class="t-td-6">강의정원</th><th class="t-td-7">강의실</th><th class="t-td-8">수강료</th>
+                	<th class="t-td-9">일</th><th class="t-td-10">월</th><th class="t-td-11">화</th><th class="t-td-12">수</th>
+                	<th class="t-td-13">목</th><th class="t-td-14">금</th><th class="t-td-15">토</th><th class="t-td-16">교재</th>
+                	<th class="t-td-17">삭제</th></tr>
+                </div>
+            <!--</table>
+            <div class="limit-table">
+            <table cellspacing="0" class="tab-table" style="border-top: 0px solid transparent;">-->
+                <tbody class="tabTable-td">
+                <!-- <tr><td class="t-td-0"><a href="@Study_lecDetail.jsp">00001</a></td><td class="t-td-1">혼자하는 수학</td><td class="t-td-2">이연희</td><td class="t-td-3">수학</td><td class="t-td-4">고등학생</td>
+                	<td class="t-td-5">3</td><td class="t-td-6">30</td><td class="t-td-7">102</td><td class="t-td-8">300,000</td>
+                	<td class="t-td-9">18:00</td><td class="t-td-10">18:00</td><td class="t-td-11">18:00</td><td class="t-td-12">18:00</td>
+                	<td class="t-td-13">18:00</td><td class="t-td-14">18:00</td><td class="t-td-15">18:00</td><td class="t-td-16">수학의 정석</td>
+                	<td class="t-td-17"><input type="button" value="삭제"></td></tr> -->
+			<c:forEach var="lecSchedule" items="${lschduleList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
+				<tr><td class="t-td-0">${pagingModel.no-status.count+1 }</td><td class="t-td-0"><a href="#">${lecSchedule.lsId }</a></td><td class="t-td-0">${lecSchedule.lsName }</td><td class="t-td-0">${lecSchedule.alId }</td><td class="t-td-1">${lecSchedule.lecture.alName }</td>
+					<td class="t-td-2">${lecSchedule.lecture.eKname }</td><td class="t-td-3">${lecSchedule.lecture.sbjName }</td><td class="t-td-3">${lecSchedule.lecture.slName }</td><td class="t-td-3">${lecSchedule.lecture.lcName }</td><td class="t-td-4">${lecSchedule.lecture.sgName }</td>
+                	<td class="t-td-6">${lecSchedule.lsMax }</td><td class="t-td-7">${lecSchedule.lrName }</td><td class="t-td-8">${lecSchedule.lsCost }</td>
+                <%-- <c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status2">
+                	<td class="t-td-9">${lecDay.ltFromTime } - ${lecDay.ltToTime }</td>
+                </c:forEach> --%>
+                <c:forEach var="i" begin="1" end="7" varStatus="status2">
+                	<td class="t-td-9">
+                	<c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status3">
+	                	<c:if test="${lecDay.dCode == i }" >
+	                		${lecDay.ltFromTime } - ${lecDay.ltToTime }
+	                	</c:if>
+                	</c:forEach>
+                	</td>
+                </c:forEach>
+                	<td class="t-td-16">${lecSchedule.lecture.tbName } - ${lecSchedule.lecture.sbjName2 }&nbsp;${lecSchedule.lecture.cName }</td><td class="t-td-17"><input type="button" value="삭제"></td></tr>
+			</c:forEach>
+			<!-- <tr><td class="t-td-0">t</td><td class="t-td-0"><a href="#">t</a></td><td class="t-td-1">t</td><td class="t-td-2">t</td>
+                	<td class="t-td-3">t</td><td class="t-td-4">t</td><td class="t-td-5">t</td>
+                	<td class="t-td-6">t</td><td class="t-td-7">t</td><td class="t-td-8">t</td>
+                	<td class="t-td-9">t</td><td class="t-td-10">t</td><td class="t-td-11">t</td>
+                	<td class="t-td-12"><input type="button" value="삭제"></td></tr> -->
+			
+                
+                </tbody>
+            </table>
+            </div>
+            
+            <div class="paging">
+            	<!-- <span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
+            		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span> -->
+			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>&nbsp;...</span></c:if>
+				&nbsp;&nbsp;<span>
+			<c:forEach var="i" begin="${pagingModel.firstPage }" end="${pagingModel.lastPage }" step="1" varStatus="status">
+				<a href="#" value="${i }">${i }</a>&nbsp;&nbsp;
+			</c:forEach>
+				</span>
+			<c:if test="${pagingModel.nextLink > 0}"><span>...&nbsp;<a href="#" value="${pagingModel.nextLink }">다음 10개</a></span></c:if>
+			<c:if test="${pagingModel.prevLink > 0 && pagingModel.nextLink == 0}"><span>...&nbsp;<a href="#">처음으로</a></span></c:if>
+            </div>
+        </div>
+        <input type="hidden" value="${pagingModel.curPage }" name="curPage" id="curPage">
+        <input type="hidden" value="${pagingModel.numPerPage }" name="numPerPageSET" id="numPerPageSET">
+        <!-- <input type="submit" value="테스트용버튼"> -->
+</form>
+        
+
+    </div>
     
     <!-- // 탭 컨테이너 영역 -->
     

@@ -4,6 +4,9 @@ var windowSizeArray = [ "width=420,height=500", "width=300,height=400,scrollbars
 
 $(document).ready(function(e) {
 	
+//	alert($('article').width());
+	$('#ibm-footer-module').css('width', $(document).width()+'px');
+	$('#ibm-footer').css('width', $(document).width()+'px');
 	$('.tabs a').click(function(e) {
 		$('.tabs a').removeClass('tab-active');
 		$(this).addClass('tab-active');

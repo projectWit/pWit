@@ -58,9 +58,10 @@ calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'from
  
 <form method="post" action="/teamP/study/lecture/search/list" name="pagingForm" id="pagingForm">
         <div class="tab-content" style="border: 0px solid red; " id="lecResult">
-        	<select id="numPerPage" name="numPerPage" style="float: right; margin-right: 10px;"><option value="10">10개씩 보기</option><option value="20">20개씩 보기</option><option value="30">30개씩 보기</option></select>
+        	
         	<div class="" style="overflow: visible; border: 0px solid transparent;">
-            <table cellspacing="0" class="tab-table result-table" id="table-0" style="">
+            <select id="numPerPage" name="numPerPage" style="float: left; margin-right: 10px;"><option value="10">10개씩 보기</option><option value="20">20개씩 보기</option><option value="30">30개씩 보기</option></select>
+            <table cellspacing="0" class="tab-table result-table" id="table-0" style="clear: both;">
             	<div class="tabTable-th">
 				<tr><th class="t-td-0">번호</th><th class="t-td-0">강의코드</th><th class="t-td-1">강의이름</th><th class="t-td-2">강의설명</th><th class="t-td-3">강의종류</th><th class="t-td-4">강의카테고리</th>
                 	<th class="t-td-5">강사아이디</th><th class="t-td-6">강사이름</th><th class="t-td-7">학교</th><th class="t-td-8">과목</th>

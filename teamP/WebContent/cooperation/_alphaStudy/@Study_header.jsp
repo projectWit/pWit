@@ -1,3 +1,5 @@
+<%@page import="com.wit.member.Power"%>
+<%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,6 +21,26 @@
 
 </script>
 </head>
+
+<%
+Member member = (Member)session.getAttribute("member");
+boolean login = member==null ? false : true;
+
+Power power = (Power)session.getAttribute("power");
+
+
+if (login) { // 로그인 상태일 때
+	if (power.getaStudy() > 0) { // 알파스터디의 관리자라면
+		
+	}
+} else { // 로그인 상태가 아닐 때
+	
+}
+%>
+
+
+
+
 <body  id="ibm-com" class="v17">
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 33px;"> -->
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 74px;"> -->
@@ -47,7 +69,7 @@
 			<li onmouseover="slideRibbon(2)"><a href="#">출결 관리</a></li>
 			<li onmouseover="slideRibbon(3)"><a href="#">수납/회계</a></li>
 			<li onmouseover="slideRibbon(4)"><a href="#">자재 관리</a></li>
-			<li onmouseover="slideRibbon(5)"><a href="/teamP/cooperation/_alphaStudy/@Study_lecSearch.jsp">강의 관리</a></li>
+			<li onmouseover="slideRibbon(5)"><a href="/teamP/study/lecture/create">강의 관리</a></li>
 			<li onmouseover="slideRibbon(6)"><a href="#">직원 관리</a></li>
 			<li onmouseover="slideRibbon(7)"><a href="/teamP/cooperation/_alphaStudy/@Study_mngCodes.jsp">코드 관리</a></li>
 		</ul>
