@@ -4,9 +4,20 @@ var windowSizeArray = [ "width=420,height=500", "width=300,height=400,scrollbars
 
 $(document).ready(function(e) {
 	
-//	alert($('article').width());
-	$('#ibm-footer-module').css('width', $(document).width()+'px');
-	$('#ibm-footer').css('width', $(document).width()+'px');
+	if ($('#loginStatus').val() == "true") {
+		if (parseInt($('#powerStudy').val()) > 0) {
+			
+		} else {	// 알파스터디 관리자가 아닐 때
+//			$('#ibm-common-menu').css('height', '0px');
+			$('.ibm-menu-subtabs').hide();
+			$('#ibm-menu-links li').removeAttr('onmouseover');
+		}
+	} else {	// 로그인 하지 않았을 때
+//		$('#ibm-common-menu').css('height', '0px');
+		$('.ibm-menu-subtabs').hide();
+		$('#ibm-menu-links li').removeAttr('onmouseover');
+	}
+	
 	$('.tabs a').click(function(e) {
 		$('.tabs a').removeClass('tab-active');
 		$(this).addClass('tab-active');
@@ -87,3 +98,7 @@ $(document).ready(function(e) {
 	
 	$('.paging a[value="'+$('#curPage').val()+'"]').addClass('activePage');
 });
+
+function hideCommonMenu() {
+	$('#ibm-common-menu').hide();
+}

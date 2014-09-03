@@ -59,6 +59,8 @@ $(document).ready(function(e) {
 		$('.ibm-container .ibm-columns').css("width", width+30);
 		$('.ibm-container .ibm-ribbon-pane').css("width", width);
 		$('.ibm-container .ibm-ribbon-section').css("left", (navIndex-1)*(width+30)*(-1));
+		$('#ibm-footer-module').css("width", width);
+		$('#ibm-footer').css("width", width);
 		
 		$('.dijitDialogUnderlayWrapper .dijitDialogUnderlay').css("width", width).css("height", height);
 		if (isDragged) {
@@ -122,6 +124,7 @@ $(document).ready(function(e) {
 function showLogin() {
 	if ($('#loginStatus').val()=="true" ) {	// 로그인 상태가 true 일 때는 로그아웃의 요청이다
 //		window.open("closeSession.jsp", "", "width=0, height=0");
+		$('#loginStatusForm').attr('action',"/teamP/members/logout");
 		$('#loginStatusForm').submit();
 	} else {
 	$('.dijitDialogUnderlayWrapper').fadeIn();

@@ -1,14 +1,17 @@
 package com.wit.member.spring;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.wit.member.Member;
 import com.wit.member.MemberService;
+import com.wit.member.Power;
 
 @Controller
 //@RequestMapping("/members")
@@ -28,36 +31,52 @@ public class MemberController {
 		return "members/welcome";
 	}
 	
+	@RequestMapping(value="/loginAjax", method=RequestMethod.GET)
+	public String loginAjax(Model model, HttpServletRequest request, HttpSession session) {
+		String username = request.getParameter("username");
+		String password_text = request.getParameter("password_text");
+		Member member = memberService.login(username, password_text);
+		
+		//result 0 : id 불일치
+		// result 1 : id 일치, pwd 불일치
+		// result 2 : id, pwd 모두 일치
+		int result = 0;
+		if (member == null) {	
+			// id와 일치하는 레코드가 없음. id 불일치
+		} else {
+//			System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
+			if (member.getmPwd().equals(password_text)) { 
+				result = 2;	// id, pwd 전부 일치
+				Power power = memberService.getPower(member);
+				session.setAttribute("member", member);		// 세션 생성
+				if (power != null) {
+					session.setAttribute("power", power);
+				}
+			} else {	
+				result = 1;	// id일치, pwd불일치
+			}
+		}
+		model.addAttribute("result", result);
+		return "loginJSON";
+	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login() {
-		Member loginMember = memberService.login("test001", "1111");	// test
-		return "members/login";
+		return "WIT_Main_index";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(String mId, String mPwd, HttpSession session) throws Exception {
-		System.out.println("pId : "+mId+", pPwd : "+mPwd);
-		Member loginMember = memberService.login(mId, mPwd);
-		if (loginMember != null) {
-			session.setAttribute("member", loginMember);
-//			return "members/changePwd";
-			return "WIT_Main_index";
-		} else {
-//			return "members/login";
-			return "WIT_Main_register";
-		}
-		
-//		return "WIT_Main_register";
-	}
-	/*@RequestMapping("/login.do")
-	public String login() {
-		System.out.println("/login 진입");
+	public String login(int dummy) throws Exception {
 		return "WIT_Main_index";
 	}
-	@RequestMapping("/login2")
-	public String login2() {
-		return "WIT_Main_register";
-	}*/
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.removeAttribute("member");
+		session.removeAttribute("power");
+		return "WIT_Main_index";
+
+	}
 		
 	@RequestMapping(value="/editAccount", method=RequestMethod.GET)
 	public String editAccount() {
@@ -113,13 +132,7 @@ public class MemberController {
 		return "members/login";
 	}
 	
-	@RequestMapping(value="/logout", method=RequestMethod.GET)
-	public String logout(HttpSession session) {
-		session.removeAttribute("member");
-
-		return "members/login";
-
-	}
+	
 
 	//TODO getAllUsers(),getUserByEmail() getUsersByKeyword() 메소드 추가(사용자 관리 페이지)
 }

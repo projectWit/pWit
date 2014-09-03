@@ -5,19 +5,10 @@
 <meta charset="utf-8">
 <title>무제 문서</title>
 
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
-<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
 <script type="text/javascript">
 //달력이 추가될 태그의 id
 calendarIDs = ['fromJoinDate', 'toJoinDate', 'fromDropDate', 'toDropDate', 'fromBirthDate', 'toBirthDate'];
 </script>
-
-<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
-<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
 
 <style type="text/css">
 </style>

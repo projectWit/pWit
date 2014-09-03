@@ -9,8 +9,6 @@
 <style type="text/css">
 </style>
 
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 </script>
 </head>

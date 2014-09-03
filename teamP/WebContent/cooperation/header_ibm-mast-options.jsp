@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Power"%>
 <%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,18 +9,6 @@
 </head>
 
 <%
-
-String loginStatus = request.getParameter("loginStatus");
-//System.out.println("loginStatus : "+loginStatus);
-if (loginStatus != null) {
-	if (loginStatus.equals("true")) {
-//		System.out.println("session.invalidate() 진입");
-//		session.invalidate();
-		session.removeAttribute("member");
-		session.removeAttribute("power");
-	}
-}
-
 Member member = (Member)session.getAttribute("member");
 boolean login = member==null ? false : true;
 
@@ -35,11 +24,34 @@ if (login) {
 	regHref = "/teamP/cooperation/WIT_Main_register.jsp";
 //	regHref = "/teamP/members/register";
 }
+
+int powerStudy = 0;
+int powerOpenex = 0;
+int powerGm = 0;
+int powerAccount = 0;
+int powerPok  =0;
+int powerInsa = 0;
+int powerShop = 0;
+Power power = (Power)session.getAttribute("power");
+boolean admin = power==null ? false : true;
+
+if (admin) {
+	powerStudy = power.getaStudy();
+	powerOpenex = power.getaOpenex();
+	powerGm = power.getaGm();
+	powerAccount = power.getaAcount();
+	powerPok = power.getaPok();
+	powerInsa = power.getaInsa();
+	powerShop = power.getaShop();
+} else {
+	
+}
 %>
 
 <body  id="ibm-com" class="v17">
-<form id="loginStatusForm" method="get" action="" ><!-- onSubmit="window.location.reload()" -->
+<form id="loginStatusForm" method="get" action="/teamP/members/login" ><!-- onSubmit="window.location.reload()" -->
 <input id="loginStatus" name="loginStatus" type="hidden" value="<%=login %>">
+<input id="powerStudy" name="powerStudy" type="hidden" value="<%=powerStudy %>">
 </form>
 <!-- ibm-mast-options -->
 	<div id="ibm-mast-options">

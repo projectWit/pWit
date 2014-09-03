@@ -1,3 +1,6 @@
+<%@page import="com.wit.Href"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="com.wit.member.Power"%>
 <%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -16,29 +19,20 @@
 
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/jquery-ui-1.9.2.css">
+
 <script type="text/javascript" src="/teamP/cooperation/script/witMemberHeader.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/_alphaStudy/css/stuCommon.css">
+<script type="text/javascript" src="/teamP/cooperation/_alphaStudy/script/stuCommon.js"></script>
+
+<script type="text/javascript" src="/teamP/cooperation/script/calendar.js"></script>
+<link rel="stylesheet" type="text/css" href="/teamP/cooperation/css/calendar.css">
+<script type="text/javascript" src="/teamP/cooperation/script/focusInput.js"></script>
 <script type="text/javascript">
 
 </script>
 </head>
-
-<%
-Member member = (Member)session.getAttribute("member");
-boolean login = member==null ? false : true;
-
-Power power = (Power)session.getAttribute("power");
-
-
-if (login) { // 로그인 상태일 때
-	if (power.getaStudy() > 0) { // 알파스터디의 관리자라면
-		
-	}
-} else { // 로그인 상태가 아닐 때
-	
-}
-%>
-
-
 
 
 <body  id="ibm-com" class="v17">
@@ -50,8 +44,42 @@ if (login) { // 로그인 상태일 때
 <header id="ibm-masthead"> 
 
 <!-- ibm-mast-options --> 
-	<jsp:include page="/cooperation/header_ibm-mast-options.jsp"></jsp:include>
+	<%-- <jsp:include page="/cooperation/header_ibm-mast-options.jsp"></jsp:include> --%>
+	<%@ include file="/cooperation/header_ibm-mast-options.jsp" %>
 <!-- //ibm-mast-options --> 
+
+<%
+ List<Href> hrefList = new ArrayList<Href>();
+
+ if (login) { // 로그인 상태일 때
+ 	if (powerStudy>0) { // 알파스터디의 관리자라면
+ 		hrefList.add(new Href("/teamP/cooperation/_alphaStudy/@Study_stuSearch.jsp","학생 관리"));
+ 		hrefList.add(new Href("/teamP/cooperation/_alphaStudy/@Study_learnProgSearch.jsp","학습 관리"));
+ 		hrefList.add(new Href("#","출결 관리"));
+ 		hrefList.add(new Href("#","수납/회계"));
+ 		hrefList.add(new Href("#","자재 관리"));
+ 		hrefList.add(new Href("/teamP/study/lecture/create","강의 관리"));
+ 		hrefList.add(new Href("#","직원 관리"));
+ 		hrefList.add(new Href("/teamP/cooperation/_alphaStudy/@Study_mngCodes.jsp","코드 관리"));
+ 	} else { // 알파스터디의 관리자가 아니라면
+ 		hrefList.add(new Href("#","α Study 소개"));
+ 		hrefList.add(new Href("#","강사 소개"));
+ 		hrefList.add(new Href("#","강좌 보기"));
+ 		hrefList.add(new Href("#","공지 사항"));
+ 		hrefList.add(new Href("#","시험 일정"));
+ 		hrefList.add(new Href("#","Q & A"));
+ 		hrefList.add(new Href("/teamP/study/account","내 정보"));
+ 	}
+ } else { // 로그인 상태가 아닐 때
+	hrefList.add(new Href("#","α Study 소개"));
+	hrefList.add(new Href("#","강사 소개"));
+	hrefList.add(new Href("#","강좌 보기"));
+	hrefList.add(new Href("#","공지 사항"));
+	hrefList.add(new Href("#","시험 일정"));
+	hrefList.add(new Href("javascript:showLogin()","Q & A"));
+	hrefList.add(new Href("javascript:showLogin()","내 정보"));
+ }
+ %>
 
 <!-- ibm-universal-nav --> 
 <!-- <div id="ibm-universal-nav" style="height: 30px;"> -->
@@ -63,15 +91,23 @@ if (login) { // 로그인 상태일 때
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul></ul>
 		<ul id="ibm-menu-links">
-			<li onmouseover="slideRibbon(-1)"><a href="/teamP/cooperation/_alphaStudy/@Study_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">α</span> STUDY</a></li>
-			<li onmouseover="slideRibbon(0)"><a href="/teamP/cooperation/_alphaStudy/@Study_stuSearch.jsp">학생 관리</a></li>
+			<li onmouseover="slideRibbon(-1)"><a href="/teamP/study/index" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">α</span> STUDY</a></li>
+			<!-- <li onmouseover="slideRibbon(0)"><a href="/teamP/cooperation/_alphaStudy/@Study_stuSearch.jsp">학생 관리</a></li>
 			<li onmouseover="slideRibbon(1)"><a href="/teamP/cooperation/_alphaStudy/@Study_learnProgSearch.jsp">학습 관리</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="#">출결 관리</a></li>
 			<li onmouseover="slideRibbon(3)"><a href="#">수납/회계</a></li>
 			<li onmouseover="slideRibbon(4)"><a href="#">자재 관리</a></li>
 			<li onmouseover="slideRibbon(5)"><a href="/teamP/study/lecture/create">강의 관리</a></li>
 			<li onmouseover="slideRibbon(6)"><a href="#">직원 관리</a></li>
-			<li onmouseover="slideRibbon(7)"><a href="/teamP/cooperation/_alphaStudy/@Study_mngCodes.jsp">코드 관리</a></li>
+			<li onmouseover="slideRibbon(7)"><a href="/teamP/cooperation/_alphaStudy/@Study_mngCodes.jsp">코드 관리</a></li> -->
+<%
+	for (int i=0; i<hrefList.size(); i++) {
+	Href href = hrefList.get(i);
+%>
+			<li onmouseover="slideRibbon(<%=i %>)"><a href="<%=href.getUrl() %>"><%=href.getMenu() %></a></li>
+<%
+		}
+%>
 		</ul>
 	</div>
 <!-- //ibm-universal-nav --> 

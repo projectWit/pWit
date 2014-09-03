@@ -68,7 +68,7 @@
 				style="display:none; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
 				<ul>
 					<li class="subTab-0-0 ibm-active" style="display: block;"><a
-						href="/teamP/cooperation/_alphaStudy/@Study_index.jsp">알파 스터디</a></li>
+						href="/teamP/study/index">알파 스터디</a></li>
 					<li class="subTab-0-1" style="display: block;"><a href="/teamP/cooperation/_OPENEX/WIT_OPENEX_index.jsp">오프넥스</a></li>
 					<!-- <li class="subTab-0-2" style="display: block;">
 			<a href="#">Business Partners and alliances</a></li> -->

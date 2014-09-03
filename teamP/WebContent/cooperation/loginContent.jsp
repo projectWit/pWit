@@ -309,7 +309,8 @@ IMG {
 <script type="text/javascript">
 $(document).ready(function(e) {
 	$('#ibm-signin-submit').click(function(e) {
-		var url = 'loginJSON2.jsp?username='+$('#username').val()+'&password_text='+$('#password_text').val();
+//		var url = 'loginJSON2.jsp?username='+$('#username').val()+'&password_text='+$('#password_text').val();
+		var url = '/teamP/members/loginAjax?username='+$('#username').val()+'&password_text='+$('#password_text').val();
 		$.get(url, function(data) {
 			responseText = eval("(" + data + ")");
 //			alert("result : "+responseText[0].result);
@@ -329,7 +330,8 @@ $(document).ready(function(e) {
 				$('#ibm-overlay-register-error').append("환영합니다");
 //				$('#userForm').submit();
 //				top.opener.document.location.reload(); 
-				parent.document.location.reload();		// 부모페이지 리프레쉬
+//				parent.document.location.reload();		// 부모페이지 리프레쉬
+				$('#loginStatusForm', parent.document).submit();
 				break;
 			default:
 				break;

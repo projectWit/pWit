@@ -25,9 +25,6 @@ a {
 	min-width: 980px;
 	_float: left;
 }
-html, body {
-	background: #333 url(/i/v17/t/bg-loader.gif) no-repeat 50% 200px;
-}
 body {
 	line-height: 1.2;
 }
@@ -429,6 +426,7 @@ h1 {
 	display: block;
 }
 </style>
+
 </head>
 <body class="v17" id="ibm-com" aria-busy="false"><div class="ibm-content-expand" id="ibm-top"><div id="ibm-access-cntr" role="main"><div id="ibm-pcon">
 <div id="ibm-content">
