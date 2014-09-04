@@ -101,6 +101,7 @@ $(document).ready(function(e) {
 	});
 	
 	$('.paging a[value="'+$('#curPage').val()+'"]').addClass('activePage');
+	
 });
 
 function hideCommonMenu() {

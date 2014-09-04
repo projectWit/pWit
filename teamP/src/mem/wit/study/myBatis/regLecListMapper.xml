@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.RegLecListMapper">
+	<!-- <resultMap id="LecScheduleMap" type="mem.wit.study.lecture.LecSchedule">
+		<id property="lsId" column="LSID"/>
+		<result property="alId" column="ALID"/>
+		<result property="lsCost" column="LSCOST"/>
+		<result property="lsMax" column="LSMAX"/>
+		<result property="lrCode" column="LRCODE"/>
+		<result property="lrName" column="LRNAME"/>
+		<result property="lsDescription" column="LSDESCRIPTION"/>
+		<result property="lsFromDate" column="LSFROMDATE"/>
+		<result property="lsToDate" column="LSTODATE"/>
+		<result property="lsCode" column="LSCODE"/>
+		<result property="lsName" column="LSNAME"/>
+		<association property="lecture" column="{alId=ALID}" javaType="mem.wit.study.lecture.Lecture" select="selectLecture"/>
+		<collection property="lecDay" column="{lsId=LSID}" ofType="mem.wit.study.lecture.LecDay" select="selectLecDay"/>
+	</resultMap> -->
+
+  
+  
+  
+  <!-- <insert id="insert" parameterType="mem.wit.study.user.RegLecList" useGeneratedKeys="true" >
+  	<selectKey keyProperty="regId" resultType="int" order="BEFORE">
+  		SELECT NEXTVAL('REGLECLIST_SEQ')
+  		SELECT REGLECLIST_SEQ.NEXTVAL FROM DUAL
+  	</selectKey>
+  	
+  	INSERT INTO REGLECLIST VALUES(#{regId},#{sId],#{lsId},#{rsCode})
+  </insert> -->
+  <insert id="insert" parameterType="mem.wit.study.user.RegLecList" useGeneratedKeys="true" >
+  	<selectKey keyProperty="regId" resultType="int" order="BEFORE">
+  		<!-- SELECT NEXTVAL('REGLECLIST_SEQ') -->
+  		SELECT REGLECLIST_SEQ.NEXTVAL FROM DUAL
+  	</selectKey>
+  	
+  	INSERT INTO regLecList VALUES(#{regId}, #{sId}, #{lsId}, #{rsCode})
+  </insert>
+</mapper>

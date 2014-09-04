@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -762,6 +763,14 @@ a:visited {
 	margin-top: 2px;
 }
 </style>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$('#btnAtndLec').click(function(e) {
+		$('#applyForm').submit();
+	});
+});
+</script>
 </head>
 <body><div id="reNwrap2013Sub" style="margin-top: 100px;">
 <div id="reNcontainer">
@@ -931,7 +940,7 @@ a:visited {
 			</form>
 			
 			<div class="tbOptionArea mB5">
-				<p class="txt mB5">* 총 <strong>195</strong>개 강좌</p>
+				<p class="txt mB5">* 총 <strong>${fn:length(lschduleList)}</strong>개 강좌</p>
 				<div class="fL">
 					<select name="_openYear" class="iBorderS" id="_openYear" style="width: 65px;">
 						<option value="">-년도-</option>
@@ -950,11 +959,11 @@ a:visited {
 					</select>
 				</div>
 				<div class="fR">
-					<a href="#none"><img name="btnAtndLec" id="btnAtndLec" alt="선택 강좌 수강 신청" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/btn_selLecApply_orange.gif"></a>
+					<a href="#none"><img name="btnAtndLec" id="btnAtndLec" alt="선택 강좌 수강 신청" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/btn_selLecApply_orange.gif" /></a>
 				</div>
 			</div>
 			
-			
+		<form method="post" action="/teamP/study/user/applying" id="applyForm">
 			<!-- 리스트 -->
 			<div class="tbArea">
 				<table width="100%" class="lms2Basic_tb mB15" summary="강좌목록을 선생님,대상/학습단계,강좌명,탑재현황(자막현황),맛보기로 나열">
@@ -973,6 +982,7 @@ a:visited {
 						</tr>
 					</thead>
 					<tbody>
+					
 					<c:forEach var="lecSchedule" items="${lschduleList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
 					<tr>
 							<td>${lecSchedule.lecture.slName }<br>${lecSchedule.lecture.lcName }</td>
@@ -983,7 +993,7 @@ a:visited {
 									</td>
 							<td class="txtL">
 								<div class="lecSort mB5">
-									<img alt="NEW" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecNew.gif"><img alt="완강" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecFinish.gif"><img alt="자막" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecCaption.gif"></div>
+									<img alt="NEW" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecNew.gif"><!-- <img alt="완강" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecFinish.gif"><img alt="자막" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecCaption.gif"> --></div>
 								<p class="lecTit">
 									<a href="#">${lecSchedule.lecture.sbjName }</a>
 										</p>
@@ -1009,71 +1019,17 @@ a:visited {
 								${lecSchedule.lsCost}
 									</td>
 							<td>
-							<input name="chkSbjt" id="chkSbjt_S20140000730" type="checkbox" value="S20140000730">
+							<input name="chkSbjt" id="chkSbjt_${lecSchedule.lsId}" type="checkbox" value="${lecSchedule.lsId}" />
 							</td>
 						</tr>
 					</c:forEach>
 					
-					<tr>
-							<td>고3<br>개념완성</td>
-							<td>
-								<!-- 연합강좌인경우 -->
-												<span id="tchrImg_194_1">
-													<span class="lecTchPhoto">
-														<img width="61" height="61" onerror="OnImageNotFound(this)" alt="박정연" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so69_2.jpg">
-													</span>
-													<span class="lecTchName">
-														[연합] 박정연</span>
-												</span>
-									<!-- 연합강좌인경우 -->
-												<span id="tchrImg_194_2" style="display: none;">
-													<span class="lecTchPhoto">
-														<img width="61" height="61" onerror="OnImageNotFound(this)" alt="민병권" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so72_2.jpg">
-													</span>
-													<span class="lecTchName">
-														[연합] 민병권</span>
-												</span>
-									<script type="text/javascript">
-											//<![CDATA[
-											     sbjtIds.push(194);
-											//]]>
-											</script>			
-									</td>
-							<td class="txtL">
-								<div class="lecSort mB5">
-									<img alt="완강" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecFinish.gif"></div>
-								<p class="lecTit">
-									<a href="#">[5분사탐] 세계지리 지도여행</a>
-										</p>
-								<div class="lecAddInfo">
-									<ul>
-										<li class="first lecInfo">
-										<a href="javascript:Fn_PopupCenter('S20140000319','sbjtInfo');">
-											강좌안내</a>
-										</li>
-										<li>
-											<a href="#" target="_blank">비교재안내&nbsp;<img class="icoDisk" alt="파일아이콘" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/icon_disk.jpg"></a>
-												</li>
-										</ul>
-								</div>
-							</td>
-							<td>
-								<span class="lecStatus">
-									<span class="mvNum">
-										63</span> / 63</span>
-								</td>
-							<td>
-								<a href="#none"><img onclick="ShowPreviewPlayer('S20140000319', event);" alt="맛보기 강좌" src="http://image.ebsi.co.kr/ebsi/images/potalUI/entrance/btn_play.jpg"></a>
-									</td>
-							<td>
-							<input name="chkSbjt" id="chkSbjt_S20140000319" type="checkbox" value="S20140000319">
-							</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
 			<!-- //리스트 -->
-			
+		</form>
+		
 	</div>
 	
 	

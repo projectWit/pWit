@@ -27,6 +27,10 @@ import mem.wit.study.lecture.LecDayService;
 import mem.wit.study.lecture.LecSchedule;
 import mem.wit.study.lecture.LecScheduleService;
 import mem.wit.study.lecture.LectureService;
+import mem.wit.study.user.RegLecList;
+import mem.wit.study.user.RegLecListService;
+import mem.wit.study.user.Student;
+import mem.wit.study.user.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.wit.Paging;
+import com.wit.member.Member;
 
 
 @Controller
@@ -52,6 +57,8 @@ public class UserController {
 	@Autowired private LecStatusService lecStatusService;
 	@Autowired private LecScheduleService lecScheduleService;
 	@Autowired private LecDayService lecDayService;
+	@Autowired private RegLecListService regLecListService;
+	@Autowired private StudentService studentService;;
 //	@Autowired private TeacherService teacherService;
 	
 	
@@ -63,6 +70,51 @@ public class UserController {
 	@RequestMapping(value="/lecture", method=RequestMethod.GET)
 	public String lecture(Model model, HttpServletRequest request, HttpSession session) {
 		System.out.println("lecture GET");
+		doSelectCodes(model);
+		List<LecSchedule> lschduleList = lecScheduleService.selectAll();
+		model.addAttribute("lschduleList", lschduleList);
+		doListPaging(model, request, lschduleList.size());
+		session.setAttribute("lschduleList", lschduleList);
+		return "@Study_userLecture";
+	}
+	
+	@RequestMapping(value="/applying", method=RequestMethod.POST)
+	public String applying(Model model, HttpServletRequest request, HttpSession session, RegLecList regLecList) {
+		String chkSbjts[] = request.getParameterValues("chkSbjt");
+		if (chkSbjts != null) {
+			System.out.println("length : "+chkSbjts.length);
+			for (int i=0; i<chkSbjts.length; i++) {
+				System.out.println("chkSbjts["+i+"] : "+chkSbjts[i]);
+				regLecList.setLsId(Integer.parseInt(chkSbjts[i]));
+				
+				Member member = (Member)session.getAttribute("member");
+				if (member != null) {
+					Student student = studentService.selectById(member.getmId());
+					if (student != null) {
+						regLecList.setsId(student.getsId());
+						regLecList.setRsCode(1);
+						int updateCount = regLecListService.insert(regLecList);
+						int updateKey = regLecList.getRegId();
+						System.out.println("updateCount : "+updateCount);
+						System.out.println("updateKey : "+updateKey);
+					}
+					
+				}
+			}
+		}
+		/*Member member = (Member)session.getAttribute("member");
+		if (member != null) {
+			Student student = studentService.selectById(member.getmId());
+			if (student != null) {
+				regLecList.setsId(student.getsId());
+				regLecList.setRsCode(1);
+				int updateCount = regLecListService.insert(regLecList);
+				System.out.println("updateCount : "+updateCount);
+			}
+			
+		}*/
+		
+		
 		doSelectCodes(model);
 		List<LecSchedule> lschduleList = lecScheduleService.selectAll();
 		model.addAttribute("lschduleList", lschduleList);
