@@ -27,7 +27,7 @@ function Close() {
 };
 
 function fnLink(no, str) {
-    window.opener.form.InTypeCd.value=no;
+    window.opener.form.eInTypeCd.value=no;
     window.opener.form.InType.value=str;
     window.close();
  };

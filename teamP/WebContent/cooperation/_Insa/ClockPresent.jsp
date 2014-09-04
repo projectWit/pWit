@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.ClkDAO"%>
+<%@page import="mem.wit.Insa.ClkDTO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html >
@@ -21,6 +24,11 @@
 
 </head>
 
+<%
+	ClkDAO dao = new ClkDAO();
+	ClkDTO dto = new ClkDTO();
+	List dtoL = dao.clkDList(dto);
+%>
 <body id="tabAll">
 
 <div id="idPrint">
@@ -36,7 +44,7 @@
 		<br />
 		<div class="container H_25px">
 			<p class="float_left">회사명 : (주)WIT</p>
-			<p class="float_right">2014/08/01 ~ 2014/08/07</p>
+			<p class="float_right"><%=dto.getcDate()%> ~ <%=dto.getcDate()%></p>
 		</div>
 
 

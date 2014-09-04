@@ -1,5 +1,3 @@
-<%@page import="mem.wit.Insa.HeadDTO"%>
-<%@page import="mem.wit.Insa.CodeDAO"%>
 <%@page import="mem.wit.Insa.BoaDAO"%>
 <%@page import = "mem.wit.Insa.BoaDTO" %>
 <%@page import="java.util.List"%>

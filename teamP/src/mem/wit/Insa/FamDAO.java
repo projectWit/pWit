@@ -10,7 +10,6 @@ import java.util.List;
 import mem.wit.Insa.DbClose;
 import mem.wit.Insa.DbSet;
 
-import com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException;
 
 public class FamDAO {
 	ResultSet rs = null;
@@ -29,7 +28,7 @@ public class FamDAO {
 			try
 			{
 				String sql = "insert into FAMILY(fSeq, fJumin1, fJumin2, fName, fRelation, fFinGrad, fJob, fCompany, fHtCd, rtCd, eId)";
-				sql += "values(Seq_fam.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+				sql += "values(Seq_fam.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'test8')";
 				pstmt = conn.prepareStatement(sql);
 
 				pstmt.setInt(1, dto.getfJumin1());
@@ -41,7 +40,7 @@ public class FamDAO {
 				pstmt.setString(7, dto.getfCompany());
 				pstmt.setInt(8, dto.getfHtCd());
 				pstmt.setInt(9,dto.getRtCd());
-				pstmt.setString(10, dto.geteId());
+				//pstmt.setString(10, dto.geteId());
 							
 				su = pstmt.executeUpdate();
 				
@@ -85,6 +84,46 @@ public class FamDAO {
 		  }finally{
 			  DbClose.close(pstmt,conn);
 		  }
+		return dtoL;
+	}
+	public List fhtcd(){
+		conn = DbSet.getConnection();
+		List<FHTCDDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select htcd, htname from HometypeCd";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				FHTCDDTO dto = new FHTCDDTO();
+				dto.setFhtCode(rs.getInt(1));
+				dto.setFhtName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
+	public List frtcd(){
+		conn = DbSet.getConnection();
+		List<FRTCDDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select rtcd, rtname from reltypecd";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				FRTCDDTO dto = new FRTCDDTO();
+				dto.setFrtCode(rs.getInt(1));
+				dto.setFrtName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
 		return dtoL;
 	}
 	

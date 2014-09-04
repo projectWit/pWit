@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,6 +14,25 @@
 
 <script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
+<%
+Member member = (Member) session.getAttribute("member");
+boolean login = member == null ? false : true;
+String href1 = "#";
+String href2 = "#";
+String href3 = "#";
+String href4 = "#";
+String href5 = "#";
+String logfunc = "";
+
+if (login) { // 로그인 관리자 때 
+  href1 = "InsaLeft.jsp";
+  href2 = "ClockLeft.jsp";
+  href3 = "BoardLeft.jsp";
+  href4 = "DocLeft.jsp";
+} else {
+	logfunc = "showLogin()";
+}
+%>
 <script type="text/javascript">
 	
 </script>
@@ -21,7 +41,7 @@
 <div style="width: 760px; margin: auto;">
 	<div>
 		<div style="float: left; margin-left: 30px;">
-			<a href="InsaLeft.jsp"><img src="img/backinsa.png" width="350px"
+			<a href="<%=href1%>" onclick = "<%=logfunc%>"><img src="img/backinsa.png" width="350px"
 				height="300px"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</div>
 		

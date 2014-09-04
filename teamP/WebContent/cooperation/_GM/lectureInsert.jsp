@@ -9,7 +9,8 @@
 <style>
 #tableList {
 	border: 1px solid;
-	border-collapse: collapse;
+	border-collapse: collaps
+	e;
 	border-bottom-color: black;
 	border-bottom-width: 2px;
 	border-top-color: black;
@@ -87,10 +88,9 @@ img {
 	vertical-align: middle;
 }
 </style>
-<script type="text/javascript"	src="/teamP/cooperation/_GM/script/calendar_beans_v2.0.js"
-	charset="utf-8"></script>
+<script type="text/javascript"	src="/teamP/cooperation/_GM/script/calendar_beans_v2.0.js"	charset="utf-8"></script>
 <script type="text/javascript"	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="teamP/cooperation/_GM/script/jquery.min.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/_GM/script/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var url = 'GMPlace.jsp';
@@ -119,6 +119,9 @@ function sendController() {
 	document.form.action="/teamP/lectureInsert.gm";
 	document.form.submit();
 }
+function SearchTeacher() {
+	window.open("teachercheck.jsp", "", "width = 530px, height = 300px");
+}
 </script>
 
 </head>
@@ -137,15 +140,18 @@ function sendController() {
 				<col>
 			<tbody>
 				<tr>
-					<th><label for="<span class='login'>강좌명</span>"><span
+					<th><label for="lecName"><span
 							class="login">강좌명</span></label></th>
-					<td><input name="business_no_basic" class="default"
-						id="business_no_basic"
-						style="width: 300px; background-color: rgb(255, 255, 255);"
+					<td><input name="lecName" class="default"
+						id="lecName" style="width: 300px; background-color: rgb(255, 255, 255);"
 						type="text"></td>
 
 				</tr>
+				<tr>
+					<th><label for="tName">강사 이름</label></th>
+					<td><input type="hidden" id="tNum" name="tNum"/><input type="text" id="tName" name="tName" /><img src="img/search_btn.gif" style="cursor:pointer;" onclick="SearchTeacher()"/></td>
 
+				</tr>
 				<tr>
 					<th><label for="lecCont">강좌 내용</label></th>
 					<td><textarea name="lecCont" id="lecCont" cols="60" rows="3"></textarea></td>

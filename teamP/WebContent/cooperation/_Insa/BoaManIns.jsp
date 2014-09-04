@@ -815,6 +815,17 @@ div.subtitle {
 				href="javascript:view('http://pnfcorp.imglink.kr/pippin1/notice/2012_Newyear_notice_banner.jpg','','width=400,height=380')"><img
 				src="http://pnfcorp.imglink.kr/pippin1/notice/2012_Newyear_notice_banner.jpg"></a>
 
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+
+		$(document).ready(function() {
+			   var url='HdCd.jsp';
+			    $.get(url, function(data) {
+			       responseText = data;
+			       $('#bHeadCdM').append(responseText);
+			    });
+			});
+		</script>
 			<!-- BOARD WRITE -->
 			<table width="100%" border="0" align="center" cellpadding="0"
 				cellspacing="0">
@@ -827,12 +838,10 @@ div.subtitle {
 										<tr>
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
-											<td><input id="bw_input_writer" type="text" name="hname"
+											<td><input id="eId" type="text" name="eId"
 												size=10 value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<select id="head">
-													<option>공지</option>
-													<option>잡담</option>
+												<select id="bHeadCdM" name = "bHeadCd">
 											</select></td>
 											
 											<td>

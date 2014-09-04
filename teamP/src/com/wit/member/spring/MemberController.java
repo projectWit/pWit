@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.wit.member.Employee;
+import com.wit.member.EmployeeService;
 import com.wit.member.Member;
 import com.wit.member.MemberService;
 import com.wit.member.Power;
@@ -17,8 +19,8 @@ import com.wit.member.Power;
 //@RequestMapping("/members")
 public class MemberController {
 	
-	@Autowired
-	private MemberService memberService;
+	@Autowired private MemberService memberService;
+	@Autowired private EmployeeService employeeService;
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String signUp() {
@@ -36,6 +38,8 @@ public class MemberController {
 		String username = request.getParameter("username");
 		String password_text = request.getParameter("password_text");
 		Member member = memberService.login(username, password_text);
+		Employee employee = employeeService.login(username, password_text);
+		
 		
 		//result 0 : id 불일치
 		// result 1 : id 일치, pwd 불일치
@@ -55,7 +59,22 @@ public class MemberController {
 			} else {	
 				result = 1;	// id일치, pwd불일치
 			}
-		}
+		} // end if member
+		
+		if (employee == null) {	
+			// id와 일치하는 레코드가 없음. id 불일치
+		} else {
+			System.out.println("eId : "+employee.geteId()+", ePwd : "+employee.getePwd());
+			if (employee.getePwd().equals(password_text)) { 
+				result = 2;	// id, pwd 전부 일치
+//				Power power = employeeService.getPower(employee);
+				session.setAttribute("employee", employee);		// 세션 생성
+//				session.setAttribute("power", power);
+			} else {	
+				result = 1;	// id일치, pwd불일치
+			}
+		} // end if employee
+		
 		model.addAttribute("result", result);
 		return "loginJSON";
 	}
@@ -74,6 +93,7 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		session.removeAttribute("member");
 		session.removeAttribute("power");
+		session.removeAttribute("employee");
 		return "WIT_Main_index";
 
 	}

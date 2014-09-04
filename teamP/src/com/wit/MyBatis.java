@@ -71,6 +71,16 @@ public class MyBatis {
 		}
 		return objReturn;
 	}
-
 	
+	public Object update(String selectId, String query) {
+		Object objReturn = null;
+		try {
+			objReturn = sqlMap.update(selectId, query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objReturn;
+	}
+
 }

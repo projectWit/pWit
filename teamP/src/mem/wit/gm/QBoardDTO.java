@@ -1,15 +1,15 @@
 package mem.wit.gm;
 
 public class QBoardDTO {
-	private int qId;
-	private String qMId;
-	private String mName;
-	private String qTitle;
-	private String qCont;
-	private String qDate;
-	private String qIp;
-	private int stateId;
-	private String stateName;
+	int qId;
+	String qMId;
+	String mName;
+	String qTitle;
+	String qCont;
+	String qDate;
+	String qIp;
+	int stateId;
+	String stateName;
 
 	public int getqId() {
 		return qId;

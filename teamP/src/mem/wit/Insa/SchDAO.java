@@ -27,7 +27,7 @@ public class SchDAO {
 			
 			try
 			{
-				String sql = "insert into School(sSeq, sSchCd, sSchName, sJoinDate, sGradDate, sMajor, sLocCd, sEtc, sGradCd, sDNCd,ENUM)";
+				String sql = "insert into School(sSeq, sSchCd, sSchName, sJoinDate, sGradDate, sMajor, sLocCd, sEtc, sGradCd, sDNCd,EID)";
 				sql += "values(Seq_sch.NEXTVAL, ?, ?, ?, ?, ?,?, ?, ?,?,?)";
 				pstmt = conn.prepareStatement(sql);
 				
@@ -84,6 +84,88 @@ public class SchDAO {
 			  DbClose.close(pstmt,conn);
 		  }
 		return dtoL;
+	}
+	public List SchCd(){
+		conn = DbSet.getConnection();
+		List<SchCdDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select schcd, schname from schooltypecd";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				SchCdDTO dto = new SchCdDTO();		
+				dto.setSchCd(rs.getInt(1));
+				dto.setSchName(rs.getString(2));			
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;		
+	}
+	
+	public List DNType(){
+		conn = DbSet.getConnection();
+		List<DNTypeDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select dncd, dnname from dntypecd";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				DNTypeDTO dto = new DNTypeDTO();		
+				dto.setTypeCd(rs.getInt(1));
+				dto.setTypeName(rs.getString(2));			
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;		
+	}
+	
+	public List SLocal(){
+		conn = DbSet.getConnection();
+		List<SLocalDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select loccd, locname from schlocal";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				SLocalDTO dto = new SLocalDTO();		
+				dto.setLocalCd(rs.getInt(1));
+				dto.setLocalName(rs.getString(2));			
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;		
+	}
+	public List SGradCd(){
+		conn = DbSet.getConnection();
+		List<SGradDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select gradcd, gradname from gradtypecd";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				SGradDTO dto = new SGradDTO();		
+				dto.setGradCd(rs.getInt(1));
+				dto.setGradName(rs.getString(2));			
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;		
 	}
 	
 }

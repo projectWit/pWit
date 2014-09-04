@@ -31,11 +31,11 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	
+	$('#main').load('/teamP/rentApplyForm.gm');
 });
 </script>
 <body>
-<div id="container" style="width:1250px; margin:auto;">
+<div id="container" style="width:1250px; height: 600px; margin:auto;">
 <div id="sidebar" style="float:left; width:200px; height:500px;margin-top:10px;">
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>

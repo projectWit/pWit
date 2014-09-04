@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -120,7 +122,7 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 시설 이용 현황 : 50 개 &nbsp;&nbsp; </td>
+					<td id='bl_count'> 시설 이용 내역 : <c:out value="${fn:length(list)}" />  개 &nbsp;&nbsp; </td>
 				</tr>
 			</table>
 			
@@ -132,8 +134,7 @@ a:link {
 			<table id='bl_table' border='0' cellpadding='0' cellspacing='0' width='100%'>
 				<tr>
 					<td class='bl_title bl_no'>No</td>					
-					<td class='bl_title bl_subject'>신청 사유</td>
-					<td class='bl_title bl_type'>분류</td>
+					<td class='bl_title bl_subject'>수강 이름</td>
 					<td class='bl_title bl_place'>장소</td>
 					<td class='bl_title bl_name'>강사명</td>
 					<td class='bl_title bl_phone'>연락처</td>
@@ -143,24 +144,19 @@ a:link {
 				<!-- INLINE NOTICE --> 
 				 
 				<!-- LIST REPEAT --> 
-				<%
-				for(int i=50;i>0;i--) {
-				%>
+				<c:forEach var="item" items="${list }"  varStatus="status">
 				<tr class="bl_oddline">
-					<td class='bl_list bl_no'><%=i %></td>
+					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >축구교실 개설에 필요한 구장 사용 신청</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_type'>시설</td>
-					<td class='bl_list bl_place'>GM축구장</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>고쌤</div></td>
-					<td class='bl_list bl_phone'>010-1111-1234</td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.lecName }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_place'>${item.place }</td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.eKName} </div></td>
+					<td class='bl_list bl_phone'>${item.eTel }</td>
 					
-					<td class='bl_list bl_date'>2014-06-16</td>
-					<td class='bl_list bl_dateend'>2014-07-15</td>
+					<td class='bl_list bl_date'>${item.sSDay.substring(0,10) }</td>
+					<td class='bl_list bl_dateend'>${item.sEDay.substring(0,10) }</td>
 				</tr>
-				 <%
-				}
-				 %>
+				</c:forEach>
 				<!-- LIST REPEAT END -->
 			</table>
 			

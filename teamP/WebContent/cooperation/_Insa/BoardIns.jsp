@@ -768,11 +768,11 @@ div.subtitle {
 }
 -->
 </style>
-
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 	function SendBoa() {
 		document.boafrm.submit();
-	}
+	}	
 </script>
 </head>
 
@@ -825,11 +825,11 @@ div.subtitle {
 										<tr>
 											<td class='bw_title_color bw_title'
 												style="padding-left: 15px;">name</td>
-											<td><input id="Writer" type="text" name="eId" size=10
+											<td><input id="eId" type="text" name="eId" size=10
 												value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
 												class="bw_title_color bw_title">head :</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												
-												<select id="bHeadCd" name="bHeadCd" onchange="headCd()">													
+												<select id="bHeadCd" name="bHeadCd">													
 											</select></td>
 										</tr>
 

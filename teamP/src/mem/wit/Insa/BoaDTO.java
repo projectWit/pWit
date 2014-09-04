@@ -2,7 +2,13 @@ package mem.wit.Insa;
 
 public class BoaDTO {
 	private int bSeq, bHeadCd,bCnt;
-	private String eId, bTitle, bContent, bDate, bIp;
+	private String eId, bTitle, bContent, bDate, bIp, headName;
+	public String getHeadName() {
+		return headName;
+	}
+	public void setHeadName(String headName) {
+		this.headName = headName;
+	}
 	public int getbSeq() {
 		return bSeq;
 	}

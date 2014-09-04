@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Employee"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -56,7 +57,9 @@
 	function PopUpDep() {
 		window.open("InsaDep.jsp", "", "width = 500px, height = 300px");
 	}
-
+	function PopUpZip() {
+		window.open("zipCheck.jsp", "", "width = 500px, height = 300px");
+	}
 	function findInput() {
 		$('form input[type="text"], form textarea').eq(0).focus();
 	}
@@ -144,6 +147,22 @@
 
 <script type="text/javascript">
 	calendarIDs = [ 'DtIn', 'DtOut' ]; // 달력이 추가될 태그의 id
+	
+	$(document).ready(function() {
+		var url = 'hId.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#hId').append(responseText);
+		});
+	});
+	
+	$(document).ready(function() {
+		var url = 'TelCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#eTel').append(responseText);
+		});
+	});
 </script>
 
 </head>
@@ -151,12 +170,11 @@
 	<%
 		InsaDAO dao = new InsaDAO();
 		InsaDTO dto = new InsaDTO();
-		List dtoL = dao.insaSelect();
+		Employee employee = (Employee) session.getAttribute("employee");
+		List dtoL = dao.insaSelect(employee.geteId());
 		dto = (InsaDTO) dtoL.get(0);
 	%>
-	<form method="post" id="form2" enctype="multipart/form-data">
-
-
+<form method="post" name = "member_zipForm" action = "InsaUpdPro.jsp">
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -174,86 +192,50 @@
 			<div id="contents">
 				<table summary="" class="entry H_15px">
 					<col width="20%" span="1" />
-					<col width="20%" span="2" />
+					<col width="25%" span="2" />
 					<col width="20%" span="1" />
 					<col width="30%" span="2" />
 					<col width="" />
 					<tr>
 						<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-							src="img/ronaldo1.jpg" style="height: 150px; width: 140px;" /></td>
+							src="img/<%=dto.getePhoto()%>" style="height: 150px; width: 140px;" /></td>
 						<th>사원번호</th>
-						<td><input type="text" readonly="readonly"
-							value="<%=dto.geteId()%>"></span></td>
+						<td><%=dto.geteId()%></td>
 						<th>성명</th>
-						<td><input name="eKName" type="text"
-							value="<%=dto.geteKName()%>" maxlength="50" id="KorName"
-							class="default" readonly="readonly" style="width: 160px;" /></td>
+						<td><%=dto.geteKName()%></td>
 					</tr>
 					<tr>
 						<th>한문성명</th>
-						<td><input name="eCName" type="text" maxlength="50"
-							value="<%=dto.geteCName()%>" id="ChiName" class="default"
-							readonly="readonly" style="width: 160px;" /></td>
+						<td><%=dto.geteCName()%></td>
 						<th>영문성명</th>
-						<td><input name="eEName" type="text" maxlength="50"
-							value="<%=dto.geteEName()%>" id="EngName" class="default"
-							readonly="readonly" style="width: 160px;" /></td>
+						<td><%=dto.geteEName()%></td>
 					</tr>
 					<tr>
 						<th>주민등록번호</th>
-						<td><input name="eJumin1" type="text"
-							value="<%=dto.geteJumin1()%>" readonly="readonly" maxlength="6"
-							id="Jumin1" class="default" style="width: 50px;" /> - <input
-							name="Jumin2" type="text" value="<%=dto.geteJumin2()%>"
-							readonly="readonly" maxlength="7" id="eJumin2" class="default"
-							style="width: 50px;" /></td>
+						<td><%=dto.geteJumin1()%> - <%=dto.geteJumin2()%></td>
 						<th>세대주여부</th>
-						<td><input value="1" name="ehId" type="radio"
-							id="ehId" />세대주&nbsp;<input value="2" name="ehId"
-							type="radio" id="ehId" checked="checked" />세대원</td>
+						<td id = "hId"></td>
 					</tr>
 					<tr>
 						<th>입사일자</th>
-						<td><input name="eJoinDate" type="text" id="DtIn" size="12"
-							readonly="readonly" maxlength="8" value="2013-08-14"
-							class="default"></td>
+						<td><%String strj = dto.geteJoinDate(); String resultj = strj.substring(0,10); out.print(resultj);%></td>
 
 						<th>입사구분</th>
-						<td><input name="eInTypeCd" type="text" id="eInTypeCd"
-							value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
-								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
-								onclick="PopUpCd()" /></a><input name="InType" type="text"
-							id="InType" class="grayleft" value="신입" style="width: 88px;"
-							readonly="readonly" /></td>
+						<td><%=dto.getIntypeCd()%></td>
 					</tr>
 					<tr>
 						<th>직위/직급</th>
-						<td><input name="ePosCd" type="text" id="ePosCd"
-							value="002" class="rightnone" style="width: 46px;" value="002" /><a
-							href="#"><img src="img/Find.gif" width="22px" height="19px"
-								alt='직위/직급' onclick="PopUpPos()" /></a><input name="JobPos"
-							type="text" id="JobPos" class="grayleft" style="width: 88px;"
-							readonly="readonly" value="대리" /></td>
+						<td><%=dto.getPosName()%></td>
 
 						<th>직책</th>
-						<td><input name="eDutyCd" type="text" id="eDutyCd"
-							value="01" class="rightnone" style="width: 46px;" /><a href="#"><img
-								src="img/Find.gif" width="22px" height="19px" alt='직책'
-								onclick="PopUpDuty()" /></a><input name="JobDuty" type="text"
-							id="JobDuty" value="팀원" class="grayleft" style="width: 88px;"
-							readonly="readonly" /></td>
+						<td><%=dto.getDutyName()%></td>
 					</tr>
 					<tr>
 						<th>퇴사일자</th>
-						<td><input name="eDropDate" type="text" id="DtOut" size="12"
-							readonly="readonly" maxlength="8" value="<%=dto.geteDropDate()%>"
-							class="default"></td>
-
+						<td><%=dto.geteDropDate()%></td>
 
 						<th>퇴사사유</th>
-						<td><input name="eDropRsn" type="text" maxlength="60"
-							readonly="readonly" id="eDropRsn" class="default"
-							value="<%=dto.geteDropRsn()%>" style="width: 160px;" /></td>
+						<td><%=dto.geteDropRsn()%></td>
 					</tr>
 					<%
 						String[] tel = dto.geteTel().split("-");
@@ -261,63 +243,49 @@
 					%>
 					<tr>
 						<th>전화</th>
-						<td><input type="tel" class="default" id="eTel" size=4 name = "eTel"
-							maxlength="3" value = "<%=tel[0]%>"/> - <input type="tel"
-							id="Tel2" class="default" size=5 maxlength="4" value = "<%=tel[1]%>"
-							required /> - <input type="tel" id="eTel"
-							class="default" name = "eTel" size=5 value = "<%=tel[2]%>"maxlength="4" required /></td>
+						<td><input type="tel" class="default" id="eTel1" size=4 name = "eTel1"
+							maxlength="3" value = "<%=tel[0]%>"/> - <input type="tel" name = "eTel2"
+							id="eTel2" class="default" size=5 maxlength="4" value = "<%=tel[1]%>"
+							required /> - <input type="tel" id="eTel3"
+							class="default" name = "eTel3" size=5 value = "<%=tel[2]%>"maxlength="4" required /></td>
 						<th>핸드폰</th>
 						<td><input type="tel" id="eMobile" class="default" size=4 name = "eMobile"
-							maxlength="3" value = "<%=mob[0]%>"/> - <input type="tel" name = "eMobile"
-							class="default" size=5 maxlength="4" id="Phone2" required
-							value = "<%=mob[1]%>"> - <input type="tel" id="Phone3" eMobile = "eMobile"
+							maxlength="3" value = "<%=mob[0]%>"/> - <input type="tel" name = "eMobile2"
+							class="default" size=5 maxlength="4" id="eMobile2" required
+							value = "<%=mob[1]%>"> - <input type="tel" id="eMobile3" name = "eMobile3"
 							class="default" size=5 maxlength="4" value = "<%=mob[2]%>"></td>
 					</tr>
 					<tr>
 						<th>부서코드</th>
-						<td><input name="eDepCd" type="text" value="00002"
-							maxlength="14" id="eDepCd" class="blue_zoom" style="width: 46px;" /><a
-							href="#"><img src="img/Find.gif" id="imgSearchEmpSite"
-								width="22px" height="19px" alt="검색" onclick="PopUpDep()" /></a><input
-							name="Dep" type="text" value="경영지원팀" readonly="readonly" id="Dep"
-							class="graybox" style="width: 88px;" /></td>
+						<td><%=dto.getDepName()%></td>
 						<td colspan="2"></td>
 					</tr>
-
+					
+					<input type = "hidden" name = "seq"/>
 					<tr>
 						<th>주소</th>
-						<td colspan="4"><a href="#" id="PostNum" name="PostNum"
-							class="link-blue">우편번호검색</a> <input name="ePostNum" type="text"
-							maxlength="3" value="123" id="ePostNum" class="default"
-							style="width: 30px;" />-<input name="ePostNum" type="text"
-							maxlength="3" id="ePostNum" value="123" class="default"
-							style="width: 30px;" /><br /> <input type="text" name="eAddr"
-							id="Addr1" class="default" readonly="readonly"
-							style="width: 300px" value="경남 김해시 삼방동 29-4번지" /></td>
+						<td colspan="4"><a href="#" onclick = "PopUpZip()" id="ePostNum" name="ePostNum"
+							class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
+							maxlength="8" value="<%=dto.getZipcode()%>" id="ePostNum" class="default"
+							style="width: 60px;" /><br /> <input type="text" name="Addr1" value = "<%=dto.getSido()%> <%=dto.getGugun()%><%=dto.getDong()%> <%=dto.getRi()%> <%=dto.getBunji()%>"
+							id="Addr1" class="default" style="width: 300px"
+							/></td>
 					</tr>
+				
 
 					<tr>
 						<th>상세주소</th>
-						<td colspan="4"><input type="text" class="default"
-							readonly="readonly" name="eAddr2" id="eAddr2"
+						<td colspan="4"><input type="text" class="default" name="eAddr2" id="eAddr2"
 							value="<%=dto.geteAddr2()%>" style="width: 80%" /></td>
-					</tr>
-
-					<tr>
-						<th>사진 <a href="javascript:;"
-							onclick="alert('권장 사진 크기\n가로:140픽셀(3.7 Cm)\n높이:150픽셀(3.8 Cm)');"><img
-								src="img/icon_smile.gif" width="14px" height="13px" alt="" /></a></th>
-						<td colspan="4"><input name="ePhoto" type="file" id="file"
-							class="graybox" size="70" style="height: 20px;" /></td>
 					</tr>
 					<%
 						String[] str = dto.geteEmail().split("@");
 					%>
 					<tr>
 						<th>이메일주소</th>
-						<td colspan="4"><input type="text" name="eEmail" id="eEmail"
+						<td colspan="4"><input type="text" name="eEmail1" id="eEmail1"
 							class="default" value="<%=str[0]%>">@<input type="text"
-							name="email2" value="<%=str[1]%>" id="email2" class="default"
+							name="eEmail2" value="<%=str[1]%>" id="email2" class="default"
 							required><select id="select_email"
 							onChange="input_email()">
 								<option value="0">직접 입력</option>
@@ -350,11 +318,8 @@
 				</div>
 
 				<br /> <br /> <br /> <br /> <span class="btn gray"><input
-					type="button" id="btnSave" name="btnSave" onclick="fnSave();"
-					value="저장(F8)" /></span>
-
+					type="submit" 	value="수정" /></span>
 			</div>
-
 		</div>
 	</form>
 </body>

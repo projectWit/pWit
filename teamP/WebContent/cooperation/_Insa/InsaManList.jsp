@@ -71,10 +71,10 @@
 				<col width="15%" />
 				<col width="9%" />
 				<col width="12%" />
-				<col width="14%" />		
-				<col width="" />			
+				<col width="14%" />
+				<col width="" />
 				<col width="8%" />
-			
+
 				<thead>
 					<tr>
 						<th><a href="#" class="th">사번</a><img src="img/arrowBot.gif"
@@ -92,37 +92,38 @@
 
 					</tr>
 				</thead>
-				<%
-						for (int i = 0; i < dtoL.size(); i++) {
-							dto = (InsaDTO)dtoL.get(i);
-					%>
+
 				<tbody>
-				
+					<%
+						for (int i = 0; i < dtoL.size(); i++) {
+							dto = (InsaDTO) dtoL.get(i);
+					%>
 
 					<tr id="rpt_ctl00_trRow">
-						<td><span id="eId"><a href="#"
-								 class="list_link"><%=dto.geteId()%></a></span></td>
+					
+						<td><span id="eId"><a href="#" class="list_link"><%=dto.geteId()%></a></span></td>
 						<td><span id="eKName"><%=dto.geteKName()%></span></td>
-						<td><span id="eDepCd"><%=dto.geteDepCd()%></span></td>
-						<td><span id="ePosCd"><%=dto.getePosCd() %></span></td>
-						<td class="center"><span id="eJoinDate">
-						<%
-									String str = dto.geteJoinDate();
-										String result = str.substring(0, 10);
-										out.print(result);
-								%>
-</span></td>
+						<td><span id="eDepCd"><%=dto.getDepName()%></span></td>
+						<td><span id="ePosCd"><%=dto.getPosName()%></span></td>
+						<td class="center"><span id="eJoinDate"> <%
+ 	String str = dto.geteJoinDate();
+ 		String result = str.substring(0, 10);
+ 		out.print(result);
+ %>
+						</span></td>
 						<td><span id="eTel"><%=dto.geteMobile()%></span></td>
 						<td class="center"><span id="eEmail"><%=dto.geteEmail()%></span></td>
 
 					</tr>
-						
+					<%
+						}
+					%>
 				</tbody>
-					<%} %>	
+
 			</table>
 
 			<div class="container H_5px">
-				<span class="float_right">현재인원 : <%=dao.totalCnt()%> (명) 
+				<span class="float_right">현재인원 : <%=dao.totalCnt()%> (명)
 				</span>
 			</div>
 

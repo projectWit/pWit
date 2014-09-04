@@ -30,22 +30,78 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.css" />
 <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
 <script type="text/javascript">
-	calendarIDs = [ 'DtBirth','DtWedding']; // 달력이 추가될 태그의 id
-	function Close(){
+	calendarIDs = [ 'DtBirth', 'DtWedding' ]; // 달력이 추가될 태그의 id
+	function Close() {
 		window.close();
 	}
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var url = 'ArmyCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#army_type').append(responseText);
+		});
+	});
+
+	$(document).ready(function() {
+		var url = 'SolCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#Sol_type').append(responseText);
+		});
+	});
+
+	$(document).ready(function() {
+		var url = 'ClsCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#class_type').append(responseText);
+		});
+	});
+	
+	$(document).ready(function() {
+		var url = 'BthType.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#BthType').append(responseText);
+		});
+	});
+	
+	$(document).ready(function() {
+		var url = 'AbleType.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#AbleType').append(responseText);
+		});
+	});
+	
+	$(document).ready(function() {
+		var url = 'MryType.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#MryType').append(responseText);
+		});
+	});
+	
+	$(document).ready(function() {
+		var url = 'BhType.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#BhType').append(responseText);
+		});
+	});
 </script>
 </head>
 <body>
 
-	<form method="post" id="form1" action = "PerPro.jsp">
-		
+	<form method="post" id="form1" action="PerPro.jsp">
+
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
-					<img src="img/titleBar.gif"
-						width="8px" height="9px" alt="" /> [<span id="lblEmpKname">호날두</span>]님의
-					신상명세서
+					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> [<span
+						id="lblEmpKname">호날두</span>]님의 신상명세서
 				</h1>
 			</div>
 
@@ -62,13 +118,13 @@
 					<col width="" />
 					<tr>
 						<th>세대주 성명</th>
-						<td><input name="hName" type="text" maxlength="50"
-							id="hName" class="default" size="20" style="width: 60%;" /></td>
-						<th>세대주와의 관계</th>
-						<td><input name="hRelate" type="text" maxlength="6" id="hRelate"
+						<td><input name="hName" type="text" maxlength="50" id="hName"
 							class="default" size="20" style="width: 60%;" /></td>
+						<th>세대주와의 관계</th>
+						<td><input name="hRelate" type="text" maxlength="6"
+							id="hRelate" class="default" size="20" style="width: 60%;" /></td>
 					</tr>
-					
+
 					<tr>
 						<th>본 적</th>
 						<td colspan="3"><input name="hHome" type="text"
@@ -77,9 +133,7 @@
 					</tr>
 					<tr>
 						<th>주민등록상 주소</th>
-						<td colspan="3"><a href="#" id=""
-							class="link-blue"
-							>우편번호검색</a>&nbsp;
+						<td colspan="3"><a href="#" id="" class="link-blue">우편번호검색</a>&nbsp;
 							<input name="doc_post1" type="text" id="doc_post1"
 							class="default" style="width: 40px;" onBlur="BlurColor(this);"
 							size="3" maxlength="3" /> - <input name="doc_post2" type="text"
@@ -90,25 +144,19 @@
 					</tr>
 					<tr>
 						<th>생년월일</th>
-						<td colspan = "3"><input name="hBth" type="text" id="DtBirth" size="12"
-							maxlength="8" value="" class="default"><input type="radio" name="hBthCode" id="birthday_type1" value="1"
-							checked />양력&nbsp;&nbsp; <input type="radio"
-							name="hBth" id="birthday_type2" value="2" />음력</td>
+						<td colspan="3" id = "BthType"><input name="hBth" type="text" id="DtBirth"
+							size="12" maxlength="8" value="" class="default"></td>
 					</tr>
 					<tr>
 						<th>결혼유무</th>
-						<td><input type="radio" name="hMryCode"
-							id="wedding_type1" value="1" checked />미혼&nbsp;&nbsp; <input
-							type="radio" name="hMryCode" id="wedding_type2" value="2" />결혼</td>
+						<td id = "MryType"></td>
 						<th>결혼기념일</th>
-						<td><input name="hMryDate" type="text" id="DtWedding" size="12"
-							maxlength="8" value="" class="default"></td>
+						<td><input name="hMryDate" type="text" id="DtWedding"
+							size="12" maxlength="8" value="" class="default"></td>
 					</tr>
 					<tr>
 						<th>장애구분</th>
-						<td colspan="3"><input type="radio" name="hAbleCode"
-							id="handi_type2" value="0" checked />무&nbsp;&nbsp;&nbsp;&nbsp; <input
-							type="radio" name="handi_type" id="handi_type1" value="1" />유</td>
+						<td colspan="3" id = "AbleType"></td>
 					</tr>
 				</table>
 
@@ -124,9 +172,7 @@
 					<col width="" />
 					<tr>
 						<th>보훈자구분</th>
-						<td><input type="radio" name="hBhCode" id="merit_type1"
-							value="0" checked />비대상&nbsp;&nbsp;&nbsp; <input type="radio"
-							name="merit_type" id="merit_type2" value="1" />대상</td>
+						<td id = "BhType"></td>
 						<th>보훈자와의 관계</th>
 						<td><input name="merit_rel" type="text" maxlength="4"
 							id="merit_rel" class="default" style="width: 50%;" /></td>
@@ -143,58 +189,40 @@
 					<col width="33%" />
 					<col width="17%" />
 					<col width="" />
+
+
 					<tr>
 						<th>병역구분</th>
-						<td><select name="army_type" id="army_type"
-							style="width: 130px;">
-								<option value="9">해당사항 없음</option>
-								<option value="1">군 필</option>
-								<option value="2">미 필</option>
-								<option value="3">산 업</option>
-								<option value="4">연 구</option>
+						<td><select id="army_type" style="width: 130px;">
+
 						</select></td>
 						<th>군 별</th>
-						<td><td><select name="military_type" id="military_type"
-							style="width: 130px;">
-								<option value="9">해당사항 없음</option>
-								<option value="11">육 군</option>
-								<option value="12">공 군</option>
-								<option value="13">해 군</option>
-								<option value="14">해병대</option>
+						<td>
+						<td><select id="Sol_type" style="width: 130px;">
+
 						</select></td>
 					</tr>
 					<tr>
 						<th>미필사유</th>
 						<td><input name="military_des" type="text" maxlength="30"
 							id="military_des" class="default" style="width: 50%;" /></td>
+
 						<th>계 급</th>
-						<td><td><select name="class_type" id="class_type"
-							style="width: 130px;">
-								<option value="10">해당사항 없음</option>
-								<option value="1">일 병</option>
-								<option value="2">상 병</option>
-								<option value="3">병 장</option>
-								<option value="4">하 사</option>
-								<option value="5">중 사</option>
-								<option value="6">상 사</option>
-								<option value="7">소 위</option>
-								<option value="8">중 위</option>
-								<option value="9">대 위</option>							
+						<td>
+						<td><select id="class_type" style="width: 130px;">
+
 						</select></td>
 					</tr>
 				</table>
-				<br />
-				<br />
-				<br />
-				<br />
+				<br /> <br /> <br /> <br />
 
 			</div>
 			<!--//contents-->
 			<div class="footerBG_pop">
 				<span class="btn blue"><input type="submit" name="btnSave"
-					id="btnSave" value="저장(F8)" /></span> <span
-					class="btn gray"><input type="button" name="btnClose"
-					id="btnClose" value="닫기" onclick = "Close()"/></span>
+					id="btnSave" value="저장(F8)" /></span> <span class="btn gray"><input
+					type="button" name="btnClose" id="btnClose" value="닫기"
+					onclick="Close()" /></span>
 				<p class="btn_right"></p>
 			</div>
 			<!--//footerBG-->

@@ -36,7 +36,7 @@
 				
 				<dt id="class113">
 					<span class="float_left" style="width: 167px"><a
-						href="ClkManDayList.jsp" id="a119_1">일일근태관리</a></span>
+						href="ClockLeftMD.jsp" id="a119_1">일일근태관리</a></span>
 				</dt>
 				
 				<dt id="class113">

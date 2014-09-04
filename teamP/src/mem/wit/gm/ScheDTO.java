@@ -7,7 +7,7 @@ public class ScheDTO {
 	String pTime;
 	String sSDay;
 	String sEDay;
-	int tId;
+	int tNum;
 	String eKName;
 	public int getsNum() {
 		return sNum;
@@ -45,11 +45,11 @@ public class ScheDTO {
 	public void setsEDay(String sEDay) {
 		this.sEDay = sEDay;
 	}
-	public int gettId() {
-		return tId;
+	public int gettNum() {
+		return tNum;
 	}
-	public void settId(int tId) {
-		this.tId = tId;
+	public void settNum(int tNum) {
+		this.tNum = tNum;
 	}
 	public String geteKName() {
 		return eKName;

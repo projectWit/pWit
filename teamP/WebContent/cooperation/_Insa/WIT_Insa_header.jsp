@@ -1,3 +1,5 @@
+<%@page import="com.wit.member.Employee"%>
+<%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,7 +13,44 @@
 <link rel="stylesheet" type="text/css" href="../css/witMemberHeader.css">
 <style type="text/css">
 </style>
+<%
+Member member = (Member) session.getAttribute("member");
+Employee employee = (Employee) session.getAttribute("employee");
+//boolean login = member == null ? false : true;
+boolean login = employee == null ? false : true;
 
+String href1 = "#";
+String href2 = "#";
+String href3 = "#";
+String href4 = "#";
+String href5 = "#";
+String logfunc = "";
+String name1 = "인사 관리";
+String name2 = "근태 관리";
+String name3 = "커뮤니티";
+String name4 = "증명서서식";
+if (login) { // 로그인 관리자 때 
+   if(employee.geteId().equals("99999")) {
+	   name1="인사 관리";
+	   name2="근태 관리";
+	   name3="커뮤니티 관리";
+	   name4="증명서서식 관리";	
+	   href1 = "InsaLeftMan.jsp";
+	   href2 = "ClockLeftMan.jsp";
+	   href3 = "BoaLeftMan.jsp";
+	   href4 = "DocLeftManPre.jsp";
+	  
+   } else {
+	   href1 = "InsaLeft.jsp";
+	   href2 = "ClockLeft.jsp";
+	   href3 = "BoardLeft.jsp";
+	   href4 = "DocLeft.jsp";
+   }
+} else {
+	logfunc = "showLogin()";
+}
+
+%>
 <script type="text/javascript" src="../script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <script type="text/javascript" src="../script/witMemberHeader.js"></script>
@@ -44,14 +83,10 @@
 				<li onmouseover="slideRibbon(-1)"><a href="WIT_Insa_index.jsp"
 					style="font-weight: bold; color: white; font-style: italic; margin-top: -3px; text-shadow: 1px 1px 1px #CCCCCC;"><span
 						style="font-size: xx-large;">Human</span></a></li>
-				<li onmouseover="slideRibbon(0)"><a href="InsaLeft.jsp">인사
-						관리</a></li>
-				<li onmouseover="slideRibbon(1)"><a href="ClockLeft.jsp">근태
-						관리</a></li>
-				<li onmouseover="slideRibbon(2)"><a href="BoardLeft.jsp">직원
-						커뮤니티</a></li>
-				<li onmouseover="slideRibbon(3)"><a href="DocLeft.jsp">증명서
-						발급</a></li>
+				<li onmouseover="slideRibbon(0)"><a onclick="<%=logfunc%>" href="<%=href1%>"><%=name1 %></a></li>
+				<li onmouseover="slideRibbon(1)"><a onclick="<%=logfunc%>" href="<%=href2%>"><%=name2 %></a></li>
+				<li onmouseover="slideRibbon(2)"><a onclick="<%=logfunc%>" href="<%=href3%>"><%=name3 %></a></li>
+				<li onmouseover="slideRibbon(3)"><a onclick="<%=logfunc%>" href="<%=href4%>"><%=name4 %></a></li>
 			</ul>
 		</div>
 		<!-- //ibm-universal-nav --> <!-- ibm-search-module --> <!-- <div id="ibm-search-module" class="ibm-access"> -->

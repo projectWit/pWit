@@ -46,7 +46,7 @@ public class ClkDAO {
 		conn = DbSet.getConnection();
 		List<ClkDTO> dtoL = new ArrayList();
 		try {
-			String sql = "select cDate, eId, cTime  from ClockTable where cCd = ? and cDate between ? and ?";
+			String sql = "select cDate, eId, e.eDepCd, cTime  from ClockTable c, Employee e where e.eId = c.eId and cCd = ? and cDate between ? and ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getcCd());
 			pstmt.setString(2,  dto.getcDate());
@@ -91,6 +91,7 @@ public class ClkDAO {
 		}
 		return dtoL;
 	}
+	
 	
 	public List clkEvalList() {
 		conn = DbSet.getConnection();

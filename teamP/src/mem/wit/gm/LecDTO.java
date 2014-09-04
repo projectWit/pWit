@@ -11,12 +11,19 @@ public class LecDTO {
 	int pId;
 	String place;
 	int tId;
+	int sNum;
+	String pTime;
 	String tName;
 	String sSDay;
 	String sEDay;
 	String eKName;
 	String eTel;
-	
+	public int getsNum() {
+		return sNum;
+	}
+	public void setsNum(int sNum) {
+		this.sNum = sNum;
+	}
 	public String getLecName() {
 		return lecName;
 	}
@@ -106,6 +113,12 @@ public class LecDTO {
 	}
 	public void setsId(int sId) {
 		this.sId = sId;
+	}
+	public String getpTime() {
+		return pTime;
+	}
+	public void setpTime(String pTime) {
+		this.pTime = pTime;
 	}
 	
 }

@@ -8,7 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="robots" content="noindex,nofollow" />
-
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
@@ -27,28 +28,73 @@
 	function Close() {
 		window.close();
 	}
+	
+	var i = 0;
+	$(function() {
+		// events
+		$("#btnAdd").click(AddRow);
+	});		
+	// 삭제
+	 function deleteRow(obj){
+		  $(obj).parent().remove();
+		 } 
+
+	function AddRow() {
+		$("#LanForm")
+				.append(
+						"<tr><td class='center'><select id='LanType"+i+"' name='LanType" + i + "' style='width: 80px'></select></td>"
+								+ "<td class='center'><select id='LanRead"+i+"' name='LanRead" + i + "'></select></td>"
+								+ "<td class='center'><select id='LanWrite"+i+"' name='LanWrite" + i + "'></select></td>"
+								+ "<td class='center'><select id='LanSpeak"+i+"' name='LanSpeak" + i + "'></select></td>"
+								+"<td class='center'><input class='default' name= 'LanQual"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='10'/></td>"
+								+"<td class='center'><input class='default' name= 'LanEtc"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='10'/></td></tr>");
+	
+		
+		var url1 = 'LanType.jsp';
+		$.get(url1, function(data) {
+			responseText = data;
+			$('#LanType' + (i-1)).append(responseText);
+		});
+
+		var url2 = 'LanRead.jsp';
+		$.get(url2, function(data) {
+			responseText = data;
+			$('#LanRead'  + (i-1)).append(responseText);
+		});
+	
+	 	var url3 = 'LanWrite.jsp';
+		$.get(url3, function(data) {
+			responseText = data;
+			$('#LanWrite'  + (i-1)).append(responseText);
+		});
+
+		var url4 = 'LanSpeak.jsp';
+		$.get(url4, function(data) {
+			responseText = data;
+			$('#LanSpeak'  + (i-1)).append(responseText);
+		});
+		i++;
+	}
+		
+	
 </script>
 </head>
 <body>
-	<form method="post" id="form1">
-
-
-
+	<form method="post" id="form1" action = "LanPro.jsp">
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
-					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> [<span
-						id="lblEmpKname">이숙이</span>]님의 어학능력등록
+					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> <span
+						id="lblEmpKname">[호날두</span>]님의 어학능력등록
 				</h1>
 			</div>
 
 			<div id="contents">
-				<div class="container H_15px">
-					<span class="float_left"><input type="button"
-						class="btn_grayS" onclick="ClearCheckedRow();" value=" 선택삭제" /></span> <span
-						class="float_right Orange font_s"><img src="img/noti.gif"
-						width="16px" height="9px" alt="" />입력줄수는 마지막 줄에서 자동증가 됩니다.</span>
-				</div>
+
 
 				<table summary="" class="list_input">
 					<col width="3%" />
@@ -59,8 +105,6 @@
 					<col width="" />
 					<thead>
 						<tr>
-							<th class="check"><input class="checkbox" type="checkbox"
-								name="chkAll" id="chkAll" onclick="AllCheck();" /></th>
 							<th>외국어명</th>
 							<th>독해</th>
 							<th>작 문</th>
@@ -69,266 +113,18 @@
 							<th>특이사항</th>
 						</tr>
 					</thead>
-					<tbody id="input_body">
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_0" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_0"
-								name="ddlForeignRead_0">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_0"
-								name="ddlForeignWrite_0">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_0"
-								name="ddlForeignSpeak_0">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_0"
-								class="default" name="txtForeignLicence_0" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-
-							<td class="center"><input id="ETC_0" class="default"
-								type="text" /></td>
-						</tr>
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_1" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_1"
-								name="ddlForeignRead_1">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_1"
-								name="ddlForeignWrite_1">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_1"
-								name="ddlForeignSpeak_1">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_1"
-								class="default" name="txtForeignLicence_1" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-							<td class="center"><input id="ETC_0" class="default"
-								type="text" /></td>
-						</tr>
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_2" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_2"
-								name="ddlForeignRead_2">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_2"
-								name="ddlForeignWrite_2">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_2"
-								name="ddlForeignSpeak_2">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_2"
-								class="default" name="txtForeignLicence_2" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
-						</tr>
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_3" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_3"
-								name="ddlForeignRead_3">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_3"
-								name="ddlForeignWrite_3">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_3"
-								name="ddlForeignSpeak_3">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_3"
-								class="default" name="txtForeignLicence_3" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
-						</tr>
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_4" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_4"
-								name="ddlForeignRead_4">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_4"
-								name="ddlForeignWrite_4">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_4"
-								name="ddlForeignSpeak_4">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_4"
-								class="default" name="txtForeignLicence_4" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-								<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
-						</tr>
-
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td><select id="forLan_5" style="width: 80px">
-									<option value="9">=====</option>
-									<option value="1">영어</option>
-									<option value="2">일본어</option>
-									<option value="3">중국어</option>
-									<option value="4">프랑스어</option>
-									<option value="5">독일어</option>
-									<option value="6">기 타</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignRead_5"
-								name="ddlForeignRead_5">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignWrite_5"
-								name="ddlForeignWrite_5">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><select id="ddlForeignSpeak_5"
-								name="ddlForeignSpeak_5">
-									<option value="0">============</option>
-									<option value="1">상</option>
-									<option value="2">중</option>
-									<option value="3">하</option>
-							</select></td>
-							<td class="center"><input id="txtForeignLicence_5"
-								class="default" name="txtForeignLicence_5" style="width: 90%;"
-								type="text" value="" maxlength="20" /></td>
-							<td class = "center"><input id = "ETC_0" class = "default" type = "text"/></td>
-						</tr>
+					<tbody id="LanForm">
+						
 
 					</tbody>
 				</table>
 
 				<br /> <br /> <br /> <br />
-
+			<input type="button" class = "btn blue" name="btnAdd" id="btnAdd" value="목록추가" />
 			</div>
 		</div>
 		<div class="footerBG_pop">
-			<span class="btn blue"><input type="button" name="btnNew"
+			<span class="btn blue"><input type="submit" name="btnNew"
 				id="btnNew" onclick="PopUpNew();" value="저장(F2)" /></span> <span
 				class="btn gray"><input type="button" name="btnClose"
 				id="btnClose" value="닫기" onclick="Close()" /></span>

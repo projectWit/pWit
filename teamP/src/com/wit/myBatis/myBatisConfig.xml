@@ -15,5 +15,6 @@
   </environments>
   <mappers>
     <mapper resource="com/wit/myBatis/mapperMember.xml"/>
+    <mapper resource="com/wit/myBatis/mapperEmployee.xml"/>
   </mappers>
 </configuration>

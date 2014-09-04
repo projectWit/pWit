@@ -872,19 +872,7 @@ function SendFAQ(){
 					<td>&nbsp;</td>
 				</tr>
 			</table>
-			</form>
-			<input type="hidden" name="b_score[1]" value=""> <input
-				type="hidden" name="b_score[2]" value=""> <input
-				type="hidden" name="b_score[3]" value=""> <input
-				type="hidden" name="b_score[4]" value=""> <input
-				type="hidden" name="b_score[5]" value=""><input type=hidden
-				name=type value="i"> <input type=hidden name=data
-				value="yes"> <input type=hidden name=code value="pippin1">
-			<input type=hidden name=num1 value=""> <input type=hidden
-				name=num2 value=""> <input type=hidden name=page value="1">
-			<input type=hidden name=ok value="N"> <input type=hidden
-				name=branduid value="" />
-		
+			</form>		
 	</center>
 
 </body>

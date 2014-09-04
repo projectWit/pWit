@@ -134,10 +134,10 @@ a:link {
 				
 				<c:forEach var="item" items="${clist }"  varStatus="status">
 				<tr class="bl_oddline">
-					<td class='bl_list bl_no'>${status.count }</td>
+					<td class='bl_list bl_no'>${item.cId }</td>
 					
 					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.cName }</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_type'>${item.sId }</td>
+					<td class='bl_list bl_type'>${item.sName }</td>
 					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.cPresident }</div></td>
 					
 					<td class='bl_list bl_hits'>${item.cJoinDay.substring(0,10) }</td>

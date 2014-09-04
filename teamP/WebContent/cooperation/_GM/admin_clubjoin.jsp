@@ -35,10 +35,8 @@ border-bottom: 5px solid #E8E8E8;
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('/teamP/cooperation/_GM/clubInsert.jsp');
-	$('#club-0').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/clubInsert.jsp');
-	});
+	$("#main").load('/teamP/clublist.gm');
+
 	$('#club-1').click(function(e) {
 		$("#main").load('/teamP/clublist.gm');
 	});
@@ -59,7 +57,6 @@ $(document).ready(function(e) {
         <h2>동호회 관리</h2>
         <nav>
           <ul>
-            <li><a href="#" id='club-0'>동호회 등록</a></li>
             <li><a href="#" id='club-1'>동호회 목록</a></li>
             <li><a href="#" id='club-2'>동호회 폐쇠</a></li>
             <li><a href="#" id='club-3'>불랙리스트</a></li>

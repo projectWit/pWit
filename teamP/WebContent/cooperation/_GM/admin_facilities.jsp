@@ -38,13 +38,10 @@ $(document).ready(function(e) {
 		$("#main").load('/teamP/cooperation/_GM/facilities.jsp');
 	});
 	$('#facil-1').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/facilitieslist.jsp');
+		$("#main").load('/teamP/facilitieslist.gm');
 	});
 	$('#facil-2').click(function(e) {
-		$("#main").load('/teamP/cooperation/_GM/facilitiesapplylist.jsp');
-	});
-	$('#facil-3').click(function(e) {
-	    $("#main").load('/teamP/cooperation/_GM/facilitiesuselist.jsp');
+	    $("#main").load('/teamP/facilitiesuselist.gm');
 
 	});
 });
@@ -60,8 +57,7 @@ $(document).ready(function(e) {
           <ul>
             <li><a id="facil-0" href="#">시설 등록</a></li>
             <li><a id="facil-1" href="#">시설 목록</a></li>
-            <li><a id="facil-2" href="#">사용 신청 목록</a></li>
-            <li><a id="facil-3" href="#">이용 내역</a></li>
+            <li><a id="facil-2" href="#">이용 내역</a></li>
           </ul>
         </nav>
         <!-- /nav -->

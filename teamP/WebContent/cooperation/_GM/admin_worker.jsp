@@ -29,36 +29,43 @@ padding-bottom: 8px;
 border-bottom: 5px solid #E8E8E8;
 }
 </style>
+<%
+String strUrl ;
+	if (request.getParameter("url") != null )
+		strUrl = request.getParameter("url");
+	else
+		strUrl = "lectureInsert.jsp";
+	
+%>
 <script type="text/javascript" >
 $(document).ready(function(e) {
-	$("#main").load('lectureInsert.jsp');
-	$('#worker-0').click(function(e) {
-		$("#main").load('workerlist.jsp');	//수정해야됨...페이지 안뜸
-	});
-	$('#worker-1').click(function(e) {
-		$("#main").load('workersearch.jsp');
-	});
+	$("#main").load('<%=strUrl%>');
+
 	$('#worker-2').click(function(e) {
 		$("#main").load('lectureInsert.jsp');	
 	});
 	$('#worker-3').click(function(e) {
-		$("#main").load('lecturelist.jsp');
+		$("#main").load('/teamP/lecturelist.gm');
+	});
+	$('#worker-4').click(function(e) {
+		$('#main').load('/teamP/adminLectureConfirm.gm');
 	});
 });
 </script>
 <body>
-<div id="container" style="width:1250px; margin:auto;">
+<div id="container" style="width:1250px; height:600px; margin:auto;">
 <div id="sidebar" style="float:left; width:200px; margin-top:10px;">
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
         <!-- ########################################################################################## -->
-        <h2>직원 관리</h2>
+        <h2>강좌 관리</h2>
         <nav>
           <ul>
-            <li><a href="#" id='worker-0'>직원 목록</a></li>
-            <li><a href="#" id='worker-1'>직원 조회</a></li>
+<!--             <li><a href="#" id='worker-0'>직원 목록</a></li>
+            <li><a href="#" id='worker-1'>직원 조회</a></li> -->
 			<li><a href="#" id='worker-2'>강좌 개설</a></li>
             <li><a href="#" id='worker-3'>개설 강좌 목록</a></li>
+            <li><a href="#" id="worker-4">수강 확정</a></li>
           </ul>
         </nav>
         <!-- /nav -->

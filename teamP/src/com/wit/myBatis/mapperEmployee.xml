@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wit.myBatis.EmployeeMapper">
+  <select id="selectEmployee_basic" resultType="com.wit.member.Employee">
+    $value$
+  </select>
+  <select id="login" resultType="com.wit.member.Employee">
+    SELECT * FROM Employee
+		WHERE eId = #{eId}
+  </select>
+
+</mapper>

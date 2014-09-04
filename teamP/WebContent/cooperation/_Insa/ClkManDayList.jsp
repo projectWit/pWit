@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
+<%@page import = "java.util.Date" %>
 <%@page import="mem.wit.Insa.ClkDAO"%>
 <%@page import="mem.wit.Insa.ClkDTO"%>
 
@@ -102,7 +103,7 @@
 						%>
 						<tbody>
 							<tr>
-								<td class="center"><%=dto.getcDate()%></td>
+								<td class="center"><%String str = dto.getcDate(); String result = str.substring(0,10); out.print(result);%></td>
 								<td><%=dto.geteId()%></td>
 								<td><%=dto.getcTime()%></td>
 							</tr>
@@ -113,7 +114,8 @@
 					</table>
 					<div id="print_last" style="width: 720px; margin-left: 0px;">
 						<ul>
-							<li>2014년 8월 11일 오전 1:30:20</li>
+						<% Date now = new Date(); %>
+							<li>현재시간 : <%=now %></li>
 						</ul>
 					</div>
 				</div>
