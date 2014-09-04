@@ -31,17 +31,21 @@ border-bottom: 5px solid #E8E8E8;
 
 
 </style>
-<script type="text/javascript" src="teamP/cooperation/script/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="teamP/cooperation/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-   $('#member-0').click(function(e) {
-	   $("#main").load('question_admin.jsp');
+	$("#main").load('/teamP/question.gm');
+   $('#board-0').click(function(e) {
+	   $("#main").load('question.jsp');
+   });
+   $('#board-1').click(function(e) {
+	   $('#main').load('questionCheck.jsp');
    });
 });
 </script>
 <body>
-<div id="container" style="width:1250px; margin:auto;">
+<div id="container" style="width:1250px;height: 600px;  margin:auto;">
 <div id="sidebar" style="float:left; width:200px; margin-top:10px;">
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
@@ -51,7 +55,6 @@ $(document).ready(function(e) {
           <ul>
             <li><a href="#" id='board-0'>1:1 문의</a></li>
             <li><a href="#" id='board-1'>답변 확인</a></li>
-            <li><a href="#" id='board-2'>자유게시판</a></li>
           </ul>
         </nav>
         <!-- /nav -->

@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Employee"%>
 <%@page import="java.util.List"%>
 <%@page import="mem.wit.Insa.InsaDTO"%>
 <%@page import="mem.wit.Insa.InsaDAO"%> 
@@ -146,7 +147,9 @@
 	InsaDAO dao = new InsaDAO();
 	InsaDTO dto = new InsaDTO();
 	String no = request.getParameter("no");
-	List dtoL = dao.insaSelect();
+	Employee employee = (Employee) session.getAttribute("employee");
+	
+	List dtoL = dao.insaSelect(employee.geteId());
 	dto = (InsaDTO)dtoL.get(0);
 %>
 </head>
@@ -174,7 +177,7 @@
 				<col width="" />
 				<tr>
 					<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-						src="img/ronaldo1.jpg" style="height: 150px; width: 140px;" /></td>
+						src="saveimg/<%=dto.getePhoto()%>" style="height: 180px; width: 140px;" /></td>
 					<th>사원번호</th>
 					<td><%=dto.geteId()%>
 					</td>
@@ -192,39 +195,20 @@
 					<td><%=dto.geteJumin1()%>
 						- <%=dto.geteJumin2()%></td>
 					<th>세대주여부</th>
-					<td><input value="1" name="HomeType" type="radio"
-						id="HomeType1" />세대주&nbsp;<input value="2" name="HomeType"
-						type="radio" id="HomeType2" checked="checked" />세대원</td>
+					<td><%=dto.getHid()%></td>
 				</tr>
 				<tr>
 					<th>입사일자</th>
 					<td><%String str = dto.geteJoinDate(); String result = str.substring(0,10); out.print(result);%></td>
 					<th>입사구분</th>
-
-					<td><input name="InTypeCd" type="text" id="InTypeCd"
-						value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
-							src="img/Find.gif" width="22px" height="19px" alt='입사구분'
-							onclick="PopUpCd()" /></a><input name="InType" type="text"
-						id="InType" class="grayleft" value="신입" style="width: 88px;"
-						readonly="readonly" /></td>
+					<td><%=dto.getIntypeCd()%></td>
 				</tr>
 				<tr>
 					<th>직위/직급</th>
-					<td><input name="JobPosCd" type="text" id="JobPosCd"
-						value="002" class="rightnone" onblur="BlurColor2(this);"
-						style="width: 46px;" value="002" /><a href="#"><img
-							src="img/Find.gif" width="22px" height="19px" alt='직위/직급'
-							onclick="PopUpPos()" /></a><input name="JobPos" type="text"
-						id="JobPos" class="grayleft" style="width: 88px;"
-						readonly="readonly" value="대리" /></td>
+					<td><%=dto.getPosName()%></td>
+					
 					<th>직책</th>
-
-					<td><input name="JobDutyCd" type="text" id="JobDutyCd"
-						value="01" class="rightnone" style="width: 46px;" /><a href="#"><img
-							src="img/Find.gif" width="22px" height="19px" alt='직책'
-							onclick="PopUpDuty()" /></a><input name="JobDuty" type="text"
-						id="JobDuty" value="팀원" class="grayleft" style="width: 88px;"
-						readonly="readonly" /></td>
+					<td><%=dto.getDutyName() %></td>
 				</tr>
 				<tr>
 					<th>퇴사일자</th>
@@ -242,38 +226,23 @@
 				</tr>
 				<tr>
 					<th>부서코드</th>
-					<td><input name="DepCd" type="text" value="00002"
-						maxlength="14" id="DepCd" class="blue_zoom" style="width: 46px;" /><a
-						href="#"><img src="img/Find.gif" id="imgSearchEmpSite"
-							width="22px" height="19px" alt="검색" onclick="PopUpDep()" /></a><input
-						name="Dep" type="text" value="경영지원팀" readonly="readonly" id="Dep"
-						class="graybox" style="width: 88px;" /></td>
+					<td><%=dto.getDepName()%></td>
 					<td colspan="2"></td>
 				</tr>
 
 				<tr>
 					<th>주소</th>
-					<td colspan="4"><a href="#" id="PostNum" name="PostNum"
-						class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
-						maxlength="3" value="123" id="PostNum1" class="default"
-						style="width: 30px;" />-<input name="PostNum2" type="text"
-						maxlength="3" id="PostNum2" value="123" class="default"
-						style="width: 30px;" /><br /> <input type="text" name="Addr1"
-						id="Addr1" class="default" style="width: 300px"
-						value="경남 김해시 삼방동 29-4번지" /></td>
+					<td colspan="4">우편번호 : <%=dto.getZipcode()%><br /> <%=dto.getSido()%> <%=dto.getGugun()%>
+					<%=dto.getDong()%> <%=dto.getRi()%> <%=dto.getBunji()%></td>
 				</tr>
 
 				<tr>
 					<th>상세주소</th>
 					<td colspan="4"><%=dto.geteAddr2()%></td>
 				</tr>
-
+				
 				<tr>
-					<th>사진</th>
-					<td colspan="4"><input name="file" type="file" id="file"
-						class="graybox" size="70" style="height: 20px;" /></td>
-				</tr>
-				<tr>
+				<td></td>
 					<th>이메일주소</th>
 					<td colspan="4"><%=dto.geteEmail()%></td>
 				</tr>

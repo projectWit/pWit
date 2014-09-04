@@ -27,8 +27,8 @@
 	};
 	
 	function fnLink(no, str) {
-	    window.opener.form.JobDutyCd.value=no;
-	    window.opener.form.JobDuty.value=str;
+	    window.opener.form.eDutyCd.value=no;
+	    window.opener.form.DutyName.value=str;
 	    window.close();
 	 };
 </script>

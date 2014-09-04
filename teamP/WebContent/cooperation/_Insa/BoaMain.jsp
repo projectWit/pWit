@@ -1,3 +1,4 @@
+<%@page import="mem.wit.Insa.HeadDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -830,6 +831,8 @@ div.subtitle {
 			BoaDTO dto = new BoaDTO();
 			List dtoL = dao.boaSelMain(no);
 			dto = (BoaDTO)dtoL.get(0);
+			HeadDTO dtoh = new HeadDTO();
+
 		%>
 		<table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
@@ -843,7 +846,7 @@ div.subtitle {
 										<td class='bw_title_color bw_title'
 											style="padding-left: 15px;">No.<%=dto.getbSeq()%></td>
 										<td class='bw_title_color bw_title'
-											style="padding-left: 15px;">name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=dto.geteId()%>
+											style="padding-left: 15px;">name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=dto.geteId()%> head : <%=dto.getHeadName()%>
 										</td>
 										<td>
 									</tr>

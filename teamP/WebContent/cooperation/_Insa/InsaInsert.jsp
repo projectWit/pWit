@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="robots" content="noindex,nofollow">
 <script type="text/javascript" src="jquery-2.1.1.js"></script>
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
@@ -25,6 +27,9 @@
 	}
 	function PopUpCd() {
 		window.open("InsaTypeCd.jsp", "", "width = 500px, height = 300px");
+	}
+	function PopUpZip() {
+		window.open("zipCheck.jsp", "", "width = 500px, height = 300px");
 	}
 	function PopUpDuty() {
 		window.open("InsaDuty.jsp", "", "width = 500px, height = 300px");
@@ -97,8 +102,8 @@
 				img.id = "prev_" + View_area;
 				img.classList.add("obj");
 				img.file = file;
-				img.style.width = '120px';
-				img.style.height = '150px';
+				img.style.width = '150px';
+				img.style.height = '180px';
 				preview.appendChild(img);
 				if (window.FileReader) { // FireFox, Chrome, Opera 확인.
 					var reader = new FileReader();
@@ -204,14 +209,40 @@
 	function findInput() {
 		$('form input[type="text"], form textarea').eq(0).focus();
 	}
+
+	$(document).ready(function() {
+		var url = 'hId.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#hId').append(responseText);
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var url = 'TelCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#eTel').append(responseText);
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var url = 'MobileCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#eMobile').append(responseText);
+		});
+	});
 </script>
 </head>
 <body>
-	<form method="post" id="form" enctype="multipart/form-data">
+	<form method="post" id="form" action = "InsaInsertPro.jsp" name = "member_zipForm"  enctype="multipart/form-data">
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
-					<strong>기본</strong>
+					<strong>인사등록</strong>
 				</div>
 				<div class="title-rightarea">
 					<span class="btn-setting" onclick="fnShowOption(); return false"></span>
@@ -232,31 +263,28 @@
 					<tr>
 						<td rowspan="10" class="center white" id="View_area"></td>
 						<th>사원번호</th>
-						<td><input type="text" value="001" name="eId" id="eId"
+						<td><input type="text" name="eId" id="eId"
 							class="default" /></td>
 						<th>성명</th>
-						<td><input name="eKName" type="text" value="호날두"
+						<td><input name="eKName" type="text" 
 							maxlength="20" id="eKName" class="default" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>한문성명</th>
 						<td><input name="eCName" type="text" maxlength="50"
-							value="호날두" id="eCName" class="default" style="width: 160px;" /></td>
+							id="eCName" class="default" style="width: 160px;" /></td>
 						<th>영문성명</th>
 						<td><input name="eEName" type="text" maxlength="50"
-							value="Ronaldo" id="eEName" class="default"
-							style="width: 160px;" /></td>
+							 id="eEName" class="default" style="width: 160px;" /></td>
 					</tr>
 					<tr>
 						<th>주민등록번호</th>
-						<td><input name="eJumin1" type="text" value="690929"
+						<td><input name="eJumin1" type="text" 
 							maxlength="6" id="eJumin1" class="default" style="width: 50px;" />
-							- <input name="eJumin2" type="text" value="2109126" maxlength="7"
+							- <input name="eJumin2" type="text" maxlength="7"
 							id="eJumin2" class="default" style="width: 50px;" /></td>
 						<th>세대주여부</th>
-						<td><input value="1" name="ehid" type="radio"
-							id="HomeType1"  value = "1"/>세대주&nbsp;<input value="2" name="ehid"
-							type="radio" id="HomeType2" value = "2" checked="checked" />세대원</td>
+						<td id="hId"></td>
 					</tr>
 					<tr>
 						<th>입사일자</th>
@@ -264,7 +292,7 @@
 							maxlength="8" value="" class="default"></td>
 						<th>입사구분</th>
 						<td><input name="eInTypeCd" type="text" id="eInTypeCd"
-							value="02" class="rightnone" style="width: 46px;" /><a href="#"><img
+							class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
 								onclick="PopUpCd()" /></a><input name="InType" type="text"
 							id="InType" class="grayleft" value="신입" style="width: 88px;"
@@ -273,18 +301,20 @@
 
 					<tr>
 						<th>직위/직급</th>
-						<td><input name="ePosCd" type="text" id="ePosCd"
-							value="002" class="rightnone" style="width: 46px;" value="002" /><a
-							href="#"><img src="img/Find.gif" width="22px" height="19px"
-								alt='직위/직급' onclick="PopUpPos()" /></a><input name="JobPos"
-							type="text" id="JobPos" class="grayleft" style="width: 88px;"
+						<td><input name="ePosCd" type="text" id="ePosCd" 
+							class="rightnone" style="width: 46px;" /><a href="#"><img
+								src="img/Find.gif" width="22px" height="19px" alt='직위/직급'
+								onclick="PopUpPos()" /></a><input name="JobPos" type="text"
+							id="JobPos" class="grayleft" style="width: 88px;"
 							readonly="readonly" value="대리" /></td>
+
 						<th>직책</th>
-						<td><input name="eDutyCd" type="text" id="eDutyCd"
-							value="01" class="rightnone" style="width: 46px;" /><a href="#"><img
+
+						<td><input name="eDutyCd" type="text" id="eDutyCd" 
+							class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='직책'
-								onclick="PopUpDuty()" /></a><input name="JobDuty" type="text"
-							id="JobDuty" value="팀원" class="grayleft" style="width: 88px;"
+								onclick="PopUpDuty()" /></a><input name="DutyName" type="text"
+							id="DutyName" value="팀원" class="grayleft" style="width: 88px;"
 							readonly="readonly" /></td>
 					</tr>
 
@@ -298,50 +328,49 @@
 						<td><input name="eDropRsn" type="text" maxlength="60"
 							id="OutReason" class="default" style="width: 160px;" /></td>
 					</tr>
+
+
 					<tr>
 						<th>전화</th>
-						<td><select name = "eTel">
-								<option>02</option>
-								<option>032</option>
-								<option>031</option>
-						</select> - <input type="tel" name = "eTel"class="default" size=5 maxlength="4"
-							required> - <input type="tel" name = "eTel" class="default" size=5
-							maxlength="4" required></td>
+						<td><select name="eTel" id="eTel">
+
+						</select> - <input type="tel" name="eTel2" class="default" size=5
+							maxlength="4" required> - <input type="tel" name="eTel3"
+							class="default" size=5 maxlength="4" required></td>
+
 						<th>핸드폰</th>
-						<td><select>
-								<option>010</option>
-								<option>011</option>
-								<option>017</option>
-						</select> - <input type="tel" class="default" size=5 maxlength="4" name = "eMobile" required>
-							- <input type="tel" name = "eMobile"class="default" size=5 maxlength="4" required></td>
+						<td><select id="eMobile" name="eMobile">
+
+						</select> - <input type="tel" class="default" size=5 maxlength="4"
+							name="eMobile2" required> - <input type="tel"
+							name="eMobile3" class="default" size=5 maxlength="4" required></td>
 					</tr>
 					<tr>
 						<th>부서코드</th>
-						<td><input name="eDepCd" type="text" value="00002"
+						<td><input name="eDepCd" type="text" 
 							maxlength="14" id="eDepCd" class="blue_zoom" style="width: 46px;" /><a
 							href="#"><img src="img/Find.gif" width="22px" height="19px"
 								alt="검색" onclick="PopUpDep()" /></a><input name="Dep" type="text"
-							value="인사부" readonly="readonly" id="Dep" class="graybox"
+							readonly="readonly" id="Dep" class="graybox"
 							style="width: 88px;" /></td>
 						<td colspan="2"></td>
 					</tr>
 
+					<input type = "hidden" name = "seq"/>
 					<tr>
 						<th>주소</th>
-						<td colspan="4"><a href="#" id="ePostNum" name="ePostNum"
+						<td colspan="4"><a href="#" onclick = "PopUpZip()" id="ePostNum" name="ePostNum"
 							class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
-							maxlength="3" value="123" id="txtPostNo1" class="default"
-							style="width: 30px;" />-<input name="PostNum2" type="text"
-							maxlength="3" id="PostNum2" value="123" class="default"
+							maxlength="8" value="123" id="txtPostNo1" class="default" style = "width : 60px"
 							style="width: 30px;" /><br /> <input type="text" name="Addr1"
 							id="Addr1" class="default" style="width: 300px"
-							value="경남 김해시 삼방동 29-4번지" /></td>
+							/></td>
 					</tr>
 
 					<tr>
 						<th>상세주소</th>
 						<td colspan="4"><input type="text" class="default"
-							name="eAddr2" id="eAddr2" value="광옥빌라502호" style="width: 80%" /></td>
+							name="eAddr2" id="eAddr2" style="width: 80%" /></td>
 					</tr>
 
 					<tr>
@@ -353,8 +382,8 @@
 
 					<tr>
 						<th>이메일주소</th>
-						<td colspan="4"><input type="text" name="eEmail" id="email1"
-							class="default">@<input type="text" name="eEmail"
+						<td colspan="4"><input type="text" name="eEmail1" id="email1"
+							class="default">@<input type="text" name="eEmail2"
 							id="email2" class="default" required><select
 							id="select_email" onChange="input_email()">
 								<option value="0">직접 입력</option>
@@ -367,18 +396,16 @@
 								<option value="7">cyworld.com</option>
 						</select></td>
 					</tr>
-				
-				<tr>
-					<th>비밀번호</th>
-					<td colspan="4"><input type="password" name="ePwd" id="ePwd"
-						class="default"></td>
-				</tr>
+
+					<tr>
+						<th>비밀번호</th>
+						<td colspan="4"><input type="password" name="ePwd" id="ePwd"
+							class="default"></td>
+					</tr>
 				</table>
 
-
-
 				<br /> <br /> <br /> <br /> <span class="btn gray"><input
-					type="button" id="btnSave" name="btnSave" onclick="fnSave();"
+					type="submit" id="btnSave" name="btnSave" 
 					value="저장(F8)" /></span>
 
 			</div>

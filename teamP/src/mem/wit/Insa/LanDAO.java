@@ -82,4 +82,87 @@ public class LanDAO {
 		  }
 		return dtoL;
 	}	
+	public List lantype(){
+		conn = DbSet.getConnection();
+		List<LanTypeDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select lantype, lanname from lantype";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				LanTypeDTO dto = new LanTypeDTO();
+				dto.setLantypeCd(rs.getInt(1));
+				dto.setLanName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
+	
+	public List lanread(){
+		conn = DbSet.getConnection();
+		List<LanReadLvDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select readlvcd, readlvname from lanreadlv";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				LanReadLvDTO dto = new LanReadLvDTO();
+				dto.setReadlvCd(rs.getInt(1));
+				dto.setReadlvName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
+	
+	public List lanwrite(){
+		conn = DbSet.getConnection();
+		List<LanWriteLvDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select writelvcd, writelvname from lanwritelv";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				LanWriteLvDTO dto = new LanWriteLvDTO();
+				dto.setWritelvCd(rs.getInt(1));
+				dto.setWritelvName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
+	
+	public List lanspeak(){
+		conn = DbSet.getConnection();
+		List<LanSpeakLvDTO> dtoL = new ArrayList();
+		try {
+			String sql = "select spklvcd, spklvname from lanspeaklv";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				LanSpeakLvDTO dto = new LanSpeakLvDTO();
+				dto.setSpeaklvCd(rs.getInt(1));
+				dto.setSpeaklvName(rs.getString(2));
+				dtoL.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DbClose.close(pstmt, conn);
+		}
+		return dtoL;
+	}
 }

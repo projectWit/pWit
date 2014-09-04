@@ -8,13 +8,15 @@ $(document).ready(function(e) {
 		if (parseInt($('#powerStudy').val()) > 0) {
 			
 		} else {	// 알파스터디 관리자가 아닐 때
-//			$('#ibm-common-menu').css('height', '0px');
-			$('.ibm-menu-subtabs').hide();
+			$('#ibm-common-menu').css('height', '0px');
+//			$('#ibm-common-menu').hide();
+//			$('.ibm-menu-subtabs').hide();
 			$('#ibm-menu-links li').removeAttr('onmouseover');
 		}
 	} else {	// 로그인 하지 않았을 때
-//		$('#ibm-common-menu').css('height', '0px');
-		$('.ibm-menu-subtabs').hide();
+		$('#ibm-common-menu').css('height', '0px');
+//		$('#ibm-common-menu').hide();
+//		$('.ibm-menu-subtabs').hide();
 		$('#ibm-menu-links li').removeAttr('onmouseover');
 	}
 	

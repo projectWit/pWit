@@ -31,17 +31,23 @@
 		window.close();
 	}
 	function PopUpVacCd(){
-		window.open("VacCd.jsp", "","width = 500px, height = 300px");
-		
+		window.open("VacCd.jsp", "","width = 500px, height = 300px");		
 	}	
+
+	$(document).ready(function() {
+		var url = 'MobileCd.jsp';
+		$.get(url, function(data) {
+			responseText = data;
+			$('#vMobile').append(responseText);
+		});
+	});
+
 </script>
 
 </head>
 <body id="all-list">
-	<form method="post"	id="form1">
+	<form method="post" action = "VacInsPro.jsp" name = "vacfrm">
 		
-
-	
 		<div id="wrap_pop">
 			<div class="new-title">
 				<div class="title-leftarea">연월차등록</div>
@@ -71,12 +77,10 @@
 						
 						<tr>
 							<th>연락처</th>
-						<td><select>
-								<option>010</option>
-								<option>011</option>
-								<option>017</option>
-						</select> - <input type="tel" class="default" size=5 maxlength="4" required>
-							- <input type="tel" class="default" size=5 maxlength="4" required></td>
+						<td><select id = "vMobile">
+								
+						</select> - <input type="tel" name = "vMobile" class="default" size=5 maxlength="4" required>
+							- <input type="tel" name = "vMobile" class="default" size=5 maxlength="4" required></td>
 						</tr>
 						<tr>
 							<th>적요</th>
@@ -94,32 +98,14 @@
 			<br />
 			<div class="footerBG_pop">
 				<span id="lblSave" class="btn blue"> <input name="btnSave"
-					type="button" id="btnSave" value = "저장"/>
+					type="submit" id="btnSave" value = "저장"/>
 				</span> <span class="btn gray"> <input name="btnList" type="button"
 					id="btnList" value="닫기"  onclick = "Close()"/>
 				</span>
 
 			</div>
 			<!--버튼 끝-->
-		</div>
-
-		<!--hidden 컨트롤 시작-->
-		<a id="lnkSave"
-			href="javascript:__doPostBack(&#39;lnkSave&#39;,&#39;&#39;)"></a> <a
-			id="lnkDel"
-			href="javascript:__doPostBack(&#39;lnkDel&#39;,&#39;&#39;)"></a> <a
-			id="lnkUse"
-			href="javascript:__doPostBack(&#39;lnkUse&#39;,&#39;&#39;)"></a> <input
-			name="hidEditFlag" type="hidden" id="hidEditFlag" value="I" /> <input
-			name="hidSdate" type="hidden" id="hidSdate" value="2014-01-01" /> <input
-			name="hidEdate" type="hidden" id="hidEdate" value="2014-12-31" /> <input
-			name="hidRestCode" type="hidden" id="hidRestCode" /> <input
-			name="hidRestDes" type="hidden" id="hidRestDes" /> <input
-			name="hidRemark" type="hidden" id="hidRemark" /> <input
-			name="hidWid" type="hidden" id="hidWid" /> <input name="hidWdate"
-			type="hidden" id="hidWdate" />
-
-		<!--hidden 컨트롤 끝-->
+		</div>	
 	</form>
 </body>
 </html>

@@ -8,7 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="robots" content="noindex,nofollow" />
-
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
@@ -27,13 +28,44 @@
 	function Close() {
 		window.close();
 	}
-	function PopUpPos() {
-		window.open("CarPos.jsp", "", "width = 500px, height = 300px");
-	}
+	var i = 0;
+	$(function() {
+		// events
+		$("#btnAdd").click(AddRow);
+	});		
+	// 삭제
+	 function deleteRow(obj){
+		  $(obj).parent().remove();
+		 } 
+
+	function AddRow() {
+		$("#CarForm")
+				.append(
+						"<tr><td class='center'><input class='default' name= 'InDt"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"
+								+ "<td class='center'><input class='default' name= 'OutDt"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"
+								+ "<td class='center'><input class='default' name= 'ComName"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"														
+								+"<td class='center'><input class='default' name= 'Position"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"								
+								+"<td class='center'><input class='default' name= 'Duty"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='60'/></td>"
+								+"<td class='center'><input class='default' name= 'Reason"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='60'/></td>	</tr>");
+		i++;
+		}
+	
 </script>
 </head>
 <body>
-<form method="post" id="form">
+<form method="post" id="form" action = "CarPro.jsp">
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
@@ -46,29 +78,21 @@
 				<div class="help_boxpop H_10px">
 					<ul class="bg_gray">
 						<li><img src="img/arrowBox.gif" width="13px" height="12px"
-							alt="" /> 등록 예 : 입사일자(또는 퇴사일자)가 2000년 1월 1일이라면 등록은 20000101 입니다.</li>
+							alt="" /> 등록 예 : 입사일자(또는 퇴사일자)가 2000년 1월 1일이라면 등록은 2000-01-01 입니다.</li>
 					</ul>
 				</div>
 				<!--//help_boxpop-->
-
-				<div class="container H_15px">
-					<span class="float_left"><input type="button"
-						class="btn_grayS" onclick="ClearCheckedRow();" value="선택삭제" /></span> <span
-						class="float_right Orange font_s"><img src="img/noti.gif"
-						width="16px" height="9px" alt="" />입력줄수는 마지막 줄에서 자동증가 됩니다.</span>
-				</div>
+				
 				<table summary="" class="list_input H_2px">
-					<col width="2%" />
 					<col width="8%" />
 					<col width="8%" />
-					<col width="15%" />
-					<col width="25%" />
+					<col width="8%" />
+					<col width="8%" />
+					<col width="8%" />
 					<col width="25%" />
 					<col width="" />
 					<thead>
-						<tr>
-							<th class="check"><input class="checkbox" type="checkbox"
-								id="chkAll" name="chkAll" onclick="AllCheck();" /></th>
+						<tr>							
 							<th>입사일자</th>
 							<th>퇴사일자</th>
 							<th>회사명</th>
@@ -77,117 +101,17 @@
 							<th>퇴사사유</th>
 						</tr>
 					</thead>
-					<tbody id="input_body">
+					<tbody id="CarForm">
 
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td class="center"><input id="InDt" maxlength="8"
-								class="default" name="InDt" style="width: 90%;" type="text"
-								value="" /></td>
-
-							<td class="center"><input id="OutDt" maxlength="8"
-								class="default" name="OutDt" style="width: 90%;" type="text"
-								value="" /></td>
-							<td class="center"><input id="ComName" class="default"
-								name="ComName" style="width: 92%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input name="JobPosCd" type="text"
-								id="JobPosCd" value="002" class="rightnone" style="width: 46px;"
-								value="002" /><a href="#"><img src="img/Find.gif"
-									width="22px" height="19px" alt='직위/직급' onclick="PopUpPos()" /></a><input
-								name="JobPos" type="text" id="JobPos" class="grayleft"
-								style="width: 88px;" readonly="readonly" value="대리" />
-							</td>
-							<td class="center"><input id="Duty" class="default"
-								name="Duty" style="width: 95%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Reason" class="default"
-								name="Reason" style="width: 94%;" type="text" value=""
-								maxlength="30" /></td>
-						</tr>
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td class="center"><input id="InDt" maxlength="8"
-								class="default" name="InDt" style="width: 90%;" type="text"
-								value="" /></td>
-
-							<td class="center"><input id="OutDt" maxlength="8"
-								class="default" name="OutDt" style="width: 90%;" type="text"
-								value="" /></td>
-							<td class="center"><input id="ComName" class="default"
-								name="ComName" style="width: 92%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Position" class="default"
-								name="Position" style="width: 88%;" type="text" value=""
-								maxlength="10" /></td>
-							<td class="center"><input id="Duty" class="default"
-								name="Duty" style="width: 95%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Reason" class="default"
-								name="Reason" style="width: 94%;" type="text" value=""
-								maxlength="30" /></td>
-						</tr>
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td class="center"><input id="InDt" maxlength="8"
-								class="default" name="InDt" style="width: 90%;" type="text"
-								value="" /></td>
-
-							<td class="center"><input id="OutDt" maxlength="8"
-								class="default" name="OutDt" style="width: 90%;" type="text"
-								value="" /></td>
-							<td class="center"><input id="ComName" class="default"
-								name="ComName" style="width: 92%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Position" class="default"
-								name="Position" style="width: 88%;" type="text" value=""
-								maxlength="10" /></td>
-							<td class="center"><input id="Duty" class="default"
-								name="Duty" style="width: 95%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Reason" class="default"
-								name="Reason" style="width: 94%;" type="text" value=""
-								maxlength="30" /></td>
-						</tr>
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-
-							<td class="center"><input id="InDt" maxlength="8"
-								class="default" name="InDt" style="width: 90%;" type="text"
-								value="" /></td>
-
-							<td class="center"><input id="OutDt" maxlength="8"
-								class="default" name="OutDt" style="width: 90%;" type="text"
-								value="" /></td>
-							<td class="center"><input id="ComName" class="default"
-								name="ComName" style="width: 92%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Position" class="default"
-								name="Position" style="width: 88%;" type="text" value=""
-								maxlength="10" /></td>
-							<td class="center"><input id="Duty" class="default"
-								name="Duty" style="width: 95%;" type="text" value=""
-								maxlength="30" /></td>
-							<td class="center"><input id="Reason" class="default"
-								name="Reason" style="width: 94%;" type="text" value=""
-								maxlength="30" /></td>
-						</tr>
+						
 					</tbody>
 				</table>
 				<br /> <br /> <br /> <br />
-
+			<input type="button" class = "btn blue" name="btnAdd" id="btnAdd" value="목록추가" />
 			</div>
 		</div>
 		<div class="footerBG_pop">
-			<span class="btn blue"><input type="button" name="btnNew"
-				id="btnNew" onclick="PopUpNew();" value="저장(F2)" /></span> <span
+			<span class="btn blue"><input type="submit" value="저장(F2)" /></span> <span
 				class="btn gray"><input type="button" name="btnClose"
 				id="btnClose" value="닫기" onclick="Close()" /></span>
 		</div>

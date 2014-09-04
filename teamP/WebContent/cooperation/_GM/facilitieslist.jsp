@@ -147,11 +147,11 @@ a:link {
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>${status.count }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${list.fObject }</a>&nbsp;&nbsp; </td>
-					<td class='bl_title bl_place'>${list.place }</td>
-					<td class='bl_title bl_name'>${list.fName }</td>
-					<td class='bl_title bl_phone'>${list.fTel }</td>
-					<td class='bl_title bl_state'>${list.fPay }</td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.fObject }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_place'>${item.place }</td>
+					<td class='bl_list bl_name'>${item.fName }</td>
+					<td class='bl_list bl_phone'>${item.fTel }</td>
+					<td class='bl_list bl_state' style="text-align:right;">${item.fPay } 원</td>
 				</tr>
 				</c:forEach>
 				<!-- LIST REPEAT END -->

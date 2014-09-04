@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Employee"%>
 <%@page import="com.wit.member.Power"%>
 <%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -12,17 +13,22 @@
 Member member = (Member)session.getAttribute("member");
 boolean login = member==null ? false : true;
 
+Employee employee = (Employee)session.getAttribute("employee");
+boolean login2 = employee == null ? false : true;
+
 String signin = null;
 String register = null;
 String regHref = "#";
 if (login) {
 	signin = "로그아웃";
 	register = member.getmNickName();
+} else if (login2) {
+	signin = "로그아웃";
+	register = employee.geteKName();
 } else {
 	signin = "WIT 로그인";
 	register = "회원가입";
 	regHref = "/teamP/cooperation/WIT_Main_register.jsp";
-//	regHref = "/teamP/members/register";
 }
 
 int powerStudy = 0;
@@ -50,7 +56,14 @@ if (admin) {
 
 <body  id="ibm-com" class="v17">
 <form id="loginStatusForm" method="get" action="/teamP/members/login" ><!-- onSubmit="window.location.reload()" -->
-<input id="loginStatus" name="loginStatus" type="hidden" value="<%=login %>">
+<%-- <input id="loginStatus" name="loginStatus" type="hidden" value="<%=login %>"> --%>
+<input id="loginStatus" name="loginStatus" type="hidden" value="<%
+if (login) {
+	out.print(login);
+} else {
+	out.print(login2);
+}
+%>">
 <input id="powerStudy" name="powerStudy" type="hidden" value="<%=powerStudy %>">
 </form>
 <!-- ibm-mast-options -->

@@ -50,7 +50,7 @@ public class DocPDAO {
 		conn = DbSet.getConnection();
 		List<DocPDTO> dtoL = new ArrayList();
 		try{
-			String sql = "select pSeq, eId, pFromDt, pToDt, pJob, pEtc, pDate from DocumentPre";
+			String sql = "select pSeq, eId, pFromDt, pToDt, pJob, pEtc, pDate from DocumentPre p, Employee e where e.eId = p.eId";
 
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();

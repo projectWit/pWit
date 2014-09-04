@@ -27,7 +27,7 @@
 	};	
 	
 	function fnLink(no, str) {
-	      window.opener.form.JobPosCd.value=no;
+	      window.opener.form.ePosCd.value=no;
 	      window.opener.form.JobPos.value=str;
 	      window.close();
 	   };

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <jsp:include page="WIT_GM_header.jsp"></jsp:include>
 <script type="text/javascript">
-currentNavIndex = 0;
+currentNavIndex = -1;
 currentSubtabIndex = 0;
 
 $(document).ready(function(e) {

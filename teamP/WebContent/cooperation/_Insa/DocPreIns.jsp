@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.DocPDAO"%>
+<%@page import="mem.wit.Insa.DocPDTO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,12 +40,18 @@ td {
 	font-size: 30px;
 }
 </style>
+<%
+	DocPDAO dao = new DocPDAO();
+	DocPDTO dto = new DocPDTO();
+	List dtoL = dao.docpSelect();
+	dto = (DocPDTO) dtoL.get(0);
+%>
 </head>
 <body>
 	<form>
 		<table width="900px" align="center">
 			<tr>
-				<td class="ckNo"><b>No.</b></td>
+				<td class="ckNo"><b>No.<%=dto.getpSeq()%></b></td>
 			</tr>
 		</table>
 		<table border="1" width="900px" height="1000px" align="center">

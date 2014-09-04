@@ -1,5 +1,5 @@
-<%@page import="java.net.URLDecoder"%><%@page import="java.net.URLEncoder"%><%@page
-	import="pAjaxAPI.Proxy"%><%@ page language="java" contentType="text/xml; charset=UTF-8" pageEncoding="UTF-8"%><%
+<%@page import="com.wit.Proxy"%>
+<%@page import="java.net.URLDecoder"%><%@page import="java.net.URLEncoder"%><%@ page language="java" contentType="text/xml; charset=UTF-8" pageEncoding="UTF-8"%><%
 /* api proxy */
 
 //String query = URLDecoder.decode(request.getParameter("query"), "euc-kr");

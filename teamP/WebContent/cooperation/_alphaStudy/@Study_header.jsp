@@ -64,16 +64,16 @@
  	} else { // 알파스터디의 관리자가 아니라면
  		hrefList.add(new Href("#","α Study 소개"));
  		hrefList.add(new Href("#","강사 소개"));
- 		hrefList.add(new Href("#","강좌 보기"));
+ 		hrefList.add(new Href("/teamP/study/user/lecture","강좌 보기"));
  		hrefList.add(new Href("#","공지 사항"));
  		hrefList.add(new Href("#","시험 일정"));
  		hrefList.add(new Href("#","Q & A"));
- 		hrefList.add(new Href("/teamP/study/account","내 정보"));
+ 		hrefList.add(new Href("/teamP/study/user/account","내 정보"));
  	}
  } else { // 로그인 상태가 아닐 때
 	hrefList.add(new Href("#","α Study 소개"));
 	hrefList.add(new Href("#","강사 소개"));
-	hrefList.add(new Href("#","강좌 보기"));
+	hrefList.add(new Href("/teamP/study/user/lecture","강좌 보기"));
 	hrefList.add(new Href("#","공지 사항"));
 	hrefList.add(new Href("#","시험 일정"));
 	hrefList.add(new Href("javascript:showLogin()","Q & A"));

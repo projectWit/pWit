@@ -27,7 +27,7 @@
 	};
 	
 	function fnLink(no, str) {
-	      window.opener.form.DepCd.value=no;
+	      window.opener.form.eDepCd.value=no;
 	      window.opener.form.Dep.value=str;
 	      window.close();
 	   };

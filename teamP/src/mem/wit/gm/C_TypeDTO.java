@@ -1,8 +1,8 @@
 package mem.wit.gm;
 
 public class C_TypeDTO {
-	private int tId;
-	private String tName;
+	int tId;
+	String tName;
 	
 	public int gettId() {
 		return tId;

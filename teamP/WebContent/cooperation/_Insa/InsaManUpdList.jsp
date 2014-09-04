@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@page import="java.util.List"%>
+<%@page import="mem.wit.Insa.InsaDAO"%>
+<%@page import="mem.wit.Insa.InsaDTO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,12 +29,24 @@
 		window.open("InsaInsert.jsp", "", "");
 	}
 </script>
+
+<%
+	InsaDAO dao = new InsaDAO();
+	InsaDTO dto = new InsaDTO();
+	List dtoL = dao.insaSelList();
+%>
+<script type="text/javascript">
+	function valSend(gubun, no) {
+		document.inLfrm.gubun.value = gubun;
+		document.inLfrm.no.value = no;
+		document.inLfrm.submit();
+	}
+</script>
 </head>
 <body>
+	<form name="inLfrm">
 
-	<form method="post" action="EPD001M.aspx?ec_req_sid=00HOCty8voui"
-		id="form">
-
+		<input type="hidden" name="gubun" /> <input type="hidden" name="no" />
 		<div id="wrap">
 			<div class="new-title">
 				<div class="title-leftarea">
@@ -56,7 +70,7 @@
 				<col width="11%" />
 				<!--사번-->
 				<col width="13%" />
-				<!--성명-->			
+				<!--성명-->
 				<col width="15%" />
 				<!--부서-->
 				<col width="9%" />
@@ -74,7 +88,7 @@
 						<th><a href="#" class="th">사번</a><img src="img/arrowBot.gif"
 							width="11px" height="15px" alt="" /></th>
 						<th><a href="#" class="th">성명</a><img src="img/arrowBot.gif"
-							width="11px" height="15px" alt="" /></th>						
+							width="11px" height="15px" alt="" /></th>
 						<th><a href="#" class="th">부 서</a><img src="img/arrowBot.gif"
 							width="11px" height="15px" alt="" /></th>
 						<th><a href="#" class="th">직 급</a><img src="img/arrowBot.gif"
@@ -83,307 +97,45 @@
 							src="img/arrowBot.gif" width="11px" height="15px" alt="" /></th>
 						<th>전화번호</th>
 						<th>Email</th>
-						
+
 					</tr>
 				</thead>
+				<%
+					for (int i = 0; i < dtoL.size(); i++) {
+						dto = (InsaDTO) dtoL.get(i);
+				%>
 				<tbody>
 
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-					
-					</tr>
 
 					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-					
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
+						<td><span id="eId"><a href="#" class="list_link"><%=dto.geteId()%></a></span></td>
+						<td><span id="eKName"><%=dto.geteKName()%></span></td>
+						<td><span id="eDepCd"><%=dto.getDepName()%></span></td>
+						<td><span id="ePosCd"><%=dto.getPosName()%></span></td>
+						<td class="center"><span id="eJoinDate"> <%
+ 	String str = dto.geteJoinDate();
+ 		String result = str.substring(0, 10);
+ 		out.print(result);
+ %>
+						</span></td>
+						<td><span id="eTel"><%=dto.geteMobile()%></span></td>
+						<td class="center"><span id="eEmail"><%=dto.geteEmail()%></span></td>
+
 					</tr>
 
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00002</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">호날두</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								 class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								 class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-					<tr id="rpt_ctl00_trRow">
-						<td><span id="rpt_ctl00_lblEmpCd"><a href="#"
-								onclick="fnModify('00001');return false;"
-								onmouseover="a('최종수정일자:2014-08-03 12:28:12.263 수정자:GUEST');return true;"
-								onmouseout="b();" class="list_link">00001</a></span></td>
-						<td><span id="rpt_ctl00_lblEmpKname">이숙이</span></td>
-						
-						<td><span id="rpt_ctl00_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl00_lblJobPosition">대리</span></td>
-						<td class="center"><span id="rpt_ctl00_lblInDate">2012/03/03</span></td>
-						<td><span id="rpt_ctl00_lblAcctNo">010-3096-0955</span></td>
-						<td class="center"><span id="rpt_ctl00_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-
-
-					<tr id="rpt_ctl01_trRow">
-						<td><span id="rpt_ctl01_lblEmpCd"><a href="#"
-								 class="list_link">2003-01</a></span></td>
-						<td><span id="rpt_ctl01_lblEmpKname">백도경</span></td>
-						
-						<td><span id="rpt_ctl01_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl01_lblJobPosition">대표이사</span></td>
-						<td class="center"><span id="rpt_ctl01_lblInDate">2003/04/06</span></td>
-						<td><span id="rpt_ctl01_lblAcctNo">4964866451125</span></td>
-						<td class="center"><span id="rpt_ctl01_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-
-
-					<tr id="rpt_ctl02_trRow">
-						<td><span id="rpt_ctl02_lblEmpCd"><a href="#"
-								 class="list_link">2003-02</a></span></td>
-						<td><span id="rpt_ctl02_lblEmpKname">현빈</span></td>
-						
-						<td><span id="rpt_ctl02_lblSiteDes">영업팀</span></td>
-						<td><span id="rpt_ctl02_lblJobPosition">과장</span></td>
-						<td class="center"><span id="rpt_ctl02_lblInDate">2011/03/26</span></td>
-						<td><span id="rpt_ctl02_lblAcctNo">21587541245</span></td>
-						<td class="center"><span id="rpt_ctl02_lblEMail">abcd@naver.com</span></td>
-						
-					</tr>
-
-
-					<tr id="rpt_ctl03_trRow">
-						<td><span id="rpt_ctl03_lblEmpCd"><a href="#"
-								class="list_link">2010-01</a></span></td>
-						<td><span id="rpt_ctl03_lblEmpKname">주다해</span></td>
-						
-						<td><span id="rpt_ctl03_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl03_lblJobPosition">부장</span></td>
-						<td class="center"><span id="rpt_ctl03_lblInDate">2009/01/05</span></td>
-						<td><span id="rpt_ctl03_lblAcctNo">101023223541</span></td>
-						<td class="center"><span id="rpt_ctl03_lblEMail">abcd@naver.com</span></td>						
-					</tr>
-
-
-					<tr id="rpt_ctl04_trRow">
-						<td><span id="rpt_ctl04_lblEmpCd"><a href="#"
-								class="list_link">2011-03</a></span></td>
-						<td><span id="rpt_ctl04_lblEmpKname">김수현</span></td>
-						
-						<td><span id="rpt_ctl04_lblSiteDes">경영지원팀</span></td>
-						<td><span id="rpt_ctl04_lblJobPosition">사원</span></td>
-						<td class="center"><span id="rpt_ctl04_lblInDate">2010/06/26</span></td>
-						<td><span id="rpt_ctl04_lblAcctNo">215478982125</span></td>
-						<td class="center"><span id="rpt_ctl04_lblEMail">abcd@naver.com</span></td>						
-					</tr>
 				</tbody>
+				<%
+					}
+				%>
 			</table>
 
 			<div class="container H_5px">
-				<span class="float_right">현재인원(명) : <span id="lblEmpCount">10</span>
+				<span class="float_right">현재인원 : <%=dao.totalCnt()%> (명)
 				</span>
 			</div>
 
-			<br /> <br /> <br /> <br /> 
+			<br /> <br /> <br /> <br />
 		</div>
-</form>
+	</form>
 </body>
 </html>

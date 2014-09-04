@@ -5,8 +5,6 @@
 		<result property="mId" column="mId" />
 		<result property="mName" column="mName" />
 		<result property="mMobile" column="mMobile" />
-		<result property="mPost" column="mPost" />
-		<result property="mAddr" column="mAddr" />
 		<result property="mJoindate" column="mJoindate" />
 	</resultMap>
 	<resultMap class="mem.wit.gm.C_SportDTO" id="c_sportDTO">
@@ -18,9 +16,10 @@
 		<result property="place" column="place" />
 	</resultMap>
 	<resultMap class="mem.wit.gm.ClubDTO" id="clubDTO">
+		<result property="cId" column="cId"/>
 		<result property="cName" column="cName" />
 		<result property="cJoinDay" column="cJoinDay" />
-		<result property="sId" column="sName" />
+		<result property="sName" column="sName" />
 		<result property="cPresident" column="mName" />
 	</resultMap>
 	<resultMap class="mem.wit.gm.ClubDTO" id="clubinsert">
@@ -28,6 +27,7 @@
 		<result property="cName" column="cName" />
 		<result property="cJoinDay" column="cJoinDay" />
 		<result property="sId" column="sId" />
+		<result property="sName" column="sName" />
 		<result property="cHomepage" column="cHomepage"/>
 		<result property="cEmblem" column="cEmblem"/>
 		<result property="cPresident" column="mName" />
@@ -41,6 +41,15 @@
 		<result property="fPay" column="fPay" />
 		<result property="fTel" column="fTel" />
 	</resultMap>
+	<resultMap class="mem.wit.gm.FacilDTO" id="searchFacil">
+		<result property="fId" column="fId" />
+		<result property="fName" column="fName"/>
+	</resultMap>
+	<resultMap class="mem.wit.gm.ClubDTO" id="searchClub">
+		<result property="cId" column="cId" />
+		<result property="cName" column="cName"/>
+		<result property="sName" column="sName"/>
+	</resultMap>
 	<resultMap class="mem.wit.gm.QBoardDTO" id="qboardDTO">
 		<result property="qId" column="qId" />
 		<result property="qTitle" column="qTitle" />
@@ -52,12 +61,35 @@
 		<result property="stateId" column="stateId" />
 		<result property="stateName" column="stateName" />
 	</resultMap>
+	<resultMap class="mem.wit.gm.TeacherDTO" id="teaDTO">
+		<result property="eId" column="eId" />
+		<result property="tNum" column="tNum" />
+		<result property="eKName" column="eKName" />
+	</resultMap>
 	<resultMap class="mem.wit.gm.LecDTO" id="lecDTO">
+		<result property="lecId" column="lecId" />
 		<result property="lecName" column="lecName" />
-		<result property="lecCnt" column="lecCnt" />
+		<result property="eKName" column="eKName" />
+		<result property="place" column="place" />
+		<result property="sNum" column="sNum" />
+		<result property="tName" column="tName" />
+		<result property="sName" column="sName" />
 		<result property="lecPay" column="lecPay" />
 		<result property="eTel" column="eTel" />
+		<result property="sSDay" column="sSDay" />
+		<result property="sEDay" column="sEDay" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.LecDTO" id="detail">
+		<result property="lecId" column="lecId" />
+		<result property="lecName" column="lecName" />
 		<result property="eKName" column="eKName" />
+		<result property="place" column="place" />
+		<result property="lecCnt" column="lecCnt" />
+		<result property="lecCont" column="lecCont" />
+		<result property="tName" column="tName" />
+		<result property="sName" column="sName" />
+		<result property="lecPay" column="lecPay" />
+		<result property="pTime" column="pTime" />
 		<result property="sSDay" column="sSDay" />
 		<result property="sEDay" column="sEDay" />
 	</resultMap>
@@ -73,6 +105,16 @@
 		<result property="pId" column="pId" />
 		<result property="pTime" column="pTime" />		
 	</resultMap>
+	<resultMap class="mem.wit.gm.MemberDTO" id="searchId">
+		<result property="mId" column="mId" />
+		<result property="mName" column="mName" />
+		<result property="mMobile" column="mMobile" />
+	</resultMap>
+	<resultMap class="mem.wit.gm.MemberDTO" id="searchName">
+		<result property="mId" column="mId" />
+		<result property="mName" column="mName" />
+	</resultMap>
+
 <select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
 $value$
 </select>
@@ -106,9 +148,30 @@ $value$
 <select id="selectLecList" parameterClass="java.lang.String" resultMap="lecDTO" >
 $value$
 </select>
+<select id="detail" parameterClass="java.lang.String" resultMap="detail" >
+$value$
+</select>
+<select id="searchId" parameterClass="java.lang.String" resultMap="searchId">
+$value$
+</select>
+<select id="searchName" parameterClass="java.lang.String" resultMap="searchName">
+$value$
+</select>
+<select id="searchFacil" parameterClass="java.lang.String" resultMap="searchFacil">
+$value$
+</select>
+<select id="searchClub" parameterClass="java.lang.String" resultMap="searchClub">
+$value$
+</select>
+<select id="searchTea" parameterClass="java.lang.String" resultMap="teaDTO"> 
+$value$
+</select>
 <!--  <select id="selectReview" parameterClass="java.lang.String" resultMap="reviewDTO" >
 $value$
 </select> -->
+<insert id="insertLReq" parameterClass="java.lang.String">
+$value$
+</insert>
 <insert id="insertClub" parameterClass="mem.wit.gm.ClubDTO" >
 	insert into GM_Club values (seq_cmId.nextval, #cName#, #sId#, #cPost#,#cAddr#,#cHomepage#,#cEmblem#,sysdate,1,#cPresident#,#cManager#)
 </insert>
@@ -122,6 +185,15 @@ $value$
 	<selectKey resultClass="int" keyProperty="lecId">
 		SELECT max(lecId) as lecId FROM GM_Lecture
 	</selectKey>
-	insert into GM_Sche values(SEQ_sNum.nextval, #lecId# , #pId#, #sSDay#, #sEDay#, 1)
+	insert into GM_Sche values(SEQ_sNum.nextval, #lecId# , #pId#, #sSDay#, #sEDay#, #tNum#)
 </insert>
+<insert id="insertQBoard" parameterClass="mem.wit.gm.QBoardDTO">
+	insert into GM_QBoard values(SEQ_qId.nextval, #qMId#, #qTitle#, #qCont#, sysdate, #qIp#, 1)
+</insert>
+<insert id="insertRent" parameterClass="mem.wit.gm.RentDTO">
+	insert into GM_Rent values(SEQ_rId.nextval, #cId#, #fId#,#sId#, sysdate, #rDay#, #rCause#, 1)
+</insert>
+<update id="updateLReq" parameterClass="java.lang.String">
+$value$
+</update>
 </sqlMap>

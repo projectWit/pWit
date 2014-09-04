@@ -3,7 +3,8 @@ package mem.wit.gm;
 public class ClubDTO {
 	private int cId;
 	private String cName;
-	private String sId;
+	private int sId;
+	private String sName;
 	private String cPost;
 	private String cAddr;
 	private String cHomepage;
@@ -24,11 +25,17 @@ public class ClubDTO {
 	public void setcName(String cName) {
 		this.cName = cName;
 	}
-	public String getsId() {
+	public int getsId() {
 		return sId;
 	}
-	public void setsId(String sId) {
+	public void setsId(int sId) {
 		this.sId = sId;
+	}
+	public String getsName() {
+		return sName;
+	}
+	public void setsName(String sName) {
+		this.sName = sName;
 	}
 	public String getcPost() {
 		return cPost;

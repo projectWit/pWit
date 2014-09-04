@@ -24,7 +24,43 @@
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 33px;"> -->
 <!-- <div class="ibm-home-page" id="ibm-top" style="margin-top: 74px;"> -->
 <div class="ibm-home-page" id="ibm-top" style="margin-top: 120px;">
-
+<%
+Member member = (Member) session.getAttribute("member");
+boolean login = member == null ? false : true;
+String href1 = "#";
+String href2 = "#";
+String href3 = "#";
+String href4 = "#";
+String href5 = "#";
+String logfunc = "";
+String name1 = "수강 강좌";
+String name2 = "동호회";
+String name3 = "질의 응답";
+String name4 = "대관 신청";
+String name5 = "마이페이지";
+if (login) { // 로그인 관리자 때 
+   if(member.getmId().equals("admin_gm") || member.getmId().equals("admin")) {
+	   name1="회원 관리";
+	   name2="동호회 관리";
+	   name3="강좌 관리";
+	   name4="시설 관리";
+	   name5="대관 관리";
+	   href1 = "WIT_GM_member.jsp";
+	   href2 = "WIT_GM_club.jsp";
+	   href3 = "WIT_GM_worker.jsp";
+	   href4 = "WIT_GM_facilities.jsp";
+	   href5 = "WIT_GM_rent.jsp";
+   } else {
+	   href1 = "Member_GM_Lecture.jsp";
+	   href2 = "Member_GM_Club.jsp";
+	   href3 = "Member_GM_Question.jsp";
+	   href4 = "Member_GM_Rent.jsp";
+	   href5 = "Member_GM_MyPage.jsp";
+   }
+} else {
+	logfunc = "showLogin()";
+}
+%>
 <!-- MASTHEAD_BEGIN -->
 <header id="ibm-masthead"> 
 
@@ -40,13 +76,12 @@
 		</ul>
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">
-			<li onmouseover="slideRibbon(-1)"><a href="WIT_GM_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">G M</span></a></li>
-			<li onmouseover="slideRibbon(0)"><a href="WIT_GM_introduce.jsp">GM 소개</a></li>
-			<li onmouseover="slideRibbon(1)"><a href="WIT_GM_member.jsp">회원 관리</a></li>
-			<li onmouseover="slideRibbon(2)"><a href="WIT_GM_club.jsp">동호회 관리</a></li>
-			<li onmouseover="slideRibbon(3)"><a href="WIT_GM_worker.jsp">직원 관리</a></li>
-			<li onmouseover="slideRibbon(4)"><a href="WIT_GM_facilities.jsp">시설 관리</a></li>
-			<li onmouseover="slideRibbon(5)"><a href="WIT_GM_rent.jsp">대관 관리</a></li>
+			<li onmouseover="slideRibbon(-1)"><a  href="WIT_GM_index.jsp" style="font-weight: bold; color: white; font-style: italic; margin-top: -3px;text-shadow: 1px 1px 1px #CCCCCC;"><span style="font-size: xx-large;">G M</span></a></li>
+			<li onmouseover="slideRibbon(1)"><a onclick="<%=logfunc%>" href="<%=href1%>"><%=name1 %></a></li>
+			<li onmouseover="slideRibbon(2)"><a onclick="<%=logfunc%>" href="<%=href2%>"><%=name2 %></a></li>
+			<li onmouseover="slideRibbon(3)"><a onclick="<%=logfunc%>" href="<%=href3%>"><%=name3 %></a></li>
+			<li onmouseover="slideRibbon(4)"><a onclick="<%=logfunc%>" href="<%=href4%>"><%=name4 %></a></li>
+			<li onmouseover="slideRibbon(5)"><a onclick="<%=logfunc%>" href="<%=href5%>"><%=name5 %></a></li>
 		</ul>
 	</div>
 	<!-- //ibm-universal-nav --> <!-- ibm-search-module --> <!-- <div id="ibm-search-module" class="ibm-access"> -->
@@ -63,59 +98,6 @@
 			</p>
 		</form>
 	</div>
-	<!-- //ibm-search-module --> <!-- ibm-common-menu --> <!-- <div id="ibm-common-menu" style="display: none;height: 1px;overflow: hidden;"> -->
-	<!-- <div id="ibm-common-menu" style="display: block; height: 41px; overflow: hidden;">
-		<div class="ibm-container-body" id="ibmweb_ribbon_0" style="height: 40px;">
-			
-		******************************************************************************************
-			<div class="ibm-menu-subtabs ibm-is-hidden" style="display:block; opacity: 1; margin-top: 0px; margin-bottom: 0px;">
-			   
-				<ul id="subTab-0" style="display:none;">
-					<li class="subTab-0-0" style="display: block;"><a href="#">도시형 헬스케어 GM</a></li>
-					<li class="subTab-0-1" style="display: block;"><a href="#">사업 목표</a></li>
-					<li class="subTab-0-2" style="display: block;"><a href="#">항후 계획</a></li>
-					<li class="subTab-0-3" style="display: block;"><a href="#">이용 약관</a></li>
-				</ul>
-				
-				<ul id="subTab-1" style="display: none;">
-					<li class="subTab-1-0" style="display: block;"><a href="#">회원 목록</a></li>
-					<li class="subTab-1-1" style="display: block;"><a href="#">회원 조회</a></li>
-					<li class="subTab-1-2" style="display: block;"><a href="#">회원 탈퇴</a></li>
-					<li class="subTab-1-3" style="display: block;"><a href="#">1:1 문의 현황</a></li>
-				</ul>
-				
-				<ul id="subTab-2" style="display: none;">
-					<li class="subTab-2-0" style="display: block;"><a href="#">동호회 등록</a></li>
-					<li class="subTab-2-1" style="display: block;"><a href="#">동호회 목록</a></li>
-					<li class="subTab-2-2" style="display: block;"><a href="#">동호회 탈퇴</a></li>
-					<li class="subTab-2-3" style="display: block;"><a href="#">블랙리스트</a></li>
-				</ul>
-				
-				<ul id="subTab-3" style="display: none;">
-					<li class="subTab-3-0" style="display: block;"><a href="#">직원 목록</a></li>
-					<li class="subTab-3-1" style="display: block;"><a href="#">직원 검색</a></li>
-					<li class="subTab-3-2" style="display: block;"><a href="#">강좌 개설</a></li>
-					<li class="subTab-3-3" style="display: block;"><a href="#">개설 강좌 목록</a></li>
-				</ul>
-				
-				<ul id="subTab-4" style="display: none;">
-					<li class="subTab-4-0" style="display: block;"><a href="#">시설 등록</a></li>
-					<li class="subTab-4-1" style="display: block;"><a href="#">시설 조회</a></li>
-					<li class="subTab-4-2" style="display: block;"><a href="#">시설 현황</a></li>
-					<li class="subTab-4-3" style="display: block;"><a href="#">신청 목록</a></li>
-					<li class="subTab-4-4" style="display: block;"><a href="#">사용 현황</a></li>
-				</ul>
-				
-				<ul id="subTab-5" style="display: none;">
-					<li class="subTab-5-0" style="display: block;"><a href="#">신청 목록</a></li>허가 취소 버튼 이용 신청여부 판정
-					<li class="subTab-5-1" style="display: block;"><a href="#">사용 현황</a></li>
-				</ul>
-			</div>
-		******************************************************************************************
-
-		</div>
-	</div>
-	//ibm-common-menu  -->
 </header>
 <!-- MASTHEAD_END -->
 

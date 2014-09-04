@@ -26,16 +26,15 @@ public class BoaDAO {
 
 		try {
 			String sql = "insert into BoardTable(bSeq, eId, bHeadCd, bTitle, bContent, bDate, bIp, bCnt)";
-			sql += "values(Seq_boa.NEXTVAL, ?, ?, ?, ?, sysdate, ?, 0);";
+			sql += "values(Seq_boa.NEXTVAL, '10001', ?, ?, ?, sysdate, ?, 0)";
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, dto.geteId());
-			pstmt.setInt(2, dto.getbHeadCd());
-			pstmt.setString(3, dto.getbTitle());
-			pstmt.setString(4, dto.getbContent());			
-			pstmt.setString(5, dto.getbIp());
-
+			//pstmt.setString(1, dto.geteId());
+			pstmt.setInt(1, dto.getbHeadCd());
+			pstmt.setString(2, dto.getbTitle());
+			pstmt.setString(3, dto.getbContent());			
+			pstmt.setString(4, dto.getbIp());
 
 			su = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -95,7 +94,7 @@ public class BoaDAO {
 		conn = DbSet.getConnection();
 		List<BoaDTO> dtoL = new ArrayList();
 		try {
-			String sql = "select bSeq, eId, bTitle, bHeadCd, bContent from BoardTable where bSeq = ?";
+			String sql = "select bSeq, eId, bTitle, headname, bContent from BoardTable b, BoardHead h where b.bheadcd = h.headCd and bSeq = ?";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,no);
@@ -105,7 +104,7 @@ public class BoaDAO {
 				dto.setbSeq(rs.getInt(1));
 				dto.seteId(rs.getString(2));
 				dto.setbTitle(rs.getString(3));
-				dto.setbHeadCd(rs.getInt(4));				
+				dto.setHeadName(rs.getString(4));				
 				dto.setbContent(rs.getString(5));
 				dtoL.add(dto);
 			}
@@ -165,4 +164,5 @@ public class BoaDAO {
 		}
 		return su;		
 	}
+	
 }

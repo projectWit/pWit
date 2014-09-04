@@ -140,8 +140,8 @@ TD.bl_list,.bl_list A,.bl_list A:link,.bl_list A:visited {
 	}
 </script>
 <body>
-	<form name="BoaFrm" action = "BoaMainMan.jsp">
-	<input type="hidden" name="gubun" /> <input type="hidden" name="no" />
+	<form name="BoaFrm" action="BoaMain.jsp">
+		<input type="hidden" name="gubun" /> <input type="hidden" name="no" />
 		<table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
 			<tr>
@@ -199,8 +199,9 @@ TD.bl_list,.bl_list A,.bl_list A:link,.bl_list A:visited {
 						%>
 						<tr class="bl_oddline">
 							<td class='bl_list bl_no'><%=dto.getbSeq()%></td>
-							<td class='bl_list bl_icon'><img src='img/notice_icon.gif'
-								border=0></td>
+							<td class='bl_list bl_icon'><%if(dto.getbHeadCd() ==1){ %><img src='img/notice_icon.gif'
+								border=0><%} else if(dto.getbHeadCd() == 2){ %><img src='img/notice_icon01.gif'
+								border=0><%} %></td>
 
 							<td class='bl_list bl_subject leftalign' colspan="1"
 								style="cursor: pointer"
@@ -211,7 +212,8 @@ TD.bl_list,.bl_list A,.bl_list A:link,.bl_list A:visited {
  	String str = dto.getbDate();
  		String result = str.substring(0, 10);
  		out.print(result);
- %></td>
+ %>
+								</td>
 							<td class='bl_list bl_name'><div
 									style='padding-left: 2px; padding-right: 2px;'>
 									<%=dto.geteId()%>

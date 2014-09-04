@@ -7,7 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="robots" content="noindex,nofollow" />
-
+<script type="text/javascript"
+	src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 
 <link type="text/css" rel="stylesheet" href="css/base.css" />
 
@@ -27,18 +28,74 @@
 	function Close() {
 		window.close();
 	}
+	
+	var i = 0;
+	$(function() {
+		// events
+		$("#btnAdd").click(AddRow);
+	});		
+	// 삭제
+	 function deleteRow(obj){
+		  $(obj).parent().remove();
+		 } 
+
+	function AddRow() {
+		$("#SchForm")
+				.append(
+						"<tr><td class='center'><select id='SchCd"+i+"' name='SchCd" + i + "' style='width: 90px'></select></td>"
+								+ "<td class='center'><input class='default' name= 'SchoolName"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='30'/></td>"
+								+ "<td class='center'><input class='default' name= 'SDate"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"
+								+ "<td class='center'><input class='default' name= 'EDate"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"
+								+"<td class='center'><select id='DNType"+i+"' name='DNType" + i + "' style='width: 50px'></select></td>"								
+								+"<td class='center'><input class='default' name= 'SMajor"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='12'/></td>"
+								+"<td class='center'><select id='SLocal"+i+"' name='SLocal" + i + "' style='width: 50px'></select></td>"
+								+"<td class='center'><input class='default' name= 'Etc"
+								+ i
+								+ "' style='width: 90%;' type='text' maxlength='60'/></td>"
+								+"<td class='center'><select id='SGradCd"+i+"' name='SGradCd" + i + "' style='width: 50px'></select></td></tr>");
+	
+		var url1 = 'SchCd.jsp';
+		$.get(url1, function(data) {
+			responseText = data;
+			$('#SchCd' + (i-1)).append(responseText);		
+	});
+		
+	var url2 = 'DNType.jsp';
+		$.get(url2, function(data) {
+			responseText = data;
+			$('#DNType' + (i-1)).append(responseText);
+		});
+
+		var url3 = 'SLocalCd.jsp';
+		$.get(url3, function(data) {
+			responseText = data;
+			$('#SLocal' + (i-1)).append(responseText);
+		});
+
+		var url4 = 'SGradCd.jsp';
+		$.get(url4, function(data) {
+			responseText = data;
+			$('#SGradCd' + (i-1)).append(responseText);
+		});
+		i++;
+	}
 </script>
 </head>
 <body>
-
-	<form method="post" id="frm">
-
-
+	<form method="post" id="frm" action = "SchPro.jsp">
 		<div id="wrap_pop">
 			<div id="title">
 				<h1>
 					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> [<span
-						id="lblEmpKname">이숙이</span>]님의 학력사항등록
+						id="lblEmpKname">호날두</span>]님의 학력사항등록
 				</h1>
 			</div>
 
@@ -46,17 +103,10 @@
 				<div class="help_boxpop H_10px">
 					<ul class="bg_gray">
 						<li><img src="img/arrowBox.gif" width="13px" height="12px"
-							alt="" /> 학력사항을 등록합니다. 일자는 yyyymmdd 형식으로 입력합니다. (예. 20070805)</li>
+							alt="" /> 학력사항을 등록합니다. 일자는 yyyy-mm-dd 형식으로 입력합니다. (예. 2007-08-05)</li>
 					</ul>
 				</div>
-				<!--//help_boxpop-->
-
-				<div class="container H_15px">
-					<span class="float_left"><input type="button"
-						class="btn_grayS" value="선택삭제" /></span> <span
-						class="float_right Orange font_s"><img src="img/noti.gif"
-						width="16px" height="9px" alt="" />입력줄수는 마지막 줄에서 자동증가 됩니다.</span>
-				</div>
+				<!--//help_boxpop-->				
 
 				<table id="tbInputList" summary="" class="list_input">
 					<col width="3%" />
@@ -71,8 +121,7 @@
 					<col width="" />
 					<thead>
 						<tr>
-							<th class="check"><input class="checkbox" type="checkbox"
-								id="chkAll" name="chkAll" onclick="AllCheck();" /></th>
+							
 							<th>학력</th>
 							<th>학교명</th>
 							<th>입학일자</th>
@@ -84,415 +133,20 @@
 							<th>졸업구분</th>
 						</tr>
 					</thead>
-					<tbody id="input_body">
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_0"
-								name="ddlScholarship_0" style="width: 90px;">
-									<option value=""  selected = "selected" >======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_0"
-								name="SchoolName_0" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_0"
-								name="SDate_0" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_0"
-								name="EDate_0" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_0" name="DNType_0"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_0"
-								name="Major_0" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_0"
-								name="local_0" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_0"
-								name="Etc_0" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_0"
-								name="SchType_0">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_1"
-								name="ddlScholarship_1" style="width: 90px;">
-									<option value="" selected = "selected">======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_1"
-								name="SchoolName_1" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_1"
-								name="SDate_1" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_1"
-								name="EDate_1" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_1" name="DNType_1"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_1"
-								name="Major_1" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_1"
-								name="local_1" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_1"
-								name="Etc_1" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_1"
-								name="SchType_1">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_2"
-								name="ddlScholarship_2" style="width: 90px;">
-									<option value="" selected = "selected">======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_2"
-								name="SchoolName_2" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_2"
-								name="SDate_2" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_2"
-								name="EDate_2" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_2" name="DNType_2"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_2"
-								name="Major_2" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_2"
-								name="local_2" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_2"
-								name="Etc_2" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_2"
-								name="SchType_2">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_3"
-								name="ddlScholarship_3" style="width: 90px;">
-									<option value="" selected = "selected">======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_3"
-								name="SchoolName_3" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_3"
-								name="SDate_3" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_3"
-								name="EDate_3" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_3" name="DNType_3"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_3"
-								name="Major_3" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_3"
-								name="local_3" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_3"
-								name="Etc_3" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_3"
-								name="SchType_3">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_4"
-								name="ddlScholarship_4" style="width: 90px;">
-									<option value="" selected = "selected">======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_4"
-								name="SchoolName_4" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_4"
-								name="SDate_4" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_4"
-								name="EDate_4" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_4" name="DNType_4"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_4"
-								name="Major_4" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_4"
-								name="local_4" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_4"
-								name="Etc_4" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_4"
-								name="SchType_4">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
-
-						<tr>
-							<td class="center"><input class="checkbox" type="checkbox"
-								id="chkRow" name="chkRow" /></td>
-							<td class="center"><select id="ddlScholarship_5"
-								name="ddlScholarship_5" style="width: 90px;">
-									<option value="" selected = "selected">======</option>
-									<option value="11">초등</option>
-									<option value="12">중등</option>
-									<option value="13">고등</option>
-									<option value="14">대학</option>
-									<option value="15">대학교</option>
-									<option value="16">대학원(석사)</option>
-									<option value="17">대학원(박사)</option>
-							</select></td>
-							<td class="center"><input type="text" id="SchoolName_5"
-								name="SchoolName_5" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><input type="text" id="SDate_5"
-								name="SDate_5" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><input type="text" id="EDate_5"
-								name="EDate_5" value="" maxlength="8" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="DNType_5" name="DNType_5"
-								style="width: 50px;">
-									<option value="" selected="selected">===</option>
-									<option value="1">주간</option>
-									<option value="2">야간</option>
-							</select></td>
-							<td class="center"><input type="text" id="Major_5"
-								name="Major_5" value="" maxlength="30" class="default"
-								style="width: 90%;" /></td>
-							<td class="center"><select id="local_5"
-								name="local_5" style="width: 80px;">
-									<option value=""  selected = "selected" >=======</option>
-									<option value="1">서울</option>
-									<option value="2">경기</option>
-									<option value="3">인천</option>
-									<option value="4">충북</option>
-									<option value="5">충남</option>
-									<option value="6">대전</option>
-									<option value="7">세종</option>
-									<option value="8">경북</option>
-									<option value="9">경남</option>
-									<option value="10">대구</option>
-									<option value="11">부산</option>
-									<option value="12">전북</option>
-									<option value="13">전남</option>
-									<option value="14">광주</option>
-									<option value="15">강원</option>
-									<option value="16">제주</option>
-							</select></td>
-							<td class="center"><input type="text" id="Etc_5"
-								name="Etc_5" value="" maxlength="60" class="default"
-								style="width: 88%;" /></td>
-							<td class="center"><select id="SchType_5"
-								name="SchType_5">
-									<option value="" selected = "selected">======</option>
-									<option value="1">재학</option>
-									<option value="2">중퇴</option>
-									<option value="3">수료</option>
-									<option value="4">휴학</option>
-									<option value="5">졸업</option>
-							</select></td>
-						</tr>
+					<tbody id="SchForm">
 
 					</tbody>
 				</table>
+				
 				<br />
 				<br /> <br /> <br />
-
+			<input type="button" class = "btn blue" name="btnAdd" id="btnAdd" value="목록추가" />
 			</div>
 			<!--//contents-->
 		</div>
 		<div class="footerBG_pop">
-				<span class="btn blue"><input type="button" name="btnNew"
-					id="btnNew" onclick="PopUpNew();" value="저장(F2)" /></span> <span
+				<span class="btn blue"><input type="submit" name="btnNew"
+					id="btnNew" value="저장(F2)" /></span> <span
 					class="btn gray"><input type="button" name="btnClose"
 					id="btnClose" value="닫기" onclick = "Close()" /></span>
 		</div>

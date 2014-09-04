@@ -1,7 +1,6 @@
 <%@page import="mem.wit.Insa.BoaDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "mem.wit.Insa.CodeDAO" %>
 <%@ page import = "mem.wit.Insa.HeadDTO" %>
 <%@page import="java.util.List"%>
 <%
@@ -19,5 +18,5 @@ for (int i = 0; i < result.size(); i++) {
 	}
 }
 out.print(str);
-  %>
+ %>
   
