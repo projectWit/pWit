@@ -2,6 +2,7 @@ package mem.wit.pShopping06;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -35,6 +36,8 @@ public class WSSellerDAO {
 		}
 	};
 	
+
+	
 	public int add(final WSSellerDTO sel) {
 		return this.jdbcTemplate.update(
 			"insert into sSeller values(?,?,?,?,?,?,?,?,sysdate,?)",
@@ -52,12 +55,50 @@ public class WSSellerDAO {
 		);	
 	}
 	
+	public int update(final WSSellerDTO sel) {
+		return this.jdbcTemplate.update(
+			"update sSeller set sel_password=?, sel_name=?, sel_zipcode=?, sel_addr=?, sel_tel1=?, sel_tel2=?, sel_email=? where sel_id=?",
+			sel.getSel_password(),
+			sel.getSel_name(),
+			sel.getSel_zipcode(),
+			sel.getSel_addr(),
+			sel.getSel_tel1(),
+			sel.getSel_tel2(),
+			sel.getSel_email(),
+			sel.getSel_id()				
+		);	
+	}
+	
+	public int isSeller(String id) {
+		return this.jdbcTemplate.queryForObject(
+			"select count(*) from sSeller where sel_id=?",
+			new Object[] {id}, Integer.class);
+	}
+	
+	public int isValidSeller(String id, String pwd) {
+		return this.jdbcTemplate.queryForObject(
+			"select count(*) from sSeller where sel_id=? and sel_password=?",
+			new Object[] {id, pwd}, Integer.class);
+	}
+	
+	public WSSellerDTO getValidSeller(String id, String pwd) {
+		return this.jdbcTemplate.queryForObject(
+				"select * from sSeller where sel_id=? and sel_password=?",
+				new Object[] {id, pwd}, this.userMapper);		
+	}
+	
 	public WSSellerDTO get(String id) {
 		return this.jdbcTemplate.queryForObject(
 			"select * from sSeller where sel_id=?",
 			new Object[] {id}, this.userMapper);
 	}
 	
+	public List<WSSellerDTO> getAll() {
+		return this.jdbcTemplate.query(
+				"select * from sSeller order by sel_id",
+				this.userMapper				
+			);
+	}
 	
 	
 	

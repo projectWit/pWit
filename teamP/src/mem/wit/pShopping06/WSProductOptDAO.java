@@ -29,8 +29,8 @@ public class WSProductOptDAO {
 		}
 	};
 	
-	public void add(final WSProductOptDTO opt) {
-		this.jdbcTemplate.update(
+	public int add(final WSProductOptDTO opt) {
+		return this.jdbcTemplate.update(
 			"insert into sProductOpt values(?,?,?,?,?)",
 			opt.getOpt_prdCode(),
 			opt.getOpt_no(),

@@ -1,551 +1,1082 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html class="dj_gecko dj_contentbox" xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title></title>
 <style>
-/* html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, li, fieldset, form, label, legend {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	outline: 0px;
-	font-size: inherit;
-	vertical-align: baseline;
-} */
-a {
-	color: #00649d;
-}
-/* div, p, span, a, li, strong {
-	font-family: Arial, sans-serif;
-} */
-#ibm-top {
-	background: #FFF;
-	margin-top: 74px;
-	_margin-top: 0;
-	min-width: 980px;
-	_float: left;
+* {
+	margin: 0;
+	padding: 0;
 }
 body {
-	line-height: 1.2;
+	font-size: 11px;
+	color: #666;
 }
-/* @media screen, projection */
-body {
-	color: #000;
+html {
+	overflow-y: scroll;
 }
-:focus {
-	outline: 0px;
+ul {
+	list-style: none;
 }
-#ibm-pcon {
-	width: 778px;
-	margin: 20px auto;
-	padding: 0 0 10px 202px;
-	background: #FFF;
+img {
+	border: none;
+	vertical-align: top;
 }
-#ibm-pcon::after {
-	content: ".";
-	display: block;
-	height: 0px;
-	clear: both;
-	visibility: hidden;
-}
-#ibm-content {
-	float: left;
-	width: 100%;
-}
-/* @media screen */
-#ibm-content {
-	position: inherit;
-}
-#ibm-my-menu, #ibm-common-menu, #ibm-primary-links a, #ibm-content, #ibm-page-tools a, #ibm-footer-module, #ibm-footer li a, #ibm-search-results p a, #ibm-search-results h2, #ibm-search-results h3, #ibm-search-results li p {
-	font-size: 0.8em;
-}
-#ibm-navigation {
-	position: relative;
-	float: left;
-	left: -182px;
-	_left: 0px;
-	margin: 14px 0% 0% -100%;
-	_margin-left: -960px;
-	padding: 1.1em 0 30px;
-	width: 172px;
-}
-.flashtext, .ibm-access, #ibm-content-main form.ibm-column-form p span a span {
-	position: absolute;
-	left: -3000px;
-	width: 500px;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
+	font-family: "돋움", Dotum, "굴림" ,Gulim, Arial;
 }
 ol, ul {
-	border: 0px;
-	outline: 0px;
-	font-size: inherit;
-	vertical-align: baseline;
-}
-#ibm-related-links, #ibm-esite-link {
-	display: block;
-}
-/* #ibm-masthead ol, #ibm-masthead ul, #ibm-leadspace-head ol, #ibm-leadspace-head ul, #ibm-pcon ol, #ibm-pcon ul, #ibm-related-content ol, #ibm-related-content ul {
 	list-style: none;
-	margin: 0px;
-	padding: 0px;
-} */
-#ibm-navigation #ibm-primary-links {
-	background: url('/i/v17/t/left_nav_base_solid.png') no-repeat bottom right #eee;
-	background: url('/i/v17/t/left_nav_base_solid.png') no-repeat scroll bottom right, -o-radial-gradient(40px 200px, circle closest-corner, #f2f2f2 50%, #e8e9e9 100%);
-	background: url('/i/v17/t/left_nav_base_solid.png') no-repeat scroll bottom right, -webkit-radial-gradient(40px 200px, circle closest-corner, #f2f2f2 50%, #e8e9e9 100%);
-	background: url('/i/v17/t/left_nav_base_solid.png') no-repeat scroll bottom right, -ms-radial-gradient(40px 200px, circle closest-corner, #f2f2f2 50%, #e8e9e9 100%);
-	background: url('/i/v17/t/left_nav_base_solid.png') no-repeat scroll bottom right, radial-gradient(40px 200px, circle closest-corner, #f2f2f2 50%, #e8e9e9 100%);
-	padding-bottom: 30px;
-	_background: url(/i/v17/t/left_nav_base_solid.png) no-repeat bottom right #eee;
 }
-#ibm-secondary-navigation {
+li {
+	list-style: none;
+}
+fieldset, img {
+	border: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
+	font-family: "돋움", Dotum, "굴림" ,Gulim, Arial;
+}
+#reNwrap2013Sub #reNcontainer #reNlnb {
+	float: left;
+	width: 220px;
+	margin: 0 15px 10px 0;
+	z-index: 9;
+}
+#reNwrap2013Sub #reNcontainer {
+	position: relative;
+	width: 995px;
+	margin: 9px auto 0;
+	font-size: 12px;
+	z-index: 9;
+}
+#reNwrap2013Sub {
+	width: 100%;
+	min-width: 995px;
+	height: auto !important;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_headerArea_sub.gif') no-repeat 50% top;
+}
+.mB10 {
+	margin-bottom: 10px !important;
+}
+#reNlnb .lnbMenuArea {
+	width: 220px;
+	font-size: 12px;
+	z-index: 10;
+}
+#reNlnb .commMenuArea {
+	overflow: hidden;
+	width: 220px;
+	margin-bottom: -5px;
+}
+#reNlnb .lnbAdArea {
+	overflow: hidden;
+	width: 210px;
+	height: 210px;
+	padding: 4px;
+	border: 1px solid #b2b2b2;
+	text-align: center;
+}
+ol, ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+#reNlnb .commMenuArea li {
+	overflow: hidden;
+	width: 220px;
+	margin-bottom: 5px;
+}
+a {
+	cursor: pointer;
+}
+a:link, a:visited {
 	color: #666;
-	padding-left: 0px;
-	padding-top: 30px;
-}
-#ibm-secondary-navigation {
-	padding: 10px 0 0 0;
-}
-#ibm-secondary-navigation ul li a {
-	background: url(/i/v17/t/left_nav_bullet.png) no-repeat 0 8px;
-	display: block;
-	*zoom:1: ;
-	_height: 1%;
-	padding: 1px 4px 1px 7px;
 	text-decoration: none;
 }
-#ibm-secondary-navigation h2, #ibm-secondary-navigation ul li a {
-	font-size: 0.8em;
+a:link {
+	color: #4b4b4b;
+	text-decoration: none;
 }
-#ibm-parent-link a, #ibm-secondary-navigation ul {
+a:visited {
+	text-decoration: none;
+}
+a:link {
+	color: #353535;
+	text-decoration: none;
+}
+fieldset, img {
+	border: 0;
+}
+img {
+	vertical-align: top;
+}
+.vT {
+	vertical-align: top;
+}
+#reNlnb .lnbMenuArea .lnbTit {
+	clear: both;
+	position: relative;
+	width: 220px;
+	height: 43px;
+	z-index: 11;
+}
+#reNlnb .lnbMenuArea .lnbMenu {
+	overflow: hidden;
+	width: 218px;
+	border-top: 1px solid #b4b3b3;
+	border-right: 1px solid #b4b3b3;
+	border-left: 1px solid #b4b3b3;
+}
+#reNlnb .lnbMenuArea .lnbImgMenu {
+	width: 214px;
+	padding: 2px 2px 0;
+	border-right: 1px solid #b4b3b3;
+	border-bottom: 1px solid #b4b3b3;
+	border-left: 1px solid #b4b3b3;
+}
+#reNlnb .lnbMenuArea .lnbImgMenu li {
+	overflow: hidden;
+	width: 214px;
+	height: 31px;
+	margin-bottom: 2px;
+}
+#reNlnb .lnbMenuArea .lnbImgMenu li a {
+	display: block;
+	width: 190px;
+	height: 31px;
+	padding-right: 24px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/mark_imgMenu.gif') no-repeat right top;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList {
+	width: 218px;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li {
+	overflow: hidden;
+	width: 218px;
+}
+a:visited {
+	text-decoration: none;
+}
+.ipsiCommonSchedule .sList_tit2 .yearIpsi_Schedule .ipsiMonth a:link, a:visited, a:hover, a:active {
+	color: #454545;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li a {
+	display: block;
+	overflow: hidden;
+	width: 156px;
+	height: 41px;
+	padding: 1px 37px 0 25px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 41px;
+	letter-spacing: -1px;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li a.menuD {
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_lnb_arrD_gray.gif') no-repeat left top;
+	color: #525050;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li .icoNew, #reNlnb .lnbMenuArea .lnbMenu ul.menuList li .icoUp {
+	margin-top: 16px;
+	margin-top: 15px\9;
+	#margin-top:2px: ;
+	_margin-top: 2px;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li .icoNew, #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li .icoUp {
+	margin-top: 5px !important;
+	margin-top: 3px\9 !important;
+	#margin-top:1px !important: ;
+	_margin-top: 1px !important;
+}
+:root #reNlnb .lnbMenuArea .lnbMenu ul.menuList li .icoNew, :root #reNlnb .lnbMenuArea .lnbMenu ul.menuList li .icoUp {
+	margin-top: 14px \0/IE9;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li a.menuB {
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_lnb_arrB_gray.gif') no-repeat left top;
+	color: #525050;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList_s {
+	width: 168px;
+	padding: 10px 25px;
+	border-bottom: 1px solid #b4b3b3;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li {
+	overflow: hidden;
+	width: 168px;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li a {
+	display: block;
+	width: 161px;
+	height: 20px;
+	padding: 0 0 0 7px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/ico/ico_arrR_blue.gif') no-repeat left 7px;
+	color: #373434;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 20px;
+	letter-spacing: 0px;
+	height: 19px\9 !important;
+	padding-top: 1px\9 !important;
+	#height:19px !important: ;
+	#padding-top:1px !important: ;
+	_height: 19px !important;
+	_padding-top: 1px !important;
+}
+:root #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li a {
+	heigth: 19px ;
+	padding-top: 1px \0/IE9;
+}
+:root #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li .icoNew, :root #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li .icoUp {
+	margin-top: 2px \0/IE9;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList li a.menuB:hover, #reNlnb .lnbMenuArea .lnbMenu ul.menuList li a.menuB:active, #reNlnb .lnbMenuArea .lnbMenu ul.menuList li.on a.menuB {
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_lnb_arrB_blue.gif') no-repeat left top;
+	color: #fff;
+}
+#reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li a:hover, #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li a:active, #reNlnb .lnbMenuArea .lnbMenu ul.menuList_s li.on a {
+	color: #489ecd;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+.mB15 {
+	margin-bottom: 15px !important;
+}
+.arealLecTab {
+	float: left;
+	width: 754px;
+	padding-left: 6px;
+	border: 3px solid #638fd1;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTab.gif') repeat-x left 50%;
+}
+#reNwrap2013Sub #reNcontainer #reNcontents {
+	float: left;
+	width: 760px;
+	padding-bottom: 60px;
+	z-index: 9;
+}
+#reNwrap2013Sub #reNcontainer {
+	position: relative;
+	width: 995px;
+	margin: 9px auto 0;
+	font-size: 12px;
+	z-index: 9;
+}
+#reNwrap2013Sub {
+	width: 100%;
+	min-width: 995px;
+	height: auto !important;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_headerArea_sub.gif') no-repeat 50% top;
+}
+ol, ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+.arealLecTab li {
+	float: left;
+	height: 26px;
+	padding: 6px 4px 5px 0;
+	color: #2f2f2f;
+	font-size: 12px;
+	line-height: 26px;
+	text-align: center;
+}
+a {
+	cursor: pointer;
+}
+a:link, a:visited {
+	color: #666;
+	text-decoration: none;
+}
+a:link {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:link {
+	color: #353535;
+	text-decoration: none;
+}
+.arealLecTab li a {
+	display: block;
+	height: 26px;
+	padding-left: 10px;
+	padding-top: 1px\9;
+	#padding-top:1px: ;
+	_padding-top: 1px;
+	color: #2f2f2f;
+	font-weight: bold;
+	line-height: 27px;
+}
+.arealLecTab li a span {
+	padding-right: 10px;
+}
+.arealLecTab li a:hover, .arealLecTab li a:active, .arealLecTab li.on a {
+	display: block;
+	overflow: hidden;
+	height: 26px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTabOnL.gif') no-repeat left top;
+	color: #fff;
+}
+.arealLecTab li a:hover span, .arealLecTab li a:active span, .arealLecTab li.on a span {
+	display: block;
+	height: 26px;
+	height: 24px\9;
+	padding-top: 2px\9;
+	margin-top: -1px\9;
+	#height:24px: ;
+	#padding-top:2px: ;
+	#margin-top:-1px: ;
+	_height: 24px;
+	_padding-top: 2px;
+	_margin-top: -1px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTabOnR.gif') no-repeat right top;
+	line-height: 26px;
+}
+
+#reNwrap2013Sub #reNcontainer #reNcontents {
+	float: left;
+	width: 760px;
+	padding-bottom: 60px;
+	z-index: 9;
+}
+#reNwrap2013Sub #reNcontainer {
+	position: relative;
+	width: 995px;
+	margin: 9px auto 0;
+	font-size: 12px;
+	z-index: 9;
+}
+#reNwrap2013Sub {
+	width: 100%;
+	min-width: 995px;
+	height: auto !important;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_headerArea_sub.gif') no-repeat 50% top;
+}
+input {
+	outline-style: none;
+}
+.mB5 {
+	margin-bottom: 5px !important;
+}
+.highSearchArea {
+	clear: both;
+	overflow: hidden;
+}
+.highSearchArea .searchInfo {
+	overflow: hidden;
+	padding: 4px 10px;
+	border: 1px solid #e7eef5;
+	background-color: #f4f7fa;
+}
+.highSearchArea .searchOption {
+	overflow: hidden;
+	padding: 10px;
+	border-right: 1px solid #e7eef5;
+	border-bottom: 1px solid #e7eef5;
+	border-left: 1px solid #e7eef5;
+	background-color: #fff;
+}
+select, input.iText, textarea {
+	font-family: Dotum;
+	font-size: 1em;
+	padding: 3px 2px 2px 2px;
+	border: 1px solid #B0B0B0;
+	margin: 0;
+}
+.iBorderS {
+	height: 20px;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	font-size: 12px;
+	color: #000;
+}
+.pT5 {
+	padding-top: 5px !important;
+}
+.iBorderT {
+	height: 18px;
+	border: 1px solid #b0b0b0;
+	color: #000;
+}
+a {
+	cursor: pointer;
+}
+a:link, a:visited {
+	color: #666;
+	text-decoration: none;
+}
+a:link {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:link {
+	color: #353535;
+	text-decoration: none;
+}
+fieldset, img {
+	border: 0;
+}
+img {
+	vertical-align: top;
+}
+.fR {
+	float: right;
+}
+a:visited {
+	text-decoration: none;
+}
+.ipsiCommonSchedule .sList_tit2 .yearIpsi_Schedule .ipsiMonth a:link, a:visited, a:hover, a:active {
+	color: #454545;
+}
+
+
+
+//==========================================================================
+#reNwrap2013Sub #reNcontainer #reNcontents {
+	float: left;
+	width: 760px;
+	padding-bottom: 60px;
+	z-index: 9;
+}
+#reNwrap2013Sub #reNcontainer {
+	position: relative;
+	width: 995px;
+	margin: 9px auto 0;
+	font-size: 12px;
+	z-index: 9;
+}
+#reNwrap2013Sub {
+	width: 100%;
+	min-width: 995px;
+	height: auto !important;
+	background: url('http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/bg_headerArea_sub.gif') no-repeat 50% top;
+}
+#reNcontainer #reNcontents .categoryNavi {
+	position: relative;
+	height: 25px;
+	margin-bottom: 20px;
+	padding-top: 1px;
+	border-bottom: 1px solid #dbdbdb;
+	color: #666;
+	text-align: left;
+	line-height: 1.2;
+}
+.mB15 {
+	margin-bottom: 15px !important;
+}
+.arealLecTab {
+	float: left;
+	width: 754px;
+	padding-left: 6px;
+	border: 3px solid #638fd1;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTab.gif') repeat-x left 50%;
+}
+.mB5 {
+	margin-bottom: 5px !important;
+}
+.contOptionArea, .tbOptionArea {
+	clear: both;
+	position: relative;
+	overflow: hidden;
+}
+.tbArea {
+	clear: both;
+	position: relative;
+}
+.fR {
+	float: right;
+}
+a {
+	cursor: pointer;
+}
+a:link, a:visited {
+	color: #666;
+	text-decoration: none;
+}
+a:link {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:link {
+	color: #353535;
+	text-decoration: none;
+}
+fieldset, img {
+	border: 0;
+}
+img {
+	vertical-align: top;
+}
+.lms2Basic_tb {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 2px solid #6c81b4;
+	table-layout: fixed;
+	empty-cells: show;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style: normal;
 	font-weight: normal;
 }
-#ibm-secondary-navigation li {
-	padding-left: 0px;
+table th, table td {
+	word-break: break-all;
 }
-#ibm-navigation li#ibm-parent-link a:link, #ibm-navigation li#ibm-parent-link a:visited, #ibm-secondary-navigation li a:link, #ibm-secondary-navigation li a:visited {
+.txtL {
+	text-align: left !important;
+}
+.txtL {
+	text-align: left !important;
+}
+.txtL {
+	text-align: left !important;
+}
+.lms2Basic_tb td {
+	padding: 8px 3px 6px;
+	border-bottom: 1px solid #e7eef5;
+	color: #454545;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+}
+input {
+	outline-style: none;
+}
+.lms2Basic_tb td .lecStatus {
+	display: block;
+	width: 60px;
+	margin: 0 auto;
 	color: #666;
+	text-align: center;
 }
-#ibm-navigation #ibm-primary-links li {
-	border-style: solid;
-	border-left-width: 1px;
-	border-right-width: 1px;
-	border-color: #e0e0e0;
+.lms2Basic_tb td .lecStatus .mvNum {
+	color: #d60e2b;
+	font-weight: bold;
 }
-#ibm-navigation #ibm-primary-links #ibm-overview {
-	border-width: 1px;
-	border-style: solid;
-	border-top-color: #d7d9dd;
-	border-left-color: #a0a3a9;
-	border-bottom-color: #575a5d;
-	border-right-color: #92969b;
-}
-#ibm-navigation #ibm-primary-links a {
-	padding: 7px 14px 6px 7px;
+.lms2Basic_tb td .lecTit {
+	margin-bottom: 2px;
 	color: #4b4b4b;
-	display: block;
-	text-decoration: none;
-	*zoom:1: ;
-	border-top: 1px solid #f4f4f5;
-	border-bottom: 1px solid #d7d7d8;
-	_height: 1%;
+	font-weight: bold;
+	line-height: 16px;
 }
-#ibm-navigation #ibm-primary-links a:hover {
-text-decoration: none;
-background-color: #9c9c9c;
-background: -moz-linear-gradient(top, #DFE2E4, #C7C9CC) repeat scroll 0 0 transparent;
-background: -o-linear-gradient(top, #DFE2E4, #C7C9CC) repeat scroll 0 0 transparent;
-background: -webkit-linear-gradient(top, #DFE2E4, #C7C9CC);
-background: -ms-linear-gradient(top, #DFE2E4, #C7C9CC);
-background: linear-gradient(top, #DFE2E4, #C7C9CC);
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#DFE2E4', endColorstr='#C7C9CC')";
-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#DFE2E4', endColorstr='#C7C9CC');
-color: #000;
-text-shadow: 0px 1px 0 #fff;
-border-top-color: #e5e7e9;
+.lms2Basic_tb td .lecAddInfo {
+	height: 15px;
+	padding-top: 5px;
 }
-#ibm-navigation #ibm-primary-links #ibm-overview a, #ibm-navigation #ibm-primary-links #ibm-overview a:hover, #ibm-navigation #ibm-primary-links #ibm-overview a:active {
-	background-color: #9c9c9c;
-	background: -moz-linear-gradient(top, #b9bdc3, #62676b) repeat scroll 0 0 transparent;
-	background: -o-linear-gradient(top, #b9bdc3, #62676b) repeat scroll 0 0 transparent;
-	background: -webkit-linear-gradient(top, #b9bdc3, #62676b) repeat scroll 0 0 transparent;
-	background: -ms-linear-gradient(top, #b9bdc3, #62676b) repeat scroll 0 0 transparent;
-	background: linear-gradient(top, #b9bdc3, #62676b) repeat scroll 0 0 transparent;
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#b9bdc3', endColorstr='#62676b')";
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b9bdc3', endColorstr='#62676b');
-	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
-	border: 0px;
-	color: #fff;
+ol, ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+.lms2Basic_tb td .lecAddInfo li {
+	float: left;
+	height: 12px;
+	margin-left: 10px;
+	padding: 2px 0 0 10px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/vline_darkGray.gif') no-repeat left 3px;
+	line-height: 12px;
+}
+.lms2Basic_tb td .lecAddInfo li.first {
 	margin-left: 0px;
-	margin-right: 0px;
-	padding: 7px 6px 6px 7px;
+	padding-left: 0px;
+	background: none;
 }
-#ibm-navigation #ibm-primary-links #ibm-overview a, #ibm-navigation #ibm-primary-links #ibm-overview a:hover, #ibm-navigation #ibm-primary-links #ibm-overview a:active {
+.lms2Basic_tb td .lecAddInfo li a {
+	display: block;
+	height: 13px;
+	padding-top: 1px;
+	padding-top: 2px\9;
+	line-height: 12px;
+}
+:root .lms2Basic_tb td .lecAddInfo li a {
+	padding-top: 3px \0/IE9;
+}
+.lms2Basic_tb td .lecAddInfo li.lecInfo, .lms2Basic_tb td .lecAddInfo li.lecInfo a {
+	font-weight: bold;
+	color: #0281b4;
+}
+.lms2Basic_tb td .lecAddInfo li a .icoDisk {
+	margin-top: -2px;
+	margin-top: -3px\9;
+}
+:root .lms2Basic_tb td .lecAddInfo li a .icoDisk {
+	margin-top: -4px \0/IE9;
+}
+.lms2Basic_tb td .lecTchPhoto {
+	display: block;
+	overflow: hidden;
+	width: 61px;
+	height: 61px;
+	margin: 0 auto;
+	border: 1px solid #dadada;
+	text-align: center;
+}
+.lms2Basic_tb td .lecTchName {
+	display: block;
+	width: 60px;
+	margin: 0 auto;
+	padding-top: 5px;
+	text-align: center;
+	letter-spacing: -2px;
+}
+.lms2Basic_tb td .lecStatus .captionNum {
+	color: #007c8b;
 	font-weight: bold;
 }
-#ibm-leadspace-head {
-	display: none;
+.lms2Basic_tb td .lecAddInfo li a .icoBook {
+	margin-top: -3px;
+	margin-top: -4px\9;
 }
-.ibm-landing-page #ibm-leadspace-head, .ibm-portal-page #ibm-leadspace-head, .ibm-home-page #ibm-leadspace-head, #ibm-content #ibm-leadspace-head, .ibm-common-overlay #ibm-leadspace-head {
-	display: block;
+:root .lms2Basic_tb td .lecAddInfo li a .icoBook {
+	margin-top: -5px \0/IE9;
 }
-#ibm-content #ibm-leadspace-head {
-	background: none;
-	min-height: 70px;
-	_height: 70px;
+.lms2Basic_tb thead th {
+	padding: 10px 0 8px;
+	border-bottom: 1px solid #e7eef5;
+	background: #f4f7fa url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/vline_lms2Basic_tb_th.gif') no-repeat left 50%;
+	color: #000641;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 14px;
 }
-#ibm-content-body {
-	padding-top: 20px;
-	background: #FFF;
+.lms2Basic_tb thead th.first {
+	background-image: none;
 }
-#ibm-content-main {
-	clear: left;
+.tbOptionArea .txt {
+	font-size: 11px;
+	color: #000641;
+	line-height: 18px;
+}
+.fL {
 	float: left;
-	width: 576px;
 }
-.ibm-content-expand#ibm-top #ibm-content-main {
-	width: 100%;
+select, input.iText, textarea {
+	font-family: Dotum;
+	font-size: 1em;
+	padding: 3px 2px 2px 2px;
+	border: 1px solid #B0B0B0;
+	margin: 0;
 }
-.ibm-columns::after {
-	content: ".";
-	display: block;
-	height: 0px;
+.iBorderS {
+	height: 20px;
+	padding: 1px;
+	border: 1px solid #b0b0b0;
+	font-size: 12px;
+	color: #000;
+}
+.highSearchArea {
 	clear: both;
-	visibility: hidden;
 	overflow: hidden;
 }
-#ibm-content .ibm-columns {
-	clear: both;
-	margin: 0px;
+.highSearchArea .searchInfo {
 	overflow: hidden;
-	width: auto;
-	padding-bottom: 10px;
+	padding: 4px 10px;
+	border: 1px solid #e7eef5;
+	background-color: #f4f7fa;
 }
-.ibm-columns .ibm-col-1-1, .ibm-columns .ibm-col-2-1, .ibm-columns .ibm-col-4-1, .ibm-columns .ibm-col-4-2, .ibm-columns .ibm-col-4-3, .ibm-columns .ibm-col-5-1, .ibm-columns .ibm-col-5-2, .ibm-columns .ibm-col-5-3, .ibm-columns .ibm-col-5-4, .ibm-columns .ibm-col-6-1, .ibm-columns .ibm-col-6-2, .ibm-columns .ibm-col-6-3, .ibm-columns .ibm-col-6-4, .ibm-columns .ibm-col-6-5, .dijitDialogPaneContent .ibm-common-overlay .ibm-columns [class*='ibm-col-'] {
-	float: left;
-	padding: 0px 10px;
-	min-height: 1px;
-}
-#ibm-content .ibm-columns .ibm-col-2-1, #ibm-content .ibm-columns .ibm-col-4-2, #ibm-content .ibm-columns .ibm-col-6-3 {
-	width: 268px;
-}
-h2.ibm-rule, h3.ibm-rule, ul.ibm-rule, ol.ibm-rule {
-	border-top: 2px solid #666;
-	padding-top: 6px;
-	margin-top: 10px !important;
-}
-h2.ibm-rule, h2.ibm-alternate-rule, h2.ibm-rule-alternate {
-	font-size: 1.3em !important;
-}
-#ibm-content h2 {
-	font-size: 1.3em;
-}
-#ibm-content h2, #ibm-content h3, #ibm-content .ibm-columns h2, #ibm-content .ibm-columns h3 {
-	margin: 5px 10px;
-}
-#ibm-content .ibm-columns p + h2, #ibm-content .ibm-columns p + h3 {
-	margin-top: 6px;
-}
-#ibm-content .ibm-columns ul + h2, #ibm-content .ibm-columns ul + h3 {
-	padding-top: 8px;
-}
-#ibm-content .ibm-columns .ibm-col-1-1 h2, #ibm-content .ibm-columns .ibm-col-2-1 h2, #ibm-content .ibm-columns .ibm-col-4-1 h2, #ibm-content .ibm-columns .ibm-col-4-2 h2, #ibm-content .ibm-columns .ibm-col-4-3 h2, #ibm-content .ibm-columns .ibm-col-5-1 h2, #ibm-content .ibm-columns .ibm-col-5-2 h2, #ibm-content .ibm-columns .ibm-col-5-3 h2, #ibm-content .ibm-columns .ibm-col-5-4 h2, #ibm-content .ibm-columns .ibm-col-6-1 h2, #ibm-content .ibm-columns .ibm-col-6-2 h2, #ibm-content .ibm-columns .ibm-col-6-3 h2, #ibm-content .ibm-columns .ibm-col-6-4 h2, #ibm-content .ibm-columns .ibm-col-6-5 h2, #ibm-content .ibm-columns .ibm-col-1-1 h3, #ibm-content .ibm-columns .ibm-col-2-1 h3, #ibm-content .ibm-columns .ibm-col-4-1 h3, #ibm-content .ibm-columns .ibm-col-4-2 h3, #ibm-content .ibm-columns .ibm-col-4-3 h3, #ibm-content .ibm-columns .ibm-col-5-1 h3, #ibm-content .ibm-columns .ibm-col-5-2 h3, #ibm-content .ibm-columns .ibm-col-5-3 h3, #ibm-content .ibm-columns .ibm-col-5-4 h3, #ibm-content .ibm-columns .ibm-col-6-1 h3, #ibm-content .ibm-columns .ibm-col-6-2 h3, #ibm-content .ibm-columns .ibm-col-6-3 h3, #ibm-content .ibm-columns .ibm-col-6-4 h3, #ibm-content .ibm-columns .ibm-col-6-5 h3 {
-	margin: 5px 0;
-}
-#ibm-content p {
+.highSearchArea .searchOption {
+	overflow: hidden;
 	padding: 10px;
+	border-right: 1px solid #e7eef5;
+	border-bottom: 1px solid #e7eef5;
+	border-left: 1px solid #e7eef5;
+	background-color: #fff;
 }
-#ibm-content-main p {
-	font-size: 1em;
-	color: #333;
+.pT5 {
+	padding-top: 5px !important;
 }
-#ibm-content .ibm-container-body p, #ibm-content .ibm-columns p {
-	padding: 6px 0;
+.iBorderT {
+	height: 18px;
+	border: 1px solid #b0b0b0;
+	color: #000;
 }
-#ibm-content .ibm-columns h2 + p, #ibm-content .ibm-columns h3 + p {
-	padding-top: 0px !important;
-	margin-top: -2px !important;
+.arealLecTab li {
+	float: left;
+	height: 26px;
+	padding: 6px 4px 5px 0;
+	color: #2f2f2f;
+	font-size: 12px;
+	line-height: 26px;
+	text-align: center;
 }
-#ibm-content .ibm-columns h2.ibm-rule + p, #ibm-content .ibm-columns h3.ibm-rule + p, #ibm-content .ibm-columns h2.ibm-rule-alternate + p, #ibm-content .ibm-columns h3.ibm-rule-alternate + p, #ibm-content .ibm-columns h2.ibm-alternate-rule + p, #ibm-content .ibm-columns h3.ibm-alternate-rule + p {
-	margin-top: 0px !important;
-}
-#ibm-content ul {
-	padding: 0px 10px;
-}
-#ibm-content-main ul, #ibm-content-main ol {
-	color: #333;
-}
-#ibm-content .ibm-container-body ul, #ibm-content .ibm-columns ul {
-	padding: 0px;
-}
-#ibm-content .ibm-container-body p + ul, #ibm-content .ibm-columns p + ul {
-	padding: 0px 0 8px 0;
-}
-.ibm-reset-link, .ibm-livedoor-link, .ibm-hatena-link, .ibm-yahoojapan-link, .ibm-baidu-link, .ibm-renren-link, .ibm-kaixn-link, .ibm-wykop-link, .ibm-blip-link, .ibm-vaideo-link, .ibm-xing-link, .ibm-recommend-link, .ibm-fullstar-link, .ibm-halfstar-link, .ibm-nostar-link, .ibm-forum-link, .ibm-setting-link, .ibm-minimize-link, .ibm-maximize-link, .ibm-cautionLarge-link, .ibm-errorLarge-link, .ibm-checkLarge-link, .ibm-informationLarge-link, .ibm-questionLarge-link, .ibm-question-lg-link, .ibm-incorrectLarge-link, .ibm-newLarge-link, .ibm-non-secure-link, .ibm-callaction-link, .ibm-generic-link, .ibm-requestquote-link, .ibm-callme-link, .ibm-phone-link, .ibm-demo-link, .ibm-demoplay-link, .ibm-forward-pg-link, .ibm-signin-link, .ibm-delete-link, .ibm-add1-link, .ibm-upload-link, .ibm-add-link, .ibm-audio-link, .ibm-back-link, .ibm-back-em-link, .ibm-calculator-link, .ibm-calendar-link, .ibm-cancel-link, .ibm-caution-link, .ibm-confirm-link, .ibm-chat-link, .ibm-anchor-down-link, .ibm-anchor-down-em-link, .ibm-digg-link, .ibm-delicious-link, .ibm-download-link, .ibm-enlarge-link, .ibm-error-link, .ibm-information-link, .ibm-help-link, .ibm-linkedin-link, .ibm-password-link, .ibm-check-link, .ibm-new-link, .ibm-question-sm-link, .ibm-question-link, .ibm-incorrect-link, .ibm-secure-link, .ibm-pdf-link, .ibm-call-link, .ibm-call-info, .ibm-video-podcast-link, .ibm-popup-link, .ibm-print-link, .ibm-rss-link, .ibm-sort-down-link, .ibm-sort-link, .ibm-sort-up-link, .ibm-external-link, .ibm-anchor-up-link, .ibm-video-link, .ibm-wireless-link, .ibm-forward-link, .ibm-firstpage-link, .ibm-lastpage-link, .ibm-forward-em-link, .ibm-email-link, .ibm-facebook-link, .ibm-twitter-link, .ibm-symp-doc, .ibm-symp-presentation, .ibm-symp-spreadsheet, .ibm-birt-table-content, .ibm-birt-run-report, .ibm-birt-export-data, .ibm-birt-export-report, .ibm-blog, .ibm-community, .ibm-dogear, .ibm-flickr, .ibm-friendfeed, .ibm-stumbleupon, .ibm-usergroup, .ibm-youtube, .ibm-reset-link, .ibm-stumbleupon-link, .ibm-youtube, .ibm-youtube-link, .ibm-flickr-link, .ibm-friendfeed-link, .ibm-skype-link, .ibm-googleplus-link, .ibm-menu-link, .ibm-usergroup-link, .ibm-dogear-link, .ibm-community-link, .ibm-blog-link, .ibm-fontsize-link, .ibm-contrast-link, .ibm-backup-link, .ibm-halfstar-link, .ibm-document-link, .ibm-forward-pg-link, .ibm-demoplay-link, .ibm-livestream-link, .ibm-weibo-link, .ibm-tag-link, .ibm-chevron-link, .ibm-chevron-alternate-link, .ibm-upward-link {
-	padding-left: 16px !important;
-	background-repeat: no-repeat;
-	opacity: 0.8;
-	_line-height: normal !important;
-	*zoom:1: ;
-}
-.ibm-external-link, .ibm-popup-link, .ibm-generic-link, .ibm-callaction-link, .ibm-chevron-link, .ibm-chevron-alternate-link {
-	background-image: url(/i/v17/icons/ibm_sprite_links_blue_ON.png) !important;
-}
-.ibm-generic-link {
-	background-position: 0px -401px;
-}
-a.ibm-feature-link, p.ibm-ind-link a:visited, ul.ibm-link-list a:visited {
-	text-decoration: none;
-}
-span[class*='-link'], a[class*='-link'], table.ibm-data-table td a[class*='-link'] {
-	border-bottom: 0 none;
-}
-p.ibm-ind-link a, ul.ibm-link-list a {
+.arealLecTab li a {
 	display: block;
-	margin: 0;
-	padding: 0 0 0 16px;
-	text-decoration: none;
-}
-p.ibm-ind-link a, #ibm-related-content .ibm-container .ibm-col-6-1 p.ibm-ind-link a {
-	line-height: 1.06em;
-}
-#ibm-content-main a.ibm-back-em-link, #ibm-content-main a.ibm-forward-pg-link, li.ibm-forward-pg-link, li.ibm-back-em-link, li.ibm-anchor-up-link, li.ibm-anchor-down-em-link, #ibm-content-main a.ibm-forward-em-link, #ibm-content-main a.ibm-anchor-up-link, #ibm-content-main a.ibm-anchor-down-em-link, #ibm-content-main .ibm-generic-link, #ibm-content-sidebar a.ibm-back-em-link, #ibm-content-sidebar .ibm-generic-link, #ibm-content-sidebar a.ibm-anchor-down-em-link, #ibm-content-sidebar a.ibm-anchor-up-link, #ibm-content-sidebar a.ibm-forward-em-link, #ibm-content-main .ibm-generic-link:hover, #ibm-content-main a.ibm-back-em-link:hover, #ibm-content-main a.ibm-forward-em-link:hover, #ibm-content-main a.ibm-anchor-up-link:hover, #ibm-content-main a.ibm-anchor-down-em-link:hover, #ibm-content-sidebar .ibm-generic-link:hover, #ibm-content-sidebar a.ibm-back-em-link:hover, #ibm-content-sidebar a.ibm-anchor-down-em-link:hover, #ibm-content-sidebar a.ibm-anchor-up-link:hover, #ibm-content-sidebar a.ibm-forward-em-link:hover, li.ibm-highlight-link {
+	height: 26px;
+	padding-left: 10px;
+	padding-top: 1px\9;
+	#padding-top:1px: ;
+	_padding-top: 1px;
+	color: #2f2f2f;
 	font-weight: bold;
+	line-height: 27px;
 }
-#ibm-content ul li {
-	background: url(/i/v17/bullets/ibm_bullet_grey_off.png) no-repeat 0 10px;
-	padding: 5px 0 5px 8px;
-	height: 1%;
-	clear: left;
+.arealLecTab li a span {
+	padding-right: 10px;
 }
-#ibm-content ul.ibm-bullet-list li a, #ibm-related-content ul.ibm-bullet-list li a {
-	display: inline;
-}
-#ibm-content .ibm-columns .ibm-col-6-5 form p, #ibm-content .ibm-columns .ibm-col-6-4 form p, #ibm-content .ibm-columns .ibm-col-6-3 form p, #ibm-content .ibm-columns .ibm-col-6-2 form p, #ibm-content .ibm-columns .ibm-col-5-4 form p, #ibm-content .ibm-columns .ibm-col-5-3 form p, #ibm-content .ibm-columns .ibm-col-5-2 form p, #ibm-content .ibm-columns .ibm-col-5-1 form p, #ibm-content .ibm-columns .ibm-col-4-3 form p, #ibm-content .ibm-columns .ibm-col-4-2 form p, #ibm-content form .ibm-columns .ibm-col-4-2 p, #ibm-content .ibm-columns .ibm-col-4-1 form p, #ibm-content .ibm-columns .ibm-col-2-1 form p, #ibm-content form .ibm-columns .ibm-col-2-1 p, #ibm-content .ibm-columns .ibm-col-1-1 form p, #ibm-content .ibm-columns .ibm-col-6-5 form ul, #ibm-content .ibm-columns .ibm-col-6-4 form ul, #ibm-content .ibm-columns .ibm-col-6-3 form ul, #ibm-content .ibm-columns .ibm-col-6-2 form ul, #ibm-content .ibm-columns .ibm-col-5-4 form ul, #ibm-content .ibm-columns .ibm-col-5-3 form ul, #ibm-content .ibm-columns .ibm-col-5-2 form ul, #ibm-content .ibm-columns .ibm-col-5-1 form ul, #ibm-content .ibm-columns .ibm-col-4-3 form ul, #ibm-content .ibm-columns .ibm-col-4-2 form ul, #ibm-content form .ibm-columns .ibm-col-4-2 ul, #ibm-content .ibm-columns .ibm-col-4-1 form ul, #ibm-content .ibm-columns .ibm-col-2-1 form ul, #ibm-content form .ibm-columns .ibm-col-2-1 ul, #ibm-content .ibm-columns .ibm-col-1-1 form ul, #ibm-content .ibm-columns .ibm-col-6-5 form ol, #ibm-content .ibm-columns .ibm-col-6-4 form ol, #ibm-content .ibm-columns .ibm-col-6-3 form ol, #ibm-content .ibm-columns .ibm-col-6-2 form ol, #ibm-content .ibm-columns .ibm-col-5-4 form ol, #ibm-content .ibm-columns .ibm-col-5-3 form ol, #ibm-content .ibm-columns .ibm-col-5-2 form ol, #ibm-content .ibm-columns .ibm-col-5-1 form ol, #ibm-content .ibm-columns .ibm-col-4-3 form ol, #ibm-content .ibm-columns .ibm-col-4-2 form ol, #ibm-content form .ibm-columns .ibm-col-4-2 ol, #ibm-content .ibm-columns .ibm-col-4-1 form ol, #ibm-content .ibm-columns .ibm-col-2-1 form ol, #ibm-content form .ibm-columns .ibm-col-2-1 ol, #ibm-content .ibm-columns .ibm-col-1-1 form ol {
-	font-size: 1em;
-}
-table, caption, tbody, tfoot, thead, tr, th, td, textarea {
-	margin: 0px;
-	padding: 0px;
-	outline: 0px;
-	font-size: inherit;
-	vertical-align: baseline;
-}
-table {
-	border-collapse: collapse;
-}
-.dijitSelect {
-	line-height: 1.1em;
-}
-.v17 .dijitSelect {
-	padding: 5px 0 5px 10px;
-	border: 1px solid #DDD;
-	width: 100%;
-	max-width: 80%;
-	text-decoration: none;
-	line-height: 1.1em;
-	text-shadow: 0px 1px 0px rgba(255,255,255,0.8);
-	background-color: #D8D8D8;
-	background-color: transparent\9;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2F2F2', endColorstr='#D8D8D8');
-	background: -webkit-linear-gradient(top, rgba(242,242,242,.2), rgba(216,216,216,.5));
-	background: -moz-linear-gradient(top, rgba(242,242,242,.2), rgba(216,216,216,.5));
-	background: -o-linear-gradient(top, rgba(242,242,242,.2), rgba(216,216,216,.5));
-	background: -ms-linear-gradient(top, rgba(242,242,242,.2), rgba(216,216,216,.5));
-	background: linear-gradient(top, rgba(242,242,242,.2), rgba(216,216,216,.5));
-	color: #333;
-	text-decoration: none;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border-collapse: separate;
-}
-.v17 .dijitSelect .dijitButtonContents {
-	white-space: normal;
-}
-.v17 .dijitSelect .dijitArrowButton {
-	background: url(/i/v17/icons/dropdown_sprite.png) no-repeat 100% -4px;
-	*background-position:100% 0: ;
-	padding: 0;
-	width: 20px;
-}
-.v17 table.dijitSelect .dijitButtonContents, .v17 table.dijitSelect .dijitDownArrowButton {
-	*padding:5px 0 5px 10px: ;
-}
-.v17 table.dijitSelect .dijitButtonContents {
-	background: none;
-	padding: 0;
-}
-.dijitSelect .dijitArrowButton .dijitArrowButtonChar {
-	*font-size:0px: ;
-	_font-size: 11px;
-}
-.v17 .dijitSelect .dijitArrowButton .dijitArrowButtonChar {
-	display: none;
-	*display:block: ;
-	*color:transparent: ;
-	_color: #333;
-}
-.v17 table.dijitSelect span.dijitSelectLabel {
+.arealLecTab li a:hover, .arealLecTab li a:active, .arealLecTab li.on a {
 	display: block;
+	overflow: hidden;
+	height: 26px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTabOnL.gif') no-repeat left top;
+	color: #fff;
 }
-#ibm-content .ibm-columns .ibm-col-1-1, #ibm-content .ibm-columns .ibm-col-6-2, #ibm-content .ibm-columns .ibm-col-6-4 {
-	float: none;
-	width: auto;
-	clear: both;
+.arealLecTab li a:hover span, .arealLecTab li a:active span, .arealLecTab li.on a span {
+	display: block;
+	height: 26px;
+	height: 24px\9;
+	padding-top: 2px\9;
+	margin-top: -1px\9;
+	#height:24px: ;
+	#padding-top:2px: ;
+	#margin-top:-1px: ;
+	_height: 24px;
+	_padding-top: 2px;
+	_margin-top: -1px;
+	background: url('http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/bg_arealTabOnR.gif') no-repeat right top;
+	line-height: 26px;
 }
-#ibm-content #ibm-leadspace-head #ibm-leadspace-body {
-	padding-bottom: 0px;
+a:visited {
+	text-decoration: none;
 }
-#ibm-content #ibm-leadspace-head #ibm-leadspace-body {
-	width: 576px;
-	margin: 0;
+.ipsiCommonSchedule .sList_tit2 .yearIpsi_Schedule .ipsiMonth a:link, a:visited, a:hover, a:active {
+	color: #454545;
 }
-.ibm-content-expand #ibm-content #ibm-leadspace-head #ibm-leadspace-body {
-	width: 748px;
-}
-h1 {
-	font-size: 2.6em;
-	clear: both;
-	line-height: 1em;
-	text-shadow: 0px 1px 0px #fff;
-}
-#ibm-content #ibm-leadspace-head h1 {
-	padding: 10px 10px 0 !important;
-}
-#ibm-content #ibm-leadspace-head p {
-	width: auto;
-	padding: 0 0 10px 10px;
-}
-#ibm-content-head p em, #ibm-content #ibm-leadspace-head p em {
-	font-style: normal;
-	font-weight: bold;
+#reNcontainer #reNcontents .categoryNavi a {
+	display: inline-block;
+	margin-top: -1px;
+	margin-top: 0\9;
 	color: #666;
-	font-size: 1.1em;
 }
-#ibm-content #ibm-leadspace-head #ibm-leadspace-body p em span {
-	display: block;
+:root #reNcontainer #reNcontents .categoryNavi a {
+	margin-top: 2px;
 }
-
 </style>
-
 </head>
-<body class="v17" id="ibm-com" aria-busy="false" style="margin: 0px; padding: 0px;"><div class="ibm-content-expand" id="ibm-top"><div id="ibm-access-cntr" role="main"><div id="ibm-pcon">
-<div id="ibm-content">
+<body><div id="reNwrap2013Sub" style="margin-top: 100px;">
+<div id="reNcontainer">
 
-
-<div id="ibm-content-body" style="margin: 0px; padding: 0px;">
-<div id="ibm-content-main">
-
-	<div class="tab-container" style="margin: 0px;">
-
-<form method="post" action="/teamP/study/lecture/regSearch/list" name="pagingForm" id="pagingForm">
-        <div class="tab-content" style="border: 0px solid red; " id="lecResult">
-        	<select id="numPerPage" name="numPerPage" style="float: left; margin-right: 10px;"><option value="10">10개씩 보기</option><option value="20">20개씩 보기</option><option value="30">30개씩 보기</option></select>
-        	<div class="" style="overflow: visible; border: 0px solid transparent;">
-            <table cellspacing="0" class="tab-table result-table" id="table-0" style="clear: both;">
-            	<div class="tabTable-th">
-				<tr><th class="t-td-0">번호</th><th class="t-td-0">스케줄코드</th><th class="t-td-0">강의상태</th><th class="t-td-0">강의코드</th><th class="t-td-1">강의명</th><th class="t-td-2">강사명</th>
-					<th class="t-td-3">과목</th><th class="t-td-3">형태</th><th class="t-td-3">분류</th><th class="t-td-4">학생구분</th>
-                	<th class="t-td-6">강의정원</th><th class="t-td-7">강의실</th><th class="t-td-8">수강료</th>
-                	<th class="t-td-9">일</th><th class="t-td-10">월</th><th class="t-td-11">화</th><th class="t-td-12">수</th>
-                	<th class="t-td-13">목</th><th class="t-td-14">금</th><th class="t-td-15">토</th><th class="t-td-16">교재</th>
-                	<th class="t-td-17">삭제</th></tr>
-                </div>
-            <!--</table>
-            <div class="limit-table">
-            <table cellspacing="0" class="tab-table" style="border-top: 0px solid transparent;">-->
-                <tbody class="tabTable-td">
-                <!-- <tr><td class="t-td-0"><a href="@Study_lecDetail.jsp">00001</a></td><td class="t-td-1">혼자하는 수학</td><td class="t-td-2">이연희</td><td class="t-td-3">수학</td><td class="t-td-4">고등학생</td>
-                	<td class="t-td-5">3</td><td class="t-td-6">30</td><td class="t-td-7">102</td><td class="t-td-8">300,000</td>
-                	<td class="t-td-9">18:00</td><td class="t-td-10">18:00</td><td class="t-td-11">18:00</td><td class="t-td-12">18:00</td>
-                	<td class="t-td-13">18:00</td><td class="t-td-14">18:00</td><td class="t-td-15">18:00</td><td class="t-td-16">수학의 정석</td>
-                	<td class="t-td-17"><input type="button" value="삭제"></td></tr> -->
-			<c:forEach var="lecSchedule" items="${lschduleList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
-				<tr><td class="t-td-0">${pagingModel.no-status.count+1 }</td><td class="t-td-0"><a href="#">${lecSchedule.lsId }</a></td><td class="t-td-0">${lecSchedule.lsName }</td><td class="t-td-0">${lecSchedule.alId }</td><td class="t-td-1">${lecSchedule.lecture.alName }</td>
-					<td class="t-td-2">${lecSchedule.lecture.eKname }</td><td class="t-td-3">${lecSchedule.lecture.sbjName }</td><td class="t-td-3">${lecSchedule.lecture.slName }</td><td class="t-td-3">${lecSchedule.lecture.lcName }</td><td class="t-td-4">${lecSchedule.lecture.sgName }</td>
-                	<td class="t-td-6">${lecSchedule.lsMax }</td><td class="t-td-7">${lecSchedule.lrName }</td><td class="t-td-8">${lecSchedule.lsCost }</td>
-                <%-- <c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status2">
-                	<td class="t-td-9">${lecDay.ltFromTime } - ${lecDay.ltToTime }</td>
-                </c:forEach> --%>
-                <c:forEach var="i" begin="1" end="7" varStatus="status2">
-                	<td class="t-td-9">
-                	<c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status3">
-	                	<c:if test="${lecDay.dCode == i }" >
-	                		${lecDay.ltFromTime } - ${lecDay.ltToTime }
-	                	</c:if>
-                	</c:forEach>
-                	</td>
-                </c:forEach>
-                	<td class="t-td-16">${lecSchedule.lecture.tbName } - ${lecSchedule.lecture.sbjName2 }&nbsp;${lecSchedule.lecture.cName }</td><td class="t-td-17"><input type="button" value="삭제"></td></tr>
-			</c:forEach>
-			<!-- <tr><td class="t-td-0">t</td><td class="t-td-0"><a href="#">t</a></td><td class="t-td-1">t</td><td class="t-td-2">t</td>
-                	<td class="t-td-3">t</td><td class="t-td-4">t</td><td class="t-td-5">t</td>
-                	<td class="t-td-6">t</td><td class="t-td-7">t</td><td class="t-td-8">t</td>
-                	<td class="t-td-9">t</td><td class="t-td-10">t</td><td class="t-td-11">t</td>
-                	<td class="t-td-12"><input type="button" value="삭제"></td></tr> -->
-			
-                
-                </tbody>
-            </table>
-            </div>
-            
-            <div class="paging">
-            	<!-- <span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
-            		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span> -->
-			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>&nbsp;...</span></c:if>
-				&nbsp;&nbsp;<span>
-			<c:forEach var="i" begin="${pagingModel.firstPage }" end="${pagingModel.lastPage }" step="1" varStatus="status">
-				<a href="#" value="${i }">${i }</a>&nbsp;&nbsp;
-			</c:forEach>
-				</span>
-			<c:if test="${pagingModel.nextLink > 0}"><span>...&nbsp;<a href="#" value="${pagingModel.nextLink }">다음 10개</a></span></c:if>
-			<c:if test="${pagingModel.prevLink > 0 && pagingModel.nextLink == 0}"><span>...&nbsp;<a href="#">처음으로</a></span></c:if>
-            </div>
-        </div>
-        <input type="hidden" value="${pagingModel.curPage }" name="curPage" id="curPage">
-        <input type="hidden" value="${pagingModel.numPerPage }" name="numPerPageSET" id="numPerPageSET">
-        <!-- <input type="submit" value="테스트용버튼"> -->
-</form>
-
+	<div class="lnbArea" id="reNlnb">
+							<div class="lnbMenuArea mB10">					
+							<div class="lnbTit"><a href="#"><img alt="고3·N수" src="http://image.ebsi.co.kr/ebsi/images/reNskin2013/layout/reNlnb05_tit.gif"></a></div>
+					<div class="lnbMenu">
+						<ul class="menuList" id="lnbList">
+						<li class=" on subMnu">
+							<a class="subMnu menuB" href="#none">영역별</a>
+							<ul class="menuList_s" style="display: block;">
+								<li><a href="#">국어</a></li>
+								<li><a href="#">수학</a></li>
+								<li><a href="#">영어</a></li>
+								<li class=" on"><a href="#">사회탐구</a></li>
+								<li><a href="#">과학탐구</a></li>
+								<li><a href="#">직업탐구</a></li>
+								<li><a href="#">제2외국어</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class=" menuD" href="#">시리즈별</a>
+						</li>
+						<li>
+							<a class=" menuD" href="#">선생님별</a>
+						</li>
+						<li class=" subMnu">
+							<a class="menuB" href="#none">시즌추천강좌</a>
+							<ul class="menuList_s" style="display: block;">
+								<li><a href="#">7030 Final 실전모의고사&nbsp;<img class="icoNew" alt="new" src="http://image.ebsi.co.kr/ebsi/images/reNpotalUI/layout/lnbicon_new.gif"></a></li>
+								<li><a href="#">수능완성</a></li>
+								<li><a href="#">해법 N제</a></li>
+								<li><a href="#">인터넷수능</a></li>
+								<li><a href="#">수능특강</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class=" menuD" href="#">통합Q&amp;A&nbsp;<img class="icoNew" alt="hot" src="http://image.ebsi.co.kr/ebsi/images/reNpotalUI/layout/lnbicon_hot.gif"></a>
+						</li>
+						<li>
+							<a class=" menuD" href="#">수능개념 FAQ&nbsp;<img class="icoNew" alt="new" src="http://image.ebsi.co.kr/ebsi/images/reNpotalUI/layout/lnbicon_new.gif"></a>
+						</li>
+						</ul>
+					</div>							
+				</div>			
+<script type="text/javascript">new lnbMenu();</script>
 
 	</div>
+	
+	
+	
+	<div id="reNcontents">
+		<div class="arealLecTab mB15">
+				<ul>
+					<li class="on"><a href="#none" data-clas-code=""><span>전체</span></a></li>
+					<li><a href="#none" data-clas-code="A50003"><span>사회문화</span></a></li>
+					<li><a href="#none" data-clas-code="A50004"><span>한국지리</span></a></li>
+					<li><a href="#none" data-clas-code="A50006"><span>경제</span></a></li>
+					<li><a href="#none" data-clas-code="A50007"><span>세계지리</span></a></li>
+					<li><a href="#none" data-clas-code="A50009"><span>세계사</span></a></li>
+					<li><a href="#none" data-clas-code="A50012"><span>법과정치</span></a></li>
+					<li><a href="#none" data-clas-code="A50013"><span>동아시아사</span></a></li>
+					<li><a href="#none" data-clas-code="A50014"><span>한국사</span></a></li>
+					<li><a href="#none" data-clas-code="A50015"><span>윤리와사상</span></a></li>
+					<li><a href="#none" data-clas-code="A50016"><span>생활과윤리</span></a></li>
+					</ul>
+		</div>
+		
+		<form name="sfrm" id="sfrm" method="post">
+			<input name="targetCode" id="targetCode" type="hidden" value="D300">
+			<input name="categoryCode" id="categoryCode" type="hidden" value="A500">
 
-
+			<input name="dtlCateCd" id="dtlCateCd" type="hidden" value="">
+			<input name="sortOrd" id="sortOrd" type="hidden" value="lec_stt_dt">
+			<input name="searchDisplayYn" id="searchDisplayYn" type="hidden" value="Y">
+			<input name="openYear" id="openYear" type="hidden" value="2014">
+			
+			<!-- 고급검색 -->
+			<div class="highSearchArea mB5">
+				<div class="searchInfo">
+					<span class="fR"><a href="#none"><img name="btnSpecSrch" id="btnSpecSrch" alt="고급검색" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/btn_highSearch.gif"></a></span>
+				</div>
+				<div class="searchOption">
+										
+					<select name="series" class="iBorderS" id="series" style="width: 200px;">
+						<option value="">-시리즈 전체-</option>
+						<option value="PRO_781">9월 모의평가 해설강의</option>
+						<option value="PRO_777">One Point Lesson 현장강의</option>
+						<option value="PRO_776">9월 모의평가 대비 EBS 리허설</option>
+						<option value="PRO_775">7030 파이널 실전모의고사</option>
+						<option value="PRO_772">고3 여름방학 대 특강</option>
+						<option value="PRO_769">7월 학력평가 해설강의</option>
+						<option value="PRO_765">수능완성</option>
+						<option value="PRO_760">6월 모의평가 해설강의</option>
+						<option value="PRO_751">EBS N제</option>
+						<option value="PRO_753">6월모평대비 특강 및 모의고사</option>
+						<option value="PRO_752">사탐 알짜 특강</option>
+						<option value="PRO_747">4월 학평 해설강의</option>
+						<option value="PRO_744">3월 학평 해설강의</option>
+						<option value="PRO_740">3월 학평 대비 특강(고3)</option>
+						<option value="PRO_697">수능특강</option>
+						<option value="PRO_723">수능기출플러스</option>
+						<option value="PRO_704">수능개념</option>
+						<option value="PRO_701">예비 고3 특강</option>
+						</select>
+					
+					<select name="learnStepCd" class="iBorderS" id="learnStepCd" style="width: 100px;">
+						<option value="">-학습단계-</option>
+						<option value="ASL01">수능입문</option>
+							<option value="ASL02">개념완성</option>
+							<option value="ASL03">실력완성</option>
+							<option value="ASL04">문제풀이</option>
+							<option value="ASL05">최종마무리</option>
+						</select>
+					
+					<select name="tchrId" class="iBorderS" id="tchrId" style="width: 80px;">
+						<option value="">-선생님-</option>
+						<option value="@*09st-so00">강봉균</option>
+						<option value="@*09st-so02">강승희</option>
+						<option value="@ebsint_so103">고아름</option>
+						<option value="@*ebsint_so87">권용기</option>
+						<option value="@ebstv_so40">김건태</option>
+						<option value="@*ebsint_so65">김성묵</option>
+						<option value="@*ebsint_so96">김종익</option>
+						<option value="@*ebsint_so97">김준우</option>
+						<option value="@ebsint_so106">김한나</option>
+						<option value="@ebsint_so102">김현진</option>
+						<option value="@*ebsint_so88">류성완</option>
+						<option value="@*ebsint_so82">문병일</option>
+						<option value="@*ebsint_so72">민병권</option>
+						<option value="@*ebstut_so99">박봄</option>
+						<option value="@*ebsint_so69">박정연</option>
+						<option value="@*09st-so01">송기택</option>
+						<option value="@*ebsint_so31">신승진</option>
+						<option value="@*ebsint_so99">윤민희</option>
+						<option value="@ebsint_so100">윤초롱</option>
+						<option value="@*ebsint_so42">윤희석</option>
+						<option value="@*ebsint_so89">이남승</option>
+						<option value="@ebsint_so101">이다지</option>
+						<option value="@ebsint_so104">이윤지</option>
+						<option value="@*ebsint_so71">이지영</option>
+						<option value="ebstv_so13">이희명</option>
+						<option value="@*ebsint_so73">최경석</option>
+						<option value="@*ebsint_so92">최양진</option>
+						<option value="@ebstv_so39">최적</option>
+						<option value="ebstut_so31">최태성</option>
+						<option value="@*ebsint_so95">한도균</option>
+						<option value="@*ebsint_so86">황승민</option>
+						<option value="@ebsint_so107">황진상</option>
+						</select>
+					
+					<div class="pT5">
+						<select name="searchType" class="iBorderS" id="searchType" style="width: 90px;">
+							<option value="">-직접검색-</option>
+							<option value="sbjtNm"> -강좌명- </option>
+							<option value="bookNm"> -교재명- </option>
+							<option value="tchrNm"> -선생님- </option>
+						</select>
+						
+						<input name="keyWord" class="iBorderT" id="keyWord" style="width: 430px;" type="text" maxlength="30" value="">
+						<a href="#none"><img name="btnSrch" id="btnSrch" alt="검색" src="http://image.ebsi.co.kr/ebsi/images/potalUI/btn/btn_search.gif"></a>
+					</div>
+				</div>
+			</div>
+			<!-- //고급검색 -->		
+			</form>
+			
+			<div class="tbOptionArea mB5">
+				<p class="txt mB5">* 총 <strong>195</strong>개 강좌</p>
+				<div class="fL">
+					<select name="_openYear" class="iBorderS" id="_openYear" style="width: 65px;">
+						<option value="">-년도-</option>
+						<option value="2014" selected="">2014</option>
+						<option value="2013">2013</option>
+						<option value="2012">2012</option>
+						<option value="2011">2011</option>
+						<option value="2010">2010</option>
+						<option value="2009">2009</option>
+						</select>
+					
+					<select name="_sortOrd" class="iBorderS" id="_sortOrd" style="width: 100px;">
+						<option selected="selected" value="lec_stt_dt">최신강좌순</option>
+						<option value="cre_date">최신등록순</option>
+						<option value="hit_cnt">인기순</option>
+					</select>
+				</div>
+				<div class="fR">
+					<a href="#none"><img name="btnAtndLec" id="btnAtndLec" alt="선택 강좌 수강 신청" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/btn_selLecApply_orange.gif"></a>
+				</div>
+			</div>
+			
+			
+			<!-- 리스트 -->
+			<div class="tbArea">
+				<table width="100%" class="lms2Basic_tb mB15" summary="강좌목록을 선생님,대상/학습단계,강좌명,탑재현황(자막현황),맛보기로 나열">
+					<caption>강좌목록</caption>
+					<colgroup>
+						<col width="11%"><col width="12%"><col width="52%"><col width="10%"><col width="7%"><col width="8%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="first">형태/<br>&nbsp;&nbsp;&nbsp;분류</th>
+							<th>강사명</th>
+							<th>강의명</th>
+							<th>교재</th>
+							<th>수강료</th>
+							<th id="applyAtnd">수강신청</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach var="lecSchedule" items="${lschduleList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
+					<tr>
+							<td>${lecSchedule.lecture.slName }<br>${lecSchedule.lecture.lcName }</td>
+							<td>
+								<!-- 비연합강좌인경우 -->
+										<span class="lecTchPhoto"><img width="61" height="61" onerror="OnImageNotFound(this)" alt="" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so89_2.jpg"></span>
+										<span class="lecTchName">${lecSchedule.lecture.eKname }</span>
+									</td>
+							<td class="txtL">
+								<div class="lecSort mB5">
+									<img alt="NEW" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecNew.gif"><img alt="완강" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecFinish.gif"><img alt="자막" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecCaption.gif"></div>
+								<p class="lecTit">
+									<a href="#">${lecSchedule.lecture.sbjName }</a>
+										</p>
+								<div class="lecAddInfo">
+									<ul>
+										<li class="first lecInfo">
+										<a href="javascript:Fn_PopupCenter('S20140000730','sbjtInfo');">
+											강의시간</a>
+										</li>
+									<c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status3">
+					                	<li>${lecDay.dName } : ${lecDay.ltFromTime } - ${lecDay.ltToTime }</li>
+				                	</c:forEach>
+										<!-- <li>
+											<a href="#" target="_blank">비교재안내&nbsp;<img class="icoDisk" alt="파일아이콘" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/icon_disk.jpg"></a>
+												</li> -->
+										</ul>
+								</div>
+							</td>
+							<td>
+								<span class="lecStatus"><span class="mvNum">${lecSchedule.lecture.tbName }</span> - </span>
+								<span class="lecStatus"><span class="captionNum">${lecSchedule.lecture.sbjName2 }</span> ${lecSchedule.lecture.cName }</span></td>
+							<td>
+								${lecSchedule.lsCost}
+									</td>
+							<td>
+							<input name="chkSbjt" id="chkSbjt_S20140000730" type="checkbox" value="S20140000730">
+							</td>
+						</tr>
+					</c:forEach>
+					
+					<tr>
+							<td>고3<br>개념완성</td>
+							<td>
+								<!-- 연합강좌인경우 -->
+												<span id="tchrImg_194_1">
+													<span class="lecTchPhoto">
+														<img width="61" height="61" onerror="OnImageNotFound(this)" alt="박정연" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so69_2.jpg">
+													</span>
+													<span class="lecTchName">
+														[연합] 박정연</span>
+												</span>
+									<!-- 연합강좌인경우 -->
+												<span id="tchrImg_194_2" style="display: none;">
+													<span class="lecTchPhoto">
+														<img width="61" height="61" onerror="OnImageNotFound(this)" alt="민병권" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so72_2.jpg">
+													</span>
+													<span class="lecTchName">
+														[연합] 민병권</span>
+												</span>
+									<script type="text/javascript">
+											//<![CDATA[
+											     sbjtIds.push(194);
+											//]]>
+											</script>			
+									</td>
+							<td class="txtL">
+								<div class="lecSort mB5">
+									<img alt="완강" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/ico_lecFinish.gif"></div>
+								<p class="lecTit">
+									<a href="#">[5분사탐] 세계지리 지도여행</a>
+										</p>
+								<div class="lecAddInfo">
+									<ul>
+										<li class="first lecInfo">
+										<a href="javascript:Fn_PopupCenter('S20140000319','sbjtInfo');">
+											강좌안내</a>
+										</li>
+										<li>
+											<a href="#" target="_blank">비교재안내&nbsp;<img class="icoDisk" alt="파일아이콘" src="http://image.ebsi.co.kr/ebsi/images/potalUI/lecture/icon_disk.jpg"></a>
+												</li>
+										</ul>
+								</div>
+							</td>
+							<td>
+								<span class="lecStatus">
+									<span class="mvNum">
+										63</span> / 63</span>
+								</td>
+							<td>
+								<a href="#none"><img onclick="ShowPreviewPlayer('S20140000319', event);" alt="맛보기 강좌" src="http://image.ebsi.co.kr/ebsi/images/potalUI/entrance/btn_play.jpg"></a>
+									</td>
+							<td>
+							<input name="chkSbjt" id="chkSbjt_S20140000319" type="checkbox" value="S20140000319">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //리스트 -->
+			
+	</div>
+	
+	
 </div>
-</div>
-</div>
-<!-- LEFTNAV_BEGIN -->
-<!--  Main nav links: ICC5 - F037275N34322B72-->
-<div id="ibm-navigation" role="navigation" aria-label="Primary">
-<h2 class="ibm-access" style="display: none;">Content navigation</h2>
-<ul id="ibm-primary-links">
-<li id="ibm-overview"><a href="//www.ibm.com/account/us/en/"><!-- My IBM -->MY ALPHA STUDY</a></li>
-<li><a href="//www.ibm.com/account/myaccounts/us/en/"><!-- My Accounts -->내 계정</a></li>
-<li><a href="https://www.ibm.com/account/myibm/myinterestView.do?cc=us&amp;lc=en"><!-- My interests -->내 성적</a></li>
-<li><a href="http://www.ibm.com/account/mycommunity/us/en/"><!-- My community spaces -->내 커뮤니티</a></li>
-<li><a href="https://www.ibm.com/account/myibm/profile.do?cc=us&amp;lc=en"><!-- My profile -->내 프로필</a></li>
-</ul>
-
-<div id="ibm-secondary-navigation" role="navigation" aria-label="Secondary">
-<!--  Lower links: ICC7 - P617422L88932J47-->
-<h2>Related links</h2>
-<ul id="ibm-related-links">
-<li><a href="#"><!-- Stockholder services -->서울대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->고려대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->연세대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->포항공과대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->카이스트</a></li>
-<li><a href="#"><!-- Stockholder services -->서강대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->성균관대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->한양대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->이화여자대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->중앙대학교</a></li>
-<li><a href="#"><!-- Stockholder services -->인하대학교</a></li>
-</ul>
-</div>
-</div>
-<!-- LEFTNAV_END -->
-</div></div></div></body>
+</div></body>
 </html>
-

@@ -1,14 +1,17 @@
-<%@page import="mem.wit.Insa.PerDAO"%> 
+<%@page import="com.wit.member.Employee"%>
+<%@page import="mem.wit.Insa.PerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<jsp:useBean id="perDTO"  class = "mem.wit.Insa.PerDTO"></jsp:useBean>
 <jsp:setProperty property="*" name="perDTO"/>
-
 <%
 
+
 PerDAO dao = PerDAO.getInstance();
+
 //perDTO.seteId(request.getSession("세션아이디"));
-int su = dao.perInsert(perDTO);
+Employee employee = (Employee) session.getAttribute("employee");
+int su = dao.perInsert(perDTO,employee.geteId());
 
 String msg = "", url = "";
 if(su != 0)

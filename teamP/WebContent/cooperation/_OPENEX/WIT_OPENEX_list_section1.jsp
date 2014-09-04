@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="mem.wit.openex.OSubjecNametListDTO"%> 
+<%@page import="mem.wit.openex.OSubjecNametListDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -16,12 +16,20 @@
 <script type="text/javascript" src="OPENEXscript/graphics.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="OPENEXcss/WIT_OPENEX_section.css">
-
 <%
 	int recSuPerPage = 10;
 %>
-
-<form name="openex_list_board" action="WIT_OPENEX_list_section1.jsp">
+<script type="text/javascript">
+	$(function() {
+		$('[id^=MD_NO]').click(function() {
+			var MD_NO = this.id;
+			$('#resultMD_NO').empty();
+			$('#resultMD_NO').val((MD_NO).substr('5', '2'));
+			location.href='WIT_OPENEX_list2.jsp?MD_NO='+$('#resultMD_NO').val();
+		});
+	});
+</script>
+<form name="openex_list_board" action="WIT_OPENEX_list2.jsp">
 	<div id="list_selectBtn">
 		<div id="list_selectBtn_listBtn">
 			<br>게시판 보기
@@ -36,6 +44,9 @@
 				<td colspan="5" class="openex_archive_record_title">OPENEX
 					SOLVE SYSTEM</td>
 			</tr>
+			<tr style="display: none">
+				<td><input type="text" id="resultMD_NO" name="MD_NO"></td>
+			</tr>
 			<tr>
 				<td class="boardMainMenuList">철학</td>
 				<td class="boardMainMenuList">종교</td>
@@ -47,35 +58,40 @@
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList1}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList2}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList3}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList4}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList5}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
@@ -91,35 +107,40 @@
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList6}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList7}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList8}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList9}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>
 				<td class="boardSubMenuList">
 					<ul class="boardMenuList">
 						<c:forEach var="item" items="${subNameList10}">
-							<li><a href="WIT_OPENEX_list2.jsp">${item.MD_NAME}</a></li>
+							<li><input type="button" value="${item.MD_NAME}"
+								id="MD_NO${item.MD_NO}"></li>
 						</c:forEach>
 					</ul>
 				</td>

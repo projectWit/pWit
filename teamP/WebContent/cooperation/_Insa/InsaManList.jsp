@@ -29,6 +29,10 @@
 	function Insert() {
 		window.open("InsaInsert.jsp", "", "");
 	}
+	function detailPage(eId)
+	{
+		window.open("InsaManChk.jsp?eId=" + eId ,"","width = 800px, height = 600px");
+	}
 </script>
 <%
 	InsaDAO dao = new InsaDAO();
@@ -99,7 +103,7 @@
 							dto = (InsaDTO) dtoL.get(i);
 					%>
 
-					<tr id="rpt_ctl00_trRow">
+					<tr id="rpt_ctl00_trRow" onclick = "detailPage('<%=dto.geteId()%>')">
 					
 						<td><span id="eId"><a href="#" class="list_link"><%=dto.geteId()%></a></span></td>
 						<td><span id="eKName"><%=dto.geteKName()%></span></td>

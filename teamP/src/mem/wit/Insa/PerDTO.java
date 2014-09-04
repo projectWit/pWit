@@ -1,14 +1,19 @@
 package mem.wit.Insa;
 
-import org.apache.catalina.connector.Request;
 
 public class PerDTO {
 	private String hName, hRelate, hHome, hBth, eId;
 	private String hMryDate, hBhRelate, hArmyNoRsn;
-	private int hBthCode, hMryCode, hAbleCode, hBhCode, solCd, clsCd;
+	private int hBthCode, hMryCode, hAbleCode, hArmyCode, hBhCode, solCd, clsCd;
 	
 	public String geteId() {
 		return eId;
+	}
+	public int gethArmyCode() {
+		return hArmyCode;
+	}
+	public void sethArmyCode(int hArmyCode) {
+		this.hArmyCode = hArmyCode;
 	}
 	public void seteId(String eId) {
 		this.eId = eId;
@@ -91,26 +96,7 @@ public class PerDTO {
 	public void setClsCd(int clsCd) {
 		this.clsCd = clsCd;
 	}
-	public PerDTO(String hName, String hRelate, String hHome, String hBth,
-			String eId, String hMryDate, String hBhRelate, String hArmyNoRsn,
-			int hBthCode, int hMryCode, int hAbleCode, int hBhCode, int solCd,
-			int clsCd) {
-		super();
-		this.hName = hName;
-		this.hRelate = hRelate;
-		this.hHome = hHome;
-		this.hBth = hBth;
-		this.eId = eId;
-		this.hMryDate = hMryDate;
-		this.hBhRelate = hBhRelate;
-		this.hArmyNoRsn = hArmyNoRsn;
-		this.hBthCode = hBthCode;
-		this.hMryCode = hMryCode;
-		this.hAbleCode = hAbleCode;
-		this.hBhCode = hBhCode;
-		this.solCd = solCd;
-		this.clsCd = clsCd;
-	}
+	
 	public PerDTO() {
 		super();
 	}

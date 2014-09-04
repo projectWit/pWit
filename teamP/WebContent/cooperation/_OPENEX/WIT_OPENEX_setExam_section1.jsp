@@ -15,7 +15,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body>
-	<form action="WIT_OPENEX_setExam2.jsp">
+	<form action="/teamP/WIT_OPENEX_setExam_section4.op">
 		<div ID="OPENEX_setExam_menuContainer">
 			<div id="menuContaner">
 				<table align="center">
@@ -58,8 +58,8 @@
 					<tr>
 						<td>
 							<div id="openex_setExam_selectbox" style="text-align: center;">
-								<input type="hidden" id="sel1stCategoryHd"> <input
-									type="hidden" id="sel2ndCategoryHd">
+								<input type="hidden" id="sel1stCategoryHd" name="MJ_NO">
+								<input type="hidden" id="sel2ndCategoryHd" name="MD_NO">
 
 								<table>
 									<tr>
@@ -68,24 +68,27 @@
 											style="width: 150px;"></span></td>
 									</tr>
 									<tr>
-										<td><input type="text" placeholder="소분류 입력" required></td>
+										<td><input type="text" placeholder="소분류 입력" required
+											name="EX_MNNAME"></td>
 										<td><input type="text" placeholder="시험 제목을 입력해 주세요."
-											style="width: 250px;" required></td>
+											style="width: 250px;" required name="EX_TITLE"></td>
 									</tr>
 									<tr>
 										<td colspan="2"><textarea cols="65" rows="3" required
-												placeholder="시험에 관한 간략한 설명을 입력해주세요."></textarea></td>
+												placeholder="시험에 관한 간략한 설명을 입력해주세요." name="EX_EXPLAIN"></textarea></td>
 									</tr>
 									<tr>
 										<td colspan="2"><input type="text" style="width: 100%"
-											placeholder="참고자료를 입력해주세요. 응시자에게 제공됩니다. (링크 혹은 제목)" required></td>
+											placeholder="추천강좌를 입력해주세요. 응시자에게 제공됩니다.(링크 혹은 제목)" required
+											name="EX_RECOMMENDLECTURE"></td>
 									</tr>
 									<tr>
 										<td colspan="2"><input type="text" style="width: 100%"
-											placeholder="추천강좌를 입력해주세요. 응시자에게 제공됩니다.(링크 혹은 제목)" required></td>
+											placeholder="참고자료를 입력해주세요. 응시자에게 제공됩니다. (링크 혹은 제목)" required
+											name="EX_REFERENCE"></td>
 									</tr>
 								</table>
-								<select>
+								<select name="EXTIMELIMIT">
 									<%
 										for (int i = 10; i <= 50; i++) {
 									%>
@@ -95,21 +98,22 @@
 									<%
 										}
 									%>
-								</select> <select id="openex_exCount" onchange="exCount(this)">
+								</select> <select id="openex_exCount" onchange="exCount(this)"
+									name="EX_QUESTIONSCOUNT">
 									<%
 										for (int i = 5; i <= 50; i++) {
 									%>
-									<option>
-										<%=i%>문제
+									<option value="<%=i%>">
+										<%=i%>문항
 									</option>
 									<%
 										}
 									%>
-								</select> <select>
-									<option>초급</option>
-									<option>중급</option>
-									<option>고급</option>
-									<option>심화</option>
+								</select> <select name="DIF_NO">
+									<option value="1">초급</option>
+									<option value="2">중급</option>
+									<option value="3">고급</option>
+									<option value="4">심화</option>
 								</select><br> <br> <input type="submit" value="출제 시작"
 									class="colorBtn">
 							</div>

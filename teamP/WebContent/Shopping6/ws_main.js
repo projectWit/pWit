@@ -17,20 +17,35 @@ HeaderWs.makeWs = {
 		var _this = this;
 		var element = [];
 		element.push('<div class="xans-element- xans-layout xans-layout-statelogoff ">');
-		element.push('<img src="img/ws_top_tm01.gif" usemap="#Map_tm01"/>');
+		/*element.push('<img src="img/ws_top_tm01.gif" usemap="#Map_tm01"/>');
 		element.push('<map name="Map_tm01" id="Map_tm01">');
 		element.push('<area shape="rect" coords="30,6,55,27" href="../WIT_Main_index.jsp"/>');
 		element.push('<area shape="rect" coords="70,5,151,27" href="/order/basket.html" alt="장바구니"/>');
 		element.push('<area shape="rect" coords="159,3,253,27" href="/myshop/order/list.html" alt="주문배송조회"/>');
 		element.push('<area shape="rect" coords="267,4,359,26" href="/board/free/list.html?board_no=3" alt="자주하는질문"/>');
-		element.push('</map>');
+		element.push('</map>');*/
 		element.push('<img src="images/system/ws_top_log01.png" usemap="#Map_log01"/>');
 		element.push('<map name="Map_log01" id="Map_log01">');
-		element.push('<area shape="rect" coords="16,3,72,24" href="SellerPage.html"/>');		// 판매자 페이지로
-		element.push('<area shape="rect" coords="74,3,125,22" href="AdminPage.html"/>');		// 관리자 페이지로
-		element.push('<area shape="rect" coords="127,3,187,22" href="SLogin.html"/>');		// 로그인 페이지로
+		element.push('<area shape="rect" coords="16,3,72,24"  href="SellerPage.html"/>');		// 판매자 페이지로
+		element.push('<area shape="rect" coords="74,3,125,24" href="AdminPage.html"/>');		// 관리자 페이지로
+		element.push('<area shape="rect" coords="127,3,187,24" href="SMemberLogin.html"/>');		// 로그인 페이지로
 																								// 회원가입 페이지로
-		element.push('<area shape="rect" coords="201,4,298,23" href="SMemberJoin.html" target="_blank" onclick="winPop(this.href); return false;"/>');
+		element.push('<area shape="rect" coords="201,3,298,24" href="SMemberJoin.html" target="_blank" onclick="winPop(this.href); return false;"/>');
+		element.push('</map>');
+		element.push('</div>');
+		return element.join('');	
+	},
+	
+	makeSellerHeaderMenu1 : function() {
+		var _this = this;
+		var element = [];
+		element.push('<div id="sellerHeaderMenu">');
+		element.push('<img src="images/system/ws_top_log01_sel1.png" usemap="#Map_log01"/>');
+		element.push('<map name="Map_log01" id="Map_log01">');
+		element.push('<area shape="rect" coords="16,3,125,24"  href="index.html"/>');			// 쇼핑몰 페이지로
+		element.push('<area shape="rect" coords="131,3,195,24" href="AdminPage.html"/>');		// 관리자 페이지로
+																								// 로그아웃
+		element.push('<area shape="rect" coords="201,3,298,24" onClick="sellerLogout();" href="#"/>');
 		element.push('</map>');
 		element.push('</div>');
 		return element.join('');	
@@ -61,9 +76,9 @@ HeaderWs.makeWs = {
 		element.push('<input id="banner_action" name="banner_action" value="" type="hidden"  />');
 		element.push('<div class="xans-element- xans-layout xans-layout-searchheader ">');
 		element.push('<fieldset>');
-		element.push('	<legend>검색</legend>');
+		element.push('	<legend></legend>');
 		element.push('	<input id="keyword" name="keyword" fw-filter="" fw-label="검색어" fw-msg="" class="inputTypeText" onmousedown="SEARCH_BANNER.clickSearchForm(this)" value="" type="text"  />');
-		element.push('	<img src="img/ws_b_search.gif" alt="검색" onclick="SEARCH_BANNER.submitSearchBanner(this)"/>');
+		element.push('	<img src="img/ws_b_search.gif" alt="" onclick="SEARCH_BANNER.submitSearchBanner(this)"/>');
 		element.push('</fieldset>');
 		element.push('</div>');
 		element.push('</form>');
@@ -96,7 +111,7 @@ HeaderWs.makeWs = {
 		element.push(	'</div>');
 		return element.join('');		
 	}
-} 
+};
 
 
 
@@ -173,8 +188,8 @@ MainContainerWs.makeWs = {
 	{
 		for(var i=0; i<CateData.length; i++) {
 			var $smenu = $('div#gnb_cate_layer'+i);
-			el = '<div class="gnb_inner">'
-			el += '<div class="grouping">'
+			el = '<div class="gnb_inner">';
+			el += '<div class="grouping">';
 			for(var j=0; j<CateData[i].length; j++) {
 				el += '<h3>'+CateData[i][j]+'</h3>';				
 			}
@@ -228,9 +243,9 @@ MainContainerWs.makeWs = {
 	
 		element.push('<div id="image_list_3">');
 		element.push('<div class="clsBannerScreen">');
-		element.push('<div class="images" style="display:block"><a href="BuyProduct2.html"><img src="images/product/ws_sc1.jpg"/></a></div>');
-		element.push('<div class="images"><a href="BuyProduct2.html"><img src="images/product/ws_sc2.jpg"/></a></div>');
-		element.push('<div class="images"><a href="BuyProduct2.html"><img src="images/product/ws_sc3.jpg"/></a></div>');
+		element.push('<div class="images" style="display:block"><a href="BuyProduct.jsp"><img src="images/product/ws_sc1.jpg"/></a></div>');
+		element.push('<div class="images"><a href="BuyProduct.jsp"><img src="images/product/ws_sc2.jpg"/></a></div>');
+		element.push('<div class="images"><a href="BuyProduct.jsp"><img src="images/product/ws_sc3.jpg"/></a></div>');
 		element.push('</div>');
 		element.push('<div class="kv">');
 		element.push('<ul class="clsBannerButton" id="label_3"><li><img src="images/system/ws_scc1a.gif" oversrc="images/system/ws_scc1.gif" outsrc="images/system/ws_scc1a.gif"/></li>');
@@ -356,7 +371,7 @@ MainContainerWs.makeWs = {
 		element.push('</div>');			
 		return element.join('');			
 	}
-}
+};
 
 FooterWs = {};
 FooterWs.makeFooter = function() {
@@ -372,7 +387,7 @@ FooterWs.makeFooter = function() {
 			
 	return element.join('');
 	
-}
+};
 
 FooterWs.makeFooter2 = function() {
 	var _this = this;
@@ -392,7 +407,7 @@ FooterWs.makeFooter2 = function() {
 			
 	return element.join('');
 	
-}
+};
 
 
  var SellTable = {};
@@ -424,7 +439,7 @@ FooterWs.makeFooter2 = function() {
  
 	 return element.join('');
 	 
- }
+ };
  
  
  

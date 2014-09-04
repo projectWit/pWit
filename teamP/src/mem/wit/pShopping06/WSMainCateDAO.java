@@ -27,6 +27,12 @@ public class WSMainCateDAO {
 		}
 	};
 	
+	public WSMainCateDTO get(int prd_mainCate) {
+		return this.jdbcTemplate.queryForObject(
+			"select * from sMainCate where mct_code=?",
+			new Object[] {prd_mainCate}, this.userMapper);
+	}
+	
 	public void add(final WSMainCateDTO mct) {
 		this.jdbcTemplate.update(
 			"insert into sMainCate values(?,?)",

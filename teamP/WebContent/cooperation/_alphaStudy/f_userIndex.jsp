@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div id="main">
+  <div id="main" style="margin-top: 120px;">
 
     <!-- begin header -->
     <!-- <header>

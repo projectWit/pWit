@@ -21,7 +21,7 @@ public class PerDAO {
 		PerDAO dao = new PerDAO();
 		return dao;
 	}
-	public int perInsert(PerDTO dto){
+	public int perInsert(PerDTO dto, String eId){
 		
 		 int su = 0;	
 		conn = DbSet.getConnection();
@@ -30,7 +30,7 @@ public class PerDAO {
 			{
 				String sql = "insert into Personal (hName, hRelate, hHome,";
 				sql += "hBthCode, hBth, hMryCode, hMryDate, hAbleCode, hBhCode, hBhRelate,";
-				sql += "hArmyCode, solCd, hArmyNoRsn, clsCd, eId) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '10001');";
+				sql += "hArmyCode, solCd, hArmyNoRsn, clsCd, eId) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'"+ eId+ "')";
 			
 
 				pstmt = conn.prepareStatement(sql);
@@ -45,7 +45,7 @@ public class PerDAO {
 				pstmt.setInt(8, dto.gethAbleCode());
 				pstmt.setInt(9, dto.gethBhCode());
 				pstmt.setString(10, dto.gethBhRelate());
-				pstmt.setInt(11, dto.gethAbleCode());
+				pstmt.setInt(11, dto.gethArmyCode());	
 				pstmt.setInt(12, dto.getSolCd());
 				pstmt.setString(13, dto.gethArmyNoRsn());
 				pstmt.setInt(14, dto.getClsCd());

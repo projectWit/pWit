@@ -98,8 +98,7 @@ public class InsaDAO {
 		return dtoL;
 	}
 
-	public int insaUpdate(String eId) {
-		InsaDTO dto = new InsaDTO();
+	public int insaUpdate(InsaDTO dto, String eId) {		
 		int su = 0;
 		conn = DbSet.getConnection();
 		try {

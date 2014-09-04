@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.wit.member.Employee"%>
+<%@page import="mem.wit.Insa.InsaDTO"%>
+<%@page import="mem.wit.Insa.InsaDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -92,6 +96,15 @@
 		});
 	});
 </script>
+<%
+	InsaDAO dao = new InsaDAO();
+	InsaDTO dto = new InsaDTO();
+	String no = request.getParameter("no");
+	Employee employee = (Employee) session.getAttribute("employee");
+	
+	List dtoL = dao.insaSelect(employee.geteId());
+	dto = (InsaDTO)dtoL.get(0);
+%>
 </head>
 <body>
 
@@ -101,7 +114,7 @@
 			<div id="title">
 				<h1>
 					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> [<span
-						id="lblEmpKname">호날두</span>]님의 신상명세서
+						id="lblEmpKname"><%=dto.geteKName()%></span>]님의 신상명세서
 				</h1>
 			</div>
 
@@ -131,16 +144,17 @@
 							maxlength="80" id="hHome" class="default" size="80"
 							style="width: 88%;" /></td>
 					</tr>
+					<input type = "hidden" name = "seq" value="<%=dto.getePostNum() %>"/>
+					<input type = "hidden" name = "employee"/>
 					<tr>
 						<th>주민등록상 주소</th>
-						<td colspan="3"><a href="#" id="" class="link-blue">우편번호검색</a>&nbsp;
-							<input name="doc_post1" type="text" id="doc_post1"
-							class="default" style="width: 40px;" onBlur="BlurColor(this);"
-							size="3" maxlength="3" /> - <input name="doc_post2" type="text"
-							id="doc_post2" class="default" style="width: 40px;"
-							onBlur="BlurColor(this);" size="3" maxlength="3" />&nbsp;&nbsp;
-							<input name="doc_addr" type="text" maxlength="80" id="doc_addr"
-							class="default" size="55" style="width: 56%;" /></td>
+						<td colspan="3">
+							<input name="ePostNum" type="text" id="ePostNum"
+							class="default" style="width: 80px;" value = "<%=dto.getZipcode()%>"
+							size="10" maxlength="8" />&nbsp;&nbsp;
+							<input type="text" name="Addr1" value = "<%=dto.getSido()%> <%=dto.getGugun()%><%=dto.getDong()%> <%=dto.getRi()%> <%=dto.getBunji()%>"
+							id="Addr1" class="default" style="width: 300px"
+							/></td>
 					</tr>
 					<tr>
 						<th>생년월일</th>
@@ -227,16 +241,7 @@
 			</div>
 			<!--//footerBG-->
 		</div>
-		<!--//wrap-->
 
-		<a id="lnkSave"
-			href="javascript:__doPostBack(&#39;lnkSave&#39;,&#39;&#39;)"></a> <input
-			type="hidden" name="hidEmpCd" id="hidEmpCd" value="00001" /> <input
-			type="hidden" name="hidEmpKname" id="hidEmpKname" value="이숙이" /> <input
-			name="hidbirth" type="hidden" id="hidbirth" /> <input name="hidwed"
-			type="hidden" id="hidwed" /> <input name="hidhandi" type="hidden"
-			id="hidhandi" /> <input name="hidmerit" type="hidden" id="hidmerit" />
-		<input name="hidmili" type="hidden" id="hidmili" />
 
 	</form>
 </body>

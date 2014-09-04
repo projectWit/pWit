@@ -114,6 +114,17 @@
 		<result property="mId" column="mId" />
 		<result property="mName" column="mName" />
 	</resultMap>
+	<resultMap class="mem.wit.gm.RentDTO" id="rentDTO">
+		<result property="rId" column="rId"/>
+		<result property="cId" column="cId" />
+		<result property="place" column="place" />
+		<result property="fName" column="fName" />
+		<result property="cName" column="cName" />
+		<result property="sName" column="sName" />
+		<result property="rCause" column="rCause" />
+		<result property="rDay" column="rDay" />
+		<result property="stateName" column="stateName" />
+	</resultMap>
 
 <select id="selectMember" parameterClass="java.lang.String" resultMap="memberDTO">
 $value$
@@ -166,9 +177,9 @@ $value$
 <select id="searchTea" parameterClass="java.lang.String" resultMap="teaDTO"> 
 $value$
 </select>
-<!--  <select id="selectReview" parameterClass="java.lang.String" resultMap="reviewDTO" >
+<select id="rentCheck" parameterClass="java.lang.String" resultMap="rentDTO">
 $value$
-</select> -->
+</select>
 <insert id="insertLReq" parameterClass="java.lang.String">
 $value$
 </insert>

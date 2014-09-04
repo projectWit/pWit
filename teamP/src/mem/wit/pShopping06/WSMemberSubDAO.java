@@ -34,5 +34,11 @@ public class WSMemberSubDAO {
 			mem.getMem_point()						
 		);	
 	}
+	
+	public int isValid(String id, String pwd) {
+		return this.jdbcTemplate.queryForObject(
+			"select count(*) from sMemberSub join witmember on mem_id=mid where mid=? and mpwd=?",
+			new Object[] {id, pwd}, Integer.class);
+	}
 
 }

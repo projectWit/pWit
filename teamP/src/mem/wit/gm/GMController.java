@@ -2,8 +2,6 @@ package mem.wit.gm;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -175,14 +173,26 @@ public class GMController {
 		mv.addObject("list", list);
 		return mv;
 	}
-	
+	@RequestMapping("/rentCheck.gm")
+	public ModelAndView rentCheck(HttpSession session) {
+		mv.setViewName("rentCheck");
+		Member member = (Member) session.getAttribute("member");
+		String query = "select r.rId, c.cId, c.cName, sp.sName, r.rCause, r.rDay, s.stateName , f.fName, p.place"
+				+ " from GM_Rent r, C_State s, GM_Club c, C_Sport sp, C_place p, GM_Facil f "
+				+ " where s.stateId = r.stateId and r.cId = c.cId and c.sId=sp.sId and "
+				+ " f.fId=r.fId and f.pId=p.pId and c.cPresident='"+member.getmId()+"' "
+				+ " order by s.stateId desc, r.rId desc";
+		List<RentDTO> list = (List<RentDTO>) m.select("rentCheck", query);
+		mv.addObject("list",list);
+		return mv;
+	}
 	@RequestMapping("/updateLReq.gm") 
 	public ModelAndView updateLReq(HttpServletRequest request) {
 		mv.setViewName("adminLectureConfirm");
 		int rNum = Integer.parseInt(request.getParameter("rNum"));
 		String chk = request.getParameter("chk");
 		String query ="";
-		if(chk.equals("in")) {
+		if(chk.equals("in")) {	
 			query = "update GM_LReq set stateId=10 where rNum="+rNum;
 		} else {
 			query = "update GM_LReq set stateId=2 where rNum="+rNum; 
@@ -256,7 +266,7 @@ public class GMController {
 		dto.setrCause(dto.rCause);
 		m.insert("insertRent", dto);
 		return new ModelAndView(
-				"redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
+				"redirect:http:/teamP/cooperation/_GM/Member_GM_Rent.jsp?url=/teamP/rentCheck.gm");
 	}
 	@RequestMapping("/searchLectureList.gm")
 	public ModelAndView searchLectureList(HttpServletRequest request) {

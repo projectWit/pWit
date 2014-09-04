@@ -146,9 +146,10 @@ public class LectureController {
 		if (alIdText != "") {
 			lecSchedule.setAlId(Integer.parseInt(alIdText));
 		}
-		if (lsCostText != "") {
+		/*if (lsCostText != "") {
 			lecSchedule.setLsCost(Integer.parseInt(lsCostText));
-		}
+		}*/
+		lecSchedule.setLsCost(lsCostText);
 		if (lsMaxText != "") {
 			lecSchedule.setLsMax(Integer.parseInt(lsMaxText));
 		}

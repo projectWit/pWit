@@ -198,7 +198,7 @@
 					<col width="" />
 					<tr>
 						<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-							src="img/<%=dto.getePhoto()%>" style="height: 150px; width: 140px;" /></td>
+							src="saveimg/<%=dto.getePhoto()%>" style="height: 150px; width: 140px;" /></td>
 						<th>사원번호</th>
 						<td><%=dto.geteId()%></td>
 						<th>성명</th>
@@ -246,7 +246,9 @@
 						<td><input type="tel" class="default" id="eTel1" size=4 name = "eTel1"
 							maxlength="3" value = "<%=tel[0]%>"/> - <input type="tel" name = "eTel2"
 							id="eTel2" class="default" size=5 maxlength="4" value = "<%=tel[1]%>"
-							required /> - <input type="tel" id="eTel3"
+							required
+							
+							 /> - <input type="tel" id="eTel3"
 							class="default" name = "eTel3" size=5 value = "<%=tel[2]%>"maxlength="4" required /></td>
 						<th>핸드폰</th>
 						<td><input type="tel" id="eMobile" class="default" size=4 name = "eMobile"
@@ -261,7 +263,8 @@
 						<td colspan="2"></td>
 					</tr>
 					
-					<input type = "hidden" name = "seq"/>
+					<input type = "hidden" name = "seq" value="<%=dto.getePostNum() %>"/>
+					<input type = "hidden" name = "employee"/>
 					<tr>
 						<th>주소</th>
 						<td colspan="4"><a href="#" onclick = "PopUpZip()" id="ePostNum" name="ePostNum"

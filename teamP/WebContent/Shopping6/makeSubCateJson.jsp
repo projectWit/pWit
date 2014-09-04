@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="mem.wit.pShopping06.Test"%>
+<%@ page import="mem.wit.pShopping06.AService"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="mem.wit.pShopping06.WSSubCateDTO"%>    
 <%
-	request.setCharacterEncoding("utf-8");
-%>
+    	request.setCharacterEncoding("utf-8");
+    %>
 <%
 	int mct = Integer.parseInt(request.getParameter("mct"));
 
-	Test tst = new Test();
+	AService tst = new AService();
 	List<WSSubCateDTO> cates = new ArrayList<WSSubCateDTO>();
 	cates = tst.getAllSubCates(mct);
 

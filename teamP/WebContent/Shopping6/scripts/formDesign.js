@@ -391,6 +391,7 @@ function selects(el) { //extend Selects
 			this.options[q].lnk.onclick = function() {
 				this._onclick();
 				this.ref.dummy.getElementsByTagName('div')[0].innerHTML = this.ref.options[this.pos].text;
+
 				this.ref.options[this.pos].selected = "selected";
 				for(var w = 0; w < this.ref.options.length; w++) {this.ref.options[w].lnk.className = "";}
 				this.ref.options[this.pos].lnk.className = "NFOptionActive";

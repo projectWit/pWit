@@ -1,0 +1,10 @@
+���� �б� ���� ����ġ
+
+/src
+sqlMapConfig.xml
+
+/src/mem.wit.openex
+OPENEXsqlMapConfig.xml
+
+/src/com.wit.myBatis
+myBatisConfig.xml

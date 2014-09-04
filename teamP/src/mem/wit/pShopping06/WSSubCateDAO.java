@@ -28,6 +28,12 @@ public class WSSubCateDAO {
 		}
 	};
 	
+	public WSSubCateDTO get(int prd_mainCate, int prd_subCate) {
+		return this.jdbcTemplate.queryForObject(
+			"select * from sSubCate where sct_code=? and sct_mctcode=?",
+			new Object[] {prd_subCate, prd_mainCate}, this.userMapper);
+	}
+	
 	public void add(final WSSubCateDTO sct) {
 		this.jdbcTemplate.update(
 			"insert into sSubCate values(?,?,?)",

@@ -6,6 +6,7 @@
 <TITLE>Wit Shopping mall - Admin</TITLE>
 <link href="css/jquery-ui.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" media="all" href="css/niceForm.css" />
+<link rel="stylesheet" type="text/css" href="css/jtable.css" />
 <STYLE>
 body {margin: 0 auto; padding: 0; font-family: 맑은 고딕, Arial, Sans-Serif; font-size: 12px; color: #333333; background: #fff; }
 hr { border: 0; height: 1px; color: #ED622B; background-color: #ED622B; width: 100%; margin-top: 10px; margin-bottom: 8px; }
@@ -16,16 +17,13 @@ h1 { font-size: 16px; margin-bottom: 4px; color:#ED622B; }
 #wrapper { width: 980px; margin: 0 auto; }
 #header { clear: both; margin: 0 0 5px 0; height: 65px; background-color:#223F9A; }
 #title { float: left; font-size: 20px; font-weight: bold; padding:20px 0 0px 15px; color: #FFFFFF; }
-#navigation { float: left; width: 200px; margin: 0; padding: 0; }
-#navigation ul { list-style: none; width: 200px; margin: 0; padding: 0; font-size: 12px; }	
+#navigation { float: left; width: 150px; margin: 0; padding: 0; }
+#navigation ul { list-style: none; margin: 0; padding: 0; font-size: 12px; }	
 #navigation li { margin:0 0 4px 0; }
 #navigation li a, #navigation li a:visited { text-align: right; text-decoration: none; color: #FFFFFF; display: block; background: #B1D3F6; padding: 6px 8px 6px 10px; }	
 #navigation li a:hover { background: #223F9A; color: #FFFFFF; }
-#content { float:left; width:750px; margin:0 15px; }
-.footer { width: 980px; background-color: #223F9A; color: #FFFFFF; font-size: 12px; line-height: 35px; margin: 0 auto; text-align: center; }
-
-
-
+#content { float:left; width:815px; margin:0 0 0 15px; }
+.footer { width: 980px; background-color: #223F9A; color: #FFFFFF; font-size: 12px; line-height: 35px; margin: 5px auto; text-align: center; }
 
 
 div.zipFinder {border: 1px solid #9da2a6; width:300px; text-align:center; display:none;}
@@ -42,8 +40,11 @@ div.zipFinder {border: 1px solid #9da2a6; width:300px; text-align:center; displa
 		top: 50%;
 		margin-top: -8px;
 	}
-	dl#zipSel{display:none;}
+	dl#zipSel {display:none;}
+	dl#chkIDResult {display:none;}
 	.niceFormContainer {display:none;}
+	
+span#chkIDResult.invalid {color:red;}
 </STYLE>
 
 
@@ -53,7 +54,6 @@ div.zipFinder {border: 1px solid #9da2a6; width:300px; text-align:center; displa
 
 <SCRIPT TYPE="text/javascript">
 $(function () {
-
 
 	$( "#dialog" ).dialog({								// 우편번호 검색 다이얼로그 초기화
 		autoOpen: false,
@@ -67,30 +67,10 @@ $(function () {
 						$( this ).dialog( "close" );
 					}
 					else{
-						$.post('searchZipcodeJson.jsp', {'dongName': dong }, function(data) {
-							var elements = eval("(" + data + ")");
-							$('select#zipSel').empty();
-							$.each(elements, function(i, elem) {
-								var html = "<option value='"+elem.seq;
-								html+="' zcode='"+elem.zipcode+"'";
-								if(i==0) html += ' selected';
-								html += '>'+"["+elem.zipcode+"] "
-								+elem.sido+" "
-								+elem.gugun+" "
-								+elem.dong+" "
-								+elem.ri+" "
-								+elem.bunji+'</option>';
-								$('select#zipSel').append(html);
-							});
-													
-							if(elements.length>0) $('dl#zipSel').show();
-							var txt = $('select#zipSel option:selected').html();
-							
-							
-							var zcode = txt.substring(1,8);
-							$('input#zipcode').val(zcode);
+						$.post('searchZipcodeJson.jsp', {'dongName': dong }, function(data) { 
+								makeSelZipCode(data);
 						});
-						$( this ).dialog( "close" );						
+						$( this ).dialog( "close" );	
 					}
 				}
 			},
@@ -102,6 +82,32 @@ $(function () {
 			}
 		]
 	});
+	
+	function makeSelZipCode(data) {
+		var elements = eval("(" + data + ")");
+		$('select#zipSel').empty();
+		$.each(elements, function(i, elem) {
+			var html = "<option value='"+elem.seq;
+			html+="' zcode='"+elem.zipcode+"'";
+			if(i==0) html += ' selected';
+			html += '>'+"["+elem.zipcode+"] "
+			+elem.sido+" "
+			+elem.gugun+" "
+			+elem.dong+" "
+			+elem.ri+" "
+			+elem.bunji+'</option>';
+			$('select#zipSel').append(html);
+		});
+								
+		if(elements.length>0) $('dl#zipSel').show();
+		var txt = $('select#zipSel option:selected').html();			
+		
+		var zcode = txt.substring(1,8);
+		$('input#zipcode').val(zcode);
+
+	}
+		
+
 
 	$('select#zipSel').change(function() {				// 셀렉트에서 주소 선택 이벤트 핸들러
 		var txt = $('select#zipSel option:selected').html();
@@ -116,26 +122,158 @@ $(function () {
 		event.preventDefault();
 	});
 	
-	$('input#seller_reset').click(function() {			// 리셋버튼 이벤트 핸들러
+	$('input.numOnly').on('keypress', function(event) {						// 숫자키와 대시(-) 기호 이외의 입력 제한(IE에서는 잘 되지만, 크롬에서는 안됨 ime-mode가 동작 안됨)
+		if(event.which && !((event.which>=48 && event.which<=57) || event.which==45)) {
+			event.preventDefault();
+		}
+	});
+	
+	$('input#seller_reset').click(function() {							// 리셋버튼 이벤트 핸들러
 		$('select#zipSel').empty();
 		$('dl#zipSel').hide();
+		$('dl#chkIDResult').hide();
 	});
 	
-	$('input#seller_submit').click(function() {			// 등록하기 버튼 이벤트 핸들러
+	$('input#sel_id').change(function () {
+		$('span#chkIDResult').removeClass('pass');
+		$('dl#chkIDResult').hide();
+	});
+	
+	$('input').change(function () {
+		$(this).val($.trim($(this).val()));		
+	});
+	
+	$('#sellerAddForm').submit(function() {							// 등록하기 버튼 이벤트 핸들러
 		$('input#sel_zipcode').val($('select#zipSel option:selected').val());
-	//return false;
-	});
-	
-});
-    
-    
-$(function() {
-	$('li#seller_add').click(function() {
-		$('div#sellerAddForm').show();
+		if($('input#sel_id').val()=="") {
+			alert("ID를 입력하세요.");
+			$('input#sel_id').focus();	
+			return false;
+		}
+		else if($('span#chkIDResult').hasClass('pass')==false) {
+			alert("ID 중복체크 검사를 통과 하세요.")
+			$('input#sel_id').focus();	
+			return false;
+		}
+		else if($('input#password').val().length<4) {
+			alert("패스워드는 4자 이상으로 입력하세요.");
+			$('input#password').focus();
+			return false;
+		}
+		else if($('input#name').val()=="") {
+			alert("이름를 입력하세요.");
+			$('input#name').focus();
+			return false;
+		}
+		else if($('input#email').val()=="") {
+			alert("email 주소를 입력하세요.");
+			$('input#email').focus();
+			return false;
+		}
+		else if($('input#zipcode').val()=="") {
+			alert("우편번호를 검색하세요.");
+			$('button#searchZip').focus();	
+			return false;
+		}
+		else if($('input#addr').val()=="") {
+			alert("상세주소를 입력하세요.");
+			$('input#addr').focus();	
+			return false;
+		}
+		else if($('input#tel1').val()=="") {
+			alert("주 전화번호를 입력하세요.");
+			$('input#tel1').focus();
+			return false;
+		}
 		
+		var postData = $('form#sellerAddForm').serialize();
+		$.post('addSellerPro.jsp', postData, function(data){
+			var elements = eval("(" + data + ")");
+			var msg = "";
+			$.each(elements, function(i, elem) {
+				if(elem.result==1) {
+					msg = "등록 되었습니다.";					
+				} else {
+					msg = "등록이 실패했습니다.";
+				}			
+			});	
+			
+			$('div.footer').text(msg);			
+		});
 		return false;
 	});
+	
+	$('button#checkID').click(function() {								// ID 중복 체크 검사 버튼 이벤트 핸들러
+		var sellerID = $.trim($('input#sel_id').val());
+		
+		if(sellerID=="") {
+			$('input#sel_id').val(sellerID);
+			return;
+		}
+		$.post('checkSellerIDJson.jsp',  {'sellerID': sellerID }, function(data) {		// Ajax 요청 
+			checkJsonSellerID(data);			
+		});
+	});
+	
+	function checkJsonSellerID(data) {						// ID 중복 체크 결과 메시지 출력
+		var msg = "";
+		var elements = eval("(" + data + ")");
+		
+		$.each(elements, function(i, elem) {
+			if(elem.isSeller==1) {
+				msg = "이 ID 는 사용할 수 없는 ID 입니다.";
+				$('span#chkIDResult').addClass('invalid').removeClass('pass');
+			} else {
+				msg = "이 ID 는 사용할 수 있는 ID 입니다.";
+				$('span#chkIDResult').removeClass('invalid').addClass('pass');
+			}			
+		});	
+		$('span#chkIDResult').text(msg);
+		$('dl#chkIDResult').show();
+
+	}
+	
+	$('li#add_seller').click(function() {					// 판매자 등록 메뉴 클릭시 이벤트 핸들러
+		$('#content>div').hide();
+		$('div#sellerAddForm').show();		
+		return false;
+	});	
+	
+	$('li#list_sellers').on('click', function() {					// 판매자 조회 메뉴 클릭시 이벤트 핸들러
+		$('#content>div').hide();
+		$('#tbd_sellerList').empty();
+		$.post('listSellersJson.jsp',  function(data) {		// Ajax 요청 
+			makeSellerList(data);			
+		});
+		$('div#sellerList').show();
+
+		return false;
+	});
+	
+	function makeSellerList(data) {
+		var elements = eval("(" + data + ")");
+		$.each(elements, function(i, elem) {
+			var html = "<tr><td>" + elem.id + "</td>";			
+			html += "<td>" + elem.name + "</td>";
+			html += "<td>" + elem.tel1 + "</td>";
+			html += "<td>" + elem.tel2 + "</td>";
+			html += "<td>" + elem.email + "</td>";
+			html += "<td>" + elem.addr + "</td>";
+			html += "<td>" + elem.enterDate + "</td>";
+			html += "<td>" + elem.level + "</td>";
+			html += "</tr>";
+			$('#tbd_sellerList').append(html);
+		});								
+	}
+	
+	$('#content>div').hide();
+	
 });
+
+function number_filter(str_value){
+	return str_value.replace(/[^0-9\-]/gi, ""); 
+}
+
 
 
 </SCRIPT>
@@ -155,8 +293,8 @@ $(function() {
 	<DIV ID="navigation">		
         <UL>
 			<LI ID="logout"><A HREF="#">Log Out</A></LI>
-            <LI ID="seller_add"><A HREF="adminAddSeller.html">판매자 등록</A></LI>
-            <LI ID="seller_get"><A HREF="#">판매자 조회</A></LI>
+            <LI ID="add_seller"><A HREF="#">판매자 등록</A></LI>
+            <LI ID="list_sellers"><A HREF="#">판매자 조회</A></LI>
             <LI ID="seller_stop"><A HREF="#">판매자 판매 중지</A></LI>            
 			<LI ID="monthly_sales"><A HREF="#">월별 매출 조회</A></LI>
 			<LI ID="daily_sales"><A HREF="#">일별 매출 조회</A></LI>		
@@ -165,21 +303,26 @@ $(function() {
 		<BR>
 	</DIV>  
 
-	<DIV ID="content">
-	
-	
-	
-	
-<div class="niceFormContainer" id="sellerAddForm" >
 
-<form  action="sellerAddPro.jsp" method="post" class="niceform">
+
+
+<DIV ID="content">
+	
+	<div class="niceFormContainer" id="sellerAddForm" >
+
+	<form  action="sellerAddPro.jsp" method="post" class="niceform" id="sellerAddForm">
 		<input type="hidden" name="sel_zipcode" id="sel_zipcode"/>
 	<fieldset>
     	<legend>판매자 등록</legend>
     	
     	<dl>
-        	<dt><label for="id">아이디:</label></dt>
-            <dd><input type="text" name="sel_id" id="id" size="64" maxlength="50" /></dd>
+        	<dt><label for="sel_id">아이디:</label></dt>
+            <dd><input type="text" name="sel_id" id="sel_id" size="30" maxlength="50" /></dd>
+            <dd><button type="button" id="checkID">I D 중복 검사</button></dd>
+        </dl>
+        <dl id="chkIDResult">
+        	<dt><label for="zipSel"></label></dt>
+            <dd><span id="chkIDResult"/></span></dd>
         </dl>        
         <dl>
         	<dt><label for="password">패스워드:</label></dt>
@@ -191,17 +334,16 @@ $(function() {
         </dl>
         <dl>
         	<dt><label for="email">이메일:</label></dt>
-            <dd><input type="text" name="sel_email" id="email" size="64" maxlength="255" /></dd>
+            <dd><input type="email" name="sel_email" id="email" size="64" maxlength="255" /></dd>
         </dl> 
     	<dl>
         	<dt><label for="zipcode">우편번호:</label></dt>
-            <dd><input type="text" name="zipcode" id="zipcode" size="7" maxlength="7" /></dd>
-            <button type="button" name="searchZip" id="searchZip">우편번호검색</button>
+            <dd><input type="text" name="zipcode" id="zipcode" size="7" maxlength="7" disabled /></dd>
+            <dd><button type="button" name="searchZip" id="searchZip">우편번호검색</button></dd>
         </dl>
         <dl id="zipSel">
         	<dt><label for="zipSel">선택된 주소:</label></dt>
-            <select name="zipSel" id="zipSel">
-            </select>
+            <dd><select name="zipSel" id="zipSel"></select></dd>
         </dl>
         <dl>
         	<dt><label for="addr">상세주소:</label></dt>
@@ -209,11 +351,11 @@ $(function() {
         </dl>
         <dl>
         	<dt><label for="tel1">주 전화번호:</label></dt>
-            <dd><input type="text" name="sel_tel1" id="tel1" size="30" maxlength="30" /></dd>
+            <dd><input type="text" name="sel_tel1" id="tel1" size="30" maxlength="30" onkeyup="this.value=number_filter(this.value);"/></dd>
         </dl>
         <dl>
         	<dt><label for="tel2">부 전화번호:</label></dt>
-            <dd><input type="text" name="sel_tel2" id="tel2" size="30" maxlength="30" /></dd>
+            <dd><input type="text" name="sel_tel2" id="tel2" size="30" maxlength="30" onkeyup="this.value=number_filter(this.value);" /></dd>
         </dl>
         
         
@@ -226,21 +368,50 @@ $(function() {
   
     </fieldset>
 
-</form>
-<div id="dialog" title="우편번호 검색">
-	<p>동 이름을 입력하세요. (예) 중계2동, 중계 등</p>
-	<input type="text" id="dongName" size="30" maxlength="30"></input>
-	
-</div>
+	</form>
+	<div id="dialog" title="우편번호 검색">
+		<p>동 이름을 입력하세요. (예) 중계2동, 중계 등</p>
+		<input type="text" id="dongName" size="30" maxlength="30"></input>	
+	</div>
+
+	</div>		<!-- end of 판매자 등록 메뉴 -->
 
 
 
-</div>
+	<div id="sellerList">
+		<div class="jtable-main-container">
+			<div class="jtable-title">
+				<div class="jtable-title-text">판매자 리스트</div>
+			</div>
+			<table class="jtable">
+				<thead>
+					<tr>
+						<th>판매자 ID</th>
+						<th>판매자 이름</th>
+						<th>전화번호1</th>
+						<th>전화번호2</th>
+						<th>이메일 주소</th>
+						<th>판매자 주소</th>
+						<th>등록일</th>
+						<th>등급</th>
+					</tr>
+				</thead>
+				<tbody id="tbd_sellerList">
+				</tbody>
+			</table>
+			<div class="jtable-bottom-panel"></div>
+		</div>
+	</div> 		<!-- end of 판매자 조회 메뉴 -->
+				
+
+
+
+
 	</DIV>
 
 	<DIV CLASS="clear"></DIV>
 
-	<DIV CLASS="footer">Footer
+	<DIV CLASS="footer">
     </DIV>
 
 </DIV>        

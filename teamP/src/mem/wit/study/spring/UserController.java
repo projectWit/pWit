@@ -62,7 +62,7 @@ public class UserController {
 	
 	@RequestMapping(value="/lecture", method=RequestMethod.GET)
 	public String lecture(Model model, HttpServletRequest request, HttpSession session) {
-		System.out.println("regSearch GET");
+		System.out.println("lecture GET");
 		doSelectCodes(model);
 		List<LecSchedule> lschduleList = lecScheduleService.selectAll();
 		model.addAttribute("lschduleList", lschduleList);

@@ -8,13 +8,13 @@
 <jsp:include page="WIT_OPENEX_main_header.jsp"></jsp:include>
 <script type="text/javascript">
 	$(function() {
-		$('#OPENEX_headerMenu4').css('color', '#FFF');
-		$('#OPENEX_headerMenu4').css('text-shadow', '0px 0 3px #FFF');
+		$('#OPENEX_headerMenu2').css('color', '#FFF');
+		$('#OPENEX_headerMenu2').css('text-shadow', '0px 0 3px #FFF');
 	});
 </script>
 </head>
 <body>
-	<jsp:include page="WIT_OPENEX_solve_section.jsp"></jsp:include>
+	<jsp:include page="/WIT_OPENEX_solve_section.op"></jsp:include>
 </body>
 	<jsp:include page="WIT_OPENEX_main_footer.jsp"></jsp:include>
 </html>

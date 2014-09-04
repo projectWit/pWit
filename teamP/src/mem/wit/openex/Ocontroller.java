@@ -2,6 +2,7 @@ package mem.wit.openex;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -14,11 +15,13 @@ import com.wit.member.Member;
 @Controller
 @SuppressWarnings("unchecked")
 public class Ocontroller {
+	ModelAndView mv = new ModelAndView();
+
+	// 아카이브 출력 : 사용자 정보
 	@RequestMapping("/WIT_OPENEX_archive_section.op")
 	public ModelAndView acvList(HttpSession session) {
 		Member member = (Member) session.getAttribute("member");
 		String sessionId = member.getmId();
-		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WIT_OPENEX_archive_section");
 		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
 		List<OacvDTO> acvList = (List<OacvDTO>) m
@@ -44,9 +47,9 @@ public class Ocontroller {
 
 	}
 
+	// 출제 출력 : 대, 중분류
 	@RequestMapping("/WIT_OPENEX_setExam_section1.op")
 	public ModelAndView mSubjecNametList() {
-		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WIT_OPENEX_setExam_section1");
 		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
 		List<OsetExam_mjnameDTO> mjSubNameList = (List<OsetExam_mjnameDTO>) m
@@ -55,17 +58,204 @@ public class Ocontroller {
 		mv.addObject("mjSubNameList", mjSubNameList);
 
 		List<OsetExam_mdnameDTO> mdSubNameList = (List<OsetExam_mdnameDTO>) m
-				.select("selectMdSubName","SELECT MD.MJ_NO, MD.MD_NO, MD.MD_NAME "
-						+ "FROM O_MAJORS MJ, O_MIDDLES MD "
-						+ "WHERE MJ.MJ_NO = MD.MJ_NO ORDER BY MD.MD_NO");
+				.select("selectMdSubName",
+						"SELECT MD.MJ_NO, MD.MD_NO, MD.MD_NAME "
+								+ "FROM O_MAJORS MJ, O_MIDDLES MD "
+								+ "WHERE MJ.MJ_NO = MD.MJ_NO ORDER BY MD.MD_NO");
 		mv.addObject("mdSubNameList", mdSubNameList);
-		
+
 		return mv;
 	}
 
+	// 입력 : 출제 시험, 문항
+	@RequestMapping("/WIT_OPENEX_setExam_section4.op")
+	public ModelAndView insertSE(HttpServletRequest request, HttpSession session) {
+		mv.setViewName("WIT_OPENEX_list_section1");
+		Member member = (Member) session.getAttribute("member");
+		String sessionId = member.getmId();
+		OsetExamDTO dto = new OsetExamDTO();
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		dto.setMID(sessionId);
+		dto.setEXTIMELIMIT(Integer.parseInt(request.getParameter("EXTIMELIMIT")));
+		dto.setDIF_NO(Integer.parseInt(request.getParameter("DIF_NO")));
+		dto.setEX_QUESTIONSCOUNT(Integer.parseInt(request
+				.getParameter("EX_QUESTIONSCOUNT")));
+		dto.setEX_TITLE(request.getParameter("EX_TITLE"));
+		dto.setEX_EXPLAIN(request.getParameter("EX_EXPLAIN"));
+		dto.setEX_RECOMMENDLECTURE(request.getParameter("EX_RECOMMENDLECTURE"));
+		dto.setEX_REFERENCE(request.getParameter("EX_REFERENCE"));
+		dto.setMD_NO(Integer.parseInt(request.getParameter("MD_NO")));
+		dto.setEX_MNNAME(request.getParameter("EX_MNNAME"));
+		m.insert("insertSE", dto);
+
+		for (int i = 1; i <= dto.getEX_QUESTIONSCOUNT(); i++) {
+			OsetExamQueDTO Qdto = new OsetExamQueDTO();
+			Qdto.setQUE_USERSUBJECT("사용자 주제를 입력하세요");
+			Qdto.setQUE_CONTENT("본문을 입력하세요");
+			Qdto.setQUE_SCORE(0);
+			Qdto.setQUE_EXAMPLE1("보기를 입력하세요");
+			Qdto.setQUE_EXAMPLE2("보기를 입력하세요");
+			Qdto.setQUE_EXAMPLE3("보기를 입력하세요");
+			Qdto.setQUE_EXAMPLE4("보기를 입력하세요");
+			Qdto.setQUE_EXAMPLE5("보기를 입력하세요");
+			Qdto.setQUE_RIGHTANSWER(1);
+			Qdto.setQUE_QNO(i);
+			m.insert("insertQUE", Qdto);
+		}
+
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_OPENEX/WIT_OPENEX_setExam2.jsp");
+	}
+
+	// 수정 : 시험 문항
+	@RequestMapping("/WIT_OPENEX_setExam_section6.op")
+	public ModelAndView updateQUE(HttpServletRequest request) {
+		mv.setViewName("WIT_OPENEX_setExam2");
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+
+		OsetExamQueDTO Qdto = new OsetExamQueDTO();
+		Qdto.setEX_NO(Integer.parseInt(request.getParameter("EX_NO")));
+		Qdto.setQUE_USERSUBJECT(request.getParameter("QUE_USERSUBJECT"));
+		Qdto.setQUE_CONTENT(request.getParameter("QUE_CONTENT"));
+		Qdto.setQUE_SCORE(Integer.parseInt(request.getParameter("QUE_SCORE")));
+		Qdto.setQUE_EXAMPLE1(request.getParameter("QUE_EXAMPLE1"));
+		Qdto.setQUE_EXAMPLE2(request.getParameter("QUE_EXAMPLE2"));
+		Qdto.setQUE_EXAMPLE3(request.getParameter("QUE_EXAMPLE3"));
+		Qdto.setQUE_EXAMPLE4(request.getParameter("QUE_EXAMPLE4"));
+		Qdto.setQUE_EXAMPLE5(request.getParameter("QUE_EXAMPLE5"));
+		Qdto.setQUE_RIGHTANSWER(Integer.parseInt(request
+				.getParameter("QUE_RIGHTANSWER")));
+		Qdto.setQUE_QNO(Integer.parseInt(request.getParameter("QUE_QNO")));
+		m.insert("updateQUE", Qdto);
+
+		return mv;
+	}
+
+	// 입력 : 시험 최종 완료
+	@RequestMapping("/WIT_OPENEX_setExam_section7.op")
+	public ModelAndView SEsubmit(HttpSession session, HttpServletRequest request) {
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		Member member = (Member) session.getAttribute("member");
+		String sessionId = member.getmId();
+		String MID = sessionId;
+		int EX_NO = Integer.parseInt(request.getParameter("EX_NO"));
+		m.insert("updateSElast", "UPDATE O_SETEXAM SET EX_CONFIRM = 1 "
+				+ "WHERE EX_NO = '" + EX_NO + "' AND MID = '" + MID + "'");
+
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_OPENEX/WIT_OPENEX_list.jsp");
+	}
+
+	// 출력 : 출제한 시험
+	@RequestMapping("/WIT_OPENEX_setExam_section2.op")
+	public ModelAndView selectSEList(HttpSession session,
+			HttpServletRequest request) {
+		mv.setViewName("WIT_OPENEX_setExam_section2");
+		Member member = (Member) session.getAttribute("member");
+		String sessionId = member.getmId();
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		List<OsetExamListDTO> selectSEList = (List<OsetExamListDTO>) m
+				.select("selectSEList",
+						"SELECT SE.EX_NO ,MID, EXTIMELIMIT, DF.DIF_GRADE, "
+								+ "EX_QUESTIONSCOUNT, EX_TITLE, EX_EXPLAIN, EX_READCOUNT, "
+								+ "EX_RECOMMENDCOUNT, EX_RECOMMENDLECTURE, EX_REFERENCE, "
+								+ "EX_DATE, EX_CONFIRM, MJ.MJ_NAME ,MD.MD_NAME, EX_MNNAME, "
+								+ "QUE.QUE_QNO, QUE.QUE_CONTENT, QUE.QUE_RIGHTANSWER, QUE.QUE_SCORE, "
+								+ "QUE.QUE_USERSUBJECT, QUE.QUE_EXAMPLE1, QUE.QUE_EXAMPLE2, "
+								+ "QUE.QUE_EXAMPLE3, QUE.QUE_EXAMPLE4, QUE.QUE_EXAMPLE5, QUE.QUE_QUENO "
+								+ "FROM O_SETEXAM SE, O_MIDDLES MD, O_MAJORS MJ, O_DIFFICULTY DF, "
+								+ "O_QUESTIONS QUE WHERE SE.EX_NO = (SELECT MAX(EX_NO) FROM O_SETEXAM) "
+								+ "AND EX_CONFIRM=0 AND MD.MJ_NO = MJ.MJ_NO AND SE.MD_NO = MD.MD_NO "
+								+ "AND QUE.EX_NO = SE.EX_NO AND SE.DIF_NO = DF.DIF_NO "
+								+ "AND MID='" + sessionId
+								+ "' ORDER BY QUE.QUE_QNO");
+		mv.addObject("selectSEList", selectSEList);
+
+		return mv;
+	}
+
+	// 출력 : 풀이 : 출제한 시험
+	@RequestMapping("/WIT_OPENEX_solve_section.op")
+	public ModelAndView selectSOLList(HttpServletRequest request) {
+		mv.setViewName("WIT_OPENEX_solve_section");
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		int exno = Integer.parseInt(request.getParameter("EX_NO"));
+		System.out.println(exno);
+		List<OsetExamListDTO> selectSEList = (List<OsetExamListDTO>) m
+				.select("selectSEList",
+						"SELECT SE.EX_NO ,MID, EXTIMELIMIT, DF.DIF_GRADE, EX_QUESTIONSCOUNT, "
+								+ "EX_TITLE, EX_EXPLAIN, EX_READCOUNT, EX_RECOMMENDCOUNT, EX_RECOMMENDLECTURE, "
+								+ "EX_REFERENCE, EX_DATE, EX_CONFIRM, MJ.MJ_NAME ,MD.MD_NAME, EX_MNNAME, "
+								+ "QUE.QUE_QNO, QUE.QUE_CONTENT, QUE.QUE_RIGHTANSWER, QUE.QUE_SCORE, "
+								+ "QUE.QUE_USERSUBJECT, QUE.QUE_EXAMPLE1, QUE.QUE_EXAMPLE2, QUE.QUE_EXAMPLE3, "
+								+ "QUE.QUE_EXAMPLE4, QUE.QUE_EXAMPLE5, QUE.QUE_QUENO "
+								+ "FROM O_SETEXAM SE, O_MIDDLES MD, "
+								+ "O_MAJORS MJ, O_DIFFICULTY DF, O_QUESTIONS QUE "
+								+ "WHERE MD.MJ_NO = MJ.MJ_NO AND SE.MD_NO = MD.MD_NO "
+								+ "AND QUE.EX_NO = SE.EX_NO AND SE.DIF_NO = DF.DIF_NO "
+								+ "AND SE.EX_NO = " + exno
+								+ " ORDER BY QUE.QUE_QNO");
+		mv.addObject("selectSEList", selectSEList);
+
+		return mv;
+	}
+
+	// 입력 : 풀이 : 출제 된 문항에 사용자 답
+	@RequestMapping("/WIT_OPENEX_solve_section2.op")
+	public ModelAndView insertUsa(HttpServletRequest request,
+			HttpSession session) {
+		mv.setViewName("WIT_OPENEX_solve_section");
+		Member member = (Member) session.getAttribute("member");
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		String MID = member.getmId();
+		int EX_QUESTIONSCOUNT = Integer.parseInt(request
+				.getParameter("EX_QUESTIONSCOUNT"));
+		int QUE_QUENO[] = new int[EX_QUESTIONSCOUNT];
+		int USA_ANSWER[] = new int[EX_QUESTIONSCOUNT];
+		int exno = Integer.parseInt(request.getParameter("EX_NO"));
+		int rectime = Integer.parseInt(request.getParameter("REC_TIME"));
+		for (int i = 0; i < EX_QUESTIONSCOUNT; i++) {
+			QUE_QUENO[i] = Integer.parseInt(request.getParameter("QUE_QUENO"
+					+ (i+1)));
+			USA_ANSWER[i] = Integer.parseInt(request.getParameter("USA_ANSWER"+(i+1)));
+			m.insert("insertUSA",
+					"INSERT INTO O_UserAns(USA_NO,QUE_QUENO,MID,USA_ANSWER)"
+							+ " VALUES(SEQ_usA_No.NEXTVAL," + QUE_QUENO[i]
+							+ ",'" + MID + "'," + USA_ANSWER[i] + ")");
+		}
+		m.insert("insertUSA",
+				"INSERT INTO O_Record(REC_NO,MID,EX_NO,REC_TIME,REC_DATE) "
+						+ "VALUES (SEQ_rec_No.NEXTVAL,'" + MID + "'," + exno
+						+ ",'" + rectime + "',SYSDATE)");
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_OPENEX/WIT_OPENEX_archive.jsp");
+	}
+
+	// 출력 : 출제 문항
+
+	@RequestMapping("/WIT_OPENEX_setExam_section3.op")
+	public ModelAndView selectQUEList(HttpServletRequest request) {
+		mv.setViewName("WIT_OPENEX_setExam_section2_xml");
+		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
+		int exno = Integer.parseInt(request.getParameter("EX_NO"));
+		int queno = Integer.parseInt(request.getParameter("QUE_QNO"));
+		System.out.println(exno + "," + queno);
+		List<OsetExamQueDTO> selectQUEList = (List<OsetExamQueDTO>) m
+				.select("selectQUEList",
+						"SELECT QUE.EX_NO, QUE_QUENO, QUE_QNO, QUE_USERSUBJECT, QUE_CONTENT, "
+								+ "QUE_SCORE, QUE_EXAMPLE1, QUE_EXAMPLE2, QUE_EXAMPLE3, QUE_EXAMPLE4, "
+								+ "QUE_EXAMPLE5, QUE_RIGHTANSWER FROM O_QUESTIONS QUE, O_SETEXAM SE "
+								+ "WHERE SE.EX_NO = QUE.EX_NO AND "
+								+ "QUE.EX_NO = " + exno + " AND QUE_QNO = "
+								+ queno + " ORDER BY QUE_QNO");
+		mv.addObject("selectQUEList", selectQUEList);
+
+		return mv;
+	}
+
+	// 출력 : 게시판 목록
 	@RequestMapping("/WIT_OPENEX_list_section1.op")
 	public ModelAndView subjecNametList() {
-		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WIT_OPENEX_list_section1");
 		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
 
@@ -148,20 +338,26 @@ public class Ocontroller {
 
 		return mv;
 	}
-	
-	/*@RequestMapping("/WIT_OPENEX_setExam_section1.op")
-	public ModelAndView insertSE(OsetExamDTO osetExamDTO,HttpSession session) {
-		Member member = (Member) session.getAttribute("member");
-		String sessionId = member.getmId();
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WIT_OPENEX_setExam_section1");
+
+	// 출력 : 게시판 세부
+	@RequestMapping("/WIT_OPENEX_list_section2.op")
+	public ModelAndView boardList(HttpServletRequest request) {
+		mv.setViewName("WIT_OPENEX_list_section2");
 		MyBatis m = new MyBatis("mem/wit/openex/OPENEXsqlMapConfig.xml");
-		
-		
-		List<OsetExam_mjnameDTO> mjSubNameList = (List<OsetExam_mjnameDTO>) m
-				.insert("insertSE", "SELECT MJ_NO, MJ_NAME "
-						+ "FROM O_MAJORS ORDER BY MJ_NO");
-		mv.addObject("mjSubNameList", mjSubNameList);
+		int mdno = Integer.parseInt(request.getParameter("MD_NO"));
+		List<OboardListDTO> selectBoardList = (List<OboardListDTO>) m
+				.select("selectBoardList",
+						"SELECT SE.EX_NO, WIT.MNICKNAME, SE.EXTIMELIMIT, "
+								+ "SE.EX_QUESTIONSCOUNT, SE.EX_TITLE, SE.EX_EXPLAIN, SE.EX_CONFIRM, "
+								+ "SE.EX_READCOUNT, SE.EX_RECOMMENDCOUNT, SE.EX_DATE, "
+								+ "MJS.MJ_NAME, MDS.MD_NAME, SE.EX_MNNAME, DIF.DIF_GRADE "
+								+ "FROM WITMEMBER WIT, O_SETEXAM SE, O_MIDDLES MDS, "
+								+ "O_MAJORS MJS, O_DIFFICULTY DIF WHERE WIT.MID = SE.MID "
+								+ "AND MDS.MD_NO = SE.MD_NO AND MJS.MJ_NO = MDS.MJ_NO "
+								+ "AND DIF.DIF_NO = SE.DIF_NO AND SE.MD_NO = "
+								+ mdno + " " + "ORDER BY SE.EX_NO DESC");
+
+		mv.addObject("selectBoardList", selectBoardList);
 		return mv;
-	}*/
+	}
 }

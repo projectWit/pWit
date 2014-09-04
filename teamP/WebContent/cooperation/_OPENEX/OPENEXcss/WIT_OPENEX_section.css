@@ -36,6 +36,10 @@ a:focus {
 	text-align: left;
 }
 
+.inputBoardNone {
+	border:0;
+}
+
 .openex_main_boardtitle {
 	font-weight: bold;
 	font-size: 15px;
@@ -137,6 +141,57 @@ a:focus {
 	border: 1px solid #373481;
 	border-bottom-color: #20559A;
 	background-color: #B5B2FF;
+}
+
+.colorBtn3 {
+	text-shadow: 0px -1px 1px #353535;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+	height: 40px;
+	color: #FFFFFF;
+	border: 1px solid #B5B2FF;
+	border-bottom-color: #20559A;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), inset 0 0 2px
+		rgba(255, 255, 255, .3), 0 1px 2px rgba(0, 0, 0, .29);
+	background: rgb(96, 108, 136); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(96,
+		108, 136, 1)), color-stop(100%, rgba(63, 76, 107, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(96, 108, 136, 1) 0%,
+		rgba(63, 76, 107, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88',
+		endColorstr='#3f4c6b', GradientType=0); /* IE6-9 */
+}
+
+.colorBtn3:HOVER {
+	cursor: pointer;
+	color: white;
+	text-shadow: 0px 1px 1px #F6F6F6;
+	background: rgb(106, 115, 135); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(106, 115, 135, 1) 0%,
+		rgba(118, 140, 201, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(106,
+		115, 135, 1)), color-stop(100%, rgba(118, 140, 201, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(106, 115, 135, 1) 0%,
+		rgba(118, 140, 201, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(106, 115, 135, 1) 0%,
+		rgba(118, 140, 201, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(106, 115, 135, 1) 0%,
+		rgba(118, 140, 201, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(106, 115, 135, 1) 0%,
+		rgba(118, 140, 201, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a7387',
+		endColorstr='#768cc9', GradientType=0); /* IE6-9 */
 }
 
 .listSelectBox {
@@ -365,8 +420,8 @@ a:focus {
 	min-width: 1000px;
 	min-height: 650px;
 	position: relative;
-	top: 25px;
 	margin: 0 auto;
+	padding-bottom: 20px;
 }
 
 #openex_setExam span {
@@ -374,7 +429,7 @@ a:focus {
 	font-size: 12px;
 }
 
-#openex_setExam input {
+.inputRadius {
 	border-radius: 10px;
 }
 
@@ -420,6 +475,67 @@ a:focus {
 	margin-bottom: 10px;
 }
 
+#openex_setExam_submit {
+	height: 140px;
+}
+
+.hdInput {
+	border: none;
+	width: 30px;
+	text-align: center;
+}
+
+/* 레이어 팝업 박스 */
+#mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background-color: #000000;
+	display: none;
+}
+
+.layerpop {
+	display: none;
+	z-index: 1000;
+	border: 2px solid #ccc;
+	background: #fff;
+	cursor: move;
+	border-radius: 0 0 10px 10px;
+}
+
+.layerpop_area .title {
+	padding: 10px 10px 10px 10px;
+	border: 0px solid #aaaaaa;
+	background: #f1f1f1;
+	color: #3eb0ce;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+}
+
+.layerpop_area .layerpop_close {
+	width: 25px;
+	height: 25px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: bold;
+}
+
+.layerpop_area .layerpop_close:hover {
+	background: transparent url('btn_exit_on.png') no-repeat;
+	cursor: pointer;
+}
+
+.layerpop_area .content {
+	width: 96%;
+	margin: 2%;
+	color: #828282;
+	text-align: center;
+}
 /* 출제 섹션 끝 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  문제풀이 섹션 시작 */
@@ -462,6 +578,7 @@ a:focus {
 	border: 1px solid gray;
 	border-radius: 10px;
 }
+
 
 /* 문제풀이 섹션 끝 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -647,9 +764,17 @@ a:focus {
 	vertical-align: top;
 }
 
-.boardMenuList li {
-	display: block;
+.boardMenuList input {
+	text-align: center;
+	border:0;
 	height: 20px;
+	background-color: rgba( 255, 255, 255, 0 );
+}
+
+.boardMenuList input:HOVER {
+	color: #8C8C8C;
+	cursor: pointer;
+	text-shadow: 0 0 1px #B2CCFF;
 }
 
 .boardMenuList li span {
@@ -657,11 +782,6 @@ a:focus {
 	color: #8C8C8C;
 }
 
-.boardMenuList li:HOVER {
-	color: #8C8C8C;
-	cursor: pointer;
-	text-shadow: 0 0 1px #B2CCFF;
-}
 
 #openex_list {
 	text-align: center;

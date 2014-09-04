@@ -5,7 +5,7 @@ import java.util.List;
 public class LecSchedule {
 	int lsId;
 	int alId;
-	int lsCost;
+	String lsCost;
 	int lsMax;
 	int lrCode;
 	String lrName;
@@ -29,10 +29,10 @@ public class LecSchedule {
 	public void setAlId(int alId) {
 		this.alId = alId;
 	}
-	public int getLsCost() {
+	public String getLsCost() {
 		return lsCost;
 	}
-	public void setLsCost(int lsCost) {
+	public void setLsCost(String lsCost) {
 		this.lsCost = lsCost;
 	}
 	public int getLsMax() {

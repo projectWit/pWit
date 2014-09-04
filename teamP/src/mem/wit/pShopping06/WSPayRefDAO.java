@@ -26,11 +26,11 @@ public class WSPayRefDAO {
 		}
 	};
 	
-	public void add(final WSPayRefDTO pay) {
+	public void add(final WSPayRefDTO nat) {
 		this.jdbcTemplate.update(
-			"insert into sPayRef values(SHOPPING_SEQ.NEXTVAL,?)",
-			//pay.getPay_code(),
-			pay.getPay_type()				
+			"insert into sPayRef values(?,?)",
+			nat.getPay_code(),
+			nat.getPay_type()				
 		);	
 	}
 	

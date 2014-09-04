@@ -36,6 +36,8 @@ private JdbcTemplate jdbcTemplate;
 			new Object[] {seq}, this.userMapper);
 	}
 	
+
+	
 	public List<ZipcodesDTO> searchDong(String dong) {
 		return this.jdbcTemplate.query(
 				"select * from zipcodes where dong like ? order by seq",

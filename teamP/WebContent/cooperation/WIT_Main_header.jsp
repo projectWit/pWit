@@ -39,7 +39,7 @@
 		<!-- <ul id="ibm-menu-links" class="ibm-access"> -->
 		<ul id="ibm-menu-links">
 			<li onmouseover="slideRibbon(0)"><a href="#">교육 사업</a></li>
-			<li onmouseover="slideRibbon(1)"><a href="/teamP/Shopping6/index.html">쇼핑몰 사업</a></li>
+			<li onmouseover="slideRibbon(1)"><a href="http://192.168.18.238:8000/teamP/Shopping6/index.html">쇼핑몰 사업</a></li>
 			<li onmouseover="slideRibbon(2)"><a href="/teamP/cooperation/_GM/WIT_GM_index.jsp">스포츠 사업</a></li>
 			<li onmouseover="slideRibbon(3)"><a href="/teamP/cooperation/_pokgan_MM/WIT_MM_index.jsp">커뮤니티 사업</a></li>
 			<li onmouseover="slideRibbon(4)"><a href="/teamP/cooperation/_Insa/WIT_Insa_index.jsp">인사 관리</a></li>

@@ -60,8 +60,118 @@
 	</select>
 
 	<insert id="insertSE" parameterClass="mem.wit.openex.OsetExamDTO">
-		INSERT INTO O_SetExam VALUES (SEQ_exNo.NEXTVAL,#MID#,#EXTIMELIMIT#,#DIF_NO#,#EX_QUESTIONSCOUNT#,#EX_TITLE#,
-#EX_EXPLAIN#,0,0,#EX_RECOMMENDLECTURE#,#EX_REFERENCE#,SYSDATE,0,#MD_NO#,#EX_MNNAME#)
+		INSERT INTO O_SetExam
+		VALUES
+		(SEQ_exNo.NEXTVAL,#MID#,#EXTIMELIMIT#,#DIF_NO#,#EX_QUESTIONSCOUNT#,#EX_TITLE#,
+		#EX_EXPLAIN#,0,0,#EX_RECOMMENDLECTURE#,#EX_REFERENCE#,SYSDATE,0,#MD_NO#,#EX_MNNAME#)
+	</insert>
+
+	<insert id="insertQUE" parameterClass="mem.wit.openex.OsetExamQueDTO">
+		<selectKey resultClass="int" keyProperty="EX_NO">
+			SELECT MAX(EX_NO)
+			AS EX_NO FROM O_SETEXAM
+		</selectKey>
+		INSERT INTO O_Questions
+		VALUES
+		(#EX_NO#,SEQ_que_QueNo.NEXTVAL,#QUE_USERSUBJECT#,#QUE_CONTENT#,#QUE_SCORE#,
+		#QUE_EXAMPLE1#,#QUE_EXAMPLE2#,#QUE_EXAMPLE3#,#QUE_EXAMPLE4#,#QUE_EXAMPLE5#,#QUE_RIGHTANSWER#,#QUE_QNO#)
+	</insert>
+
+	<update id="updateQUE" parameterClass="mem.wit.openex.OsetExamQueDTO">
+		UPDATE O_QUESTIONS
+		SET
+		QUE_USERSUBJECT=#QUE_USERSUBJECT#,
+		QUE_CONTENT=#QUE_CONTENT#,QUE_SCORE
+		= #QUE_SCORE#,
+		QUE_EXAMPLE1 = #QUE_EXAMPLE1#, QUE_EXAMPLE2
+		=#QUE_EXAMPLE2#, QUE_EXAMPLE3 =#QUE_EXAMPLE3#,
+		QUE_EXAMPLE4
+		=#QUE_EXAMPLE5#, QUE_EXAMPLE5 =#QUE_EXAMPLE5#,
+		QUE_RIGHTANSWER=#QUE_RIGHTANSWER#
+		WHERE QUE_QNO=#QUE_QNO# AND EX_NO =
+		#EX_NO#
+	</update>
+
+	<update id="updateSElast" parameterClass="java.lang.String">
+		$value$
+	</update>
+
+	<resultMap class="mem.wit.openex.OsetExamListDTO" id="OsetExamListDTO">
+		<result property="EX_NO" column="EX_NO" />
+		<result property="MID" column="MID" />
+		<result property="EXTIMELIMIT" column="EXTIMELIMIT" />
+		<result property="DIF_GRADE" column="DIF_GRADE" />
+		<result property="EX_QUESTIONSCOUNT" column="EX_QUESTIONSCOUNT" />
+		<result property="EX_TITLE" column="EX_TITLE" />
+		<result property="EX_EXPLAIN" column="EX_EXPLAIN" />
+		<result property="EX_READCOUNT" column="EX_READCOUNT" />
+		<result property="EX_RECOMMENDCOUNT" column="EX_RECOMMENDCOUNT" />
+		<result property="EX_RECOMMENDLECTURE" column="EX_RECOMMENDLECTURE" />
+		<result property="EX_REFERENCE" column="EX_REFERENCE" />
+		<result property="EX_DATE" column="EX_DATE" />
+		<result property="EX_CONFIRM" column="EX_CONFIRM" />
+		<result property="MJ_NAME" column="MJ_NAME" />
+		<result property="MD_NAME" column="MD_NAME" />
+		<result property="EX_MNNAME" column="EX_MNNAME" />
+		<result property="QUE_USERSUBJECT" column="QUE_USERSUBJECT" />
+		<result property="QUE_CONTENT" column="QUE_CONTENT" />
+		<result property="QUE_SCORE" column="QUE_SCORE" />
+		<result property="QUE_EXAMPLE1" column="QUE_EXAMPLE1" />
+		<result property="QUE_EXAMPLE2" column="QUE_EXAMPLE2" />
+		<result property="QUE_EXAMPLE3" column="QUE_EXAMPLE3" />
+		<result property="QUE_EXAMPLE4" column="QUE_EXAMPLE4" />
+		<result property="QUE_EXAMPLE5" column="QUE_EXAMPLE5" />
+		<result property="QUE_RIGHTANSWER" column="QUE_RIGHTANSWER" />
+		<result property="QUE_QNO" column="QUE_QNO" />
+		<result property="QUE_QUENO" column="QUE_QUENO" />
+	</resultMap>
+	<select id="selectSEList" parameterClass="java.lang.String"
+		resultMap="OsetExamListDTO">
+		$value$
+	</select>
+
+	<resultMap class="mem.wit.openex.OboardListDTO" id="OboardListDTO">
+		<result property="EX_NO" column="EX_NO" />
+		<result property="MNICKNAME" column="MNICKNAME" />
+		<result property="EXTIMELIMIT" column="EXTIMELIMIT" />
+		<result property="DIF_GRADE" column="DIF_GRADE" />
+		<result property="EX_QUESTIONSCOUNT" column="EX_QUESTIONSCOUNT" />
+		<result property="EX_TITLE" column="EX_TITLE" />
+		<result property="EX_EXPLAIN" column="EX_EXPLAIN" />
+		<result property="EX_READCOUNT" column="EX_READCOUNT" />
+		<result property="EX_RECOMMENDCOUNT" column="EX_RECOMMENDCOUNT" />
+		<result property="EX_DATE" column="EX_DATE" />
+		<result property="EX_CONFIRM" column="EX_CONFIRM" />
+		<result property="MJ_NAME" column="MJ_NAME" />
+		<result property="MD_NAME" column="MD_NAME" />
+		<result property="EX_MNNAME" column="EX_MNNAME" />
+	</resultMap>
+	<select id="selectBoardList" parameterClass="java.lang.String"
+		resultMap="OboardListDTO">
+		$value$
+	</select>
+
+	<resultMap class="mem.wit.openex.OsetExamQueDTO" id="OsetExamQueDTO">
+		<result property="EX_NO" column="EX_NO" />
+		<result property="QUE_QUENO" column="QUE_QUENO" />
+		<result property="QUE_USERSUBJECT" column="QUE_USERSUBJECT" />
+		<result property="QUE_CONTENT" column="QUE_CONTENT" />
+		<result property="QUE_SCORE" column="QUE_SCORE" />
+		<result property="QUE_EXAMPLE1" column="QUE_EXAMPLE1" />
+		<result property="QUE_EXAMPLE2" column="QUE_EXAMPLE2" />
+		<result property="QUE_EXAMPLE3" column="QUE_EXAMPLE3" />
+		<result property="QUE_EXAMPLE4" column="QUE_EXAMPLE4" />
+		<result property="QUE_EXAMPLE5" column="QUE_EXAMPLE5" />
+		<result property="QUE_RIGHTANSWER" column="QUE_RIGHTANSWER" />
+		<result property="QUE_QNO" column="QUE_QNO" />
+	</resultMap>
+	<select id="selectQUEList" parameterClass="java.lang.String"
+		resultMap="OsetExamQueDTO">
+		$value$
+	</select>
+
+	<insert id="insertUSA" parameterClass="java.lang.String">
+		$value$
 	</insert>
 
 </sqlMap>

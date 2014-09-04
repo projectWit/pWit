@@ -8,6 +8,7 @@ public class RentDTO {
 	String fName;
 	int sId;
 	String sName;
+	String place;
 	String rDate;
 	String rDay;
 	String rCause;
@@ -84,6 +85,12 @@ public class RentDTO {
 	}
 	public void setStateName(String stateName) {
 		this.stateName = stateName;
+	}
+	public String getPlace() {
+		return place;
+	}
+	public void setPlace(String place) {
+		this.place = place;
 	}
 	
 	

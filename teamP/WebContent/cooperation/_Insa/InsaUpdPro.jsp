@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Employee"%>
 <%@page import="mem.wit.Insa.InsaDTO"%>
 <%@page import="mem.wit.Insa.InsaDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,13 +21,15 @@
 	String mobile = request.getParameter("eMobile") + "-"
 			+ request.getParameter("eMobile2") + "-"
 			+ request.getParameter("eMobile3");
+	System.out.println(mobile);
 	insaDTO.seteMobile(mobile);
 	
 	String email = request.getParameter("eEmail1") + "@" + request.getParameter("eEmail2");
 	insaDTO.seteEmail(email);
 	
 	insaDTO.setePostNum(Integer.parseInt(request.getParameter("seq")));
-	int su = dao.insaUpdate(insaDTO);
+	Employee employee = (Employee) session.getAttribute("employee");
+	int su = dao.insaUpdate(insaDTO,employee.geteId());  
 
 	out.print(su);
 	String msg = "", url = "";
@@ -35,7 +38,7 @@
 		url = "InsaLeft.jsp";
 	} else {
 		msg = "인사수정 실패 확인";
-		url = "InsaUpd.jsp";
+		url = "InsaLeftUpd.jsp";
 	}
 %>
 <script>

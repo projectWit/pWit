@@ -27,6 +27,12 @@ public class WSNationDAO {
 		}
 	};
 	
+	public WSNationDTO get(int prd_nation) {
+		return this.jdbcTemplate.queryForObject(
+			"select * from sNation where nat_code=?",
+			new Object[] {prd_nation}, this.userMapper);
+	}
+	
 	public void add(final WSNationDTO nat) {
 		this.jdbcTemplate.update(
 			"insert into sNation values(?,?)",

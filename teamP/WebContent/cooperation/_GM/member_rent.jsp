@@ -27,11 +27,25 @@ padding-bottom: 8px;
 border-bottom: 5px solid #E8E8E8;
 }
 </style>
+<%
+String strUrl ;
+	if (request.getParameter("url") != null )
+		strUrl = request.getParameter("url");
+	else
+		strUrl = "/teamP/rentApplyForm.gm";
+	
+%>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$('#main').load('/teamP/rentApplyForm.gm');
+	$('#main').load('<%=strUrl%>');
+	$('#rent-0').click(function (e) {
+		$('#main').load('/teamP/rentApplyForm.gm');
+	});
+	$('#rent-1').click(function (e) {
+		$('#main').load('/teamP/rentCheck.gm');
+	})
 });
 </script>
 <body>
@@ -45,7 +59,7 @@ $(document).ready(function(e) {
           <ul>
             <li><a href="#" id='rent-0'>대관 신청</a></li>
             <li><a href="#" id='rent-1'>신청 결과</a></li>
-            <li><a href="#" id='rent-1'>대관 일정</a></li>
+            <li><a href="#" id='rent-2'>대관 일정</a></li>
           </ul>
         </nav>
         <!-- /nav -->

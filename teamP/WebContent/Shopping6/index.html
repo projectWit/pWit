@@ -18,8 +18,30 @@
 
 <script type="text/javascript">
 $(document).ready(function(){    
-    $('#quick').floatBanner();    
+    $('#quick').floatBanner();   
+   
+    makeNewProduct();
+    
+    function makeNewProduct() {
+    	$.post('GetRecentProductInfo.do', function(data){
+			var elem = eval("(" + data + ")");
+			$('li#anchorBoxId_9 a.prdImg img').attr('src', 'upload/'+ elem.prd_mainImg);
+			$('li#anchorBoxId_9 a.prdImg').attr('href', 'BuyProduct.jsp?prd_code='+ elem.prd_code);
+			
+			var prdName = elem.prd_name.match(/^\[(.+)\]/)[1];
+
+			$('li#anchorBoxId_9 a.name span').text(prdName);
+			$('li#anchorBoxId_9 strong.price').text(elem.prd_price+'원');			
+		});   	
+    }
+    
+    
+
+    
+   
 });
+
+
 </script>
 
 <title>Wit Shopping Mall</title>
@@ -147,9 +169,8 @@ $(document).ready(function(){
 		document.write(HeaderWs.makeWs.makeRightWingMenu());
 	</script>
 	
-    
- 
-	
+
+
 
 </div>
    

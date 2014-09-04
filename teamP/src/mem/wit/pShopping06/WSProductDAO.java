@@ -23,7 +23,7 @@ public class WSProductDAO {
 			prd.setPrd_code(rs.getInt("prd_code"));
 			prd.setPrd_name(rs.getString("prd_name"));
 			prd.setPrd_modelNo(rs.getString("prd_modelno"));
-			prd.setPrd_sellerID(rs.getString("prd_sellerlno"));
+			prd.setPrd_sellerID(rs.getString("prd_sellerID"));
 			prd.setPrd_mainImg(rs.getString("prd_mainimg"));
 			prd.setPrd_detailImg(rs.getString("prd_detailimg"));
 			prd.setPrd_mainCate(rs.getInt("prd_mainCate"));
@@ -42,10 +42,11 @@ public class WSProductDAO {
 		}
 	};
 	
-	public void add(final WSProductDTO prd) {
+	public int add(final WSProductDTO prd) {
+		int lastSeq = lastSeq();
 		this.jdbcTemplate.update(
-			"insert into sProduct values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,sysdate,?)",
-			prd.getPrd_code(),
+			"insert into sProduct values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,sysdate,0)",
+			lastSeq+1,
 			prd.getPrd_name(),
 			prd.getPrd_modelNo(),
 			prd.getPrd_sellerID(),
@@ -59,14 +60,44 @@ public class WSProductDAO {
 			prd.getPrd_hasOpt(),
 			prd.getPrd_buyMin(),
 			prd.getPrd_buyMax(),
-			prd.getPrd_remain(),
-
-//			prd.getPrd_launchDay(),
-			prd.getPrd_stop()			
+			prd.getPrd_remain()		
 		);	
+		return lastSeq+1;
 	}
 	
+	public WSProductDTO get(int prd_code) {
+		return this.jdbcTemplate.queryForObject(
+			"select * from sProduct where prd_code=?",
+			new Object[] {prd_code}, this.userMapper);
+	}
 	
+	public WSProductDTO getRecent() {
+		return this.jdbcTemplate.queryForObject(
+			"select * from sProduct where prd_code=(select max(prd_code) from sProduct) ",
+			 this.userMapper);
+	}
 	
+	public int lastSeq() {
+		if(getCount()==0) {
+			return 0;
+		}
+		else {
+			return this.jdbcTemplate.queryForObject(
+				"select max(prd_code) from sProduct", Integer.class);
+		}
+				 
+	}
+	
+	public int getCount() {
+		return this.jdbcTemplate.queryForObject(
+				"select count(*) from sProduct", Integer.class);
+				 
+	}
+	
+	public int addImage(int prd_code, String mainImg, String detailImg) {
+		return this.jdbcTemplate.update(
+			"update sProduct set prd_mainImg=?, prd_detailImg=? where prd_code=?", 
+				mainImg, detailImg, prd_code );
+	}
 	
 }

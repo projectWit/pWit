@@ -126,7 +126,7 @@ a:link {
 			
 			<table border=0 width='900px'>
 				<tr>
-					<td id='bl_count'> 개설 강좌 : <c:out value="${fn:length(list)}" /> &nbsp;&nbsp; </td>
+					<td id='bl_count'> 신청 현황 : <c:out value="${fn:length(list)}" /> &nbsp;&nbsp; </td>
 				</tr>
 			</table>
 			
@@ -138,11 +138,10 @@ a:link {
 			<table id='bl_table' border='0' cellpadding='0' cellspacing='0' width='100%'>
 				<tr>
 					<td class='bl_title bl_no'>No</td>					
-					<td class='bl_title bl_subject'>동호회명</td>
+					<td class='bl_title bl_subject'>신청사유</td>
 					<td class='bl_title bl_type'>종목</td>
 					<td class='bl_title bl_place'>장소</td>
-					<td class='bl_title bl_name'>회장</td>
-					<td class='bl_title bl_phone'>연락처</td>
+					<td class='bl_title bl_name'>동호회명</td>
 					<td class='bl_title bl_date'>대관일</td>
 					<td class='bl_title bl_dateend'>상태</td>
 				</tr>
@@ -153,15 +152,12 @@ a:link {
 				<tr class="bl_oddline">
 					<td class='bl_list bl_no'>${item.rId }</td>
 					
-					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.lecName }</a>&nbsp;&nbsp; </td>
-					<td class='bl_list bl_sport'>${item.sName }</td>
-					<td class='bl_list bl_type'>${item.tName }</td>
+					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.rCause }</a>&nbsp;&nbsp; </td>
+					<td class='bl_list bl_type'>${item.sName }</td>
 					<td class='bl_list bl_place'>${item.place }</td>
-					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.eKName }</div></td>
-					<td class='bl_list bl_phone'>${item.eTel }</td>
-					
-					<td class='bl_list bl_date'>${item.sSDay.substring(0,10) }</td>
-					<td class='bl_list bl_dateend'>${item.sEDay.substring(0,10) }</td>
+					<td class='bl_list bl_name'><div style='padding-left:2px; padding-right:2px;'>${item.cName }</div></td>					
+					<td class='bl_list bl_date'>${item.rDay.substring(0,10) }</td>
+					<td class='bl_list bl_dateend'>${item.stateName }</td>
 				</tr>
 				</c:forEach>
 				<!-- LIST REPEAT END -->
