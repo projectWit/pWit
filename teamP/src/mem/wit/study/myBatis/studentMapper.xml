@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mem.wit.study.myBatis.StudentMapper">
+	<resultMap id="SuppLecMap" type="mem.wit.study.codes.SuppLec">
+		<!-- <result property="slCode" column="slCode" />
+		<result property="slName" column="slName" /> -->
+	</resultMap>
+  
+  <select id="select" resultType="mem.wit.study.codes.SuppLec">
+    SELECT * FROM cdSuppLec
+		WHERE slCode = #{slCode}
+  </select>
+  <select id="selectAll" resultMap="mem.wit.study.myBatis.SuppLecMapper.SuppLecMap">
+    SELECT * FROM cdSuppLec
+  </select>
+  <select id="selectById" resultType="mem.wit.study.user.Student">
+    SELECT * FROM ASTUDENT
+		WHERE mId = #{mId}
+  </select>
+</mapper>

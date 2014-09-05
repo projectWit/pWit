@@ -14,6 +14,7 @@ $(document).ready(function(e) {
 	});
 	
 //	var currentIndex = 0;
+	
 	$('.ibm-menu-subtabs li[class*="subTab-'+currentNavIndex+'-'+currentSubtabIndex+'"]').addClass('ibm-active');
 	$('.ibm-menu-subtabs li[class*="subTab-"]').hover(function(e) {
 		var className = $(this).attr('class');
@@ -36,6 +37,7 @@ $(document).ready(function(e) {
 	
 //	var width = document.getElementById("ibm-com").offsetWidth;
 //	var height = document.getElementById("ibm-com").offsetHeight;
+	
 	var width = $(window).width();
 	var height = $(window).height();
 	var isDragged = false;
@@ -90,20 +92,19 @@ $(document).ready(function(e) {
 
 function showLogin() {
 	if ($('#loginStatus').val()=="true" ) {	// 로그인 상태가 true 일 때는 로그아웃의 요청이다
-//		window.open("closeSession.jsp", "", "width=0, height=0");
 		$('#loginStatusForm').attr('action',"/teamP/members/logout");
 		$('#loginStatusForm').submit();
 	} else {
-	$('.dijitDialogUnderlayWrapper').fadeIn();
-	$('.dijitDialog').fadeIn();
-	$('#iframe1').contents().find('.ibm-btn-cancel-sec').click(function(e) {
-		hideLogin();
-	});
-	$( ".dijitDialog" ).draggable({
-		  drag: function( event, ui ) {
-			  isDragged = true;
-		  }
-	});
+		$('.dijitDialogUnderlayWrapper').fadeIn();
+		$('.dijitDialog').fadeIn();
+		$('#iframe1').contents().find('.ibm-btn-cancel-sec').click(function(e) {
+			hideLogin();
+		});
+		$( ".dijitDialog" ).draggable({
+			  drag: function( event, ui ) {
+				  isDragged = true;
+			  }
+		});
 	} // end if ($('#loginStatus').val()=="true" )
 }
 function hideLogin() {

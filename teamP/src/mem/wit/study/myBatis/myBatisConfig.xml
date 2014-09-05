@@ -25,6 +25,7 @@
     <mapper resource="mem/wit/study/myBatis/lectureMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/regLecListMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/sbjCateMapper.xml"/>
+    <mapper resource="mem/wit/study/myBatis/studentMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/subjectMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/suppLecMapper.xml"/>
     <mapper resource="mem/wit/study/myBatis/teacherMapper.xml"/>

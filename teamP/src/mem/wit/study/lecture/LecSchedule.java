@@ -12,7 +12,7 @@ public class LecSchedule {
 	String lsDescription;
 	String lsFromDate;
 	String lsToDate;
-	int lsCode;		// 강의 상태
+	int lsCode;
 	String lsName;
 	Lecture lecture;
 	List<LecDay> lecDay;
