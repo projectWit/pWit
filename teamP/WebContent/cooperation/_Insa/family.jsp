@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%> 
+<%@page import="com.wit.member.Employee"%>
+<%@page import="mem.wit.Insa.InsaDTO"%>
+<%@page import="mem.wit.Insa.InsaDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -43,7 +47,6 @@
 		 } 
 
 	function AddRow() {
-
 		$("#dvForm")
 				.append(
 						"<tr><td class='center'><input class='default' name='fJumin1"
@@ -86,7 +89,13 @@
 		i++;
 	}
 </script>
-
+<%
+InsaDAO dao = new InsaDAO();
+InsaDTO dto = new InsaDTO();
+Employee employee = (Employee) session.getAttribute("employee");
+List dtoL = dao.insaSelect(employee.geteId());
+dto = (InsaDTO) dtoL.get(0);
+%>
 
 
 </head>
@@ -96,7 +105,7 @@
 			<div id="title">
 				<h1>
 					<img src="img/titleBar.gif" width="8px" height="9px" alt="" /> [<span
-						id="lblEmpKname">호날두</span>]님의 가족사항등록
+						id="lblEmpKname"><%=dto.geteKName()%></span>]님의 가족사항등록
 				</h1>
 			</div>
 
@@ -131,8 +140,7 @@
 				<br /> <br /> <br /> <br />
 				<input type="button" class = "btn blue" name="btnAdd" id="btnAdd" value="가족추가" />
 			</div>
-		</div>
-		
+		</div>		
 
 
 		<div class="footerBG_pop">

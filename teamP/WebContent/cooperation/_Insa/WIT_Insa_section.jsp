@@ -1,3 +1,4 @@
+<%@page import="com.wit.member.Employee"%>
 <%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -16,7 +17,9 @@
 <script type="text/javascript" src="../script/jquery-ui.js"></script>
 <%
 Member member = (Member) session.getAttribute("member");
-boolean login = member == null ? false : true;
+Employee employee = (Employee) session.getAttribute("employee");
+//boolean login = member == null ? false : true;
+boolean login = employee == null ? false : true;
 String href1 = "#";
 String href2 = "#";
 String href3 = "#";
@@ -25,17 +28,14 @@ String href5 = "#";
 String logfunc = "";
 
 if (login) { // 로그인 관리자 때 
-  href1 = "InsaLeft.jsp";
-  href2 = "ClockLeft.jsp";
-  href3 = "BoardLeft.jsp";
-  href4 = "DocLeft.jsp";
+  href1 = "InsaLeftMan.jsp";
+  href2 = "ClockLeftMan.jsp";
+  href3 = "BoardLeftMan.jsp";
+  href4 = "DocLeftMan.jsp";
 } else {
 	logfunc = "showLogin()";
 }
 %>
-<script type="text/javascript">
-	
-</script>
 </head>
 <body>
 <div style="width: 760px; margin: auto;">
@@ -46,19 +46,19 @@ if (login) { // 로그인 관리자 때
 		</div>
 		
 		<div>
-			<a href="ClockLeft.jsp"><img src="img/backclock.png" width="350px"
+			<a href="<%=href2%>" onclick = "<%=logfunc%>"><img src="img/backclock.png" width="350px"
 				height="300px"></a>
 		</div>
 	</div>
 	<br><br>
 	<div>
 		<div style="float: left;margin-left: 30px;">
-			<a href="BoardLeft.jsp"><img src="img/backboard01.png" width="350px"
+			<a href="<%=href3%>" onclick = "<%=logfunc%>"><img src="img/backboard01.png" width="350px"
 				height="300px"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</div>
 		
 		<div>
-			<a href="DocLeft.jsp"><img src="img/backdocument.png" width="350px"
+			<a href="<%=href4%>" onclick = "<%=logfunc%>"><img src="img/backdocument.png" width="350px"
 				height="300px"></a>
 		</div>
 	</div>

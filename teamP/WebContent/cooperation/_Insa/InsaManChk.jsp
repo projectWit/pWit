@@ -1,5 +1,5 @@
 <%@page import="com.wit.member.Employee"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.List"%> 
 <%@page import="mem.wit.Insa.InsaDTO"%>
 <%@page import="mem.wit.Insa.InsaDAO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -180,7 +180,7 @@
 				<col width="" />
 				<tr>
 					<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-						src="saveimg/<%=dto.getePhoto()%>" style="height: 180px; width: 140px;" /></td>
+						src="../../img/<%=dto.getePhoto()%>" style="height: 180px; width: 140px;" /></td>
 					<th>사원번호</th>
 					<td><%=dto.geteId()%>
 					</td>

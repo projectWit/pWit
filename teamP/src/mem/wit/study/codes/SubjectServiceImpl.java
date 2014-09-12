@@ -21,6 +21,10 @@ public class SubjectServiceImpl implements SubjectService {
 		return subjectMapper.select(sbjCode);
 	}
 	
+	public List<Subject> selectByCatCode(int sbjCatCode) {
+		return subjectMapper.selectByCatCode(sbjCatCode);
+	}
+	
 	public int insert(Subject subject) {
 		return subjectMapper.insert(subject);
 	}

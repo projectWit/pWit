@@ -2,7 +2,19 @@ package mem.wit.Insa;
 
 public class FamDTO {
 	private int fSeq, fHtCd, rtCd, fJumin1, fJumin2;
-	private String eId, fName, fRelation, fFinGrad, fJob, fCompany;
+	private String eId, fName, fRelation, fFinGrad, fJob, fCompany, fhtName, frtName;
+	public String getFhtName() {
+		return fhtName;
+	}
+	public void setFhtName(String fhtName) {
+		this.fhtName = fhtName;
+	}
+	public String getFrtName() {
+		return frtName;
+	}
+	public void setFrtName(String frtName) {
+		this.frtName = frtName;
+	}
 	public int getfSeq() {
 		return fSeq;
 	}

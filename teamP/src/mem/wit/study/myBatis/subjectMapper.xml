@@ -13,6 +13,10 @@
     SELECT * FROM cdSubject
 		WHERE sbjCode = #{sbjCode}
   </select>
+  <select id="selectByCatCode" resultMap="mem.wit.study.myBatis.SubjectMapper.SubjectMap">
+    SELECT * FROM cdSubject
+		WHERE sbjCatCode = #{sbjCatCode}
+  </select>
   <select id="selectAll" resultMap="mem.wit.study.myBatis.SubjectMapper.SubjectMap">
     SELECT * FROM cdSubject
   </select>

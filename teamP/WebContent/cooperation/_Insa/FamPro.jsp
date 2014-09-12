@@ -1,5 +1,6 @@
+<%@page import="com.wit.member.Employee"%>
 <%@page import="org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID"%>
-<%@page import="oracle.jdbc.driver.OracleDriver"%>
+<%@page import="oracle.jdbc.driver.OracleDriver"%> 
 <%@page import="mem.wit.Insa.FamDTO"%>
 <%@page import="mem.wit.Insa.FamDAO"%>
 <%@page import="java.sql.Connection"%>
@@ -17,6 +18,9 @@
 <jsp:useBean id="famDTO" class="mem.wit.Insa.FamDTO"></jsp:useBean>
 <jsp:setProperty property="*" name="famDTO" />
 <%
+Employee employee = (Employee)session.getAttribute("employee");
+
+	String eId = employee.geteId();
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
@@ -53,7 +57,7 @@
 		sql += "values(Seq_fam.NEXTVAL,'" + fJumin1 + "' , '" + fJumin2
 				+ "', '" + fName + "', '" + fRelation + "', '"
 				+ fFinGrad + "', '" + fJob + "', '" + fCompany
-				+ "', '" + fhtcd + "', '" + frtcd + "', 'test8')";
+				+ "', '" + fhtcd + "', '" + frtcd + "', '" + eId + "')"; 
 		stmt.execute(sql);
 	}
 	String url1 = "family.jsp";

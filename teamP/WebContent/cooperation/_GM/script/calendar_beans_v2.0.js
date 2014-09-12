@@ -48,8 +48,10 @@ function initCal(obj){
 	
 	if( calType == "day"){
 		$("#"+obj.id).attr("maxlength",10);
-		$("#"+calId).css("width","170px");
-		$("#"+calId +"btn.todayBtn").css("width","157px");							
+		$("#"+calId).css("width","175px");
+		$("#"+calId).css("min-width","175px");
+		$("#"+calId +"btn.todayBtn").css("width","162px");
+		$("#"+calId +"btn.todayBtn").css("min-width","162px");
 	}else{
 		$("#"+obj.id).attr("maxlength",7);
 		$("#"+calId).css("width","146px");

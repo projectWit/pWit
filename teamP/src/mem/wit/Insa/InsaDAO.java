@@ -30,7 +30,8 @@ public class InsaDAO {
 			sql += "PosName, DutyName, eDropDate, eDropRsn, eTel, eMobile, DepName, ePostNum, eAddr2, ePhoto,";
 			sql += "eEmail, zipcode, sido, gugun, dong, ri, bunji from Employee e, DepartmentCd d, PositionCd p, InTypeCd i, DutyCd u, House h, zipcodes z ";
 			sql += "where e.eInTypeCd = i.inTypeCd and e.ePosCd = p.PosCd and e.eDutyCd = u.DutyCd ";
-			sql += "and e.eDepCd = d.DepCd and e.ehId = h.hId and e.ePostNum = z.seq and eId = '"+ eId+ "'";
+			sql += "and e.eDepCd = d.DepCd and e.ehId = h.hId and e.ePostNum = z.seq and eId = '"
+					+ eId + "'";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -98,12 +99,12 @@ public class InsaDAO {
 		return dtoL;
 	}
 
-	public int insaUpdate(InsaDTO dto, String eId) {		
+	public int insaUpdate(InsaDTO dto, String eId) {
 		int su = 0;
 		conn = DbSet.getConnection();
 		try {
 			String sql = "update Employee set ehid = ?, eTel = ?, eMobile = ?, ePostNum = ?,";
-			sql += "eAddr2 = ?, eEmail = ?, ePwd = ? where eId ='"+ eId+ "'";
+			sql += "eAddr2 = ?, eEmail = ?, ePwd = ? where eId ='" + eId + "'";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getEhId());
@@ -113,7 +114,7 @@ public class InsaDAO {
 			pstmt.setString(5, dto.geteAddr2());
 			pstmt.setString(6, dto.geteEmail());
 			pstmt.setString(7, dto.getePwd());
-			//pstmt.setString(8, dto.geteId());
+			// pstmt.setString(8, dto.geteId());
 			su = pstmt.executeUpdate();
 		}
 
@@ -128,9 +129,8 @@ public class InsaDAO {
 	public int insaInsert(InsaDTO dto) {
 		int su = 0;
 		conn = DbSet.getConnection();
-
 		try {
-			
+
 			String sql = "insert into Employee (eId, eKName, eCName, eEName, eJumin1, eJumin2,";
 			sql += "eTel, eMobile, eJoinDate, eDropDate, eDropRsn, ePhoto, ePostNum, eAddr2, eEmail,";
 			sql += "ePwd, eInTypeCd, ePosCd, eDutyCd, eDepCd, ehId) ";
@@ -285,5 +285,5 @@ public class InsaDAO {
 		}
 		return dtoL;
 	}
-	
+
 }

@@ -48,7 +48,6 @@ public class MemberController {
 		if (member == null) {	
 			// id와 일치하는 레코드가 없음. id 불일치
 		} else {
-//			System.out.println("mId : "+member.getmId()+", mPwd : "+member.getmPwd());
 			if (member.getmPwd().equals(password_text)) { 
 				result = 2;	// id, pwd 전부 일치
 				Power power = memberService.getPower(member);
@@ -67,9 +66,7 @@ public class MemberController {
 			System.out.println("eId : "+employee.geteId()+", ePwd : "+employee.getePwd());
 			if (employee.getePwd().equals(password_text)) { 
 				result = 2;	// id, pwd 전부 일치
-//				Power power = employeeService.getPower(employee);
 				session.setAttribute("employee", employee);		// 세션 생성
-//				session.setAttribute("power", power);
 			} else {	
 				result = 1;	// id일치, pwd불일치
 			}

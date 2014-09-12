@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -54,7 +54,7 @@ $(document).ready(function(e) {
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
         <!-- ########################################################################################## -->
-        <h2>대관 관리</h2>
+        <h2>대관 신청</h2>
         <nav>
           <ul>
             <li><a href="#" id='rent-0'>대관 신청</a></li>

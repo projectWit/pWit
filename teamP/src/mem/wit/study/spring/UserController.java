@@ -136,6 +136,7 @@ public class UserController {
 		List<SuppLec> slList = suppLecService.selectAll();
 		List<LecCate> lcList = lecCateService.selectAll();
 		List<Subject> sbjList = subjectService.selectAll();
+		List<Subject> sbjListByCate = subjectService.selectByCatCode(2);
 		List<ExamGrade> egList = examGradeService.selectAll();
 		List<Textbook> tbList = textbookService.selectAll();
 		List<LecRoom> lrList = lecRoomService.selectAll();
@@ -144,6 +145,7 @@ public class UserController {
 		model.addAttribute("slList", slList);
 		model.addAttribute("lcList", lcList);
 		model.addAttribute("sbjList", sbjList);
+		model.addAttribute("sbjListByCate", sbjListByCate);
 		model.addAttribute("egList", egList);
 		model.addAttribute("tbList", tbList);
 		model.addAttribute("lrList", lrList);

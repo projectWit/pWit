@@ -1,4 +1,4 @@
-<%@page import="javax.swing.text.Document"%>
+<%@page import="javax.swing.text.Document"%> 
 <%@page import="com.wit.member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

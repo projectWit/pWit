@@ -14,7 +14,7 @@ $(function() {
 
 	// 카운트 다운
 	var ext = parseInt($('#EXTIMELIMIT').val());
-	var intervals = (60*ext);
+	var intervals = (60 * ext);
 	function timer() {
 		$("#REC_TIME").val(intervals);
 		setTimeout(timer, 1000); // 1초
@@ -27,6 +27,7 @@ $(function() {
 		}
 	}
 	setTimeout(timer, 10);
+	
 	// 문항 수 계산
 	var Excnt = parseInt($('#EX_QUESTIONSCOUNT').val());
 
@@ -71,20 +72,21 @@ $(function() {
 					var code = $(xml).find(cFind).text();
 					$(element + code).prop("checked", true);
 				}
-				//라디오버튼 체크 해제
-				$('.radioSelect').attr('checked',false).checkboxradio('refresh');
+				// 라디오버튼 체크 해제
+				$('.radioSelect').attr('checked', false).checkboxradio(
+						'refresh');
 			});
 
 	// 사용자답이 입력되면 출력
 	$('.radioSelect').on('change', function() {
 		var radioSelVal = $('.radioSelect:checked').val();
 		$('#USA_ANSWER' + $('#QUE_QNO').val()).val(radioSelVal);
-		
+
 		// 사용자답이 입력되면 체크
 		var sumCnt = 0;
 		for (var i = 1; i <= Excnt; i++) {
 			sumCnt += parseInt($('#USA_ANSWER' + i).val());
-			
+
 			if ($('#USA_ANSWER' + i).val() != 0) {
 				$('#queChk' + i).prop("checked", true);
 			} else {

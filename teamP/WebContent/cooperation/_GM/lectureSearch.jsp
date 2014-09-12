@@ -157,7 +157,6 @@ $('#sId').change(function (e) {
 	});
 });
 function insertLReq(sNum) {
-	alert(sNum);
 	location.href="/teamP/insertLReq.gm?sNum="+sNum;
 }
 </script>

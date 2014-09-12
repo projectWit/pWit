@@ -1,7 +1,7 @@
 <%@page import="com.wit.member.Employee"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.List"%> 
 <%@page import="mem.wit.Insa.InsaDTO"%> 
 <%@page import="mem.wit.Insa.InsaDAO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -198,7 +198,7 @@
 					<col width="" />
 					<tr>
 						<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-							src="saveimg/<%=dto.getePhoto()%>" style="height: 150px; width: 140px;" /></td>
+							src="../../img/<%=dto.getePhoto()%>" style="height: 150px; width: 140px;" /></td>
 						<th>사원번호</th>
 						<td><%=dto.geteId()%></td>
 						<th>성명</th>

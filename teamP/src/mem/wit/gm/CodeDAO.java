@@ -60,4 +60,8 @@ public class CodeDAO {
 		List<TeacherDTO> alist = (List<TeacherDTO>) myBatis.select("searchTea", query);
 		return alist;
 	}
+	public String InsertClub(ClubDTO dto) {
+		myBatis.insert("insertClub", dto);
+		return "insert";
+	}
 }

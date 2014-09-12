@@ -1,5 +1,5 @@
 <%@page import="mem.wit.accounting.ACC_TotalSlipDTO"%>
-<%@page import="java.util.ArrayList"%> 
+<%@page import="java.util.ArrayList"%>  
 <%@page import="mem.wit.accounting.ACC_TotalSlipDAO"%>
 <%@page
 	import="org.springframework.context.support.GenericXmlApplicationContext"%>

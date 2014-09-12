@@ -37,7 +37,7 @@ String name1 = "수강 강좌";
 String name2 = "동호회";
 String name3 = "질의 응답";
 String name4 = "대관 신청";
-String name5 = "마이페이지";
+String name5 = "";
 if (login) { // 로그인 관리자 때 
    if(member.getmId().equals("admin_gm") || member.getmId().equals("admin")) {
 	   name1="회원 관리";
@@ -55,7 +55,6 @@ if (login) { // 로그인 관리자 때
 	   href2 = "Member_GM_Club.jsp";
 	   href3 = "Member_GM_Question.jsp";
 	   href4 = "Member_GM_Rent.jsp";
-	   href5 = "Member_GM_MyPage.jsp";
    }
 } else {
 	logfunc = "showLogin()";

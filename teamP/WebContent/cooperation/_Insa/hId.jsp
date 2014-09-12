@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "mem.wit.Insa.HIdDTO" %>
-<%@page import="java.util.List"%>
+<%@page import="java.util.List"%> 
 <%
 InsaDAO dao = new InsaDAO();
 List<HIdDTO> result = dao.hId();

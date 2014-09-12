@@ -1,4 +1,4 @@
-<%@page import="mem.wit.Insa.BhCdDTO"%>
+<%@page import="mem.wit.Insa.BhCdDTO"%> 
 <%@page import="mem.wit.Insa.PerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>

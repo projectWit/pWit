@@ -89,18 +89,14 @@ calendarIDs = ['lsFromDate', 'lsToDate', 'fromDropDate', 'toDropDate', 'fromBirt
             <div class="limit-table">
             <table cellspacing="0" class="tab-table" style="border-top: 0px solid transparent;">-->
                 <tbody class="tabTable-td">
-                <!-- <tr><td class="t-td-0"><a href="@Study_lecDetail.jsp">00001</a></td><td class="t-td-1">혼자하는 수학</td><td class="t-td-2">이연희</td><td class="t-td-3">수학</td><td class="t-td-4">고등학생</td>
-                	<td class="t-td-5">3</td><td class="t-td-6">30</td><td class="t-td-7">102</td><td class="t-td-8">300,000</td>
-                	<td class="t-td-9">18:00</td><td class="t-td-10">18:00</td><td class="t-td-11">18:00</td><td class="t-td-12">18:00</td>
-                	<td class="t-td-13">18:00</td><td class="t-td-14">18:00</td><td class="t-td-15">18:00</td><td class="t-td-16">수학의 정석</td>
-                	<td class="t-td-17"><input type="button" value="삭제"></td></tr> -->
+ 
 			<c:forEach var="lecSchedule" items="${lschduleList }" begin="${pagingModel.startRecord-1 }" end="${pagingModel.endRecord-1 }" step="1" varStatus="status">
-				<tr><td class="t-td-0">${pagingModel.no-status.count+1 }</td><td class="t-td-0"><a href="#">${lecSchedule.lsId }</a></td><td class="t-td-0">${lecSchedule.lsName }</td><td class="t-td-0">${lecSchedule.alId }</td><td class="t-td-1">${lecSchedule.lecture.alName }</td>
-					<td class="t-td-2">${lecSchedule.lecture.eKname }</td><td class="t-td-3">${lecSchedule.lecture.sbjName }</td><td class="t-td-3">${lecSchedule.lecture.slName }</td><td class="t-td-3">${lecSchedule.lecture.lcName }</td><td class="t-td-4">${lecSchedule.lecture.sgName }</td>
+				<tr><td class="t-td-0">${pagingModel.no-status.count+1 }</td><td class="t-td-0"><a href="#">${lecSchedule.lsId }</a></td>
+					<td class="t-td-0">${lecSchedule.lsName }</td><td class="t-td-0">${lecSchedule.alId }</td><td class="t-td-1">${lecSchedule.lecture.alName }</td>
+					<td class="t-td-2">${lecSchedule.lecture.eKname }</td><td class="t-td-3">${lecSchedule.lecture.sbjName }</td><td class="t-td-3">${lecSchedule.lecture.slName }</td>
+					<td class="t-td-3">${lecSchedule.lecture.lcName }</td><td class="t-td-4">${lecSchedule.lecture.sgName }</td>
                 	<td class="t-td-6">${lecSchedule.lsMax }</td><td class="t-td-7">${lecSchedule.lrName }</td><td class="t-td-8">${lecSchedule.lsCost }</td>
-                <%-- <c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status2">
-                	<td class="t-td-9">${lecDay.ltFromTime } - ${lecDay.ltToTime }</td>
-                </c:forEach> --%>
+ 
                 <c:forEach var="i" begin="1" end="7" varStatus="status2">
                 	<td class="t-td-9">
                 	<c:forEach var="lecDay" items="${lecSchedule.lecDay}"  varStatus="status3">
@@ -110,22 +106,15 @@ calendarIDs = ['lsFromDate', 'lsToDate', 'fromDropDate', 'toDropDate', 'fromBirt
                 	</c:forEach>
                 	</td>
                 </c:forEach>
-                	<td class="t-td-16">${lecSchedule.lecture.tbName } - ${lecSchedule.lecture.sbjName2 }&nbsp;${lecSchedule.lecture.cName }</td><td class="t-td-17"><input type="button" value="삭제"></td></tr>
+                	<td class="t-td-16">${lecSchedule.lecture.tbName } - ${lecSchedule.lecture.sbjName2 }&nbsp;${lecSchedule.lecture.cName }</td>
+                	<td class="t-td-17"><input type="button" value="삭제"></td></tr>
 			</c:forEach>
-			<!-- <tr><td class="t-td-0">t</td><td class="t-td-0"><a href="#">t</a></td><td class="t-td-1">t</td><td class="t-td-2">t</td>
-                	<td class="t-td-3">t</td><td class="t-td-4">t</td><td class="t-td-5">t</td>
-                	<td class="t-td-6">t</td><td class="t-td-7">t</td><td class="t-td-8">t</td>
-                	<td class="t-td-9">t</td><td class="t-td-10">t</td><td class="t-td-11">t</td>
-                	<td class="t-td-12"><input type="button" value="삭제"></td></tr> -->
-			
                 
                 </tbody>
             </table>
             </div>
             
             <div class="paging">
-            	<!-- <span><a href="#">이전 10개</a>...</span> <span><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> 
-            		<a href="#">6</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">10</a></span> <span>...<a href="#">다음 10개</a></span> -->
 			<c:if test="${pagingModel.prevLink > 0}"><span><a href="#" value="${pagingModel.prevLink }">이전 10개</a>&nbsp;...</span></c:if>
 				&nbsp;&nbsp;<span>
 			<c:forEach var="i" begin="${pagingModel.firstPage }" end="${pagingModel.lastPage }" step="1" varStatus="status">

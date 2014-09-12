@@ -26,11 +26,13 @@
 		<result property="cId" column="cId" />
 		<result property="cName" column="cName" />
 		<result property="cJoinDay" column="cJoinDay" />
-		<result property="sId" column="sId" />
+		<result property="cPTel" column="cPTel" />
+		<result property="cMTel" column="cMTel" />
 		<result property="sName" column="sName" />
 		<result property="cHomepage" column="cHomepage"/>
 		<result property="cEmblem" column="cEmblem"/>
-		<result property="cPresident" column="mName" />
+		<result property="cPresident" column="cPresident" />
+		<result property="cManager" column="cManager" />
 	</resultMap>
 	<resultMap class="mem.wit.gm.FacilDTO" id="FacilDTO">
 		<result property="fName" column="fName" />
@@ -180,6 +182,9 @@ $value$
 <select id="rentCheck" parameterClass="java.lang.String" resultMap="rentDTO">
 $value$
 </select>
+<select id="detailclub" parameterClass="java.lang.String" resultMap="clubinsert">
+$value$
+</select>
 <insert id="insertLReq" parameterClass="java.lang.String">
 $value$
 </insert>
@@ -207,4 +212,5 @@ $value$
 <update id="updateLReq" parameterClass="java.lang.String">
 $value$
 </update>
+
 </sqlMap>

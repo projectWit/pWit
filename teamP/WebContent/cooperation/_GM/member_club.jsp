@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,13 +29,22 @@ padding-bottom: 8px;
 border-bottom: 5px solid #E8E8E8;
 }
 
+<%
+String strUrl ;
+	if (request.getParameter("url") != null )
+		strUrl = request.getParameter("url");
+	else
+		strUrl = "/teamP/clublist.gm";
+	
+%>
+
 
 </style>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="/teamP/cooperation/script/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
-	$("#main").load('/teamP/cooperation/_GM/clubsInsert.jsp');
+	$("#main").load('<%=strUrl%>');
 	$('#club-0').click(function(e) {
 		$("#main").load('/teamP/cooperation/_GM/clubsInsert.jsp');
 	});
@@ -56,7 +65,7 @@ $(document).ready(function(e) {
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
         <!-- ########################################################################################## -->
-        <h2>동호회 관리</h2>
+        <h2>동호회 </h2>
         <nav>
           <ul>
             <li><a href="#" id='club-0'>동호회 등록</a></li>

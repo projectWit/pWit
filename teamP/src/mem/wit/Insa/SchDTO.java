@@ -3,6 +3,31 @@ package mem.wit.Insa;
 public class SchDTO {
 	private int sSeq, sSchCd, sLocCd, sGradCd, sDnCd;
 	private String eId, sSchName, sJoinDate, sGradDate, sMajor, sEtc;
+	private String schname, locname, gradname, dnname;
+	public String getSchname() {
+		return schname;
+	}
+	public void setSchname(String schname) {
+		this.schname = schname;
+	}
+	public String getLocname() {
+		return locname;
+	}
+	public void setLocname(String locname) {
+		this.locname = locname;
+	}
+	public String getGradname() {
+		return gradname;
+	}
+	public void setGradname(String gradname) {
+		this.gradname = gradname;
+	}
+	public String getDnname() {
+		return dnname;
+	}
+	public void setDnname(String dnname) {
+		this.dnname = dnname;
+	}
 	public int getsSeq() {
 		return sSeq;
 	}

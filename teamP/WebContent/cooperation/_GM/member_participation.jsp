@@ -50,7 +50,7 @@ $(document).ready(function(e) {
 	<div id="sidebar_1" class="sidebar one_third">
       <aside>
         <!-- ########################################################################################## -->
-        <h2>회원 관리</h2>
+        <h2>질의 응답</h2>
         <nav>
           <ul>
             <li><a href="#" id='board-0'>1:1 문의</a></li>

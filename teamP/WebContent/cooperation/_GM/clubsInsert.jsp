@@ -100,7 +100,7 @@ $(document).ready(function() {
 	});
 });
 function sendController() {
-	document.clubInsFrm.action="/teamP/clubsInsert.gm";
+	document.clubInsFrm.action="clubInsertPro.jsp";
 	document.clubInsFrm.submit();
 }
 function SearchId() {
@@ -150,8 +150,8 @@ function previewImage(targetObj, View_area) {
 			img.id = "prev_" + View_area;
 			img.classList.add("obj");
 			img.file = file;
-			img.style.width = '100px'; 
-			img.style.height = '100px';
+			img.style.width = '200px'; 
+			img.style.height = '200px';
 			preview.appendChild(img);
 			if (window.FileReader) { // FireFox, Chrome, Opera 확인.
 				var reader = new FileReader();
@@ -195,7 +195,7 @@ Member member = (Member) session.getAttribute("member");
 				<col>
 			<tbody>
 				<tr>
-					<td rowspan="7"  id="View_area" name="View_area"></td>
+					<td rowspan="6" id="View_area" name="View_area"></td>
 					<th><label for="cName"><span
 							class="login">동호회명</span></label></th>
 					<td><input name="cName" class="default"
@@ -213,20 +213,14 @@ Member member = (Member) session.getAttribute("member");
 					<th><label for="cManagerName">총무</label></th>
 					<td><input type="hidden" id="cManager" name="cManager" /><input type="text" id="cManagerName" name="cManagerName" /> <img src="img/search_btn.gif" style="cursor:pointer;" onclick="SearchId()"/></td>
 				</tr>
-
+				
 				<tr>
 					<th><label for="sId">종목</label></th>
 					<td><select id="sId" name="sId" style="margin-left: 10px;">
 					</select></td>
 				</tr>
 
-				<tr>
-					<th><label for="cPost1">주소</label></th>
-					<td><input type="button" onclick="searchAddr()" value="우편번호찾기" style="height:25px;" /> <br/>
-					<input type="text" id=cPost1 name="cPost1" style="width:250px; margin-top:6px;"  /><br/>
-					<input type="text" id="cAddr" name="cAddr" style="width:350px; margin-top:6px;"  />
-					</td>
-				</tr>
+
 
 				<tr>
 					<th><label for="cHomepage">홈페이지 주소</label></th>
@@ -240,6 +234,7 @@ Member member = (Member) session.getAttribute("member");
 					<td><input name="cEmblem" type="file" id="cEmblem" class="graybox" size="70" style="height: 20px;" onchange="previewImage(this,'View_area')" />
 					</td>
 				</tr>
+
 
 
 

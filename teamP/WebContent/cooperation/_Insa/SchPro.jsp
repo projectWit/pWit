@@ -3,8 +3,9 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.DriverManager"%> 
 <%@page import="java.util.Map"%>
+<%@page import="com.wit.member.Employee"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,7 +14,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%
-	Connection conn = null;
+Employee employee = (Employee)session.getAttribute("employee");
+String eId = employee.geteId();
+	Connection conn = null; 
 	Statement stmt = null;
 	ResultSet rs = null;
 	String url = "jdbc:oracle:thin:@192.168.18.235:1521:XE";
@@ -49,7 +52,7 @@
 		String sql = "insert into School(sSeq, sSchCd, sSchName, sJoinDate, sGradDate, sMajor, sLocCd, sEtc, sGradCd, sDNCd,EID)";
 		sql += "values(Seq_sch.NEXTVAL,'" + SchCd + "' , '" + SchoolName
 		+ "', '" + SDate + "', '" + EDate + "', '"
-		+ SMajor + "', '" + SLocal +  "', '" + Etc +  "', '" + SGradCd +  "', '" + DNType +"', 'test8')";
+		+ SMajor + "', '" + SLocal +  "', '" + Etc +  "', '" + SGradCd +  "', '" + DNType +"', '" + eId + "')"; 
 		stmt.execute(sql);
 	}
 	String url1 = "School.jsp";

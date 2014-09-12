@@ -1,18 +1,32 @@
 package mem.wit.gm;
 
 public class ClubDTO {
-	private int cId;
-	private String cName;
-	private int sId;
-	private String sName;
-	private String cPost;
-	private String cAddr;
-	private String cHomepage;
-	private String cEmblem;
-	private String cJoinDay;
-	private int gId;
-	private String cPresident;
-	private String cManager;
+	 int cId;
+	 String cName;
+	 int sId;
+	 String sName;
+	 String cPost;
+	 String cAddr;
+	 String cHomepage;
+	 String cEmblem;
+	 String cJoinDay;
+	 int gId;
+	 String cPresident;
+	 String cManager;
+	String cPTel;
+	String cMTel;
+	public String getcPTel() {
+		return cPTel;
+	}
+	public void setcPTel(String cPTel) {
+		this.cPTel = cPTel;
+	}
+	public String getcMTel() {
+		return cMTel;
+	}
+	public void setcMTel(String cMTel) {
+		this.cMTel = cMTel;
+	}
 	public int getcId() {
 		return cId;
 	}

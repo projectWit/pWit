@@ -295,7 +295,7 @@
 							class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='입사구분'
 								onclick="PopUpCd()" /></a><input name="InType" type="text"
-							id="InType" class="grayleft" value="신입" style="width: 88px;"
+							id="InType" class="grayleft" style="width: 88px;"
 							readonly="readonly" /></td>
 					</tr>
 
@@ -306,7 +306,7 @@
 								src="img/Find.gif" width="22px" height="19px" alt='직위/직급'
 								onclick="PopUpPos()" /></a><input name="JobPos" type="text"
 							id="JobPos" class="grayleft" style="width: 88px;"
-							readonly="readonly" value="대리" /></td>
+							readonly="readonly"  /></td>
 
 						<th>직책</th>
 
@@ -314,7 +314,7 @@
 							class="rightnone" style="width: 46px;" /><a href="#"><img
 								src="img/Find.gif" width="22px" height="19px" alt='직책'
 								onclick="PopUpDuty()" /></a><input name="DutyName" type="text"
-							id="DutyName" value="팀원" class="grayleft" style="width: 88px;"
+							id="DutyName" class="grayleft" style="width: 88px;"
 							readonly="readonly" /></td>
 					</tr>
 
@@ -361,7 +361,7 @@
 						<th>주소</th>
 						<td colspan="4"><a href="#" onclick = "PopUpZip()" id="ePostNum" name="ePostNum"
 							class="link-blue">우편번호검색</a> <input name="PostNum1" type="text"
-							maxlength="8" value="123" id="txtPostNo1" class="default" style = "width : 60px"
+							maxlength="8" id="txtPostNo1" class="default" style = "width : 60px"
 							style="width: 30px;" /><br /> <input type="text" name="Addr1"
 							id="Addr1" class="default" style="width: 300px"
 							/></td>

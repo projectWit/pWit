@@ -784,9 +784,10 @@ $(document).ready(function(e) {
 							<a class="subMnu menuB" href="#none">영역별</a>
 							<ul class="menuList_s" style="display: block;">
 								<li><a href="#">국어</a></li>
+								<!-- <li class=" on"><a href="#">수학</a></li> -->
 								<li><a href="#">수학</a></li>
 								<li><a href="#">영어</a></li>
-								<li class=" on"><a href="#">사회탐구</a></li>
+								<li><a href="#">사회탐구</a></li>
 								<li><a href="#">과학탐구</a></li>
 								<li><a href="#">직업탐구</a></li>
 								<li><a href="#">제2외국어</a></li>
@@ -827,7 +828,10 @@ $(document).ready(function(e) {
 		<div class="arealLecTab mB15">
 				<ul>
 					<li class="on"><a href="#none" data-clas-code=""><span>전체</span></a></li>
-					<li><a href="#none" data-clas-code="A50003"><span>사회문화</span></a></li>
+				<c:forEach var="subject" items="${sbjList }" varStatus="status">
+					<li><a href="#none" data-clas-code="A50003"><span>${subject.sbjName }</span></a></li>
+				</c:forEach>
+					<!-- <li><a href="#none" data-clas-code="A50003"><span>사회문화</span></a></li>
 					<li><a href="#none" data-clas-code="A50004"><span>한국지리</span></a></li>
 					<li><a href="#none" data-clas-code="A50006"><span>경제</span></a></li>
 					<li><a href="#none" data-clas-code="A50007"><span>세계지리</span></a></li>
@@ -836,7 +840,7 @@ $(document).ready(function(e) {
 					<li><a href="#none" data-clas-code="A50013"><span>동아시아사</span></a></li>
 					<li><a href="#none" data-clas-code="A50014"><span>한국사</span></a></li>
 					<li><a href="#none" data-clas-code="A50015"><span>윤리와사상</span></a></li>
-					<li><a href="#none" data-clas-code="A50016"><span>생활과윤리</span></a></li>
+					<li><a href="#none" data-clas-code="A50016"><span>생활과윤리</span></a></li> -->
 					</ul>
 		</div>
 		
@@ -988,7 +992,7 @@ $(document).ready(function(e) {
 							<td>${lecSchedule.lecture.slName }<br>${lecSchedule.lecture.lcName }</td>
 							<td>
 								<!-- 비연합강좌인경우 -->
-										<span class="lecTchPhoto"><img width="61" height="61" onerror="OnImageNotFound(this)" alt="" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so89_2.jpg"></span>
+										<!-- <span class="lecTchPhoto"><img width="61" height="61" onerror="OnImageNotFound(this)" alt="" src="http://image.ebsi.co.kr/images/teacher_new/@/@_ebsint_so89_2.jpg"></span> -->
 										<span class="lecTchName">${lecSchedule.lecture.eKname }</span>
 									</td>
 							<td class="txtL">

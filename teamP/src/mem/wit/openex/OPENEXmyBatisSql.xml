@@ -29,6 +29,60 @@
 		$value$
 	</select>
 
+	<resultMap class="mem.wit.openex.OacvSEDTO" id="OacvSEDTO">
+		<result property="EX_NO" column="EX_NO" />
+		<result property="MNICKNAME" column="MNICKNAME" />
+		<result property="EXTIMELIMIT" column="EXTIMELIMIT" />
+		<result property="EX_QUESTIONSCOUNT" column="EX_QUESTIONSCOUNT" />
+		<result property="EX_TITLE" column="EX_TITLE" />
+		<result property="EX_EXPLAIN" column="EX_EXPLAIN" />
+		<result property="EX_READCOUNT" column="EX_READCOUNT" />
+		<result property="EX_RECOMMENDCOUNT" column="EX_RECOMMENDCOUNT" />
+		<result property="EX_DATE" column="EX_DATE" />
+		<result property="MJ_NAME" column="MJ_NAME" />
+		<result property="MD_NAME" column="MD_NAME" />
+		<result property="EX_MNNAME" column="EX_MNNAME" />
+		<result property="DIF_GRADE" column="DIF_GRADE" />
+	</resultMap>
+	<select id="selecAcvSE" parameterClass="java.lang.String"
+		resultMap="OacvSEDTO">
+		$value$
+	</select>
+
+	<resultMap class="mem.wit.openex.OacvSOLDTO" id="OacvSOLDTO">
+		<result property="REC_NO" column="REC_NO" />
+		<result property="EX_NO" column="EX_NO" />
+		<result property="REC_TIME" column="REC_TIME" />
+		<result property="REC_DATE" column="REC_DATE" />
+		<result property="MNICKNAME" column="MNICKNAME" />
+		<result property="EXTIMELIMIT" column="EXTIMELIMIT" />
+		<result property="EX_QUESTIONSCOUNT" column="EX_QUESTIONSCOUNT" />
+		<result property="EX_TITLE" column="EX_TITLE" />
+		<result property="EX_EXPLAIN" column="EX_EXPLAIN" />
+		<result property="EX_READCOUNT" column="EX_READCOUNT" />
+		<result property="EX_RECOMMENDCOUNT" column="EX_RECOMMENDCOUNT" />
+		<result property="MJ_NAME" column="MJ_NAME" />
+		<result property="MD_NAME" column="MD_NAME" />
+		<result property="DIF_GRADE" column="DIF_GRADE" />
+	</resultMap>
+	<select id="selecAcvSOL" parameterClass="java.lang.String"
+		resultMap="OacvSOLDTO">
+		$value$
+	</select>
+
+	<resultMap class="mem.wit.openex.OacvRECDTO" id="OacvRECDTO">
+		<result property="REC_NO" column="REC_NO" />
+		<result property="QUE_QNO" column="QUE_QNO" />
+		<result property="USA_ANSWER" column="USA_ANSWER" />
+		<result property="QUE_RIGHTANSWER" column="QUE_RIGHTANSWER" />
+		<result property="QUE_SCORE" column="QUE_SCORE" />
+		<result property="EX_QUESTIONSCOUNT" column="EX_QUESTIONSCOUNT" />
+	</resultMap>
+	<select id="selecAcvREC" parameterClass="java.lang.String"
+		resultMap="OacvRECDTO">
+		$value$
+	</select>
+
 	<resultMap class="mem.wit.openex.OSubjecNametListDTO" id="OSubjecNametListDTO">
 		<result property="MJ_NO" column="MJ_NO" />
 		<result property="MJ_NAME" column="MJ_NAME" />
@@ -95,6 +149,14 @@
 	<update id="updateSElast" parameterClass="java.lang.String">
 		$value$
 	</update>
+
+	<resultMap class="mem.wit.openex.OrecnoDTO" id="OrecnoDTO">
+		<result property="REC_NO" column="REC_NO" />
+	</resultMap>
+	<select id="selMaxRecno" parameterClass="java.lang.String"
+		resultMap="OrecnoDTO">
+		$value$
+	</select>
 
 	<resultMap class="mem.wit.openex.OsetExamListDTO" id="OsetExamListDTO">
 		<result property="EX_NO" column="EX_NO" />

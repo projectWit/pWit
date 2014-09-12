@@ -2,7 +2,7 @@
 CodeDAO dao = new CodeDAO();
 List<C_PlaceDTO> result = dao.CallPlace();
 String str = "";
-for(int i=0;i<result.size();i++) {
+for(int i=0;i<result.size();i++) { 
 	if(i==0) {
 		str+= "<option value='"+result.get(i).getpId()+"' selected>"+result.get(i).getPlace()+"</option>";
 	} else {

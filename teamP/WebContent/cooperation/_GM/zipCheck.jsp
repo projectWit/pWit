@@ -1,5 +1,5 @@
 <%@page import="mem.wit.gm.ZipcodeDTO"%>
-<%@page import="java.util.List"%> 
+<%@page import="java.util.List"%>  
 <%@page import="mem.wit.gm.ZipcodeDAO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

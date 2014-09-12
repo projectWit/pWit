@@ -89,7 +89,8 @@
 										<p>
 											<textarea rows="4" cols="80">${item.ACVC_COMMENT}</textarea>
 										</p>
-										<span style="text-align: left; width: 350px;float: left;padding-left: 10px;">${item.ACVC_DATE}</span><span
+										<span
+											style="text-align: left; width: 350px; float: left; padding-left: 10px;">${item.ACVC_DATE}</span><span
 											style="text-align: right;">${item.ACVC_IP}</span>
 									</div>
 								</c:forEach>
@@ -124,37 +125,32 @@
 					<tr>
 						<td colspan="9"></td>
 					</tr>
-					<%
-						for (int i = 5; i > 0; i--) {
-					%>
-					<tr id="openex_archive_setExam_list"
-						id="openex_archive_record_list_solve">
-						<td><%=i%></td>
-						<td><label><a href="#"> IT</a> > </label> <label><a
-								href="#"> 소프트웨어</a></label></td>
-						<td><img src="/teamP/cooperation/_OPENEX/img/icon/java.png"
-							style="width: 12%;"><a href="#" onclick="graphTr()">자바
-								기초 문법 문제입니다</a><span>[23]</span></td>
-						<td>10문제</td>
-						<td>10분</td>
-						<td>32명</td>
-						<td>초급</td>
-						<td>75.4%</td>
-						<td>4:56</td>
-					</tr>
-					<tr>
-						<td colspan="10"><hr></td>
-					</tr>
-					<%
-						}
-					%>
+					<c:forEach var="item" items="${selecAcvSE}" end="4"
+						varStatus="status">
+						<tr id="openex_archive_setExam_list"
+							id="openex_archive_record_list_solve">
+							<td>${item.EX_NO}</td>
+							<td><label><a href="#"> ${item.MJ_NAME}</a> > </label> <label><a
+									href="#">${item.MD_NAME}</a></label></td>
+							<td><a href="#" onclick="graphTr()">${item.EX_TITLE}</a><span>[23]</span></td>
+							<td>${item.EX_QUESTIONSCOUNT}문제</td>
+							<td>${item.EXTIMELIMIT}분</td>
+							<td>32명</td>
+							<td>${item.DIF_GRADE}</td>
+							<td>75.4%</td>
+							<td>${item.EX_DATE}</td>
+						</tr>
+						<tr>
+							<td colspan="10"><hr></td>
+						</tr>
+					</c:forEach>
 					<tr class="pageNos">
 						<td colspan="10">
 							<%
-								for (int i = 1; i < 10; i++) {
+								for (int i = 1; i < 3; i++) {
 							%> <span><a href="#"><%=i%></a></span> <%
  	}
- %> <a href="#">[다음 10개]</a>
+ %> <a href="#">[다음]</a>
 						</td>
 					</tr>
 				</table>
@@ -163,37 +159,30 @@
 				<div id="slideTogBtn_sv" class="openex_archive_record_title">최근
 					성적 리스트</div>
 				<table id="slideTogCtn_sv" class="openex_archive_recordTable">
-					<%
-						for (int i = 5; i > 0; i--) {
-					%>
+					<c:forEach var="item" items="${selecAcvSOL}" end="4" varStatus="status">
 					<tr id="openex_archive_solve_list">
-						<td><%=i%></td>
-						<td><label><a href="#"> 경제</a> > </label> <label><a
-								href="#"> 일반</a></label></td>
-						<td><img
-							src="/teamP/cooperation/_OPENEX/img/icon/economy.png"
-							style="width: 12%;"><a href="#" onclick="graphTr()">경제
-								일반 중급 첫출제해봅니다</a><span>[23]</span></td>
-						<td>30문제</td>
-						<td>40분</td>
-						<td>10명</td>
-						<td>중급</td>
+						<td>${item.REC_NO}</td>
+						<td><label><a href="#">${item.MJ_NAME}</a> > </label> <label><a
+								href="#"> ${item.MD_NAME}</a></label></td>
+						<td><a href="#" onclick="graphTr()">${item.EX_TITLE}</a><span>[23]</span></td>
+						<td>${item.EX_QUESTIONSCOUNT}30문제</td>
+						<td>${item.EXTIMELIMIT}</td>
+						<td>${item.REC_TIME/60}분 소모</td>
+						<td>${item.DIF_GRADE}</td>
 						<td>46.4%</td>
-						<td>2014.02.12</td>
+						<td>${item.REC_DATE}</td>
 					</tr>
 					<tr>
 						<td colspan="10"><hr></td>
 					</tr>
-					<%
-						}
-					%>
+					</c:forEach>
 					<tr class="pageNos">
 						<td colspan="10">
 							<%
-								for (int i = 1; i < 10; i++) {
+								for (int i = 1; i < 2; i++) {
 							%> <span><a href="#"><%=i%></a></span> <%
  	}
- %> <a href="#">[다음 10개]</a>
+ %> <a href="#"></a>
 						</td>
 					</tr>
 				</table>

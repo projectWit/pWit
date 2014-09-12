@@ -1,10 +1,10 @@
 package mem.wit.gm;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,51 +35,7 @@ public class GMController {
 		mv.addObject("clist", clist);
 		return mv;
 	}
-
-	@RequestMapping("/clubsInsert.gm")
-	public ModelAndView clubInsert(HttpServletRequest request,HttpServletResponse response ,HttpSession session) throws IOException {
-		mv.setViewName("clubsInsert"); // view의 이름을 제공
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		String fileName = "";
-        File file = null;
-        String savePath = "C:/pwit/img"; //<- 요기를 바꿔주면 다운받는 경로가 바뀝니다.
-        
-        Enumeration files = null;
-        
-        int maxSize = 5 * 1024 * 1024; // 최대 업로드 파일 크기 5MB(메가)로 제한
-        MultipartRequest multi = new MultipartRequest(request,
-                savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
-        try {
-        
-         fileName = multi.getFilesystemName("cEmblem"); // 파일의 이름 얻기
-         files = multi.getFileNames();
-         String name = (String)files.nextElement();         
-         file = multi.getFile(name);
-         if (fileName == null) { // 파일이 업로드 되지 않았을때
-        	 System.out.print("파일 업로드 되지 않았음");
-         } else { // 파일이 업로드 되었을때   
-             System.out.println("File Name  : " + fileName);
-             System.out.println("FullName : "+savePath+fileName);
-         }//else
-        } catch (Exception e) {
-            System.out.print("예외 발생 : " + e);
-        }//catch
-    	Member member = (Member) session.getAttribute("member");
-		ClubDTO dto = new ClubDTO();
-		dto.setcName(multi.getParameter("cName"));
-		dto.setsId(Integer.parseInt(multi.getParameter("sId")));
-		dto.setcPost(multi.getParameter("cPost"));
-		dto.setcAddr(multi.getParameter("cAddr"));
-		dto.setcHomepage(multi.getParameter("cHomepage"));
-		dto.setcEmblem(fileName);
-		dto.setcPresident(member.getmId());
-		dto.setcManager(multi.getParameter("cManager"));
-		m.insert("insertClub", dto);
-		return new ModelAndView(
-				"redirect:http:/teamP/cooperation/_GM/WIT_GM_index.jsp");
-	}
-
+	
 	@RequestMapping("/facilities.gm")
 	public ModelAndView placeInsert(HttpServletRequest request) {
 
@@ -142,7 +98,8 @@ public class GMController {
 		mv.setViewName("lecturelist");
 		String query = "select s.sNum, l.lecId, l.lecName, e.eKName, ty.tName, p.place, sp.sName, s.sSDay, s.sEDay, l.lecPay, e.eTel "
 				+ "from GM_Lecture l, GM_Sche s, GM_Teacher t, Employee e, C_PTime pt, C_Place p, C_Sport sp, C_Type ty "
-				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum and s.pId=pt.pId and sp.sId=l.sId and ty.tId=l.tId order by l.lecId DESC";
+				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum and s.pId=pt.pId"
+				+ " and sp.sId=l.sId and ty.tId=l.tId order by l.lecId DESC";
 		List<LecDTO> list = (List<LecDTO>) m.select("selectLecList", query);
 		request.setAttribute("alist", list);
 		mv.addObject("list", list);
@@ -153,10 +110,14 @@ public class GMController {
 		mv.setViewName("memberLectureConfirm");
 		Member member = (Member)session.getAttribute("member");
 		System.out.println(member.getmId());
-		String query = "select lr.rNum as sNum,l.lecId, l.lecName, e.eKName, ty.tName, p.place, sp.sName, s.sSDay, s.sEDay, l.lecPay, st.stateName as eTel "
-				+ "from GM_Lecture l, GM_Sche s, GM_Teacher t, Employee e, C_PTime pt, C_Place p, C_Sport sp, C_Type ty, GM_LReq lr, GM_Member m, C_State st "
-				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum and s.pId=pt.pId and sp.sId=l.sId "
-				+ "and ty.tId=l.tId and lr.mId=m.mId and lr.stateId=st.stateId and lr.sNum=s.sNum and lr.mId='"+member.getmId()+"' order by st.stateId asc, lr.rNum desc ";
+		String query = "select lr.rNum as sNum,l.lecId, l.lecName, e.eKName, ty.tName, p.place, "
+				+ "sp.sName, s.sSDay, s.sEDay, l.lecPay, st.stateName as eTel "
+				+ "from GM_Lecture l, GM_Sche s, GM_Teacher t, Employee e, C_PTime pt, C_Place p, "
+				+ "C_Sport sp, C_Type ty, GM_LReq lr, GM_Member m, C_State st "
+				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum "
+				+ "and s.pId=pt.pId and sp.sId=l.sId "
+				+ "and ty.tId=l.tId and lr.mId=m.mId and lr.stateId=st.stateId and lr.sNum=s.sNum and"
+				+ " lr.mId='"+member.getmId()+"' order by st.stateId asc, lr.rNum desc ";
 		List<LecDTO> list = (List<LecDTO>) m.select("selectLecList", query);
 		mv.addObject("list", list);
 		return mv;
@@ -274,7 +235,8 @@ public class GMController {
 		int sId = Integer.parseInt(request.getParameter("sId"));
 		String query="select s.sNum,l.lecId, l.lecName, e.eKName, ty.tName, p.place, sp.sName, s.sSDay, s.sEDay, l.lecPay, e.eTel "
 				+ "from GM_Lecture l, GM_Sche s, GM_Teacher t, Employee e, C_PTime pt, C_Place p, C_Sport sp, C_Type ty "
-				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum and s.pId=pt.pId and sp.sId=l.sId and ty.tId=l.tId and sp.sId="+sId+" order by lecId desc";
+				+ "where l.lecId=s.lecId and p.pId=l.pId and e.eId=t.eId and t.tNum=s.tNum and s.pId=pt.pId "
+				+ "and sp.sId=l.sId and ty.tId=l.tId and sp.sId="+sId+" order by lecId desc";
 		List<LecDTO> list = (List<LecDTO>) m.select("selectLecList", query);
 		mv.addObject("list", list);
 		return mv;
@@ -312,6 +274,26 @@ public class GMController {
 				+ "and ty.tId=l.tId and l.lecId="+lecId;
 		List<LecDTO> list = (List<LecDTO>) m.select("detail", query);
 		mv.addObject("list", list);
+		return mv;
+	}
+	@RequestMapping("/detailcl.gm")
+	public ModelAndView detailcl(HttpServletRequest request) {
+		int cId = Integer.parseInt(request.getParameter("cId"));
+		return new ModelAndView(
+				"redirect:http:/teamP/cooperation/_GM/Member_GM_Club.jsp?url=/teamP/detailclub.gm?cId="+cId);
+	}
+	@RequestMapping("/detailclub.gm")
+	public ModelAndView detailclub(HttpServletRequest request) {
+		mv.setViewName("detailclub");	
+
+		int cId = Integer.parseInt(request.getParameter("cId"));
+		System.out.println(cId);
+		String query="select c.cId, c.cName, w.mName as cPresident, w.mMobile as cPTel, w1.mMobile as cMTel, w1.mName as cManager, s.sName, c.cHomepage, c.cEmblem, c.cJoinDay from "
+				+ "GM_Club c, C_Sport s, GM_Member m, GM_Member m1, WitMember w, WitMember w1 "
+				+ "where c.sId=s.sId and c.cPresident=m.mId and c.cManager=m1.mId and m.mId=w.mId and m1.mId=w1.mId "
+				+ "and c.cId = "+cId;
+		List<ClubDTO> list = (List<ClubDTO>) m.select("detailclub", query);
+		mv.addObject("alist", list);
 		return mv;
 	}
 

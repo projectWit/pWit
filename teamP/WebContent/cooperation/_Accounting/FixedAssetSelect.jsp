@@ -1,5 +1,5 @@
 <%@page import="mem.wit.accounting.ACC_FixedAssetsDTO"%>
-<%@page import="mem.wit.accounting.ACC_FixedAssetsDAO"%>
+<%@page import="mem.wit.accounting.ACC_FixedAssetsDAO"%> 
 <%@page import="mem.wit.accounting.ACC_AccountsDTO"%>
 <%@page import="mem.wit.accounting.ACC_AccountsDAO"%>
 <%@page

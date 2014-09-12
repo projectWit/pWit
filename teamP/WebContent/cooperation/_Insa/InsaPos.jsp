@@ -93,7 +93,7 @@
 
 						<tr id="rpt_ctl05_trRpt">
 							<td><a onclick="fnLink('600','반장')" class="list_link">600</a></td>
-							<td><a onclick="fnLink('600','바장')" class="list_link">반장</a></td>
+							<td><a onclick="fnLink('600','반장')" class="list_link">반장</a></td>
 						</tr>
 
 						<tr id="rpt_ctl06_trRpt">

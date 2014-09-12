@@ -1,5 +1,5 @@
 <%@page import="com.wit.member.Employee"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.List"%> 
 <%@page import="mem.wit.Insa.InsaDTO"%>
 <%@page import="mem.wit.Insa.InsaDAO"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -37,10 +37,10 @@
 		window.open("Qual.jsp", "", "width = 800px, height = 600px");
 	}
 	function PopUpSch() {
-		window.open("School.jsp", "", "width = 800px, height = 600px");
+		window.open("SchoolSel.jsp", "", "width = 800px, height = 600px");
 	}
 	function PopUpFam() {
-		window.open("family.jsp", "", "width = 800px, height = 600px");
+		window.open("familySel.jsp", "", "width = 800px, height = 600px");
 	}
 	function PopUpLan() {
 		window.open("Language.jsp", "", "width = 800px, height = 600px");
@@ -177,7 +177,7 @@
 				<col width="" />
 				<tr>
 					<td rowspan="10" class="center white"><img id="imgEmpPhoto"
-						src="saveimg/<%=dto.getePhoto()%>" style="height: 180px; width: 140px;" /></td>
+						src="../../img/<%=dto.getePhoto()%>" style="height: 180px; width: 140px;" /></td>
 					<th>사원번호</th>
 					<td><%=dto.geteId()%>
 					</td>
@@ -259,9 +259,7 @@
 					<li><a href="#" onclick="PopUpLan();return false;">외국어</a></li>
 				</ul>
 			</div>
-			<br /> <br /> <br /> <br /> <span class="btn gray"><input
-				type="button" id="btnSave" name="btnSave" onclick="fnSave();"
-				value="수정" /></span>
+			<br /> <br /> <br /> <br />
 
 		</div>
 	</div>

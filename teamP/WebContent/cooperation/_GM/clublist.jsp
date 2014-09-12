@@ -101,6 +101,11 @@ a:link {
 	text-decoration: none;
 }
 </style>
+<script>
+function detailclub(cId) {
+	location.href="/teamP/detailcl.gm?cId="+cId;
+}
+</script>
 <body>
 
 <table width="900px" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -133,7 +138,7 @@ a:link {
 				<!-- LIST REPEAT --> 
 				
 				<c:forEach var="item" items="${clist }"  varStatus="status">
-				<tr class="bl_oddline">
+				<tr class="bl_oddline" onclick="detailclub('${item.cId }')" >
 					<td class='bl_list bl_no'>${item.cId }</td>
 					
 					<td class='bl_list bl_subject' colspan="1"><a href="#"  >${item.cName }</a>&nbsp;&nbsp; </td>
