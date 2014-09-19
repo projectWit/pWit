@@ -23,8 +23,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commonJar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.7.0_60/jre/lib/ext/aaa/commons-fileupload-1.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.7.0_60/jre/lib/ext/aaa/commons-io-2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.7.0_60/jre/lib/ext/aaa/gson-2.2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
