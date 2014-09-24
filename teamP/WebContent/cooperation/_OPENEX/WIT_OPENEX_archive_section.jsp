@@ -79,6 +79,7 @@
 						<td class="openex_archive_record_title" colspan="4">코멘트</td>
 					</tr>
 					<tr>
+						<td>등록된 코멘트가 없습니다</td>
 					</tr>
 					<tr>
 						<td>
@@ -135,7 +136,7 @@
 							<td><a href="#" onclick="graphTr()">${item.EX_TITLE}</a><span>[23]</span></td>
 							<td>${item.EX_QUESTIONSCOUNT}문제</td>
 							<td>${item.EXTIMELIMIT}분</td>
-							<td>32명</td>
+							<td>1명</td>
 							<td>${item.DIF_GRADE}</td>
 							<td>75.4%</td>
 							<td>${item.EX_DATE}</td>
@@ -159,22 +160,23 @@
 				<div id="slideTogBtn_sv" class="openex_archive_record_title">최근
 					성적 리스트</div>
 				<table id="slideTogCtn_sv" class="openex_archive_recordTable">
-					<c:forEach var="item" items="${selecAcvSOL}" end="4" varStatus="status">
-					<tr id="openex_archive_solve_list">
-						<td>${item.REC_NO}</td>
-						<td><label><a href="#">${item.MJ_NAME}</a> > </label> <label><a
-								href="#"> ${item.MD_NAME}</a></label></td>
-						<td><a href="#" onclick="graphTr()">${item.EX_TITLE}</a><span>[23]</span></td>
-						<td>${item.EX_QUESTIONSCOUNT}30문제</td>
-						<td>${item.EXTIMELIMIT}</td>
-						<td>${item.REC_TIME/60}분 소모</td>
-						<td>${item.DIF_GRADE}</td>
-						<td>46.4%</td>
-						<td>${item.REC_DATE}</td>
-					</tr>
-					<tr>
-						<td colspan="10"><hr></td>
-					</tr>
+					<c:forEach var="item" items="${selecAcvSOL}" end="4"
+						varStatus="status">
+						<tr id="openex_archive_solve_list">
+							<td>${item.REC_NO}</td>
+							<td><label><a href="#">${item.MJ_NAME}</a> > </label> <label><a
+									href="#"> ${item.MD_NAME}</a></label></td>
+							<td><a href="#" onclick="graphTr()">${item.EX_TITLE}</a><span>[23]</span></td>
+							<td>${item.EX_QUESTIONSCOUNT}문제</td>
+							<td>${item.EXTIMELIMIT}분</td>
+							<td>${item.EXTIMELIMIT*60-item.REC_TIME}초소모</td>
+							<td>${item.DIF_GRADE}</td>
+							<td>46.4%</td>
+							<td>${item.REC_DATE}</td>
+						</tr>
+						<tr>
+							<td colspan="10"><hr></td>
+						</tr>
 					</c:forEach>
 					<tr class="pageNos">
 						<td colspan="10">
